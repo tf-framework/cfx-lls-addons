@@ -1,8 +1,16 @@
-export function add(a: number, b: number): number {
-  return a + b;
+import { Bundler, Generator, NativeType } from "./lib/index.ts";
+
+const parseNativeType = (apiSet?: string) =>
+  apiSet == "server" ? NativeType.SERVER : NativeType.CLIENT;
+
+async function main(args: string[]) {
+  const type = parseNativeType(args[0]);
+
+  const generator = new Generator(type);
+  await generator.generate();
+
+  const bundler = new Bundler(type);
+  bundler.bundle();
 }
 
-// Learn more at https://deno.land/manual/examples/module_metadata#concepts
-if (import.meta.main) {
-  console.log("Add 2 + 3 =", add(2, 3));
-}
+main(Deno.args);

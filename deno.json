@@ -1,5 +1,6 @@
 {
   "tasks": {
-    "dev": "deno run --watch main.ts"
+    "g:server": "deno run --allow-net --allow-read --allow-write main.ts server",
+    "g:client": "deno run --allow-net --allow-read --allow-write main.ts client"
   }
 }
