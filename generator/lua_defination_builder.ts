@@ -11,7 +11,7 @@ export class LuaDefinationBuilder {
   public header(category: string, apiSet: string, hash: string) {
     return this.append(
       `---**\`${category}\` \`${apiSet}\` [\`${hash}\`](${FIVEM_DOCS_URL_PREFIX}${hash})**`,
-      "---"
+      "---",
     );
   }
 
@@ -25,7 +25,7 @@ export class LuaDefinationBuilder {
   private formatDescriptionDocLink(description: string) {
     return description.replace(
       /\?\\_(0[xX][0-9a-fA-F]+)/g,
-      (_, hash) => FIVEM_DOCS_URL_PREFIX + hash
+      (_, hash) => FIVEM_DOCS_URL_PREFIX + hash,
     );
   }
 
@@ -36,7 +36,7 @@ export class LuaDefinationBuilder {
 
     return this.append(
       this.formatMultiline(this.formatDescriptionDocLink(description)),
-      "---"
+      "---",
     );
   }
 
@@ -46,7 +46,7 @@ export class LuaDefinationBuilder {
       "---```lua",
       this.formatMultiline(code),
       "---```",
-      "---"
+      "---",
     );
   }
 
@@ -81,7 +81,7 @@ export class LuaDefinationBuilder {
   public functionDeclaration(nativeName: string, paramNames: string[]) {
     const functionName = this.formatFunctionName(nativeName);
     return this.append(
-      `function ${functionName}(${paramNames.join(", ")}) end`
+      `function ${functionName}(${paramNames.join(", ")}) end`,
     );
   }
 

@@ -1,17 +1,5 @@
-import { NativeMethod, NativeParam } from "../types.ts";
+import { NativeMethod, NativeParam, ParsedNativeMethod } from "./types.ts";
 import { converNativeType } from "./convert_native_type.ts";
-
-export interface ParsedNativeMethod {
-  hash: string;
-  category: string;
-  apiSet: string;
-  name: string;
-  description: string;
-  params: NativeParam[];
-  returnTypes: string[];
-  returnDescription?: string;
-  example?: string;
-}
 
 function fixKeywordParamName(name: string) {
   switch (name) {

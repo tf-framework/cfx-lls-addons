@@ -29,3 +29,15 @@ export interface NativeMethod {
 export type NativeCategory = Record<string, NativeMethod>;
 
 export type NativeCategories = Record<string, NativeCategory>;
+
+export interface ParsedNativeMethod {
+  hash: string;
+  category: string;
+  apiSet: string;
+  name: string;
+  description: string;
+  params: NativeParam[];
+  returnTypes: string[];
+  returnDescription?: string;
+  example?: string;
+}

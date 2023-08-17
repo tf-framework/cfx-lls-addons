@@ -1,12 +1,9 @@
 import { emptyDir } from "https://deno.land/std@0.198.0/fs/empty_dir.ts";
 import { CFX_NATIVES_URL, FIVEM_NATIVES_URL } from "./constants.ts";
 import { LuaDefinationBuilder } from "./lua_defination_builder.ts";
-import {
-  ParsedNativeMethod,
-  parseNativeMethod,
-} from "./parse_native_method.ts";
+import { parseNativeMethod } from "./parse_native_method.ts";
 import { sortBy } from "https://deno.land/std@0.198.0/collections/sort_by.ts";
-import { NativeCategories, NativeType } from "../types.ts";
+import { NativeCategories, NativeType, ParsedNativeMethod } from "./types.ts";
 
 export class Generator {
   private type: NativeType;
@@ -84,17 +81,16 @@ export class Generator {
       .returnType(mt.returnTypes, mt.returnDescription)
       .functionDeclaration(
         mt.name,
-        mt.params.map((param) => param.name)
+        mt.params.map((param) => param.name),
       )
       .build();
   }
 
   private async generateCategoryDefinationFile(
     category: string,
-    methods: ParsedNativeMethod[]
+    methods: ParsedNativeMethod[],
   ) {
-    const lines =
-      "---@meta\n" +
+    const lines = "---@meta\n" +
       methods.map((mt) => this.buildMethodDefination(mt)).join("\n\n");
 
     const definationFile = `./generated/${this.type}/${category}.lua`;
