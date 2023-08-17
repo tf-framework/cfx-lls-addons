@@ -1,4 +1,4 @@
 .idea
 .vscode/*
 !.vscode/extensions.json
-generated
+addon/library/natives

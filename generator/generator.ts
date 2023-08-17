@@ -1,9 +1,9 @@
-import { emptyDir } from "https://deno.land/std@0.198.0/fs/empty_dir.ts";
 import { CFX_NATIVES_URL, FIVEM_NATIVES_URL } from "./constants.ts";
 import { LuaDefinationBuilder } from "./lua_defination_builder.ts";
 import { parseNativeMethod } from "./parse_native_method.ts";
 import { sortBy } from "https://deno.land/std@0.198.0/collections/sort_by.ts";
 import { NativeCategories, NativeType, ParsedNativeMethod } from "./types.ts";
+import { emptyDir } from "https://deno.land/std@0.198.0/fs/empty_dir.ts";
 
 export class Generator {
   private type: NativeType;
@@ -93,14 +93,14 @@ export class Generator {
     const lines = "---@meta\n" +
       methods.map((mt) => this.buildMethodDefination(mt)).join("\n\n");
 
-    const definationFile = `./generated/${this.type}/${category}.lua`;
+    const definationFile =
+      `./addon/library/natives/${this.type}/${category}.lua`;
     console.log(`Generating ${definationFile}...`);
     await Deno.writeTextFile(definationFile, lines);
   }
 
   public async generate() {
-    const generatedDir = `./generated/${this.type}`;
-    emptyDir(generatedDir);
+    emptyDir(`./addon/library/natives/${this.type}`);
 
     await this.parseNatives();
 
@@ -109,6 +109,5 @@ export class Generator {
     });
 
     console.log("Generation completed!");
-    return generatedDir;
   }
 }
