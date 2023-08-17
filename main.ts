@@ -1,4 +1,4 @@
-import { Bundler, Generator, NativeType } from "./lib/index.ts";
+import { Generator, NativeType } from "./generator/index.ts";
 
 const parseNativeType = (apiSet?: string) =>
   apiSet == "server" ? NativeType.SERVER : NativeType.CLIENT;
@@ -8,9 +8,6 @@ async function main(args: string[]) {
 
   const generator = new Generator(type);
   await generator.generate();
-
-  const bundler = new Bundler(type);
-  bundler.bundle();
 }
 
 main(Deno.args);
