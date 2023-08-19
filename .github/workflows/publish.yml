@@ -19,6 +19,12 @@ jobs:
       - name: Generate native definitions
         run: deno task generate
 
+      - uses: JohnnyMorganz/stylua-action@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version: latest
+          args: .
+
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
