@@ -419,7 +419,7 @@ function N_0xe0f82d68c7039158(p0) end
 ---**`MONEY` `client` [`0xE154B48B68EF72BC`](https://docs.fivem.net/natives/?_0xE154B48B68EF72BC)**
 ---
 ---```
----This function is hard-coded to always return 1.  
+---This function is hard-coded to always return 1.
 ---```
 ---
 ---@param p0 any
@@ -494,8 +494,8 @@ function DepositVc(amount) end
 ---**`MONEY` `client` [`0x763B4BD305338F19`](https://docs.fivem.net/natives/?_0x763B4BD305338F19)**
 ---
 ---```
----p1 = 0 (always)  
----p2 = 1 (always)  
+---p1 = 0 (always)
+---p2 = 1 (always)
 ---```
 ---
 ---@param cost number
@@ -518,7 +518,7 @@ function NetworkBuyBackupGang(p0, p1, p2, p3) end
 ---**`MONEY` `client` [`0x7B718E197453F2D9`](https://docs.fivem.net/natives/?_0x7B718E197453F2D9)**
 ---
 ---```
----p1 is just an assumption. p2 was false and p3 was true.  
+---p1 is just an assumption. p2 was false and p3 was true.
 ---```
 ---
 ---@param amount number
@@ -530,10 +530,10 @@ function NetworkBuyBounty(amount, victim, p2, p3) end
 ---**`MONEY` `client` [`0x8A7B3952DD64D2B5`](https://docs.fivem.net/natives/?_0x8A7B3952DD64D2B5)**
 ---
 ---```
----The first parameter is the amount spent which is store in a global when this native is called. The global returns 10. Which is the price for both rides.  
----The last 3 parameters are,   
----2,0,1 in the am_ferriswheel.c  
----1,0,1 in the am_rollercoaster.c  
+---The first parameter is the amount spent which is store in a global when this native is called. The global returns 10. Which is the price for both rides.
+---The last 3 parameters are,
+---2,0,1 in the am_ferriswheel.c
+---1,0,1 in the am_rollercoaster.c
 ---```
 ---
 ---@param amountSpent number
@@ -552,8 +552,8 @@ function NetworkBuyHealthcare(cost, p1, p2) end
 ---**`MONEY` `client` [`0x81AA4610E3FD3A69`](https://docs.fivem.net/natives/?_0x81AA4610E3FD3A69)**
 ---
 ---```
----p1 = 0 (always)  
----p2 = 1 (always)  
+---p1 = 0 (always)
+---p2 = 1 (always)
 ---```
 ---
 ---@param cost number
@@ -658,7 +658,7 @@ function NetworkClearCharacterWallet(characterSlot) end
 ---**`MONEY` `client` [`0x05A50AF38947EB8D`](https://docs.fivem.net/natives/?_0x05A50AF38947EB8D)**
 ---
 ---```
----Note the 2nd parameters are always 1, 0. I have a feeling it deals with your money, wallet, bank. So when you delete the character it of course wipes the wallet cash at that time. So if that was the case, it would be eg, NETWORK_DELETE_CHARACTER(characterIndex, deleteWalletCash, deleteBankCash);  
+---Note the 2nd parameters are always 1, 0. I have a feeling it deals with your money, wallet, bank. So when you delete the character it of course wipes the wallet cash at that time. So if that was the case, it would be eg, NETWORK_DELETE_CHARACTER(characterIndex, deleteWalletCash, deleteBankCash);
 ---```
 ---
 ---@param characterSlot number
@@ -669,7 +669,7 @@ function NetworkDeleteCharacter(characterSlot, p1, p2) end
 ---**`MONEY` `client` [`0x515B4A22E4D3C6D7`](https://docs.fivem.net/natives/?_0x515B4A22E4D3C6D7)**
 ---
 ---```
----DSPORT  
+---DSPORT
 ---```
 ---
 ---@param p0 any
@@ -679,7 +679,7 @@ function NetworkEarnFromAiTargetKill(p0, p1) end
 ---**`MONEY` `client` [`0xFB6DB092FBAE29E6`](https://docs.fivem.net/natives/?_0xFB6DB092FBAE29E6)**
 ---
 ---```
----Example for p1: "AM_DISTRACT_COPS"  
+---Example for p1: "AM_DISTRACT_COPS"
 ---```
 ---
 ---@param p0 number
@@ -935,38 +935,38 @@ function NetworkReceivePlayerJobshareCash(value, networkHandle) end
 ---**`MONEY` `client` [`0xF9C812CD7C46E817`](https://docs.fivem.net/natives/?_0xF9C812CD7C46E817)**
 ---
 ---```
----index  
-----------  
----See function sub_1005 in am_boat_taxi.ysc  
----context  
--------------  
----"BACKUP_VAGOS"  
----"BACKUP_LOST"  
----"BACKUP_FAMILIES"  
----"HIRE_MUGGER"  
----"HIRE_MERCENARY"  
----"BUY_CARDROPOFF"  
----"HELI_PICKUP"  
----"BOAT_PICKUP"  
----"CLEAR_WANTED"  
----"HEAD_2_HEAD"  
----"CHALLENGE"  
----"SHARE_LAST_JOB"  
----"DEFAULT"  
----reason  
-------------  
----"NOTREACHTARGET"  
----"TARGET_ESCAPE"  
----"DELIVERY_FAIL"  
----"NOT_USED"  
----"TEAM_QUIT"  
----"SERVER_ERROR"  
----"RECEIVE_LJ_L"  
----"CHALLENGE_PLAYER_LEFT"  
----"DEFAULT"  
----unk  
---------  
----Unknown bool value  
+---index
+----------
+---See function sub_1005 in am_boat_taxi.ysc
+---context
+-------------
+---"BACKUP_VAGOS"
+---"BACKUP_LOST"
+---"BACKUP_FAMILIES"
+---"HIRE_MUGGER"
+---"HIRE_MERCENARY"
+---"BUY_CARDROPOFF"
+---"HELI_PICKUP"
+---"BOAT_PICKUP"
+---"CLEAR_WANTED"
+---"HEAD_2_HEAD"
+---"CHALLENGE"
+---"SHARE_LAST_JOB"
+---"DEFAULT"
+---reason
+------------
+---"NOTREACHTARGET"
+---"TARGET_ESCAPE"
+---"DELIVERY_FAIL"
+---"NOT_USED"
+---"TEAM_QUIT"
+---"SERVER_ERROR"
+---"RECEIVE_LJ_L"
+---"CHALLENGE_PLAYER_LEFT"
+---"DEFAULT"
+---unk
+--------
+---Unknown bool value
 ---```
 ---
 ---@param index number
@@ -1115,9 +1115,9 @@ function NetworkSpentHireMercenary(p0, p1, p2) end
 ---**`MONEY` `client` [`0xE404BFB981665BF0`](https://docs.fivem.net/natives/?_0xE404BFB981665BF0)**
 ---
 ---```
----Only used once in a script (am_contact_requests)  
----p1 = 0  
----p2 = 1  
+---Only used once in a script (am_contact_requests)
+---p1 = 0
+---p2 = 1
 ---```
 ---
 ---@param p0 any
@@ -1258,7 +1258,7 @@ function NetworkBuyContraband(p0, p1, p2, p3, p4) end
 ---**`MONEY` `client` [`0x7303E27CC6532080`](https://docs.fivem.net/natives/?_0x7303E27CC6532080)**
 ---
 ---```
----NETWORK_CAN_R??? or NETWORK_CAN_S???  
+---NETWORK_CAN_R??? or NETWORK_CAN_S???
 ---```
 ---
 ---```

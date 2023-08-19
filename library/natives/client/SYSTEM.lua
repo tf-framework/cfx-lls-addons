@@ -2,7 +2,7 @@
 ---**`SYSTEM` `client` [`0x11E019C8F43ACC8A`](https://docs.fivem.net/natives/?_0x11E019C8F43ACC8A)**
 ---
 ---```
----I'm guessing this rounds a float value up to the next whole number, and FLOOR rounds it down  
+---I'm guessing this rounds a float value up to the next whole number, and FLOOR rounds it down
 ---```
 ---
 ---@param value number
@@ -137,8 +137,8 @@ function StartNewScript(scriptName, stackSize) end
 ---**`SYSTEM` `client` [`0xB8BA7F44DF1575E1`](https://docs.fivem.net/natives/?_0xB8BA7F44DF1575E1)**
 ---
 ---```
----return : script thread id, 0 if failed  
----Pass pointer to struct of args in p1, size of struct goes into p2  
+---return : script thread id, 0 if failed
+---Pass pointer to struct of args in p1, size of struct goes into p2
 ---```
 ---
 ---@param scriptName string
@@ -167,7 +167,7 @@ function StartNewScriptWithNameHashAndArgs(scriptHash, args, argCount, stackSize
 ---**`SYSTEM` `client` [`0x83666F9FB8FEBD4B`](https://docs.fivem.net/natives/?_0x83666F9FB8FEBD4B)**
 ---
 ---```
----Counts up. Every 1000 is 1 real-time second. Use SETTIMERA(int value) to set the timer (e.g.: SETTIMERA(0)).  
+---Counts up. Every 1000 is 1 real-time second. Use SETTIMERA(int value) to set the timer (e.g.: SETTIMERA(0)).
 ---```
 ---
 ---@return number
@@ -181,7 +181,7 @@ function Timerb() end
 ---**`SYSTEM` `client` [`0x0000000050597EE2`](https://docs.fivem.net/natives/?_0x0000000050597EE2)**
 ---
 ---```
----Gets the current frame time.  
+---Gets the current frame time.
 ---```
 ---
 ---@return number
@@ -196,7 +196,7 @@ function ToFloat(value) end
 ---**`SYSTEM` `client` [`0x2A488C176D52CCA5`](https://docs.fivem.net/natives/?_0x2A488C176D52CCA5)**
 ---
 ---```
----Calculates distance between vectors.  
+---Calculates distance between vectors.
 ---```
 ---
 ---@param x1 number
@@ -211,7 +211,7 @@ function Vdist(x1, y1, z1, x2, y2, z2) end
 ---**`SYSTEM` `client` [`0xB7A628320EFF8E47`](https://docs.fivem.net/natives/?_0xB7A628320EFF8E47)**
 ---
 ---```
----Calculates distance between vectors but does not perform Sqrt operations. (Its way faster)  
+---Calculates distance between vectors but does not perform Sqrt operations. (Its way faster)
 ---```
 ---
 ---@param x1 number
@@ -226,7 +226,7 @@ function Vdist2(x1, y1, z1, x2, y2, z2) end
 ---**`SYSTEM` `client` [`0x652D2EEEF1D3E62C`](https://docs.fivem.net/natives/?_0x652D2EEEF1D3E62C)**
 ---
 ---```
----Calculates the magnitude of a vector.  
+---Calculates the magnitude of a vector.
 ---```
 ---
 ---@param x number
@@ -238,7 +238,7 @@ function Vmag(x, y, z) end
 ---**`SYSTEM` `client` [`0xA8CEACB4F35AE058`](https://docs.fivem.net/natives/?_0xA8CEACB4F35AE058)**
 ---
 ---```
----Calculates the magnitude of a vector but does not perform Sqrt operations. (Its way faster)  
+---Calculates the magnitude of a vector but does not perform Sqrt operations. (Its way faster)
 ---```
 ---
 ---@param x number

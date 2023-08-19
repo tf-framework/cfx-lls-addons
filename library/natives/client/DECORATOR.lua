@@ -2,7 +2,7 @@
 ---**`DECORATOR` `client` [`0x05661B80A8C9165F`](https://docs.fivem.net/natives/?_0x05661B80A8C9165F)**
 ---
 ---```
----Returns whether or not the specified property is set for the entity.  
+---Returns whether or not the specified property is set for the entity.
 ---```
 ---
 ---@param entity Entity
@@ -60,7 +60,7 @@ function DecorRegister(propertyName, type) end
 ---**`DECORATOR` `client` [`0xA9D14EEA259F9248`](https://docs.fivem.net/natives/?_0xA9D14EEA259F9248)**
 ---
 ---```
----Called after all decorator type initializations.  
+---Called after all decorator type initializations.
 ---```
 ---
 function DecorRegisterLock() end
@@ -75,7 +75,7 @@ function DecorRemove(entity, propertyName) end
 ---**`DECORATOR` `client` [`0x6B1E8E2ED1335B71`](https://docs.fivem.net/natives/?_0x6B1E8E2ED1335B71)**
 ---
 ---```
----This function sets metadata of type bool to specified entity.  
+---This function sets metadata of type bool to specified entity.
 ---```
 ---
 ---@param entity Entity
@@ -95,7 +95,7 @@ function DecorSetFloat(entity, propertyName, value) end
 ---**`DECORATOR` `client` [`0x0CE3AA5E1CA19E10`](https://docs.fivem.net/natives/?_0x0CE3AA5E1CA19E10)**
 ---
 ---```
----Sets property to int.  
+---Sets property to int.
 ---```
 ---
 ---@param entity Entity

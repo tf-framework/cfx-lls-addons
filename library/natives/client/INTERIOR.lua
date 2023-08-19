@@ -12,7 +12,7 @@ function N_0x38c1cb1cb119a016(p0, p1) end
 ---**`INTERIOR` `client` [`0x405DC2AEF6AF95B9`](https://docs.fivem.net/natives/?_0x405DC2AEF6AF95B9)**
 ---
 ---```
----Usage: INTERIOR::_0x405DC2AEF6AF95B9(INTERIOR::GET_KEY_FOR_ENTITY_IN_ROOM(PLAYER::PLAYER_PED_ID()));  
+---Usage: INTERIOR::_0x405DC2AEF6AF95B9(INTERIOR::GET_KEY_FOR_ENTITY_IN_ROOM(PLAYER::PLAYER_PED_ID()));
 ---```
 ---
 ---@param roomHashKey Hash
@@ -70,8 +70,8 @@ function N_0x9e6542f0ce8e70a3(toggle) end
 ---**`INTERIOR` `client` [`0xAF348AFCB575A441`](https://docs.fivem.net/natives/?_0xAF348AFCB575A441)**
 ---
 ---```
----Exemple of use(carmod_shop.c4)  
----INTERIOR::_AF348AFCB575A441("V_CarModRoom");  
+---Exemple of use(carmod_shop.c4)
+---INTERIOR::_AF348AFCB575A441("V_CarModRoom");
 ---```
 ---
 ---@param roomName string
@@ -80,7 +80,7 @@ function N_0xaf348afcb575a441(roomName) end
 ---**`INTERIOR` `client` [`0x55E86AF2712B36A1`](https://docs.fivem.net/natives/?_0x55E86AF2712B36A1)**
 ---
 ---```
----More info: http://gtaforums.com/topic/836367-adding-props-to-interiors/  
+---More info: http://gtaforums.com/topic/836367-adding-props-to-interiors/
 ---```
 ---
 ---@param interior number
@@ -96,7 +96,7 @@ function AddPickupToInteriorRoomByName(pickup, roomName) end
 ---**`INTERIOR` `client` [`0xD9175F941610DB54`](https://docs.fivem.net/natives/?_0xD9175F941610DB54)**
 ---
 ---```
----Does something similar to INTERIOR::DISABLE_INTERIOR  
+---Does something similar to INTERIOR::DISABLE_INTERIOR
 ---```
 ---
 ---@param interiorID number
@@ -121,9 +121,9 @@ function DeactivateInteriorEntitySet(interior, entitySetName) end
 ---**`INTERIOR` `client` [`0x6170941419D7D8EC`](https://docs.fivem.net/natives/?_0x6170941419D7D8EC)**
 ---
 ---```
----Example:   
----This removes the interior from the strip club and when trying to walk inside the player just falls:  
----INTERIOR::DISABLE_INTERIOR(118018, true);  
+---Example:
+---This removes the interior from the strip club and when trying to walk inside the player just falls:
+---INTERIOR::DISABLE_INTERIOR(118018, true);
 ---```
 ---
 ---@param interiorID number
@@ -159,9 +159,9 @@ function ForceRoomForGameViewport(interiorID, roomHashKey) end
 ---**`INTERIOR` `client` [`0xB0F7F8663821D9C3`](https://docs.fivem.net/natives/?_0xB0F7F8663821D9C3)**
 ---
 ---```
----Returns interior ID from specified coordinates. If coordinates are outside, then it returns 0.  
----Example for VB.NET  
----Dim interiorID As Integer = Native.Function.Call(Of Integer)(Hash.GET_INTERIOR_AT_COORDS, X, Y, Z)  
+---Returns interior ID from specified coordinates. If coordinates are outside, then it returns 0.
+---Example for VB.NET
+---Dim interiorID As Integer = Native.Function.Call(Of Integer)(Hash.GET_INTERIOR_AT_COORDS, X, Y, Z)
 ---```
 ---
 ---@param x number
@@ -173,10 +173,10 @@ function GetInteriorAtCoords(x, y, z) end
 ---**`INTERIOR` `client` [`0x05B7A89BD78797FC`](https://docs.fivem.net/natives/?_0x05B7A89BD78797FC)**
 ---
 ---```
----Returns the interior ID representing the requested interior at that location (if found?). The supplied interior string is not the same as the one used to load the interior.  
----Use: INTERIOR::UNPIN_INTERIOR(INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(x, y, z, interior))  
----Interior types include: "V_Michael", "V_Franklins", "V_Franklinshouse", etc.. you can find them in the scripts.  
----Not a very useful native as you could just use GET_INTERIOR_AT_COORDS instead and get the same result, without even having to specify the interior type.  
+---Returns the interior ID representing the requested interior at that location (if found?). The supplied interior string is not the same as the one used to load the interior.
+---Use: INTERIOR::UNPIN_INTERIOR(INTERIOR::GET_INTERIOR_AT_COORDS_WITH_TYPE(x, y, z, interior))
+---Interior types include: "V_Michael", "V_Franklins", "V_Franklinshouse", etc.. you can find them in the scripts.
+---Not a very useful native as you could just use GET_INTERIOR_AT_COORDS instead and get the same result, without even having to specify the interior type.
 ---```
 ---
 ---@param x number
@@ -210,7 +210,7 @@ function GetInteriorFromCollision(x, y, z) end
 ---**`INTERIOR` `client` [`0x2107BA504071A6BB`](https://docs.fivem.net/natives/?_0x2107BA504071A6BB)**
 ---
 ---```
----Returns the handle of the interior that the entity is in. Returns 0 if outside.  
+---Returns the handle of the interior that the entity is in. Returns 0 if outside.
 ---```
 ---
 ---@param entity Entity
@@ -229,7 +229,7 @@ function GetInteriorFromPrimaryView() end
 ---**`INTERIOR` `client` [`0xE4A84ABF135EF91A`](https://docs.fivem.net/natives/?_0xE4A84ABF135EF91A)**
 ---
 ---```
----Returns the group ID of the specified interior. For example, regular interiors have group 0, subway interiors have group 1. There are a few other groups too.  
+---Returns the group ID of the specified interior. For example, regular interiors have group 0, subway interiors have group 1. There are a few other groups too.
 ---```
 ---
 ---@param interior number
@@ -250,7 +250,7 @@ function GetInteriorLocationAndNamehash(interior, position, nameHash) end
 ---**`INTERIOR` `client` [`0x399685DB942336BC`](https://docs.fivem.net/natives/?_0x399685DB942336BC)**
 ---
 ---```
----Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY  
+---Seems to do the exact same as INTERIOR::GET_ROOM_KEY_FROM_ENTITY
 ---```
 ---
 ---@param entity Entity
@@ -274,7 +274,7 @@ function GetRoomKeyForGameViewport() end
 ---**`INTERIOR` `client` [`0x47C2A06D4F5F424B`](https://docs.fivem.net/natives/?_0x47C2A06D4F5F424B)**
 ---
 ---```
----Gets the room hash key from the room that the specified entity is in. Each room in every interior has a unique key. Returns 0 if the entity is outside.  
+---Gets the room hash key from the room that the specified entity is in. Each room in every interior has a unique key. Returns 0 if the entity is outside.
 ---```
 ---
 ---@param entity Entity
@@ -340,8 +340,8 @@ function RefreshInterior(interiorID) end
 ---**`INTERIOR` `client` [`0x261CCE7EED010641`](https://docs.fivem.net/natives/?_0x261CCE7EED010641)**
 ---
 ---```
----Does something similar to INTERIOR::DISABLE_INTERIOR.  
----You don't fall through the floor but everything is invisible inside and looks the same as when INTERIOR::DISABLE_INTERIOR is used. Peds behaves normally inside.  
+---Does something similar to INTERIOR::DISABLE_INTERIOR.
+---You don't fall through the floor but everything is invisible inside and looks the same as when INTERIOR::DISABLE_INTERIOR is used. Peds behaves normally inside.
 ---```
 ---
 ---@param interior number

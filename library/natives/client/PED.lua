@@ -46,16 +46,16 @@ function N_0x0f62619393661d6e(p0, p1, p2) end
 ---**`PED` `client` [`0x110F526AB784111F`](https://docs.fivem.net/natives/?_0x110F526AB784111F)**
 ---
 ---```
----In agency_heist3b.c4, its like this 90% of the time:  
----PED::_110F526AB784111F(ped, 0.099);  
----PED::SET_PED_ENVEFF_SCALE(ped, 1.0);  
----PED::_D69411AA0CEBF9E9(ped, 87, 81, 68);  
----PED::SET_ENABLE_PED_ENVEFF_SCALE(ped, 1);  
----and its like this 10% of the time:  
----PED::_110F526AB784111F(ped, 0.2);  
----PED::SET_PED_ENVEFF_SCALE(ped, 0.65);  
----PED::_D69411AA0CEBF9E9(ped, 74, 69, 60);  
----PED::SET_ENABLE_PED_ENVEFF_SCALE(ped, 1);  
+---In agency_heist3b.c4, its like this 90% of the time:
+---PED::_110F526AB784111F(ped, 0.099);
+---PED::SET_PED_ENVEFF_SCALE(ped, 1.0);
+---PED::_D69411AA0CEBF9E9(ped, 87, 81, 68);
+---PED::SET_ENABLE_PED_ENVEFF_SCALE(ped, 1);
+---and its like this 10% of the time:
+---PED::_110F526AB784111F(ped, 0.2);
+---PED::SET_PED_ENVEFF_SCALE(ped, 0.65);
+---PED::_D69411AA0CEBF9E9(ped, 74, 69, 60);
+---PED::SET_ENABLE_PED_ENVEFF_SCALE(ped, 1);
 ---```
 ---
 ---@param ped Ped
@@ -73,7 +73,7 @@ function N_0x1216e0bfa72cc703(p0, p1) end
 ---**`PED` `client` [`0x1A330D297AAC6BC1`](https://docs.fivem.net/natives/?_0x1A330D297AAC6BC1)**
 ---
 ---```
----Only appears in lamar1 script.  
+---Only appears in lamar1 script.
 ---```
 ---
 ---@param ped Ped
@@ -184,9 +184,9 @@ function N_0x425aecf167663f48(ped, p1) end
 ---**`PED` `client` [`0x46B05BCAE43856B0`](https://docs.fivem.net/natives/?_0x46B05BCAE43856B0)**
 ---
 ---```
----Checks if the specified unknown flag is set in the ped's model.  
----The engine itself seems to exclusively check for flags 1 and 4 (Might be inlined code of the check that checks for other flags).  
----Game scripts exclusively check for flags 1 and 4.  
+---Checks if the specified unknown flag is set in the ped's model.
+---The engine itself seems to exclusively check for flags 1 and 4 (Might be inlined code of the check that checks for other flags).
+---Game scripts exclusively check for flags 1 and 4.
 ---```
 ---
 ---@param ped Ped
@@ -470,8 +470,8 @@ function N_0xea9960d07dadcf10(p0) end
 ---**`PED` `client` [`0xEC4B4B3B9908052A`](https://docs.fivem.net/natives/?_0xEC4B4B3B9908052A)**
 ---
 ---```
----SET_PED_*  
----Has most likely to do with some shooting attributes as it sets the float which is in the same range as shootRate.  
+---SET_PED_*
+---Has most likely to do with some shooting attributes as it sets the float which is in the same range as shootRate.
 ---```
 ---
 ---@param ped Ped
@@ -519,9 +519,9 @@ function N_0xf2bebcdfafdaa19e(toggle) end
 ---**`PED` `client` [`0xF9ACF4A08098EA25`](https://docs.fivem.net/natives/?_0xF9ACF4A08098EA25)**
 ---
 ---```
----p1 was always 1 (true).  
----Kicks the ped from the current vehicle and keeps the rendering-focus on this ped (also disables its collision). If doing this for your player ped, you'll still be able to drive the vehicle.  
----Actual name begins with 'S'  
+---p1 was always 1 (true).
+---Kicks the ped from the current vehicle and keeps the rendering-focus on this ped (also disables its collision). If doing this for your player ped, you'll still be able to drive the vehicle.
+---Actual name begins with 'S'
 ---```
 ---
 ---@param ped Ped
@@ -567,7 +567,7 @@ function N_0xff4803bc019852d9(p0, p1) end
 ---**`PED` `client` [`0x5BA652A0CD14DF2F`](https://docs.fivem.net/natives/?_0x5BA652A0CD14DF2F)**
 ---
 ---```
----Same as SET_PED_ARMOUR, but ADDS 'amount' to the armor the Ped already has.  
+---Same as SET_PED_ARMOUR, but ADDS 'amount' to the armor the Ped already has.
 ---```
 ---
 ---@param ped Ped
@@ -616,7 +616,7 @@ function AddPedDecorationFromHashesInCorona(ped, collection, overlay) end
 ---**`PED` `client` [`0xF372BC22FCB88606`](https://docs.fivem.net/natives/?_0xF372BC22FCB88606)**
 ---
 ---```
----Can't select void. This function returns nothing. The hash of the created relationship group is output in the second parameter.  
+---Can't select void. This function returns nothing. The hash of the created relationship group is output in the second parameter.
 ---```
 ---
 ---@param name string
@@ -642,10 +642,10 @@ function AddScenarioBlockingArea(x1, y1, z1, x2, y2, z2, p6, p7, p8, p9) end
 ---**`PED` `client` [`0x697157CED63F18D4`](https://docs.fivem.net/natives/?_0x697157CED63F18D4)**
 ---
 ---```
----damages a ped with the given amount  
--------  
----armorFirst means it will damage/lower the armor first before damaging the player.  
----setting damageAmount to a negative amount will cause the player or the armor (depending on armorFirst) to be healed by damageAmount instead.  
+---damages a ped with the given amount
+-------
+---armorFirst means it will damage/lower the armor first before damaging the player.
+---setting damageAmount to a negative amount will cause the player or the armor (depending on armorFirst) to be healed by damageAmount instead.
 ---```
 ---
 ---```
@@ -660,8 +660,8 @@ function ApplyDamageToPed(ped, damageAmount, armorFirst) end
 ---**`PED` `client` [`0x83F7E01C7B769A26`](https://docs.fivem.net/natives/?_0x83F7E01C7B769A26)**
 ---
 ---```
----Found one occurence in re_crashrescue.c4  
----PED::APPLY_PED_BLOOD(l_4B, 3, 0.0, 0.0, 0.0, "wound_sheet");  
+---Found one occurence in re_crashrescue.c4
+---PED::APPLY_PED_BLOOD(l_4B, 3, 0.0, 0.0, 0.0, "wound_sheet");
 ---```
 ---
 ---@param ped Ped
@@ -745,30 +745,30 @@ function ApplyPedDamageDecal(ped, damageZone, xOffset, yOffset, heading, scale, 
 ---**`PED` `client` [`0x46DF918788CB093F`](https://docs.fivem.net/natives/?_0x46DF918788CB093F)**
 ---
 ---```
----Damage Packs:  
----"SCR_TrevorTreeBang"  
----"HOSPITAL_0"  
----"HOSPITAL_1"  
----"HOSPITAL_2"  
----"HOSPITAL_3"  
----"HOSPITAL_4"  
----"HOSPITAL_5"  
----"HOSPITAL_6"  
----"HOSPITAL_7"  
----"HOSPITAL_8"  
----"HOSPITAL_9"  
----"SCR_Dumpster"  
----"BigHitByVehicle"  
----"SCR_Finale_Michael_Face"  
----"SCR_Franklin_finb"  
----"SCR_Finale_Michael"  
----"SCR_Franklin_finb2"  
----"Explosion_Med"  
----"SCR_Torture"  
----"SCR_TracySplash"  
----"Skin_Melee_0"  
----Additional damage packs:  
----gist.github.com/alexguirre/f3f47f75ddcf617f416f3c8a55ae2227  
+---Damage Packs:
+---"SCR_TrevorTreeBang"
+---"HOSPITAL_0"
+---"HOSPITAL_1"
+---"HOSPITAL_2"
+---"HOSPITAL_3"
+---"HOSPITAL_4"
+---"HOSPITAL_5"
+---"HOSPITAL_6"
+---"HOSPITAL_7"
+---"HOSPITAL_8"
+---"HOSPITAL_9"
+---"SCR_Dumpster"
+---"BigHitByVehicle"
+---"SCR_Finale_Michael_Face"
+---"SCR_Franklin_finb"
+---"SCR_Finale_Michael"
+---"SCR_Franklin_finb2"
+---"Explosion_Med"
+---"SCR_Torture"
+---"SCR_TracySplash"
+---"Skin_Melee_0"
+---Additional damage packs:
+---gist.github.com/alexguirre/f3f47f75ddcf617f416f3c8a55ae2227
 ---```
 ---
 ---@param ped Ped
@@ -821,8 +821,8 @@ function CanPedInCombatSeeTarget(ped, target) end
 ---**`PED` `client` [`0x128F79EDCECE4FD5`](https://docs.fivem.net/natives/?_0x128F79EDCECE4FD5)**
 ---
 ---```
----Prevents the ped from going limp.  
----[Example: Can prevent peds from falling when standing on moving vehicles.]  
+---Prevents the ped from going limp.
+---[Example: Can prevent peds from falling when standing on moving vehicles.]
 ---```
 ---
 ---@param ped Ped
@@ -874,7 +874,7 @@ function ClearPedBloodDamage(ped) end
 ---**`PED` `client` [`0x56E3B78C5408D9F4`](https://docs.fivem.net/natives/?_0x56E3B78C5408D9F4)**
 ---
 ---```
----Somehow related to changing ped's clothes.  
+---Somehow related to changing ped's clothes.
 ---```
 ---
 ---@param ped Ped
@@ -884,8 +884,8 @@ function ClearPedBloodDamageByZone(ped, p1) end
 ---**`PED` `client` [`0x523C79AEEFCC4A2A`](https://docs.fivem.net/natives/?_0x523C79AEEFCC4A2A)**
 ---
 ---```
----p1: from 0 to 5 in the b617d scripts.  
----p2: "blushing" and "ALL" found in the b617d scripts.  
+---p1: from 0 to 5 in the b617d scripts.
+---p2: "blushing" and "ALL" found in the b617d scripts.
 ---```
 ---
 ---@param ped Ped
@@ -948,7 +948,7 @@ function ClearPedStoredHatProp(ped) end
 ---**`PED` `client` [`0x9C720776DAA43E7E`](https://docs.fivem.net/natives/?_0x9C720776DAA43E7E)**
 ---
 ---```
----It clears the wetness of the selected Ped/Player. Clothes have to be wet to notice the difference.  
+---It clears the wetness of the selected Ped/Player. Clothes have to be wet to notice the difference.
 ---```
 ---
 ---@param ped Ped
@@ -957,7 +957,7 @@ function ClearPedWetness(ped) end
 ---**`PED` `client` [`0xD86D101FCFD00A4B`](https://docs.fivem.net/natives/?_0xD86D101FCFD00A4B)**
 ---
 ---```
----There seem to be 26 flags  
+---There seem to be 26 flags
 ---```
 ---
 ---@param ped Ped
@@ -967,19 +967,19 @@ function ClearRagdollBlockingFlags(ped, flags) end
 ---**`PED` `client` [`0x5E29243FB56FC6D4`](https://docs.fivem.net/natives/?_0x5E29243FB56FC6D4)**
 ---
 ---```
----Clears the relationship between two groups. This should be called twice (once for each group).  
----Relationship types:  
----0 = Companion  
----1 = Respect  
----2 = Like  
----3 = Neutral  
----4 = Dislike  
----5 = Hate  
----255 = Pedestrians  
----(Credits: Inco)  
----Example:  
----PED::CLEAR_RELATIONSHIP_BETWEEN_GROUPS(2, l_1017, 0xA49E591C);  
----PED::CLEAR_RELATIONSHIP_BETWEEN_GROUPS(2, 0xA49E591C, l_1017);  
+---Clears the relationship between two groups. This should be called twice (once for each group).
+---Relationship types:
+---0 = Companion
+---1 = Respect
+---2 = Like
+---3 = Neutral
+---4 = Dislike
+---5 = Hate
+---255 = Pedestrians
+---(Credits: Inco)
+---Example:
+---PED::CLEAR_RELATIONSHIP_BETWEEN_GROUPS(2, l_1017, 0xA49E591C);
+---PED::CLEAR_RELATIONSHIP_BETWEEN_GROUPS(2, 0xA49E591C, l_1017);
 ---```
 ---
 ---@param relationship number
@@ -1018,10 +1018,10 @@ function ClonePedToTarget(ped, targetPed) end
 ---**`PED` `client` [`0x90370EBE0FEE1A3D`](https://docs.fivem.net/natives/?_0x90370EBE0FEE1A3D)**
 ---
 ---```
----Creates a new ped group.  
----Groups can contain up to 8 peds.  
----The parameter is unused.  
----Returns a handle to the created group, or 0 if a group couldn't be created.  
+---Creates a new ped group.
+---Groups can contain up to 8 peds.
+---The parameter is unused.
+---Returns a handle to the created group, or 0 if a group couldn't be created.
 ---```
 ---
 ---@param unused number
@@ -1031,10 +1031,10 @@ function CreateGroup(unused) end
 ---**`PED` `client` [`0x418EF2A1BCE56685`](https://docs.fivem.net/natives/?_0x418EF2A1BCE56685)**
 ---
 ---```
----Creates a new NaturalMotion message.  
----startImmediately: If set to true, the character will perform the message the moment it receives it by GIVE_PED_NM_MESSAGE. If false, the Ped will get the message but won't perform it yet. While it's a boolean value, if negative, the message will not be initialized.  
----messageId: The ID of the NaturalMotion message.  
----If a message already exists, this function does nothing. A message exists until the point it has been successfully dispatched by GIVE_PED_NM_MESSAGE.  
+---Creates a new NaturalMotion message.
+---startImmediately: If set to true, the character will perform the message the moment it receives it by GIVE_PED_NM_MESSAGE. If false, the Ped will get the message but won't perform it yet. While it's a boolean value, if negative, the message will not be initialized.
+---messageId: The ID of the NaturalMotion message.
+---If a message already exists, this function does nothing. A message exists until the point it has been successfully dispatched by GIVE_PED_NM_MESSAGE.
 ---```
 ---
 ---@param startImmediately boolean
@@ -1106,9 +1106,9 @@ function CreateRandomPedAsDriver(vehicle, returnHandle) end
 ---**`PED` `client` [`0x8C18E0F9080ADD73`](https://docs.fivem.net/natives/?_0x8C18E0F9080ADD73)**
 ---
 ---```
----p6 always 2 (but it doesnt seem to matter...)  
----roll and pitch 0  
----yaw to Ped.rotation  
+---p6 always 2 (but it doesnt seem to matter...)
+---roll and pitch 0
+---yaw to Ped.rotation
 ---```
 ---
 ---@param x number
@@ -1124,7 +1124,7 @@ function CreateSynchronizedScene(x, y, z, roll, pitch, yaw, p6) end
 ---**`PED` `client` [`0x9614299DCB53E54B`](https://docs.fivem.net/natives/?_0x9614299DCB53E54B)**
 ---
 ---```
----Deletes the specified ped, then sets the handle pointed to by the pointer to NULL.  
+---Deletes the specified ped, then sets the handle pointed to by the pointer to NULL.
 ---```
 ---
 ---@param ped Ped
@@ -1183,25 +1183,25 @@ function ForcePedAiAndAnimationUpdate(ped, p1, p2) end
 ---**`PED` `client` [`0xF28965D04F570DCA`](https://docs.fivem.net/natives/?_0xF28965D04F570DCA)**
 ---
 ---```
----Some motionstate hashes are  
----0xec17e58 (standing idle), 0xbac0f10b (nothing?), 0x3f67c6af (aiming with pistol 2-h), 0x422d7a25 (stealth), 0xbd8817db, 0x916e828c  
----and those for the strings  
----"motionstate_idle", "motionstate_walk", "motionstate_run", "motionstate_actionmode_idle", and "motionstate_actionmode_walk".  
----Regarding p2, p3 and p4: Most common is 0, 0, 0); followed by 0, 1, 0); and 1, 1, 0); in the scripts. p4 is very rarely something other than 0.  
---- [31/03/2017] ins1de :  
----        enum MotionState  
----        {  
----            StopRunning = -530524,  
----            StopWalking = -668482597,  
----            Idle = 247561816, // 1, 1, 0  
----            Idl2 = -1871534317,  
----            SkyDive =-1161760501, // 0, 1, 0  
----            Stealth = 1110276645,  
----            Sprint = -1115154469,  
----            Swim = -1855028596,  
----            Unknown1 = 1063765679,  
----            Unknown2 = -633298724,  
----        }  
+---Some motionstate hashes are
+---0xec17e58 (standing idle), 0xbac0f10b (nothing?), 0x3f67c6af (aiming with pistol 2-h), 0x422d7a25 (stealth), 0xbd8817db, 0x916e828c
+---and those for the strings
+---"motionstate_idle", "motionstate_walk", "motionstate_run", "motionstate_actionmode_idle", and "motionstate_actionmode_walk".
+---Regarding p2, p3 and p4: Most common is 0, 0, 0); followed by 0, 1, 0); and 1, 1, 0); in the scripts. p4 is very rarely something other than 0.
+--- [31/03/2017] ins1de :
+---        enum MotionState
+---        {
+---            StopRunning = -530524,
+---            StopWalking = -668482597,
+---            Idle = 247561816, // 1, 1, 0
+---            Idl2 = -1871534317,
+---            SkyDive =-1161760501, // 0, 1, 0
+---            Stealth = 1110276645,
+---            Sprint = -1115154469,
+---            Swim = -1855028596,
+---            Unknown1 = 1063765679,
+---            Unknown2 = -633298724,
+---        }
 ---```
 ---
 ---@param ped Ped
@@ -1254,34 +1254,34 @@ function GetAnimInitialOffsetRotation(animDict, animName, x, y, z, xRot, yRot, z
 ---**`PED` `client` [`0xC33AB876A77F8164`](https://docs.fivem.net/natives/?_0xC33AB876A77F8164)**
 ---
 ---```
----Gets the closest ped in a radius.  
----Ped Types:  
----Any ped = -1  
----Player = 1  
----Male = 4   
----Female = 5   
----Cop = 6  
----Human = 26  
----SWAT = 27   
----Animal = 28  
----Army = 29  
----------------------  
----P4 P5 P7 P8  
----1  0  x  x  = return nearest walking Ped  
----1  x  0  x  = return nearest walking Ped  
----x  1  1  x  = return Ped you are using  
----0  0  x  x  = no effect  
----0  x  0  x  = no effect  
----x = can be 1 or 0. Does not have any obvious changes.  
----This function does not return ped who is:  
----1. Standing still  
----2. Driving  
----3. Fleeing  
----4. Attacking  
----This function only work if the ped is:  
----1. walking normally.  
----2. waiting to cross a road.  
----Note: PED::GET_PED_NEARBY_PEDS works for more peds.  
+---Gets the closest ped in a radius.
+---Ped Types:
+---Any ped = -1
+---Player = 1
+---Male = 4
+---Female = 5
+---Cop = 6
+---Human = 26
+---SWAT = 27
+---Animal = 28
+---Army = 29
+---------------------
+---P4 P5 P7 P8
+---1  0  x  x  = return nearest walking Ped
+---1  x  0  x  = return nearest walking Ped
+---x  1  1  x  = return Ped you are using
+---0  0  x  x  = no effect
+---0  x  0  x  = no effect
+---x = can be 1 or 0. Does not have any obvious changes.
+---This function does not return ped who is:
+---1. Standing still
+---2. Driving
+---3. Fleeing
+---4. Attacking
+---This function only work if the ped is:
+---1. walking normally.
+---2. waiting to cross a road.
+---Note: PED::GET_PED_NEARBY_PEDS works for more peds.
 ---```
 ---
 ---@param x number
@@ -1300,33 +1300,33 @@ function GetClosestPed(x, y, z, radius, p4, p5, outPed, p7, p8, pedType) end
 ---**`PED` `client` [`0x52DFF8A10508090A`](https://docs.fivem.net/natives/?_0x52DFF8A10508090A)**
 ---
 ---```
----p0: Ped Handle  
----p1: int i | 0 <= i <= 27  
----p1 probably refers to the attributes configured in combatbehavior.meta. There are 13. Example:  
----<BlindFireChance value="0.1"/>  
----<WeaponShootRateModifier value="1.0"/>  
----<TimeBetweenBurstsInCover value="1.25"/>  
----<BurstDurationInCover value="2.0"/>  
----<TimeBetweenPeeks value="10.0"/>  
----<WeaponAccuracy value="0.18"/>  
----<FightProficiency value="0.8"/>  
----<StrafeWhenMovingChance value="1.0"/>  
----<WalkWhenStrafingChance value="0.0"/>  
----<AttackWindowDistanceForCover value="55.0"/>  
----<TimeToInvalidateInjuredTarget value="9.0"/>  
----<TriggerChargeTime_Near value="4.0"/>  
----<TriggerChargeTime_Far value="10.0"/>  
-----------------Confirmed by editing combatbehavior.meta:  
----p1:  
----0=BlindFireChance  
----1=BurstDurationInCover  
----3=TimeBetweenBurstsInCover  
----4=TimeBetweenPeeks  
----5=StrafeWhenMovingChance  
----8=WalkWhenStrafingChance  
----11=AttackWindowDistanceForCover  
----12=TimeToInvalidateInjuredTarget  
----16=OptimalCoverDistance  
+---p0: Ped Handle
+---p1: int i | 0 <= i <= 27
+---p1 probably refers to the attributes configured in combatbehavior.meta. There are 13. Example:
+---<BlindFireChance value="0.1"/>
+---<WeaponShootRateModifier value="1.0"/>
+---<TimeBetweenBurstsInCover value="1.25"/>
+---<BurstDurationInCover value="2.0"/>
+---<TimeBetweenPeeks value="10.0"/>
+---<WeaponAccuracy value="0.18"/>
+---<FightProficiency value="0.8"/>
+---<StrafeWhenMovingChance value="1.0"/>
+---<WalkWhenStrafingChance value="0.0"/>
+---<AttackWindowDistanceForCover value="55.0"/>
+---<TimeToInvalidateInjuredTarget value="9.0"/>
+---<TriggerChargeTime_Near value="4.0"/>
+---<TriggerChargeTime_Far value="10.0"/>
+----------------Confirmed by editing combatbehavior.meta:
+---p1:
+---0=BlindFireChance
+---1=BurstDurationInCover
+---3=TimeBetweenBurstsInCover
+---4=TimeBetweenPeeks
+---5=StrafeWhenMovingChance
+---8=WalkWhenStrafingChance
+---11=AttackWindowDistanceForCover
+---12=TimeToInvalidateInjuredTarget
+---16=OptimalCoverDistance
 ---```
 ---
 ---@param ped Ped
@@ -1345,7 +1345,7 @@ function GetDeadPedPickupCoords(ped, p1, p2) end
 ---**`PED` `client` [`0x8DE69FE35CA09A45`](https://docs.fivem.net/natives/?_0x8DE69FE35CA09A45)**
 ---
 ---```
----p1 may be a BOOL representing whether or not the group even exists  
+---p1 may be a BOOL representing whether or not the group even exists
 ---```
 ---
 ---@param groupID number
@@ -1368,14 +1368,14 @@ function GetMeleeTargetForPed(ped) end
 ---**`PED` `client` [`0xE7E11B8DCBED1058`](https://docs.fivem.net/natives/?_0xE7E11B8DCBED1058)**
 ---
 ---```
----Function just returns 0  
----void __fastcall ped__get_mount(NativeContext *a1)  
----{  
----  NativeContext *v1; // rbx@1  
----  v1 = a1;  
----  GetAddressOfPedFromScriptHandle(a1->Args->Arg1);  
----  v1->Returns->Item1= 0;  
----}  
+---Function just returns 0
+---void __fastcall ped__get_mount(NativeContext *a1)
+---{
+---  NativeContext *v1; // rbx@1
+---  v1 = a1;
+---  GetAddressOfPedFromScriptHandle(a1->Args->Arg1);
+---  v1->Returns->Item1= 0;
+---}
 ---```
 ---
 ---@param ped Ped
@@ -1419,7 +1419,7 @@ function GetNumberOfPedTextureVariations(ped, componentId, drawableId) end
 ---**`PED` `client` [`0xDB4EACD4AD0A5D6B`](https://docs.fivem.net/natives/?_0xDB4EACD4AD0A5D6B)**
 ---
 ---```
----gtaforums.com/topic/885580-ped-headshotmugshot-txd/  
+---gtaforums.com/topic/885580-ped-headshotmugshot-txd/
 ---```
 ---
 ---@param id number
@@ -1441,13 +1441,13 @@ function GetPedAccuracy(ped) end
 ---**`PED` `client` [`0xF6AA118530443FD2`](https://docs.fivem.net/natives/?_0xF6AA118530443FD2)**
 ---
 ---```
----Returns the ped's alertness (0-3).  
----Values :   
----0 : Neutral  
----1 : Heard something (gun shot, hit, etc)  
----2 : Knows (the origin of the event)  
----3 : Fully alerted (is facing the event?)  
----If the Ped does not exist, returns -1.  
+---Returns the ped's alertness (0-3).
+---Values :
+---0 : Neutral
+---1 : Heard something (gun shot, hit, etc)
+---2 : Knows (the origin of the event)
+---3 : Fully alerted (is facing the event?)
+---If the Ped does not exist, returns -1.
 ---```
 ---
 ---@param ped Ped
@@ -1469,13 +1469,13 @@ function GetPedAsGroupLeader(groupID) end
 ---**`PED` `client` [`0x51455483CF23ED97`](https://docs.fivem.net/natives/?_0x51455483CF23ED97)**
 ---
 ---```
----from fm_mission_controller.c4 (variable names changed for clarity):  
----int groupID = PLAYER::GET_PLAYER_GROUP(PLAYER::PLAYER_ID());  
----PED::GET_GROUP_SIZE(group, &unused, &groupSize);  
----if (groupSize >= 1) {  
----. . . . for (int memberNumber = 0; memberNumber < groupSize; memberNumber++) {  
----. . . . . . . . Ped ped1 = PED::GET_PED_AS_GROUP_MEMBER(groupID, memberNumber);  
----. . . . . . . . //and so on  
+---from fm_mission_controller.c4 (variable names changed for clarity):
+---int groupID = PLAYER::GET_PLAYER_GROUP(PLAYER::PLAYER_ID());
+---PED::GET_GROUP_SIZE(group, &unused, &groupSize);
+---if (groupSize >= 1) {
+---. . . . for (int memberNumber = 0; memberNumber < groupSize; memberNumber++) {
+---. . . . . . . . Ped ped1 = PED::GET_PED_AS_GROUP_MEMBER(groupID, memberNumber);
+---. . . . . . . . //and so on
 ---```
 ---
 ---@param groupID number
@@ -1486,12 +1486,12 @@ function GetPedAsGroupMember(groupID, memberNumber) end
 ---**`PED` `client` [`0x17C07FC640E86B4E`](https://docs.fivem.net/natives/?_0x17C07FC640E86B4E)**
 ---
 ---```
----Gets the position of the specified bone of the specified ped.  
----ped: The ped to get the position of a bone from.  
----boneId: The ID of the bone to get the position from. This is NOT the index.  
----offsetX: The X-component of the offset to add to the position relative to the bone's rotation.  
----offsetY: The Y-component of the offset to add to the position relative to the bone's rotation.  
----offsetZ: The Z-component of the offset to add to the position relative to the bone's rotation.  
+---Gets the position of the specified bone of the specified ped.
+---ped: The ped to get the position of a bone from.
+---boneId: The ID of the bone to get the position from. This is NOT the index.
+---offsetX: The X-component of the offset to add to the position relative to the bone's rotation.
+---offsetY: The Y-component of the offset to add to the position relative to the bone's rotation.
+---offsetZ: The Z-component of the offset to add to the position relative to the bone's rotation.
 ---```
 ---
 ---@param ped Ped
@@ -1865,7 +1865,7 @@ function GetPedBoneCoords(ped, boneId, offsetX, offsetY, offsetZ) end
 ---    FB_L_Lip_Bot_001 = 0xB93B,
 ---    FB_R_Lip_Bot_001 = 0xC33B,
 ---    FB_Tongue_001 = 0xB987
----}; 
+---};
 ---```
 ---
 ---@param ped Ped
@@ -1876,7 +1876,7 @@ function GetPedBoneIndex(ped, boneId) end
 ---**`PED` `client` [`0x16FFE42AB2D2DC59`](https://docs.fivem.net/natives/?_0x16FFE42AB2D2DC59)**
 ---
 ---```
----Returns the hash of the weapon/model/object that killed the ped.  
+---Returns the hash of the weapon/model/object that killed the ped.
 ---```
 ---
 ---@param ped Ped
@@ -1972,9 +1972,9 @@ function GetPedEnveffScale(ped) end
 ---**`PED` `client` [`0xE0AF41401ADF87E3`](https://docs.fivem.net/natives/?_0xE0AF41401ADF87E3)**
 ---
 ---```
----Gets the offset the specified ped has moved since the previous tick.  
----If worldSpace is false, the returned offset is relative to the ped. That is, if the ped has moved 1 meter right and 5 meters forward, it'll return 1,5,0.  
----If worldSpace is true, the returned offset is relative to the world. That is, if the ped has moved 1 meter on the X axis and 5 meters on the Y axis, it'll return 1,5,0.  
+---Gets the offset the specified ped has moved since the previous tick.
+---If worldSpace is false, the returned offset is relative to the ped. That is, if the ped has moved 1 meter right and 5 meters forward, it'll return 1,5,0.
+---If worldSpace is true, the returned offset is relative to the world. That is, if the ped has moved 1 meter on the X axis and 5 meters on the Y axis, it'll return 1,5,0.
 ---```
 ---
 ---@param ped Ped
@@ -1985,7 +1985,7 @@ function GetPedExtractedDisplacement(ped, worldSpace) end
 ---**`PED` `client` [`0xF162E133B4E7A675`](https://docs.fivem.net/natives/?_0xF162E133B4E7A675)**
 ---
 ---```
----Returns the group id of which the specified ped is a member of.  
+---Returns the group id of which the specified ped is a member of.
 ---```
 ---
 ---@param ped Ped
@@ -1995,14 +1995,14 @@ function GetPedGroupIndex(ped) end
 ---**`PED` `client` [`0x2746BD9D88C5C5D0`](https://docs.fivem.net/natives/?_0x2746BD9D88C5C5D0)**
 ---
 ---```
----The pointer is to a padded struct that matches the arguments to SET_PED_HEAD_BLEND_DATA(...). There are 4 bytes of padding after each field.  
----pass this struct in the second parameter   
----typedef struct  
----{  
----        int shapeFirst, shapeSecond, shapeThird;   
----        int skinFirst, skinSecond, skinThird;   
----	float shapeMix, skinMix, thirdMix;  
----} headBlendData;  
+---The pointer is to a padded struct that matches the arguments to SET_PED_HEAD_BLEND_DATA(...). There are 4 bytes of padding after each field.
+---pass this struct in the second parameter
+---typedef struct
+---{
+---        int shapeFirst, shapeSecond, shapeThird;
+---        int skinFirst, skinSecond, skinThird;
+---	float shapeMix, skinMix, thirdMix;
+---} headBlendData;
 ---```
 ---
 ---@param ped Ped
@@ -2024,7 +2024,7 @@ function GetPedHeadBlendFirstIndex(type) end
 ---**`PED` `client` [`0x5EF37013A6539C9D`](https://docs.fivem.net/natives/?_0x5EF37013A6539C9D)**
 ---
 ---```
----Type equals 0 for male non-dlc, 1 for female non-dlc, 2 for male dlc, and 3 for female dlc.  
+---Type equals 0 for male non-dlc, 1 for female non-dlc, 2 for male dlc, and 3 for female dlc.
 ---```
 ---
 ---@param type number
@@ -2087,31 +2087,31 @@ function GetPedNearbyPeds(ped, sizeAndPeds, ignore) end
 ---**`PED` `client` [`0xCFF869CBFA210D82`](https://docs.fivem.net/natives/?_0xCFF869CBFA210D82)**
 ---
 ---```
----Returns size of array, passed into the second variable.  
----See below for usage information.  
----This function actually requires a struct, where the first value is the maximum number of elements to return.  Here is a sample of how I was able to get it to work correctly, without yet knowing the struct format.  
----//Setup the array  
----	const int numElements = 10;  
----	const int arrSize = numElements * 2 + 2;  
----	Any veh[arrSize];  
----	//0 index is the size of the array  
----	veh[0] = numElements;  
----	int count = PED::GET_PED_NEARBY_VEHICLES(PLAYER::PLAYER_PED_ID(), veh);  
----	if (veh != NULL)  
----	{  
----//Simple loop to go through results  
----for (int i = 0; i < count; i++)  
----{  
----	int offsettedID = i * 2 + 2;  
----	//Make sure it exists  
----	if (veh[offsettedID] != NULL && ENTITY::DOES_ENTITY_EXIST(veh[offsettedID]))  
----	{  
----//Do something  
----	}  
----}  
----	}    
----Here's the right way to do it (console and pc):  
----pastebin.com/SsFej963  
+---Returns size of array, passed into the second variable.
+---See below for usage information.
+---This function actually requires a struct, where the first value is the maximum number of elements to return.  Here is a sample of how I was able to get it to work correctly, without yet knowing the struct format.
+---//Setup the array
+---	const int numElements = 10;
+---	const int arrSize = numElements * 2 + 2;
+---	Any veh[arrSize];
+---	//0 index is the size of the array
+---	veh[0] = numElements;
+---	int count = PED::GET_PED_NEARBY_VEHICLES(PLAYER::PLAYER_PED_ID(), veh);
+---	if (veh != NULL)
+---	{
+---//Simple loop to go through results
+---for (int i = 0; i < count; i++)
+---{
+---	int offsettedID = i * 2 + 2;
+---	//Make sure it exists
+---	if (veh[offsettedID] != NULL && ENTITY::DOES_ENTITY_EXIST(veh[offsettedID]))
+---	{
+---//Do something
+---	}
+---}
+---	}
+---Here's the right way to do it (console and pc):
+---pastebin.com/SsFej963
 ---```
 ---
 ---@param ped Ped
@@ -2129,11 +2129,11 @@ function GetPedPaletteVariation(ped, componentId) end
 ---**`PED` `client` [`0x8B9F1FC6AE8166C0`](https://docs.fivem.net/natives/?_0x8B9F1FC6AE8166C0)**
 ---
 ---```
-----1: no landing  
----0: landing on both feet  
----1: stumbling  
----2: rolling  
----3: ragdoll  
+----1: no landing
+---0: landing on both feet
+---1: stumbling
+---2: rolling
+---3: ragdoll
 ---```
 ---
 ---@param ped Ped
@@ -2143,13 +2143,13 @@ function GetPedParachuteLandingType(ped) end
 ---**`PED` `client` [`0x79CFD9827CC979B6`](https://docs.fivem.net/natives/?_0x79CFD9827CC979B6)**
 ---
 ---```
----Returns:  
-----1: Normal  
----0: Wearing parachute on back  
----1: Parachute opening  
----2: Parachute open  
----3: Falling to doom (e.g. after exiting parachute)  
----Normal means no parachute?  
+---Returns:
+----1: Normal
+---0: Wearing parachute on back
+---1: Parachute opening
+---2: Parachute open
+---3: Falling to doom (e.g. after exiting parachute)
+---Normal means no parachute?
 ---```
 ---
 ---@param ped Ped
@@ -2205,8 +2205,8 @@ function GetPedResetFlag(ped, flagId) end
 ---**`PED` `client` [`0x93C8B64DEB84728C`](https://docs.fivem.net/natives/?_0x93C8B64DEB84728C)**
 ---
 ---```
----Returns the Entity (Ped, Vehicle, or ?Object?) that killed the 'ped'  
----Is best to check if the Ped is dead before asking for its killer.  
+---Returns the Entity (Ped, Vehicle, or ?Object?) that killed the 'ped'
+---Is best to check if the Ped is dead before asking for its killer.
 ---```
 ---
 ---@param ped Ped
@@ -2216,7 +2216,7 @@ function GetPedSourceOfDeath(ped) end
 ---**`PED` `client` [`0x7C2AC9CA66575FBF`](https://docs.fivem.net/natives/?_0x7C2AC9CA66575FBF)**
 ---
 ---```
----Returns whether the entity is in stealth mode  
+---Returns whether the entity is in stealth mode
 ---```
 ---
 ---@param ped Ped
@@ -2289,17 +2289,17 @@ function GetPlayerPedIsFollowing(ped) end
 ---**`PED` `client` [`0x876046A8E3A4B71C`](https://docs.fivem.net/natives/?_0x876046A8E3A4B71C)**
 ---
 ---```
----Gets a random ped in the x/y/zRadius near the x/y/z coordinates passed.   
----Ped Types:  
----Any = -1  
----Player = 1  
----Male = 4   
----Female = 5   
----Cop = 6  
----Human = 26  
----SWAT = 27   
----Animal = 28  
----Army = 29  
+---Gets a random ped in the x/y/zRadius near the x/y/z coordinates passed.
+---Ped Types:
+---Any = -1
+---Player = 1
+---Male = 4
+---Female = 5
+---Cop = 6
+---Human = 26
+---SWAT = 27
+---Animal = 28
+---Army = 29
 ---```
 ---
 ---@param x number
@@ -2315,18 +2315,18 @@ function GetRandomPedAtCoord(x, y, z, xRadius, yRadius, zRadius, pedType) end
 ---**`PED` `client` [`0x9E6B70061662AE5C`](https://docs.fivem.net/natives/?_0x9E6B70061662AE5C)**
 ---
 ---```
----Gets the relationship between two groups. This should be called twice (once for each group).  
----Relationship types:  
----0 = Companion  
----1 = Respect  
----2 = Like  
----3 = Neutral  
----4 = Dislike  
----5 = Hate  
----255 = Pedestrians  
----Example:  
----PED::GET_RELATIONSHIP_BETWEEN_GROUPS(l_1017, 0xA49E591C);  
----PED::GET_RELATIONSHIP_BETWEEN_GROUPS(0xA49E591C, l_1017);  
+---Gets the relationship between two groups. This should be called twice (once for each group).
+---Relationship types:
+---0 = Companion
+---1 = Respect
+---2 = Like
+---3 = Neutral
+---4 = Dislike
+---5 = Hate
+---255 = Pedestrians
+---Example:
+---PED::GET_RELATIONSHIP_BETWEEN_GROUPS(l_1017, 0xA49E591C);
+---PED::GET_RELATIONSHIP_BETWEEN_GROUPS(0xA49E591C, l_1017);
 ---```
 ---
 ---@param group1 Hash
@@ -2337,19 +2337,19 @@ function GetRelationshipBetweenGroups(group1, group2) end
 ---**`PED` `client` [`0xEBA5AD3A0EAF7121`](https://docs.fivem.net/natives/?_0xEBA5AD3A0EAF7121)**
 ---
 ---```
----Gets the relationship between two peds. This should be called twice (once for each ped).  
----Relationship types:  
----0 = Companion  
----1 = Respect  
----2 = Like  
----3 = Neutral  
----4 = Dislike  
----5 = Hate  
----255 = Pedestrians  
----(Credits: Inco)  
----Example:  
----PED::GET_RELATIONSHIP_BETWEEN_PEDS(2, l_1017, 0xA49E591C);  
----PED::GET_RELATIONSHIP_BETWEEN_PEDS(2, 0xA49E591C, l_1017);  
+---Gets the relationship between two peds. This should be called twice (once for each ped).
+---Relationship types:
+---0 = Companion
+---1 = Respect
+---2 = Like
+---3 = Neutral
+---4 = Dislike
+---5 = Hate
+---255 = Pedestrians
+---(Credits: Inco)
+---Example:
+---PED::GET_RELATIONSHIP_BETWEEN_PEDS(2, l_1017, 0xA49E591C);
+---PED::GET_RELATIONSHIP_BETWEEN_PEDS(2, 0xA49E591C, l_1017);
 ---```
 ---
 ---@param ped1 Ped
@@ -2400,7 +2400,7 @@ function GetVehiclePedIsTryingToEnter(ped) end
 ---**`PED` `client` [`0x6094AD011A2EA87D`](https://docs.fivem.net/natives/?_0x6094AD011A2EA87D)**
 ---
 ---```
----Gets ID of vehicle player using. It means it can get ID at any interaction with vehicle. Enter\exit for example. And that means it is faster than GET_VEHICLE_PED_IS_IN but less safe.  
+---Gets ID of vehicle player using. It means it can get ID at any interaction with vehicle. Enter\exit for example. And that means it is faster than GET_VEHICLE_PED_IS_IN but less safe.
 ---```
 ---
 ---@param ped Ped
@@ -2428,22 +2428,22 @@ function GivePedHelmet(ped, cannotRemove, helmetFlag, textureIndex) end
 ---**`PED` `client` [`0xB158DFCCC56E5C5B`](https://docs.fivem.net/natives/?_0xB158DFCCC56E5C5B)**
 ---
 ---```
----Sends the message that was created by a call to CREATE_NM_MESSAGE to the specified Ped.  
----If a message hasn't been created already, this function does nothing.  
----If the Ped is not ragdolled with Euphoria enabled, this function does nothing.  
----The following call can be used to ragdoll the Ped with Euphoria enabled: SET_PED_TO_RAGDOLL(ped, 4000, 5000, 1, 1, 1, 0);  
----Call order:  
----SET_PED_TO_RAGDOLL  
----CREATE_NM_MESSAGE  
----GIVE_PED_NM_MESSAGE  
----Multiple messages can be chained. Eg. to make the ped stagger and swing his arms around, the following calls can be made:  
----SET_PED_TO_RAGDOLL(ped, 4000, 5000, 1, 1, 1, 0);  
----CREATE_NM_MESSAGE(true, 0); // stopAllBehaviours - Stop all other behaviours, in case the Ped is already doing some Euphoria stuff.  
----GIVE_PED_NM_MESSAGE(ped); // Dispatch message to Ped.  
----CREATE_NM_MESSAGE(true, 1151); // staggerFall - Attempt to walk while falling.  
----GIVE_PED_NM_MESSAGE(ped); // Dispatch message to Ped.  
----CREATE_NM_MESSAGE(true, 372); // armsWindmill - Swing arms around.  
----GIVE_PED_NM_MESSAGE(ped); // Dispatch message to Ped.  
+---Sends the message that was created by a call to CREATE_NM_MESSAGE to the specified Ped.
+---If a message hasn't been created already, this function does nothing.
+---If the Ped is not ragdolled with Euphoria enabled, this function does nothing.
+---The following call can be used to ragdoll the Ped with Euphoria enabled: SET_PED_TO_RAGDOLL(ped, 4000, 5000, 1, 1, 1, 0);
+---Call order:
+---SET_PED_TO_RAGDOLL
+---CREATE_NM_MESSAGE
+---GIVE_PED_NM_MESSAGE
+---Multiple messages can be chained. Eg. to make the ped stagger and swing his arms around, the following calls can be made:
+---SET_PED_TO_RAGDOLL(ped, 4000, 5000, 1, 1, 1, 0);
+---CREATE_NM_MESSAGE(true, 0); // stopAllBehaviours - Stop all other behaviours, in case the Ped is already doing some Euphoria stuff.
+---GIVE_PED_NM_MESSAGE(ped); // Dispatch message to Ped.
+---CREATE_NM_MESSAGE(true, 1151); // staggerFall - Attempt to walk while falling.
+---GIVE_PED_NM_MESSAGE(ped); // Dispatch message to Ped.
+---CREATE_NM_MESSAGE(true, 372); // armsWindmill - Swing arms around.
+---GIVE_PED_NM_MESSAGE(ped); // Dispatch message to Ped.
 ---```
 ---
 ---@param ped Ped
@@ -2554,7 +2554,7 @@ function IsConversationPedDead(ped) end
 ---**`PED` `client` [`0x16EC4839969F9F5E`](https://docs.fivem.net/natives/?_0x16EC4839969F9F5E)**
 ---
 ---```
----xyz - relative to the world origin.  
+---xyz - relative to the world origin.
 ---```
 ---
 ---@param x1 number
@@ -2574,7 +2574,7 @@ function IsPedheadshotImgUploadAvailable() end
 ---**`PED` `client` [`0x7085228842B13A67`](https://docs.fivem.net/natives/?_0x7085228842B13A67)**
 ---
 ---```
----gtaforums.com/topic/885580-ped-headshotmugshot-txd/  
+---gtaforums.com/topic/885580-ped-headshotmugshot-txd/
 ---```
 ---
 ---@param id number
@@ -2584,7 +2584,7 @@ function IsPedheadshotReady(id) end
 ---**`PED` `client` [`0xA0A9668F158129A2`](https://docs.fivem.net/natives/?_0xA0A9668F158129A2)**
 ---
 ---```
----gtaforums.com/topic/885580-ped-headshotmugshot-txd/  
+---gtaforums.com/topic/885580-ped-headshotmugshot-txd/
 ---```
 ---
 ---@param id number
@@ -2622,7 +2622,7 @@ function IsPedBeingStealthKilled(ped) end
 ---**`PED` `client` [`0x4FBACCE3B4138EE8`](https://docs.fivem.net/natives/?_0x4FBACCE3B4138EE8)**
 ---
 ---```
----p1 is always 0  
+---p1 is always 0
 ---```
 ---
 ---@param ped Ped
@@ -2698,7 +2698,7 @@ function IsPedEvasiveDiving(ped, evadingEntity) end
 ---**`PED` `client` [`0xD71649DB0A545AA3`](https://docs.fivem.net/natives/?_0xD71649DB0A545AA3)**
 ---
 ---```
----angle is ped's view cone  
+---angle is ped's view cone
 ---```
 ---
 ---@param ped Ped
@@ -2716,8 +2716,8 @@ function IsPedFalling(ped) end
 ---**`PED` `client` [`0xD839450756ED5A80`](https://docs.fivem.net/natives/?_0xD839450756ED5A80)**
 ---
 ---```
----Gets a value indicating whether this ped's health is below its fatally injured threshold. The default threshold is 100.  
----If the handle is invalid, the function returns true.  
+---Gets a value indicating whether this ped's health is below its fatally injured threshold. The default threshold is 100.
+---If the handle is invalid, the function returns true.
 ---```
 ---
 ---@param ped Ped
@@ -2782,7 +2782,7 @@ function IsPedHeadtrackingPed(ped1, ped2) end
 ---**`PED` `client` [`0xB980061DA992779D`](https://docs.fivem.net/natives/?_0xB980061DA992779D)**
 ---
 ---```
----Returns true/false if the ped is/isn't humanoid.  
+---Returns true/false if the ped is/isn't humanoid.
 ---```
 ---
 ---@param ped Ped
@@ -2792,7 +2792,7 @@ function IsPedHuman(ped) end
 ---**`PED` `client` [`0x5983BB449D7FDB12`](https://docs.fivem.net/natives/?_0x5983BB449D7FDB12)**
 ---
 ---```
----Returns whether the specified ped is hurt.  
+---Returns whether the specified ped is hurt.
 ---```
 ---
 ---@param ped Ped
@@ -2802,8 +2802,8 @@ function IsPedHurt(ped) end
 ---**`PED` `client` [`0x84A2DD9AC37C35C1`](https://docs.fivem.net/natives/?_0x84A2DD9AC37C35C1)**
 ---
 ---```
----Gets a value indicating whether this ped's health is below its injured threshold.  
----The default threshold is 100.  
+---Gets a value indicating whether this ped's health is below its injured threshold.
+---The default threshold is 100.
 ---```
 ---
 ---@param ped Ped
@@ -2872,8 +2872,8 @@ function IsPedInAnyVehicle(ped, atGetIn) end
 ---**`PED` `client` [`0x4859F1FC66A6278E`](https://docs.fivem.net/natives/?_0x4859F1FC66A6278E)**
 ---
 ---```
----Checks to see if ped and target are in combat with eachother. Only goes one-way: if target is engaged in combat with ped but ped has not yet reacted, the function will return false until ped starts fighting back.  
----p1 is usually 0 in the scripts because it gets the ped id during the task sequence. For instance: PED::IS_PED_IN_COMBAT(l_42E[4/*14*/], PLAYER::PLAYER_PED_ID()) // armenian2.ct4: 43794  
+---Checks to see if ped and target are in combat with eachother. Only goes one-way: if target is engaged in combat with ped but ped has not yet reacted, the function will return false until ped starts fighting back.
+---p1 is usually 0 in the scripts because it gets the ped id during the task sequence. For instance: PED::IS_PED_IN_COMBAT(l_42E[4/*14*/], PLAYER::PLAYER_PED_ID()) // armenian2.ct4: 43794
 ---```
 ---
 ---@param ped Ped
@@ -2884,7 +2884,7 @@ function IsPedInCombat(ped, target) end
 ---**`PED` `client` [`0x60DFD0691A170B88`](https://docs.fivem.net/natives/?_0x60DFD0691A170B88)**
 ---
 ---```
----p1 is nearly always 0 in the scripts.  
+---p1 is nearly always 0 in the scripts.
 ---```
 ---
 ---@param ped Ped
@@ -2919,11 +2919,11 @@ function IsPedInHighCover(ped) end
 ---**`PED` `client` [`0x4E209B2C1EAD5159`](https://docs.fivem.net/natives/?_0x4E209B2C1EAD5159)**
 ---
 ---```
----Notes: The function only returns true while the ped is:   
----A.) Swinging a random melee attack (including pistol-whipping)  
----B.) Reacting to being hit by a melee attack (including pistol-whipping)  
----C.) Is locked-on to an enemy (arms up, strafing/skipping in the default fighting-stance, ready to dodge+counter).   
----You don't have to be holding the melee-targetting button to be in this stance; you stay in it by default for a few seconds after swinging at someone. If you do a sprinting punch, it returns true for the duration of the punch animation and then returns false again, even if you've punched and made-angry many peds  
+---Notes: The function only returns true while the ped is:
+---A.) Swinging a random melee attack (including pistol-whipping)
+---B.) Reacting to being hit by a melee attack (including pistol-whipping)
+---C.) Is locked-on to an enemy (arms up, strafing/skipping in the default fighting-stance, ready to dodge+counter).
+---You don't have to be holding the melee-targetting button to be in this stance; you stay in it by default for a few seconds after swinging at someone. If you do a sprinting punch, it returns true for the duration of the punch animation and then returns false again, even if you've punched and made-angry many peds
 ---```
 ---
 ---@param ped Ped
@@ -2946,8 +2946,8 @@ function IsPedInParachuteFreeFall(ped) end
 ---**`PED` `client` [`0xA3EE4A07279BB9DB`](https://docs.fivem.net/natives/?_0xA3EE4A07279BB9DB)**
 ---
 ---```
----Gets a value indicating whether the specified ped is in the specified vehicle.  
----If 'atGetIn' is false, the function will not return true until the ped is sitting in the vehicle and is about to close the door. If it's true, the function returns true the moment the ped starts to get onto the seat (after opening the door). Eg. if false, and the ped is getting into a submersible, the function will not return true until the ped has descended down into the submersible and gotten into the seat, while if it's true, it'll return true the moment the hatch has been opened and the ped is about to descend into the submersible.  
+---Gets a value indicating whether the specified ped is in the specified vehicle.
+---If 'atGetIn' is false, the function will not return true until the ped is sitting in the vehicle and is about to close the door. If it's true, the function returns true the moment the ped starts to get onto the seat (after opening the door). Eg. if false, and the ped is getting into a submersible, the function will not return true until the ped has descended down into the submersible and gotten into the seat, while if it's true, it'll return true the moment the hatch has been opened and the ped is about to descend into the submersible.
 ---```
 ---
 ---@param ped Ped
@@ -2977,7 +2977,7 @@ function IsPedJumpingOutOfVehicle(ped) end
 ---**`PED` `client` [`0x6D9F5FAA7488BA46`](https://docs.fivem.net/natives/?_0x6D9F5FAA7488BA46)**
 ---
 ---```
----Returns true/false if the ped is/isn't male.  
+---Returns true/false if the ped is/isn't male.
 ---```
 ---
 ---@param ped Ped
@@ -3006,7 +3006,7 @@ function IsPedOnFoot(ped) end
 ---**`PED` `client` [`0x460BC76A0E10655E`](https://docs.fivem.net/natives/?_0x460BC76A0E10655E)**
 ---
 ---```
----Same function call as PED::GET_MOUNT, aka just returns 0  
+---Same function call as PED::GET_MOUNT, aka just returns 0
 ---```
 ---
 ---@param ped Ped
@@ -3023,9 +3023,9 @@ function IsPedOnSpecificVehicle(ped, vehicle) end
 ---**`PED` `client` [`0x67722AEB798E5FAB`](https://docs.fivem.net/natives/?_0x67722AEB798E5FAB)**
 ---
 ---```
----Gets a value indicating whether the specified ped is on top of any vehicle.  
----Return 1 when ped is on vehicle.  
----Return 0 when ped is not on a vehicle.  
+---Gets a value indicating whether the specified ped is on top of any vehicle.
+---Return 1 when ped is on vehicle.
+---Return 0 when ped is not on a vehicle.
 ---```
 ---
 ---@param ped Ped
@@ -3065,7 +3065,7 @@ function IsPedProne(ped) end
 ---**`PED` `client` [`0x47E4E977581C5B55`](https://docs.fivem.net/natives/?_0x47E4E977581C5B55)**
 ---
 ---```
----If the ped handle passed through the parenthesis is in a ragdoll state this will return true.  
+---If the ped handle passed through the parenthesis is in a ragdoll state this will return true.
 ---```
 ---
 ---@param ped Ped
@@ -3075,7 +3075,7 @@ function IsPedRagdoll(ped) end
 ---**`PED` `client` [`0x24B100C68C645951`](https://docs.fivem.net/natives/?_0x24B100C68C645951)**
 ---
 ---```
----Returns whether the specified ped is reloading.  
+---Returns whether the specified ped is reloading.
 ---```
 ---
 ---@param ped Ped
@@ -3110,7 +3110,7 @@ function IsPedRunningRagdollTask(ped) end
 ---**`PED` `client` [`0x34616828CD07F1A1`](https://docs.fivem.net/natives/?_0x34616828CD07F1A1)**
 ---
 ---```
----Returns whether the specified ped is shooting.  
+---Returns whether the specified ped is shooting.
 ---```
 ---
 ---@param ped Ped
@@ -3134,8 +3134,8 @@ function IsPedShootingInArea(ped, x1, y1, z1, x2, y2, z2, p7, p8) end
 ---**`PED` `client` [`0x826AA586EDB9FEF8`](https://docs.fivem.net/natives/?_0x826AA586EDB9FEF8)**
 ---
 ---```
----Detect if ped is in any vehicle  
----[True/False]  
+---Detect if ped is in any vehicle
+---[True/False]
 ---```
 ---
 ---@param ped Ped
@@ -3145,8 +3145,8 @@ function IsPedSittingInAnyVehicle(ped) end
 ---**`PED` `client` [`0xA808AA1D79230FC2`](https://docs.fivem.net/natives/?_0xA808AA1D79230FC2)**
 ---
 ---```
----Detect if ped is sitting in the specified vehicle  
----[True/False]  
+---Detect if ped is sitting in the specified vehicle
+---[True/False]
 ---```
 ---
 ---@param ped Ped
@@ -3157,7 +3157,7 @@ function IsPedSittingInVehicle(ped, vehicle) end
 ---**`PED` `client` [`0x530944F6F4B8A214`](https://docs.fivem.net/natives/?_0x530944F6F4B8A214)**
 ---
 ---```
----Returns true if the ped doesn't do any movement. If the ped is being pushed forwards by using APPLY_FORCE_TO_ENTITY for example, the function returns false.  
+---Returns true if the ped doesn't do any movement. If the ped is being pushed forwards by using APPLY_FORCE_TO_ENTITY for example, the function returns false.
 ---```
 ---
 ---@param ped Ped
@@ -3222,7 +3222,7 @@ function IsPedVaulting(ped) end
 ---**`PED` `client` [`0xF33BDFE19B309B19`](https://docs.fivem.net/natives/?_0xF33BDFE19B309B19)**
 ---
 ---```
----Returns true if the ped passed through the parenthesis is wearing a helmet.  
+---Returns true if the ped passed through the parenthesis is wearing a helmet.
 ---```
 ---
 ---@param ped Ped
@@ -3254,7 +3254,7 @@ function IsSynchronizedSceneLooped(sceneID) end
 ---**`PED` `client` [`0x25D39B935A038A26`](https://docs.fivem.net/natives/?_0x25D39B935A038A26)**
 ---
 ---```
----Returns true if a synchronized scene is running  
+---Returns true if a synchronized scene is running
 ---```
 ---
 ---@param sceneId number
@@ -3264,8 +3264,8 @@ function IsSynchronizedSceneRunning(sceneId) end
 ---**`PED` `client` [`0x91C8E617F64188AC`](https://docs.fivem.net/natives/?_0x91C8E617F64188AC)**
 ---
 ---```
----returns whether or not a ped is visible within your FOV, not this check auto's to false after a certain distance.  
----Target needs to be tracked.. won't work otherwise.  
+---returns whether or not a ped is visible within your FOV, not this check auto's to false after a certain distance.
+---Target needs to be tracked.. won't work otherwise.
 ---```
 ---
 ---@param ped Ped
@@ -3296,7 +3296,7 @@ function PlayFacialAnim(ped, animName, animDict) end
 ---**`PED` `client` [`0x9222F300BF8354FE`](https://docs.fivem.net/natives/?_0x9222F300BF8354FE)**
 ---
 ---```
----Based on TASK_COMBAT_HATED_TARGETS_AROUND_PED, the parameters are likely similar (PedHandle, and area to attack in).  
+---Based on TASK_COMBAT_HATED_TARGETS_AROUND_PED, the parameters are likely similar (PedHandle, and area to attack in).
 ---```
 ---
 ---@param ped Ped
@@ -3306,7 +3306,7 @@ function RegisterHatedTargetsAroundPed(ped, radius) end
 ---**`PED` `client` [`0x4462658788425076`](https://docs.fivem.net/natives/?_0x4462658788425076)**
 ---
 ---```
----gtaforums.com/topic/885580-ped-headshotmugshot-txd/  
+---gtaforums.com/topic/885580-ped-headshotmugshot-txd/
 ---```
 ---
 ---Example code:
@@ -3360,7 +3360,7 @@ function RegisterPedheadshot(ped) end
 ---
 ---    -- Draw the notification
 ---    DrawNotificationAward(txd, txd, 200, 0, "FM_GEN_UNLOCK")
----    
+---
 ---    -- Cleanup after yourself!
 ---    UnregisterPedheadshot(handle)
 ---end)
@@ -3373,8 +3373,8 @@ function RegisterPedheadshotTransparent(ped) end
 ---**`PED` `client` [`0x2F25D9AEFA34FBA2`](https://docs.fivem.net/natives/?_0x2F25D9AEFA34FBA2)**
 ---
 ---```
----PED::REGISTER_TARGET(l_216, PLAYER::PLAYER_PED_ID()); from re_prisonbreak.txt.  
----l_216 = RECSBRobber1  
+---PED::REGISTER_TARGET(l_216, PLAYER::PLAYER_PED_ID()); from re_prisonbreak.txt.
+---l_216 = RECSBRobber1
 ---```
 ---
 ---@param ped Ped
@@ -3409,7 +3409,7 @@ function RemoveGroup(groupId) end
 ---**`PED` `client` [`0x74D4E028107450A9`](https://docs.fivem.net/natives/?_0x74D4E028107450A9)**
 ---
 ---```
----Ped will no longer get angry when you stay near him.  
+---Ped will no longer get angry when you stay near him.
 ---```
 ---
 ---@param ped Ped
@@ -3419,7 +3419,7 @@ function RemovePedDefensiveArea(ped, toggle) end
 ---**`PED` `client` [`0xAC6D445B994DF95E`](https://docs.fivem.net/natives/?_0xAC6D445B994DF95E)**
 ---
 ---```
----Judging purely from a quick disassembly, if the ped is in a vehicle, the ped will be deleted immediately. If not, it'll be marked as no longer needed. 
+---Judging purely from a quick disassembly, if the ped is in a vehicle, the ped will be deleted immediately. If not, it'll be marked as no longer needed.
 ---```
 ---
 ---@param ped Ped
@@ -3509,7 +3509,7 @@ function ResetPedInVehicleContext(ped) end
 ---**`PED` `client` [`0xBB8DE8CF6A8DD8BB`](https://docs.fivem.net/natives/?_0xBB8DE8CF6A8DD8BB)**
 ---
 ---```
----Resets the value for the last vehicle driven by the Ped.  
+---Resets the value for the last vehicle driven by the Ped.
 ---```
 ---
 ---@param ped Ped
@@ -3556,9 +3556,9 @@ function ResurrectPed(ped) end
 ---**`PED` `client` [`0x8D8ACD8388CD99CE`](https://docs.fivem.net/natives/?_0x8D8ACD8388CD99CE)**
 ---
 ---```
----It will revive/cure the injured ped. The condition is ped must not be dead.  
----Upon setting and converting the health int, found, if health falls below 5, the ped will lay on the ground in pain(Maximum default health is 100).  
----This function is well suited there.  
+---It will revive/cure the injured ped. The condition is ped must not be dead.
+---Upon setting and converting the health int, found, if health falls below 5, the ped will lay on the ground in pain(Maximum default health is 100).
+---This function is well suited there.
 ---```
 ---
 ---@param ped Ped
@@ -3592,10 +3592,10 @@ function SetBlockingOfNonTemporaryEvents(ped, toggle) end
 ---**`PED` `client` [`0xB3B1CB349FF9C75D`](https://docs.fivem.net/natives/?_0xB3B1CB349FF9C75D)**
 ---
 ---```
----Setting ped to true allows the ped to shoot "friendlies".  
----p2 set to true when toggle is also true seams to make peds permanently unable to aim at, even if you set p2 back to false.  
----p1 = false & p2 = false for unable to aim at.  
----p1 = true & p2 = false for able to aim at.  
+---Setting ped to true allows the ped to shoot "friendlies".
+---p2 set to true when toggle is also true seams to make peds permanently unable to aim at, even if you set p2 back to false.
+---p1 = false & p2 = false for unable to aim at.
+---p1 = true & p2 = false for able to aim at.
 ---```
 ---
 ---@param ped Ped
@@ -3628,7 +3628,7 @@ function SetCreateRandomCopsOnScenarios(toggle) end
 ---**`PED` `client` [`0xB195FFA8042FC5C3`](https://docs.fivem.net/natives/?_0xB195FFA8042FC5C3)**
 ---
 ---```
----The function specifically verifies the value is equal to, or less than 1.0f. If it is greater than 1.0f, the function does nothing at all.  
+---The function specifically verifies the value is equal to, or less than 1.0f. If it is greater than 1.0f, the function does nothing at all.
 ---```
 ---
 ---@param driver Ped
@@ -3638,7 +3638,7 @@ function SetDriverAbility(driver, ability) end
 ---**`PED` `client` [`0xA731F608CA104E3C`](https://docs.fivem.net/natives/?_0xA731F608CA104E3C)**
 ---
 ---```
----range 0.0f - 1.0f  
+---range 0.0f - 1.0f
 ---```
 ---
 ---@param driver Ped
@@ -3666,7 +3666,7 @@ function SetEnableBoundAnkles(ped, toggle) end
 ---**`PED` `client` [`0xDF1AF8B5D56542FA`](https://docs.fivem.net/natives/?_0xDF1AF8B5D56542FA)**
 ---
 ---```
----ped can not pull out a weapon when true  
+---ped can not pull out a weapon when true
 ---```
 ---
 ---@param ped Ped
@@ -3682,7 +3682,7 @@ function SetEnablePedEnveffScale(ped, toggle) end
 ---**`PED` `client` [`0xF99F62004024D506`](https://docs.fivem.net/natives/?_0xF99F62004024D506)**
 ---
 ---```
----Enables diving motion when underwater.  
+---Enables diving motion when underwater.
 ---```
 ---
 ---@param ped Ped
@@ -3715,8 +3715,8 @@ function SetForceStepType(ped, p1, type, p3) end
 ---```
 ---0: Freedom to move
 ---1: Circle Around Leader
----2: Alternative Circle Around Leader  
----3: Line, with Leader at center  
+---2: Alternative Circle Around Leader
+---3: Line, with Leader at center
 ---4: Arrow Formation
 ---5: "V" Formation
 ---6: Line Follow Formation
@@ -3739,7 +3739,7 @@ function SetGroupFormationSpacing(groupId, p1, p2, p3) end
 ---**`PED` `client` [`0x4102C7858CFEE4E4`](https://docs.fivem.net/natives/?_0x4102C7858CFEE4E4)**
 ---
 ---```
----Sets the range at which members will automatically leave the group.  
+---Sets the range at which members will automatically leave the group.
 ---```
 ---
 ---@param groupHandle number
@@ -3769,7 +3769,19 @@ function SetHeadBlendPaletteColor(ped, r, g, b, id) end
 ---@param p7 any
 ---@param blendInDuration number
 ---@param blendOutDuration number
-function SetIkTarget(ped, ikIndex, entityLookAt, boneLookAt, offsetX, offsetY, offsetZ, p7, blendInDuration, blendOutDuration) end
+function SetIkTarget(
+	ped,
+	ikIndex,
+	entityLookAt,
+	boneLookAt,
+	offsetX,
+	offsetY,
+	offsetZ,
+	p7,
+	blendInDuration,
+	blendOutDuration
+)
+end
 
 ---**`PED` `client` [`0x781DE8FA214E87D2`](https://docs.fivem.net/natives/?_0x781DE8FA214E87D2)**
 ---
@@ -3794,7 +3806,7 @@ function SetPedAccuracy(ped, accuracy) end
 ---**`PED` `client` [`0xDBA71115ED9941A6`](https://docs.fivem.net/natives/?_0xDBA71115ED9941A6)**
 ---
 ---```
----value ranges from 0 to 3.  
+---value ranges from 0 to 3.
 ---```
 ---
 ---@param ped Ped
@@ -3816,11 +3828,11 @@ function SetPedAllowVehiclesOverride(ped, toggle) end
 ---**`PED` `client` [`0x90A43CC281FFAB46`](https://docs.fivem.net/natives/?_0x90A43CC281FFAB46)**
 ---
 ---```
----stance:  
----0 = idle  
----1 = walk  
----2 = running  
----p5 = usually set to true  
+---stance:
+---0 = idle
+---1 = walk
+---2 = running
+---p5 = usually set to true
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -3871,9 +3883,9 @@ function SetPedAoBlobRendering(ped, toggle) end
 ---**`PED` `client` [`0xCEA04D83135264CC`](https://docs.fivem.net/natives/?_0xCEA04D83135264CC)**
 ---
 ---```
----Sets the armor of the specified ped.  
----ped: The Ped to set the armor of.  
----amount: A value between 0 and 100 indicating the value to set the Ped's armor to.  
+---Sets the armor of the specified ped.
+---ped: The Ped to set the armor of.
+---amount: A value between 0 and 100 indicating the value to set the Ped's armor to.
 ---```
 ---
 ---@param ped Ped
@@ -3883,7 +3895,7 @@ function SetPedArmour(ped, amount) end
 ---**`PED` `client` [`0xBB03C38DD3FB7FFD`](https://docs.fivem.net/natives/?_0xBB03C38DD3FB7FFD)**
 ---
 ---```
----Turns the desired ped into a cop. If you use this on the player ped, you will become almost invisible to cops dispatched for you. You will also report your own crimes, get a generic cop voice, get a cop-vision-cone on the radar, and you will be unable to shoot at other cops. SWAT and Army will still shoot at you. Toggling ped as "false" has no effect; you must change p0's ped model to disable the effect.  
+---Turns the desired ped into a cop. If you use this on the player ped, you will become almost invisible to cops dispatched for you. You will also report your own crimes, get a generic cop voice, get a cop-vision-cone on the radar, and you will be unable to shoot at other cops. SWAT and Army will still shoot at you. Toggling ped as "false" has no effect; you must change p0's ped model to disable the effect.
 ---```
 ---
 ---@param ped Ped
@@ -3996,8 +4008,8 @@ function SetPedCanBeTargettedByTeam(ped, team, toggle) end
 ---**`PED` `client` [`0xCB7553CDCEF4A735`](https://docs.fivem.net/natives/?_0xCB7553CDCEF4A735)**
 ---
 ---```
----It simply makes the said ped to cower behind cover object(wall, desk, car)  
----Peds flee attributes must be set to not to flee, first. Else, most of the peds, will just flee from gunshot sounds or any other panic situations.  
+---It simply makes the said ped to cower behind cover object(wall, desk, car)
+---Peds flee attributes must be set to not to flee, first. Else, most of the peds, will just flee from gunshot sounds or any other panic situations.
 ---```
 ---
 ---@param ped Ped
@@ -4068,7 +4080,7 @@ function SetPedCanPlayGestureAnims(ped, toggle) end
 ---**`PED` `client` [`0xF833DDBA3B104D43`](https://docs.fivem.net/natives/?_0xF833DDBA3B104D43)**
 ---
 ---```
----p2 usually 0  
+---p2 usually 0
 ---```
 ---
 ---@param ped Ped
@@ -4104,8 +4116,8 @@ function SetPedCanSwitchWeapon(ped, toggle) end
 ---**`PED` `client` [`0x2E2F4240B3F24647`](https://docs.fivem.net/natives/?_0x2E2F4240B3F24647)**
 ---
 ---```
----This only will teleport the ped to the group leader if the group leader teleports (sets coords).  
----Only works in singleplayer  
+---This only will teleport the ped to the group leader if the group leader teleports (sets coords).
+---Only works in singleplayer
 ---```
 ---
 ---@param pedHandle Ped
@@ -4140,9 +4152,9 @@ function SetPedCanUseAutoConversationLookat(ped, toggle) end
 ---**`PED` `client` [`0x364DF566EC833DE2`](https://docs.fivem.net/natives/?_0x364DF566EC833DE2)**
 ---
 ---```
----Overrides the ped's collision capsule radius for the current tick.  
----Must be called every tick to be effective.  
----Setting this to 0.001 will allow warping through some objects.  
+---Overrides the ped's collision capsule radius for the current tick.
+---Must be called every tick to be effective.
+---Setting this to 0.001 will allow warping through some objects.
 ---```
 ---
 ---@param ped Ped
@@ -4164,13 +4176,13 @@ function SetPedClothProne(p0, p1) end
 ---**`PED` `client` [`0xC7622C0D36B2FDA8`](https://docs.fivem.net/natives/?_0xC7622C0D36B2FDA8)**
 ---
 ---```
----100 would equal attack  
----less then 50ish would mean run away  
----Only the values 0, 1 and 2 occur in the decompiled scripts. Most likely refers directly to the values also described in combatbehaviour.meta:  
----0: CA_Poor  
----1: CA_Average  
----2: CA_Professional  
----Tested this and got the same results as the first explanation here. Could not find any difference between 0, 1 and 2.  
+---100 would equal attack
+---less then 50ish would mean run away
+---Only the values 0, 1 and 2 occur in the decompiled scripts. Most likely refers directly to the values also described in combatbehaviour.meta:
+---0: CA_Poor
+---1: CA_Average
+---2: CA_Professional
+---Tested this and got the same results as the first explanation here. Could not find any difference between 0, 1 and 2.
 ---```
 ---
 ---@param ped Ped
@@ -4183,7 +4195,7 @@ function SetPedCombatAbility(ped, p1) end
 ---So far, these are the equivalents found:
 ---
 ---```
----enum CombatAttributes  
+---enum CombatAttributes
 ---{
 ---	BF_CanUseCover = 0,
 ---	BF_CanUseVehicles = 1,
@@ -4194,8 +4206,8 @@ function SetPedCombatAbility(ped, p1) end
 ---	BF_AlwaysFight = 46,
 ---	BF_IgnoreTrafficWhenDriving = 52,
 ---	BF_FleesFromInvincibleOpponents = 63,
----        BF_FreezeMovement = 292,  
----        BF_PlayerCanUseFiringWeapons = 1424  
+---        BF_FreezeMovement = 292,
+---        BF_PlayerCanUseFiringWeapons = 1424
 ---};
 ---```
 ---
@@ -4213,10 +4225,10 @@ function SetPedCombatAttributes(ped, attributeIndex, enabled) end
 ---**`PED` `client` [`0x4D9CA1009AFBD057`](https://docs.fivem.net/natives/?_0x4D9CA1009AFBD057)**
 ---
 ---```
----0 - Stationary (Will just stand in place)  
----1 - Defensive (Will try to find cover and very likely to blind fire)  
----2 - Offensive (Will attempt to charge at enemy but take cover as well)  
----3 - Suicidal Offensive (Will try to flank enemy in a suicidal attack)  
+---0 - Stationary (Will just stand in place)
+---1 - Defensive (Will try to find cover and very likely to blind fire)
+---2 - Offensive (Will attempt to charge at enemy but take cover as well)
+---3 - Suicidal Offensive (Will try to flank enemy in a suicidal attack)
 ---```
 ---
 ---@param ped Ped
@@ -4226,10 +4238,10 @@ function SetPedCombatMovement(ped, combatMovement) end
 ---**`PED` `client` [`0x3C606747B23E497B`](https://docs.fivem.net/natives/?_0x3C606747B23E497B)**
 ---
 ---```
----Only the values 0, 1 and 2 occur in the decompiled scripts. Most likely refers directly to the values also described as AttackRange in combatbehaviour.meta:  
----0: CR_Near  
----1: CR_Medium  
----2: CR_Far  
+---Only the values 0, 1 and 2 occur in the decompiled scripts. Most likely refers directly to the values also described as AttackRange in combatbehaviour.meta:
+---0: CR_Near
+---1: CR_Medium
+---2: CR_Far
 ---```
 ---
 ---@param ped Ped
@@ -4759,7 +4771,7 @@ function SetPedConfigFlag(ped, flagId, value) end
 ---**`PED` `client` [`0x9AFEFF481A85AB2E`](https://docs.fivem.net/natives/?_0x9AFEFF481A85AB2E)**
 ---
 ---```
----teleports ped to coords along with the vehicle ped is in  
+---teleports ped to coords along with the vehicle ped is in
 ---```
 ---
 ---@param ped Ped
@@ -4779,7 +4791,7 @@ function SetPedCoordsNoGang(ped, posX, posY, posZ) end
 ---**`PED` `client` [`0xA549131166868ED3`](https://docs.fivem.net/natives/?_0xA549131166868ED3)**
 ---
 ---```
----p1: Only "CODE_HUMAN_STAND_COWER" found in the b617d scripts.  
+---p1: Only "CODE_HUMAN_STAND_COWER" found in the b617d scripts.
 ---```
 ---
 ---@param ped Ped
@@ -4789,7 +4801,7 @@ function SetPedCowerHash(ped, p1) end
 ---**`PED` `client` [`0x45EEE61580806D63`](https://docs.fivem.net/natives/?_0x45EEE61580806D63)**
 ---
 ---```
----Sets Ped Default Clothes  
+---Sets Ped Default Clothes
 ---```
 ---
 ---@param ped Ped
@@ -4891,7 +4903,7 @@ function SetPedDriveByClipsetOverride(ped, clipset) end
 ---**`PED` `client` [`0x030983CA930B692D`](https://docs.fivem.net/natives/?_0x030983CA930B692D)**
 ---
 ---```
----This is the SET_CHAR_DUCKING from GTA IV, that makes Peds duck. This function does nothing in GTA V. It cannot set the ped as ducking in vehicles, and IS_PED_DUCKING will always return false.  
+---This is the SET_CHAR_DUCKING from GTA IV, that makes Peds duck. This function does nothing in GTA V. It cannot set the ped as ducking in vehicles, and IS_PED_DUCKING will always return false.
 ---```
 ---
 ---@param ped Ped
@@ -4920,9 +4932,9 @@ function SetPedEnveffColorModulator(ped, r, g, b) end
 ---**`PED` `client` [`0xBF29516833893561`](https://docs.fivem.net/natives/?_0xBF29516833893561)**
 ---
 ---```
----Values look to be between 0.0 and 1.0  
----From decompiled scripts: 0.0, 0.6, 0.65, 0.8, 1.0  
----You are correct, just looked in IDA it breaks from the function if it's less than 0.0f or greater than 1.0f.  
+---Values look to be between 0.0 and 1.0
+---From decompiled scripts: 0.0, 0.6, 0.65, 0.8, 1.0
+---You are correct, just looked in IDA it breaks from the function if it's less than 0.0f or greater than 1.0f.
 ---```
 ---
 ---@param ped Ped
@@ -4932,23 +4944,23 @@ function SetPedEnveffScale(ped, value) end
 ---**`PED` `client` [`0x9AC577F5A12AD8A9`](https://docs.fivem.net/natives/?_0x9AC577F5A12AD8A9)**
 ---
 ---```
----FIRING_PATTERN_BURST_FIRE = 0xD6FF6D61 ( 1073727030 )  
----FIRING_PATTERN_BURST_FIRE_IN_COVER = 0x026321F1 ( 40051185 )  
----FIRING_PATTERN_BURST_FIRE_DRIVEBY = 0xD31265F2 ( -753768974 )  
----FIRING_PATTERN_FROM_GROUND = 0x2264E5D6 ( 577037782 )  
----FIRING_PATTERN_DELAY_FIRE_BY_ONE_SEC = 0x7A845691 ( 2055493265 )  
----FIRING_PATTERN_FULL_AUTO = 0xC6EE6B4C ( -957453492 )  
----FIRING_PATTERN_SINGLE_SHOT = 0x5D60E4E0 ( 1566631136 )  
----FIRING_PATTERN_BURST_FIRE_PISTOL = 0xA018DB8A ( -1608983670 )  
----FIRING_PATTERN_BURST_FIRE_SMG = 0xD10DADEE ( 1863348768 )  
----FIRING_PATTERN_BURST_FIRE_RIFLE = 0x9C74B406 ( -1670073338 )  
----FIRING_PATTERN_BURST_FIRE_MG = 0xB573C5B4 ( -1250703948 )  
----FIRING_PATTERN_BURST_FIRE_PUMPSHOTGUN = 0x00BAC39B ( 12239771 )  
----FIRING_PATTERN_BURST_FIRE_HELI = 0x914E786F ( -1857128337 )  
----FIRING_PATTERN_BURST_FIRE_MICRO = 0x42EF03FD ( 1122960381 )  
----FIRING_PATTERN_SHORT_BURSTS = 0x1A92D7DF ( 445831135 )  
----FIRING_PATTERN_SLOW_FIRE_TANK = 0xE2CA3A71 ( -490063247 )  
----if anyone is interested firing pattern info: pastebin.com/Px036isB  
+---FIRING_PATTERN_BURST_FIRE = 0xD6FF6D61 ( 1073727030 )
+---FIRING_PATTERN_BURST_FIRE_IN_COVER = 0x026321F1 ( 40051185 )
+---FIRING_PATTERN_BURST_FIRE_DRIVEBY = 0xD31265F2 ( -753768974 )
+---FIRING_PATTERN_FROM_GROUND = 0x2264E5D6 ( 577037782 )
+---FIRING_PATTERN_DELAY_FIRE_BY_ONE_SEC = 0x7A845691 ( 2055493265 )
+---FIRING_PATTERN_FULL_AUTO = 0xC6EE6B4C ( -957453492 )
+---FIRING_PATTERN_SINGLE_SHOT = 0x5D60E4E0 ( 1566631136 )
+---FIRING_PATTERN_BURST_FIRE_PISTOL = 0xA018DB8A ( -1608983670 )
+---FIRING_PATTERN_BURST_FIRE_SMG = 0xD10DADEE ( 1863348768 )
+---FIRING_PATTERN_BURST_FIRE_RIFLE = 0x9C74B406 ( -1670073338 )
+---FIRING_PATTERN_BURST_FIRE_MG = 0xB573C5B4 ( -1250703948 )
+---FIRING_PATTERN_BURST_FIRE_PUMPSHOTGUN = 0x00BAC39B ( 12239771 )
+---FIRING_PATTERN_BURST_FIRE_HELI = 0x914E786F ( -1857128337 )
+---FIRING_PATTERN_BURST_FIRE_MICRO = 0x42EF03FD ( 1122960381 )
+---FIRING_PATTERN_SHORT_BURSTS = 0x1A92D7DF ( 445831135 )
+---FIRING_PATTERN_SLOW_FIRE_TANK = 0xE2CA3A71 ( -490063247 )
+---if anyone is interested firing pattern info: pastebin.com/Px036isB
 ---```
 ---
 ---@param ped Ped
@@ -4975,11 +4987,11 @@ function SetPedGeneratesDeadBodyEvents(ped, toggle) end
 ---**`PED` `client` [`0xDDF803377F94AAA8`](https://docs.fivem.net/natives/?_0xDDF803377F94AAA8)**
 ---
 ---```
----From the scripts:  
----PED::SET_PED_GESTURE_GROUP(PLAYER::PLAYER_PED_ID(),  
----"ANIM_GROUP_GESTURE_MISS_FRA0");  
----PED::SET_PED_GESTURE_GROUP(PLAYER::PLAYER_PED_ID(),  
----"ANIM_GROUP_GESTURE_MISS_DocksSetup1");  
+---From the scripts:
+---PED::SET_PED_GESTURE_GROUP(PLAYER::PLAYER_PED_ID(),
+---"ANIM_GROUP_GESTURE_MISS_FRA0");
+---PED::SET_PED_GESTURE_GROUP(PLAYER::PLAYER_PED_ID(),
+---"ANIM_GROUP_GESTURE_MISS_DocksSetup1");
 ---```
 ---
 ---@param ped Ped
@@ -4995,10 +5007,10 @@ function SetPedGetOutUpsideDownVehicle(ped, toggle) end
 ---**`PED` `client` [`0x9FF447B6B6AD960A`](https://docs.fivem.net/natives/?_0x9FF447B6B6AD960A)**
 ---
 ---```
----enable or disable the gravity of a ped  
----Examples:  
----PED::SET_PED_GRAVITY(PLAYER::PLAYER_PED_ID(), 0x00000001);  
----PED::SET_PED_GRAVITY(Local_289[iVar0 /*20*/], 0x00000001);  
+---enable or disable the gravity of a ped
+---Examples:
+---PED::SET_PED_GRAVITY(PLAYER::PLAYER_PED_ID(), 0x00000001);
+---PED::SET_PED_GRAVITY(Local_289[iVar0 /*20*/], 0x00000001);
 ---```
 ---
 ---@param ped Ped
@@ -5044,26 +5056,39 @@ function SetPedGroupMemberPassengerIndex(ped, index) end
 ---@param skinMix number 0.0 - 1.0 Of whose characteristics to take Mother -> Father (skinFirstID and skinSecondID)
 ---@param thirdMix number Overrides the others in favor of the third IDs.
 ---@param isParent boolean IsParent is set for "children" of the player character's grandparents during old-gen character creation. It has unknown effect otherwise.
-function SetPedHeadBlendData(ped, shapeFirstID, shapeSecondID, shapeThirdID, skinFirstID, skinSecondID, skinThirdID, shapeMix, skinMix, thirdMix, isParent) end
+function SetPedHeadBlendData(
+	ped,
+	shapeFirstID,
+	shapeSecondID,
+	shapeThirdID,
+	skinFirstID,
+	skinSecondID,
+	skinThirdID,
+	shapeMix,
+	skinMix,
+	thirdMix,
+	isParent
+)
+end
 
 ---**`PED` `client` [`0x48F44967FA05CC1E`](https://docs.fivem.net/natives/?_0x48F44967FA05CC1E)**
 ---
 ---```
----OverlayID ranges from 0 to 12, index from 0 to _GET_NUM_OVERLAY_VALUES(overlayID)-1, and opacity from 0.0 to 1.0.   
----overlayID       Part                  Index, to disable  
----0               Blemishes             0 - 23, 255  
----1               Facial Hair           0 - 28, 255  
----2               Eyebrows              0 - 33, 255  
----3               Ageing                0 - 14, 255  
----4               Makeup                0 - 74, 255  
----5               Blush                 0 - 6, 255  
----6               Complexion            0 - 11, 255  
----7               Sun Damage            0 - 10, 255  
----8               Lipstick              0 - 9, 255  
----9               Moles/Freckles        0 - 17, 255  
----10              Chest Hair            0 - 16, 255  
----11              Body Blemishes        0 - 11, 255  
----12              Add Body Blemishes    0 - 1, 255  
+---OverlayID ranges from 0 to 12, index from 0 to _GET_NUM_OVERLAY_VALUES(overlayID)-1, and opacity from 0.0 to 1.0.
+---overlayID       Part                  Index, to disable
+---0               Blemishes             0 - 23, 255
+---1               Facial Hair           0 - 28, 255
+---2               Eyebrows              0 - 33, 255
+---3               Ageing                0 - 14, 255
+---4               Makeup                0 - 74, 255
+---5               Blush                 0 - 6, 255
+---6               Complexion            0 - 11, 255
+---7               Sun Damage            0 - 10, 255
+---8               Lipstick              0 - 9, 255
+---9               Moles/Freckles        0 - 17, 255
+---10              Chest Hair            0 - 16, 255
+---11              Body Blemishes        0 - 11, 255
+---12              Add Body Blemishes    0 - 1, 255
 ---```
 ---
 ---**Note:**
@@ -5166,7 +5191,7 @@ function SetPedKeepTask(ped, toggle) end
 ---**`PED` `client` [`0xC396F5B86FF9FEBD`](https://docs.fivem.net/natives/?_0xC396F5B86FF9FEBD)**
 ---
 ---```
----"IK" stands for "Inverse kinematics." I assume this has something to do with how the ped uses his legs to balance. In the scripts, the second parameter is always an int with a value of 2, 0, or sometimes 1  
+---"IK" stands for "Inverse kinematics." I assume this has something to do with how the ped uses his legs to balance. In the scripts, the second parameter is always an int with a value of 2, 0, or sometimes 1
 ---```
 ---
 ---@param ped Ped
@@ -5182,8 +5207,8 @@ function SetPedLodMultiplier(ped, multiplier) end
 ---**`PED` `client` [`0xF5F6378C4F3419D3`](https://docs.fivem.net/natives/?_0xF5F6378C4F3419D3)**
 ---
 ---```
----sets the maximum health of a ped  
----I think it's never been used in any script  
+---sets the maximum health of a ped
+---I think it's never been used in any script
 ---```
 ---
 ---@param ped Ped
@@ -5213,7 +5238,7 @@ function SetPedMaxTimeUnderwater(ped, value) end
 ---**`PED` `client` [`0xFA0675AB151073FA`](https://docs.fivem.net/natives/?_0xFA0675AB151073FA)**
 ---
 ---```
----Ped will stay on the ground after being stunned for at lest ms time. (in milliseconds)  
+---Ped will stay on the ground after being stunned for at lest ms time. (in milliseconds)
 ---```
 ---
 ---@param ped Ped
@@ -5235,9 +5260,9 @@ function SetPedModelIsSuppressed(model, toggle) end
 ---**`PED` `client` [`0xA9C8960E8684C1B5`](https://docs.fivem.net/natives/?_0xA9C8960E8684C1B5)**
 ---
 ---```
----Maximum possible amount of money on MP is 2000. ~JX  
---------------------------------------------------------------------------------  
----Maximum amount that a ped can theoretically have is 65535 (0xFFFF) since the amount is stored as an unsigned short (uint16_t) value.  
+---Maximum possible amount of money on MP is 2000. ~JX
+--------------------------------------------------------------------------------
+---Maximum amount that a ped can theoretically have is 65535 (0xFFFF) since the amount is stored as an unsigned short (uint16_t) value.
 ---```
 ---
 ---@param ped Ped
@@ -5316,14 +5341,14 @@ function SetPedMoveAnimsBlendOut(ped) end
 ---**`PED` `client` [`0x085BF80FA50A39D1`](https://docs.fivem.net/natives/?_0x085BF80FA50A39D1)**
 ---
 ---```
----Min: 0.00  
----Max: 10.00  
----Can be used in combo with fast run cheat.  
----When value is set to 10.00:  
----Sprinting without fast run cheat: 66 m/s  
----Sprinting with fast run cheat: 77 m/s  
----Needs to be looped!  
----Note: According to IDA for the Xbox360 xex, when they check bgt they seem to have the min to 0.0f, but the max set to 1.15f not 10.0f.  
+---Min: 0.00
+---Max: 10.00
+---Can be used in combo with fast run cheat.
+---When value is set to 10.00:
+---Sprinting without fast run cheat: 66 m/s
+---Sprinting with fast run cheat: 77 m/s
+---Needs to be looped!
+---Note: According to IDA for the Xbox360 xex, when they check bgt they seem to have the min to 0.0f, but the max set to 1.15f not 10.0f.
 ---```
 ---
 ---@param ped Ped
@@ -5333,8 +5358,8 @@ function SetPedMoveRateOverride(ped, value) end
 ---**`PED` `client` [`0x98EFA132A4117BE1`](https://docs.fivem.net/natives/?_0x98EFA132A4117BE1)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.  
----*untested but char *name could also be a hash for a localized string  
+---NOTE: Debugging functions are not present in the retail version of the game.
+---*untested but char *name could also be a hash for a localized string
 ---```
 ---
 ---@param ped Ped
@@ -5350,7 +5375,7 @@ function SetPedNeverLeavesGroup(ped, toggle) end
 ---**`PED` `client` [`0xEE01041D559983EA`](https://docs.fivem.net/natives/?_0xEE01041D559983EA)**
 ---
 ---```
----The distance between these points, is the diagonal of a box (remember it's 3D).  
+---The distance between these points, is the diagonal of a box (remember it's 3D).
 ---```
 ---
 ---@param x1 number
@@ -5393,7 +5418,7 @@ function SetPedPinnedDown(ped, pinned, i) end
 ---**This native does absolutely nothing, just a nullsub**
 ---
 ---```
----Points to the same function as for example GET_RANDOM_VEHICLE_MODEL_IN_MEMORY and it does absolutely nothing.  
+---Points to the same function as for example GET_RANDOM_VEHICLE_MODEL_IN_MEMORY and it does absolutely nothing.
 ---```
 ---
 ---@param ped Ped
@@ -5502,7 +5527,7 @@ function SetPedRagdollOnCollision(ped, toggle) end
 ---**`PED` `client` [`0xC8A9481A01E63C28`](https://docs.fivem.net/natives/?_0xC8A9481A01E63C28)**
 ---
 ---```
----p1 is always 0 in R* scripts; and a quick disassembly seems to indicate that p1 is unused.  
+---p1 is always 0 in R* scripts; and a quick disassembly seems to indicate that p1 is unused.
 ---```
 ---
 ---@param ped Ped
@@ -5560,7 +5585,7 @@ function SetPedShootsAtCoord(ped, x, y, z, toggle) end
 ---**`PED` `client` [`0x614DA022990752DC`](https://docs.fivem.net/natives/?_0x614DA022990752DC)**
 ---
 ---```
----shootRate 0-1000  
+---shootRate 0-1000
 ---```
 ---
 ---@param ped Ped
@@ -5606,7 +5631,7 @@ function SetPedStayInVehicleWhenJacked(ped, toggle) end
 ---**`PED` `client` [`0x88CBB5CEB96B7BD2`](https://docs.fivem.net/natives/?_0x88CBB5CEB96B7BD2)**
 ---
 ---```
----p1 is usually 0 in the scripts. action is either 0 or a pointer to "DEFAULT_ACTION".  
+---p1 is usually 0 in the scripts. action is either 0 or a pointer to "DEFAULT_ACTION".
 ---```
 ---
 ---@param ped Ped
@@ -5651,7 +5676,7 @@ function SetPedSuffersCriticalHits(ped, toggle) end
 ---**`PED` `client` [`0x27B0405F59637D1F`](https://docs.fivem.net/natives/?_0x27B0405F59637D1F)**
 ---
 ---```
----Sweat is set to 100.0 or 0.0 in the decompiled scripts.  
+---Sweat is set to 100.0 or 0.0 in the decompiled scripts.
 ---```
 ---
 ---@param ped Ped
@@ -5661,7 +5686,7 @@ function SetPedSweat(ped, sweat) end
 ---**`PED` `client` [`0x0703B9079823DA4A`](https://docs.fivem.net/natives/?_0x0703B9079823DA4A)**
 ---
 ---```
----Only 1 and 2 appear in the scripts. combatbehaviour.meta seems to only have TLR_SearchForTarget for all peds, but we don't know if that's 1 or 2.  
+---Only 1 and 2 appear in the scripts. combatbehaviour.meta seems to only have TLR_SearchForTarget for all peds, but we don't know if that's 1 or 2.
 ---```
 ---
 ---@param ped Ped
@@ -5704,13 +5729,13 @@ function SetPedToRagdoll(ped, time1, time2, ragdollType, p4, p5, p6) end
 ---**`PED` `client` [`0xD76632D99E4966C8`](https://docs.fivem.net/natives/?_0xD76632D99E4966C8)**
 ---
 ---```
----Return variable is never used in R*'s scripts.  
----Not sure what p2 does. It seems like it would be a time judging by it's usage in R*'s scripts, but didn't seem to affect anything in my testings.  
----x, y, and z are coordinates, most likely to where the ped will fall.  
----p7 is probably the force of the fall, but untested, so I left the variable name the same.  
----p8 to p13 are always 0f in R*'s scripts.  
----(Simplified) Example of the usage of the function from R*'s scripts:  
----ped::set_ped_to_ragdoll_with_fall(ped, 1500, 2000, 1, -entity::get_entity_forward_vector(ped), 1f, 0f, 0f, 0f, 0f, 0f, 0f);  
+---Return variable is never used in R*'s scripts.
+---Not sure what p2 does. It seems like it would be a time judging by it's usage in R*'s scripts, but didn't seem to affect anything in my testings.
+---x, y, and z are coordinates, most likely to where the ped will fall.
+---p7 is probably the force of the fall, but untested, so I left the variable name the same.
+---p8 to p13 are always 0f in R*'s scripts.
+---(Simplified) Example of the usage of the function from R*'s scripts:
+---ped::set_ped_to_ragdoll_with_fall(ped, 1500, 2000, 1, -entity::get_entity_forward_vector(ped), 1f, 0f, 0f, 0f, 0f, 0f, 0f);
 ---```
 ---
 ---@param ped Ped
@@ -5733,7 +5758,7 @@ function SetPedToRagdollWithFall(ped, time, p2, ragdollType, x, y, z, p7, p8, p9
 ---**`PED` `client` [`0xD75ACCF5E0FB5367`](https://docs.fivem.net/natives/?_0xD75ACCF5E0FB5367)**
 ---
 ---```
----p2 is usually -1 in the scripts. action is either 0 or "DEFAULT_ACTION".  
+---p2 is usually -1 in the scripts. action is either 0 or "DEFAULT_ACTION".
 ---```
 ---
 ---@param ped Ped
@@ -5769,7 +5794,7 @@ function SetPedVisualFieldMaxAngle(ped, value) end
 ---**`PED` `client` [`0x78D0B67629D75856`](https://docs.fivem.net/natives/?_0x78D0B67629D75856)**
 ---
 ---```
----This native refers to the field of vision the ped has above them, starting at 0 degrees. 90f would let the ped see enemies directly above of them.  
+---This native refers to the field of vision the ped has above them, starting at 0 degrees. 90f would let the ped see enemies directly above of them.
 ---```
 ---
 ---@param ped Ped
@@ -5785,7 +5810,7 @@ function SetPedVisualFieldMinAngle(ped, value) end
 ---**`PED` `client` [`0x7A276EB2C224D70F`](https://docs.fivem.net/natives/?_0x7A276EB2C224D70F)**
 ---
 ---```
----This native refers to the field of vision the ped has below them, starting at 0 degrees. The angle value should be negative.  
+---This native refers to the field of vision the ped has below them, starting at 0 degrees. The angle value should be negative.
 ---```
 ---
 ---@param ped Ped
@@ -5807,7 +5832,7 @@ function SetPedWeaponMovementClipset(ped, clipSet) end
 ---**`PED` `client` [`0xB5485E4907B53019`](https://docs.fivem.net/natives/?_0xB5485E4907B53019)**
 ---
 ---```
----combined with PED::SET_PED_WETNESS_HEIGHT(), this native makes the ped drenched in water up to the height specified in the other function  
+---combined with PED::SET_PED_WETNESS_HEIGHT(), this native makes the ped drenched in water up to the height specified in the other function
 ---```
 ---
 ---@param ped Ped
@@ -5816,7 +5841,7 @@ function SetPedWetnessEnabledThisFrame(ped) end
 ---**`PED` `client` [`0x44CB6447D2571AA0`](https://docs.fivem.net/natives/?_0x44CB6447D2571AA0)**
 ---
 ---```
----It adds the wetness level to the player clothing/outfit. As if player just got out from water surface.  
+---It adds the wetness level to the player clothing/outfit. As if player just got out from water surface.
 ---```
 ---
 ---@param ped Ped
@@ -5839,12 +5864,12 @@ function SetPopControlSphereThisFrame(x, y, z, min, max) end
 ---**`PED` `client` [`0x26695EC767728D84`](https://docs.fivem.net/natives/?_0x26695EC767728D84)**
 ---
 ---```
----Works for both player and peds, but some flags don't seem to work for the player (1, for example)  
----1 - Blocks ragdolling when shot.  
----2 - Blocks ragdolling when hit by a vehicle. The ped still might play a falling animation.  
----4 - Blocks ragdolling when set on fire.  
---------------------------------------------------------------------------  
----There seem to be 26 flags  
+---Works for both player and peds, but some flags don't seem to work for the player (1, for example)
+---1 - Blocks ragdolling when shot.
+---2 - Blocks ragdolling when hit by a vehicle. The ped still might play a falling animation.
+---4 - Blocks ragdolling when set on fire.
+--------------------------------------------------------------------------
+---There seem to be 26 flags
 ---```
 ---
 ---@param ped Ped
@@ -5854,18 +5879,18 @@ function SetRagdollBlockingFlags(ped, flags) end
 ---**`PED` `client` [`0xBF25EB89375A37AD`](https://docs.fivem.net/natives/?_0xBF25EB89375A37AD)**
 ---
 ---```
----Sets the relationship between two groups. This should be called twice (once for each group).  
----Relationship types:  
----0 = Companion  
----1 = Respect  
----2 = Like  
----3 = Neutral  
----4 = Dislike  
----5 = Hate  
----255 = Pedestrians  
----Example:  
----PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, l_1017, 0xA49E591C);  
----PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, 0xA49E591C, l_1017);  
+---Sets the relationship between two groups. This should be called twice (once for each group).
+---Relationship types:
+---0 = Companion
+---1 = Respect
+---2 = Like
+---3 = Neutral
+---4 = Dislike
+---5 = Hate
+---255 = Pedestrians
+---Example:
+---PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, l_1017, 0xA49E591C);
+---PED::SET_RELATIONSHIP_BETWEEN_GROUPS(2, 0xA49E591C, l_1017);
 ---```
 ---
 ---@param relationship number
@@ -5885,7 +5910,7 @@ function SetScenarioPedsSpawnInSphereArea(x, y, z, range, p4) end
 ---**`PED` `client` [`0x14F19A8782C8071E`](https://docs.fivem.net/natives/?_0x14F19A8782C8071E)**
 ---
 ---```
----Sets a value indicating whether scenario peds should be returned by the next call to a command that returns peds. Eg. GET_CLOSEST_PED.  
+---Sets a value indicating whether scenario peds should be returned by the next call to a command that returns peds. Eg. GET_CLOSEST_PED.
 ---```
 ---
 ---@param value boolean
@@ -6022,7 +6047,7 @@ function StopPedWeaponFiringWhenDropped(ped) end
 ---**`PED` `client` [`0x96B1361D9B24C2FF`](https://docs.fivem.net/natives/?_0x96B1361D9B24C2FF)**
 ---
 ---```
----gtaforums.com/topic/885580-ped-headshotmugshot-txd/  
+---gtaforums.com/topic/885580-ped-headshotmugshot-txd/
 ---```
 ---
 ---@param id number
@@ -6059,7 +6084,7 @@ function WasPedKnockedOut(ped) end
 ---**`PED` `client` [`0x11B499C1E0FF8559`](https://docs.fivem.net/natives/?_0x11B499C1E0FF8559)**
 ---
 ---```
----Despite this function's name, it simply returns whether the specified handle is a Ped.  
+---Despite this function's name, it simply returns whether the specified handle is a Ped.
 ---```
 ---
 ---@param ped Ped
@@ -6149,7 +6174,7 @@ function FreezePedCameraRotation(ped) end
 ---**`PED` `client` [`0xE5C0CF872C2AD150`](https://docs.fivem.net/natives/?_0xE5C0CF872C2AD150)**
 ---
 ---```
----Used for freemode (online) characters.  
+---Used for freemode (online) characters.
 ---```
 ---
 ---@return number
@@ -6571,7 +6596,7 @@ function SetPedFaceFeature(ped, index, scale) end
 ---**`PED` `client` [`0x4CFFC65454C93A49`](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49)**
 ---
 ---```
----Used for freemode (online) characters.  
+---Used for freemode (online) characters.
 ---```
 ---
 ---@param ped Ped
@@ -6582,8 +6607,8 @@ function SetPedHairColor(ped, colorID, highlightColorID) end
 ---**`PED` `client` [`0x497BF74A7B9CB952`](https://docs.fivem.net/natives/?_0x497BF74A7B9CB952)**
 ---
 ---```
----Used for freemode (online) characters. 
----Called after SET_PED_HEAD_OVERLAY().  
+---Used for freemode (online) characters.
+---Called after SET_PED_HEAD_OVERLAY().
 ---```
 ---
 ---**Note:**

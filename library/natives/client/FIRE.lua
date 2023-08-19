@@ -6,7 +6,7 @@
 ---```
 ---
 ---```
----BOOL isAudible = If explosion makes a sound.  
+---BOOL isAudible = If explosion makes a sound.
 ---BOOL isInvisible = If the explosion is invisible or not.
 ---BOOL noDamage = false: damage || nodamage = true: no damage
 ---```
@@ -122,7 +122,18 @@ function AddExplosion(x, y, z, explosionType, damageScale, isAudible, isInvisibl
 ---@param isAudible boolean If explosion makes a sound.
 ---@param isInvisible boolean If the explosion is invisible or not.
 ---@param cameraShake number
-function AddExplosionWithUserVfx(x, y, z, explosionType, explosionFx, damageScale, isAudible, isInvisible, cameraShake) end
+function AddExplosionWithUserVfx(
+	x,
+	y,
+	z,
+	explosionType,
+	explosionFx,
+	damageScale,
+	isAudible,
+	isInvisible,
+	cameraShake
+)
+end
 
 ---**`FIRE` `client` [`0x172AA1B624FA1013`](https://docs.fivem.net/natives/?_0x172AA1B624FA1013)**
 ---
@@ -140,7 +151,7 @@ function AddOwnedExplosion(ped, x, y, z, explosionType, damageScale, isAudible, 
 ---**`FIRE` `client` [`0x352A9F6BCF90081F`](https://docs.fivem.net/natives/?_0x352A9F6BCF90081F)**
 ---
 ---```
----Returns TRUE if it found something. FALSE if not.  
+---Returns TRUE if it found something. FALSE if not.
 ---```
 ---
 ---@param outPosition vector3
@@ -228,10 +239,10 @@ function StartEntityFire(entity) end
 ---**`FIRE` `client` [`0x6B83617E04503888`](https://docs.fivem.net/natives/?_0x6B83617E04503888)**
 ---
 ---```
----Starts a fire:  
----xyz: Location of fire  
----maxChildren: The max amount of times a fire can spread to other objects. Must be 25 or less, or the function will do nothing.  
----isGasFire: Whether or not the fire is powered by gasoline.  
+---Starts a fire:
+---xyz: Location of fire
+---maxChildren: The max amount of times a fire can spread to other objects. Must be 25 or less, or the function will do nothing.
+---isGasFire: Whether or not the fire is powered by gasoline.
 ---```
 ---
 ---@param X number

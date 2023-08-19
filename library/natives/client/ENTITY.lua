@@ -2,7 +2,7 @@
 ---**`ENTITY` `client` [`0x1A092BB0C3808B96`](https://docs.fivem.net/natives/?_0x1A092BB0C3808B96)**
 ---
 ---```
----SET_ENTITY_*  
+---SET_ENTITY_*
 ---```
 ---
 ---@param entity Entity
@@ -33,8 +33,8 @@ function N_0x490861b88f4fd846(p0) end
 ---**`ENTITY` `client` [`0x5C3B791D580E0BC2`](https://docs.fivem.net/natives/?_0x5C3B791D580E0BC2)**
 ---
 ---```
----Only called once in the scripts.  
----Related to weapon objects.  
+---Only called once in the scripts.
+---Related to weapon objects.
 ---```
 ---
 ---@param entity Entity
@@ -200,7 +200,23 @@ function N_0xe66377cddada4810(entity, p1) end
 ---@param isForceRel boolean (Usually true) When true, force gets multiplied with the objects mass and different objects will have the same acceleration
 ---@param p12 boolean (Usually false)
 ---@param p13 boolean (Usually true)
-function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
+function ApplyForceToEntity(
+	entity,
+	forceType,
+	x,
+	y,
+	z,
+	offX,
+	offY,
+	offZ,
+	boneIndex,
+	isDirectionRel,
+	ignoreUpVec,
+	isForceRel,
+	p12,
+	p13
+)
+end
 
 ---**`ENTITY` `client` [`0x18FF00FC7EFF559E`](https://docs.fivem.net/natives/?_0x18FF00FC7EFF559E)**
 ---
@@ -251,7 +267,24 @@ function ApplyForceToEntityCenterOfMass(entity, forceType, x, y, z, p5, isDirect
 ---@param isPed boolean Pitch doesnt work when false and roll will only work on negative numbers (only peds)
 ---@param rotationOrder number The order in which the rotation is applied. See [`GET_ENTITY_ROTATION`](#\_0xAFBD61CC738D9EB9)
 ---@param syncRot boolean If false it ignores entity rotation.
-function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRot, yRot, zRot, p9, useSoftPinning, collision, isPed, rotationOrder, syncRot) end
+function AttachEntityToEntity(
+	entity1,
+	entity2,
+	boneIndex,
+	xPos,
+	yPos,
+	zPos,
+	xRot,
+	yRot,
+	zRot,
+	p9,
+	useSoftPinning,
+	collision,
+	isPed,
+	rotationOrder,
+	syncRot
+)
+end
 
 ---**`ENTITY` `client` [`0xC3675780C92F90F9`](https://docs.fivem.net/natives/?_0xC3675780C92F90F9)**
 ---
@@ -283,7 +316,28 @@ function AttachEntityToEntity(entity1, entity2, boneIndex, xPos, yPos, zPos, xRo
 ---@param collision boolean
 ---@param teleport boolean
 ---@param p18 number
-function AttachEntityToEntityPhysically(entity1, entity2, boneIndex1, boneIndex2, xPos1, yPos1, zPos1, xPos2, yPos2, zPos2, xRot, yRot, zRot, breakForce, fixedRot, p15, collision, teleport, p18) end
+function AttachEntityToEntityPhysically(
+	entity1,
+	entity2,
+	boneIndex1,
+	boneIndex2,
+	xPos1,
+	yPos1,
+	zPos1,
+	xPos2,
+	yPos2,
+	zPos2,
+	xRot,
+	yRot,
+	zRot,
+	breakForce,
+	fixedRot,
+	p15,
+	collision,
+	teleport,
+	p18
+)
+end
 
 ---**`ENTITY` `client` [`0xA72CD9CA74A5ECBA`](https://docs.fivem.net/natives/?_0xA72CD9CA74A5ECBA)**
 ---
@@ -305,9 +359,9 @@ function CreateForcedObject(x, y, z, p3, modelHash, p5) end
 ---**`ENTITY` `client` [`0x8A97BCA30A0CE478`](https://docs.fivem.net/natives/?_0x8A97BCA30A0CE478)**
 ---
 ---```
----p5 = sets as true in scripts  
----Same as the comment for CREATE_MODEL_SWAP unless for some reason p5 affects it this only works with objects as well.  
----Network players do not see changes done with this.  
+---p5 = sets as true in scripts
+---Same as the comment for CREATE_MODEL_SWAP unless for some reason p5 affects it this only works with objects as well.
+---Network players do not see changes done with this.
 ---```
 ---
 ---@param x number
@@ -331,8 +385,8 @@ function CreateModelHideExcludingScriptObjects(x, y, z, radius, model, p5) end
 ---**`ENTITY` `client` [`0x92C47782FDA8B2A3`](https://docs.fivem.net/natives/?_0x92C47782FDA8B2A3)**
 ---
 ---```
----Only works with objects!  
----Network players do not see changes done with this.  
+---Only works with objects!
+---Network players do not see changes done with this.
 ---```
 ---
 ---@param x number
@@ -397,15 +451,15 @@ function DoesEntityHavePhysics(entity) end
 ---**`ENTITY` `client` [`0x07F1BE2BCCAA27A7`](https://docs.fivem.net/natives/?_0x07F1BE2BCCAA27A7)**
 ---
 ---```
----In the script "player_scene_t_bbfight.c4":  
----"if (ENTITY::FIND_ANIM_EVENT_PHASE(&l_16E, &l_19F[v_4/*16*/], v_9, &v_A, &v_B))"  
------ &l_16E (p0) is requested as an anim dictionary earlier in the script.  
------ &l_19F[v_4/*16*/] (p1) is used in other natives in the script as the "animation" param.  
------ v_9 (p2) is instantiated as "victim_fall"; I'm guessing that's another anim  
------v_A and v_B (p3 & p4) are both set as -1.0, but v_A is used immediately after this native for:   
----"if (v_A < ENTITY::GET_ENTITY_ANIM_CURRENT_TIME(...))"  
----Both v_A and v_B are seemingly used to contain both Vector3's and floats, so I can't say what either really is other than that they are both output parameters. p4 looks more like a *Vector3 though  
-----alphazolam  
+---In the script "player_scene_t_bbfight.c4":
+---"if (ENTITY::FIND_ANIM_EVENT_PHASE(&l_16E, &l_19F[v_4/*16*/], v_9, &v_A, &v_B))"
+----- &l_16E (p0) is requested as an anim dictionary earlier in the script.
+----- &l_19F[v_4/*16*/] (p1) is used in other natives in the script as the "animation" param.
+----- v_9 (p2) is instantiated as "victim_fall"; I'm guessing that's another anim
+-----v_A and v_B (p3 & p4) are both set as -1.0, but v_A is used immediately after this native for:
+---"if (v_A < ENTITY::GET_ENTITY_ANIM_CURRENT_TIME(...))"
+---Both v_A and v_B are seemingly used to contain both Vector3's and floats, so I can't say what either really is other than that they are both output parameters. p4 looks more like a *Vector3 though
+----alphazolam
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -421,7 +475,7 @@ function FindAnimEventPhase(animDictionary, animName, p2, p3, p4) end
 ---**`ENTITY` `client` [`0x40FDEDB72F8293B2`](https://docs.fivem.net/natives/?_0x40FDEDB72F8293B2)**
 ---
 ---```
----Based on carmod_shop script decompile this takes a vehicle parameter. It is called when repair is done on initial enter.  
+---Based on carmod_shop script decompile this takes a vehicle parameter. It is called when repair is done on initial enter.
 ---```
 ---
 ---@param entity Entity
@@ -464,11 +518,11 @@ function GetEntityAlpha(entity) end
 ---**`ENTITY` `client` [`0x346D81500D088F42`](https://docs.fivem.net/natives/?_0x346D81500D088F42)**
 ---
 ---```
----Returns a float value representing animation's current playtime with respect to its total playtime. This value increasing in a range from [0 to 1] and wrap back to 0 when it reach 1.  
----Example:  
----0.000000 - mark the starting of animation.  
----0.500000 - mark the midpoint of the animation.  
----1.000000 - mark the end of animation.  
+---Returns a float value representing animation's current playtime with respect to its total playtime. This value increasing in a range from [0 to 1] and wrap back to 0 when it reach 1.
+---Example:
+---0.000000 - mark the starting of animation.
+---0.500000 - mark the midpoint of the animation.
+---1.000000 - mark the end of animation.
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -482,10 +536,10 @@ function GetEntityAnimCurrentTime(entity, animDict, animName) end
 ---**`ENTITY` `client` [`0x50BD2730B191E360`](https://docs.fivem.net/natives/?_0x50BD2730B191E360)**
 ---
 ---```
----Returns a float value representing animation's total playtime in milliseconds.  
----Example:  
----GET_ENTITY_ANIM_TOTAL_TIME(PLAYER_ID(),"amb@world_human_yoga@female@base","base_b")   
----return 20800.000000  
+---Returns a float value representing animation's total playtime in milliseconds.
+---Example:
+---GET_ENTITY_ANIM_TOTAL_TIME(PLAYER_ID(),"amb@world_human_yoga@female@base","base_b")
+---return 20800.000000
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -505,51 +559,51 @@ function GetEntityAttachedTo(entity) end
 ---**`ENTITY` `client` [`0xFB71170B7E76ACBA`](https://docs.fivem.net/natives/?_0xFB71170B7E76ACBA)**
 ---
 ---```
----Returns the index of the bone. If the bone was not found, -1 will be returned.   
----list:  
----pastebin.com/D7JMnX1g  
----BoneNames:  
----	chassis,  
----	windscreen,  
----	seat_pside_r,  
----	seat_dside_r,  
----	bodyshell,  
----	suspension_lm,  
----	suspension_lr,  
----	platelight,  
----	attach_female,  
----	attach_male,  
----	bonnet,  
----	boot,  
----	chassis_dummy,	//Center of the dummy  
----	chassis_Control,	//Not found yet  
----	door_dside_f,	//Door left, front  
----	door_dside_r,	//Door left, back  
----	door_pside_f,	//Door right, front  
----	door_pside_r,	//Door right, back  
----	Gun_GripR,  
----	windscreen_f,  
----	platelight,	//Position where the light above the numberplate is located  
----	VFX_Emitter,  
----	window_lf,	//Window left, front  
----	window_lr,	//Window left, back  
----	window_rf,	//Window right, front  
----	window_rr,	//Window right, back  
----	engine,	//Position of the engine  
----	gun_ammo,  
----	ROPE_ATTATCH,	//Not misspelled. In script "finale_heist2b.c4".  
----	wheel_lf,	//Wheel left, front  
----	wheel_lr,	//Wheel left, back  
----	wheel_rf,	//Wheel right, front  
----	wheel_rr,	//Wheel right, back  
----	exhaust,	//Exhaust. shows only the position of the stock-exhaust  
----	overheat,	//A position on the engine(not exactly sure, how to name it)  
----	misc_e,	//Not a car-bone.  
----	seat_dside_f,	//Driver-seat  
----	seat_pside_f,	//Seat next to driver  
----	Gun_Nuzzle,  
----	seat_r  
----I doubt that the function is case-sensitive, since I found a "Chassis" and a "chassis". - Just tested: Definitely not case-sensitive.  
+---Returns the index of the bone. If the bone was not found, -1 will be returned.
+---list:
+---pastebin.com/D7JMnX1g
+---BoneNames:
+---	chassis,
+---	windscreen,
+---	seat_pside_r,
+---	seat_dside_r,
+---	bodyshell,
+---	suspension_lm,
+---	suspension_lr,
+---	platelight,
+---	attach_female,
+---	attach_male,
+---	bonnet,
+---	boot,
+---	chassis_dummy,	//Center of the dummy
+---	chassis_Control,	//Not found yet
+---	door_dside_f,	//Door left, front
+---	door_dside_r,	//Door left, back
+---	door_pside_f,	//Door right, front
+---	door_pside_r,	//Door right, back
+---	Gun_GripR,
+---	windscreen_f,
+---	platelight,	//Position where the light above the numberplate is located
+---	VFX_Emitter,
+---	window_lf,	//Window left, front
+---	window_lr,	//Window left, back
+---	window_rf,	//Window right, front
+---	window_rr,	//Window right, back
+---	engine,	//Position of the engine
+---	gun_ammo,
+---	ROPE_ATTATCH,	//Not misspelled. In script "finale_heist2b.c4".
+---	wheel_lf,	//Wheel left, front
+---	wheel_lr,	//Wheel left, back
+---	wheel_rf,	//Wheel right, front
+---	wheel_rr,	//Wheel right, back
+---	exhaust,	//Exhaust. shows only the position of the stock-exhaust
+---	overheat,	//A position on the engine(not exactly sure, how to name it)
+---	misc_e,	//Not a car-bone.
+---	seat_dside_f,	//Driver-seat
+---	seat_pside_f,	//Seat next to driver
+---	Gun_Nuzzle,
+---	seat_r
+---I doubt that the function is case-sensitive, since I found a "Chassis" and a "chassis". - Just tested: Definitely not case-sensitive.
 ---```
 ---
 ---@param entity Entity
@@ -597,7 +651,7 @@ function GetEntityForwardVector(entity) end
 ---**`ENTITY` `client` [`0x8BB4EF4214E0E6D5`](https://docs.fivem.net/natives/?_0x8BB4EF4214E0E6D5)**
 ---
 ---```
----Gets the X-component of the entity's forward vector.  
+---Gets the X-component of the entity's forward vector.
 ---```
 ---
 ---@param entity Entity
@@ -607,7 +661,7 @@ function GetEntityForwardX(entity) end
 ---**`ENTITY` `client` [`0x866A4A5FAE349510`](https://docs.fivem.net/natives/?_0x866A4A5FAE349510)**
 ---
 ---```
----Gets the Y-component of the entity's forward vector.  
+---Gets the Y-component of the entity's forward vector.
 ---```
 ---
 ---@param entity Entity
@@ -668,10 +722,10 @@ function GetEntityHeight(entity, X, Y, Z, atTop, inWorldCoords) end
 ---**`ENTITY` `client` [`0x1DD55701034110E5`](https://docs.fivem.net/natives/?_0x1DD55701034110E5)**
 ---
 ---```
----Return height (z-dimension) above ground.   
----Example: The pilot in a titan plane is 1.844176 above ground.  
----How can i convert it to meters?  
----Everything seems to be in meters, probably this too.  
+---Return height (z-dimension) above ground.
+---Example: The pilot in a titan plane is 1.844176 above ground.
+---How can i convert it to meters?
+---Everything seems to be in meters, probably this too.
 ---```
 ---
 ---@param entity Entity
@@ -681,7 +735,7 @@ function GetEntityHeightAboveGround(entity) end
 ---**`ENTITY` `client` [`0x4159C2762B5791D6`](https://docs.fivem.net/natives/?_0x4159C2762B5791D6)**
 ---
 ---```
----Returns the LOD distance of an entity.  
+---Returns the LOD distance of an entity.
 ---```
 ---
 ---@param entity Entity
@@ -700,9 +754,9 @@ function GetEntityMatrix(entity, forwardVector, rightVector, upVector, position)
 ---**`ENTITY` `client` [`0x15D757606D170C3C`](https://docs.fivem.net/natives/?_0x15D757606D170C3C)**
 ---
 ---```
----Return an integer value of entity's maximum health.  
----Example:  
----- Player = 200  
+---Return an integer value of entity's maximum health.
+---Example:
+---- Player = 200
 ---```
 ---
 ---@param entity Entity
@@ -743,7 +797,7 @@ function GetEntityPopulationType(entity) end
 ---**`ENTITY` `client` [`0x7B3703D2D32DFA18`](https://docs.fivem.net/natives/?_0x7B3703D2D32DFA18)**
 ---
 ---```
----w is the correct parameter name!  
+---w is the correct parameter name!
 ---```
 ---
 ---@param entity Entity
@@ -756,8 +810,8 @@ function GetEntityQuaternion(entity, x, y, z, w) end
 ---**`ENTITY` `client` [`0x831E0242595560DF`](https://docs.fivem.net/natives/?_0x831E0242595560DF)**
 ---
 ---```
----Displays the current ROLL axis of the entity [-180.0000/180.0000+]  
----(Sideways Roll) such as a vehicle tipped on its side  
+---Displays the current ROLL axis of the entity [-180.0000/180.0000+]
+---(Sideways Roll) such as a vehicle tipped on its side
 ---```
 ---
 ---@param entity Entity
@@ -804,7 +858,7 @@ function GetEntityRotationVelocity(entity) end
 ---**`ENTITY` `client` [`0xA6E9C38DB51D7748`](https://docs.fivem.net/natives/?_0xA6E9C38DB51D7748)**
 ---
 ---```
----All ambient entities in-world seem to have the same value for the second argument (Any *script), depending on when the scripthook was activated/re-activated. I've seen numbers from ~5 to almost 70 when the value was translated with to_string. The function return value seems to always be 0.  
+---All ambient entities in-world seem to have the same value for the second argument (Any *script), depending on when the scripthook was activated/re-activated. I've seen numbers from ~5 to almost 70 when the value was translated with to_string. The function return value seems to always be 0.
 ---```
 ---
 ---@param entity Entity
@@ -823,7 +877,7 @@ function GetEntitySpeed(entity) end
 ---**`ENTITY` `client` [`0x9A8D700A51CB7B0D`](https://docs.fivem.net/natives/?_0x9A8D700A51CB7B0D)**
 ---
 ---```
----Relative can be used for getting speed relative to the frame of the vehicle, to determine for example, if you are going in reverse (-y speed) or not (+y speed).  
+---Relative can be used for getting speed relative to the frame of the vehicle, to determine for example, if you are going in reverse (-y speed) or not (+y speed).
 ---```
 ---
 ---@param entity Entity
@@ -834,7 +888,7 @@ function GetEntitySpeedVector(entity, relative) end
 ---**`ENTITY` `client` [`0xE81AFC1BC4CC41CE`](https://docs.fivem.net/natives/?_0xE81AFC1BC4CC41CE)**
 ---
 ---```
----Get how much of the entity is submerged.  1.0f is whole entity.  
+---Get how much of the entity is submerged.  1.0f is whole entity.
 ---```
 ---
 ---@param entity Entity
@@ -889,7 +943,7 @@ function GetNearestPlayerToEntityOnTeam(entity, team) end
 ---**`ENTITY` `client` [`0xD7E3B9735C0F89D6`](https://docs.fivem.net/natives/?_0xD7E3B9735C0F89D6)**
 ---
 ---```
----Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
 ---```
 ---
 ---@param entity Entity
@@ -899,13 +953,13 @@ function GetObjectIndexFromEntityIndex(entity) end
 ---**`ENTITY` `client` [`0x2274BC1C4885E333`](https://docs.fivem.net/natives/?_0x2274BC1C4885E333)**
 ---
 ---```
----Converts world coords (posX - Z) to coords relative to the entity  
----Example:  
----posX = 50  
----posY = 1000  
----posZ = 60  
----Entity's coords are: x=30, y=1000, z=60.  
----All three returned coords will then be in range of [-20,20] depending on rotation of the entity.  
+---Converts world coords (posX - Z) to coords relative to the entity
+---Example:
+---posX = 50
+---posY = 1000
+---posZ = 60
+---Entity's coords are: x=30, y=1000, z=60.
+---All three returned coords will then be in range of [-20,20] depending on rotation of the entity.
 ---```
 ---
 ---@param entity Entity
@@ -918,10 +972,10 @@ function GetOffsetFromEntityGivenWorldCoords(entity, posX, posY, posZ) end
 ---**`ENTITY` `client` [`0x1899F328B0E12848`](https://docs.fivem.net/natives/?_0x1899F328B0E12848)**
 ---
 ---```
----Offset values are relative to the entity.  
----x = left/right  
----y = forward/backward  
----z = up/down  
+---Offset values are relative to the entity.
+---x = left/right
+---y = forward/backward
+---z = up/down
 ---```
 ---
 ---@param entity Entity
@@ -934,7 +988,7 @@ function GetOffsetFromEntityInWorldCoords(entity, offsetX, offsetY, offsetZ) end
 ---**`ENTITY` `client` [`0x04A2A40C73395041`](https://docs.fivem.net/natives/?_0x04A2A40C73395041)**
 ---
 ---```
----Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
 ---```
 ---
 ---@param entity Entity
@@ -944,7 +998,7 @@ function GetPedIndexFromEntityIndex(entity) end
 ---**`ENTITY` `client` [`0x4B53F92932ADFAC0`](https://docs.fivem.net/natives/?_0x4B53F92932ADFAC0)**
 ---
 ---```
----Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
 ---```
 ---
 ---@param entity Entity
@@ -954,7 +1008,7 @@ function GetVehicleIndexFromEntityIndex(entity) end
 ---**`ENTITY` `client` [`0x44A8FCB8ED227738`](https://docs.fivem.net/natives/?_0x44A8FCB8ED227738)**
 ---
 ---```
----Returns the coordinates of an entity-bone.  
+---Returns the coordinates of an entity-bone.
 ---```
 ---
 ---@param entity Entity
@@ -982,7 +1036,7 @@ function HasCollisionLoadedAroundEntity(entity) end
 ---**`ENTITY` `client` [`0x20B711662962B472`](https://docs.fivem.net/natives/?_0x20B711662962B472)**
 ---
 ---```
----P3 is always 3 as far as i cant tell  
+---P3 is always 3 as far as i cant tell
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -1015,9 +1069,9 @@ function HasEntityBeenDamagedByAnyVehicle(entity) end
 ---**`ENTITY` `client` [`0xC86D67D52A707CF8`](https://docs.fivem.net/natives/?_0xC86D67D52A707CF8)**
 ---
 ---```
----Entity 1 = Victim  
----Entity 2 = Attacker  
----p2 seems to always be 1  
+---Entity 1 = Victim
+---Entity 2 = Attacker
+---p2 seems to always be 1
 ---```
 ---
 ---@param entity1 Entity
@@ -1041,8 +1095,8 @@ function HasEntityClearLosToEntity(entity1, entity2, flags) end
 ---**`ENTITY` `client` [`0x0267D00AF114F17A`](https://docs.fivem.net/natives/?_0x0267D00AF114F17A)**
 ---
 ---```
----Has the entity1 got a clear line of sight to the other entity2 from the direction entity1 is facing.  
----This is one of the most CPU demanding BOOL natives in the game; avoid calling this in things like nested for-loops  
+---Has the entity1 got a clear line of sight to the other entity2 from the direction entity1 is facing.
+---This is one of the most CPU demanding BOOL natives in the game; avoid calling this in things like nested for-loops
 ---```
 ---
 ---@param entity1 Entity
@@ -1053,9 +1107,9 @@ function HasEntityClearLosToEntityInFront(entity1, entity2) end
 ---**`ENTITY` `client` [`0x8BAD02F0368D9E14`](https://docs.fivem.net/natives/?_0x8BAD02F0368D9E14)**
 ---
 ---```
----Called on tick.  
----Tested with vehicles, returns true whenever the vehicle is touching any entity.  
----Note: for vehicles, the wheels can touch the ground and it will still return false, but if the body of the vehicle touches the ground, it will return true.  
+---Called on tick.
+---Tested with vehicles, returns true whenever the vehicle is touching any entity.
+---Note: for vehicles, the wheels can touch the ground and it will still return false, but if the body of the vehicle touches the ground, it will return true.
 ---```
 ---
 ---@param entity Entity
@@ -1117,8 +1171,8 @@ function IsEntityAttachedToEntity(from, to) end
 ---**`ENTITY` `client` [`0x20B60995556D004F`](https://docs.fivem.net/natives/?_0x20B60995556D004F)**
 ---
 ---```
----Checks if entity is within x/y/zSize distance of x/y/z.   
----Last three are unknown ints, almost always p7 = 0, p8 = 1, p9 = 0  
+---Checks if entity is within x/y/zSize distance of x/y/z.
+---Last three are unknown ints, almost always p7 = 0, p8 = 1, p9 = 0
 ---```
 ---
 ---@param entity Entity
@@ -1137,8 +1191,8 @@ function IsEntityAtCoord(entity, xPos, yPos, zPos, xSize, ySize, zSize, p7, p8, 
 ---**`ENTITY` `client` [`0x751B70C3D034E187`](https://docs.fivem.net/natives/?_0x751B70C3D034E187)**
 ---
 ---```
----Checks if entity1 is within the box defined by x/y/zSize of entity2.  
----Last three parameters are almost alwasy p5 = 0, p6 = 1, p7 = 0  
+---Checks if entity1 is within the box defined by x/y/zSize of entity2.
+---Last three parameters are almost alwasy p5 = 0, p6 = 1, p7 = 0
 ---```
 ---
 ---@param entity1 Entity
@@ -1243,9 +1297,9 @@ function IsEntityOccluded(entity) end
 ---**`ENTITY` `client` [`0xE659E47AF827484B`](https://docs.fivem.net/natives/?_0xE659E47AF827484B)**
 ---
 ---```
----Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.   
----This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.   
----Chipping  
+---Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.
+---This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.
+---Chipping
 ---```
 ---
 ---@param entity Entity
@@ -1257,10 +1311,10 @@ function IsEntityOnScreen(entity) end
 ---See also [`IS_SCRIPTED_SCENARIO_PED_USING_CONDITIONAL_ANIM`](#\_0x6EC47A344923E1ED)
 ---
 ---```
----Taken from ENTITY::IS_ENTITY_PLAYING_ANIM(PLAYER::PLAYER_PED_ID(), "creatures@shark@move", "attack_player", 3)  
----p4 is always 3 in the scripts.  
----taskFlag:  
----2 - Check synchronized scene  
+---Taken from ENTITY::IS_ENTITY_PLAYING_ANIM(PLAYER::PLAYER_PED_ID(), "creatures@shark@move", "attack_player", 3)
+---p4 is always 3 in the scripts.
+---taskFlag:
+---2 - Check synchronized scene
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -1275,8 +1329,8 @@ function IsEntityPlayingAnim(entity, animDict, animName, taskFlag) end
 ---**`ENTITY` `client` [`0x1218E6886D3D8327`](https://docs.fivem.net/natives/?_0x1218E6886D3D8327)**
 ---
 ---```
----A static ped will not react to natives like "APPLY_FORCE_TO_ENTITY" or "SET_ENTITY_VELOCITY" and oftentimes will not react to task-natives like "AI::TASK_COMBAT_PED". The only way I know of to make one of these peds react is to ragdoll them (or sometimes to use CLEAR_PED_TASKS_IMMEDIATELY(). Static peds include almost all far-away peds, beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others. If anyone knows how to make a ped non-static without ragdolling them, please edit this with the solution.  
----^ Attach a phCollider to the ped.  
+---A static ped will not react to natives like "APPLY_FORCE_TO_ENTITY" or "SET_ENTITY_VELOCITY" and oftentimes will not react to task-natives like "AI::TASK_COMBAT_PED". The only way I know of to make one of these peds react is to ragdoll them (or sometimes to use CLEAR_PED_TASKS_IMMEDIATELY(). Static peds include almost all far-away peds, beach-combers, peds in certain scenarios, peds crossing a crosswalk, peds walking to get back into their cars, and others. If anyone knows how to make a ped non-static without ragdolling them, please edit this with the solution.
+---^ Attach a phCollider to the ped.
 ---```
 ---
 ---@param entity Entity
@@ -1331,8 +1385,8 @@ function IsEntityWaitingForWorldCollision(entity) end
 ---**`ENTITY` `client` [`0x7FB218262B810701`](https://docs.fivem.net/natives/?_0x7FB218262B810701)**
 ---
 ---```
----delta and bitset are guessed fields. They are based on the fact that most of the calls have 0 or nil field types passed in.  
----The only time bitset has a value is 0x4000 and the only time delta has a value is during stealth with usually <1.0f values.  
+---delta and bitset are guessed fields. They are based on the fact that most of the calls have 0 or nil field types passed in.
+---The only time bitset has a value is 0x4000 and the only time delta has a value is during stealth with usually <1.0f values.
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -1352,7 +1406,7 @@ function PlayEntityAnim(entity, animName, animDict, p3, loop, stayInAnim, p6, de
 ---**`ENTITY` `client` [`0xC77720A12FE14A86`](https://docs.fivem.net/natives/?_0xC77720A12FE14A86)**
 ---
 ---```
----p4 and p7 are usually 1000.0f.  
+---p4 and p7 are usually 1000.0f.
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -1513,8 +1567,8 @@ function SetEntityAsMissionEntity(entity, p1, p2) end
 ---**`ENTITY` `client` [`0xB736A491E64A32CF`](https://docs.fivem.net/natives/?_0xB736A491E64A32CF)**
 ---
 ---```
----Marks the specified entity (ped, vehicle or object) as no longer needed.  
----Entities marked as no longer needed, will be deleted as the engine sees fit.  
+---Marks the specified entity (ped, vehicle or object) as no longer needed.
+---Entities marked as no longer needed, will be deleted as the engine sees fit.
 ---```
 ---
 ---@param entity Entity
@@ -1536,7 +1590,7 @@ function SetEntityCanBeDamagedByRelationshipGroup(entity, bCanBeDamaged, relGrou
 ---**`ENTITY` `client` [`0xD3997889736FD899`](https://docs.fivem.net/natives/?_0xD3997889736FD899)**
 ---
 ---```
----Sets whether the entity can be targeted without being in line-of-sight.  
+---Sets whether the entity can be targeted without being in line-of-sight.
 ---```
 ---
 ---@param entity Entity
@@ -1652,20 +1706,20 @@ function SetEntityHealth(entity, health) end
 ---**`ENTITY` `client` [`0x3882114BDE571AD4`](https://docs.fivem.net/natives/?_0x3882114BDE571AD4)**
 ---
 ---```
----Sets a ped or an object totally invincible. It doesn't take any kind of damage. Peds will not ragdoll on explosions and the tazer animation won't apply either.  
----If you use this for a ped and you want Ragdoll to stay enabled, then do:  
----*(DWORD *)(pedAddress + 0x188) |= (1 << 9);  
----Use this if you want to get the invincibility status:  
----	bool IsPedInvincible(Ped ped)  
----	{  
----auto addr = getScriptHandleBaseAddress(ped);	  
----if (addr)  
----{  
----	DWORD flag = *(DWORD *)(addr + 0x188);  
----	return ((flag & (1 << 8)) != 0) || ((flag & (1 << 9)) != 0);  
----}  
----return false;  
----	}  
+---Sets a ped or an object totally invincible. It doesn't take any kind of damage. Peds will not ragdoll on explosions and the tazer animation won't apply either.
+---If you use this for a ped and you want Ragdoll to stay enabled, then do:
+---*(DWORD *)(pedAddress + 0x188) |= (1 << 9);
+---Use this if you want to get the invincibility status:
+---	bool IsPedInvincible(Ped ped)
+---	{
+---auto addr = getScriptHandleBaseAddress(ped);
+---if (addr)
+---{
+---	DWORD flag = *(DWORD *)(addr + 0x188);
+---	return ((flag & (1 << 8)) != 0) || ((flag & (1 << 9)) != 0);
+---}
+---return false;
+---	}
 ---```
 ---
 ---@param entity Entity
@@ -1702,7 +1756,7 @@ function SetEntityLoadCollisionFlag(entity, toggle) end
 ---**`ENTITY` `client` [`0x5927F96A78577363`](https://docs.fivem.net/natives/?_0x5927F96A78577363)**
 ---
 ---```
----LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).  
+---LOD distance can be 0 to 0xFFFF (higher values will result in 0xFFFF) as it is actually stored as a 16-bit value (aka uint16_t).
 ---```
 ---
 ---@param entity Entity
@@ -1712,7 +1766,7 @@ function SetEntityLodDist(entity, value) end
 ---**`ENTITY` `client` [`0x166E7CF68597D8B5`](https://docs.fivem.net/natives/?_0x166E7CF68597D8B5)**
 ---
 ---```
----For instance: ENTITY::SET_ENTITY_MAX_HEALTH(PLAYER::PLAYER_PED_ID(), 200); // director_mode.c4: 67849  
+---For instance: ENTITY::SET_ENTITY_MAX_HEALTH(PLAYER::PLAYER_PED_ID(), 200); // director_mode.c4: 67849
 ---```
 ---
 ---@param entity Entity
@@ -1760,9 +1814,9 @@ function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipHash) e
 ---**`ENTITY` `client` [`0xFAEE099C6F890BB8`](https://docs.fivem.net/natives/?_0xFAEE099C6F890BB8)**
 ---
 ---```
----Enable / disable each type of damage.  
------------------  
----p7 is to to '1' in am_mp_property_ext/int: entity::set_entity_proofs(uParam0->f_19, true, true, true, true, true, true, 1, true);  
+---Enable / disable each type of damage.
+-----------------
+---p7 is to to '1' in am_mp_property_ext/int: entity::set_entity_proofs(uParam0->f_19, true, true, true, true, true, true, 1, true);
 ---```
 ---
 ---@param entity Entity
@@ -1774,12 +1828,23 @@ function SetEntityOnlyDamagedByRelationshipGroup(entity, p1, relationshipHash) e
 ---@param steamProof boolean
 ---@param p7 boolean
 ---@param drownProof boolean
-function SetEntityProofs(entity, bulletProof, fireProof, explosionProof, collisionProof, meleeProof, steamProof, p7, drownProof) end
+function SetEntityProofs(
+	entity,
+	bulletProof,
+	fireProof,
+	explosionProof,
+	collisionProof,
+	meleeProof,
+	steamProof,
+	p7,
+	drownProof
+)
+end
 
 ---**`ENTITY` `client` [`0x77B21BE7AC540F07`](https://docs.fivem.net/natives/?_0x77B21BE7AC540F07)**
 ---
 ---```
----w is the correct parameter name!  
+---w is the correct parameter name!
 ---```
 ---
 ---@param entity Entity
@@ -1855,7 +1920,7 @@ function SetEntityVisible(entity, toggle, unk) end
 ---**`ENTITY` `client` [`0x3AE22DEB5BA5A3E6`](https://docs.fivem.net/natives/?_0x3AE22DEB5BA5A3E6)**
 ---
 ---```
----This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+---This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.
 ---```
 ---
 ---@param object Object
@@ -1864,7 +1929,7 @@ function SetObjectAsNoLongerNeeded(object) end
 ---**`ENTITY` `client` [`0x2595DD4236549CE3`](https://docs.fivem.net/natives/?_0x2595DD4236549CE3)**
 ---
 ---```
----This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+---This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.
 ---```
 ---
 ---@param ped Ped
@@ -1873,7 +1938,7 @@ function SetPedAsNoLongerNeeded(ped) end
 ---**`ENTITY` `client` [`0x629BFA74418D6239`](https://docs.fivem.net/natives/?_0x629BFA74418D6239)**
 ---
 ---```
----This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.  
+---This is an alias of SET_ENTITY_AS_NO_LONGER_NEEDED.
 ---```
 ---
 ---@param vehicle Vehicle
@@ -1895,7 +1960,7 @@ function StopEntityAnim(entity, animation, animGroup, p3) end
 ---**`ENTITY` `client` [`0x43D3807C077261E3`](https://docs.fivem.net/natives/?_0x43D3807C077261E3)**
 ---
 ---```
----p1 sync task id?  
+---p1 sync task id?
 ---```
 ---
 ---@param entity Entity
@@ -2019,8 +2084,8 @@ function GetEntityBoneRotationLocal(entity, boneIndex) end
 ---**`ENTITY` `client` [`0x846BF6291198A71E`](https://docs.fivem.net/natives/?_0x846BF6291198A71E)**
 ---
 ---```
----Gets the heading of the entity physics in degrees, which tends to be more accurate than just "GET_ENTITY_HEADING". This can be clearly seen while, for example, ragdolling a ped/player.  
----NOTE: The name and description of this native are based on independent research. If you find this native to be more suitable under a different name and/or described differently, please feel free to do so.  
+---Gets the heading of the entity physics in degrees, which tends to be more accurate than just "GET_ENTITY_HEADING". This can be clearly seen while, for example, ragdolling a ped/player.
+---NOTE: The name and description of this native are based on independent research. If you find this native to be more suitable under a different name and/or described differently, please feel free to do so.
 ---```
 ---
 ---@param entity Entity
@@ -2058,7 +2123,18 @@ function GetEntityPickup(entity, modelHash) end
 ---@param p7 boolean
 ---@param drownProof boolean
 ---@return boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean, boolean
-function GetEntityProofs(entity, bulletProof, fireProof, explosionProof, collisionProof, meleeProof, steamProof, p7, drownProof) end
+function GetEntityProofs(
+	entity,
+	bulletProof,
+	fireProof,
+	explosionProof,
+	collisionProof,
+	meleeProof,
+	steamProof,
+	p7,
+	drownProof
+)
+end
 
 ---**`ENTITY` `client` [`0x394BDE2A7BBA031E`](https://docs.fivem.net/natives/?_0x394BDE2A7BBA031E)**
 ---

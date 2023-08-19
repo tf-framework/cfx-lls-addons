@@ -120,7 +120,7 @@ function GenerateDirectionsToCoord(x, y, z, p3, direction, vehicle, distToNxJunc
 ---**`PATHFIND` `client` [`0x2EABE3B06F58C1BE`](https://docs.fivem.net/natives/?_0x2EABE3B06F58C1BE)**
 ---
 ---```
----Get the closest vehicle node to a given position, unknown1 = 3.0, unknown2 = 0  
+---Get the closest vehicle node to a given position, unknown1 = 3.0, unknown2 = 0
 ---```
 ---
 ---@param x number
@@ -135,7 +135,7 @@ function GetClosestMajorVehicleNode(x, y, z, outPosition, unknown1, unknown2) en
 ---**`PATHFIND` `client` [`0x132F52BBA570FE92`](https://docs.fivem.net/natives/?_0x132F52BBA570FE92)**
 ---
 ---```
----p1 seems to be always 1.0f in the scripts  
+---p1 seems to be always 1.0f in the scripts
 ---```
 ---
 ---@param x number
@@ -184,25 +184,25 @@ function GetClosestVehicleNode(x, y, z, outPosition, nodeType, p5, p6) end
 ---**`PATHFIND` `client` [`0xFF071FB798B803B0`](https://docs.fivem.net/natives/?_0xFF071FB798B803B0)**
 ---
 ---```
----p5, p6 and p7 seems to be about the same as p4, p5 and p6 for GET_CLOSEST_VEHICLE_NODE. p6 and/or p7 has something to do with finding a node on the same path/road and same direction(at least for this native, something to do with the heading maybe). Edit this when you find out more.  
----p5 is either 1 or 12. 1 means any path/road. 12, 8, 0 means node in the middle of the closest main (asphalt) road.  
----p6 is always 3.0  
----p7 is always 0.  
----Known node types: simple path/asphalt road, only asphalt road, water, under the map at always the same coords.   
----The node types follows a pattern. For example, every fourth node is of the type water i.e. 3, 7, 11, 15, 19, 23, 27, 31, 35, 39... 239. Could not see any difference between nodes within certain types.   
----Starting at 2, every fourth node is under the map, always same coords.  
----Same with only asphalt road (0, 4, 8, etc) and simple path/asphalt road (1, 5, 9, etc).  
----gtaforums.com/topic/843561-pathfind-node-types  
----Example of usage, moving vehicle to closest path/road:  
----Vector3 coords = ENTITY::GET_ENTITY_COORDS(playerVeh, true);  
----Vector3 closestVehicleNodeCoords;   
----float roadHeading;   
----PATHFIND::GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(coords.x, coords.y, coords.z, &closestVehicleNodeCoords, &roadHeading, 1, 3, 0);   
----ENTITY::SET_ENTITY_HEADING(playerVeh, roadHeading);  
----ENTITY::SET_ENTITY_COORDS(playerVeh, closestVehicleNodeCoords.x, closestVehicleNodeCoords.y, closestVehicleNodeCoords.z, 1, 0, 0, 1);  
----VEHICLE::SET_VEHICLE_ON_GROUND_PROPERLY(playerVeh);  
----------------------------------------------------------------------  
----C# Example (ins1de) : pastebin.com/fxtMWAHD  
+---p5, p6 and p7 seems to be about the same as p4, p5 and p6 for GET_CLOSEST_VEHICLE_NODE. p6 and/or p7 has something to do with finding a node on the same path/road and same direction(at least for this native, something to do with the heading maybe). Edit this when you find out more.
+---p5 is either 1 or 12. 1 means any path/road. 12, 8, 0 means node in the middle of the closest main (asphalt) road.
+---p6 is always 3.0
+---p7 is always 0.
+---Known node types: simple path/asphalt road, only asphalt road, water, under the map at always the same coords.
+---The node types follows a pattern. For example, every fourth node is of the type water i.e. 3, 7, 11, 15, 19, 23, 27, 31, 35, 39... 239. Could not see any difference between nodes within certain types.
+---Starting at 2, every fourth node is under the map, always same coords.
+---Same with only asphalt road (0, 4, 8, etc) and simple path/asphalt road (1, 5, 9, etc).
+---gtaforums.com/topic/843561-pathfind-node-types
+---Example of usage, moving vehicle to closest path/road:
+---Vector3 coords = ENTITY::GET_ENTITY_COORDS(playerVeh, true);
+---Vector3 closestVehicleNodeCoords;
+---float roadHeading;
+---PATHFIND::GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(coords.x, coords.y, coords.z, &closestVehicleNodeCoords, &roadHeading, 1, 3, 0);
+---ENTITY::SET_ENTITY_HEADING(playerVeh, roadHeading);
+---ENTITY::SET_ENTITY_COORDS(playerVeh, closestVehicleNodeCoords.x, closestVehicleNodeCoords.y, closestVehicleNodeCoords.z, 1, 0, 0, 1);
+---VEHICLE::SET_VEHICLE_ON_GROUND_PROPERLY(playerVeh);
+---------------------------------------------------------------------
+---C# Example (ins1de) : pastebin.com/fxtMWAHD
 ---```
 ---
 ---@param x number
@@ -265,9 +265,9 @@ function GetNthClosestVehicleNode(x, y, z, nthClosest, outPosition, unknown1, un
 ---**`PATHFIND` `client` [`0x45905BE8654AE067`](https://docs.fivem.net/natives/?_0x45905BE8654AE067)**
 ---
 ---```
----See gtaforums.com/topic/843561-pathfind-node-types for node type info. 0 = paved road only, 1 = any road, 3 = water  
----p10 always equal 0x40400000  
----p11 always equal 0  
+---See gtaforums.com/topic/843561-pathfind-node-types for node type info. 0 = paved road only, 1 = any road, 3 = water
+---p10 always equal 0x40400000
+---p11 always equal 0
 ---```
 ---
 ---@param x number
@@ -283,12 +283,26 @@ function GetNthClosestVehicleNode(x, y, z, nthClosest, outPosition, unknown1, un
 ---@param p10 number
 ---@param p11 any
 ---@return boolean, vector3, number
-function GetNthClosestVehicleNodeFavourDirection(x, y, z, desiredX, desiredY, desiredZ, nthClosest, outPosition, outHeading, nodetype, p10, p11) end
+function GetNthClosestVehicleNodeFavourDirection(
+	x,
+	y,
+	z,
+	desiredX,
+	desiredY,
+	desiredZ,
+	nthClosest,
+	outPosition,
+	outHeading,
+	nodetype,
+	p10,
+	p11
+)
+end
 
 ---**`PATHFIND` `client` [`0x22D7275A79FE8215`](https://docs.fivem.net/natives/?_0x22D7275A79FE8215)**
 ---
 ---```
----Returns the id.  
+---Returns the id.
 ---```
 ---
 ---@param x number
@@ -318,7 +332,7 @@ function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, outPosition,
 ---**`PATHFIND` `client` [`0x80CA6A8B6C094CC4`](https://docs.fivem.net/natives/?_0x80CA6A8B6C094CC4)**
 ---
 ---```
----Get the nth closest vehicle node and its heading. (unknown2 = 9, unknown3 = 3.0, unknown4 = 2.5)  
+---Get the nth closest vehicle node and its heading. (unknown2 = 9, unknown3 = 3.0, unknown4 = 2.5)
 ---```
 ---
 ---@param x number
@@ -332,7 +346,19 @@ function GetNthClosestVehicleNodeIdWithHeading(x, y, z, nthClosest, outPosition,
 ---@param unknown3 number
 ---@param unknown4 number
 ---@return boolean, vector3, number, any
-function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, outPosition, heading, unknown1, unknown2, unknown3, unknown4) end
+function GetNthClosestVehicleNodeWithHeading(
+	x,
+	y,
+	z,
+	nthClosest,
+	outPosition,
+	heading,
+	unknown1,
+	unknown2,
+	unknown3,
+	unknown4
+)
+end
 
 ---**`PATHFIND` `client` [`0x01708E8DD3FF8C65`](https://docs.fivem.net/natives/?_0x01708E8DD3FF8C65)**
 ---
@@ -448,9 +474,9 @@ function GetVehicleNodePosition(nodeId, outPosition) end
 ---**`PATHFIND` `client` [`0x0568566ACBB5DEDC`](https://docs.fivem.net/natives/?_0x0568566ACBB5DEDC)**
 ---
 ---```
----Gets the density and flags of the closest node to the specified position.  
----Density is a value between 0 and 15, indicating how busy the road is.  
----Flags is a bit field.  
+---Gets the density and flags of the closest node to the specified position.
+---Density is a value between 0 and 15, indicating how busy the road is.
+---Flags is a bit field.
 ---```
 ---
 ---@param x number
@@ -464,8 +490,8 @@ function GetVehicleNodeProperties(x, y, z, density, flags) end
 ---**`PATHFIND` `client` [`0xF813C7E63F9062A5`](https://docs.fivem.net/natives/?_0xF813C7E63F9062A5)**
 ---
 ---```
----Returns whether navmesh for the region is loaded. The region is a rectangular prism defined by it's top left deepest corner to it's bottom right shallowest corner.  
----If you can re-word this so it makes more sense, please do. I'm horrible with words sometimes...  
+---Returns whether navmesh for the region is loaded. The region is a rectangular prism defined by it's top left deepest corner to it's bottom right shallowest corner.
+---If you can re-word this so it makes more sense, please do. I'm horrible with words sometimes...
 ---```
 ---
 ---@param x1 number
@@ -480,8 +506,8 @@ function IsNavmeshLoadedInArea(x1, y1, z1, x2, y2, z2) end
 ---**`PATHFIND` `client` [`0x125BF4ABFC536B09`](https://docs.fivem.net/natives/?_0x125BF4ABFC536B09)**
 ---
 ---```
----Gets a value indicating whether the specified position is on a road.  
----The vehicle parameter is not implemented (ignored).  
+---Gets a value indicating whether the specified position is on a road.
+---The vehicle parameter is not implemented (ignored).
 ---```
 ---
 ---@param x number
@@ -494,7 +520,7 @@ function IsPointOnRoad(x, y, z, vehicle) end
 ---**`PATHFIND` `client` [`0x1EAF30FCFBF5AF74`](https://docs.fivem.net/natives/?_0x1EAF30FCFBF5AF74)**
 ---
 ---```
----Returns true if the id is non zero.  
+---Returns true if the id is non zero.
 ---```
 ---
 ---@param vehicleNodeId number
@@ -504,7 +530,7 @@ function IsVehicleNodeIdValid(vehicleNodeId) end
 ---**`PATHFIND` `client` [`0x80E4A6EDDB0BE8D9`](https://docs.fivem.net/natives/?_0x80E4A6EDDB0BE8D9)**
 ---
 ---```
----This native has been removed in v1180.  
+---This native has been removed in v1180.
 ---```
 ---
 ---@param keepInMemory boolean if true, all path nodes will be loaded and be kept in memory; otherwise, all path nodes will be loaded, but unloaded as the game sees fit.
@@ -593,7 +619,7 @@ function SetPedPathsInArea(x1, y1, z1, x2, y2, z2, unknown) end
 ---**`PATHFIND` `client` [`0x1EE7063B80FFC77C`](https://docs.fivem.net/natives/?_0x1EE7063B80FFC77C)**
 ---
 ---```
----missing a last parameter int p6  
+---missing a last parameter int p6
 ---```
 ---
 ---```
@@ -615,7 +641,7 @@ function SetRoadsBackToOriginal(p0, p1, p2, p3, p4, p5) end
 ---```
 ---NativeDB Added Parameter 8: Any p7
 ---
----bool p7 - always 1  
+---bool p7 - always 1
 ---```
 ---
 ---@param x1 number X dimension of the angled area 'origin'

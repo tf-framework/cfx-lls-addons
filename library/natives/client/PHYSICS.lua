@@ -56,7 +56,7 @@ function N_0xb743f735c03d7810(ropeId, p1) end
 ---**`PHYSICS` `client` [`0xBC0CE682D4D05650`](https://docs.fivem.net/natives/?_0xBC0CE682D4D05650)**
 ---
 ---```
----Most likely ROPE_ATTACH_*  
+---Most likely ROPE_ATTACH_*
 ---```
 ---
 ---@param ropeId number
@@ -78,7 +78,7 @@ function N_0xbc0ce682d4d05650(ropeId, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p
 ---**`PHYSICS` `client` [`0xCC6E963682533882`](https://docs.fivem.net/natives/?_0xCC6E963682533882)**
 ---
 ---```
----RESET_*  
+---RESET_*
 ---```
 ---
 ---@param object Object
@@ -92,10 +92,10 @@ function ActivatePhysics(entity) end
 ---**`PHYSICS` `client` [`0xE832D760399EB220`](https://docs.fivem.net/natives/?_0xE832D760399EB220)**
 ---
 ---```
----Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.  
----__  
----Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).  
----Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.  
+---Creates a rope at the specific position, that extends in the specified direction when not attached to any entities.
+---__
+---Rope does NOT interact with anything you attach it to, in some cases it make interact with the world AFTER it breaks (seems to occur if you set the type to -1).
+---Rope will sometimes contract and fall to the ground like you'd expect it to, but since it doesn't interact with the world the effect is just jaring.
 ---```
 ---
 ---@param x number Spawn coordinate X component.
@@ -116,7 +116,26 @@ function ActivatePhysics(entity) end
 ---@param breakable boolean Whether shooting the rope will break it.
 ---@param unkPtr any Unknown pointer, always 0 in original scrips.
 ---@return number, any # A script handle for the rope
-function AddRope(x, y, z, rotX, rotY, rotZ, maxLength, ropeType, initLength, minLength, lengthChangeRate, onlyPPU, collisionOn, lockFromFront, timeMultiplier, breakable, unkPtr) end
+function AddRope(
+	x,
+	y,
+	z,
+	rotX,
+	rotY,
+	rotZ,
+	maxLength,
+	ropeType,
+	initLength,
+	minLength,
+	lengthChangeRate,
+	onlyPPU,
+	collisionOn,
+	lockFromFront,
+	timeMultiplier,
+	breakable,
+	unkPtr
+)
+end
 
 ---**`PHYSICS` `client` [`0xE37F721824571784`](https://docs.fivem.net/natives/?_0xE37F721824571784)**
 ---
@@ -132,7 +151,7 @@ function ApplyImpulseToCloth(posX, posY, posZ, vecX, vecY, vecZ, impulse) end
 ---**`PHYSICS` `client` [`0x3D95EC8B6D940AC3`](https://docs.fivem.net/natives/?_0x3D95EC8B6D940AC3)**
 ---
 ---```
----Attaches entity 1 to entity 2.  
+---Attaches entity 1 to entity 2.
 ---```
 ---
 ---@param ropeId number
@@ -149,12 +168,28 @@ function ApplyImpulseToCloth(posX, posY, posZ, vecX, vecY, vecZ, impulse) end
 ---@param p11 boolean
 ---@param boneName1 string
 ---@param boneName2 string
-function AttachEntitiesToRope(ropeId, ent1, ent2, ent1_x, ent1_y, ent1_z, ent2_x, ent2_y, ent2_z, length, p10, p11, boneName1, boneName2) end
+function AttachEntitiesToRope(
+	ropeId,
+	ent1,
+	ent2,
+	ent1_x,
+	ent1_y,
+	ent1_z,
+	ent2_x,
+	ent2_y,
+	ent2_z,
+	length,
+	p10,
+	p11,
+	boneName1,
+	boneName2
+)
+end
 
 ---**`PHYSICS` `client` [`0x4B490A6832559A65`](https://docs.fivem.net/natives/?_0x4B490A6832559A65)**
 ---
 ---```
----The position supplied can be anywhere, and the entity should anchor relative to that point from it's origin.  
+---The position supplied can be anywhere, and the entity should anchor relative to that point from it's origin.
 ---```
 ---
 ---@param ropeId number
@@ -289,7 +324,7 @@ function RopeLoadTextures() end
 ---**`PHYSICS` `client` [`0xC16DE94D9BEA14A0`](https://docs.fivem.net/natives/?_0xC16DE94D9BEA14A0)**
 ---
 ---```
----Reset a rope to a certain length.  
+---Reset a rope to a certain length.
 ---```
 ---
 ---@param ropeId number

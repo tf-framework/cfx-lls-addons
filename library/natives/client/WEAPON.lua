@@ -64,7 +64,7 @@ function AddAmmoToPed(ped, weaponHash, ammo) end
 ---**`WEAPON` `client` [`0xBC7BE5ABC0879F74`](https://docs.fivem.net/natives/?_0xBC7BE5ABC0879F74)**
 ---
 ---```
----this returns if you can use the weapon while using a parachute  
+---this returns if you can use the weapon while using a parachute
 ---```
 ---
 ---@param weaponHash Hash
@@ -86,7 +86,7 @@ function ClearPedLastWeaponDamage(ped) end
 ---**`WEAPON` `client` [`0x9541D3CF0D398F36`](https://docs.fivem.net/natives/?_0x9541D3CF0D398F36)**
 ---
 ---```
----Now has 8 params.  
+---Now has 8 params.
 ---```
 ---
 ---```
@@ -115,8 +115,8 @@ function DoesWeaponTakeWeaponComponent(weaponHash, componentHash) end
 ---**`WEAPON` `client` [`0xC8B46D7727D864AA`](https://docs.fivem.net/natives/?_0xC8B46D7727D864AA)**
 ---
 ---```
----Enables laser sight on any weapon.  
----It doesn't work. Neither on tick nor OnKeyDown  
+---Enables laser sight on any weapon.
+---It doesn't work. Neither on tick nor OnKeyDown
 ---```
 ---
 ---@param toggle boolean
@@ -125,7 +125,7 @@ function EnableLaserSightRendering(toggle) end
 ---**`WEAPON` `client` [`0xFC4BD125DE7611E4`](https://docs.fivem.net/natives/?_0xFC4BD125DE7611E4)**
 ---
 ---```
----WEAPON::EXPLODE_PROJECTILES(PLAYER::PLAYER_PED_ID(), func_221(0x00000003), 0x00000001);  
+---WEAPON::EXPLODE_PROJECTILES(PLAYER::PLAYER_PED_ID(), func_221(0x00000003), 0x00000001);
 ---```
 ---
 ---@param ped Ped
@@ -144,11 +144,11 @@ function GetAmmoInClip(ped, weaponHash, ammo) end
 ---**`WEAPON` `client` [`0x015A522136D7F951`](https://docs.fivem.net/natives/?_0x015A522136D7F951)**
 ---
 ---```
----WEAPON::GET_AMMO_IN_PED_WEAPON(PLAYER::PLAYER_PED_ID(), a_0)  
----From decompiled scripts  
----Returns total ammo in weapon  
----GTALua Example :  
----natives.WEAPON.GET_AMMO_IN_PED_WEAPON(plyPed, WeaponHash)  
+---WEAPON::GET_AMMO_IN_PED_WEAPON(PLAYER::PLAYER_PED_ID(), a_0)
+---From decompiled scripts
+---Returns total ammo in weapon
+---GTALua Example :
+---natives.WEAPON.GET_AMMO_IN_PED_WEAPON(plyPed, WeaponHash)
 ---```
 ---
 ---@param ped Ped
@@ -159,7 +159,7 @@ function GetAmmoInPedWeapon(ped, weaponhash) end
 ---**`WEAPON` `client` [`0x8483E98E8B888AE2`](https://docs.fivem.net/natives/?_0x8483E98E8B888AE2)**
 ---
 ---```
----p1 is always 0 in the scripts.  
+---p1 is always 0 in the scripts.
 ---```
 ---
 ---@param ped Ped
@@ -177,7 +177,7 @@ function GetCurrentPedVehicleWeapon(ped, weaponHash) end
 ---**`WEAPON` `client` [`0x3A87E44BB9A01D54`](https://docs.fivem.net/natives/?_0x3A87E44BB9A01D54)**
 ---
 ---```
----The return value seems to indicate returns true if the hash of the weapon object weapon equals the weapon hash.  
+---The return value seems to indicate returns true if the hash of the weapon object weapon equals the weapon hash.
 ---p2 seems to be 1 most of the time; and is not implemented.
 ---```
 ---
@@ -200,7 +200,7 @@ function GetCurrentPedWeaponEntityIndex(ped) end
 ---**`WEAPON` `client` [`0xF731332072F5156C`](https://docs.fivem.net/natives/?_0xF731332072F5156C)**
 ---
 ---```
----gadgetHash - was always 0xFBAB5776 ("GADGET_PARACHUTE").  
+---gadgetHash - was always 0xFBAB5776 ("GADGET_PARACHUTE").
 ---```
 ---
 ---@param ped Ped
@@ -225,7 +225,7 @@ function GetMaxAmmo(ped, weaponHash, ammo) end
 ---**`WEAPON` `client` [`0xA38DCFFCEA8962FA`](https://docs.fivem.net/natives/?_0xA38DCFFCEA8962FA)**
 ---
 ---```
----p2 is mostly 1 in the scripts.  
+---p2 is mostly 1 in the scripts.
 ---```
 ---
 ---@param ped Ped
@@ -265,9 +265,9 @@ function GetPedAmmoTypeFromWeapon(ped, weaponHash) end
 ---**`WEAPON` `client` [`0x6C4D0409BA1A2BC2`](https://docs.fivem.net/natives/?_0x6C4D0409BA1A2BC2)**
 ---
 ---```
----Pass ped. Pass address of Vector3.  
----The coord will be put into the Vector3.  
----The return will determine whether there was a coord found or not.  
+---Pass ped. Pass address of Vector3.
+---The coord will be put into the Vector3.
+---The return will determine whether there was a coord found or not.
 ---```
 ---
 ---@param ped Ped
@@ -304,9 +304,9 @@ function GetWeapontypeGroup(weaponHash) end
 ---**`WEAPON` `client` [`0xF46CDC33180FDA94`](https://docs.fivem.net/natives/?_0xF46CDC33180FDA94)**
 ---
 ---```
----Returns the model of any weapon.  
----Can also take an ammo hash?  
----sub_6663a(&l_115B, WEAPON::GET_WEAPONTYPE_MODEL(${ammo_rpg}));  
+---Returns the model of any weapon.
+---Can also take an ammo hash?
+---sub_6663a(&l_115B, WEAPON::GET_WEAPONTYPE_MODEL(${ammo_rpg}));
 ---```
 ---
 ---@param weaponHash Hash
@@ -322,19 +322,19 @@ function GetWeapontypeSlot(weaponHash) end
 ---**`WEAPON` `client` [`0x583BE370B1EC6EB4`](https://docs.fivem.net/natives/?_0x583BE370B1EC6EB4)**
 ---
 ---```
----// Returns the size of the default weapon component clip.  
----Use it like this:  
----char cClipSize[32];  
----Hash cur;  
----if (WEAPON::GET_CURRENT_PED_WEAPON(playerPed, &cur, 1))  
----{  
----    if (WEAPON::IS_WEAPON_VALID(cur))  
----    {  
----        int iClipSize = WEAPON::GET_WEAPON_CLIP_SIZE(cur);  
----        sprintf_s(cClipSize, "ClipSize: %.d", iClipSize);  
----        vDrawString(cClipSize, 0.5f, 0.5f);  
----    }  
----}  
+---// Returns the size of the default weapon component clip.
+---Use it like this:
+---char cClipSize[32];
+---Hash cur;
+---if (WEAPON::GET_CURRENT_PED_WEAPON(playerPed, &cur, 1))
+---{
+---    if (WEAPON::IS_WEAPON_VALID(cur))
+---    {
+---        int iClipSize = WEAPON::GET_WEAPON_CLIP_SIZE(cur);
+---        sprintf_s(cClipSize, "ClipSize: %.d", iClipSize);
+---        vDrawString(cClipSize, 0.5f, 0.5f);
+---    }
+---}
 ---```
 ---
 ---@param weaponHash Hash
@@ -366,19 +366,19 @@ function GetWeaponDamage(weaponHash, componentHash) end
 ---**`WEAPON` `client` [`0x3BE0BB12D25FB305`](https://docs.fivem.net/natives/?_0x3BE0BB12D25FB305)**
 ---
 ---```
----0=unknown (or incorrect weaponHash)  
----1= no damage (flare,snowball, petrolcan)  
----2=melee  
----3=bullet  
----4=force ragdoll fall  
----5=explosive (RPG, Railgun, grenade)  
----6=fire(molotov)  
----8=fall(WEAPON_HELI_CRASH)  
----10=electric  
----11=barbed wire  
----12=extinguisher  
----13=gas  
----14=water cannon(WEAPON_HIT_BY_WATER_CANNON)  
+---0=unknown (or incorrect weaponHash)
+---1= no damage (flare,snowball, petrolcan)
+---2=melee
+---3=bullet
+---4=force ragdoll fall
+---5=explosive (RPG, Railgun, grenade)
+---6=fire(molotov)
+---8=fall(WEAPON_HELI_CRASH)
+---10=electric
+---11=barbed wire
+---12=extinguisher
+---13=gas
+---14=water cannon(WEAPON_HIT_BY_WATER_CANNON)
 ---```
 ---
 ---@param weaponHash Hash
@@ -388,21 +388,21 @@ function GetWeaponDamageType(weaponHash) end
 ---**`WEAPON` `client` [`0xD92C739EE34C9EBA`](https://docs.fivem.net/natives/?_0xD92C739EE34C9EBA)**
 ---
 ---```
----// members should be aligned to 8 bytes by default but it's best to use alignas here, just to be sure  
----struct WeaponHudStatsData  
----{  
----	alignas(8) uint8_t hudDamage; // 0x0000  
----	alignas(8) uint8_t hudSpeed; // 0x0008  
----	alignas(8) uint8_t hudCapacity; // 0x0010  
----	alignas(8) uint8_t hudAccuracy; // 0x0018  
----	alignas(8) uint8_t hudRange; // 0x0020  
----};  
----Usage:  
----WeaponHudStatsData data;  
----if (GET_WEAPON_HUD_STATS(weaponHash, (Any*)&data))  
----{  
----    // uint8_t damagePercentage = data.hudDamage etc...  
----}  
+---// members should be aligned to 8 bytes by default but it's best to use alignas here, just to be sure
+---struct WeaponHudStatsData
+---{
+---	alignas(8) uint8_t hudDamage; // 0x0000
+---	alignas(8) uint8_t hudSpeed; // 0x0008
+---	alignas(8) uint8_t hudCapacity; // 0x0010
+---	alignas(8) uint8_t hudAccuracy; // 0x0018
+---	alignas(8) uint8_t hudRange; // 0x0020
+---};
+---Usage:
+---WeaponHudStatsData data;
+---if (GET_WEAPON_HUD_STATS(weaponHash, (Any*)&data))
+---{
+---    // uint8_t damagePercentage = data.hudDamage etc...
+---}
 ---```
 ---
 ---@param weaponHash Hash
@@ -413,8 +413,8 @@ function GetWeaponHudStats(weaponHash, outData) end
 ---**`WEAPON` `client` [`0xCAE1DC9A0E22A16D`](https://docs.fivem.net/natives/?_0xCAE1DC9A0E22A16D)**
 ---
 ---```
----Drops the current weapon and returns the object  
----Unknown behavior when unarmed.  
+---Drops the current weapon and returns the object
+---Unknown behavior when unarmed.
 ---```
 ---
 ---@param ped Ped
@@ -499,10 +499,10 @@ function HasEntityBeenDamagedByWeapon(entity, weaponHash, weaponType) end
 ---**`WEAPON` `client` [`0x2D343D2219CD027A`](https://docs.fivem.net/natives/?_0x2D343D2219CD027A)**
 ---
 ---```
----It determines what weapons caused damage:  
----If you want to define only a specific weapon, second parameter=weapon hash code, third parameter=0  
----If you want to define any melee weapon, second parameter=0, third parameter=1.  
----If you want to identify any weapon (firearms, melee, rockets, etc.), second parameter=0, third parameter=2.  
+---It determines what weapons caused damage:
+---If you want to define only a specific weapon, second parameter=weapon hash code, third parameter=0
+---If you want to define any melee weapon, second parameter=0, third parameter=1.
+---If you want to identify any weapon (firearms, melee, rockets, etc.), second parameter=0, third parameter=2.
 ---```
 ---
 ---@param ped Ped
@@ -514,8 +514,8 @@ function HasPedBeenDamagedByWeapon(ped, weaponHash, weaponType) end
 ---**`WEAPON` `client` [`0x8DECB02F88F428BC`](https://docs.fivem.net/natives/?_0x8DECB02F88F428BC)**
 ---
 ---```
----p2 should be FALSE, otherwise it seems to always return FALSE  
----Bool does not check if the weapon is current equipped, unfortunately.  
+---p2 should be FALSE, otherwise it seems to always return FALSE
+---Bool does not check if the weapon is current equipped, unfortunately.
 ---```
 ---
 ---@param ped Ped
@@ -535,9 +535,9 @@ function HasPedGotWeaponComponent(ped, weaponHash, componentHash) end
 ---**`WEAPON` `client` [`0x717C8481234E3B88`](https://docs.fivem.net/natives/?_0x717C8481234E3B88)**
 ---
 ---```
----Third Parameter = unsure, but pretty sure it is weapon hash  
------> get_hash_key("weapon_stickybomb")  
----Fourth Parameter = unsure, almost always -1  
+---Third Parameter = unsure, but pretty sure it is weapon hash
+-----> get_hash_key("weapon_stickybomb")
+---Fourth Parameter = unsure, almost always -1
 ---```
 ---
 ---@param driver Ped
@@ -563,7 +563,7 @@ function HasWeaponGotWeaponComponent(weapon, addonHash) end
 ---**`WEAPON` `client` [`0x6F6981D2253C208F`](https://docs.fivem.net/natives/?_0x6F6981D2253C208F)**
 ---
 ---```
----Hides the players weapon during a cutscene.  
+---Hides the players weapon during a cutscene.
 ---```
 ---
 ---@param ped Ped
@@ -596,8 +596,8 @@ function IsPedArmed(ped, typeFlags) end
 ---**`WEAPON` `client` [`0x65F0C5AE05943EC7`](https://docs.fivem.net/natives/?_0x65F0C5AE05943EC7)**
 ---
 ---```
----This native returns a true or false value.  
----Ped ped = The ped whose weapon you want to check.  
+---This native returns a true or false value.
+---Ped ped = The ped whose weapon you want to check.
 ---```
 ---
 ---@param ped Ped
@@ -676,14 +676,14 @@ function RemoveWeaponComponentFromWeaponObject(weaponObject, addonHash) end
 ---**`WEAPON` `client` [`0x4899CB088EDF59B8`](https://docs.fivem.net/natives/?_0x4899CB088EDF59B8)**
 ---
 ---```
----This native removes a specified weapon from your selected ped.  
----Weapon Hashes: pastebin.com/0wwDZgkF  
----Example:  
----C#:  
----Function.Call(Hash.REMOVE_WEAPON_FROM_PED, Game.Player.Character, 0x99B507EA);  
----C++:  
----WEAPON::REMOVE_WEAPON_FROM_PED(PLAYER::PLAYER_PED_ID(), 0x99B507EA);  
----The code above removes the knife from the player.  
+---This native removes a specified weapon from your selected ped.
+---Weapon Hashes: pastebin.com/0wwDZgkF
+---Example:
+---C#:
+---Function.Call(Hash.REMOVE_WEAPON_FROM_PED, Game.Player.Character, 0x99B507EA);
+---C++:
+---WEAPON::REMOVE_WEAPON_FROM_PED(PLAYER::PLAYER_PED_ID(), 0x99B507EA);
+---The code above removes the knife from the player.
 ---```
 ---
 ---@param ped Ped
@@ -693,8 +693,8 @@ function RemoveWeaponFromPed(ped, weaponHash) end
 ---**`WEAPON` `client` [`0x5443438F033E29C3`](https://docs.fivem.net/natives/?_0x5443438F033E29C3)**
 ---
 ---```
----Nearly every instance of p1 I found was 31. Nearly every instance of p2 I found was 0.  
----REQUEST_WEAPON_ASSET(iLocal_1888, 31, 26);  
+---Nearly every instance of p1 I found was 31. Nearly every instance of p2 I found was 0.
+---REQUEST_WEAPON_ASSET(iLocal_1888, 31, 26);
 ---```
 ---
 ---@param weaponHash Hash
@@ -769,7 +769,7 @@ function SetPedChanceOfFiringBlanks(ped, xBias, yBias) end
 ---**`WEAPON` `client` [`0x0725A4CCFDED9A70`](https://docs.fivem.net/natives/?_0x0725A4CCFDED9A70)**
 ---
 ---```
----Has 5 parameters since latest patches.  
+---Has 5 parameters since latest patches.
 ---```
 ---
 ---@param ped Ped
@@ -803,8 +803,8 @@ function SetPedDropsWeaponsWhenDead(ped, toggle) end
 ---**`WEAPON` `client` [`0xD0D7B1E680ED4A1A`](https://docs.fivem.net/natives/?_0xD0D7B1E680ED4A1A)**
 ---
 ---```
----p1/gadgetHash was always 0xFBAB5776 ("GADGET_PARACHUTE").  
----p2 is always true.  
+---p1/gadgetHash was always 0xFBAB5776 ("GADGET_PARACHUTE").
+---p2 is always true.
 ---```
 ---
 ---@param ped Ped
@@ -839,7 +839,7 @@ function SetPedShootOrdnanceWeapon(ped, p1) end
 ---**`WEAPON` `client` [`0x50969B9B89ED5738`](https://docs.fivem.net/natives/?_0x50969B9B89ED5738)**
 ---
 ---```
----tintIndex can be the following:  
+---tintIndex can be the following:
 ---0 : Default/Black
 ---1 : Green
 ---2 : Gold
@@ -898,39 +898,39 @@ function SetPickupAmmoAmountScaler(p0) end
 ---**`WEAPON` `client` [`0x1055AC3A667F09D9`](https://docs.fivem.net/natives/?_0x1055AC3A667F09D9)**
 ---
 ---```
----Changes the selected ped aiming animation style.   
----Note : You must use GET_HASH_KEY!  
----Strings to use with GET_HASH_KEY :  
----	"Ballistic",  
----	"Default",  
----	"Fat",  
----	"Female",  
----	"FirstPerson",  
----	"FirstPersonAiming",  
----	"FirstPersonFranklin",  
----	"FirstPersonFranklinAiming",  
----	"FirstPersonFranklinRNG",  
----	"FirstPersonFranklinScope",  
----	"FirstPersonMPFemale",  
----	"FirstPersonMichael",  
----	"FirstPersonMichaelAiming",  
----	"FirstPersonMichaelRNG",  
----	"FirstPersonMichaelScope",  
----	"FirstPersonRNG",  
----	"FirstPersonScope",  
----	"FirstPersonTrevor",  
----	"FirstPersonTrevorAiming",  
----	"FirstPersonTrevorRNG",  
----	"FirstPersonTrevorScope",  
----	"Franklin",  
----	"Gang",  
----	"Gang1H",  
----	"GangFemale",  
----	"Hillbilly",  
----	"MP_F_Freemode",  
----	"Michael",  
----	"SuperFat",  
----	"Trevor"  
+---Changes the selected ped aiming animation style.
+---Note : You must use GET_HASH_KEY!
+---Strings to use with GET_HASH_KEY :
+---	"Ballistic",
+---	"Default",
+---	"Fat",
+---	"Female",
+---	"FirstPerson",
+---	"FirstPersonAiming",
+---	"FirstPersonFranklin",
+---	"FirstPersonFranklinAiming",
+---	"FirstPersonFranklinRNG",
+---	"FirstPersonFranklinScope",
+---	"FirstPersonMPFemale",
+---	"FirstPersonMichael",
+---	"FirstPersonMichaelAiming",
+---	"FirstPersonMichaelRNG",
+---	"FirstPersonMichaelScope",
+---	"FirstPersonRNG",
+---	"FirstPersonScope",
+---	"FirstPersonTrevor",
+---	"FirstPersonTrevorAiming",
+---	"FirstPersonTrevorRNG",
+---	"FirstPersonTrevorScope",
+---	"Franklin",
+---	"Gang",
+---	"Gang1H",
+---	"GangFemale",
+---	"Hillbilly",
+---	"MP_F_Freemode",
+---	"Michael",
+---	"SuperFat",
+---	"Trevor"
 ---```
 ---
 ---@param ped Ped

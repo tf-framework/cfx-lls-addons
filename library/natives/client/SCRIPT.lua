@@ -212,7 +212,7 @@ function RequestScript(scriptName) end
 ---**`SCRIPT` `client` [`0xD62A67D26D9653E6`](https://docs.fivem.net/natives/?_0xD62A67D26D9653E6)**
 ---
 ---```
----formerly _REQUEST_STREAMED_SCRIPT  
+---formerly _REQUEST_STREAMED_SCRIPT
 ---```
 ---
 ---@param scriptHash Hash

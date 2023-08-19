@@ -49,7 +49,7 @@ function AddReplaceTexture(origTxd, origTxn, newTxd, newTxn) end
 ---
 ---Example code:
 ---```lua
----AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
+---AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value)
 ---    local entity = GetEntityFromStateBagName(bagName)
 ---    -- Whoops, we don't have a valid entity!
 ---    if entity === 0 then return end
@@ -607,7 +607,7 @@ function GetEntityArchetypeName(entity) end
 ---
 ---Example code:
 ---```lua
----AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
+---AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value)
 ---    local entity = GetEntityFromStateBagName(bagName)
 ---    -- Whoops, we don't have a valid entity!
 ---    if entity === 0 then return end
@@ -654,7 +654,7 @@ function GetEntityMapdataOwner(entity, mapdataHandle, entityHandle) end
 ---
 ---Example code:
 ---```lua
----local kvpValue = GetExternalKvpFloat('drugs', 'mollis') 
+---local kvpValue = GetExternalKvpFloat('drugs', 'mollis')
 ---if kvpValue then
 ---	-- do something!
 ---end
@@ -671,7 +671,7 @@ function GetExternalKvpFloat(resource, key) end
 ---
 ---Example code:
 ---```lua
----local kvpValue = GetExternalKvpInt('food', 'bananabread') 
+---local kvpValue = GetExternalKvpInt('food', 'bananabread')
 ---if kvpValue then
 ---	-- do something!
 ---end
@@ -688,7 +688,7 @@ function GetExternalKvpInt(resource, key) end
 ---
 ---Example code:
 ---```lua
----local kvpValue = GetExternalKvpString('food', 'codfish') 
+---local kvpValue = GetExternalKvpString('food', 'codfish')
 ---if kvpValue then
 ---	-- do something!
 ---end
@@ -1404,7 +1404,7 @@ function GetPlayerFromServerId(serverId) end
 ---
 ---Example code:
 ---```lua
----AddStateBagChangeHandler("isDead", nil, function(bagName, key, value) 
+---AddStateBagChangeHandler("isDead", nil, function(bagName, key, value)
 ---    local ply = GetPlayerFromStateBagName(bagName)
 ---    -- The player doesn't exist!
 ---    if ply == 0 then return end
@@ -1565,7 +1565,7 @@ function GetResourceKvpFloat(key) end
 ---
 ---Example code:
 ---```lua
----local kvpValue = GetResourceKvpInt('bananabread') 
+---local kvpValue = GetResourceKvpInt('bananabread')
 ---if kvpValue ~= 0 then
 ---	-- do something!
 ---end
@@ -1581,7 +1581,7 @@ function GetResourceKvpInt(key) end
 ---
 ---Example code:
 ---```lua
----local kvpValue = GetResourceKvpString('codfish') 
+---local kvpValue = GetResourceKvpString('codfish')
 ---if kvpValue then
 ---	-- do something!
 ---end
@@ -2778,7 +2778,7 @@ function RegisterArchetypes(factory) end
 ---RegisterCommand("ping", function(source, args, rawCommand)
 ---    -- If the source is > 0, then that means it must be a player.
 ---    if (source > 0) then
----    
+---
 ---        -- result (using the default GTA:O chat theme) https://i.imgur.com/TaCnG09.png
 ---        TriggerClientEvent("chat:addMessage", -1, {
 ---            args = {
@@ -2787,7 +2787,7 @@ function RegisterArchetypes(factory) end
 ---            },
 ---            color = { 5, 255, 255 }
 ---        })
----    
+---
 ---    -- If it's not a player, then it must be RCON, a resource, or the server console directly.
 ---    else
 ---        print("This command was executed by the server console, RCON client, or a resource.")
@@ -3180,7 +3180,17 @@ function SetAudioSubmixEffectRadioFx(submixId, effectSlot) end
 ---@param rearRightVolume number The volume for the rear right channel.
 ---@param channel5Volume number The volume for channel 5.
 ---@param channel6Volume number The volume for channel 6.
-function SetAudioSubmixOutputVolumes(submixId, outputSlot, frontLeftVolume, frontRightVolume, rearLeftVolume, rearRightVolume, channel5Volume, channel6Volume) end
+function SetAudioSubmixOutputVolumes(
+	submixId,
+	outputSlot,
+	frontLeftVolume,
+	frontRightVolume,
+	rearLeftVolume,
+	rearRightVolume,
+	channel5Volume,
+	channel6Volume
+)
+end
 
 ---**`CFX` `client` [`0x8A7A8DAC`](https://docs.fivem.net/natives/?_0x8A7A8DAC)**
 ---
@@ -3406,7 +3416,7 @@ function SetIgnoreVehicleOwnershipForStowing(ignore) end
 ---      SetInteriorPortalCornerPosition(interiorId, portalIndex, cornerIndex, 0.0, 0.0, 0.0)
 ---    end
 ---  end
----  
+---
 ---  RefreshInterior(interiorId)
 ---end
 ---```
@@ -4246,9 +4256,9 @@ function ShutdownLoadingScreenNui() end
 ---```lua
 ---local kvpHandle = StartFindExternalKvp('drugs', 'mollis:')
 ---
----if kvpHandle ~= -1 then 
+---if kvpHandle ~= -1 then
 ---	local key
----	
+---
 ---	repeat
 ---		key = FindKvp(kvpHandle)
 ---
@@ -4276,9 +4286,9 @@ function StartFindExternalKvp(resourceName, prefix) end
 ---
 ---local kvpHandle = StartFindKvp('mollis:')
 ---
----if kvpHandle ~= -1 then 
+---if kvpHandle ~= -1 then
 ---	local key
----	
+---
 ---	repeat
 ---		key = FindKvp(kvpHandle)
 ---

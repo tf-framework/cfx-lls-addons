@@ -373,17 +373,17 @@ function N_0x4348bfda56023a2f(p0, p1) end
 ---**`NETWORK` `client` [`0x444C4525ECE0A4B9`](https://docs.fivem.net/natives/?_0x444C4525ECE0A4B9)**
 ---
 ---```
----related to: 
----NETWORK_BAIL  
----NETWORK_BAIL_TRANSITION  
----NETWORK_JOIN_GROUP_ACTIVITY  
----NETWORK_JOIN_TRANSITION  
----NETWORK_LAUNCH_TRANSITION  
----NETWORK_SESSION_HOST  
----NETWORK_SESSION_HOST_CLOSED  
----NETWORK_SESSION_HOST_FRIENDS_ONLY  
----NETWORK_SESSION_HOST_SINGLE_PLAYER  
----NETWORK_SESSION_VOICE_LEAVE  
+---related to:
+---NETWORK_BAIL
+---NETWORK_BAIL_TRANSITION
+---NETWORK_JOIN_GROUP_ACTIVITY
+---NETWORK_JOIN_TRANSITION
+---NETWORK_LAUNCH_TRANSITION
+---NETWORK_SESSION_HOST
+---NETWORK_SESSION_HOST_CLOSED
+---NETWORK_SESSION_HOST_FRIENDS_ONLY
+---NETWORK_SESSION_HOST_SINGLE_PLAYER
+---NETWORK_SESSION_VOICE_LEAVE
 ---```
 ---
 function N_0x444c4525ece0a4b9() end
@@ -953,8 +953,8 @@ function N_0xaa5fafcd2c5f5e47() end
 ---**`NETWORK` `client` [`0xADB57E5B663CCA8B`](https://docs.fivem.net/natives/?_0xADB57E5B663CCA8B)**
 ---
 ---```
----gets 2 floats from the CNetGamePlayer of p0 and stores them in p1 and p2.  
----Possibly waypoint?  
+---gets 2 floats from the CNetGamePlayer of p0 and stores them in p1 and p2.
+---Possibly waypoint?
 ---```
 ---
 ---@param p0 Player
@@ -1235,7 +1235,7 @@ function N_0xfae628f1e9adb239(p0, p1, p2) end
 ---**`NETWORK` `client` [`0xFB1F9381E80FA13F`](https://docs.fivem.net/natives/?_0xFB1F9381E80FA13F)**
 ---
 ---```
----p0 is always 0. p1 is pointing to a global.  
+---p0 is always 0. p1 is pointing to a global.
 ---```
 ---
 ---@param p0 number
@@ -1334,15 +1334,15 @@ function CloudIsCheckingAvailability() end
 ---**`NETWORK` `client` [`0xAC97AF97FA68E5D5`](https://docs.fivem.net/natives/?_0xAC97AF97FA68E5D5)**
 ---
 ---```
----Takes the specified time and writes it to the structure specified in the second argument.  
----struct date_time  
----{ 
----    alignas(8) int year;  
----    alignas(8) int month;  
----    alignas(8) int day;  
----    alignas(8) int hour;  
----    alignas(8) int minute;  
----    alignas(8) int second;  
+---Takes the specified time and writes it to the structure specified in the second argument.
+---struct date_time
+---{
+---    alignas(8) int year;
+---    alignas(8) int month;
+---    alignas(8) int day;
+---    alignas(8) int hour;
+---    alignas(8) int minute;
+---    alignas(8) int second;
 ---};
 ---```
 ---
@@ -1353,7 +1353,7 @@ function ConvertPosixTime(posixTime, timeStructure) end
 ---**`NETWORK` `client` [`0x416DBD4CD6ED8DD2`](https://docs.fivem.net/natives/?_0x416DBD4CD6ED8DD2)**
 ---
 ---```
----Hardcoded to not work in SP.  
+---Hardcoded to not work in SP.
 ---```
 ---
 ---@param p0 boolean
@@ -1490,7 +1490,7 @@ function GetNumCreatedMissionVehicles(p0) end
 ---**`NETWORK` `client` [`0xAA81B5F10BC43AC2`](https://docs.fivem.net/natives/?_0xAA81B5F10BC43AC2)**
 ---
 ---```
----p0 appears to be for MP  
+---p0 appears to be for MP
 ---```
 ---
 ---```
@@ -1504,7 +1504,7 @@ function GetNumReservedMissionObjects(p0) end
 ---**`NETWORK` `client` [`0x1F13D5AE5CB17E17`](https://docs.fivem.net/natives/?_0x1F13D5AE5CB17E17)**
 ---
 ---```
----p0 appears to be for MP  
+---p0 appears to be for MP
 ---```
 ---
 ---```
@@ -1518,7 +1518,7 @@ function GetNumReservedMissionPeds(p0) end
 ---**`NETWORK` `client` [`0xCF3A965906452031`](https://docs.fivem.net/natives/?_0xCF3A965906452031)**
 ---
 ---```
----p0 appears to be for MP  
+---p0 appears to be for MP
 ---```
 ---
 ---```
@@ -1550,7 +1550,7 @@ function GetTimeAsString(time) end
 ---**`NETWORK` `client` [`0xA2C6FC031D46FFF0`](https://docs.fivem.net/natives/?_0xA2C6FC031D46FFF0)**
 ---
 ---```
----Subtracts the second argument from the first.  
+---Subtracts the second argument from the first.
 ---```
 ---
 ---@param timeA number
@@ -1561,7 +1561,7 @@ function GetTimeDifference(timeA, timeB) end
 ---**`NETWORK` `client` [`0x017008CCDAD48503`](https://docs.fivem.net/natives/?_0x017008CCDAD48503)**
 ---
 ---```
----Adds the first argument to the second.  
+---Adds the first argument to the second.
 ---```
 ---
 ---@param timeA number
@@ -1629,7 +1629,7 @@ function IsStoreAvailableToUser() end
 ---**`NETWORK` `client` [`0xF5BC95857BD6D512`](https://docs.fivem.net/natives/?_0xF5BC95857BD6D512)**
 ---
 ---```
----Returns true if the two times are equal; otherwise returns false.  
+---Returns true if the two times are equal; otherwise returns false.
 ---```
 ---
 ---@param timeA number
@@ -1640,7 +1640,7 @@ function IsTimeEqualTo(timeA, timeB) end
 ---**`NETWORK` `client` [`0xCB2CF5148012C8D0`](https://docs.fivem.net/natives/?_0xCB2CF5148012C8D0)**
 ---
 ---```
----Subtracts the second argument from the first, then returns whether the result is negative.  
+---Subtracts the second argument from the first, then returns whether the result is negative.
 ---```
 ---
 ---@param timeA number
@@ -1651,7 +1651,7 @@ function IsTimeLessThan(timeA, timeB) end
 ---**`NETWORK` `client` [`0xDE350F8651E4346C`](https://docs.fivem.net/natives/?_0xDE350F8651E4346C)**
 ---
 ---```
----Subtracts the first argument from the second, then returns whether the result is negative.  
+---Subtracts the first argument from the second, then returns whether the result is negative.
 ---```
 ---
 ---@param timeA number
@@ -1768,7 +1768,7 @@ function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animNam
 ---**`NETWORK` `client` [`0x236406F60CF216D6`](https://docs.fivem.net/natives/?_0x236406F60CF216D6)**
 ---
 ---```
----..  
+---..
 ---```
 ---
 ---@param p0 number
@@ -1794,7 +1794,19 @@ function NetworkAddFriend(networkHandle, message) end
 ---@param flag number
 ---@param playbackRate number
 ---@param p9 any
-function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animnName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, p9) end
+function NetworkAddPedToSynchronisedScene(
+	ped,
+	netScene,
+	animDict,
+	animnName,
+	blendInSpeed,
+	blendOutSpeed,
+	duration,
+	flag,
+	playbackRate,
+	p9
+)
+end
 
 ---**`NETWORK` `client` [`0xCF8BD3B0BD6D42D7`](https://docs.fivem.net/natives/?_0xCF8BD3B0BD6D42D7)**
 ---
@@ -1926,9 +1938,9 @@ function NetworkCancelRespawnSearch() end
 ---**`NETWORK` `client` [`0xAF50DA1A3F8B1BA4`](https://docs.fivem.net/natives/?_0xAF50DA1A3F8B1BA4)**
 ---
 ---```
----11 - Need to download tunables.  
----12 - Need to download background script.  
----Returns 1 if the multiplayer is loaded, otherwhise 0.  
+---11 - Need to download tunables.
+---12 - Need to download background script.
+---Returns 1 if the multiplayer is loaded, otherwhise 0.
 ---```
 ---
 ---@param loadingState number
@@ -2077,7 +2089,7 @@ function NetworkClanIsEmblemReady(p0, p1) end
 ---**`NETWORK` `client` [`0x7543BB439F63792B`](https://docs.fivem.net/natives/?_0x7543BB439F63792B)**
 ---
 ---```
----bufferSize is 35 in the scripts.  
+---bufferSize is 35 in the scripts.
 ---```
 ---
 ---@param clanDesc number
@@ -2094,10 +2106,10 @@ function NetworkClanJoin(clanDesc) end
 ---**`NETWORK` `client` [`0xEEE6EACBE8874FBA`](https://docs.fivem.net/natives/?_0xEEE6EACBE8874FBA)**
 ---
 ---```
----bufferSize is 35 in the scripts.  
----bufferSize is the elementCount of p0(desc), sizeof(p0) == 280 == p1*8 == 35 * 8, p2(netHandle) is obtained from NETWORK::NETWORK_HANDLE_FROM_PLAYER.  And no, I can't explain why 35 * sizeof(int) == 280 and not 140, but I'll get back to you on that.  
----the answer is: because p0 an int64_t* / int64_t[35].  and FYI p2 is an int64_t[13]  
----pastebin.com/cSZniHak  
+---bufferSize is 35 in the scripts.
+---bufferSize is the elementCount of p0(desc), sizeof(p0) == 280 == p1*8 == 35 * 8, p2(netHandle) is obtained from NETWORK::NETWORK_HANDLE_FROM_PLAYER.  And no, I can't explain why 35 * sizeof(int) == 280 and not 140, but I'll get back to you on that.
+---the answer is: because p0 an int64_t* / int64_t[35].  and FYI p2 is an int64_t[13]
+---pastebin.com/cSZniHak
 ---```
 ---
 ---@param clanDesc number
@@ -2203,7 +2215,21 @@ function NetworkConcealPlayer(player, toggle, p2) end
 ---@param animTime number
 ---@param animSpeed number
 ---@return number # netScene id
-function NetworkCreateSynchronisedScene(x, y, z, xRot, yRot, zRot, rotationOrder, holdLastFrame, looped, p9, animTime, animSpeed) end
+function NetworkCreateSynchronisedScene(
+	x,
+	y,
+	z,
+	xRot,
+	yRot,
+	zRot,
+	rotationOrder,
+	holdLastFrame,
+	looped,
+	p9,
+	animTime,
+	animSpeed
+)
+end
 
 ---**`NETWORK` `client` [`0xF9B83B77929D8863`](https://docs.fivem.net/natives/?_0xF9B83B77929D8863)**
 ---
@@ -2304,8 +2330,8 @@ function NetworkDoTransitionQuickmatchWithGroup(p0, p1, p2, p3, p4, p5) end
 ---**`NETWORK` `client` [`0x3AAD8B2FCA1E289F`](https://docs.fivem.net/natives/?_0x3AAD8B2FCA1E289F)**
 ---
 ---```
----p2 is true 3/4 of the occurrences I found.  
----'players' is the number of players for a session. On PS3/360 it's always 18. On PC it's 32.  
+---p2 is true 3/4 of the occurrences I found.
+---'players' is the number of players for a session. On PS3/360 it's always 18. On PC it's 32.
 ---```
 ---
 ---@param p0 any
@@ -2369,19 +2395,19 @@ function NetworkExplodeHeli(heli, isAudible, isInvisible, netScriptEntityId) end
 ---**`NETWORK` `client` [`0x301A42153C9AD707`](https://docs.fivem.net/natives/?_0x301A42153C9AD707)**
 ---
 ---```
----In the console script dumps, this is only referenced once.   
----NETWORK::NETWORK_EXPLODE_VEHICLE(vehicle, 1, 0, 0);  
----^^^^^ That must be PC script dumps? In X360 Script Dumps it is reference a few times with 2 differences in the parameters.  
----Which as you see below is 1, 0, 0 + 1, 1, 0 + 1, 0, and a *param?  
----am_plane_takedown.c   
----network_explode_vehicle(net_to_veh(Local_40.imm_2), 1, 1, 0);  
----armenian2.c   
----network_explode_vehicle(Local_80[6 <2>], 1, 0, 0);  
----fm_horde_controler.c  
----network_explode_vehicle(net_to_veh(*uParam0), 1, 0, *uParam0);  
----fm_mission_controller.c, has 6 hits so not going to list them.  
----Side note, setting the first parameter to 0 seems to mute sound or so?  
----Seems it's like ADD_EXPLOSION, etc. the first 2 params. The 3rd atm no need to worry since it always seems to be 0.  
+---In the console script dumps, this is only referenced once.
+---NETWORK::NETWORK_EXPLODE_VEHICLE(vehicle, 1, 0, 0);
+---^^^^^ That must be PC script dumps? In X360 Script Dumps it is reference a few times with 2 differences in the parameters.
+---Which as you see below is 1, 0, 0 + 1, 1, 0 + 1, 0, and a *param?
+---am_plane_takedown.c
+---network_explode_vehicle(net_to_veh(Local_40.imm_2), 1, 1, 0);
+---armenian2.c
+---network_explode_vehicle(Local_80[6 <2>], 1, 0, 0);
+---fm_horde_controler.c
+---network_explode_vehicle(net_to_veh(*uParam0), 1, 0, *uParam0);
+---fm_mission_controller.c, has 6 hits so not going to list them.
+---Side note, setting the first parameter to 0 seems to mute sound or so?
+---Seems it's like ADD_EXPLOSION, etc. the first 2 params. The 3rd atm no need to worry since it always seems to be 0.
 ---```
 ---
 ---@param vehicle Vehicle
@@ -2393,9 +2419,9 @@ function NetworkExplodeVehicle(vehicle, isAudible, isInvisible, p3) end
 ---**`NETWORK` `client` [`0x1F4ED342ACEFE62D`](https://docs.fivem.net/natives/?_0x1F4ED342ACEFE62D)**
 ---
 ---```
----state - 0 does 5 fades  
----state - 1 does 6 fades  
----native is missing third argument, also boolean, setting to 1 made vehicle fade in slower, probably "slow" as per NETWORK_FADE_OUT_ENTITY  
+---state - 0 does 5 fades
+---state - 1 does 6 fades
+---native is missing third argument, also boolean, setting to 1 made vehicle fade in slower, probably "slow" as per NETWORK_FADE_OUT_ENTITY
 ---```
 ---
 ---```
@@ -2409,8 +2435,8 @@ function NetworkFadeInEntity(entity, state) end
 ---**`NETWORK` `client` [`0xDE564951F95E09ED`](https://docs.fivem.net/natives/?_0xDE564951F95E09ED)**
 ---
 ---```
----normal - transition like when your coming out of LSC  
----slow - transition like when you walk into a mission  
+---normal - transition like when your coming out of LSC
+---slow - transition like when you walk into a mission
 ---```
 ---
 ---@param entity Entity
@@ -2487,10 +2513,10 @@ function NetworkGetBackgroundLoadingRecipients(p0, p1, p2, p3) end
 ---**`NETWORK` `client` [`0x187382F8A3E0A6C3`](https://docs.fivem.net/natives/?_0x187382F8A3E0A6C3)**
 ---
 ---```
----Return the content modifier id (the tunables context if you want) of a specific content.  
----It takes the content hash (which is the mission id hash), and return the content modifier id, used as the tunables context.  
----The mission id can be found on the Social club, for example, 'socialclub.rockstargames.com/games/gtav/jobs/job/A8M6Bz8MLEC5xngvDCzGwA'  
----'A8M6Bz8MLEC5xngvDCzGwA' is the mission id, so the game hash this and use it as the parameter for this native.  
+---Return the content modifier id (the tunables context if you want) of a specific content.
+---It takes the content hash (which is the mission id hash), and return the content modifier id, used as the tunables context.
+---The mission id can be found on the Social club, for example, 'socialclub.rockstargames.com/games/gtav/jobs/job/A8M6Bz8MLEC5xngvDCzGwA'
+---'A8M6Bz8MLEC5xngvDCzGwA' is the mission id, so the game hash this and use it as the parameter for this native.
 ---```
 ---
 ---@param contentHash Hash
@@ -2590,11 +2616,11 @@ function NetworkGetGlobalMultiplayerClock(hours, minutes, seconds) end
 ---**`NETWORK` `client` [`0x1D6A14F1F9A736FC`](https://docs.fivem.net/natives/?_0x1D6A14F1F9A736FC)**
 ---
 ---```
----scriptName examples:  
----"freemode", "AM_CR_SecurityVan", ...  
----Most of the time, these values are used:  
----p1 = -1  
----p2 = 0  
+---scriptName examples:
+---"freemode", "AM_CR_SecurityVan", ...
+---Most of the time, these values are used:
+---p1 = -1
+---p2 = 0
 ---```
 ---
 ---@param scriptName string
@@ -2616,8 +2642,8 @@ function NetworkGetInstanceIdOfThisScript() end
 ---**`NETWORK` `client` [`0xE86051786B66CD8E`](https://docs.fivem.net/natives/?_0xE86051786B66CD8E)**
 ---
 ---```
----Retrieves the local player's NetworkHandle* and stores it in the given buffer.  
----* Currently unknown struct  
+---Retrieves the local player's NetworkHandle* and stores it in the given buffer.
+---* Currently unknown struct
 ---```
 ---
 ---@param networkHandle number
@@ -2672,7 +2698,7 @@ function NetworkGetNetworkIdFromEntity(entity) end
 ---**`NETWORK` `client` [`0xA4A79DD2D9600654`](https://docs.fivem.net/natives/?_0xA4A79DD2D9600654)**
 ---
 ---```
----Returns the amount of players connected in the current session. Only works when connected to a session/server.  
+---Returns the amount of players connected in the current session. Only works when connected to a session/server.
 ---```
 ---
 ---@return number
@@ -2729,7 +2755,7 @@ function NetworkGetPlayerIndex(player) end
 ---**`NETWORK` `client` [`0x6C0E2E0125610278`](https://docs.fivem.net/natives/?_0x6C0E2E0125610278)**
 ---
 ---```
----Returns the Player associated to a given Ped when in an online session.  
+---Returns the Player associated to a given Ped when in an online session.
 ---```
 ---
 ---@param ped Ped
@@ -2865,7 +2891,7 @@ function NetworkGetRandomIntRanged(rangeStart, rangeEnd) end
 ---**`NETWORK` `client` [`0x371EA43692861CF1`](https://docs.fivem.net/natives/?_0x371EA43692861CF1)**
 ---
 ---```
----Based on scripts such as in freemode.c how they call their vars vVar and fVar the 2nd and 3rd param it a Vector3 and Float, but the first is based on get_random_int_in_range..  
+---Based on scripts such as in freemode.c how they call their vars vVar and fVar the 2nd and 3rd param it a Vector3 and Float, but the first is based on get_random_int_in_range..
 ---```
 ---
 ---@param randomInt number
@@ -2940,8 +2966,8 @@ function NetworkHandleFromFriend(friendIndex, networkHandle, bufferSize) end
 ---**`NETWORK` `client` [`0xA0FD21BED61E5C4C`](https://docs.fivem.net/natives/?_0xA0FD21BED61E5C4C)**
 ---
 ---```
----Returns a NetworkHandle* from the specified member ID and stores it in a given buffer.  
----* Currently unknown struct  
+---Returns a NetworkHandle* from the specified member ID and stores it in a given buffer.
+---* Currently unknown struct
 ---```
 ---
 ---@param memberId string
@@ -2952,19 +2978,19 @@ function NetworkHandleFromMemberId(memberId, networkHandle, bufferSize) end
 ---**`NETWORK` `client` [`0x388EB2B86C73B6B3`](https://docs.fivem.net/natives/?_0x388EB2B86C73B6B3)**
 ---
 ---```
----Returns a handle to networkHandle* from the specified player handle and stores it in a given buffer.  
----* Currently unknown struct  
----Example:  
----std::vector<UINT64> GetPlayerNetworkHandle(Player player) {  
----    const int size = 13;  
----    uint64_t *buffer = std::make_unique<uint64_t[]>(size).get();  
----    NETWORK::NETWORK_HANDLE_FROM_PLAYER(player, reinterpret_cast<int *>(buffer), 13);  
----    for (int i = 0; i < size; i++) {  
----        Log::Msg("networkhandle[%i]: %llx", i, buffer[i]);  
----    }  
----    std::vector<UINT64> result(buffer, buffer + sizeof(buffer));  
----    return result;  
----}  
+---Returns a handle to networkHandle* from the specified player handle and stores it in a given buffer.
+---* Currently unknown struct
+---Example:
+---std::vector<UINT64> GetPlayerNetworkHandle(Player player) {
+---    const int size = 13;
+---    uint64_t *buffer = std::make_unique<uint64_t[]>(size).get();
+---    NETWORK::NETWORK_HANDLE_FROM_PLAYER(player, reinterpret_cast<int *>(buffer), 13);
+---    for (int i = 0; i < size; i++) {
+---        Log::Msg("networkhandle[%i]: %llx", i, buffer[i]);
+---    }
+---    std::vector<UINT64> result(buffer, buffer + sizeof(buffer));
+---    return result;
+---}
 ---```
 ---
 ---@param player Player
@@ -2975,8 +3001,8 @@ function NetworkHandleFromPlayer(player, networkHandle, bufferSize) end
 ---**`NETWORK` `client` [`0xDCD51DD8F87AEC5C`](https://docs.fivem.net/natives/?_0xDCD51DD8F87AEC5C)**
 ---
 ---```
----Returns a NetworkHandle* from the specified user ID and stores it in a given buffer.  
----* Currently unknown struct  
+---Returns a NetworkHandle* from the specified user ID and stores it in a given buffer.
+---* Currently unknown struct
 ---```
 ---
 ---@param userId string
@@ -3228,9 +3254,9 @@ function NetworkIsCableConnected() end
 ---**`NETWORK` `client` [`0x8DE9945BCC9AEC52`](https://docs.fivem.net/natives/?_0x8DE9945BCC9AEC52)**
 ---
 ---```
----This would be nice to see if someone is in party chat, but 2 sad notes.  
----1) It only becomes true if said person is speaking in that party at the time.  
----2) It will never, become true unless you are in that party with said person.  
+---This would be nice to see if someone is in party chat, but 2 sad notes.
+---1) It only becomes true if said person is speaking in that party at the time.
+---2) It will never, become true unless you are in that party with said person.
 ---```
 ---
 ---@param networkHandle number
@@ -3290,7 +3316,7 @@ function NetworkIsFriendInMultiplayer(friendName) end
 ---**`NETWORK` `client` [`0x2EA9A3BEDF3F17B8`](https://docs.fivem.net/natives/?_0x2EA9A3BEDF3F17B8)**
 ---
 ---```
----In scripts R* calls 'NETWORK_GET_FRIEND_NAME' in this param.  
+---In scripts R* calls 'NETWORK_GET_FRIEND_NAME' in this param.
 ---```
 ---
 ---@param friendName string
@@ -3375,12 +3401,12 @@ function NetworkIsInMpCutscene() end
 ---**`NETWORK` `client` [`0x966C2BC2A7FE3F30`](https://docs.fivem.net/natives/?_0x966C2BC2A7FE3F30)**
 ---
 ---```
----Note according to IDA TU27 X360(Console),  
----This native & 'NETWORK_IS_PARTY_MEMBER' both jump to the same location.  
----Side note: This location just stops where it's at once jumped to.  
----Screenshot for side note,   
----h t t p ://i.imgur.com/m2ci1mF.png  
----h t t p://i.imgur.com/Z0Wx2B6.png  
+---Note according to IDA TU27 X360(Console),
+---This native & 'NETWORK_IS_PARTY_MEMBER' both jump to the same location.
+---Side note: This location just stops where it's at once jumped to.
+---Screenshot for side note,
+---h t t p ://i.imgur.com/m2ci1mF.png
+---h t t p://i.imgur.com/Z0Wx2B6.png
 ---```
 ---
 ---@return boolean
@@ -3453,12 +3479,12 @@ function NetworkIsParticipantActive(p0) end
 ---**`NETWORK` `client` [`0x676ED266AADD31E0`](https://docs.fivem.net/natives/?_0x676ED266AADD31E0)**
 ---
 ---```
----Note according to IDA TU27 X360(Console),  
----This native & 'NETWORK_IS_PARTY_MEMBER' both jump to the same location.  
----Side note: This location just stops where it's at once jumped to.  
----Screenshot for side note,   
----h t t p ://i.imgur.com/m2ci1mF.png  
----h t t p://i.imgur.com/Z0Wx2B6.png  
+---Note according to IDA TU27 X360(Console),
+---This native & 'NETWORK_IS_PARTY_MEMBER' both jump to the same location.
+---Side note: This location just stops where it's at once jumped to.
+---Screenshot for side note,
+---h t t p ://i.imgur.com/m2ci1mF.png
+---h t t p://i.imgur.com/Z0Wx2B6.png
 ---```
 ---
 ---@param networkHandle number
@@ -3534,7 +3560,7 @@ function NetworkIsPlayerMutedByMe(player) end
 ---**`NETWORK` `client` [`0x031E11F3D447647E`](https://docs.fivem.net/natives/?_0x031E11F3D447647E)**
 ---
 ---```
----returns true if someone is screaming or talking in a microphone  
+---returns true if someone is screaming or talking in a microphone
 ---```
 ---
 ---@param player Player
@@ -3563,8 +3589,8 @@ function NetworkIsSessionBusy() end
 ---**`NETWORK` `client` [`0x9DE624D2FC4B603F`](https://docs.fivem.net/natives/?_0x9DE624D2FC4B603F)**
 ---
 ---```
----This checks if player is playing on gta online or not.  
----Please add an if and block your mod if this is "true".  
+---This checks if player is playing on gta online or not.
+---Please add an if and block your mod if this is "true".
 ---```
 ---
 ---@return boolean
@@ -3573,7 +3599,7 @@ function NetworkIsSessionStarted() end
 ---**`NETWORK` `client` [`0x054354A99211EB96`](https://docs.fivem.net/natives/?_0x054354A99211EB96)**
 ---
 ---```
----Returns whether the player is signed into Social Club.  
+---Returns whether the player is signed into Social Club.
 ---```
 ---
 ---@return boolean
@@ -3582,8 +3608,8 @@ function NetworkIsSignedIn() end
 ---**`NETWORK` `client` [`0x1077788E268557C2`](https://docs.fivem.net/natives/?_0x1077788E268557C2)**
 ---
 ---```
----Returns whether the game is not in offline mode.  
----seemed not to work for some ppl  
+---Returns whether the game is not in offline mode.
+---seemed not to work for some ppl
 ---```
 ---
 ---@return boolean
@@ -3678,11 +3704,11 @@ function NetworkJoinPreviouslyFailedTransition() end
 ---**`NETWORK` `client` [`0x9D060B08CD63321A`](https://docs.fivem.net/natives/?_0x9D060B08CD63321A)**
 ---
 ---```
----int handle[76];  
----NETWORK_HANDLE_FROM_FRIEND(iSelectedPlayer, &handle[0], 13);  
----Player uVar2 = NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(&handle[0]);  
----NETWORK_JOIN_TRANSITION(uVar2);  
----		nothing doin.  
+---int handle[76];
+---NETWORK_HANDLE_FROM_FRIEND(iSelectedPlayer, &handle[0], 13);
+---Player uVar2 = NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(&handle[0]);
+---NETWORK_JOIN_TRANSITION(uVar2);
+---		nothing doin.
 ---```
 ---
 ---@param player Player
@@ -3718,7 +3744,7 @@ function NetworkOpenTransitionMatchmaking() end
 ---**`NETWORK` `client` [`0x3039AE5AD2C9C0C4`](https://docs.fivem.net/natives/?_0x3039AE5AD2C9C0C4)**
 ---
 ---```
----Could possibly bypass being muted or automatically muted  
+---Could possibly bypass being muted or automatically muted
 ---```
 ---
 ---@param player Player
@@ -3747,8 +3773,8 @@ function NetworkOverrideCoordsAndHeading(entity, x, y, z, heading) end
 ---**`NETWORK` `client` [`0xDDF73E2B1FEC5AB4`](https://docs.fivem.net/natives/?_0xDDF73E2B1FEC5AB4)**
 ---
 ---```
----R* uses this to hear all player when spectating.   
----It allows you to hear other online players when their chat is on none, crew and or friends  
+---R* uses this to hear all player when spectating.
+---It allows you to hear other online players when their chat is on none, crew and or friends
 ---```
 ---
 ---@param player Player
@@ -3842,11 +3868,11 @@ function NetworkPlayerIsCheater() end
 ---**`NETWORK` `client` [`0x544ABDDA3B409B6D`](https://docs.fivem.net/natives/?_0x544ABDDA3B409B6D)**
 ---
 ---```
----Checks if a specific value (BYTE) in CPlayerInfo is nonzero.  
----Returns always false in Singleplayer.  
----No longer used for dev checks since first mods were released on PS3 & 360.  
----R* now checks with the is_dlc_present native for the dlc hash 2532323046,  
----if that is present it will unlock dev stuff.  
+---Checks if a specific value (BYTE) in CPlayerInfo is nonzero.
+---Returns always false in Singleplayer.
+---No longer used for dev checks since first mods were released on PS3 & 360.
+---R* now checks with the is_dlc_present native for the dlc hash 2532323046,
+---if that is present it will unlock dev stuff.
 ---```
 ---
 ---@param player Player
@@ -3976,8 +4002,8 @@ function NetworkSendTextMessage(message, networkHandle) end
 ---**`NETWORK` `client` [`0x31D1D2B858D25E6B`](https://docs.fivem.net/natives/?_0x31D1D2B858D25E6B)**
 ---
 ---```
----the first arg seems to be the network player handle (&handle) and the second var is pretty much always "" and the third seems to be a number between 0 and ~10 and the 4th is is something like 0 to 5 and I guess the 5th is a bool cuz it is always 0 or 1  
----does this send an invite to a player?  
+---the first arg seems to be the network player handle (&handle) and the second var is pretty much always "" and the third seems to be a number between 0 and ~10 and the 4th is is something like 0 to 5 and I guess the 5th is a bool cuz it is always 0 or 1
+---does this send an invite to a player?
 ---```
 ---
 ---@param networkHandle number
@@ -4030,10 +4056,10 @@ function NetworkSessionCrewMatchmaking(p0, p1, p2, maxPlayers, p4) end
 ---**`NETWORK` `client` [`0xA02E59562D711006`](https://docs.fivem.net/natives/?_0xA02E59562D711006)**
 ---
 ---```
----p0 is always false and p1 varies.  
----NETWORK_SESSION_END(0, 1)  
----NETWORK_SESSION_END(0, 0)  
----Results in: "Connection to session lost due to an unknown network error. Please return to Grand Theft Auto V and try again later."  
+---p0 is always false and p1 varies.
+---NETWORK_SESSION_END(0, 1)
+---NETWORK_SESSION_END(0, 0)
+---Results in: "Connection to session lost due to an unknown network error. Please return to Grand Theft Auto V and try again later."
 ---```
 ---
 ---@param p0 boolean
@@ -4044,15 +4070,15 @@ function NetworkSessionEnd(p0, p1) end
 ---**`NETWORK` `client` [`0x330ED4D05491934F`](https://docs.fivem.net/natives/?_0x330ED4D05491934F)**
 ---
 ---```
----unknown params  
----p0 = 0, 2, or 999 (The global is 999 by default.)  
----p1 = 0 (Always in every script it's found in atleast.)  
----p2 = 0, 3, or 4 (Based on a var that is determined by a function.)  
----p3 = maxPlayers (It's obvious in x360 scripts it's always 18)  
----p4 = 0 (Always in every script it's found in atleast.)  
----p5 = 0 or 1. (1 if network_can_enter_multiplayer, but set to 0 if other checks after that are passed.)  
----p5 is reset to 0 if,  
----Global_1315318 = 0 or Global_1315323 = 9 or 12 or (Global_1312629 = 0 && Global_1312631 = true/1) those are passed.  
+---unknown params
+---p0 = 0, 2, or 999 (The global is 999 by default.)
+---p1 = 0 (Always in every script it's found in atleast.)
+---p2 = 0, 3, or 4 (Based on a var that is determined by a function.)
+---p3 = maxPlayers (It's obvious in x360 scripts it's always 18)
+---p4 = 0 (Always in every script it's found in atleast.)
+---p5 = 0 or 1. (1 if network_can_enter_multiplayer, but set to 0 if other checks after that are passed.)
+---p5 is reset to 0 if,
+---Global_1315318 = 0 or Global_1315323 = 9 or 12 or (Global_1312629 = 0 && Global_1312631 = true/1) those are passed.
 ---```
 ---
 ---@param p0 any
@@ -4102,7 +4128,7 @@ function NetworkSessionGetPrivateSlots() end
 ---**`NETWORK` `client` [`0x6F3D4ED9BEE4E61D`](https://docs.fivem.net/natives/?_0x6F3D4ED9BEE4E61D)**
 ---
 ---```
----Does nothing in online but in offline it will cause the screen to fade to black. Nothing happens past then, the screen will sit at black until you restart GTA. Other stuff must be needed to actually host a session.  
+---Does nothing in online but in offline it will cause the screen to fade to black. Nothing happens past then, the screen will sit at black until you restart GTA. Other stuff must be needed to actually host a session.
 ---```
 ---
 ---@param p0 number
@@ -4121,7 +4147,7 @@ function NetworkSessionHostClosed(p0, maxPlayers) end
 ---**`NETWORK` `client` [`0xB9CFD27A5D578D83`](https://docs.fivem.net/natives/?_0xB9CFD27A5D578D83)**
 ---
 ---```
----Does nothing in online but in offline it will cause the screen to fade to black. Nothing happens past then, the screen will sit at black until you restart GTA. Other stuff must be needed to actually host a session.  
+---Does nothing in online but in offline it will cause the screen to fade to black. Nothing happens past then, the screen will sit at black until you restart GTA. Other stuff must be needed to actually host a session.
 ---```
 ---
 ---@param p0 number
@@ -4132,10 +4158,10 @@ function NetworkSessionHostFriendsOnly(p0, maxPlayers) end
 ---**`NETWORK` `client` [`0xC74C33FCA52856D5`](https://docs.fivem.net/natives/?_0xC74C33FCA52856D5)**
 ---
 ---```
----Loads up the map that is loaded when beeing in mission creator  
----Player gets placed in a mix between online/offline mode  
----p0 is always 2 in R* scripts.  
----Appears to be patched in gtav b757 (game gets terminated) alonside with most other network natives to prevent online modding ~ghost30812  
+---Loads up the map that is loaded when beeing in mission creator
+---Player gets placed in a mix between online/offline mode
+---p0 is always 2 in R* scripts.
+---Appears to be patched in gtav b757 (game gets terminated) alonside with most other network natives to prevent online modding ~ghost30812
 ---```
 ---
 ---@param p0 number
@@ -4391,8 +4417,8 @@ function NetworkSetPropertyId(id) end
 ---**`NETWORK` `client` [`0x1DCCACDCFC569362`](https://docs.fivem.net/natives/?_0x1DCCACDCFC569362)**
 ---
 ---```
----On PC it's a nullsub which means it does absolutely nothing.  
----Now that Discord supports Rich Presence, R* might finally implement this for PC. Or maybe in future games like RDR2, GTA VI...  
+---On PC it's a nullsub which means it does absolutely nothing.
+---Now that Discord supports Rich Presence, R* might finally implement this for PC. Or maybe in future games like RDR2, GTA VI...
 ---```
 ---
 ---@param p0 number
@@ -4460,10 +4486,10 @@ function NetworkSetVoiceChannel(channel) end
 ---**`NETWORK` `client` [`0x859ED1CEA343FCA8`](https://docs.fivem.net/natives/?_0x859ED1CEA343FCA8)**
 ---
 ---```
----Example:  
----int playerHandle;	  
----NETWORK_HANDLE_FROM_PLAYER(selectedPlayer, &playerHandle, 13);  
----NETWORK_SHOW_PROFILE_UI(&playerHandle);  
+---Example:
+---int playerHandle;
+---NETWORK_HANDLE_FROM_PLAYER(selectedPlayer, &playerHandle, 13);
+---NETWORK_SHOW_PROFILE_UI(&playerHandle);
 ---```
 ---
 ---@param networkHandle number
@@ -4472,8 +4498,8 @@ function NetworkShowProfileUi(networkHandle) end
 ---**`NETWORK` `client` [`0x5A6FFA2433E2F14C`](https://docs.fivem.net/natives/?_0x5A6FFA2433E2F14C)**
 ---
 ---```
----One of the first things it does is get the players ped.  
----Then it calls a function that is used in some tasks and ped based functions.  
+---One of the first things it does is get the players ped.
+---Then it calls a function that is used in some tasks and ped based functions.
 ---```
 ---
 ---p5, p6, p7 is another coordinate (or zero), often related to `GET_BLIP_COORDS`, in the decompiled scripts.
@@ -4563,7 +4589,7 @@ function NetworkUseLogarithmicBlendingThisFrame(entity) end
 ---**`NETWORK` `client` [`0xBFFEAB45A9A9094A`](https://docs.fivem.net/natives/?_0xBFFEAB45A9A9094A)**
 ---
 ---```
----gets the entity id of a network id  
+---gets the entity id of a network id
 ---```
 ---
 ---@param netHandle number
@@ -4573,7 +4599,7 @@ function NetToEnt(netHandle) end
 ---**`NETWORK` `client` [`0xD8515F5FEA14CB3F`](https://docs.fivem.net/natives/?_0xD8515F5FEA14CB3F)**
 ---
 ---```
----gets the object id of a network id  
+---gets the object id of a network id
 ---```
 ---
 ---@param netHandle number
@@ -4583,7 +4609,7 @@ function NetToObj(netHandle) end
 ---**`NETWORK` `client` [`0xBDCD95FC216A8B3E`](https://docs.fivem.net/natives/?_0xBDCD95FC216A8B3E)**
 ---
 ---```
----gets the ped id of a network id  
+---gets the ped id of a network id
 ---```
 ---
 ---@param netHandle number
@@ -4599,8 +4625,8 @@ function NetToVeh(netHandle) end
 ---**`NETWORK` `client` [`0x99BFDC94A603E541`](https://docs.fivem.net/natives/?_0x99BFDC94A603E541)**
 ---
 ---```
----Lets objects spawn online simply do it like this:  
----int createdObject = OBJ_TO_NET(CREATE_OBJECT_NO_OFFSET(oball, pCoords.x, pCoords.y, pCoords.z, 1, 0, 0));  
+---Lets objects spawn online simply do it like this:
+---int createdObject = OBJ_TO_NET(CREATE_OBJECT_NO_OFFSET(oball, pCoords.x, pCoords.y, pCoords.z, 1, 0, 0));
 ---```
 ---
 ---@param object Object
@@ -4610,7 +4636,7 @@ function ObjToNet(object) end
 ---**`NETWORK` `client` [`0x58C21165F6545892`](https://docs.fivem.net/natives/?_0x58C21165F6545892)**
 ---
 ---```
----Has a 3rd param (int) since patch [???].  
+---Has a 3rd param (int) since patch [???].
 ---```
 ---
 ---```
@@ -4624,7 +4650,7 @@ function OpenCommerceStore(p0, p1) end
 ---**`NETWORK` `client` [`0x90986E8876CE0A83`](https://docs.fivem.net/natives/?_0x90986E8876CE0A83)**
 ---
 ---```
----Return the local Participant ID  
+---Return the local Participant ID
 ---```
 ---
 ---@return Player
@@ -4633,8 +4659,8 @@ function ParticipantId() end
 ---**`NETWORK` `client` [`0x57A3BDDAD8E5AA0A`](https://docs.fivem.net/natives/?_0x57A3BDDAD8E5AA0A)**
 ---
 ---```
----Return the local Participant ID.  
----This native is exactly the same as 'PARTICIPANT_ID' native.  
+---Return the local Participant ID.
+---This native is exactly the same as 'PARTICIPANT_ID' native.
 ---```
 ---
 ---@return number
@@ -4643,7 +4669,7 @@ function ParticipantIdToInt() end
 ---**`NETWORK` `client` [`0x0EDEC3C276198689`](https://docs.fivem.net/natives/?_0x0EDEC3C276198689)**
 ---
 ---```
----gets the network id of a ped  
+---gets the network id of a ped
 ---```
 ---
 ---@param ped Ped
@@ -4663,7 +4689,7 @@ function ReleaseAllCommerceItemImages() end
 ---**`NETWORK` `client` [`0x715135F4B82AC90D`](https://docs.fivem.net/natives/?_0x715135F4B82AC90D)**
 ---
 ---```
----Used in am_mp_property_ext and am_mp_property_int  
+---Used in am_mp_property_ext and am_mp_property_int
 ---```
 ---
 ---```
@@ -4791,7 +4817,7 @@ function SetNetworkIdAlwaysExistsForPlayer(netId, player, toggle) end
 ---**`NETWORK` `client` [`0x299EEB23175895FC`](https://docs.fivem.net/natives/?_0x299EEB23175895FC)**
 ---
 ---```
----Whether or not another player is allowed to take control of the entity  
+---Whether or not another player is allowed to take control of the entity
 ---```
 ---
 ---@param netId number
@@ -4843,7 +4869,7 @@ function SetPlayerVisibleLocally(player, toggle) end
 ---**`NETWORK` `client` [`0x9641A9FF718E9C5E`](https://docs.fivem.net/natives/?_0x9641A9FF718E9C5E)**
 ---
 ---```
----Access to the store for shark cards etc...  
+---Access to the store for shark cards etc...
 ---```
 ---
 ---@param toggle boolean
@@ -4852,7 +4878,7 @@ function SetStoreEnabled(toggle) end
 ---**`NETWORK` `client` [`0x593850C16A36B692`](https://docs.fivem.net/natives/?_0x593850C16A36B692)**
 ---
 ---```
----Starts a new singleplayer game (at the prologue).  
+---Starts a new singleplayer game (at the prologue).
 ---```
 ---
 function ShutdownAndLaunchSinglePlayerGame() end
@@ -5276,7 +5302,7 @@ function UsePlayerColourInsteadOfTeamColour(toggle) end
 ---**`NETWORK` `client` [`0xB4C94523F023419C`](https://docs.fivem.net/natives/?_0xB4C94523F023419C)**
 ---
 ---```
----calls from vehicle to net.  
+---calls from vehicle to net.
 ---```
 ---
 ---@param vehicle Vehicle
@@ -5332,14 +5358,14 @@ function FacebookSetHeistComplete(heistName, cashEarned, xpEarned) end
 ---**`NETWORK` `client` [`0x0AE1F1653B554AB9`](https://docs.fivem.net/natives/?_0x0AE1F1653B554AB9)**
 ---
 ---```
----milestoneId:  
----0 = "percentcomplete"  
----1 = "storycomplete"  
----2 = "vehicles"  
----3 = "properties"  
----4 = "psych"  
----5 = "mapreveal"  
----6 = "prologue"  
+---milestoneId:
+---0 = "percentcomplete"
+---1 = "storycomplete"
+---2 = "vehicles"
+---3 = "properties"
+---4 = "psych"
+---5 = "mapreveal"
+---6 = "prologue"
 ---```
 ---
 ---@param milestoneId number
@@ -5461,7 +5487,7 @@ function NetworkCanViewGamerUserContent(networkHandle) end
 ---**`NETWORK` `client` [`0x729E3401F0430686`](https://docs.fivem.net/natives/?_0x729E3401F0430686)**
 ---
 ---```
----Only documented...  
+---Only documented...
 ---```
 ---
 ---@param animDict string
@@ -5706,7 +5732,7 @@ function NetworkIsNetworkIdAClone(netId) end
 ---**`NETWORK` `client` [`0x9DE986FC9A87C474`](https://docs.fivem.net/natives/?_0x9DE986FC9A87C474)**
 ---
 ---```
----NETWORK_ARE_*  
+---NETWORK_ARE_*
 ---```
 ---
 ---@param player Player
@@ -5735,7 +5761,7 @@ function NetworkIsScriptActiveByHash(scriptHash, p1, p2, p3) end
 ---**`NETWORK` `client` [`0x5FCF4D7069B09026`](https://docs.fivem.net/natives/?_0x5FCF4D7069B09026)**
 ---
 ---```
----Same as _IS_TEXT_CHAT_ACTIVE, except it does not check if the text chat HUD component is initialized, and therefore may crash.  
+---Same as _IS_TEXT_CHAT_ACTIVE, except it does not check if the text chat HUD component is initialized, and therefore may crash.
 ---```
 ---
 ---@return boolean
@@ -5798,7 +5824,7 @@ function NetworkReportMyself() end
 ---**`NETWORK` `client` [`0x9769F811D1785B03`](https://docs.fivem.net/natives/?_0x9769F811D1785B03)**
 ---
 ---```
----p4 and p5 are always 0 in scripts  
+---p4 and p5 are always 0 in scripts
 ---```
 ---
 ---@param player Player
@@ -5812,7 +5838,7 @@ function NetworkRespawnCoords(player, x, y, z, p4, p5) end
 ---**`NETWORK` `client` [`0xC116FF9B4D488291`](https://docs.fivem.net/natives/?_0xC116FF9B4D488291)**
 ---
 ---```
----String "NETWORK_SEND_PRESENCE_TRANSITION_INVITE" is contained in the function in ida so this one is correct.  
+---String "NETWORK_SEND_PRESENCE_TRANSITION_INVITE" is contained in the function in ida so this one is correct.
 ---```
 ---
 ---@param p0 any
@@ -5884,12 +5910,12 @@ function NetworkSetEntityGhostedWithOwner(entity, p1) end
 ---**`NETWORK` `client` [`0xF1CA12B18AEF5298`](https://docs.fivem.net/natives/?_0xF1CA12B18AEF5298)**
 ---
 ---```
----if set to true other network players can't see it  
----if set to false other network player can see it  
----=========================================  
----^^ I attempted this by grabbing an object with GET_ENTITY_PLAYER_IS_FREE_AIMING_AT and setting this naive no matter the toggle he could still see it.  
----pc or last gen?  
----^^ last-gen  
+---if set to true other network players can't see it
+---if set to false other network player can see it
+---=========================================
+---^^ I attempted this by grabbing an object with GET_ENTITY_PLAYER_IS_FREE_AIMING_AT and setting this naive no matter the toggle he could still see it.
+---pc or last gen?
+---^^ last-gen
 ---```
 ---
 ---@param entity Entity

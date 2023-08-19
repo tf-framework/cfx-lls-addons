@@ -442,8 +442,8 @@ function AudioIsScriptedMusicPlaying() end
 ---**`AUDIO` `client` [`0x1B9025BDA76822B6`](https://docs.fivem.net/natives/?_0x1B9025BDA76822B6)**
 ---
 ---```
----Plays the siren sound of a vehicle which is otherwise activated when fastly double-pressing the horn key.  
----Only works on vehicles with a police siren.  
+---Plays the siren sound of a vehicle which is otherwise activated when fastly double-pressing the horn key.
+---Only works on vehicles with a police siren.
 ---```
 ---
 ---@param vehicle Vehicle
@@ -457,7 +457,7 @@ function BlockDeathJingle(toggle) end
 ---**`AUDIO` `client` [`0x5B17A90291133DA5`](https://docs.fivem.net/natives/?_0x5B17A90291133DA5)**
 ---
 ---```
----All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
+---All music event names found in the b617d scripts: pastebin.com/GnYt0R3P
 ---```
 ---
 ---@param eventName string
@@ -578,8 +578,8 @@ function GetMusicPlaytime() end
 ---**`AUDIO` `client` [`0x2DE3F0A134FFBC0D`](https://docs.fivem.net/natives/?_0x2DE3F0A134FFBC0D)**
 ---
 ---```
----Could this be used alongside either,   
----SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES or _SET_NETWORK_ID_SYNC_TO_PLAYER to make it so other players can hear the sound while online? It'd be a bit troll-fun to be able to play the Zancudo UFO creepy sounds globally.  
+---Could this be used alongside either,
+---SET_NETWORK_ID_EXISTS_ON_ALL_MACHINES or _SET_NETWORK_ID_SYNC_TO_PLAYER to make it so other players can hear the sound while online? It'd be a bit troll-fun to be able to play the Zancudo UFO creepy sounds globally.
 ---```
 ---
 ---@param soundId number
@@ -599,7 +599,7 @@ function GetPlayerRadioStationGenre() end
 ---**`AUDIO` `client` [`0xE8AF77C4C06ADC93`](https://docs.fivem.net/natives/?_0xE8AF77C4C06ADC93)**
 ---
 ---```
----Returns 255 (radio off index) if the function fails.  
+---Returns 255 (radio off index) if the function fails.
 ---```
 ---
 ---@return number
@@ -608,7 +608,7 @@ function GetPlayerRadioStationIndex() end
 ---**`AUDIO` `client` [`0xF6D733C32076AD03`](https://docs.fivem.net/natives/?_0xF6D733C32076AD03)**
 ---
 ---```
----Returns active radio station name  
+---Returns active radio station name
 ---```
 ---
 ---@return string
@@ -617,7 +617,7 @@ function GetPlayerRadioStationName() end
 ---**`AUDIO` `client` [`0xB28ECA15046CA8B9`](https://docs.fivem.net/natives/?_0xB28ECA15046CA8B9)**
 ---
 ---```
----Returns String with radio station name.  
+---Returns String with radio station name.
 ---```
 ---
 ---@param radioStation number
@@ -645,8 +645,8 @@ function GetStreamPlayTime() end
 ---**`AUDIO` `client` [`0x02165D55000219AC`](https://docs.fivem.net/natives/?_0x02165D55000219AC)**
 ---
 ---```
----Returns hash of default vehicle horn  
----Hash is stored in audVehicleAudioEntity  
+---Returns hash of default vehicle horn
+---Hash is stored in audVehicleAudioEntity
 ---```
 ---
 ---@param vehicle Vehicle
@@ -709,8 +709,8 @@ function InterruptConversationAndPause(ped, p1, p2) end
 ---**`AUDIO` `client` [`0x226435CB96CCFC8C`](https://docs.fivem.net/natives/?_0x226435CB96CCFC8C)**
 ---
 ---```
----Example:  
----bool playing = AUDIO::IS_ALARM_PLAYING("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
+---Example:
+---bool playing = AUDIO::IS_ALARM_PLAYING("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");
 ---```
 ---
 ---@param alarmName string
@@ -720,8 +720,8 @@ function IsAlarmPlaying(alarmName) end
 ---**`AUDIO` `client` [`0x932C2D096A2C3FFF`](https://docs.fivem.net/natives/?_0x932C2D096A2C3FFF)**
 ---
 ---```
----Common in the scripts:  
----AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());  
+---Common in the scripts:
+---AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());
 ---```
 ---
 ---@param ped Ped
@@ -761,7 +761,7 @@ function IsAudioSceneActive(scene) end
 ---**`AUDIO` `client` [`0x6D28DC1671E334FD`](https://docs.fivem.net/natives/?_0x6D28DC1671E334FD)**
 ---
 ---```
----Hardcoded to return 1  
+---Hardcoded to return 1
 ---```
 ---
 ---@return boolean
@@ -770,7 +770,7 @@ function IsGameInControlOfMusic() end
 ---**`AUDIO` `client` [`0x9D6BFC12B05C6121`](https://docs.fivem.net/natives/?_0x9D6BFC12B05C6121)**
 ---
 ---```
----Checks whether the horn of a vehicle is currently played.  
+---Checks whether the horn of a vehicle is currently played.
 ---```
 ---
 ---@param vehicle Vehicle
@@ -865,11 +865,11 @@ function IsVehicleAudiblyDamaged(vehicle) end
 ---**`AUDIO` `client` [`0x1F1F957154EC51DF`](https://docs.fivem.net/natives/?_0x1F1F957154EC51DF)**
 ---
 ---```
----Example:  
----AUDIO::LOAD_STREAM("CAR_STEAL_1_PASSBY", "CAR_STEAL_1_SOUNDSET");  
----All found occurrences in the b678d decompiled scripts: pastebin.com/3rma6w5w  
----Stream names often ends with "_MASTER", "_SMALL" or "_STREAM". Also "_IN", "_OUT" and numbers.     
----soundSet is often set to 0 in the scripts. These are common to end the soundSets: "_SOUNDS", "_SOUNDSET" and numbers.  
+---Example:
+---AUDIO::LOAD_STREAM("CAR_STEAL_1_PASSBY", "CAR_STEAL_1_SOUNDSET");
+---All found occurrences in the b678d decompiled scripts: pastebin.com/3rma6w5w
+---Stream names often ends with "_MASTER", "_SMALL" or "_STREAM". Also "_IN", "_OUT" and numbers.
+---soundSet is often set to 0 in the scripts. These are common to end the soundSets: "_SOUNDS", "_SOUNDSET" and numbers.
 ---```
 ---
 ---@param streamName string
@@ -880,9 +880,9 @@ function LoadStream(streamName, soundSet) end
 ---**`AUDIO` `client` [`0x59C16B79F53B3712`](https://docs.fivem.net/natives/?_0x59C16B79F53B3712)**
 ---
 ---```
----Example:  
----AUDIO::LOAD_STREAM_WITH_START_OFFSET("STASH_TOXIN_STREAM", 2400, "FBI_05_SOUNDS");  
----Only called a few times in the scripts.  
+---Example:
+---AUDIO::LOAD_STREAM_WITH_START_OFFSET("STASH_TOXIN_STREAM", 2400, "FBI_05_SOUNDS");
+---Only called a few times in the scripts.
 ---```
 ---
 ---@param streamName string
@@ -1170,9 +1170,9 @@ function PlayPedAmbientSpeechWithVoiceNative(ped, speechName, voiceName, speechP
 ---**`AUDIO` `client` [`0xF9E56683CA8E11A5`](https://docs.fivem.net/natives/?_0xF9E56683CA8E11A5)**
 ---
 ---```
----All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/RFb4GTny  
----AUDIO::PLAY_PED_RINGTONE("Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);  
----AUDIO::PLAY_PED_RINGTONE("Dial_and_Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);  
+---All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/RFb4GTny
+---AUDIO::PLAY_PED_RINGTONE("Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);
+---AUDIO::PLAY_PED_RINGTONE("Dial_and_Remote_Ring", PLAYER::PLAYER_PED_ID(), 1);
 ---```
 ---
 ---@param ringtoneName string
@@ -1195,7 +1195,7 @@ function PlayPoliceReport(name, p1) end
 ---**`AUDIO` `client` [`0x7FF4944CC209192D`](https://docs.fivem.net/natives/?_0x7FF4944CC209192D)**
 ---
 ---```
----All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/A8Ny8AHZ  
+---All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/A8Ny8AHZ
 ---```
 ---
 ---@param soundId number
@@ -1209,8 +1209,8 @@ function PlaySound(soundId, audioName, audioRef, p3, p4, p5) end
 ---**`AUDIO` `client` [`0x8D8686B622B88120`](https://docs.fivem.net/natives/?_0x8D8686B622B88120)**
 ---
 ---```
----All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/eeFc5DiW  
----gtaforums.com/topic/795622-audio-for-mods  
+---All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/eeFc5DiW
+---gtaforums.com/topic/795622-audio-for-mods
 ---```
 ---
 ---@param soundId number
@@ -1227,9 +1227,9 @@ function PlaySoundFromCoord(soundId, audioName, x, y, z, audioRef, isNetwork, ra
 ---**`AUDIO` `client` [`0xE65F427EB70AB1ED`](https://docs.fivem.net/natives/?_0xE65F427EB70AB1ED)**
 ---
 ---```
----All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/f2A7vTj0   
----No changes made in b678d.  
----gtaforums.com/topic/795622-audio-for-mods  
+---All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/f2A7vTj0
+---No changes made in b678d.
+---gtaforums.com/topic/795622-audio-for-mods
 ---```
 ---
 ---@param soundId number
@@ -1327,8 +1327,8 @@ function PreloadScriptPhoneConversation(p0, p1) end
 ---**`AUDIO` `client` [`0x9D74AE343DB65533`](https://docs.fivem.net/natives/?_0x9D74AE343DB65533)**
 ---
 ---```
----Example:  
----bool prepareAlarm = AUDIO::PREPARE_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
+---Example:
+---bool prepareAlarm = AUDIO::PREPARE_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");
 ---```
 ---
 ---@param alarmName string
@@ -1338,7 +1338,7 @@ function PrepareAlarm(alarmName) end
 ---**`AUDIO` `client` [`0x1E5185B72EF5158A`](https://docs.fivem.net/natives/?_0x1E5185B72EF5158A)**
 ---
 ---```
----All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
+---All music event names found in the b617d scripts: pastebin.com/GnYt0R3P
 ---```
 ---
 ---@param eventName string
@@ -1442,7 +1442,7 @@ function RequestAmbientAudioBank(p0, p1) end
 ---**`AUDIO` `client` [`0x7345BDD95E62E0F2`](https://docs.fivem.net/natives/?_0x7345BDD95E62E0F2)**
 ---
 ---```
----All occurrences and usages found in b617d: pastebin.com/NzZZ2Tmm  
+---All occurrences and usages found in b617d: pastebin.com/NzZZ2Tmm
 ---```
 ---
 ---```
@@ -1457,7 +1457,7 @@ function RequestMissionAudioBank(p0, p1) end
 ---**`AUDIO` `client` [`0x2F844A8B08D76685`](https://docs.fivem.net/natives/?_0x2F844A8B08D76685)**
 ---
 ---```
----All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/AkmDAVn6  
+---All occurrences and usages found in b617d, sorted alphabetically and identical lines removed: pastebin.com/AkmDAVn6
 ---```
 ---
 ---```
@@ -1485,7 +1485,7 @@ function RestartScriptedConversation() end
 ---**`AUDIO` `client` [`0x395BF71085D1B1D9`](https://docs.fivem.net/natives/?_0x395BF71085D1B1D9)**
 ---
 ---```
----Makes pedestrians sound their horn longer, faster and more agressive when they use their horn.  
+---Makes pedestrians sound their horn longer, faster and more agressive when they use their horn.
 ---```
 ---
 ---@param toggle boolean
@@ -1494,10 +1494,10 @@ function SetAggressiveHorns(toggle) end
 ---**`AUDIO` `client` [`0x6C8065A3B780185B`](https://docs.fivem.net/natives/?_0x6C8065A3B780185B)**
 ---
 ---```
----Audio List  
----gtaforums.com/topic/795622-audio-for-mods/  
----All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/FTeAj4yZ  
----Yes  
+---Audio List
+---gtaforums.com/topic/795622-audio-for-mods/
+---All found occurrences in b617d, sorted alphabetically and identical lines removed: pastebin.com/FTeAj4yZ
+---Yes
 ---```
 ---
 ---@param ped Ped
@@ -1535,7 +1535,7 @@ function SetAmbientZoneStatePersistent(ambientZone, p1, p2) end
 ---**`AUDIO` `client` [`0xCC97B29285B1DC3B`](https://docs.fivem.net/natives/?_0xCC97B29285B1DC3B)**
 ---
 ---```
----mood can be 0 or 1 (it's not a boolean value!). Effects audio of the animal.  
+---mood can be 0 or 1 (it's not a boolean value!). Effects audio of the animal.
 ---```
 ---
 ---@param animal Ped
@@ -1545,112 +1545,112 @@ function SetAnimalMood(animal, mood) end
 ---**`AUDIO` `client` [`0xB9EFD5C25018725A`](https://docs.fivem.net/natives/?_0xB9EFD5C25018725A)**
 ---
 ---```
----Possible flag names:  
----"ActivateSwitchWheelAudio"  
----"AllowAmbientSpeechInSlowMo"  
----"AllowCutsceneOverScreenFade"  
----"AllowForceRadioAfterRetune"  
----"AllowPainAndAmbientSpeechToPlayDuringCutscene"  
----"AllowPlayerAIOnMission"  
----"AllowPoliceScannerWhenPlayerHasNoControl"  
----"AllowRadioDuringSwitch"  
----"AllowRadioOverScreenFade"  
----"AllowScoreAndRadio"  
----"AllowScriptedSpeechInSlowMo"  
----"AvoidMissionCompleteDelay"  
----"DisableAbortConversationForDeathAndInjury"  
----"DisableAbortConversationForRagdoll"  
----"DisableBarks"  
----"DisableFlightMusic"  
----"DisableReplayScriptStreamRecording"  
----"EnableHeadsetBeep"  
----"ForceConversationInterrupt"  
----"ForceSeamlessRadioSwitch"  
----"ForceSniperAudio"  
----"FrontendRadioDisabled"  
----"HoldMissionCompleteWhenPrepared"  
----"IsDirectorModeActive"  
----"IsPlayerOnMissionForSpeech"  
----"ListenerReverbDisabled"  
----"LoadMPData"  
----"MobileRadioInGame"  
----"OnlyAllowScriptTriggerPoliceScanner"  
----"PlayMenuMusic"  
----"PoliceScannerDisabled"  
----"ScriptedConvListenerMaySpeak"  
----"SpeechDucksScore"  
----"SuppressPlayerScubaBreathing"  
----"WantedMusicDisabled"  
----"WantedMusicOnMission"  
-----------------------------------  
----No added flag names between b393d and b573d, including b573d.  
----#######################################################################  
----"IsDirectorModeActive" is an audio flag which will allow you to play speech infinitely without any pauses like in Director Mode.  
---------------------------------------------------------------------------  
----All flag IDs and hashes:  
----ID: 01 | Hash: 0x20A7858F  
----ID: 02 | Hash: 0xA11C2259  
----ID: 03 | Hash: 0x08DE4700  
----ID: 04 | Hash: 0x989F652F  
----ID: 05 | Hash: 0x3C9E76BA  
----ID: 06 | Hash: 0xA805FEB0  
----ID: 07 | Hash: 0x4B94EA26  
----ID: 08 | Hash: 0x803ACD34  
----ID: 09 | Hash: 0x7C741226  
----ID: 10 | Hash: 0x31DB9EBD  
----ID: 11 | Hash: 0xDF386F18  
----ID: 12 | Hash: 0x669CED42  
----ID: 13 | Hash: 0x51F22743  
----ID: 14 | Hash: 0x2052B35C  
----ID: 15 | Hash: 0x071472DC  
----ID: 16 | Hash: 0xF9928BCC  
----ID: 17 | Hash: 0x7ADBDD48  
----ID: 18 | Hash: 0xA959BA1A  
----ID: 19 | Hash: 0xBBE89B60  
----ID: 20 | Hash: 0x87A08871  
----ID: 21 | Hash: 0xED1057CE  
----ID: 22 | Hash: 0x1584AD7A  
----ID: 23 | Hash: 0x8582CFCB  
----ID: 24 | Hash: 0x7E5E2FB0  
----ID: 25 | Hash: 0xAE4F72DB  
----ID: 26 | Hash: 0x5D16D1FA  
----ID: 27 | Hash: 0x06B2F4B8  
----ID: 28 | Hash: 0x5D4CDC96  
----ID: 29 | Hash: 0x8B5A48BA  
----ID: 30 | Hash: 0x98FBD539  
----ID: 31 | Hash: 0xD8CB0473  
----ID: 32 | Hash: 0x5CBB4874  
----ID: 33 | Hash: 0x2E9F93A9  
----ID: 34 | Hash: 0xD93BEA86  
----ID: 35 | Hash: 0x92109B7D  
----ID: 36 | Hash: 0xB7EC9E4D  
----ID: 37 | Hash: 0xCABDBB1D  
----ID: 38 | Hash: 0xB3FD4A52  
----ID: 39 | Hash: 0x370D94E5  
----ID: 40 | Hash: 0xA0F7938F  
----ID: 41 | Hash: 0xCBE1CE81  
----ID: 42 | Hash: 0xC27F1271  
----ID: 43 | Hash: 0x9E3258EB  
----ID: 44 | Hash: 0x551CDA5B  
----ID: 45 | Hash: 0xCB6D663C  
----ID: 46 | Hash: 0x7DACE87F  
----ID: 47 | Hash: 0xF9DE416F  
----ID: 48 | Hash: 0x882E6E9E  
----ID: 49 | Hash: 0x16B447E7  
----ID: 50 | Hash: 0xBD867739  
----ID: 51 | Hash: 0xA3A58604  
----ID: 52 | Hash: 0x7E046BBC  
----ID: 53 | Hash: 0xD95FDB98  
----ID: 54 | Hash: 0x5842C0ED  
----ID: 55 | Hash: 0x285FECC6  
----ID: 56 | Hash: 0x9351AC43  
----ID: 57 | Hash: 0x50032E75  
----ID: 58 | Hash: 0xAE6D0D59  
----ID: 59 | Hash: 0xD6351785  
----ID: 60 | Hash: 0xD25D71BC  
----ID: 61 | Hash: 0x1F7F6423  
----ID: 62 | Hash: 0xE24C3AA6  
----ID: 63 | Hash: 0xBFFDD2B7  
+---Possible flag names:
+---"ActivateSwitchWheelAudio"
+---"AllowAmbientSpeechInSlowMo"
+---"AllowCutsceneOverScreenFade"
+---"AllowForceRadioAfterRetune"
+---"AllowPainAndAmbientSpeechToPlayDuringCutscene"
+---"AllowPlayerAIOnMission"
+---"AllowPoliceScannerWhenPlayerHasNoControl"
+---"AllowRadioDuringSwitch"
+---"AllowRadioOverScreenFade"
+---"AllowScoreAndRadio"
+---"AllowScriptedSpeechInSlowMo"
+---"AvoidMissionCompleteDelay"
+---"DisableAbortConversationForDeathAndInjury"
+---"DisableAbortConversationForRagdoll"
+---"DisableBarks"
+---"DisableFlightMusic"
+---"DisableReplayScriptStreamRecording"
+---"EnableHeadsetBeep"
+---"ForceConversationInterrupt"
+---"ForceSeamlessRadioSwitch"
+---"ForceSniperAudio"
+---"FrontendRadioDisabled"
+---"HoldMissionCompleteWhenPrepared"
+---"IsDirectorModeActive"
+---"IsPlayerOnMissionForSpeech"
+---"ListenerReverbDisabled"
+---"LoadMPData"
+---"MobileRadioInGame"
+---"OnlyAllowScriptTriggerPoliceScanner"
+---"PlayMenuMusic"
+---"PoliceScannerDisabled"
+---"ScriptedConvListenerMaySpeak"
+---"SpeechDucksScore"
+---"SuppressPlayerScubaBreathing"
+---"WantedMusicDisabled"
+---"WantedMusicOnMission"
+----------------------------------
+---No added flag names between b393d and b573d, including b573d.
+---#######################################################################
+---"IsDirectorModeActive" is an audio flag which will allow you to play speech infinitely without any pauses like in Director Mode.
+--------------------------------------------------------------------------
+---All flag IDs and hashes:
+---ID: 01 | Hash: 0x20A7858F
+---ID: 02 | Hash: 0xA11C2259
+---ID: 03 | Hash: 0x08DE4700
+---ID: 04 | Hash: 0x989F652F
+---ID: 05 | Hash: 0x3C9E76BA
+---ID: 06 | Hash: 0xA805FEB0
+---ID: 07 | Hash: 0x4B94EA26
+---ID: 08 | Hash: 0x803ACD34
+---ID: 09 | Hash: 0x7C741226
+---ID: 10 | Hash: 0x31DB9EBD
+---ID: 11 | Hash: 0xDF386F18
+---ID: 12 | Hash: 0x669CED42
+---ID: 13 | Hash: 0x51F22743
+---ID: 14 | Hash: 0x2052B35C
+---ID: 15 | Hash: 0x071472DC
+---ID: 16 | Hash: 0xF9928BCC
+---ID: 17 | Hash: 0x7ADBDD48
+---ID: 18 | Hash: 0xA959BA1A
+---ID: 19 | Hash: 0xBBE89B60
+---ID: 20 | Hash: 0x87A08871
+---ID: 21 | Hash: 0xED1057CE
+---ID: 22 | Hash: 0x1584AD7A
+---ID: 23 | Hash: 0x8582CFCB
+---ID: 24 | Hash: 0x7E5E2FB0
+---ID: 25 | Hash: 0xAE4F72DB
+---ID: 26 | Hash: 0x5D16D1FA
+---ID: 27 | Hash: 0x06B2F4B8
+---ID: 28 | Hash: 0x5D4CDC96
+---ID: 29 | Hash: 0x8B5A48BA
+---ID: 30 | Hash: 0x98FBD539
+---ID: 31 | Hash: 0xD8CB0473
+---ID: 32 | Hash: 0x5CBB4874
+---ID: 33 | Hash: 0x2E9F93A9
+---ID: 34 | Hash: 0xD93BEA86
+---ID: 35 | Hash: 0x92109B7D
+---ID: 36 | Hash: 0xB7EC9E4D
+---ID: 37 | Hash: 0xCABDBB1D
+---ID: 38 | Hash: 0xB3FD4A52
+---ID: 39 | Hash: 0x370D94E5
+---ID: 40 | Hash: 0xA0F7938F
+---ID: 41 | Hash: 0xCBE1CE81
+---ID: 42 | Hash: 0xC27F1271
+---ID: 43 | Hash: 0x9E3258EB
+---ID: 44 | Hash: 0x551CDA5B
+---ID: 45 | Hash: 0xCB6D663C
+---ID: 46 | Hash: 0x7DACE87F
+---ID: 47 | Hash: 0xF9DE416F
+---ID: 48 | Hash: 0x882E6E9E
+---ID: 49 | Hash: 0x16B447E7
+---ID: 50 | Hash: 0xBD867739
+---ID: 51 | Hash: 0xA3A58604
+---ID: 52 | Hash: 0x7E046BBC
+---ID: 53 | Hash: 0xD95FDB98
+---ID: 54 | Hash: 0x5842C0ED
+---ID: 55 | Hash: 0x285FECC6
+---ID: 56 | Hash: 0x9351AC43
+---ID: 57 | Hash: 0x50032E75
+---ID: 58 | Hash: 0xAE6D0D59
+---ID: 59 | Hash: 0xD6351785
+---ID: 60 | Hash: 0xD25D71BC
+---ID: 61 | Hash: 0x1F7F6423
+---ID: 62 | Hash: 0xE24C3AA6
+---ID: 63 | Hash: 0xBFFDD2B7
 ---```
 ---
 ---@param flagName string
@@ -1705,10 +1705,10 @@ function SetCustomRadioTrackList(radioStation, trackListName, p2) end
 ---**`AUDIO` `client` [`0x3B4BF5F0859204D9`](https://docs.fivem.net/natives/?_0x3B4BF5F0859204D9)**
 ---
 ---```
----All occurrences found in b617d, sorted alphabetically and identical lines removed:   
----AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_AK");  
----AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_CUSTOM");  
----AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_TOOTHLESS");  
+---All occurrences found in b617d, sorted alphabetically and identical lines removed:
+---AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_AK");
+---AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_CUSTOM");
+---AUDIO::SET_CUTSCENE_AUDIO_OVERRIDE("_TOOTHLESS");
 ---```
 ---
 ---@param name string
@@ -1744,7 +1744,7 @@ function SetInitialPlayerStation(radioStation) end
 ---**`AUDIO` `client` [`0xB6AE90EDDE95C762`](https://docs.fivem.net/natives/?_0xB6AE90EDDE95C762)**
 ---
 ---```
----If this is the correct name, what microphone? I know your TV isn't going to reach out and adjust your headset so..  
+---If this is the correct name, what microphone? I know your TV isn't going to reach out and adjust your headset so..
 ---```
 ---
 ---@param p0 boolean
@@ -1837,7 +1837,7 @@ function SetRadioStationMusicOnly(radioStation, toggle) end
 ---**`AUDIO` `client` [`0xA619B168B8A8570F`](https://docs.fivem.net/natives/?_0xA619B168B8A8570F)**
 ---
 ---```
----Sets radio station by index.  
+---Sets radio station by index.
 ---```
 ---
 ---@param radioStation number
@@ -1853,8 +1853,8 @@ function SetRadioToStationName(stationName) end
 ---**`AUDIO` `client` [`0xB39786F201FEE30B`](https://docs.fivem.net/natives/?_0xB39786F201FEE30B)**
 ---
 ---```
----Only found this one in the decompiled scripts:  
----AUDIO::SET_RADIO_TRACK("RADIO_03_HIPHOP_NEW", "ARM1_RADIO_STARTS");  
+---Only found this one in the decompiled scripts:
+---AUDIO::SET_RADIO_TRACK("RADIO_03_HIPHOP_NEW", "ARM1_RADIO_STARTS");
 ---```
 ---
 ---@param radioStation string
@@ -1900,11 +1900,11 @@ function SetVariableOnSound(soundId, variableName, value) end
 ---**`AUDIO` `client` [`0x2F9D3834AEB9EF79`](https://docs.fivem.net/natives/?_0x2F9D3834AEB9EF79)**
 ---
 ---```
----From the scripts, p0:  
----"ArmWrestlingIntensity",  
----"INOUT",  
----"Monkey_Stream",  
----"ZoomLevel"  
+---From the scripts, p0:
+---"ArmWrestlingIntensity",
+---"INOUT",
+---"Monkey_Stream",
+---"ZoomLevel"
 ---```
 ---
 ---@param p0 string
@@ -1939,9 +1939,9 @@ function SetVehicleAudioEngineDamageFactor(vehicle, damageFactor) end
 ---**`AUDIO` `client` [`0x4A04DE7CAB2739A1`](https://docs.fivem.net/natives/?_0x4A04DE7CAB2739A1)**
 ---
 ---```
----SET_VEHICLE_BOOST_ACTIVE(vehicle, 1, 0);  
----SET_VEHICLE_BOOST_ACTIVE(vehicle, 0, 0);   
----Will give a boost-soundeffect.  
+---SET_VEHICLE_BOOST_ACTIVE(vehicle, 1, 0);
+---SET_VEHICLE_BOOST_ACTIVE(vehicle, 0, 0);
+---Will give a boost-soundeffect.
 ---```
 ---
 ---@param vehicle Vehicle
@@ -1951,7 +1951,7 @@ function SetVehicleBoostActive(vehicle, toggle) end
 ---**`AUDIO` `client` [`0x3B988190C0AA6C0B`](https://docs.fivem.net/natives/?_0x3B988190C0AA6C0B)**
 ---
 ---```
----can't seem to enable radio on cop cars etc  
+---can't seem to enable radio on cop cars etc
 ---```
 ---
 ---@param vehicle Vehicle
@@ -1971,7 +1971,7 @@ function SetVehicleRadioLoud(vehicle, toggle) end
 ---2 calls found in the b617d scripts:
 ---
 ---```cpp
----AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
+---AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");
 ---AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");
 ---```
 ---
@@ -2030,8 +2030,8 @@ function StartAlarm(alarmName, p2) end
 ---**`AUDIO` `client` [`0x013A80FC08F6E4F2`](https://docs.fivem.net/natives/?_0x013A80FC08F6E4F2)**
 ---
 ---```
----Used to prepare a scene where the surrounding sound is muted or a bit changed. This does not play any sound.  
----List of all usable scene names found in b617d. Sorted alphabetically and identical names removed: pastebin.com/MtM9N9CC  
+---Used to prepare a scene where the surrounding sound is muted or a bit changed. This does not play any sound.
+---List of all usable scene names found in b617d. Sorted alphabetically and identical names removed: pastebin.com/MtM9N9CC
 ---```
 ---
 ---@param scene string
@@ -2059,11 +2059,11 @@ function StartScriptPhoneConversation(p0, p1) end
 ---**`AUDIO` `client` [`0xA1CADDCD98415A41`](https://docs.fivem.net/natives/?_0xA1CADDCD98415A41)**
 ---
 ---```
----Example:  
----This will stop the alarm at Fort Zancudo.  
----AUDIO::STOP_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  
----First parameter (char) is the name of the alarm.  
----Second parameter (bool) has to be true (1) to have any effect.  
+---Example:
+---This will stop the alarm at Fort Zancudo.
+---AUDIO::STOP_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);
+---First parameter (char) is the name of the alarm.
+---Second parameter (bool) has to be true (1) to have any effect.
 ---```
 ---
 ---@param alarmName string
@@ -2083,7 +2083,7 @@ function StopAudioScene(scene) end
 ---**`AUDIO` `client` [`0xBAC7FC81A75EC1A1`](https://docs.fivem.net/natives/?_0xBAC7FC81A75EC1A1)**
 ---
 ---```
----??  
+---??
 ---```
 ---
 function StopAudioScenes() end
@@ -2137,8 +2137,8 @@ function StopSynchronizedAudioEvent(p0) end
 ---**`AUDIO` `client` [`0x706D57B0F50DA710`](https://docs.fivem.net/natives/?_0x706D57B0F50DA710)**
 ---
 ---```
----List of all usable event names found in b617d used with this native. Sorted alphabetically and identical names removed: pastebin.com/RzDFmB1W  
----All music event names found in the b617d scripts: pastebin.com/GnYt0R3P  
+---List of all usable event names found in b617d used with this native. Sorted alphabetically and identical names removed: pastebin.com/RzDFmB1W
+---All music event names found in the b617d scripts: pastebin.com/GnYt0R3P
 ---```
 ---
 ---@param eventName string
@@ -2170,7 +2170,7 @@ function UnlockRadioStationTrackList(radioStation, trackListName) end
 ---**This native does absolutely nothing, just a nullsub**
 ---
 ---```
----On last-gen this just runs blr and this func is called by several other functions other then the native's table.  
+---On last-gen this just runs blr and this func is called by several other functions other then the native's table.
 ---```
 ---
 function UnregisterScriptWithAudio() end
@@ -2188,7 +2188,7 @@ function CancelCurrentPoliceReport() end
 ---**`AUDIO` `client` [`0x49B99BF3FDA89A7A`](https://docs.fivem.net/natives/?_0x49B99BF3FDA89A7A)**
 ---
 ---```
----Checks if the ped can play the speech or has the speech file, last parameter is usually 0  
+---Checks if the ped can play the speech or has the speech file, last parameter is usually 0
 ---```
 ---
 ---@param ped Ped
@@ -2244,7 +2244,7 @@ function GetCurrentRadioTrackName(radioStationName) end
 ---**`AUDIO` `client` [`0x3E65CDE5215832C1`](https://docs.fivem.net/natives/?_0x3E65CDE5215832C1)**
 ---
 ---```
----Return the playback time (in milliseconds) of the radio stations current track. 
+---Return the playback time (in milliseconds) of the radio stations current track.
 ---
 ---NativeDB Introduced: v1493
 ---```
@@ -2405,7 +2405,7 @@ function SetPedAudioGender(ped, p1) end
 ---**`AUDIO` `client` [`0x40CF0D12D142A9E8`](https://docs.fivem.net/natives/?_0x40CF0D12D142A9E8)**
 ---
 ---```
----Assigns some ambient voice to the ped.  
+---Assigns some ambient voice to the ped.
 ---```
 ---
 ---@param ped Ped
@@ -2414,7 +2414,7 @@ function SetPedScream(ped) end
 ---**`AUDIO` `client` [`0x4ADA3F19BE4A6047`](https://docs.fivem.net/natives/?_0x4ADA3F19BE4A6047)**
 ---
 ---```
----Speech related.  
+---Speech related.
 ---```
 ---
 ---@param ped Ped

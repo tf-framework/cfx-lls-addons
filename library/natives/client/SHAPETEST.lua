@@ -30,7 +30,15 @@ function GetShapeTestResult(shapeTestHandle, hit, endCoords, surfaceNormal, enti
 ---@param materialHash Hash hash of the hit material or surface type, see materialFX.dat
 ---@param entityHit Entity Any dynamic entity hit by the shape test.
 ---@return number, boolean, vector3, vector3, Hash, Entity # `0` if the handle is invalid, `1` if the shape test is still pending, or `2` if the shape test has completed, and the handle should be invalidated.
-function GetShapeTestResultIncludingMaterial(shapeTestHandle, hit, endCoords, surfaceNormal, materialHash, entityHit) end
+function GetShapeTestResultIncludingMaterial(
+	shapeTestHandle,
+	hit,
+	endCoords,
+	surfaceNormal,
+	materialHash,
+	entityHit
+)
+end
 
 ---**`SHAPETEST` `client` [`0x2B3334BCA57CD799`](https://docs.fivem.net/natives/?_0x2B3334BCA57CD799)**
 ---
@@ -175,8 +183,8 @@ function StartShapeTestSweptSphere(x1, y1, z1, x2, y2, z2, radius, flags, entity
 ---Asynchronous.
 ---
 ---```
----it returns a ShapeTest handle that can be used with GET_SHAPE_TEST_RESULT.  
----In its only usage in game scripts its called with flag set to 511, entity to player_ped_id and flag2 set to 7  
+---it returns a ShapeTest handle that can be used with GET_SHAPE_TEST_RESULT.
+---In its only usage in game scripts its called with flag set to 511, entity to player_ped_id and flag2 set to 7
 ---```
 ---
 ---See [`START_SHAPE_TEST_LOS_PROBE`](#\_0x7EE9F5D83DD4F90E) for flags.

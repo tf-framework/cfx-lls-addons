@@ -25,7 +25,7 @@ function N_0x0cf54f20de43879c(p0) end
 ---**`HUD` `client` [`0x1185A8087587322C`](https://docs.fivem.net/natives/?_0x1185A8087587322C)**
 ---
 ---```
----SET_TEXT_??? - Used in golf and golf_mp  
+---SET_TEXT_??? - Used in golf and golf_mp
 ---```
 ---
 ---@param p0 boolean
@@ -107,7 +107,7 @@ function N_0x2e22fefa0100275e() end
 ---**`HUD` `client` [`0x2F057596F2BD0061`](https://docs.fivem.net/natives/?_0x2F057596F2BD0061)**
 ---
 ---```
----Appears to return whether the player is using the pause menu store. Can't be sure though.  
+---Appears to return whether the player is using the pause menu store. Can't be sure though.
 ---```
 ---
 ---@return boolean
@@ -187,7 +187,7 @@ function N_0x801879a9b4f4b2fb() end
 ---**`HUD` `client` [`0x817B86108EB94E51`](https://docs.fivem.net/natives/?_0x817B86108EB94E51)**
 ---
 ---```
----UI::_817B86108EB94E51(1, &g_189F36._f10CD1[0/*16*/], &g_189F36._f10CD1[1/*16*/], &g_189F36._f10CD1[2/*16*/], &g_189F36._f10CD1[3/*16*/], &g_189F36._f10CD1[4/*16*/], &g_189F36._f10CD1[5/*16*/], &g_189F36._f10CD1[6/*16*/], &g_189F36._f10CD1[7/*16*/]);  
+---UI::_817B86108EB94E51(1, &g_189F36._f10CD1[0/*16*/], &g_189F36._f10CD1[1/*16*/], &g_189F36._f10CD1[2/*16*/], &g_189F36._f10CD1[3/*16*/], &g_189F36._f10CD1[4/*16*/], &g_189F36._f10CD1[5/*16*/], &g_189F36._f10CD1[6/*16*/], &g_189F36._f10CD1[7/*16*/]);
 ---```
 ---
 ---@param p0 boolean
@@ -618,7 +618,7 @@ function AddTextComponentSubstringTextLabel(labelName) end
 ---**`HUD` `client` [`0x17299B63C7683A2B`](https://docs.fivem.net/natives/?_0x17299B63C7683A2B)**
 ---
 ---```
----It adds the localized text of the specified GXT entry name. Eg. if the argument is GET_HASH_KEY("ES_HELP"), adds "Continue". Just uses a text labels hash key  
+---It adds the localized text of the specified GXT entry name. Eg. if the argument is GET_HASH_KEY("ES_HELP"), adds "Continue". Just uses a text labels hash key
 ---```
 ---
 ---@param gxtEntryHash Hash
@@ -627,7 +627,7 @@ function AddTextComponentSubstringTextLabelHashKey(gxtEntryHash) end
 ---**`HUD` `client` [`0x1115F16B8AB9E8BF`](https://docs.fivem.net/natives/?_0x1115F16B8AB9E8BF)**
 ---
 ---```
----Adds a timer (e.g. "00:00:00:000"). The appearance of the timer depends on the flags, which needs more research.  
+---Adds a timer (e.g. "00:00:00:000"). The appearance of the timer depends on the flags, which needs more research.
 ---```
 ---
 ---@param timestamp number
@@ -637,7 +637,7 @@ function AddTextComponentSubstringTime(timestamp, flags) end
 ---**`HUD` `client` [`0x94CF4AC034C9C986`](https://docs.fivem.net/natives/?_0x94CF4AC034C9C986)**
 ---
 ---```
----This native (along with 0x5F68520888E69014 and 0x6C188BE134E074AA) do not actually filter anything. They simply add the provided text (as of 944)  
+---This native (along with 0x5F68520888E69014 and 0x6C188BE134E074AA) do not actually filter anything. They simply add the provided text (as of 944)
 ---```
 ---
 ---@param website string
@@ -651,39 +651,39 @@ function AllowSonarBlips(toggle) end
 ---**`HUD` `client` [`0xABA17D7CE615ADBF`](https://docs.fivem.net/natives/?_0xABA17D7CE615ADBF)**
 ---
 ---```
----Initializes the text entry for the the text next to a loading prompt. All natives for for building UI texts can be used here  
----BEGIN_TEXT_COMMAND_PRINT  
----e.g  
----void StartLoadingMessage(char *text, int spinnerType = 3)  
----	{  
----_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----_SHOW_LOADING_PROMPT(spinnerType);  
----	}  
----/*OR*/  
----	void ShowLoadingMessage(char *text, int spinnerType = 3, int timeMs = 10000)  
----	{  
----_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----_SHOW_LOADING_PROMPT(spinnerType);  
----WAIT(timeMs);  
----_REMOVE_LOADING_PROMPT();  
----	}  
----These are some localized strings used in the loading spinner.  
----"PM_WAIT"                   = Please Wait  
----"CELEB_WPLYRS"              = Waiting For Players.  
----"CELL_SPINNER2"             = Scanning storage.  
----"ERROR_CHECKYACHTNAME" = Registering your yacht's name. Please wait.  
----"ERROR_CHECKPROFANITY"   = Checking your text for profanity. Please wait.  
----"FM_COR_AUTOD"                        = Just spinner no text  
----"FM_IHELP_WAT2"                        = Waiting for other players  
----"FM_JIP_WAITO"                            = Game options are being set  
----"FMMC_DOWNLOAD"                    = Downloading  
----"FMMC_PLYLOAD"                         = Loading  
----"FMMC_STARTTRAN"                    = Launching session  
----"HUD_QUITTING"                           =  Quiting session  
----"KILL_STRIP_IDM"                         = Waiting for to accept  
----"MP_SPINLOADING"                      = Loading  
+---Initializes the text entry for the the text next to a loading prompt. All natives for for building UI texts can be used here
+---BEGIN_TEXT_COMMAND_PRINT
+---e.g
+---void StartLoadingMessage(char *text, int spinnerType = 3)
+---	{
+---_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
+---_SHOW_LOADING_PROMPT(spinnerType);
+---	}
+---/*OR*/
+---	void ShowLoadingMessage(char *text, int spinnerType = 3, int timeMs = 10000)
+---	{
+---_SET_LOADING_PROMPT_TEXT_ENTRY("STRING");
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
+---_SHOW_LOADING_PROMPT(spinnerType);
+---WAIT(timeMs);
+---_REMOVE_LOADING_PROMPT();
+---	}
+---These are some localized strings used in the loading spinner.
+---"PM_WAIT"                   = Please Wait
+---"CELEB_WPLYRS"              = Waiting For Players.
+---"CELL_SPINNER2"             = Scanning storage.
+---"ERROR_CHECKYACHTNAME" = Registering your yacht's name. Please wait.
+---"ERROR_CHECKPROFANITY"   = Checking your text for profanity. Please wait.
+---"FM_COR_AUTOD"                        = Just spinner no text
+---"FM_IHELP_WAT2"                        = Waiting for other players
+---"FM_JIP_WAITO"                            = Game options are being set
+---"FMMC_DOWNLOAD"                    = Downloading
+---"FMMC_PLYLOAD"                         = Loading
+---"FMMC_STARTTRAN"                    = Launching session
+---"HUD_QUITTING"                           =  Quiting session
+---"KILL_STRIP_IDM"                         = Waiting for to accept
+---"MP_SPINLOADING"                      = Loading
 ---```
 ---
 ---@param string string
@@ -692,7 +692,7 @@ function BeginTextCommandBusyspinnerOn(string) end
 ---**`HUD` `client` [`0xE124FA80A759019C`](https://docs.fivem.net/natives/?_0xE124FA80A759019C)**
 ---
 ---```
----clears a print text command with this text  
+---clears a print text command with this text
 ---```
 ---
 ---@param text string
@@ -701,7 +701,7 @@ function BeginTextCommandClearPrint(text) end
 ---**`HUD` `client` [`0x8509B634FBE7DA11`](https://docs.fivem.net/natives/?_0x8509B634FBE7DA11)**
 ---
 ---```
----Used to be known as _SET_TEXT_COMPONENT_FORMAT  
+---Used to be known as _SET_TEXT_COMPONENT_FORMAT
 ---```
 ---
 ---@param inputType string
@@ -710,11 +710,11 @@ function BeginTextCommandDisplayHelp(inputType) end
 ---**`HUD` `client` [`0x25FBB336DF1804CB`](https://docs.fivem.net/natives/?_0x25FBB336DF1804CB)**
 ---
 ---```
----The following were found in the decompiled script files:  
----STRING, TWOSTRINGS, NUMBER, PERCENTAGE, FO_TWO_NUM, ESMINDOLLA, ESDOLLA, MTPHPER_XPNO, AHD_DIST, CMOD_STAT_0, CMOD_STAT_1, CMOD_STAT_2, CMOD_STAT_3, DFLT_MNU_OPT, F3A_TRAFDEST, ES_HELP_SOC3  
----ESDOLLA   
----ESMINDOLLA - cash (negative)  
----Used to be known as _SET_TEXT_ENTRY  
+---The following were found in the decompiled script files:
+---STRING, TWOSTRINGS, NUMBER, PERCENTAGE, FO_TWO_NUM, ESMINDOLLA, ESDOLLA, MTPHPER_XPNO, AHD_DIST, CMOD_STAT_0, CMOD_STAT_1, CMOD_STAT_2, CMOD_STAT_3, DFLT_MNU_OPT, F3A_TRAFDEST, ES_HELP_SOC3
+---ESDOLLA
+---ESMINDOLLA - cash (negative)
+---Used to be known as _SET_TEXT_ENTRY
 ---```
 ---
 ---@param text string
@@ -723,13 +723,13 @@ function BeginTextCommandDisplayText(text) end
 ---**`HUD` `client` [`0x853648FD1063A213`](https://docs.fivem.net/natives/?_0x853648FD1063A213)**
 ---
 ---```
----nothin doin.   
----BOOL Message(char* text)  
----	{  
----BEGIN_TEXT_COMMAND_IS_MESSAGE_DISPLAYED("STRING");  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----return END_TEXT_COMMAND_IS_MESSAGE_DISPLAYED();  
----	}  
+---nothin doin.
+---BOOL Message(char* text)
+---	{
+---BEGIN_TEXT_COMMAND_IS_MESSAGE_DISPLAYED("STRING");
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
+---return END_TEXT_COMMAND_IS_MESSAGE_DISPLAYED();
+---	}
 ---```
 ---
 ---@param text string
@@ -762,13 +762,13 @@ function BeginTextCommandOverrideButtonText(gxtEntry) end
 ---**`HUD` `client` [`0xB87A37EEB7FAA67D`](https://docs.fivem.net/natives/?_0xB87A37EEB7FAA67D)**
 ---
 ---```
----Used to be known as _SET_TEXT_ENTRY_2  
----void ShowSubtitle(char *text)  
----{  
----	BEGIN_TEXT_COMMAND_PRINT("STRING");  
----	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----	END_TEXT_COMMAND_PRINT(2000, 1);  
----}  
+---Used to be known as _SET_TEXT_ENTRY_2
+---void ShowSubtitle(char *text)
+---{
+---	BEGIN_TEXT_COMMAND_PRINT("STRING");
+---	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
+---	END_TEXT_COMMAND_PRINT(2000, 1);
+---}
 ---```
 ---
 ---@param GxtEntry string
@@ -835,7 +835,7 @@ function BusyspinnerOff() end
 ---**`HUD` `client` [`0x0772DF77852C2E30`](https://docs.fivem.net/natives/?_0x0772DF77852C2E30)**
 ---
 ---```
----Displays cash change notifications on HUD.  
+---Displays cash change notifications on HUD.
 ---```
 ---
 ---@param cash number
@@ -873,8 +873,8 @@ function ClearGpsCustomRoute() end
 ---**`HUD` `client` [`0x21986729D6A3A830`](https://docs.fivem.net/natives/?_0x21986729D6A3A830)**
 ---
 ---```
----Clears the GPS flags. Only the script that originally called SET_GPS_FLAGS can clear them.  
----Doesn't seem like the flags are actually read by the game at all.  
+---Clears the GPS flags. Only the script that originally called SET_GPS_FLAGS can clear them.
+---Doesn't seem like the flags are actually read by the game at all.
 ---```
 ---
 function ClearGpsFlags() end
@@ -923,7 +923,7 @@ function ClearSmallPrints() end
 ---**`HUD` `client` [`0xCF708001E1E536DD`](https://docs.fivem.net/natives/?_0xCF708001E1E536DD)**
 ---
 ---```
----p0: found arguments in the b617d scripts: pastebin.com/X5akCN7z  
+---p0: found arguments in the b617d scripts: pastebin.com/X5akCN7z
 ---```
 ---
 ---@param p0 string
@@ -987,7 +987,18 @@ function CreateFakeMpGamerTag(ped, username, crewIsPrivate, crewIsRockstar, crew
 ---@param crewR number Red component of the crew colour.
 ---@param crewG number Green component of the crew colour.
 ---@param crewB number Blue component of the crew colour.
-function CreateMpGamerTagWithCrewColor(player, username, crewIsPrivate, crewIsRockstar, crewName, crewRank, crewR, crewG, crewB) end
+function CreateMpGamerTagWithCrewColor(
+	player,
+	username,
+	crewIsPrivate,
+	crewIsRockstar,
+	crewName,
+	crewRank,
+	crewR,
+	crewG,
+	crewB
+)
+end
 
 ---**`HUD` `client` [`0x6D3465A73092F0E6`](https://docs.fivem.net/natives/?_0x6D3465A73092F0E6)**
 ---
@@ -1006,8 +1017,8 @@ function DisplayAreaName(toggle) end
 ---**`HUD` `client` [`0x96DEC8D5430208B7`](https://docs.fivem.net/natives/?_0x96DEC8D5430208B7)**
 ---
 ---```
----"DISPLAY_CASH(true);" makes the cash amount render on the screen when appropriate  
----"DISPLAY_CASH(false);" disables cash amount rendering  
+---"DISPLAY_CASH(true);" makes the cash amount render on the screen when appropriate
+---"DISPLAY_CASH(false);" disables cash amount rendering
 ---```
 ---
 ---@param display boolean
@@ -1016,17 +1027,17 @@ function DisplayCash(display) end
 ---**`HUD` `client` [`0x960C9FF8F616E41C`](https://docs.fivem.net/natives/?_0x960C9FF8F616E41C)**
 ---
 ---```
----The messages are localized strings.  
----Examples:  
----"No_bus_money"  
----"Enter_bus"  
----"Tour_help"  
----"LETTERS_HELP2"  
----"Dummy"  
----**The bool appears to always be false (if it even is a bool, as it's represented by a zero)**  
------------  
----p1 doesn't seem to make a difference, regardless of the state it's in.   
----picture of where on the screen this is displayed?  
+---The messages are localized strings.
+---Examples:
+---"No_bus_money"
+---"Enter_bus"
+---"Tour_help"
+---"LETTERS_HELP2"
+---"Dummy"
+---**The bool appears to always be false (if it even is a bool, as it's represented by a zero)**
+-----------
+---p1 doesn't seem to make a difference, regardless of the state it's in.
+---picture of where on the screen this is displayed?
 ---```
 ---
 ---@param message string
@@ -1036,7 +1047,7 @@ function DisplayHelpTextThisFrame(message, p1) end
 ---**`HUD` `client` [`0xA6294919E56FF02A`](https://docs.fivem.net/natives/?_0xA6294919E56FF02A)**
 ---
 ---```
----If Hud should be displayed  
+---If Hud should be displayed
 ---```
 ---
 ---@param toggle boolean
@@ -1068,7 +1079,7 @@ function DisplayRadar(toggle) end
 ---**`HUD` `client` [`0x73115226F4814E62`](https://docs.fivem.net/natives/?_0x73115226F4814E62)**
 ---
 ---```
----Displays the crosshair for this frame.  
+---Displays the crosshair for this frame.
 ---```
 ---
 function DisplaySniperScopeThisFrame() end
@@ -1088,8 +1099,8 @@ function DoesBlipHaveGpsRoute(blip) end
 ---**`HUD` `client` [`0x15B8ECF844EE67ED`](https://docs.fivem.net/natives/?_0x15B8ECF844EE67ED)**
 ---
 ---```
----Returns whether the ped's blip is controlled by the game.   
----It's the default blip you can see on enemies during freeroam in singleplayer (the one that fades out quickly).  
+---Returns whether the ped's blip is controlled by the game.
+---It's the default blip you can see on enemies during freeroam in singleplayer (the one that fades out quickly).
 ---```
 ---
 ---@param ped Ped
@@ -1105,7 +1116,7 @@ function DoesTextBlockExist(gxt) end
 ---**`HUD` `client` [`0xAC09CA973C564252`](https://docs.fivem.net/natives/?_0xAC09CA973C564252)**
 ---
 ---```
----Checks if the passed gxt name exists in the game files.  
+---Checks if the passed gxt name exists in the game files.
 ---```
 ---
 ---@param gxt string
@@ -1169,7 +1180,7 @@ function EndTextCommandDisplayHelp(shape, loop, beep, duration) end
 ---**`HUD` `client` [`0xCD015E5BB0D96A57`](https://docs.fivem.net/natives/?_0xCD015E5BB0D96A57)**
 ---
 ---```
----After applying the properties to the text (See UI::SET_TEXT_), this will draw the text in the applied position. Also 0.0f < x, y < 1.0f, percentage of the axis.  
+---After applying the properties to the text (See UI::SET_TEXT_), this will draw the text in the applied position. Also 0.0f < x, y < 1.0f, percentage of the axis.
 ---```
 ---
 ---```
@@ -1209,10 +1220,10 @@ function EndTextCommandOverrideButtonText(buttonIndex) end
 ---**`HUD` `client` [`0x9D77056A530643F6`](https://docs.fivem.net/natives/?_0x9D77056A530643F6)**
 ---
 ---```
----Draws the subtitle at middle center of the screen.  
----int duration = time in milliseconds to show text on screen before disappearing  
----drawImmediately = If true, the text will be drawn immediately, if false, the text will be drawn after the previous subtitle has finished  
----Used to be known as _DRAW_SUBTITLE_TIMED  
+---Draws the subtitle at middle center of the screen.
+---int duration = time in milliseconds to show text on screen before disappearing
+---drawImmediately = If true, the text will be drawn immediately, if false, the text will be drawn after the previous subtitle has finished
+---Used to be known as _DRAW_SUBTITLE_TIMED
 ---```
 ---
 ---@param duration number
@@ -1247,9 +1258,9 @@ function EndTextCommandSetBlipName(blip) end
 ---Old description:
 ---
 ---```
----Example:  
----UI::_SET_NOTIFICATION_TEXT_ENTRY("HUNT");  
----UI::_0xAA295B6F28BD587D("Hunting", "Hunting_Gold_128", 0, 109, "HUD_MED_UNLKED");  
+---Example:
+---UI::_SET_NOTIFICATION_TEXT_ENTRY("HUNT");
+---UI::_0xAA295B6F28BD587D("Hunting", "Hunting_Gold_128", 0, 109, "HUD_MED_UNLKED");
 ---```
 ---
 ---Example code:
@@ -1269,7 +1280,7 @@ function EndTextCommandSetBlipName(blip) end
 ---
 ---    -- Draw the notification
 ---    EndTextCommandThefeedPostAward(txd, txd, 200, 0, "FM_GEN_UNLOCK")
----    
+---
 ---    -- Cleanup after yourself!
 ---    UnregisterPedheadshot(handle)
 ---end)
@@ -1286,38 +1297,38 @@ function EndTextCommandThefeedPostAward(textureDict, textureName, rpBonus, color
 ---**`HUD` `client` [`0x97C9E4E7024A8F2C`](https://docs.fivem.net/natives/?_0x97C9E4E7024A8F2C)**
 ---
 ---```
----This function and the one below it are for after you receive an invite, not sending it.  
----p0 = 1 or 0  
----nothin doin.   
----int invite(Player player)  
----	{  
----int iVar2, iVar3;  
----networkHandleMgr handle;  
----NETWORK_HANDLE_FROM_PLAYER(player, &handle.netHandle, 13);  
----networkClanMgr clan;  
----char *playerName = GET_PLAYER_NAME(player);  
----_SET_NOTIFICATION_TEXT_ENTRY("STRING");  
----_SET_NOTIFACTION_COLOR_NEXT(0);  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(playerName);  
----if (NETWORK_CLAN_PLAYER_GET_DESC(&clan, 35, &handle.netHandle))  
----{  
----	iVar2 = 0;  
----	if (ARE_STRINGS_EQUAL(clan.unk22, "Leader") && clan.unk30 == 0)  
----	{  
----iVar2 = 1;  
----	}  
----	if (clan.unk21 > 0)  
----	{  
----iVar3 = 0;  
----	}  
----	else  
----	{  
----iVar3 = 1;  
----	}  
----	BOOL unused = _0x54E79E9C(&clan.clanHandle, 35);  
----	return _DRAW_NOTIFICATION_APARTMENT_INVITE(iVar3, 0 /*unused*/, &clan.unk17, clan.unk30, iVar2, 0, clan.clanHandle, 0, 0, 0);  
----}  
----	}  
+---This function and the one below it are for after you receive an invite, not sending it.
+---p0 = 1 or 0
+---nothin doin.
+---int invite(Player player)
+---	{
+---int iVar2, iVar3;
+---networkHandleMgr handle;
+---NETWORK_HANDLE_FROM_PLAYER(player, &handle.netHandle, 13);
+---networkClanMgr clan;
+---char *playerName = GET_PLAYER_NAME(player);
+---_SET_NOTIFICATION_TEXT_ENTRY("STRING");
+---_SET_NOTIFACTION_COLOR_NEXT(0);
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(playerName);
+---if (NETWORK_CLAN_PLAYER_GET_DESC(&clan, 35, &handle.netHandle))
+---{
+---	iVar2 = 0;
+---	if (ARE_STRINGS_EQUAL(clan.unk22, "Leader") && clan.unk30 == 0)
+---	{
+---iVar2 = 1;
+---	}
+---	if (clan.unk21 > 0)
+---	{
+---iVar3 = 0;
+---	}
+---	else
+---	{
+---iVar3 = 1;
+---	}
+---	BOOL unused = _0x54E79E9C(&clan.clanHandle, 35);
+---	return _DRAW_NOTIFICATION_APARTMENT_INVITE(iVar3, 0 /*unused*/, &clan.unk17, clan.unk30, iVar2, 0, clan.clanHandle, 0, 0, 0);
+---}
+---	}
 ---```
 ---
 ---@param crewTypeIsPrivate boolean
@@ -1331,30 +1342,42 @@ function EndTextCommandThefeedPostAward(textureDict, textureName, rpBonus, color
 ---@param g number
 ---@param b number
 ---@return number, number
-function EndTextCommandThefeedPostCrewtag(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, rank, hasFounderStatus, isImportant, clanHandle, r, g, b) end
+function EndTextCommandThefeedPostCrewtag(
+	crewTypeIsPrivate,
+	crewTagContainsRockstar,
+	crewTag,
+	rank,
+	hasFounderStatus,
+	isImportant,
+	clanHandle,
+	r,
+	g,
+	b
+)
+end
 
 ---**`HUD` `client` [`0x137BC35589E34E1E`](https://docs.fivem.net/natives/?_0x137BC35589E34E1E)**
 ---
 ---```
----p0 = 1 or 0  
----crashes my game...  
----this is for sending invites to network players - jobs/apartment/ect...   
----return notification handle  
----int invite(Player player)  
----	{  
----networkHandleMgr netHandle;  
----networkClanMgr clan;  
----char *playerName = GET_PLAYER_NAME(player);  
----_SET_NOTIFICATION_TEXT_ENTRY("STRING");  
----_SET_NOTIFACTION_COLOR_NEXT(1);  
----ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(playerName);  
----NETWORK_HANDLE_FROM_PLAYER(player, &netHandle.netHandle, 13);  
----if (NETWORK_CLAN_PLAYER_IS_ACTIVE(&netHandle.netHandle))  
----{  
----	NETWORK_CLAN_PLAYER_GET_DESC(&clan.clanHandle, 35, &netHandle.netHandle);  
----	_DRAW_NOTIFICATION_CLAN_INVITE(0, _0x54E79E9C(&clan.clanHandle, 35), &clan.unk17, clan.isLeader, 0, 0, clan.clanHandle, playerName, 0, 0, 0);  
----}  
----	}  
+---p0 = 1 or 0
+---crashes my game...
+---this is for sending invites to network players - jobs/apartment/ect...
+---return notification handle
+---int invite(Player player)
+---	{
+---networkHandleMgr netHandle;
+---networkClanMgr clan;
+---char *playerName = GET_PLAYER_NAME(player);
+---_SET_NOTIFICATION_TEXT_ENTRY("STRING");
+---_SET_NOTIFACTION_COLOR_NEXT(1);
+---ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(playerName);
+---NETWORK_HANDLE_FROM_PLAYER(player, &netHandle.netHandle, 13);
+---if (NETWORK_CLAN_PLAYER_IS_ACTIVE(&netHandle.netHandle))
+---{
+---	NETWORK_CLAN_PLAYER_GET_DESC(&clan.clanHandle, 35, &netHandle.netHandle);
+---	_DRAW_NOTIFICATION_CLAN_INVITE(0, _0x54E79E9C(&clan.clanHandle, 35), &clan.unk17, clan.isLeader, 0, 0, clan.clanHandle, playerName, 0, 0, 0);
+---}
+---	}
 ---```
 ---
 ---@param crewTypeIsPrivate boolean
@@ -1369,7 +1392,20 @@ function EndTextCommandThefeedPostCrewtag(crewTypeIsPrivate, crewTagContainsRock
 ---@param g number
 ---@param b number
 ---@return number, number
-function EndTextCommandThefeedPostCrewtagWithGameName(crewTypeIsPrivate, crewTagContainsRockstar, crewTag, rank, isLeader, isImportant, clanHandle, gamerStr, r, g, b) end
+function EndTextCommandThefeedPostCrewtagWithGameName(
+	crewTypeIsPrivate,
+	crewTagContainsRockstar,
+	crewTag,
+	rank,
+	isLeader,
+	isImportant,
+	clanHandle,
+	gamerStr,
+	r,
+	g,
+	b
+)
+end
 
 ---**`HUD` `client` [`0x8EFCCF6EC66D85E4`](https://docs.fivem.net/natives/?_0x8EFCCF6EC66D85E4)**
 ---
@@ -1394,20 +1430,20 @@ function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImport
 ---Old description with list of possible icons and texture names:
 ---
 ---```
----List of picNames: pastebin.com/XdpJVbHz  
----flash is a bool for fading in.  
----iconTypes:  
----1 : Chat Box  
----2 : Email  
----3 : Add Friend Request  
----4 : Nothing  
----5 : Nothing  
----6 : Nothing  
----7 : Right Jumping Arrow  
----8 : RP Icon  
----9 : $ Icon  
----"sender" is the very top header. This can be any old string.  
----"subject" is the header under the sender.  
+---List of picNames: pastebin.com/XdpJVbHz
+---flash is a bool for fading in.
+---iconTypes:
+---1 : Chat Box
+---2 : Email
+---3 : Add Friend Request
+---4 : Nothing
+---5 : Nothing
+---6 : Nothing
+---7 : Right Jumping Arrow
+---8 : RP Icon
+---9 : $ Icon
+---"sender" is the very top header. This can be any old string.
+---"subject" is the header under the sender.
 ---```
 ---
 ---Example code:
@@ -1435,7 +1471,7 @@ function EndTextCommandThefeedPostCrewRankup(chTitle, clanTxd, clanTxn, isImport
 ---    local showInBrief = true
 ---    local blink = false -- blink doesn't work when using icon notifications.
 ---    EndTextCommandThefeedPostTicker(blink, showInBrief)
----    
+---
 ---    -- Cleanup after yourself!
 ---    UnregisterPedheadshot(handle)
 ---end)
@@ -1477,22 +1513,22 @@ function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType,
 ---**`HUD` `client` [`0x5CBF7BADE20DB93E`](https://docs.fivem.net/natives/?_0x5CBF7BADE20DB93E)**
 ---
 ---```
----List of picNames pastebin.com/XdpJVbHz  
----flash is a bool for fading in.  
----iconTypes:  
----1 : Chat Box  
----2 : Email  
----3 : Add Friend Request  
----4 : Nothing  
----5 : Nothing  
----6 : Nothing  
----7 : Right Jumping Arrow  
----8 : RP Icon  
----9 : $ Icon  
----"sender" is the very top header. This can be any old string.  
----"subject" is the header under the sender.  
----"duration" is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.  
----"clanTag" shows a crew tag in the "sender" header, after the text. You need to use 3 underscores as padding. Maximum length of this field seems to be 7. (e.g. "MK" becomes "___MK", "ACE" becomes "___ACE", etc.)  
+---List of picNames pastebin.com/XdpJVbHz
+---flash is a bool for fading in.
+---iconTypes:
+---1 : Chat Box
+---2 : Email
+---3 : Add Friend Request
+---4 : Nothing
+---5 : Nothing
+---6 : Nothing
+---7 : Right Jumping Arrow
+---8 : RP Icon
+---9 : $ Icon
+---"sender" is the very top header. This can be any old string.
+---"subject" is the header under the sender.
+---"duration" is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
+---"clanTag" shows a crew tag in the "sender" header, after the text. You need to use 3 underscores as padding. Maximum length of this field seems to be 7. (e.g. "MK" becomes "___MK", "ACE" becomes "___ACE", etc.)
 ---```
 ---
 ---@param picTxd string
@@ -1504,35 +1540,45 @@ function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType,
 ---@param duration number
 ---@param crewPackedStr string
 ---@return number
-function EndTextCommandThefeedPostMessagetextWithCrewTag(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration, crewPackedStr) end
+function EndTextCommandThefeedPostMessagetextWithCrewTag(
+	picTxd,
+	picTxn,
+	flash,
+	iconType,
+	nameStr,
+	subtitleStr,
+	duration,
+	crewPackedStr
+)
+end
 
 ---**`HUD` `client` [`0x531B84E7DA981FB6`](https://docs.fivem.net/natives/?_0x531B84E7DA981FB6)**
 ---
 ---```
----List of picNames: pastebin.com/XdpJVbHz  
----flash is a bool for fading in.  
----iconTypes:  
----1 : Chat Box  
----2 : Email  
----3 : Add Friend Request  
----4 : Nothing  
----5 : Nothing  
----6 : Nothing  
----7 : Right Jumping Arrow  
----8 : RP Icon  
----9 : $ Icon  
----"sender" is the very top header. This can be any old string.  
----"subject" is the header under the sender.  
----"duration" is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.  
----"clanTag" shows a crew tag in the "sender" header, after the text. You need to use 3 underscores as padding. Maximum length of this field seems to be 7. (e.g. "MK" becomes "___MK", "ACE" becomes "___ACE", etc.)  
----iconType2 is a mirror of iconType. It shows in the "subject" line, right under the original iconType.  
----int IconNotification(char *text, char *text2, char *Subject)  
----{  
----	_SET_NOTIFICATION_TEXT_ENTRY("STRING");  
----	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----	_SET_NOTIFICATION_MESSAGE_CLAN_TAG_2("CHAR_SOCIAL_CLUB", "CHAR_SOCIAL_CLUB", 1, 7, text2, Subject, 1.0f, "__EXAMPLE", 7);  
----	return _DRAW_NOTIFICATION(1, 1);  
----}  
+---List of picNames: pastebin.com/XdpJVbHz
+---flash is a bool for fading in.
+---iconTypes:
+---1 : Chat Box
+---2 : Email
+---3 : Add Friend Request
+---4 : Nothing
+---5 : Nothing
+---6 : Nothing
+---7 : Right Jumping Arrow
+---8 : RP Icon
+---9 : $ Icon
+---"sender" is the very top header. This can be any old string.
+---"subject" is the header under the sender.
+---"duration" is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
+---"clanTag" shows a crew tag in the "sender" header, after the text. You need to use 3 underscores as padding. Maximum length of this field seems to be 7. (e.g. "MK" becomes "___MK", "ACE" becomes "___ACE", etc.)
+---iconType2 is a mirror of iconType. It shows in the "subject" line, right under the original iconType.
+---int IconNotification(char *text, char *text2, char *Subject)
+---{
+---	_SET_NOTIFICATION_TEXT_ENTRY("STRING");
+---	ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
+---	_SET_NOTIFICATION_MESSAGE_CLAN_TAG_2("CHAR_SOCIAL_CLUB", "CHAR_SOCIAL_CLUB", 1, 7, text2, Subject, 1.0f, "__EXAMPLE", 7);
+---	return _DRAW_NOTIFICATION(1, 1);
+---}
 ---```
 ---
 ---@param picTxd string
@@ -1546,7 +1592,19 @@ function EndTextCommandThefeedPostMessagetextWithCrewTag(picTxd, picTxn, flash, 
 ---@param iconType2 number
 ---@param textColor number
 ---@return number
-function EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon(picTxd, picTxn, flash, iconType1, nameStr, subtitleStr, duration, crewPackedStr, iconType2, textColor) end
+function EndTextCommandThefeedPostMessagetextWithCrewTagAndAdditionalIcon(
+	picTxd,
+	picTxn,
+	flash,
+	iconType1,
+	nameStr,
+	subtitleStr,
+	duration,
+	crewPackedStr,
+	iconType2,
+	textColor
+)
+end
 
 ---**`HUD` `client` [`0xF020C96915705B3A`](https://docs.fivem.net/natives/?_0xF020C96915705B3A)**
 ---
@@ -1589,7 +1647,7 @@ function EndTextCommandThefeedPostMpticker(blink, bHasTokens) end
 ---    local showInBrief = true
 ---    local blink = false -- blink doesn't work when using icon notifications.
 ---    EndTextCommandThefeedPostTicker(blink, showInBrief)
----    
+---
 ---    -- Cleanup after yourself!
 ---    UnregisterPedheadshot(handle)
 ---end)
@@ -1694,8 +1752,8 @@ function FlashAbilityBar(millisecondsToFlash) end
 ---**`HUD` `client` [`0xF2DD778C22B15BDA`](https://docs.fivem.net/natives/?_0xF2DD778C22B15BDA)**
 ---
 ---```
----adds a short flash to the Radar/Minimap  
----Usage: UI.FLASH_MINIMAP_DISPLAY  
+---adds a short flash to the Radar/Minimap
+---Usage: UI.FLASH_MINIMAP_DISPLAY
 ---```
 ---
 function FlashMinimapDisplay() end
@@ -1744,7 +1802,7 @@ function GetBlipCoords(blip) end
 ---**`HUD` `client` [`0xBC8DBDCA2436F7E8`](https://docs.fivem.net/natives/?_0xBC8DBDCA2436F7E8)**
 ---
 ---```
----Returns the Blip handle of given Entity.  
+---Returns the Blip handle of given Entity.
 ---```
 ---
 ---@param entity Entity
@@ -1778,7 +1836,7 @@ function GetBlipInfoIdEntityIndex(blip) end
 ---**`HUD` `client` [`0x9B6786E4C03DD382`](https://docs.fivem.net/natives/?_0x9B6786E4C03DD382)**
 ---
 ---```
----This function is hard-coded to always return 0.  
+---This function is hard-coded to always return 0.
 ---```
 ---
 ---@param blip Blip
@@ -1832,7 +1890,7 @@ function GetCurrentWebsiteId() end
 ---**`HUD` `client` [`0x52F0982D7FD156B6`](https://docs.fivem.net/natives/?_0x52F0982D7FD156B6)**
 ---
 ---```
----This function is hard-coded to always return 1.  
+---This function is hard-coded to always return 1.
 ---```
 ---
 ---@return number
@@ -1898,7 +1956,7 @@ function GetHudScreenPositionFromWorldPosition(worldX, worldY, worldZ, screenX, 
 ---**`HUD` `client` [`0xF030907CCBB8A9FD`](https://docs.fivem.net/natives/?_0xF030907CCBB8A9FD)**
 ---
 ---```
----Returns the length of the string passed (much like strlen).  
+---Returns the length of the string passed (much like strlen).
 ---```
 ---
 ---@param string string
@@ -1914,7 +1972,7 @@ function GetLengthOfLiteralStringInBytes(string) end
 ---**`HUD` `client` [`0x801BD273D3A23F74`](https://docs.fivem.net/natives/?_0x801BD273D3A23F74)**
 ---
 ---```
----Returns the string length of the string from the gxt string .  
+---Returns the string length of the string from the gxt string .
 ---```
 ---
 ---@param gxt string
@@ -2045,7 +2103,7 @@ function GetWaypointBlipEnumId() end
 ---**`HUD` `client` [`0xAC0BFBDC3BE00E14`](https://docs.fivem.net/natives/?_0xAC0BFBDC3BE00E14)**
 ---
 ---```
----p1 is either 1 or 2 in the PC scripts.  
+---p1 is either 1 or 2 in the PC scripts.
 ---```
 ---
 ---This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the `CLONE_PED` ( https://runtime.fivem.net/doc/natives/#\_0xEF29A16337FACADB ) to clone said ped.
@@ -2063,7 +2121,7 @@ function HasAdditionalTextLoaded(slot) end
 ---**`HUD` `client` [`0xADBF060E2B30C5BC`](https://docs.fivem.net/natives/?_0xADBF060E2B30C5BC)**
 ---
 ---```
----Checks if the specified gxt has loaded into the passed slot.  
+---Checks if the specified gxt has loaded into the passed slot.
 ---```
 ---
 ---@param gxt string
@@ -2078,7 +2136,7 @@ function HideHelpTextThisFrame() end
 ---**`HUD` `client` [`0x719FF505F097FD20`](https://docs.fivem.net/natives/?_0x719FF505F097FD20)**
 ---
 ---```
----I think this works, but seems to prohibit switching to other weapons (or accessing the weapon wheel)  
+---I think this works, but seems to prohibit switching to other weapons (or accessing the weapon wheel)
 ---```
 ---
 function HideHudAndRadarThisFrame() end
@@ -2209,31 +2267,31 @@ function IsHoveringOverMissionCreatorBlip() end
 ---**`HUD` `client` [`0xBC4C9EA5391ECC0D`](https://docs.fivem.net/natives/?_0xBC4C9EA5391ECC0D)**
 ---
 ---```
----Full list of components below  
----HUD = 0;  
----HUD_WANTED_STARS = 1;  
----HUD_WEAPON_ICON = 2;  
----HUD_CASH = 3;  
----HUD_MP_CASH = 4;  
----HUD_MP_MESSAGE = 5;  
----HUD_VEHICLE_NAME = 6;  
----HUD_AREA_NAME = 7;  
----HUD_VEHICLE_CLASS = 8;  
----HUD_STREET_NAME = 9;  
----HUD_HELP_TEXT = 10;  
----HUD_FLOATING_HELP_TEXT_1 = 11;  
----HUD_FLOATING_HELP_TEXT_2 = 12;  
----HUD_CASH_CHANGE = 13;  
----HUD_RETICLE = 14;  
----HUD_SUBTITLE_TEXT = 15;  
----HUD_RADIO_STATIONS = 16;  
----HUD_SAVING_GAME = 17;  
----HUD_GAME_STREAM = 18;  
----HUD_WEAPON_WHEEL = 19;  
----HUD_WEAPON_WHEEL_STATS = 20;  
----MAX_HUD_COMPONENTS = 21;  
----MAX_HUD_WEAPONS = 22;  
----MAX_SCRIPTED_HUD_COMPONENTS = 141;  
+---Full list of components below
+---HUD = 0;
+---HUD_WANTED_STARS = 1;
+---HUD_WEAPON_ICON = 2;
+---HUD_CASH = 3;
+---HUD_MP_CASH = 4;
+---HUD_MP_MESSAGE = 5;
+---HUD_VEHICLE_NAME = 6;
+---HUD_AREA_NAME = 7;
+---HUD_VEHICLE_CLASS = 8;
+---HUD_STREET_NAME = 9;
+---HUD_HELP_TEXT = 10;
+---HUD_FLOATING_HELP_TEXT_1 = 11;
+---HUD_FLOATING_HELP_TEXT_2 = 12;
+---HUD_CASH_CHANGE = 13;
+---HUD_RETICLE = 14;
+---HUD_SUBTITLE_TEXT = 15;
+---HUD_RADIO_STATIONS = 16;
+---HUD_SAVING_GAME = 17;
+---HUD_GAME_STREAM = 18;
+---HUD_WEAPON_WHEEL = 19;
+---HUD_WEAPON_WHEEL_STATS = 20;
+---MAX_HUD_COMPONENTS = 21;
+---MAX_HUD_WEAPONS = 22;
+---MAX_SCRIPTED_HUD_COMPONENTS = 141;
 ---```
 ---
 ---@param id number
@@ -2380,8 +2438,8 @@ function LinkNamedRendertarget(modelHash) end
 ---**`HUD` `client` [`0x299FAEBB108AE05B`](https://docs.fivem.net/natives/?_0x299FAEBB108AE05B)**
 ---
 ---```
----Locks the minimap to the specified angle in integer degrees.  
----angle: The angle in whole degrees. If less than 0 or greater than 360, unlocks the angle.  
+---Locks the minimap to the specified angle in integer degrees.
+---angle: The angle in whole degrees. If less than 0 or greater than 360, unlocks the angle.
 ---```
 ---
 ---@param angle number
@@ -2390,7 +2448,7 @@ function LockMinimapAngle(angle) end
 ---**`HUD` `client` [`0x1279E861A329E73F`](https://docs.fivem.net/natives/?_0x1279E861A329E73F)**
 ---
 ---```
----Locks the minimap to the specified world position.  
+---Locks the minimap to the specified world position.
 ---```
 ---
 ---@param x number
@@ -2571,7 +2629,7 @@ function RemoveMultiplayerBankCash() end
 ---**`HUD` `client` [`0x968F270E39141ECA`](https://docs.fivem.net/natives/?_0x968F270E39141ECA)**
 ---
 ---```
----Removes multiplayer cash hud each frame  
+---Removes multiplayer cash hud each frame
 ---```
 ---
 function RemoveMultiplayerHudCash() end
@@ -2604,7 +2662,7 @@ function ReplaceHudColourWithRgba(hudColorIndex, r, g, b, a) end
 ---**`HUD` `client` [`0x71A78003C8E71424`](https://docs.fivem.net/natives/?_0x71A78003C8E71424)**
 ---
 ---```
----Request a gxt into the passed slot.  
+---Request a gxt into the passed slot.
 ---```
 ---
 ---@param gxt string
@@ -2634,14 +2692,14 @@ function ResetReticuleValues() end
 ---**`HUD` `client` [`0x10706DC6AD2D49C0`](https://docs.fivem.net/natives/?_0x10706DC6AD2D49C0)**
 ---
 ---```
----Before using this native click the native above and look at the decription.  
----Example:  
----int GetHash = Function.Call<int>(Hash.GET_HASH_KEY, "fe_menu_version_corona_lobby");  
----Function.Call(Hash.ACTIVATE_FRONTEND_MENU, GetHash, 0, -1);  
----Function.Call(Hash.RESTART_FRONTEND_MENU(GetHash, -1);  
----This native refreshes the frontend menu.  
----p1 = Hash of Menu  
----p2 = Unknown but always works with -1.  
+---Before using this native click the native above and look at the decription.
+---Example:
+---int GetHash = Function.Call<int>(Hash.GET_HASH_KEY, "fe_menu_version_corona_lobby");
+---Function.Call(Hash.ACTIVATE_FRONTEND_MENU, GetHash, 0, -1);
+---Function.Call(Hash.RESTART_FRONTEND_MENU(GetHash, -1);
+---This native refreshes the frontend menu.
+---p1 = Hash of Menu
+---p2 = Unknown but always works with -1.
 ---```
 ---
 ---@param menuHash Hash
@@ -2857,7 +2915,7 @@ function SetBlipHighDetail(blip, toggle) end
 ---**`HUD` `client` [`0xEAA0FFE120D92784`](https://docs.fivem.net/natives/?_0xEAA0FFE120D92784)**
 ---
 ---```
----Doesn't work if the label text of gxtEntry is >= 80.  
+---Doesn't work if the label text of gxtEntry is >= 80.
 ---```
 ---
 ---@param blip Blip
@@ -2873,7 +2931,7 @@ function SetBlipNameToPlayerName(blip, player) end
 ---**`HUD` `client` [`0xAE9FC9EF6A9FAC79`](https://docs.fivem.net/natives/?_0xAE9FC9EF6A9FAC79)**
 ---
 ---```
----See this topic for more details : gtaforums.com/topic/717612-v-scriptnative-documentation-and-research/page-35?p=1069477935  
+---See this topic for more details : gtaforums.com/topic/717612-v-scriptnative-documentation-and-research/page-35?p=1069477935
 ---```
 ---
 ---@param blip Blip
@@ -2893,7 +2951,7 @@ function SetBlipRotation(blip, rotation) end
 ---**`HUD` `client` [`0x4F7D8A9BFB0B43E9`](https://docs.fivem.net/natives/?_0x4F7D8A9BFB0B43E9)**
 ---
 ---```
----Enable / disable showing route for the Blip-object.  
+---Enable / disable showing route for the Blip-object.
 ---```
 ---
 ---@param blip Blip
@@ -3126,7 +3184,7 @@ function SetMissionName(p0, name) end
 ---**`HUD` `client` [`0xD48FE545CD46F857`](https://docs.fivem.net/natives/?_0xD48FE545CD46F857)**
 ---
 ---```
----Sets flag's sprite transparency. 0-255.  
+---Sets flag's sprite transparency. 0-255.
 ---```
 ---
 ---@param gamerTagId number
@@ -3231,7 +3289,7 @@ function SetMpGamerTagVisibility(gamerTagId, component, toggle) end
 ---**`HUD` `client` [`0xCF228E2AA03099C3`](https://docs.fivem.net/natives/?_0xCF228E2AA03099C3)**
 ---
 ---```
----displays wanted star above head  
+---displays wanted star above head
 ---```
 ---
 ---@param gamerTagId number
@@ -3302,8 +3360,8 @@ function SetPauseMenuPedSleepState(state) end
 ---**`HUD` `client` [`0x0C4BBF625CA98C4E`](https://docs.fivem.net/natives/?_0x0C4BBF625CA98C4E)**
 ---
 ---```
----if "flag" is true, the AI blip will always be displayed for the specified ped, if it has an AI blip  
----If "flag" is false, the AI blip will only be displayed when the player is in combat with the specified ped, if it has an AI blip  
+---if "flag" is true, the AI blip will always be displayed for the specified ped, if it has an AI blip
+---If "flag" is false, the AI blip will only be displayed when the player is in combat with the specified ped, if it has an AI blip
 ---```
 ---
 ---@param ped Ped
@@ -3351,8 +3409,8 @@ function SetRadarAsExteriorThisFrame() end
 ---**`HUD` `client` [`0x59E727A1C9D3E31A`](https://docs.fivem.net/natives/?_0x59E727A1C9D3E31A)**
 ---
 ---```
----List of interior hashes: pastebin.com/1FUyXNqY  
----Not for every interior zoom > 0 available.  
+---List of interior hashes: pastebin.com/1FUyXNqY
+---Not for every interior zoom > 0 available.
 ---```
 ---
 ---@param interior Hash
@@ -3365,7 +3423,7 @@ function SetRadarAsInteriorThisFrame(interior, x, y, heading, zoom) end
 ---**`HUD` `client` [`0x096EF57A0C999BBA`](https://docs.fivem.net/natives/?_0x096EF57A0C999BBA)**
 ---
 ---```
----zoomLevel ranges from 0 to 200  
+---zoomLevel ranges from 0 to 200
 ---```
 ---
 ---@param zoomLevel number
@@ -3469,7 +3527,7 @@ function SetTextEdge(p0, r, g, b, a) end
 ---**`HUD` `client` [`0x66E0276CC5F6B9DA`](https://docs.fivem.net/natives/?_0x66E0276CC5F6B9DA)**
 ---
 ---```
----fonts that mess up your text where made for number values/misc stuff  
+---fonts that mess up your text where made for number values/misc stuff
 ---```
 ---
 ---@param fontType number
@@ -3478,11 +3536,11 @@ function SetTextFont(fontType) end
 ---**`HUD` `client` [`0x4E096588B13FFECA`](https://docs.fivem.net/natives/?_0x4E096588B13FFECA)**
 ---
 ---```
----Types -  
----0: Center-Justify  
----1: Left-Justify  
----2: Right-Justify  
----Right-Justify requires SET_TEXT_WRAP, otherwise it will draw to the far right of the screen  
+---Types -
+---0: Center-Justify
+---1: Left-Justify
+---2: Right-Justify
+---Right-Justify requires SET_TEXT_WRAP, otherwise it will draw to the far right of the screen
 ---```
 ---
 ---@param justifyType number
@@ -3528,9 +3586,9 @@ function SetTextScale(scale, size) end
 ---**`HUD` `client` [`0x63145D9C883A1A70`](https://docs.fivem.net/natives/?_0x63145D9C883A1A70)**
 ---
 ---```
----It sets the text in a specified box and wraps the text if it exceeds the boundries. Both values are for X axis. Useful when positioning text set to center or aligned to the right.  
----start - left boundry on screen position (0.0 - 1.0)  
----end - right boundry on screen position (0.0 - 1.0)  
+---It sets the text in a specified box and wraps the text if it exceeds the boundries. Both values are for X axis. Useful when positioning text set to center or aligned to the right.
+---start - left boundry on screen position (0.0 - 1.0)
+---end - right boundry on screen position (0.0 - 1.0)
 ---```
 ---
 ---@param start number
@@ -3630,10 +3688,10 @@ function SetTextWrap(start, end_) end
 ---        Wait(0)
 ---        -- Display the warning message every tick.
 ---        SetWarningMessage("warning_message_first_line", 82, "warning_message_second_line", 0, -1, true, 0, 0, 0)
----        
+---
 ---        -- Check for key presses or instructional button clicks.
 ---        -- Input group of 2 is required for this to work while the warning is being displayed.
----        
+---
 ---        if (IsControlJustReleased(2, 201) or IsControlJustReleased(2, 217)) then -- any select/confirm key was pressed.
 ---            TriggerEvent("optionSelected", "select")
 ---            break
@@ -3662,12 +3720,12 @@ function SetWarningMessage(entryLine1, instructionalKey, entryLine2, p3, p4, bac
 ---**`HUD` `client` [`0xDC38CC1E35B6A5D7`](https://docs.fivem.net/natives/?_0xDC38CC1E35B6A5D7)**
 ---
 ---```
----You can only use text entries. No custom text.  
----C# Example :  
----Function.Call(Hash._SET_WARNING_MESSAGE_2, "HUD_QUIT", "HUD_CGIGNORE", 2, "HUD_CGINVITE", 0, -1, 0, 0, 1);  
----you can recreate this easily with scaleforms  
-------------------  
----Fixed native name, from before nativedb restoration.  
+---You can only use text entries. No custom text.
+---C# Example :
+---Function.Call(Hash._SET_WARNING_MESSAGE_2, "HUD_QUIT", "HUD_CGIGNORE", 2, "HUD_CGINVITE", 0, -1, 0, 0, 1);
+---you can recreate this easily with scaleforms
+------------------
+---Fixed native name, from before nativedb restoration.
 ---```
 ---
 ---```
@@ -3688,7 +3746,7 @@ function SetWarningMessageWithHeader(titleMsg, entryLine1, flags, promptMsg, p4,
 ---**`HUD` `client` [`0x701919482C74B5AB`](https://docs.fivem.net/natives/?_0x701919482C74B5AB)**
 ---
 ---```
----You can only use text entries. No custom text.  
+---You can only use text entries. No custom text.
 ---```
 ---
 ---```
@@ -3705,7 +3763,19 @@ function SetWarningMessageWithHeader(titleMsg, entryLine1, flags, promptMsg, p4,
 ---@param p7 any
 ---@param p8 any
 ---@param p9 boolean
-function SetWarningMessageWithHeaderAndSubstringFlags(entryHeader, entryLine1, instructionalKey, entryLine2, p4, p5, p6, p7, p8, p9) end
+function SetWarningMessageWithHeaderAndSubstringFlags(
+	entryHeader,
+	entryLine1,
+	instructionalKey,
+	entryLine2,
+	p4,
+	p5,
+	p6,
+	p7,
+	p8,
+	p9
+)
+end
 
 ---**`HUD` `client` [`0xA7E4E2D361C2627F`](https://docs.fivem.net/natives/?_0xA7E4E2D361C2627F)**
 ---
@@ -3774,7 +3844,7 @@ function ShowFriendIndicatorOnBlip(blip, toggle) end
 ---**`HUD` `client` [`0x5FBCA48327B914DF`](https://docs.fivem.net/natives/?_0x5FBCA48327B914DF)**
 ---
 ---```
----Adds the GTA: Online player heading indicator to a blip.  
+---Adds the GTA: Online player heading indicator to a blip.
 ---```
 ---
 ---@param blip Blip
@@ -3845,7 +3915,7 @@ function ShowStartMissionInstructionalButton(p0) end
 ---**`HUD` `client` [`0x74513EA3E505181E`](https://docs.fivem.net/natives/?_0x74513EA3E505181E)**
 ---
 ---```
----Adds a green checkmark on top of a blip.  
+---Adds a green checkmark on top of a blip.
 ---```
 ---
 ---@param blip Blip
@@ -4008,7 +4078,7 @@ function ThefeedPause() end
 ---**`HUD` `client` [`0xBE4390CB40B3E627`](https://docs.fivem.net/natives/?_0xBE4390CB40B3E627)**
 ---
 ---```
----Removes a notification instantly instead of waiting for it to disappear  
+---Removes a notification instantly instead of waiting for it to disappear
 ---```
 ---
 ---@param notificationId number
@@ -4143,13 +4213,13 @@ function BeginTextCommandGetWidth(text) end
 ---**`HUD` `client` [`0x521FB041D93DD0E4`](https://docs.fivem.net/natives/?_0x521FB041D93DD0E4)**
 ---
 ---```
----get's line count  
----int GetLineCount(char *text, float x, float y)  
----	{  
----_BEGIN_TEXT_COMMAND_LINE_COUNT("STRING");  
----                ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);  
----return _END_TEXT_COMMAND_GET_LINE_COUNT(x, y);  
----	}  
+---get's line count
+---int GetLineCount(char *text, float x, float y)
+---	{
+---_BEGIN_TEXT_COMMAND_LINE_COUNT("STRING");
+---                ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(text);
+---return _END_TEXT_COMMAND_GET_LINE_COUNT(x, y);
+---	}
 ---```
 ---
 ---@param entry string
@@ -4251,11 +4321,11 @@ function EndTextCommandThefeedPostMessagetextGxtEntry(txdName, textureName, flas
 ---**`HUD` `client` [`0xD202B92CBF1D816F`](https://docs.fivem.net/natives/?_0xD202B92CBF1D816F)**
 ---
 ---```
----returns a notification handle, prints out a notification like below:  
----type range: 0   
----if you set type to 1, image goes from 0 - 39 - Xbox you can add text to  
----example:   
----UI::_0xD202B92CBF1D816F(1, 20, "Who you trynna get crazy with, ese? Don't you know I'm LOCO?!");  
+---returns a notification handle, prints out a notification like below:
+---type range: 0
+---if you set type to 1, image goes from 0 - 39 - Xbox you can add text to
+---example:
+---UI::_0xD202B92CBF1D816F(1, 20, "Who you trynna get crazy with, ese? Don't you know I'm LOCO?!");
 ---```
 ---
 ---@param eType number
@@ -4293,7 +4363,7 @@ function ForceCloseTextInputBox() end
 ---**`HUD` `client` [`0x56176892826A4FE8`](https://docs.fivem.net/natives/?_0x56176892826A4FE8)**
 ---
 ---```
----Returns the current AI BLIP for the specified ped  
+---Returns the current AI BLIP for the specified ped
 ---```
 ---
 ---@param ped Ped
@@ -4568,7 +4638,7 @@ function IsMouseCursorAboveInstructionalButtons() end
 ---**`HUD` `client` [`0xB118AF58B5F332A1`](https://docs.fivem.net/natives/?_0xB118AF58B5F332A1)**
 ---
 ---```
----Returns whether or not the text chat (MULTIPLAYER_CHAT Scaleform component) is active.  
+---Returns whether or not the text chat (MULTIPLAYER_CHAT Scaleform component) is active.
 ---```
 ---
 ---@return boolean
@@ -4775,7 +4845,7 @@ function SetMainPlayerBlipColour(color) end
 ---**`HUD` `client` [`0xD201F3FF917A506D`](https://docs.fivem.net/natives/?_0xD201F3FF917A506D)**
 ---
 ---```
----Argument must be 0.0f or above 38.0f, or it will be ignored.  
+---Argument must be 0.0f or above 38.0f, or it will be ignored.
 ---```
 ---
 ---```
@@ -4812,23 +4882,23 @@ function SetMouseCursorActiveThisFrame() end
 ---**`HUD` `client` [`0x8DB8CFFD58B62552`](https://docs.fivem.net/natives/?_0x8DB8CFFD58B62552)**
 ---
 ---```
----Changes the mouse cursor's sprite.   
----public enum CursorType  
----{  
----    None = 0,  
----    Normal = 1,  
----    TransparentNormal = 2,  
----    PreGrab = 3,  
----    Grab = 4,  
----    MiddleFinger = 5,  
----    LeftArrow = 6,  
----    RightArrow = 7,  
----    UpArrow = 8,  
----    DownArrow = 9,  
----    HorizontalExpand = 10,  
----    Add = 11,  
----    Remove = 12,  
----}  
+---Changes the mouse cursor's sprite.
+---public enum CursorType
+---{
+---    None = 0,
+---    Normal = 1,
+---    TransparentNormal = 2,
+---    PreGrab = 3,
+---    Grab = 4,
+---    MiddleFinger = 5,
+---    LeftArrow = 6,
+---    RightArrow = 7,
+---    UpArrow = 8,
+---    DownArrow = 9,
+---    HorizontalExpand = 10,
+---    Add = 11,
+---    Remove = 12,
+---}
 ---```
 ---
 ---@param spriteId number
@@ -4866,7 +4936,7 @@ function SetMpGamerTagDisablePlayerHealthSync(gamerTagId, toggle) end
 ---**`HUD` `client` [`0x9C16459B2324B2CF`](https://docs.fivem.net/natives/?_0x9C16459B2324B2CF)**
 ---
 ---```
----displays wanted star above head  
+---displays wanted star above head
 ---```
 ---
 ---@param gamerTagId number
@@ -4916,8 +4986,8 @@ function SetPedHasAiBlipWithColor(ped, hasCone, color) end
 ---**`HUD` `client` [`0x77E2DD177910E1CF`](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)**
 ---
 ---```
----Sets the position of the arrow icon representing the player on both the minimap and world map.  
----Too bad this wouldn't work over the network (obviously not). Could spoof where we would be.  
+---Sets the position of the arrow icon representing the player on both the minimap and world map.
+---Too bad this wouldn't work over the network (obviously not). Could spoof where we would be.
 ---```
 ---
 ---@param x number
@@ -5065,7 +5135,21 @@ function SetWarningMessageListRow(index, name, cash, rp, lvl, colour) end
 ---@param p9 string unknown label
 ---@param background boolean Set to anything other than 0 or false (even any string) and it will draw a background. Setting it to 0 or false will draw no background.
 ---@param errorCode number Error code, shown at the bottom left if set to value other than 0.
-function SetWarningMessageWithAlert(labelTitle, labelMsg, p2, p3, labelMsg2, p5, p6, p7, p8, p9, background, errorCode) end
+function SetWarningMessageWithAlert(
+	labelTitle,
+	labelMsg,
+	p2,
+	p3,
+	labelMsg2,
+	p5,
+	p6,
+	p7,
+	p8,
+	p9,
+	background,
+	errorCode
+)
+end
 
 ---**`HUD` `client` [`0x38B55259C2E078ED`](https://docs.fivem.net/natives/?_0x38B55259C2E078ED)**
 ---

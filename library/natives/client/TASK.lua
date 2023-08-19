@@ -202,7 +202,7 @@ function AddPatrolRouteNode(p0, p1, x1, y1, z1, x2, y2, z2, p8) end
 ---**`TASK` `client` [`0x5CF0D8F9BBA0DD75`](https://docs.fivem.net/natives/?_0x5CF0D8F9BBA0DD75)**
 ---
 ---```
----x, y, z: offset in world coords from some entity.  
+---x, y, z: offset in world coords from some entity.
 ---```
 ---
 ---@param ped Ped
@@ -236,7 +236,7 @@ function AssistedMovementRemoveRoute(route) end
 ---**`TASK` `client` [`0x817268968605947A`](https://docs.fivem.net/natives/?_0x817268968605947A)**
 ---
 ---```
----Routes: "1_FIBStairs", "2_FIBStairs", "3_FIBStairs", "4_FIBStairs", "5_FIBStairs", "5_TowardsFire", "6a_FIBStairs", "7_FIBStairs", "8_FIBStairs", "Aprtmnt_1", "AssAfterLift", "ATM_1", "coroner2", "coroner_stairs", "f5_jimmy1", "fame1", "family5b", "family5c", "Family5d", "family5d", "FIB_Glass1", "FIB_Glass2", "FIB_Glass3", "finaBroute1A", "finalb1st", "finalB1sta", "finalbround", "finalbroute2", "Hairdresser1", "jan_foyet_ft_door", "Jo_3", "Lemar1", "Lemar2", "mansion_1", "Mansion_1", "pols_1", "pols_2", "pols_3", "pols_4", "pols_5", "pols_6", "pols_7", "pols_8", "Pro_S1", "Pro_S1a", "Pro_S2", "Towards_case", "trev_steps", "tunrs1", "tunrs2", "tunrs3", "Wave01457s"  
+---Routes: "1_FIBStairs", "2_FIBStairs", "3_FIBStairs", "4_FIBStairs", "5_FIBStairs", "5_TowardsFire", "6a_FIBStairs", "7_FIBStairs", "8_FIBStairs", "Aprtmnt_1", "AssAfterLift", "ATM_1", "coroner2", "coroner_stairs", "f5_jimmy1", "fame1", "family5b", "family5c", "Family5d", "family5d", "FIB_Glass1", "FIB_Glass2", "FIB_Glass3", "finaBroute1A", "finalb1st", "finalB1sta", "finalbround", "finalbroute2", "Hairdresser1", "jan_foyet_ft_door", "Jo_3", "Lemar1", "Lemar2", "mansion_1", "Mansion_1", "pols_1", "pols_2", "pols_3", "pols_4", "pols_5", "pols_6", "pols_7", "pols_8", "Pro_S1", "Pro_S1a", "Pro_S2", "Towards_case", "trev_steps", "tunrs1", "tunrs2", "tunrs3", "Wave01457s"
 ---```
 ---
 ---@param route string
@@ -289,8 +289,8 @@ function CloseSequenceTask(taskSequenceId) end
 ---**`TASK` `client` [`0xDCFE42068FE0135A`](https://docs.fivem.net/natives/?_0xDCFE42068FE0135A)**
 ---
 ---```
----Forces the ped to use the mounted weapon.  
----Returns false if task is not possible.  
+---Forces the ped to use the mounted weapon.
+---Returns false if task is not possible.
 ---```
 ---
 ---@param ped Ped
@@ -379,7 +379,7 @@ function DoesScenarioOfTypeExistInArea(p0, p1, p2, p3, p4, p5) end
 ---**`TASK` `client` [`0xA98B8E3C088E5A31`](https://docs.fivem.net/natives/?_0xA98B8E3C088E5A31)**
 ---
 ---```
----Checks if there is a cover point at position  
+---Checks if there is a cover point at position
 ---```
 ---
 ---@param x number
@@ -620,7 +620,7 @@ function IsPedActiveInScenario(ped) end
 ---**`TASK` `client` [`0x90A09F3A45FED688`](https://docs.fivem.net/natives/?_0x90A09F3A45FED688)**
 ---
 ---```
----This function is hard-coded to always return 0.  
+---This function is hard-coded to always return 0.
 ---```
 ---
 ---@param ped Ped
@@ -680,7 +680,7 @@ function IsPedStill(ped) end
 ---**`TASK` `client` [`0xE45B7F222DE47E09`](https://docs.fivem.net/natives/?_0xE45B7F222DE47E09)**
 ---
 ---```
----What's strafing?  
+---What's strafing?
 ---```
 ---
 ---@param ped Ped
@@ -790,7 +790,7 @@ function IsWaypointPlaybackGoingOnForVehicle(vehicle) end
 ---**`TASK` `client` [`0xA36BFB5EE89F3D82`](https://docs.fivem.net/natives/?_0xA36BFB5EE89F3D82)**
 ---
 ---```
----The patrol route name must starts with "miss_" to be properly created. 
+---The patrol route name must starts with "miss_" to be properly created.
 ---
 --- patrolRoutes found in the b617d scripts:
 --- "miss_Ass0",
@@ -931,7 +931,7 @@ function SetAnimWeight(p0, p1, p2, p3, p4) end
 ---**`TASK` `client` [`0xE5B302114D8162EE`](https://docs.fivem.net/natives/?_0xE5B302114D8162EE)**
 ---
 ---```
----For p1 & p2 (Ped, Vehicle). I could be wrong, as the only time this native is called in scripts is once and both are 0, but I assume this native will work like SET_MOUNTED_WEAPON_TARGET in which has the same exact amount of parameters and the 1st and last 3 parameters are right and the same for both natives.  
+---For p1 & p2 (Ped, Vehicle). I could be wrong, as the only time this native is called in scripts is once and both are 0, but I assume this native will work like SET_MOUNTED_WEAPON_TARGET in which has the same exact amount of parameters and the 1st and last 3 parameters are right and the same for both natives.
 ---```
 ---
 ---@param shootingPed Ped
@@ -951,12 +951,12 @@ function SetDriveTaskCruiseSpeed(driver, cruiseSpeed) end
 ---**`TASK` `client` [`0xDACE1BE37D88AF67`](https://docs.fivem.net/natives/?_0xDACE1BE37D88AF67)**
 ---
 ---```
----This native is used to set the driving style for specific ped.  
----Driving styles id seems to be:  
----786468  
----262144  
----786469  
----http://gtaforums.com/topic/822314-guide-driving-styles/  
+---This native is used to set the driving style for specific ped.
+---Driving styles id seems to be:
+---786468
+---262144
+---786469
+---http://gtaforums.com/topic/822314-guide-driving-styles/
 ---```
 ---
 ---@param ped Ped
@@ -972,12 +972,12 @@ function SetDriveTaskMaxCruiseSpeed(p0, p1) end
 ---**`TASK` `client` [`0x535E97E1F7FC0C6A`](https://docs.fivem.net/natives/?_0x535E97E1F7FC0C6A)**
 ---
 ---```
----Groups found in the scripts used with this native:  
----"AMMUNATION",  
----"QUARRY",  
----"Triathlon_1",  
----"Triathlon_2",  
----"Triathlon_3"  
+---Groups found in the scripts used with this native:
+---"AMMUNATION",
+---"QUARRY",
+---"Triathlon_1",
+---"Triathlon_2",
+---"Triathlon_3"
 ---```
 ---
 ---@param scenarioGroup string
@@ -986,7 +986,7 @@ function SetExclusiveScenarioGroup(scenarioGroup) end
 ---**`TASK` `client` [`0x6C6B148586F934F7`](https://docs.fivem.net/natives/?_0x6C6B148586F934F7)**
 ---
 ---```
----Birds will try to reach the given height.  
+---Birds will try to reach the given height.
 ---```
 ---
 ---@param height number
@@ -1003,7 +1003,7 @@ function SetHighFallTask(ped, duration, p2, p3) end
 ---**`TASK` `client` [`0xCCD892192C6D2BB9`](https://docs.fivem.net/natives/?_0xCCD892192C6D2BB9)**
 ---
 ---```
----Note: Look in decompiled scripts and the times that p1 and p2 aren't 0. They are filled with vars. If you look through out that script what other natives those vars are used in, you can tell p1 is a ped and p2 is a vehicle. Which most likely means if you want the mounted weapon to target a ped set targetVehicle to 0 or vice-versa.  
+---Note: Look in decompiled scripts and the times that p1 and p2 aren't 0. They are filled with vars. If you look through out that script what other natives those vars are used in, you can tell p1 is a ped and p2 is a vehicle. Which most likely means if you want the mounted weapon to target a ped set targetVehicle to 0 or vice-versa.
 ---```
 ---
 ---```
@@ -1043,10 +1043,10 @@ function SetParachuteTaskThrust(ped, thrust) end
 ---**`TASK` `client` [`0x8FD89A6240813FD0`](https://docs.fivem.net/natives/?_0x8FD89A6240813FD0)**
 ---
 ---```
----Appears only in fm_mission_controller and used only 3 times.  
----ped was always PLAYER_PED_ID()  
----p1 was always true  
----p2 was always true  
+---Appears only in fm_mission_controller and used only 3 times.
+---ped was always PLAYER_PED_ID()
+---p1 was always true
+---p2 was always true
 ---```
 ---
 ---@param ped Ped
@@ -1118,7 +1118,7 @@ function SetPedWaypointRouteOffset(p0, p1, p2, p3) end
 ---**`TASK` `client` [`0x02C8E5B49848664E`](https://docs.fivem.net/natives/?_0x02C8E5B49848664E)**
 ---
 ---```
----Occurrences in the b617d scripts: pastebin.com/Tvg2PRHU  
+---Occurrences in the b617d scripts: pastebin.com/Tvg2PRHU
 ---```
 ---
 ---@param scenarioGroup string
@@ -1238,10 +1238,10 @@ function StopAnimTask(ped, animDictionary, animationName, animExitSpeed) end
 ---**`TASK` `client` [`0x93B93A37987F1F3D`](https://docs.fivem.net/natives/?_0x93B93A37987F1F3D)**
 ---
 ---```
----Makes the specified ped achieve the specified heading.  
----pedHandle: The handle of the ped to assign the task to.  
----heading: The desired heading.  
----timeout: The time, in milliseconds, to allow the task to complete. If the task times out, it is cancelled, and the ped will stay at the heading it managed to reach in the time.  
+---Makes the specified ped achieve the specified heading.
+---pedHandle: The handle of the ped to assign the task to.
+---heading: The desired heading.
+---timeout: The time, in milliseconds, to allow the task to complete. If the task times out, it is cancelled, and the ped will stay at the heading it managed to reach in the time.
 ---```
 ---
 ---@param ped Ped
@@ -1263,7 +1263,7 @@ function TaskAimGunAtCoord(ped, x, y, z, time, p5, p6) end
 ---**`TASK` `client` [`0x9B53BB6E8943AF53`](https://docs.fivem.net/natives/?_0x9B53BB6E8943AF53)**
 ---
 ---```
----duration: the amount of time in milliseconds to do the task.  -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
+---duration: the amount of time in milliseconds to do the task.  -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped
 ---```
 ---
 ---@param ped Ped
@@ -1337,8 +1337,8 @@ function TaskBoatMission(pedDriver, boat, p2, p3, x, y, z, p7, maxSpeed, driving
 ---**`TASK` `client` [`0x8C338E0263E4FD19`](https://docs.fivem.net/natives/?_0x8C338E0263E4FD19)**
 ---
 ---```
----p2 tend to be 16, 17 or 1  
----p3 to p7 tend to be 0.0  
+---p2 tend to be 16, 17 or 1
+---p3 to p7 tend to be 0.0
 ---```
 ---
 ---@param ped Ped
@@ -1380,7 +1380,7 @@ function TaskClearLookAt(ped) end
 ---**`TASK` `client` [`0x89D9FCC2435112F1`](https://docs.fivem.net/natives/?_0x89D9FCC2435112F1)**
 ---
 ---```
----Climbs or vaults the nearest thing.  
+---Climbs or vaults the nearest thing.
 ---```
 ---
 ---@param ped Ped
@@ -1396,8 +1396,8 @@ function TaskClimbLadder(ped, p1) end
 ---**`TASK` `client` [`0x7BF835BB9E2698C8`](https://docs.fivem.net/natives/?_0x7BF835BB9E2698C8)**
 ---
 ---```
----Despite its name, it only attacks ONE hated target. The one closest hated target.  
----p2 seems to be always 0  
+---Despite its name, it only attacks ONE hated target. The one closest hated target.
+---p2 seems to be always 0
 ---```
 ---
 ---@param ped Ped
@@ -1416,7 +1416,7 @@ function TaskCombatHatedTargetsAroundPedTimed(p0, p1, p2, p3) end
 ---**`TASK` `client` [`0x4CF5F55DAC3280A0`](https://docs.fivem.net/natives/?_0x4CF5F55DAC3280A0)**
 ---
 ---```
----Despite its name, it only attacks ONE hated target. The one closest to the specified position.  
+---Despite its name, it only attacks ONE hated target. The one closest to the specified position.
 ---```
 ---
 ---@param ped Ped
@@ -1430,9 +1430,9 @@ function TaskCombatHatedTargetsInArea(ped, x, y, z, radius, p5) end
 ---**`TASK` `client` [`0xF166E48407BAC484`](https://docs.fivem.net/natives/?_0xF166E48407BAC484)**
 ---
 ---```
----Makes the specified ped attack the target ped.  
----p2 should be 0  
----p3 should be 16  
+---Makes the specified ped attack the target ped.
+---p2 should be 0
+---p3 should be 16
 ---```
 ---
 ---@param ped Ped
@@ -1478,14 +1478,26 @@ function TaskCower(ped, duration) end
 ---@param pedAccuracy number
 ---@param p8 boolean
 ---@param firingPattern Hash
-function TaskDriveBy(driverPed, targetPed, targetVehicle, targetX, targetY, targetZ, distanceToShoot, pedAccuracy, p8, firingPattern) end
+function TaskDriveBy(
+	driverPed,
+	targetPed,
+	targetVehicle,
+	targetX,
+	targetY,
+	targetZ,
+	distanceToShoot,
+	pedAccuracy,
+	p8,
+	firingPattern
+)
+end
 
 ---**`TASK` `client` [`0xC20E50AA46D09CA8`](https://docs.fivem.net/natives/?_0xC20E50AA46D09CA8)**
 ---
 ---```
----speed 1.0 = walk, 2.0 = run  
----p5 1 = normal, 3 = teleport to vehicle, 8 = normal/carjack ped from seat, 16 = teleport directly into vehicle  
----p6 is always 0  
+---speed 1.0 = walk, 2.0 = run
+---p5 1 = normal, 3 = teleport to vehicle, 8 = normal/carjack ped from seat, 16 = teleport directly into vehicle
+---p6 is always 0
 ---```
 ---
 ---@param ped Ped
@@ -1531,7 +1543,7 @@ function TaskFlushRoute() end
 ---**`TASK` `client` [`0x15D3A79D4E44B913`](https://docs.fivem.net/natives/?_0x15D3A79D4E44B913)**
 ---
 ---```
----If no timeout, set timeout to -1.  
+---If no timeout, set timeout to -1.
 ---```
 ---
 ---@param ped Ped
@@ -1559,7 +1571,21 @@ function TaskFollowNavMeshToCoord(ped, x, y, z, speed, timeout, stoppingRange, p
 ---@param unkY number
 ---@param unkZ number
 ---@param unk_40000f number
-function TaskFollowNavMeshToCoordAdvanced(ped, x, y, z, speed, timeout, unkFloat, unkInt, unkX, unkY, unkZ, unk_40000f) end
+function TaskFollowNavMeshToCoordAdvanced(
+	ped,
+	x,
+	y,
+	z,
+	speed,
+	timeout,
+	unkFloat,
+	unkInt,
+	unkX,
+	unkY,
+	unkZ,
+	unk_40000f
+)
+end
 
 ---**`TASK` `client` [`0x595583281858626E`](https://docs.fivem.net/natives/?_0x595583281858626E)**
 ---
@@ -1584,9 +1610,9 @@ function TaskFollowPointRoute(ped, speed, unknown) end
 ---**`TASK` `client` [`0x304AE42E357B8C7E`](https://docs.fivem.net/natives/?_0x304AE42E357B8C7E)**
 ---
 ---```
----p6 always -1  
----p7 always 10.0  
----p8 always 1  
+---p6 always -1
+---p7 always 10.0
+---p8 always 1
 ---```
 ---
 ---@param ped Ped
@@ -1598,7 +1624,18 @@ function TaskFollowPointRoute(ped, speed, unknown) end
 ---@param timeout number
 ---@param stoppingRange number
 ---@param persistFollowing boolean
-function TaskFollowToOffsetOfEntity(ped, entity, offsetX, offsetY, offsetZ, movementSpeed, timeout, stoppingRange, persistFollowing) end
+function TaskFollowToOffsetOfEntity(
+	ped,
+	entity,
+	offsetX,
+	offsetY,
+	offsetZ,
+	movementSpeed,
+	timeout,
+	stoppingRange,
+	persistFollowing
+)
+end
 
 ---**`TASK` `client` [`0x0759591819534F7B`](https://docs.fivem.net/natives/?_0x0759591819534F7B)**
 ---
@@ -1730,7 +1767,24 @@ function TaskGoStraightToCoordRelativeToEntity(entity1, entity2, p2, p3, p4, p5,
 ---@param unkFlag number
 ---@param aimingFlag number
 ---@param firingPattern Hash
-function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(pedHandle, goToLocationX, goToLocationY, goToLocationZ, focusLocationX, focusLocationY, focusLocationZ, speed, shootAtEnemies, distanceToStopAt, noRoadsDistance, unkTrue, unkFlag, aimingFlag, firingPattern) end
+function TaskGoToCoordAndAimAtHatedEntitiesNearCoord(
+	pedHandle,
+	goToLocationX,
+	goToLocationY,
+	goToLocationZ,
+	focusLocationX,
+	focusLocationY,
+	focusLocationZ,
+	speed,
+	shootAtEnemies,
+	distanceToStopAt,
+	noRoadsDistance,
+	unkTrue,
+	unkFlag,
+	aimingFlag,
+	firingPattern
+)
+end
 
 ---**`TASK` `client` [`0x5BC448CB78FA3E88`](https://docs.fivem.net/natives/?_0x5BC448CB78FA3E88)**
 ---
@@ -1789,7 +1843,22 @@ function TaskGoToCoordAnyMeansExtraParams(ped, x, y, z, speed, p5, p6, walkingSt
 ---@param p10 any
 ---@param p11 any
 ---@param p12 any
-function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(ped, x, y, z, speed, p5, p6, walkingStyle, p8, p9, p10, p11, p12) end
+function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(
+	ped,
+	x,
+	y,
+	z,
+	speed,
+	p5,
+	p6,
+	walkingStyle,
+	p8,
+	p9,
+	p10,
+	p11,
+	p12
+)
+end
 
 ---**`TASK` `client` [`0x11315AB3385B8AC0`](https://docs.fivem.net/natives/?_0x11315AB3385B8AC0)**
 ---
@@ -1810,7 +1879,24 @@ function TaskGoToCoordAnyMeansExtraParamsWithCruiseSpeed(ped, x, y, z, speed, p5
 ---@param flags any 0 / 512 / 513, etc
 ---@param p13 boolean
 ---@param firingPattern Hash ${firing_pattern_full_auto}, 0xC6EE6B4C
-function TaskGoToCoordWhileAimingAtCoord(ped, x, y, z, aimAtX, aimAtY, aimAtZ, moveSpeed, shoot, p9, p10, p11, flags, p13, firingPattern) end
+function TaskGoToCoordWhileAimingAtCoord(
+	ped,
+	x,
+	y,
+	z,
+	aimAtX,
+	aimAtY,
+	aimAtZ,
+	moveSpeed,
+	shoot,
+	p9,
+	p10,
+	p11,
+	flags,
+	p13,
+	firingPattern
+)
+end
 
 ---**`TASK` `client` [`0xB2A16444EAD9AE47`](https://docs.fivem.net/natives/?_0xB2A16444EAD9AE47)**
 ---
@@ -1867,9 +1953,9 @@ function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9
 ---**`TASK` `client` [`0x97465886D35210E9`](https://docs.fivem.net/natives/?_0x97465886D35210E9)**
 ---
 ---```
----shootatEntity:  
----If true, peds will shoot at Entity till it is dead.  
----If false, peds will just walk till they reach the entity and will cease shooting.  
+---shootatEntity:
+---If true, peds will shoot at Entity till it is dead.
+---If false, peds will just walk till they reach the entity and will cease shooting.
 ---```
 ---
 ---@param ped Ped
@@ -1882,7 +1968,19 @@ function TaskGoToEntityWhileAimingAtCoord(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9
 ---@param p7 boolean
 ---@param p8 boolean
 ---@param firingPattern Hash
-function TaskGoToEntityWhileAimingAtEntity(ped, entityToWalkTo, entityToAimAt, speed, shootatEntity, p5, p6, p7, p8, firingPattern) end
+function TaskGoToEntityWhileAimingAtEntity(
+	ped,
+	entityToWalkTo,
+	entityToAimAt,
+	speed,
+	shootatEntity,
+	p5,
+	p6,
+	p7,
+	p8,
+	firingPattern
+)
+end
 
 ---**`TASK` `client` [`0xD2A207EEBDF9889B`](https://docs.fivem.net/natives/?_0xD2A207EEBDF9889B)**
 ---
@@ -1911,13 +2009,13 @@ function TaskGuardCurrentPosition(p0, p1, p2, p3) end
 ---**`TASK` `client` [`0xC946FE14BE0EB5E2`](https://docs.fivem.net/natives/?_0xC946FE14BE0EB5E2)**
 ---
 ---```
----p0 - Guessing PedID  
----p1, p2, p3 - XYZ?  
----p4 - ???  
----p5 - Maybe the size of sphere from XYZ?  
----p6 - ???  
----p7, p8, p9 - XYZ again?  
----p10 - Maybe the size of sphere from second XYZ?  
+---p0 - Guessing PedID
+---p1, p2, p3 - XYZ?
+---p4 - ???
+---p5 - Maybe the size of sphere from XYZ?
+---p6 - ???
+---p7, p8, p9 - XYZ again?
+---p10 - Maybe the size of sphere from second XYZ?
 ---```
 ---
 ---@param p0 Ped
@@ -1936,9 +2034,9 @@ function TaskGuardSphereDefensiveArea(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p1
 ---**`TASK` `client` [`0xF2EAB31979A7F910`](https://docs.fivem.net/natives/?_0xF2EAB31979A7F910)**
 ---
 ---```
----In the scripts, p3 was always -1.  
----p3 seems to be duration or timeout of turn animation.  
----Also facingPed can be 0 or -1 so ped will just raise hands up.  
+---In the scripts, p3 was always -1.
+---p3 seems to be duration or timeout of turn animation.
+---Also facingPed can be 0 or -1 so ped will just raise hands up.
 ---```
 ---
 ---@param ped Ped
@@ -1951,10 +2049,10 @@ function TaskHandsUp(ped, duration, facingPed, p3, p4) end
 ---**`TASK` `client` [`0xAC83B1DB38D0ADA0`](https://docs.fivem.net/natives/?_0xAC83B1DB38D0ADA0)**
 ---
 ---```
----Ped pilot should be in a heli.  
----EntityToFollow can be a vehicle or Ped.  
----x,y,z appear to be how close to the EntityToFollow the heli should be. Scripts use 0.0, 0.0, 80.0. Then the heli tries to position itself 80 units above the EntityToFollow. If you reduce it to -5.0, it tries to go below (if the EntityToFollow is a heli or plane)  
----NOTE: If the pilot finds enemies, it will engage them, then remain there idle, not continuing to chase the Entity given.  
+---Ped pilot should be in a heli.
+---EntityToFollow can be a vehicle or Ped.
+---x,y,z appear to be how close to the EntityToFollow the heli should be. Scripts use 0.0, 0.0, 80.0. Then the heli tries to position itself 80 units above the EntityToFollow. If you reduce it to -5.0, it tries to go below (if the EntityToFollow is a heli or plane)
+---NOTE: If the pilot finds enemies, it will engage them, then remain there idle, not continuing to chase the Entity given.
 ---```
 ---
 ---@param pilot Ped
@@ -2001,15 +2099,32 @@ function TaskHeliChase(pilot, entityToFollow, x, y, z) end
 ---@param unk2 number
 ---@param unk3 number
 ---@param landingFlags number
-function TaskHeliMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, maxSpeed, landingRadius, targetHeading, unk1, unk2, unk3, landingFlags) end
+function TaskHeliMission(
+	pilot,
+	aircraft,
+	targetVehicle,
+	targetPed,
+	destinationX,
+	destinationY,
+	destinationZ,
+	missionFlag,
+	maxSpeed,
+	landingRadius,
+	targetHeading,
+	unk1,
+	unk2,
+	unk3,
+	landingFlags
+)
+end
 
 ---**`TASK` `client` [`0x0AE4086104E067B1`](https://docs.fivem.net/natives/?_0x0AE4086104E067B1)**
 ---
 ---```
----Definition is wrong. This has 4 parameters (Not sure when they were added. v350 has 2, v678 has 4).  
----v350: Ped ped, bool unused  
----v678: Ped ped, bool unused, bool flag1, bool flag2  
----flag1 = super jump, flag2 = do nothing if flag1 is false and doubles super jump height if flag1 is true.  
+---Definition is wrong. This has 4 parameters (Not sure when they were added. v350 has 2, v678 has 4).
+---v350: Ped ped, bool unused
+---v678: Ped ped, bool unused, bool flag1, bool flag2
+---flag1 = super jump, flag2 = do nothing if flag1 is false and doubles super jump height if flag1 is true.
 ---```
 ---
 ---```
@@ -2033,15 +2148,15 @@ function TaskLeaveAnyVehicle(ped, p1, flags) end
 ---**`TASK` `client` [`0xD3DBCE61A490BE02`](https://docs.fivem.net/natives/?_0xD3DBCE61A490BE02)**
 ---
 ---```
----Flags from decompiled scripts:  
----0 = normal exit and closes door.  
----1 = normal exit and closes door.  
+---Flags from decompiled scripts:
+---0 = normal exit and closes door.
+---1 = normal exit and closes door.
 ---16 = teleports outside, door kept closed.  (This flag does not seem to work for the front seats in buses, NPCs continue to exit normally)
----64 = normal exit and closes door, maybe a bit slower animation than 0.  
----256 = normal exit but does not close the door.  
----4160 = ped is throwing himself out, even when the vehicle is still.  
----262144 = ped moves to passenger seat first, then exits normally  
----Others to be tried out: 320, 512, 131072.  
+---64 = normal exit and closes door, maybe a bit slower animation than 0.
+---256 = normal exit but does not close the door.
+---4160 = ped is throwing himself out, even when the vehicle is still.
+---262144 = ped moves to passenger seat first, then exits normally
+---Others to be tried out: 320, 512, 131072.
 ---```
 ---
 ---@param ped Ped
@@ -2063,9 +2178,9 @@ function TaskLookAtCoord(entity, x, y, z, duration, p5, p6) end
 ---**`TASK` `client` [`0x69F4BE8C8CC4796C`](https://docs.fivem.net/natives/?_0x69F4BE8C8CC4796C)**
 ---
 ---```
----param3: duration in ms, use -1 to look forever  
----param4: using 2048 is fine  
----param5: using 3 is fine  
+---param3: duration in ms, use -1 to look forever
+---param4: using 2048 is fine
+---param5: using 3 is fine
 ---```
 ---
 ---@param ped Ped
@@ -2128,9 +2243,9 @@ function TaskOpenVehicleDoor(ped, vehicle, timeOut, seat, speed) end
 ---**`TASK` `client` [`0xD2F1C53C97EE81AB`](https://docs.fivem.net/natives/?_0xD2F1C53C97EE81AB)**
 ---
 ---```
----This function has a third parameter as well (bool).  
----Second parameter is unused.  
----seconds parameter was for jetpack in the early stages of gta and the hard coded code is now removed  
+---This function has a third parameter as well (bool).
+---Second parameter is unused.
+---seconds parameter was for jetpack in the early stages of gta and the hard coded code is now removed
 ---```
 ---
 ---```
@@ -2144,7 +2259,7 @@ function TaskParachute(ped, p1) end
 ---**`TASK` `client` [`0xB33E291AFA6BD03A`](https://docs.fivem.net/natives/?_0xB33E291AFA6BD03A)**
 ---
 ---```
----makes ped parachute to coords x y z. Works well with PATHFIND::GET_SAFE_COORD_FOR_PED  
+---makes ped parachute to coords x y z. Works well with PATHFIND::GET_SAFE_COORD_FOR_PED
 ---```
 ---
 ---@param ped Ped
@@ -2249,47 +2364,47 @@ function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, r
 ---**`TASK` `client` [`0x23703CD154E83B88`](https://docs.fivem.net/natives/?_0x23703CD154E83B88)**
 ---
 ---```
----EDITED (7/13/2017)  
----NOTE: If you want air combat, AI::TASK_COMBAT_PED (while your pilot is in an aircraft) also does the same thing as this native.  
----DESCRIPTION:  
----Ever wish your buddy could shoot down one of your enemies for you? Ever wanted an auto-pilot? Well look no further! This is the native for you! (Ped intelligence may vary)  
----USAGE:  
------ REQUIRED --  
----• pilot = The ped flying the aircraft.  
----• aircraft = The aircraft the pilot is flying  
------ OPTIONAL -- [atleast 1 must be assigned]  
----• targetVehicle = The vehicle the pilot will target.  
----• targetPed = The ped the pilot will target.  
----• destinationX, destinationY, destinationZ = The location the pilot will target.  
------ LOGIC --  
----• missionFlag = The type of mission. pastebin.com/R8x73dbv  
----• angularDrag = The higher the value, the slower the plane will rotate. Value ranges from 0 - Infinity.  
----• unk = Set to 0, and you'll be fine.  
----• targetHeading = The target angle (from world space north) that the pilot will try to acheive before executing an attack/landing.  
----• maxZ = Maximum Z coordinate height for flying.  
----• minZ = Minimum Z coordinate height for flying.  
----Z: 2,700 is the default max height a pilot will be able to fly. Anything greater and he will fly downward until reaching 2,700 again.  
----Mission Types (incase you don't like links..):  
----0 = None  
----1 = Unk  
----2 = CTaskVehicleRam  
----3 = CTaskVehicleBlock  
----4 = CTaskVehicleGoToPlane  
----5 = CTaskVehicleStop  
----6 = CTaskVehicleAttack  
----7 = CTaskVehicleFollow  
----8 = CTaskVehicleFleeAirborne  
----9 = CTaskVehicleCircle  
----10 = CTaskVehicleEscort  
----15 = CTaskVehicleFollowRecording  
----16 = CTaskVehiclePoliceBehaviour  
----17 = CTaskVehicleCrash  
----Example C#:  
----Function.Call(Hash.TASK_PLANE_MISSION, pilot, vehicle, 0, Game.Player.Character, 0, 0, 0, 6, 0f, 0f, 0f, 2500.0f, -1500f);  
----Example C++  
----AI::TASK_PLANE_MISSION(pilot, vehicle, 0, PLAYER::GET_PLAYER_PED(PLAYER::GET_PLAYER_INDEX()), 0, 0, 0, 6, 0.0, 0.0, 0.0, 2500.0, -1500.0);  
----[DEPRECATED] EXAMPLE USAGE:  
----pastebin.com/gx7Finsk  
+---EDITED (7/13/2017)
+---NOTE: If you want air combat, AI::TASK_COMBAT_PED (while your pilot is in an aircraft) also does the same thing as this native.
+---DESCRIPTION:
+---Ever wish your buddy could shoot down one of your enemies for you? Ever wanted an auto-pilot? Well look no further! This is the native for you! (Ped intelligence may vary)
+---USAGE:
+----- REQUIRED --
+---• pilot = The ped flying the aircraft.
+---• aircraft = The aircraft the pilot is flying
+----- OPTIONAL -- [atleast 1 must be assigned]
+---• targetVehicle = The vehicle the pilot will target.
+---• targetPed = The ped the pilot will target.
+---• destinationX, destinationY, destinationZ = The location the pilot will target.
+----- LOGIC --
+---• missionFlag = The type of mission. pastebin.com/R8x73dbv
+---• angularDrag = The higher the value, the slower the plane will rotate. Value ranges from 0 - Infinity.
+---• unk = Set to 0, and you'll be fine.
+---• targetHeading = The target angle (from world space north) that the pilot will try to acheive before executing an attack/landing.
+---• maxZ = Maximum Z coordinate height for flying.
+---• minZ = Minimum Z coordinate height for flying.
+---Z: 2,700 is the default max height a pilot will be able to fly. Anything greater and he will fly downward until reaching 2,700 again.
+---Mission Types (incase you don't like links..):
+---0 = None
+---1 = Unk
+---2 = CTaskVehicleRam
+---3 = CTaskVehicleBlock
+---4 = CTaskVehicleGoToPlane
+---5 = CTaskVehicleStop
+---6 = CTaskVehicleAttack
+---7 = CTaskVehicleFollow
+---8 = CTaskVehicleFleeAirborne
+---9 = CTaskVehicleCircle
+---10 = CTaskVehicleEscort
+---15 = CTaskVehicleFollowRecording
+---16 = CTaskVehiclePoliceBehaviour
+---17 = CTaskVehicleCrash
+---Example C#:
+---Function.Call(Hash.TASK_PLANE_MISSION, pilot, vehicle, 0, Game.Player.Character, 0, 0, 0, 6, 0f, 0f, 0f, 2500.0f, -1500f);
+---Example C++
+---AI::TASK_PLANE_MISSION(pilot, vehicle, 0, PLAYER::GET_PLAYER_PED(PLAYER::GET_PLAYER_INDEX()), 0, 0, 0, 6, 0.0, 0.0, 0.0, 2500.0, -1500.0);
+---[DEPRECATED] EXAMPLE USAGE:
+---pastebin.com/gx7Finsk
 ---```
 ---
 ---```
@@ -2309,7 +2424,22 @@ function TaskPlaneLand(pilot, plane, runwayStartX, runwayStartY, runwayStartZ, r
 ---@param targetHeading number
 ---@param maxZ number
 ---@param minZ number
-function TaskPlaneMission(pilot, aircraft, targetVehicle, targetPed, destinationX, destinationY, destinationZ, missionFlag, angularDrag, unk, targetHeading, maxZ, minZ) end
+function TaskPlaneMission(
+	pilot,
+	aircraft,
+	targetVehicle,
+	targetPed,
+	destinationX,
+	destinationY,
+	destinationZ,
+	missionFlag,
+	angularDrag,
+	unk,
+	targetHeading,
+	maxZ,
+	minZ
+)
+end
 
 ---**`TASK` `client` [`0x965FEC691D55E9BF`](https://docs.fivem.net/natives/?_0x965FEC691D55E9BF)**
 ---
@@ -2326,50 +2456,50 @@ function TaskPlantBomb(ped, x, y, z, heading) end
 ---
 ---```
 ---float blendInSpeed > normal speed is 8.0f
--------------------------  
+-------------------------
 ---float blendOutSpeed > normal speed is 8.0f
--------------------------  
----int duration: time in millisecond  
--------------------------  
-----1 _ _ _ _ _ _ _> Default (see flag)  
----0 _ _ _ _ _ _ _ > Not play at all  
----Small value _ _ > Slow down animation speed  
----Other _ _ _ _ _ > freeze player control until specific time (ms) has   
----_ _ _ _ _ _ _ _ _ passed. (No effect if flag is set to be   
----_ _ _ _ _ _ _ _ _ controllable.)  
----int flag:  
--------------------------  
----enum eAnimationFlags  
----{  
---- ANIM_FLAG_NORMAL = 0,  
----   ANIM_FLAG_REPEAT = 1,  
----   ANIM_FLAG_STOP_LAST_FRAME = 2,  
----   ANIM_FLAG_UPPERBODY = 16,  
----   ANIM_FLAG_ENABLE_PLAYER_CONTROL = 32,  
----   ANIM_FLAG_CANCELABLE = 120,  
----};  
----Odd number : loop infinitely  
----Even number : Freeze at last frame  
----Multiple of 4: Freeze at last frame but controllable  
----01 to 15 > Full body  
----10 to 31 > Upper body  
----32 to 47 > Full body > Controllable  
----48 to 63 > Upper body > Controllable  
----...  
----001 to 255 > Normal  
----256 to 511 > Garbled  
----...  
----playbackRate:  
----values are between 0.0 and 1.0  
----lockX:    
----0 in most cases 1 for rcmepsilonism8 and rcmpaparazzo_3  
----> 1 for mini@sprunk  
----lockY:  
----0 in most cases   
----1 for missfam5_yoga, missfra1mcs_2_crew_react  
----lockZ:   
----    0 for single player   
----    Can be 1 but only for MP  
+-------------------------
+---int duration: time in millisecond
+-------------------------
+----1 _ _ _ _ _ _ _> Default (see flag)
+---0 _ _ _ _ _ _ _ > Not play at all
+---Small value _ _ > Slow down animation speed
+---Other _ _ _ _ _ > freeze player control until specific time (ms) has
+---_ _ _ _ _ _ _ _ _ passed. (No effect if flag is set to be
+---_ _ _ _ _ _ _ _ _ controllable.)
+---int flag:
+-------------------------
+---enum eAnimationFlags
+---{
+--- ANIM_FLAG_NORMAL = 0,
+---   ANIM_FLAG_REPEAT = 1,
+---   ANIM_FLAG_STOP_LAST_FRAME = 2,
+---   ANIM_FLAG_UPPERBODY = 16,
+---   ANIM_FLAG_ENABLE_PLAYER_CONTROL = 32,
+---   ANIM_FLAG_CANCELABLE = 120,
+---};
+---Odd number : loop infinitely
+---Even number : Freeze at last frame
+---Multiple of 4: Freeze at last frame but controllable
+---01 to 15 > Full body
+---10 to 31 > Upper body
+---32 to 47 > Full body > Controllable
+---48 to 63 > Upper body > Controllable
+---...
+---001 to 255 > Normal
+---256 to 511 > Garbled
+---...
+---playbackRate:
+---values are between 0.0 and 1.0
+---lockX:
+---0 in most cases 1 for rcmepsilonism8 and rcmpaparazzo_3
+---> 1 for mini@sprunk
+---lockY:
+---0 in most cases
+---1 for missfam5_yoga, missfra1mcs_2_crew_react
+---lockZ:
+---    0 for single player
+---    Can be 1 but only for MP
 ---```
 ---
 ---@param ped Ped
@@ -2383,7 +2513,20 @@ function TaskPlantBomb(ped, x, y, z, heading) end
 ---@param lockX boolean
 ---@param lockY boolean
 ---@param lockZ boolean
-function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, lockX, lockY, lockZ) end
+function TaskPlayAnim(
+	ped,
+	animDictionary,
+	animationName,
+	blendInSpeed,
+	blendOutSpeed,
+	duration,
+	flag,
+	playbackRate,
+	lockX,
+	lockY,
+	lockZ
+)
+end
 
 ---**`TASK` `client` [`0x83CDB10EA29B370B`](https://docs.fivem.net/natives/?_0x83CDB10EA29B370B)**
 ---
@@ -2407,7 +2550,25 @@ function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOut
 ---@param animTime number Value between 0.0 and 1.0, lets you start an animation from the given point
 ---@param p14 any
 ---@param p15 any
-function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
+function TaskPlayAnimAdvanced(
+	ped,
+	animDict,
+	animName,
+	posX,
+	posY,
+	posZ,
+	rotX,
+	rotY,
+	rotZ,
+	animEnterSpeed,
+	animExitSpeed,
+	duration,
+	flag,
+	animTime,
+	p14,
+	p15
+)
+end
 
 ---**`TASK` `client` [`0x8FBB6758B3B3E9EC`](https://docs.fivem.net/natives/?_0x8FBB6758B3B3E9EC)**
 ---
@@ -2506,40 +2667,40 @@ function TaskReloadWeapon(ped, unused) end
 ---**`TASK` `client` [`0x126EF75F1E17ABE5`](https://docs.fivem.net/natives/?_0x126EF75F1E17ABE5)**
 ---
 ---```
----From fm_mission_controller.c:  
----reserve_network_mission_objects(get_num_reserved_mission_objects(0) + 1);  
----	vVar28 = {0.094f, 0.02f, -0.005f};  
----	vVar29 = {-92.24f, 63.64f, 150.24f};  
----	func_253(&uVar30, joaat("prop_ld_case_01"), Global_1592429.imm_34757[iParam1 <268>], 1, 1, 0, 1);  
----	set_entity_lod_dist(net_to_ent(uVar30), 500);  
----	attach_entity_to_entity(net_to_ent(uVar30), iParam0, get_ped_bone_index(iParam0, 28422), vVar28, vVar29, 1, 0, 0, 0, 2, 1);  
----	Var31.imm_4 = 1065353216;  
----	Var31.imm_5 = 1065353216;  
----	Var31.imm_9 = 1065353216;  
----	Var31.imm_10 = 1065353216;  
----	Var31.imm_14 = 1065353216;  
----	Var31.imm_15 = 1065353216;  
----	Var31.imm_17 = 1040187392;  
----	Var31.imm_18 = 1040187392;  
----	Var31.imm_19 = -1;  
----	Var32.imm_4 = 1065353216;  
----	Var32.imm_5 = 1065353216;  
----	Var32.imm_9 = 1065353216;  
----	Var32.imm_10 = 1065353216;  
----	Var32.imm_14 = 1065353216;  
----	Var32.imm_15 = 1065353216;  
----	Var32.imm_17 = 1040187392;  
----	Var32.imm_18 = 1040187392;  
----	Var32.imm_19 = -1;  
----	Var31 = 1;  
----	Var31.imm_1 = "weapons@misc@jerrycan@mp_male";  
----	Var31.imm_2 = "idle";  
----	Var31.imm_20 = 1048633;  
----	Var31.imm_4 = 0.5f;  
----	Var31.imm_16 = get_hash_key("BONEMASK_ARMONLY_R");  
----	task_scripted_animation(iParam0, &Var31, &Var32, &Var32, 0f, 0.25f);  
----	set_model_as_no_longer_needed(joaat("prop_ld_case_01"));  
----	remove_anim_dict("anim@heists@biolab@");  
+---From fm_mission_controller.c:
+---reserve_network_mission_objects(get_num_reserved_mission_objects(0) + 1);
+---	vVar28 = {0.094f, 0.02f, -0.005f};
+---	vVar29 = {-92.24f, 63.64f, 150.24f};
+---	func_253(&uVar30, joaat("prop_ld_case_01"), Global_1592429.imm_34757[iParam1 <268>], 1, 1, 0, 1);
+---	set_entity_lod_dist(net_to_ent(uVar30), 500);
+---	attach_entity_to_entity(net_to_ent(uVar30), iParam0, get_ped_bone_index(iParam0, 28422), vVar28, vVar29, 1, 0, 0, 0, 2, 1);
+---	Var31.imm_4 = 1065353216;
+---	Var31.imm_5 = 1065353216;
+---	Var31.imm_9 = 1065353216;
+---	Var31.imm_10 = 1065353216;
+---	Var31.imm_14 = 1065353216;
+---	Var31.imm_15 = 1065353216;
+---	Var31.imm_17 = 1040187392;
+---	Var31.imm_18 = 1040187392;
+---	Var31.imm_19 = -1;
+---	Var32.imm_4 = 1065353216;
+---	Var32.imm_5 = 1065353216;
+---	Var32.imm_9 = 1065353216;
+---	Var32.imm_10 = 1065353216;
+---	Var32.imm_14 = 1065353216;
+---	Var32.imm_15 = 1065353216;
+---	Var32.imm_17 = 1040187392;
+---	Var32.imm_18 = 1040187392;
+---	Var32.imm_19 = -1;
+---	Var31 = 1;
+---	Var31.imm_1 = "weapons@misc@jerrycan@mp_male";
+---	Var31.imm_2 = "idle";
+---	Var31.imm_20 = 1048633;
+---	Var31.imm_4 = 0.5f;
+---	Var31.imm_16 = get_hash_key("BONEMASK_ARMONLY_R");
+---	task_scripted_animation(iParam0, &Var31, &Var32, &Var32, 0f, 0.25f);
+---	set_model_as_no_longer_needed(joaat("prop_ld_case_01"));
+---	remove_anim_dict("anim@heists@biolab@");
 ---```
 ---
 ---@param ped Ped
@@ -2603,9 +2764,9 @@ function TaskSeekCoverToCoverPoint(p0, p1, p2, p3, p4, p5, p6) end
 ---**`TASK` `client` [`0x90D2156198831D69`](https://docs.fivem.net/natives/?_0x90D2156198831D69)**
 ---
 ---```
----I cant believe I have to define this, this is one of the best natives.  
----It makes the ped ignore basically all shocking events around it. Occasionally the ped may comment or gesture, but other than that they just continue their daily activities. This includes shooting and wounding the ped. And - most importantly - they do not flee.  
----Since it is a task, every time the native is called the ped will stop for a moment.  
+---I cant believe I have to define this, this is one of the best natives.
+---It makes the ped ignore basically all shocking events around it. Occasionally the ped may comment or gesture, but other than that they just continue their daily activities. This includes shooting and wounding the ped. And - most importantly - they do not flee.
+---Since it is a task, every time the native is called the ped will stop for a moment.
 ---```
 ---
 ---@param ped Ped
@@ -2615,7 +2776,7 @@ function TaskSetBlockingOfNonTemporaryEvents(ped, toggle) end
 ---**`TASK` `client` [`0xEB8517DDA73720DA`](https://docs.fivem.net/natives/?_0xEB8517DDA73720DA)**
 ---
 ---```
----p1 is always GET_HASH_KEY("empty") in scripts, for the rare times this is used  
+---p1 is always GET_HASH_KEY("empty") in scripts, for the rare times this is used
 ---```
 ---
 ---@param ped Ped
@@ -2673,8 +2834,8 @@ function TaskShootAtEntity(entity, target, duration, firingPattern) end
 ---**`TASK` `client` [`0x7AA80209BDA643EB`](https://docs.fivem.net/natives/?_0x7AA80209BDA643EB)**
 ---
 ---```
----Makes the specified ped shuffle to the next vehicle seat.  
----The ped MUST be in a vehicle and the vehicle parameter MUST be the ped's current vehicle.  
+---Makes the specified ped shuffle to the next vehicle seat.
+---The ped MUST be in a vehicle and the vehicle parameter MUST be the ped's current vehicle.
 ---```
 ---
 ---```
@@ -2697,7 +2858,7 @@ function TaskSkyDive(ped) end
 ---**`TASK` `client` [`0x94587F17E9C365D5`](https://docs.fivem.net/natives/?_0x94587F17E9C365D5)**
 ---
 ---```
----Makes the specified ped flee the specified distance from the specified position.  
+---Makes the specified ped flee the specified distance from the specified position.
 ---```
 ---
 ---@param ped Ped
@@ -2713,9 +2874,9 @@ function TaskSmartFleeCoord(ped, x, y, z, distance, time, p6, p7) end
 ---**`TASK` `client` [`0x22B0D0E37CCB840D`](https://docs.fivem.net/natives/?_0x22B0D0E37CCB840D)**
 ---
 ---```
----Makes a ped run away from another ped (fleeTarget).  
----distance = ped will flee this distance.  
----fleeTime = ped will flee for this amount of time, set to "-1" to flee forever  
+---Makes a ped run away from another ped (fleeTarget).
+---distance = ped will flee this distance.
+---fleeTime = ped will flee for this amount of time, set to "-1" to flee forever
 ---```
 ---
 ---@param ped Ped
@@ -2729,7 +2890,7 @@ function TaskSmartFleePed(ped, fleeTarget, distance, fleeTime, p4, p5) end
 ---**`TASK` `client` [`0xAE032F8BBA959E90`](https://docs.fivem.net/natives/?_0xAE032F8BBA959E90)**
 ---
 ---```
----scenarioName example: "WORLD_HUMAN_GUARD_STAND"  
+---scenarioName example: "WORLD_HUMAN_GUARD_STAND"
 ---```
 ---
 ---@param ped Ped
@@ -2743,7 +2904,7 @@ function TaskStandGuard(ped, x, y, z, heading, scenarioName) end
 ---**`TASK` `client` [`0x919BE13EED931959`](https://docs.fivem.net/natives/?_0x919BE13EED931959)**
 ---
 ---```
----Makes the specified ped stand still for (time) milliseconds.  
+---Makes the specified ped stand still for (time) milliseconds.
 ---```
 ---
 ---@param ped Ped
@@ -2779,32 +2940,32 @@ function TaskStartScenarioAtPosition(ped, scenarioName, x, y, z, heading, durati
 ---**`TASK` `client` [`0x142A02425FF02BD9`](https://docs.fivem.net/natives/?_0x142A02425FF02BD9)**
 ---
 ---```
----Plays a scenario on a Ped at their current location.  
----unkDelay - Usually 0 or -1, doesn't seem to have any effect. Might be a delay between sequences.  
----playEnterAnim - Plays the "Enter" anim if true, otherwise plays the "Exit" anim. Scenarios that don't have any "Enter" anims won't play if this is set to true.  
+---Plays a scenario on a Ped at their current location.
+---unkDelay - Usually 0 or -1, doesn't seem to have any effect. Might be a delay between sequences.
+---playEnterAnim - Plays the "Enter" anim if true, otherwise plays the "Exit" anim. Scenarios that don't have any "Enter" anims won't play if this is set to true.
 ---
----List of scenarioNames: pastebin.com/6mrYTdQv  
+---List of scenarioNames: pastebin.com/6mrYTdQv
 ---
----Also these:  
----WORLD_FISH_FLEE  
----DRIVE  
----WORLD_HUMAN_HIKER  
----WORLD_VEHICLE_ATTRACTOR  
----WORLD_VEHICLE_BICYCLE_MOUNTAIN  
----WORLD_VEHICLE_BIKE_OFF_ROAD_RACE  
----WORLD_VEHICLE_BIKER  
----WORLD_VEHICLE_CONSTRUCTION_PASSENGERS  
----WORLD_VEHICLE_CONSTRUCTION_SOLO  
----WORLD_VEHICLE_DRIVE_PASSENGERS  
----WORLD_VEHICLE_DRIVE_SOLO  
----WORLD_VEHICLE_EMPTY  
----WORLD_VEHICLE_PARK_PARALLEL  
----WORLD_VEHICLE_PARK_PERPENDICULAR_NOSE_IN  
----WORLD_VEHICLE_POLICE_BIKE  
----WORLD_VEHICLE_POLICE_CAR  
----WORLD_VEHICLE_POLICE_NEXT_TO_CAR  
----WORLD_VEHICLE_SALTON_DIRT_BIKE  
----WORLD_VEHICLE_TRUCK_LOGS  
+---Also these:
+---WORLD_FISH_FLEE
+---DRIVE
+---WORLD_HUMAN_HIKER
+---WORLD_VEHICLE_ATTRACTOR
+---WORLD_VEHICLE_BICYCLE_MOUNTAIN
+---WORLD_VEHICLE_BIKE_OFF_ROAD_RACE
+---WORLD_VEHICLE_BIKER
+---WORLD_VEHICLE_CONSTRUCTION_PASSENGERS
+---WORLD_VEHICLE_CONSTRUCTION_SOLO
+---WORLD_VEHICLE_DRIVE_PASSENGERS
+---WORLD_VEHICLE_DRIVE_SOLO
+---WORLD_VEHICLE_EMPTY
+---WORLD_VEHICLE_PARK_PARALLEL
+---WORLD_VEHICLE_PARK_PERPENDICULAR_NOSE_IN
+---WORLD_VEHICLE_POLICE_BIKE
+---WORLD_VEHICLE_POLICE_CAR
+---WORLD_VEHICLE_POLICE_NEXT_TO_CAR
+---WORLD_VEHICLE_SALTON_DIRT_BIKE
+---WORLD_VEHICLE_TRUCK_LOGS
 ---```
 ---
 ---@param ped Ped
@@ -2816,7 +2977,7 @@ function TaskStartScenarioInPlace(ped, scenarioName, unkDelay, playEnterAnim) en
 ---**`TASK` `client` [`0xE5DA8615A6180789`](https://docs.fivem.net/natives/?_0xE5DA8615A6180789)**
 ---
 ---```
----Makes the ped run to take cover  
+---Makes the ped run to take cover
 ---```
 ---
 ---@param ped Ped
@@ -2825,21 +2986,21 @@ function TaskStayInCover(ped) end
 ---**`TASK` `client` [`0xAA5DC05579D60BD9`](https://docs.fivem.net/natives/?_0xAA5DC05579D60BD9)**
 ---
 ---```
----Stealth kill action name hashes:  
----stealth kills can be found here: Grand Theft Auto V\common.rpf\data\action\stealth_kills.meta  
----...  
----{  
----    "ACT_stealth_kill_a",  
----    "ACT_stealth_kill_weapon",  
----    "ACT_stealth_kill_b",  
----    "ACT_stealth_kill_c",  
----    "ACT_stealth_kill_d",  
----    "ACT_stealth_kill_a_gardener"  
----}  
----Only known script using this native: fbi4_prep2  
----EXAMPLE:  
----ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_a"), 1f, 0);ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_knife"), 1f, 0);  
----Also it may be important to note, that each time this task is called, it's followed by AI::CLEAR_PED_TASKS on the target  
+---Stealth kill action name hashes:
+---stealth kills can be found here: Grand Theft Auto V\common.rpf\data\action\stealth_kills.meta
+---...
+---{
+---    "ACT_stealth_kill_a",
+---    "ACT_stealth_kill_weapon",
+---    "ACT_stealth_kill_b",
+---    "ACT_stealth_kill_c",
+---    "ACT_stealth_kill_d",
+---    "ACT_stealth_kill_a_gardener"
+---}
+---Only known script using this native: fbi4_prep2
+---EXAMPLE:
+---ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_a"), 1f, 0);ai::task_stealth_kill(iParam1, Local_252, gameplay::get_hash_key("AR_stealth_kill_knife"), 1f, 0);
+---Also it may be important to note, that each time this task is called, it's followed by AI::CLEAR_PED_TASKS on the target
 ---```
 ---
 ---@param killer Ped
@@ -2867,10 +3028,10 @@ function TaskSwapWeapon(ped, p1) end
 ---**`TASK` `client` [`0x2047C02158D6405A`](https://docs.fivem.net/natives/?_0x2047C02158D6405A)**
 ---
 ---```
----This function is called on peds in vehicles.  
----anim: animation name  
----p2, p3, p4: "sweep_low", "sweep_med" or "sweep_high"  
----p5: no idea what it does but is usually -1  
+---This function is called on peds in vehicles.
+---anim: animation name
+---p2, p3, p4: "sweep_low", "sweep_med" or "sweep_high"
+---p5: no idea what it does but is usually -1
 ---```
 ---
 ---@param ped Ped
@@ -2915,18 +3076,30 @@ function TaskSweepAimPosition(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) end
 ---@param flag number
 ---@param playbackRate number
 ---@param p9 any
-function TaskSynchronizedScene(ped, scene, animDictionary, animationName, speed, speedMultiplier, duration, flag, playbackRate, p9) end
+function TaskSynchronizedScene(
+	ped,
+	scene,
+	animDictionary,
+	animationName,
+	speed,
+	speedMultiplier,
+	duration,
+	flag,
+	playbackRate,
+	p9
+)
+end
 
 ---**`TASK` `client` [`0x7285951DBF6B5A51`](https://docs.fivem.net/natives/?_0x7285951DBF6B5A51)**
 ---
 ---```
----In every case of this native, I've only seen the first parameter passed as 0, although I believe it's a Ped after seeing tasks around it using 0. That's because it's used in a Sequence Task.  
----The last 3 parameters are definitely coordinates after seeing them passed in other scripts, and even being used straight from the player's coordinates.  
-------  
----It seems that - in the decompiled scripts - this native was used on a ped who was in a vehicle to throw a projectile out the window at the player. This is something any ped will naturally do if they have a throwable and they are doing driveby-combat (although not very accurately).  
----It is possible, however, that this is how SWAT throws smoke grenades at the player when in cover.  
--------------------------------------------------------  
----The first comment is right it definately is the ped as if you look in script finale_heist2b.c line 59628 in Xbox Scripts atleast you will see task_throw_projectile and the first param is Local_559[2 <14>] if you look above it a little bit line 59622 give_weapon_to_ped uses the same exact param Local_559[2 <14>] and we all know the first param of that native is ped. So it guaranteed has to be ped. 0 just may mean to use your ped by default for some reason.  
+---In every case of this native, I've only seen the first parameter passed as 0, although I believe it's a Ped after seeing tasks around it using 0. That's because it's used in a Sequence Task.
+---The last 3 parameters are definitely coordinates after seeing them passed in other scripts, and even being used straight from the player's coordinates.
+------
+---It seems that - in the decompiled scripts - this native was used on a ped who was in a vehicle to throw a projectile out the window at the player. This is something any ped will naturally do if they have a throwable and they are doing driveby-combat (although not very accurately).
+---It is possible, however, that this is how SWAT throws smoke grenades at the player when in cover.
+-------------------------------------------------------
+---The first comment is right it definately is the ped as if you look in script finale_heist2b.c line 59628 in Xbox Scripts atleast you will see task_throw_projectile and the first param is Local_559[2 <14>] if you look above it a little bit line 59622 give_weapon_to_ped uses the same exact param Local_559[2 <14>] and we all know the first param of that native is ped. So it guaranteed has to be ped. 0 just may mean to use your ped by default for some reason.
 ---```
 ---
 ---```
@@ -2943,8 +3116,8 @@ function TaskThrowProjectile(ped, x, y, z) end
 ---**`TASK` `client` [`0xAC96609B9995EDF8`](https://docs.fivem.net/natives/?_0xAC96609B9995EDF8)**
 ---
 ---```
----used in sequence task  
----both parameters seems to be always 0  
+---used in sequence task
+---both parameters seems to be always 0
 ---```
 ---
 ---@param p0 boolean
@@ -2954,7 +3127,7 @@ function TaskToggleDuck(p0, p1) end
 ---**`TASK` `client` [`0x1DDA930A0AC38571`](https://docs.fivem.net/natives/?_0x1DDA930A0AC38571)**
 ---
 ---```
----duration in milliseconds  
+---duration in milliseconds
 ---```
 ---
 ---@param ped Ped
@@ -2967,7 +3140,7 @@ function TaskTurnPedToFaceCoord(ped, x, y, z, duration) end
 ---**`TASK` `client` [`0x5AD23D40115353AC`](https://docs.fivem.net/natives/?_0x5AD23D40115353AC)**
 ---
 ---```
----duration: the amount of time in milliseconds to do the task. -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped  
+---duration: the amount of time in milliseconds to do the task. -1 will keep the task going until either another task is applied, or CLEAR_ALL_TASKS() is called with the ped
 ---```
 ---
 ---@param ped Ped
@@ -2978,10 +3151,10 @@ function TaskTurnPedToFaceEntity(ped, entity, duration) end
 ---**`TASK` `client` [`0xBD2A8EC3AF4DE7DB`](https://docs.fivem.net/natives/?_0xBD2A8EC3AF4DE7DB)**
 ---
 ---```
----Actually has 3 params, not 2.  
----p0: Ped  
----p1: int (or bool?)  
----p2: int  
+---Actually has 3 params, not 2.
+---p0: Ped
+---p1: int (or bool?)
+---p2: int
 ---```
 ---
 ---```
@@ -3060,9 +3233,9 @@ function TaskVehicleAimAtPed(ped, target) end
 ---**`TASK` `client` [`0x3C08A8E30363B353`](https://docs.fivem.net/natives/?_0x3C08A8E30363B353)**
 ---
 ---```
----chases targetEnt fast and aggressively  
------  
----Makes ped (needs to be in vehicle) chase targetEnt.  
+---chases targetEnt fast and aggressively
+-----
+---Makes ped (needs to be in vehicle) chase targetEnt.
 ---```
 ---
 ---@param driver Ped
@@ -3072,12 +3245,12 @@ function TaskVehicleChase(driver, targetEnt) end
 ---**`TASK` `client` [`0xE2A2AA2F659D77A7`](https://docs.fivem.net/natives/?_0xE2A2AA2F659D77A7)**
 ---
 ---```
----info about driving modes: HTTP://gtaforums.com/topic/822314-guide-driving-styles/  
-------------------------------------------------------------------  
----Passing P6 value as floating value didn't throw any errors, though unsure what is it exactly, looks like radius or something.  
----P10 though, it is mentioned as float, however, I used bool and set it to true, that too worked.  
----Here the e.g. code I used  
----Function.Call(Hash.TASK_VEHICLE_DRIVE_TO_COORD, Ped, Vehicle, Cor X, Cor Y, Cor Z, 30f, 1f, Vehicle.GetHashCode(), 16777216, 1f, true);  
+---info about driving modes: HTTP://gtaforums.com/topic/822314-guide-driving-styles/
+------------------------------------------------------------------
+---Passing P6 value as floating value didn't throw any errors, though unsure what is it exactly, looks like radius or something.
+---P10 though, it is mentioned as float, however, I used bool and set it to true, that too worked.
+---Here the e.g. code I used
+---Function.Call(Hash.TASK_VEHICLE_DRIVE_TO_COORD, Ped, Vehicle, Cor X, Cor Y, Cor Z, 30f, 1f, Vehicle.GetHashCode(), 16777216, 1f, true);
 ---```
 ---
 ---@param ped Ped
@@ -3120,17 +3293,17 @@ function TaskVehicleDriveWander(ped, vehicle, speed, drivingStyle) end
 ---**`TASK` `client` [`0x0FA6E4B75F302400`](https://docs.fivem.net/natives/?_0x0FA6E4B75F302400)**
 ---
 ---```
----Makes a ped follow the targetVehicle with <minDistance> in between.  
----note: minDistance is ignored if drivingstyle is avoiding traffic, but Rushed is fine.  
----Mode: The mode defines the relative position to the targetVehicle. The ped will try to position its vehicle there.  
-----1 = behind  
----0 = ahead  
----1 = left  
----2 = right  
----3 = back left  
----4 = back right  
----if the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow you directly.  
----Driving Styles guide: gtaforums.com/topic/822314-guide-driving-styles/  
+---Makes a ped follow the targetVehicle with <minDistance> in between.
+---note: minDistance is ignored if drivingstyle is avoiding traffic, but Rushed is fine.
+---Mode: The mode defines the relative position to the targetVehicle. The ped will try to position its vehicle there.
+----1 = behind
+---0 = ahead
+---1 = left
+---2 = right
+---3 = back left
+---4 = back right
+---if the target is closer than noRoadsDistance, the driver will ignore pathing/roads and follow you directly.
+---Driving Styles guide: gtaforums.com/topic/822314-guide-driving-styles/
 ---```
 ---
 ---@param ped Ped
@@ -3189,16 +3362,16 @@ function TaskVehicleFollowWaypointRecording(ped, vehicle, WPRecording, p3, p4, p
 ---**`TASK` `client` [`0x195AEEB13CEFE2EE`](https://docs.fivem.net/natives/?_0x195AEEB13CEFE2EE)**
 ---
 ---```
----Differs from TASK_VEHICLE_DRIVE_TO_COORDS in that it will pick the shortest possible road route without taking one-way streets and other "road laws" into consideration.  
----WARNING:  
----A behaviorFlag value of 0 will result in a clunky, stupid driver!  
----Recommended settings:  
----speed = 30.0f,  
----behaviorFlag = 156,   
----stoppingRange = 5.0f;  
----If you simply want to have your driver move to a fixed location, call it only once, or, when necessary in the event of interruption.   
----If using this to continually follow a Ped who is on foot:  You will need to run this in a tick loop.  Call it in with the Ped's updated coordinates every 20 ticks or so and you will have one hell of a smart, fast-reacting NPC driver -- provided he doesn't get stuck.  If your update frequency is too fast, the Ped may not have enough time to figure his way out of being stuck, and thus, remain stuck.  One way around this would be to implement an "anti-stuck" mechanism, which allows the driver to realize he's stuck, temporarily pause the tick, unstuck, then resume the tick.  
----EDIT:  This is being discussed in more detail at http://gtaforums.com/topic/818504-any-idea-on-how-to-make-peds-clever-and-insanely-fast-c/  
+---Differs from TASK_VEHICLE_DRIVE_TO_COORDS in that it will pick the shortest possible road route without taking one-way streets and other "road laws" into consideration.
+---WARNING:
+---A behaviorFlag value of 0 will result in a clunky, stupid driver!
+---Recommended settings:
+---speed = 30.0f,
+---behaviorFlag = 156,
+---stoppingRange = 5.0f;
+---If you simply want to have your driver move to a fixed location, call it only once, or, when necessary in the event of interruption.
+---If using this to continually follow a Ped who is on foot:  You will need to run this in a tick loop.  Call it in with the Ped's updated coordinates every 20 ticks or so and you will have one hell of a smart, fast-reacting NPC driver -- provided he doesn't get stuck.  If your update frequency is too fast, the Ped may not have enough time to figure his way out of being stuck, and thus, remain stuck.  One way around this would be to implement an "anti-stuck" mechanism, which allows the driver to realize he's stuck, temporarily pause the tick, unstuck, then resume the tick.
+---EDIT:  This is being discussed in more detail at http://gtaforums.com/topic/818504-any-idea-on-how-to-make-peds-clever-and-insanely-fast-c/
 ---```
 ---
 ---@param ped Ped
@@ -3214,13 +3387,13 @@ function TaskVehicleGotoNavmesh(ped, vehicle, x, y, z, speed, behaviorFlag, stop
 ---**`TASK` `client` [`0x1E09C32048FEFD1C`](https://docs.fivem.net/natives/?_0x1E09C32048FEFD1C)**
 ---
 ---```
----pilot, vehicle and altitude are rather self-explanatory.  
----p4: is unused variable in the function.  
----entityToFollow: you can provide a Vehicle entity or a Ped entity, the heli will protect them.  
----'targetSpeed':  The pilot will dip the nose AS MUCH AS POSSIBLE so as to reach this value AS FAST AS POSSIBLE.  As such, you'll want to modulate it as opposed to calling it via a hard-wired, constant #.  
----'radius' isn't just "stop within radius of X of target" like with ground vehicles.  In this case, the pilot will fly an entire circle around 'radius' and continue to do so.  
----NOT CONFIRMED:  p7 appears to be a FlyingStyle enum.  Still investigating it as of this writing, but playing around with values here appears to result in different -behavior- as opposed to offsetting coordinates, altitude, target speed, etc.  
----NOTE: If the pilot finds enemies, it will engage them until it kills them, but will return to protect the ped/vehicle given shortly thereafter.  
+---pilot, vehicle and altitude are rather self-explanatory.
+---p4: is unused variable in the function.
+---entityToFollow: you can provide a Vehicle entity or a Ped entity, the heli will protect them.
+---'targetSpeed':  The pilot will dip the nose AS MUCH AS POSSIBLE so as to reach this value AS FAST AS POSSIBLE.  As such, you'll want to modulate it as opposed to calling it via a hard-wired, constant #.
+---'radius' isn't just "stop within radius of X of target" like with ground vehicles.  In this case, the pilot will fly an entire circle around 'radius' and continue to do so.
+---NOT CONFIRMED:  p7 appears to be a FlyingStyle enum.  Still investigating it as of this writing, but playing around with values here appears to result in different -behavior- as opposed to offsetting coordinates, altitude, target speed, etc.
+---NOTE: If the pilot finds enemies, it will engage them until it kills them, but will return to protect the ped/vehicle given shortly thereafter.
 ---```
 ---
 ---@param pilot Ped
@@ -3280,17 +3453,28 @@ function TaskVehicleMissionCoorsTarget(ped, vehicle, x, y, z, p5, p6, p7, p8, p9
 ---@param minDistance number
 ---@param p7 number
 ---@param DriveAgainstTraffic boolean
-function TaskVehicleMissionPedTarget(ped, vehicle, pedTarget, missionType, maxSpeed, drivingStyle, minDistance, p7, DriveAgainstTraffic) end
+function TaskVehicleMissionPedTarget(
+	ped,
+	vehicle,
+	pedTarget,
+	missionType,
+	maxSpeed,
+	drivingStyle,
+	minDistance,
+	p7,
+	DriveAgainstTraffic
+)
+end
 
 ---**`TASK` `client` [`0x0F3E34E968EA374E`](https://docs.fivem.net/natives/?_0x0F3E34E968EA374E)**
 ---
 ---```
----Modes:  
----0 - ignore heading  
----1 - park forward  
----2 - park backwards  
----Depending on the angle of approach, the vehicle can park at the specified heading or at its exact opposite (-180) angle.  
----Radius seems to define how close the vehicle has to be -after parking- to the position for this task considered completed. If the value is too small, the vehicle will try to park again until it's exactly where it should be. 20.0 Works well but lower values don't, like the radius is measured in centimeters or something.  
+---Modes:
+---0 - ignore heading
+---1 - park forward
+---2 - park backwards
+---Depending on the angle of approach, the vehicle can park at the specified heading or at its exact opposite (-180) angle.
+---Radius seems to define how close the vehicle has to be -after parking- to the position for this task considered completed. If the value is too small, the vehicle will try to park again until it's exactly where it should be. 20.0 Works well but lower values don't, like the radius is measured in centimeters or something.
 ---```
 ---
 ---@param ped Ped
@@ -3421,8 +3605,8 @@ function TaskWanderInArea(ped, x, y, z, radius, minimalLength, timeBetweenWalks)
 ---**`TASK` `client` [`0xBB9CE077274F6A1B`](https://docs.fivem.net/natives/?_0xBB9CE077274F6A1B)**
 ---
 ---```
----Makes ped walk around the area.  
----set p1 to 10.0f and p2 to 10 if you want the ped to walk anywhere without a duration.  
+---Makes ped walk around the area.
+---set p1 to 10.0f and p2 to 10 if you want the ped to walk anywhere without a duration.
 ---```
 ---
 ---@param ped Ped

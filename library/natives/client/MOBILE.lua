@@ -26,8 +26,8 @@ function N_0xac2890471901861c(p0) end
 ---**`MOBILE` `client` [`0xC4E2813898C97A4B`](https://docs.fivem.net/natives/?_0xC4E2813898C97A4B)**
 ---
 ---```
----This one is weird and seems to return a TRUE state regardless of whether the phone is visible on screen or tucked away.  
----I can confirm the above. This function is hard-coded to always return 1.  
+---This one is weird and seems to return a TRUE state regardless of whether the phone is visible on screen or tucked away.
+---I can confirm the above. This function is hard-coded to always return 1.
 ---```
 ---
 ---@return boolean
@@ -48,13 +48,13 @@ function CellCamIsCharVisibleNoFaceCheck(entity) end
 ---**`MOBILE` `client` [`0xA4E8E696C532FBC7`](https://docs.fivem.net/natives/?_0xA4E8E696C532FBC7)**
 ---
 ---```
----Creates a mobile phone of the specified type.  
----Possible phone types:  
----0 - Default phone / Michael's phone  
----1 - Trevor's phone  
----2 - Franklin's phone  
----4 - Prologue phone  
----These values represent bit flags, so a value of '3' would toggle Trevor and Franklin's phones together, causing unexpected behavior and most likely crash the game.  
+---Creates a mobile phone of the specified type.
+---Possible phone types:
+---0 - Default phone / Michael's phone
+---1 - Trevor's phone
+---2 - Franklin's phone
+---4 - Prologue phone
+---These values represent bit flags, so a value of '3' would toggle Trevor and Franklin's phones together, causing unexpected behavior and most likely crash the game.
 ---```
 ---
 ---@param phoneType number
@@ -63,7 +63,7 @@ function CreateMobilePhone(phoneType) end
 ---**`MOBILE` `client` [`0x3BC861DF703E5097`](https://docs.fivem.net/natives/?_0x3BC861DF703E5097)**
 ---
 ---```
----Destroys the currently active mobile phone.  
+---Destroys the currently active mobile phone.
 ---```
 ---
 function DestroyMobilePhone() end
@@ -87,8 +87,8 @@ function GetMobilePhoneRotation(rotation, p1) end
 ---**`MOBILE` `client` [`0xF511F759238A5122`](https://docs.fivem.net/natives/?_0xF511F759238A5122)**
 ---
 ---```
----If bool Toggle = true so the mobile is hide to screen.  
----If bool Toggle = false so the mobile is show to screen.  
+---If bool Toggle = true so the mobile is hide to screen.
+---If bool Toggle = false so the mobile is show to screen.
 ---```
 ---
 ---@param toggle boolean
@@ -104,7 +104,7 @@ function SetMobilePhonePosition(posX, posY, posZ) end
 ---**`MOBILE` `client` [`0xBB779C0CA917E865`](https://docs.fivem.net/natives/?_0xBB779C0CA917E865)**
 ---
 ---```
----Last parameter is unknown and always zero.  
+---Last parameter is unknown and always zero.
 ---```
 ---
 ---@param rotX number
@@ -116,7 +116,7 @@ function SetMobilePhoneRotation(rotX, rotY, rotZ, p3) end
 ---**`MOBILE` `client` [`0xCBDD322A73D6D932`](https://docs.fivem.net/natives/?_0xCBDD322A73D6D932)**
 ---
 ---```
----The minimum/default is 500.0f. If you plan to make it bigger set it's position as well. Also this seems to need to be called in a loop as when you close the phone the scale is reset. If not in a loop you'd need to call it everytime before you re-open the phone.  
+---The minimum/default is 500.0f. If you plan to make it bigger set it's position as well. Also this seems to need to be called in a loop as when you close the phone the scale is reset. If not in a loop you'd need to call it everytime before you re-open the phone.
 ---```
 ---
 ---@param scale number
@@ -125,11 +125,11 @@ function SetMobilePhoneScale(scale) end
 ---**`MOBILE` `client` [`0x015C49A93E3E086E`](https://docs.fivem.net/natives/?_0x015C49A93E3E086E)**
 ---
 ---```
----Disables the phone up-button, oddly enough.   
----i.e.: When the phone is out, and this method is called with false as it's parameter, the phone will not be able to scroll up. However, when you use the down arrow key, it's functionality still, works on the phone.   
----When the phone is not out, and this method is called with false as it's parameter, you will not be able to bring up the phone. Although the up arrow key still works for whatever functionality it's used for, just not for the phone.  
----This can be used for creating menu's when trying to disable the phone from being used.   
----You do not have to call the function again with false as a parameter, as soon as the function stops being called, the phone will again be usable.  
+---Disables the phone up-button, oddly enough.
+---i.e.: When the phone is out, and this method is called with false as it's parameter, the phone will not be able to scroll up. However, when you use the down arrow key, it's functionality still, works on the phone.
+---When the phone is not out, and this method is called with false as it's parameter, you will not be able to bring up the phone. Although the up arrow key still works for whatever functionality it's used for, just not for the phone.
+---This can be used for creating menu's when trying to disable the phone from being used.
+---You do not have to call the function again with false as a parameter, as soon as the function stops being called, the phone will again be usable.
 ---```
 ---
 ---@param toggle boolean
@@ -138,7 +138,7 @@ function CellCamDisableThisFrame(toggle) end
 ---**`MOBILE` `client` [`0x95C9E72F3D7DEC9B`](https://docs.fivem.net/natives/?_0x95C9E72F3D7DEC9B)**
 ---
 ---```
----For move the finger of player, the value of int goes 1 at 5.  
+---For move the finger of player, the value of int goes 1 at 5.
 ---```
 ---
 ---@param direction number
@@ -172,8 +172,8 @@ function CellCamSetHorizontalOffset(p0) end
 ---**`MOBILE` `client` [`0x44E44169EF70138E`](https://docs.fivem.net/natives/?_0x44E44169EF70138E)**
 ---
 ---```
----if the bool "Toggle" is "true" so the phone is lean.  
----if the bool "Toggle" is "false" so the phone is not lean.  
+---if the bool "Toggle" is "true" so the phone is lean.
+---if the bool "Toggle" is "false" so the phone is not lean.
 ---```
 ---
 ---@param toggle boolean

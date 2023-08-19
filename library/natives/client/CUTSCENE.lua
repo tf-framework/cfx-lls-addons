@@ -31,7 +31,7 @@ function N_0x2f137b508de238f2(p0) end
 ---**`CUTSCENE` `client` [`0x4CEBC1ED31E8925E`](https://docs.fivem.net/natives/?_0x4CEBC1ED31E8925E)**
 ---
 ---```
----This function is hard-coded to always return 1.  
+---This function is hard-coded to always return 1.
 ---```
 ---
 ---@param cutsceneName string
@@ -113,7 +113,7 @@ function CanRequestAssetsForCutsceneEntity() end
 ---**`CUTSCENE` `client` [`0x645D0B458D8E17B5`](https://docs.fivem.net/natives/?_0x645D0B458D8E17B5)**
 ---
 ---```
----modelHash (p1) was always 0 in R* scripts  
+---modelHash (p1) was always 0 in R* scripts
 ---```
 ---
 ---@param cutsceneEntName string
@@ -370,7 +370,7 @@ function SetCutscenePedPropVariation(cutsceneEntName, componentId, drawableId, t
 ---**`CUTSCENE` `client` [`0x9896CE4721BE84BA`](https://docs.fivem.net/natives/?_0x9896CE4721BE84BA)**
 ---
 ---```
----Only used twice in R* scripts  
+---Only used twice in R* scripts
 ---```
 ---
 ---@param p0 number
