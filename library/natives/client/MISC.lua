@@ -2015,9 +2015,9 @@ function NextOnscreenKeyboardResultWillDisplayUsingTheseFonts(p0) end
 ---@param p3 number
 ---@param p4 number
 ---@param p5 boolean
----@param p6 number
+---@param p6 vector3
 ---@param p7 number
----@return boolean
+---@return boolean, vector3, number
 function OverrideSaveHouse(p0, p1, p2, p3, p4, p5, p6, p7) end
 
 ---**`MISC` `client` [`0x2C2B3493FBF51C71`](https://docs.fivem.net/natives/?_0x2C2B3493FBF51C71)**

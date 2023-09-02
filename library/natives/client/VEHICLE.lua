@@ -674,7 +674,7 @@ function N_0xa247f9ef01d8082e(p0) end
 ---**`VEHICLE` `client` [`0xA4822F1CF23F4810`](https://docs.fivem.net/natives/?_0xA4822F1CF23F4810)**
 ---
 ---@param outVec vector3
----@param p1 any
+---@param p1 vector3
 ---@param outVec1 vector3
 ---@param p3 any
 ---@param p4 any
@@ -682,7 +682,7 @@ function N_0xa247f9ef01d8082e(p0) end
 ---@param p6 any
 ---@param p7 any
 ---@param p8 any
----@return boolean, vector3, vector3
+---@return boolean, vector3, vector3, vector3
 function N_0xa4822f1cf23f4810(outVec, p1, outVec1, p3, p4, p5, p6, p7, p8) end
 
 ---**`VEHICLE` `client` [`0xA4A9A4C40E615885`](https://docs.fivem.net/natives/?_0xA4A9A4C40E615885)**
@@ -6148,7 +6148,7 @@ function IsMissionTrain(vehicle) end
 ---@param ped Ped
 ---@param vehicle Vehicle
 ---@param outIndex number
----@return boolean
+---@return boolean, number
 function IsPedExclusiveDriverOfVehicle(ped, vehicle, outIndex) end
 
 ---**`VEHICLE` `client` [`0x633F6F44A537EBB6`](https://docs.fivem.net/natives/?_0x633F6F44A537EBB6)**

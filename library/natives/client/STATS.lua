@@ -84,8 +84,8 @@ function N_0x1a7ce7cd3e653485(p0) end
 
 ---**`STATS` `client` [`0x1A8EA222F9C67DBB`](https://docs.fivem.net/natives/?_0x1A8EA222F9C67DBB)**
 ---
----@param p0 any
----@return any
+---@param p0 number
+---@return any, number
 function N_0x1a8ea222f9c67dbb(p0) end
 
 ---**`STATS` `client` [`0x26D7399B9587FE89`](https://docs.fivem.net/natives/?_0x26D7399B9587FE89)**
@@ -410,9 +410,9 @@ function N_0x6a7f19756f1a9016() end
 ---**`STATS` `client` [`0x6BC0ACD0673ACEBE`](https://docs.fivem.net/natives/?_0x6BC0ACD0673ACEBE)**
 ---
 ---@param p0 any
----@param p1 any
----@param p2 any
-function N_0x6bc0acd0673acebe(p0, p1, p2) end
+---@param valueA number
+---@param valueB number
+function N_0x6bc0acd0673acebe(p0, valueA, valueB) end
 
 ---**`STATS` `client` [`0x6BCCF9948492FD85`](https://docs.fivem.net/natives/?_0x6BCCF9948492FD85)**
 ---
@@ -940,8 +940,8 @@ function N_0xf06a6f41cb445443(p0) end
 
 ---**`STATS` `client` [`0xF11F01D98113536A`](https://docs.fivem.net/natives/?_0xF11F01D98113536A)**
 ---
----@param p0 any
----@return any
+---@param p0 number
+---@return any, number
 function N_0xf11f01d98113536a(p0) end
 
 ---**`STATS` `client` [`0xF1A1803D3476F215`](https://docs.fivem.net/natives/?_0xF1A1803D3476F215)**

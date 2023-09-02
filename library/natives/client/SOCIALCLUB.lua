@@ -182,9 +182,9 @@ function N_0x7ffcbfee44ecfabf() end
 ---NativeDB Introduced: v1290
 ---```
 ---
----@param p0 any
----@return boolean
-function N_0x8a4416c0db05fa66(p0) end
+---@param newsStoryData any
+---@return boolean, any
+function N_0x8a4416c0db05fa66(newsStoryData) end
 
 ---**`SOCIALCLUB` `client` [`0x8CC469AB4D349B7C`](https://docs.fivem.net/natives/?_0x8CC469AB4D349B7C)**
 ---

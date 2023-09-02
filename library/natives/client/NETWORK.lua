@@ -256,9 +256,9 @@ function N_0x2d5dc831176d0114(p0) end
 ---**`NETWORK` `client` [`0x2DA41ED6E1FCD7A5`](https://docs.fivem.net/natives/?_0x2DA41ED6E1FCD7A5)**
 ---
 ---@param p0 any
----@param p1 any
----@return any
-function N_0x2da41ed6e1fcd7a5(p0, p1) end
+---@param TypeOfWeapon number
+---@return any, number
+function N_0x2da41ed6e1fcd7a5(p0, TypeOfWeapon) end
 
 ---**`NETWORK` `client` [`0x2E0BF682CC778D49`](https://docs.fivem.net/natives/?_0x2E0BF682CC778D49)**
 ---
@@ -268,15 +268,15 @@ function N_0x2e0bf682cc778d49(p0) end
 
 ---**`NETWORK` `client` [`0x2E4C123D1C8A710E`](https://docs.fivem.net/natives/?_0x2E4C123D1C8A710E)**
 ---
----@param p0 any
----@param p1 any
+---@param retPlayerIds number
+---@param retNumber number
 ---@param p2 any
 ---@param p3 any
 ---@param p4 any
 ---@param p5 any
 ---@param p6 any
----@return any
-function N_0x2e4c123d1c8a710e(p0, p1, p2, p3, p4, p5, p6) end
+---@return any, number, number
+function N_0x2e4c123d1c8a710e(retPlayerIds, retNumber, p2, p3, p4, p5, p6) end
 
 ---**`NETWORK` `client` [`0x32EBD154CB6B8B99`](https://docs.fivem.net/natives/?_0x32EBD154CB6B8B99)**
 ---
@@ -771,9 +771,9 @@ function N_0x7fcc39c46c3c03bd(p0) end
 ---
 ---@param p0 any
 ---@param p1 any
----@param p2 any
----@return any
-function N_0x83660b734994124d(p0, p1, p2) end
+---@param damageDealt number
+---@return any, number
+function N_0x83660b734994124d(p0, p1, damageDealt) end
 
 ---**`NETWORK` `client` [`0x83FE8D7229593017`](https://docs.fivem.net/natives/?_0x83FE8D7229593017)**
 ---
@@ -1062,9 +1062,9 @@ function N_0xc42dd763159f3461() end
 ---**`NETWORK` `client` [`0xC434133D9BA52777`](https://docs.fivem.net/natives/?_0xC434133D9BA52777)**
 ---
 ---@param p0 any
----@param p1 any
----@return any
-function N_0xc434133d9ba52777(p0, p1) end
+---@param TypeOfWeapon number
+---@return any, number
+function N_0xc434133d9ba52777(p0, TypeOfWeapon) end
 
 ---**`NETWORK` `client` [`0xC571D0E77D8BBC29`](https://docs.fivem.net/natives/?_0xC571D0E77D8BBC29)**
 ---
@@ -1150,10 +1150,10 @@ function N_0xe16aa70ce9beedc3(p0) end
 ---@param p1 any
 ---@param p2 any
 ---@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
-function N_0xe42d626eec94e5d9(p0, p1, p2, p3, p4, p5, p6) end
+---@param numReservedPeds number
+---@param numReservedVehicles number
+---@param numReservedObjects number
+function N_0xe42d626eec94e5d9(p0, p1, p2, p3, numReservedPeds, numReservedVehicles, numReservedObjects) end
 
 ---**`NETWORK` `client` [`0xE6717E652B8C8D8A`](https://docs.fivem.net/natives/?_0xE6717E652B8C8D8A)**
 ---
@@ -2783,7 +2783,7 @@ function NetworkGetPlayerTutorialSessionInstance(player) end
 ---**`NETWORK` `client` [`0x24409FC4C55CB22D`](https://docs.fivem.net/natives/?_0x24409FC4C55CB22D)**
 ---
 ---@param p0 any
----@return any
+---@return string
 function NetworkGetPresenceInviteContentId(p0) end
 
 ---**`NETWORK` `client` [`0x3DBF2DF0AEB7D289`](https://docs.fivem.net/natives/?_0x3DBF2DF0AEB7D289)**
@@ -4962,7 +4962,7 @@ function UgcGetBookmarkedContent(p0, p1, p2, p3) end
 ---
 ---@param p0 any
 ---@param p1 any
----@return any
+---@return string
 function UgcGetCachedDescription(p0, p1) end
 
 ---**`NETWORK` `client` [`0xA7BAB11E7C9C6C5A`](https://docs.fivem.net/natives/?_0xA7BAB11E7C9C6C5A)**
@@ -5032,7 +5032,7 @@ function UgcGetContentLanguage(p0) end
 ---**`NETWORK` `client` [`0xBF09786A7FCAB582`](https://docs.fivem.net/natives/?_0xBF09786A7FCAB582)**
 ---
 ---@param p0 any
----@return any
+---@return string
 function UgcGetContentName(p0) end
 
 ---**`NETWORK` `client` [`0xE0A6138401BCB837`](https://docs.fivem.net/natives/?_0xE0A6138401BCB837)**
@@ -5095,12 +5095,12 @@ function UgcGetContentUserId(p0) end
 ---**`NETWORK` `client` [`0x703F12425ECA8BF5`](https://docs.fivem.net/natives/?_0x703F12425ECA8BF5)**
 ---
 ---@param p0 any
----@return any
+---@return string
 function UgcGetContentUserName(p0) end
 
 ---**`NETWORK` `client` [`0xC55A0B40FFB1ED23`](https://docs.fivem.net/natives/?_0xC55A0B40FFB1ED23)**
 ---
----@return any
+---@return string
 function UgcGetCreateContentId() end
 
 ---**`NETWORK` `client` [`0xFBC5E768C7A77A6A`](https://docs.fivem.net/natives/?_0xFBC5E768C7A77A6A)**

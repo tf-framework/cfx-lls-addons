@@ -1064,9 +1064,9 @@ function GiveLoadoutToPed(ped, loadoutHash) end
 ---@param y number
 ---@param z number
 ---@param radius number
----@param outZoneId number
----@return boolean
-function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius, outZoneId) end
+---@param SphereIndex number
+---@return boolean, number
+function IsAnyAirDefenseZoneInsideSphere(x, y, z, radius, SphereIndex) end
 
 ---**`WEAPON` `client` [`0x0ABF535877897560`](https://docs.fivem.net/natives/?_0x0ABF535877897560)**
 ---
