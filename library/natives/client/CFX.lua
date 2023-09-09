@@ -83,6 +83,29 @@ function AddTextEntry(entryKey, entryText) end
 ---@param entryText string
 function AddTextEntryByHash(entryKey, entryText) end
 
+---**`CFX` `client` [`0xA274CADB`](https://docs.fivem.net/natives/?_0xA274CADB)**
+---
+---Break off vehicle wheel by index. The `leaveDebrisTrail` flag requires `putOnFire` to be true.
+---
+---Example code:
+---```lua
+---local vehicle = GetVehiclePedIsIn(PlayerPedId())
+---
+---if DoesEntityExist(vehicle) then
+---  for i = 0, 3 do
+---    BreakOffVehicleWheel(vehicle, i, true, false, true, false)
+---  end
+---end
+---```
+---
+---@param vehicle Vehicle The vehicle handle.
+---@param wheelIndex number The wheel index.
+---@param leaveDebrisTrail boolean Start "veh_debris_trail" ptfx.
+---@param deleteWheel boolean True to delete wheel, otherwise detach.
+---@param unknownFlag boolean Unknown flag.
+---@param putOnFire boolean Set wheel on fire once detached.
+function BreakOffVehicleWheel(vehicle, wheelIndex, leaveDebrisTrail, deleteWheel, unknownFlag, putOnFire) end
+
 ---**`CFX` `client` [`0x4C89C0ED`](https://docs.fivem.net/natives/?_0x4C89C0ED)**
 ---
 ---This is similar to the PushScaleformMovieFunction natives, except it calls in the `TIMELINE` of a minimap overlay.
@@ -104,6 +127,24 @@ function CancelEvent() end
 ---
 ---@param vehicle Vehicle The vehicle handle.
 function ClearVehicleXenonLightsCustomColor(vehicle) end
+
+---**`CFX` `client` [`0x54D636B3`](https://docs.fivem.net/natives/?_0x54D636B3)**
+---
+---Example code:
+---```lua
+---local sourceName = "underwater"
+---local cloneName = "my_awesome_timecycle"
+---
+---local clonedIndex = CloneTimecycleModifier(sourceName, cloneName)
+---if clonedIndex ~= -1 then
+---  SetTimecycleModifier(cloneName)
+---end
+---```
+---
+---@param sourceModifierName string The source timecycle name.
+---@param clonedModifierName string The clone timecycle name, must be unique.
+---@return number # The cloned timecycle modifier index, or -1 if failed.
+function CloneTimecycleModifier(sourceModifierName, clonedModifierName) end
 
 ---**`CFX` `client` [`0x19D81F4E`](https://docs.fivem.net/natives/?_0x19D81F4E)**
 ---
@@ -190,6 +231,24 @@ function CreateRuntimeTextureFromImage(txd, txn, fileName) end
 ---@return number # A handle to the runtime TXD.
 function CreateRuntimeTxd(name) end
 
+---**`CFX` `client` [`0x70FA2AFA`](https://docs.fivem.net/natives/?_0x70FA2AFA)**
+---
+---Create a clean timecycle modifier. See [`SET_TIMECYCLE_MODIFIER_VAR`](#\_0x6E0A422B) to add variables.
+---
+---Example code:
+---```lua
+---local modifierName = "my_awesome_timecycle"
+---local createdIndex = CreateTimecycleModifier(modifierName)
+---
+---if createdIndex ~= -1 then
+---  SetTimecycleModifier(modifierName)
+---end
+---```
+---
+---@param modifierName string The new timecycle name, must be unique.
+---@return number # The created timecycle modifier index, or -1 if failed.
+function CreateTimecycleModifier(modifierName) end
+
 ---**`CFX` `shared` [`0x1E86F206`](https://docs.fivem.net/natives/?_0x1E86F206)**
 ---
 ---@param referenceIdentity string
@@ -226,6 +285,13 @@ function DisableEditorRuntime() end
 ---@param state boolean On/Off
 function DisableIdleCamera(state) end
 
+---**`CFX` `client` [`0x5C140555`](https://docs.fivem.net/natives/?_0x5C140555)**
+---
+---Disables the game's afk camera that starts panning around after 30 seconds of inactivity(While riding in a car as a passenger)
+---
+---@param state boolean On/Off
+function DisableVehiclePassengerIdleCamera(state) end
+
 ---**`CFX` `client` [`0xA9C92CDC`](https://docs.fivem.net/natives/?_0xA9C92CDC)**
 ---
 ---Disables the game's world horizon lods rendering (see `farlods.#dd`).
@@ -233,6 +299,31 @@ function DisableIdleCamera(state) end
 ---
 ---@param state boolean On/Off
 function DisableWorldhorizonRendering(state) end
+
+---**`CFX` `client` [`0xC53BB6D3`](https://docs.fivem.net/natives/?_0xC53BB6D3)**
+---
+---Example code:
+---```lua
+---local modifierName = "superDARK"
+---local varName = "postfx_noise"
+---
+---if DoesTimecycleModifierHasVar(modifierName, varName) then
+---  local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+---
+---  if success then
+---    print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---    RemoveTimecycleModifierVar(modifierName, varName)
+---  end
+---else
+---    SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---    print(string.format("[%s] created var %s", modifierName, varName))
+---end
+---```
+---
+---@param modifierName string The name of timecycle modifier.
+---@param varName string The name of timecycle variable.
+---@return boolean # Whether or not variable by name was found on the specified timecycle modifier.
+function DoesTimecycleModifierHasVar(modifierName, varName) end
 
 ---**`CFX` `client` [`0xF65BBA4B`](https://docs.fivem.net/natives/?_0xF65BBA4B)**
 ---
@@ -521,6 +612,58 @@ function GetAmbientPedRangeMultiplier() end
 ---@return number # Returns ambient vehicle range multiplier value.
 function GetAmbientVehicleRangeMultiplier() end
 
+---**`CFX` `client` [`0x870E8B40`](https://docs.fivem.net/natives/?_0x870E8B40)**
+---
+---This native returns the index of a calming quad if the given point is inside its bounds.
+---
+---Example code:
+---```lua
+---local currentPedPosition = GetEntityCoords(PlayerPedId())
+---local calmingQuadIndex = GetCalmingQuadAtCoords(currentPedPosition.x, currentPedPosition.y)
+---```
+---
+---@param x number The X coordinate
+---@param y number The Y coordinate
+---@return number # The calming quad index at the given position. Returns -1 if there isn't any there.
+function GetCalmingQuadAtCoords(x, y) end
+
+---**`CFX` `client` [`0xFF60E63`](https://docs.fivem.net/natives/?_0xFF60E63)**
+---
+---Example code:
+---```lua
+---local success, minX, minY, maxX, maxY = GetCalmingQuadBounds(1)
+---```
+---
+---@param waterQuad number The calming quad index
+---@param minX number The minX coordinate
+---@param minY number The minY coordinate
+---@param maxX number The maxX coordinate
+---@param maxY number The maxY coordinate
+---@return boolean, number, number, number, number # Returns true on success. Bounds are undefined on failure
+function GetCalmingQuadBounds(waterQuad, minX, minY, maxX, maxY) end
+
+---**`CFX` `client` [`0xCEBFC42`](https://docs.fivem.net/natives/?_0xCEBFC42)**
+---
+---Example code:
+---```lua
+---local calmingQuadCount = GetCalmingQuadCount()
+---```
+---
+---@return number # Returns the amount of calming quads loaded.
+function GetCalmingQuadCount() end
+
+---**`CFX` `client` [`0xB0E3A058`](https://docs.fivem.net/natives/?_0xB0E3A058)**
+---
+---Example code:
+---```lua
+---local success, dampening = GetCalmingQuadDampening(1)
+---```
+---
+---@param waterQuad number The calming quad index
+---@param calmingQuadDampening number
+---@return boolean, number # Returns true on success. Dampening value is undefined on failure
+function GetCalmingQuadDampening(waterQuad, calmingQuadDampening) end
+
 ---**`CFX` `client` [`0x8F57A89D`](https://docs.fivem.net/natives/?_0x8F57A89D)**
 ---
 ---Returns the world matrix of the specified camera. To turn this into a view matrix, calculate the inverse.
@@ -714,6 +857,7 @@ function GetExternalKvpString(resource, key) end
 ---    *   2612
 ---    *   2699
 ---    *   2802
+---    *   2944
 ---*   RedM
 ---    *   1311
 ---    *   1355
@@ -772,6 +916,27 @@ function GetGameName() end
 ---@param poolName string The pool name to get a list of entities from.
 ---@return table # An array containing entity handles for each entity in the named pool.
 function GetGamePool(poolName) end
+
+---**`CFX` `client` [`0xCD949E20`](https://docs.fivem.net/natives/?_0xCD949E20)**
+---
+---See [SET_SCRIPT_GFX_ALIGN](#\_0xB8A850F20A067EB6) for details about how gfx align works.
+---
+---@param id number The hud component id.
+---@param horizontalAlign number
+---@param verticalAlign number
+function GetHudComponentAlign(id, horizontalAlign, verticalAlign) end
+
+---**`CFX` `client` [`0xA91866BC`](https://docs.fivem.net/natives/?_0xA91866BC)**
+---
+---@param id number The hud component id.
+---@return string # The hud component name.
+function GetHudComponentName(id) end
+
+---**`CFX` `client` [`0x12217D33`](https://docs.fivem.net/natives/?_0x12217D33)**
+---
+---@param id number The hud component id.
+---@return vector3 # A Vector3 with the hud component size X and size Y values.
+function GetHudComponentSize(id) end
 
 ---**`CFX` `shared` [`0x9F1C4383`](https://docs.fivem.net/natives/?_0x9F1C4383)**
 ---
@@ -1392,6 +1557,19 @@ function GetPedModelPersonality(modelHash) end
 ---@return number # The current movement clipset hash.
 function GetPedMovementClipset(ped) end
 
+---**`CFX` `client` [`0x44B91E94`](https://docs.fivem.net/natives/?_0x44B91E94)**
+---
+---A getter for [SET_PED_SWEAT](#\_0x27B0405F59637D1F).
+---
+---Example code:
+---```lua
+---local sweat = GetPedSweat(PlayerPedId())
+---```
+---
+---@param ped Ped The target ped
+---@return number # Returns ped's sweat.
+function GetPedSweat(ped) end
+
 ---**`CFX` `client` [`0x344EA166`](https://docs.fivem.net/natives/?_0x344EA166)**
 ---
 ---@param serverId number
@@ -1683,6 +1861,187 @@ function GetScenarioPedDensityMultiplier() end
 ---@param key string
 ---@return table # Value.
 function GetStateBagValue(bagName, key) end
+
+---**`CFX` `client` [`0xFE2A1D4D`](https://docs.fivem.net/natives/?_0xFE2A1D4D)**
+---
+---Example code:
+---```lua
+---local count = GetTimecycleModifierCount()
+---print("we have  " .. count .. "timecycle modifiers loaded")
+---```
+---
+---@return number # Returns the amount of timecycle modifiers loaded.
+function GetTimecycleModifierCount() end
+
+---**`CFX` `client` [`0x5F4CD0E2`](https://docs.fivem.net/natives/?_0x5F4CD0E2)**
+---
+---Example code:
+---```lua
+---local modifierIndex = GetTimecycleModifierIndexByName("underwater")
+---local currentIndex = GetTimecycleModifierIndex()
+---
+---if currentIndex ~= -1 and currentIndex == modifierIndex then
+---  print("we're actually using 'underwater' timecycle!")
+---end
+---```
+---
+---@param modifierName string The timecycle modifier name.
+---@return number # The timecycle modifier index.
+function GetTimecycleModifierIndexByName(modifierName) end
+
+---**`CFX` `client` [`0x28CB8608`](https://docs.fivem.net/natives/?_0x28CB8608)**
+---
+---Example code:
+---```lua
+---local modifierIndex = GetTimecycleModifierIndex()
+---
+---if modifierIndex ~= -1 then
+---  local modifierName = GetTimecycleModifierNameByIndex(modifierIndex)
+---  print("current timecycle name is " .. modifierName)
+---end
+---```
+---
+---@param modifierIndex number The timecycle modifier index.
+---@return string # The timecycle modifier name.
+function GetTimecycleModifierNameByIndex(modifierIndex) end
+
+---**`CFX` `client` [`0xBE54124A`](https://docs.fivem.net/natives/?_0xBE54124A)**
+---
+---A getter for [SET_TIMECYCLE_MODIFIER_STRENGTH](#\_0x82E7FFCD5B2326B3).
+---
+---@return number # Returns current timecycle modifier strength.
+function GetTimecycleModifierStrength() end
+
+---**`CFX` `client` [`0xA7109E12`](https://docs.fivem.net/natives/?_0xA7109E12)**
+---
+---Example code:
+---```lua
+---local modifierName = "superDARK"
+---local varName = "postfx_noise"
+---
+---if DoesTimecycleModifierHasVar(modifierName, varName) then
+---  local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+---
+---  if success then
+---    print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---    RemoveTimecycleModifierVar(modifierName, varName)
+---  end
+---else
+---    SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---    print(string.format("[%s] created var %s", modifierName, varName))
+---end
+---```
+---
+---@param modifierName string The name of timecycle modifier.
+---@param varName string The name of timecycle variable.
+---@param value1 number
+---@param value2 number
+---@return boolean, number, number # Whether or not variable by name was found on the specified timecycle modifier.
+function GetTimecycleModifierVar(modifierName, varName, value1, value2) end
+
+---**`CFX` `client` [`0x60FB60FE`](https://docs.fivem.net/natives/?_0x60FB60FE)**
+---
+---Example code:
+---```lua
+---local varCount = GetTimecycleModifierVarCount("underwater")
+---
+---if varCount ~= 0 then
+---  for index = 0, varCount - 1 do
+---    local varName = GetTimecycleModifierVarNameByIndex(index)
+---
+---    print(string.format("[%d] %s", index, varName))
+---  end
+---end
+---```
+---
+---@param modifierName string The timecycle modifier name.
+---@return number # The amount of variables used on a specified timecycle modifier.
+function GetTimecycleModifierVarCount(modifierName) end
+
+---**`CFX` `client` [`0xE874AB1D`](https://docs.fivem.net/natives/?_0xE874AB1D)**
+---
+---Example code:
+---```lua
+---local varCount = GetTimecycleModifierVarCount("underwater")
+---
+---if varCount ~= 0 then
+---  for index = 0, varCount - 1 do
+---    local varName = GetTimecycleModifierVarNameByIndex(index)
+---
+---    print(string.format("[%d] %s", index, varName))
+---  end
+---end
+---```
+---
+---@param modifierName string The name of timecycle modifier.
+---@param modifierVarIndex number The index of a variable on the specified timecycle modifier.
+---@return string # The name of a variable by index.
+function GetTimecycleModifierVarNameByIndex(modifierName, modifierVarIndex) end
+
+---**`CFX` `client` [`0x838B34D8`](https://docs.fivem.net/natives/?_0x838B34D8)**
+---
+---Returns the amount of variables available to be applied on timecycle modifiers.
+---
+---Example code:
+---```lua
+---local varCount = GetTimecycleVarCount()
+---
+---if varCount ~= 0 then
+---  for index = 0, varCount - 1 do
+---    local varName = GetTimecycleVarNameByIndex(index)
+---    local varDefault = GetTimecycleVarDefaultValueByIndex(index)
+---
+---    print(string.format("[%d] %s (%f)", index, varName, varDefault))
+---  end
+---end
+---```
+---
+---@return number # The amount of available variables for timecycle modifiers.
+function GetTimecycleVarCount() end
+
+---**`CFX` `client` [`0x3B90238`](https://docs.fivem.net/natives/?_0x3B90238)**
+---
+---See [GET_TIMECYCLE_VAR_COUNT](#\_0x838B34D8).
+---
+---Example code:
+---```lua
+---local varCount = GetTimecycleVarCount()
+---
+---if varCount ~= 0 then
+---  for index = 0, varCount - 1 do
+---    local varName = GetTimecycleVarNameByIndex(index)
+---    local varDefault = GetTimecycleVarDefaultValueByIndex(index)
+---
+---    print(string.format("[%d] %s (%f)", index, varName, varDefault))
+---  end
+---end
+---```
+---
+---@param varIndex number The index of variable.
+---@return number # The default value of a timecycle variable.
+function GetTimecycleVarDefaultValueByIndex(varIndex) end
+
+---**`CFX` `client` [`0xC6C55AAF`](https://docs.fivem.net/natives/?_0xC6C55AAF)**
+---
+---See [GET_TIMECYCLE_VAR_COUNT](#\_0x838B34D8).
+---
+---Example code:
+---```lua
+---local varCount = GetTimecycleVarCount()
+---
+---if varCount ~= 0 then
+---  for index = 0, varCount - 1 do
+---    local varName = GetTimecycleVarNameByIndex(index)
+---    local varDefault = GetTimecycleVarDefaultValueByIndex(index)
+---
+---    print(string.format("[%d] %s (%f)", index, varName, varDefault))
+---  end
+---end
+---```
+---
+---@param varIndex number The index of variable.
+---@return string # The name of a timecycle variable.
+function GetTimecycleVarNameByIndex(varIndex) end
 
 ---**`CFX` `client` [`0xE015E854`](https://docs.fivem.net/natives/?_0xE015E854)**
 ---
@@ -2162,6 +2521,214 @@ function GetVehicleWheelYRotation(vehicle, wheelIndex) end
 ---@return boolean, number, number, number # A boolean indicating if vehicle have custom xenon lights RGB color.
 function GetVehicleXenonLightsCustomColor(vehicle, red, green, blue) end
 
+---**`CFX` `client` [`0x14088095`](https://docs.fivem.net/natives/?_0x14088095)**
+---
+---Example code:
+---```lua
+---local success, a0, a1, a2, a3 = GetWaterQuadAlpha(0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param a0 number The a0 level
+---@param a1 number The a1 level
+---@param a2 number The a2 level
+---@param a3 number The a3 level
+---@return boolean, number, number, number, number # Returns true on success. Alpha values are undefined on failure
+function GetWaterQuadAlpha(waterQuad, a0, a1, a2, a3) end
+
+---**`CFX` `client` [`0x17321452`](https://docs.fivem.net/natives/?_0x17321452)**
+---
+---This native returns the index of a water quad if the given point is inside its bounds.
+---
+---*If you also want to check for water level, check out [`GetWaterQuadAtCoords_3d`](#\_0xF8E03DB8)*
+---
+---Example code:
+---```lua
+---local currentPedPosition = GetEntityCoords(PlayerPedId())
+---local waterQuadIndex = GetWaterQuadAtCoords(currentPedPosition.x, currentPedPosition.y)
+---```
+---
+---@param x number The X coordinate
+---@param y number The Y coordinate
+---@return number # The water quad index at the given position. Returns -1 if there isn't any there.
+function GetWaterQuadAtCoords(x, y) end
+
+---**`CFX` `client` [`0xF8E03DB8`](https://docs.fivem.net/natives/?_0xF8E03DB8)**
+---
+---This alternative implementation of [`GetWaterQuadAtCoords`](#\_0x17321452) also checks the height of the water level.
+---
+---Example code:
+---```lua
+---local currentPedPosition = GetEntityCoords(PlayerPedId())
+---local waterQuadIndex = GetWaterQuadAtCoords(currentPedPosition.x, currentPedPosition.y, currentPedPosition.z)
+---```
+---
+---@param x number The X coordinate
+---@param y number The Y coordinate
+---@param z number The water level inside the water quad
+---@return number # The water quad index at the given position. Returns -1 if there isn't any there. Also returns -1 if the given point is above the water level.
+function GetWaterQuadAtCoords_3d(x, y, z) end
+
+---**`CFX` `client` [`0x42E9A06A`](https://docs.fivem.net/natives/?_0x42E9A06A)**
+---
+---Example code:
+---```lua
+---local success, minX, minY, maxX, maxY = GetWaterQuadBounds(1)
+---```
+---
+---@param waterQuad number The water quad index
+---@param minX number The minX coordinate
+---@param minY number The minY coordinate
+---@param maxX number The maxX coordinate
+---@param maxY number The maxY coordinate
+---@return boolean, number, number, number, number # Returns true on success. Bounds are undefined on failure
+function GetWaterQuadBounds(waterQuad, minX, minY, maxX, maxY) end
+
+---**`CFX` `client` [`0xB1884159`](https://docs.fivem.net/natives/?_0xB1884159)**
+---
+---Example code:
+---```lua
+---local waterQuadCount = GetWaterQuadCount()
+---```
+---
+---@return number # Returns the amount of water quads loaded.
+function GetWaterQuadCount() end
+
+---**`CFX` `client` [`0x22EA3BD8`](https://docs.fivem.net/natives/?_0x22EA3BD8)**
+---
+---Example code:
+---```lua
+---local success, hasLimitedDepth = GetWaterQuadHasLimitedDepth(0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param hasLimitedDepth number
+---@return boolean, number # Returns if the given water quad has a limited depth.
+function GetWaterQuadHasLimitedDepth(waterQuad, hasLimitedDepth) end
+
+---**`CFX` `client` [`0x1DEDBD77`](https://docs.fivem.net/natives/?_0x1DEDBD77)**
+---
+---Example code:
+---```lua
+---local success, isInvisible = GetWaterQuadIsInvisible(0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param isInvisible number
+---@return boolean, number # Returns if the given water quad is invisible
+function GetWaterQuadIsInvisible(waterQuad, isInvisible) end
+
+---**`CFX` `client` [`0x6523816B`](https://docs.fivem.net/natives/?_0x6523816B)**
+---
+---*level is defined as "z" in water.xml*
+---
+---Example code:
+---```lua
+---local success, waterQuadLevel = GetWaterQuadLevel(0)
+---```
+---
+---@param waterQuad number The returned water quad level
+---@param waterQuadLevel number
+---@return boolean, number # Returns true on success. Level is undefined on failure
+function GetWaterQuadLevel(waterQuad, waterQuadLevel) end
+
+---**`CFX` `client` [`0x6F4ACBA`](https://docs.fivem.net/natives/?_0x6F4ACBA)**
+---
+---Example code:
+---```lua
+---local success, noStencil = GetWaterQuadNoStencil(0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param noStencil number
+---@return boolean, number # Returns if the given water quad has no stencil.
+function GetWaterQuadNoStencil(waterQuad, noStencil) end
+
+---**`CFX` `client` [`0xE2501B8B`](https://docs.fivem.net/natives/?_0xE2501B8B)**
+---
+---Valid type definitions:
+---
+---*   **0** Square
+---*   **1** Right triangle where the 90 degree angle is at maxX, minY
+---*   **2** Right triangle where the 90 degree angle is at minX, minY
+---*   **3** Right triangle where the 90 degree angle is at minX, maxY
+---*   **4** Right triangle where the 90 degree angle is at maxY, maxY
+---
+---Example code:
+---```lua
+---local success, type = GetWaterQuadType(0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param waterType number
+---@return boolean, number # Returns true on success. Type is undefined on failure
+function GetWaterQuadType(waterQuad, waterType) end
+
+---**`CFX` `client` [`0x865139A3`](https://docs.fivem.net/natives/?_0x865139A3)**
+---
+---Example code:
+---```lua
+---local success, amplitude = GetWaveQuadAmplitude(1)
+---```
+---
+---@param waveQuad number The wave quad index
+---@param waveQuadAmplitude number
+---@return boolean, number # Returns true on success. Amplitude is undefined on failure
+function GetWaveQuadAmplitude(waveQuad, waveQuadAmplitude) end
+
+---**`CFX` `client` [`0x3F5A61A7`](https://docs.fivem.net/natives/?_0x3F5A61A7)**
+---
+---This native returns the index of a wave quad if the given point is inside its bounds.
+---
+---Example code:
+---```lua
+---local currentPedPosition = GetEntityCoords(PlayerPedId())
+---local waveQuadIndex = GetWaveQuadAtCoords(currentPedPosition.x, currentPedPosition.y)
+---```
+---
+---@param x number The X coordinate
+---@param y number The Y coordinate
+---@return number # The wave quad index at the given position. Returns -1 if there isn't any there.
+function GetWaveQuadAtCoords(x, y) end
+
+---**`CFX` `client` [`0xF86136DB`](https://docs.fivem.net/natives/?_0xF86136DB)**
+---
+---Example code:
+---```lua
+---local success, minX, minY, maxX, maxY = GetWaveQuadBounds(1)
+---```
+---
+---@param waveQuad number The wave quad index
+---@param minX number The minX coordinate
+---@param minY number The minY coordinate
+---@param maxX number The maxX coordinate
+---@param maxY number The maxY coordinate
+---@return boolean, number, number, number, number # Returns true on success. Bounds are undefined on failure
+function GetWaveQuadBounds(waveQuad, minX, minY, maxX, maxY) end
+
+---**`CFX` `client` [`0x9250C76`](https://docs.fivem.net/natives/?_0x9250C76)**
+---
+---Example code:
+---```lua
+---local waveQuadCount = GetWaveQuadCount()
+---```
+---
+---@return number # Returns the amount of wave quads loaded.
+function GetWaveQuadCount() end
+
+---**`CFX` `client` [`0xCCE49A1C`](https://docs.fivem.net/natives/?_0xCCE49A1C)**
+---
+---Example code:
+---```lua
+---local success, directionX, directionY = GetWaveQuadDirection(1)
+---```
+---
+---@param waveQuad number The wave quad index
+---@param directionX number The wave quad X direction
+---@param directionY number The wave quad Y direction
+---@return boolean, number, number # Returns true on success. Direction values are undefined on failure
+function GetWaveQuadDirection(waveQuad, directionX, directionY) end
+
 ---**`CFX` `client` [`0x63ED2E7`](https://docs.fivem.net/natives/?_0x63ED2E7)**
 ---
 ---A getter for [SET_WEAPON_ANIMATION_OVERRIDE](\_0x1055AC3A667F09D9).
@@ -2302,8 +2869,6 @@ function IsAceAllowed(object) end
 
 ---**`CFX` `client` [`0xFFF65C63`](https://docs.fivem.net/natives/?_0xFFF65C63)**
 ---
----<!-- Native implemented by Disquse. 0xFFF65C63 -->
----
 ---Returns true if the minimap is currently expanded. False if it's the normal minimap state.
 ---Use [`IsBigmapFull`](#\_0x66EE14B2) to check if the full map is currently revealed on the minimap.
 ---
@@ -2318,8 +2883,6 @@ function IsAceAllowed(object) end
 function IsBigmapActive() end
 
 ---**`CFX` `client` [`0x66EE14B2`](https://docs.fivem.net/natives/?_0x66EE14B2)**
----
----<!-- Native implemented by Disquse. 0x66EE14B2 -->
 ---
 ---Example code:
 ---```lua
@@ -2346,7 +2909,7 @@ function IsDuiAvailable(duiObject) end
 ---@return boolean # A boolean value.
 function IsDuplicityVersion() end
 
----**`CFX` `client` [`0xEDBE6ADD`](https://docs.fivem.net/natives/?_0xEDBE6ADD)**
+---**`CFX` `shared` [`0xEDBE6ADD`](https://docs.fivem.net/natives/?_0xEDBE6ADD)**
 ---
 ---A getter for [FREEZE_ENTITY_POSITION](#\_0x428CA6DBD1094446).
 ---
@@ -2372,6 +2935,29 @@ function IsNuiFocused() end
 ---
 ---@return boolean # True or false.
 function IsNuiFocusKeepingInput() end
+
+---**`CFX` `client` [`0xC767B581`](https://docs.fivem.net/natives/?_0xC767B581)**
+---
+---Example code:
+---```lua
+---local ped = PlayerPedId()
+---
+---for component = 0, 12 do
+---  local count = GetNumberOfPedDrawableVariations(ped, component)
+---
+---  for drawable = 0, count - 1 do
+---    if IsPedComponentVariationGen9Exclusive(ped, component, drawable) then
+---      print("Component " .. component .. " drawable " .. drawable .. " is a gen9 exclusive, skip!")
+---    end
+---  end
+---end
+---```
+---
+---@param ped Ped The target ped.
+---@param componentId number The component id.
+---@param drawableId number The drawable id.
+---@return boolean # Whether or not the ped component variation is a gen9 exclusive (stub assets).
+function IsPedComponentVariationGen9Exclusive(ped, componentId, drawableId) end
 
 ---**`CFX` `shared` [`0x37CF52CE`](https://docs.fivem.net/natives/?_0x37CF52CE)**
 ---
@@ -2442,6 +3028,20 @@ function LeaveCursorMode() end
 ---@param fileName string The file in the resource.
 ---@return string # The file contents
 function LoadResourceFile(resourceName, fileName) end
+
+---**`CFX` `client` [`0xF5102568`](https://docs.fivem.net/natives/?_0xF5102568)**
+---
+---Define the xml in a resources fxmanifest, under the file(s) section.
+---
+---Example code:
+---```lua
+---local success = LoadWaterFromPath('my-resource-name', 'water-all-over-the-place.xml')
+---```
+---
+---@param resourceName string The name of the resource containing your modified water definition
+---@param fileName string The name of the file
+---@return boolean # Returns true on success.
+function LoadWaterFromPath(resourceName, fileName) end
 
 ---**`CFX` `client` [`0xC79F44BF`](https://docs.fivem.net/natives/?_0xC79F44BF)**
 ---
@@ -2832,6 +3432,8 @@ function RegisterFontId(fontName) end
 ---
 ---See the related [cookbook post](https://cookbook.fivem.net/2020/01/06/using-the-new-console-key-bindings/) for more information.
 ---
+---Below you can find some examples on how to create these keybindings as well as the alternate keybinding syntax, which is preceded by `~!` to indicate that it's an alternate key.
+---
 ---Example code:
 ---```lua
 ---local handsUp = false
@@ -2849,7 +3451,11 @@ function RegisterFontId(fontName) end
 ---RegisterCommand('-handsup', function()
 ---    handsUp = false
 ---end, false)
+---
 ---RegisterKeyMapping('+handsup', 'Hands Up', 'keyboard', 'i')
+---
+----- Alternate keybinding syntax
+---RegisterKeyMapping('~!+handsup', 'Hands Up - Alternate Key', 'keyboard', 'o')
 ---```
 ---
 ---@param commandString string The command to execute, and the identifier of the binding.
@@ -2939,6 +3545,41 @@ function RemoveReplaceTexture(origTxd, origTxn) end
 ---@param cookie number The cookie.
 function RemoveStateBagChangeHandler(cookie) end
 
+---**`CFX` `client` [`0x36DF8612`](https://docs.fivem.net/natives/?_0x36DF8612)**
+---
+---Example code:
+---```lua
+---local modifierName = "my_awesome_timecycle"
+---RemoveTimecycleModifier(modifierName)
+---```
+---
+---@param modifierName string The timecycle modifier name.
+function RemoveTimecycleModifier(modifierName) end
+
+---**`CFX` `client` [`0x5A5E0D05`](https://docs.fivem.net/natives/?_0x5A5E0D05)**
+---
+---Example code:
+---```lua
+---local modifierName = "superDARK"
+---local varName = "postfx_noise"
+---
+---if DoesTimecycleModifierHasVar(modifierName, varName) then
+---  local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+---
+---  if success then
+---    print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---    RemoveTimecycleModifierVar(modifierName, varName)
+---  end
+---else
+---    SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---    print(string.format("[%s] created var %s", modifierName, varName))
+---end
+---```
+---
+---@param modifierName string The name of timecycle modifier.
+---@param varName string The name of timecycle variable.
+function RemoveTimecycleModifierVar(modifierName, varName) end
+
 ---**`CFX` `client` [`0xE7490533`](https://docs.fivem.net/natives/?_0xE7490533)**
 ---
 ---Requests a resource file set with the specified name to be downloaded and mounted on top of the current resource.
@@ -3025,6 +3666,17 @@ function ResetPedModelPersonality(modelHash) end
 ---
 ---@param vehicle Vehicle The vehicle.
 function ResetVehiclePedsCanStandOnTopFlag(vehicle) end
+
+---**`CFX` `client` [`0x1DA4791`](https://docs.fivem.net/natives/?_0x1DA4791)**
+---
+---Resets the water to the games default water.xml.
+---
+---Example code:
+---```lua
+---ResetWater()
+---```
+---
+function ResetWater() end
 
 ---**`CFX` `client` [`0x3DD8130F`](https://docs.fivem.net/natives/?_0x3DD8130F)**
 ---
@@ -3191,6 +3843,33 @@ function SetAudioSubmixOutputVolumes(
 	channel6Volume
 )
 end
+
+---**`CFX` `client` [`0xC5945BD9`](https://docs.fivem.net/natives/?_0xC5945BD9)**
+---
+---Example code:
+---```lua
+---local success = SetCalmingQuadBounds(1, -500, -500, 500, 500)
+---```
+---
+---@param waterQuad number The calming quad index
+---@param minX number The minX coordinate
+---@param minY number The minY coordinate
+---@param maxX number The maxX coordinate
+---@param maxY number The maxY coordinate
+---@return boolean # Returns true on success.
+function SetCalmingQuadBounds(waterQuad, minX, minY, maxX, maxY) end
+
+---**`CFX` `client` [`0x67977501`](https://docs.fivem.net/natives/?_0x67977501)**
+---
+---Example code:
+---```lua
+---local success = SetCalmingQuadDampening(0, 1.0)
+---```
+---
+---@param calmingQuad number The calming quad
+---@param dampening number The dampening value
+---@return boolean # Returns true on success.
+function SetCalmingQuadDampening(calmingQuad, dampening) end
 
 ---**`CFX` `client` [`0x8A7A8DAC`](https://docs.fivem.net/natives/?_0x8A7A8DAC)**
 ---
@@ -3392,6 +4071,22 @@ function SetHandlingInt(vehicle, class_, fieldName, value) end
 ---@param fieldName string The field name to set. These match the keys in `handling.meta`.
 ---@param value vector3 The Vector3 value to set.
 function SetHandlingVector(vehicle, class_, fieldName, value) end
+
+---**`CFX` `client` [`0xEED219F2`](https://docs.fivem.net/natives/?_0xEED219F2)**
+---
+---See [SET_SCRIPT_GFX_ALIGN](#\_0xB8A850F20A067EB6) for details about how gfx align works.
+---
+---@param id number The hud component id.
+---@param horizontalAlign number The horizontal alignment.
+---@param verticalAlign number The vertical alignment.
+function SetHudComponentAlign(id, horizontalAlign, verticalAlign) end
+
+---**`CFX` `client` [`0x7644A9FA`](https://docs.fivem.net/natives/?_0x7644A9FA)**
+---
+---@param id number The hud component id.
+---@param x number New size X.
+---@param y number New size Y.
+function SetHudComponentSize(id, x, y) end
 
 ---**`CFX` `client` [`0x85A10FFD`](https://docs.fivem.net/natives/?_0x85A10FFD)**
 ---
@@ -3840,6 +4535,32 @@ function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) 
 ---@return boolean
 function SetTextChatEnabled(enabled) end
 
+---**`CFX` `client` [`0x6E0A422B`](https://docs.fivem.net/natives/?_0x6E0A422B)**
+---
+---Example code:
+---```lua
+---local modifierName = "superDARK"
+---local varName = "postfx_noise"
+---
+---if DoesTimecycleModifierHasVar(modifierName, varName) then
+---  local success, value1, value2 = GetTimecycleModifierVar(modifierName, varName)
+---
+---  if success then
+---    print(string.format("[%s] removed var %s with values: %f %f", modifierName, varName, value1, value2))
+---    RemoveTimecycleModifierVar(modifierName, varName)
+---  end
+---else
+---    SetTimecycleModifierVar(modifierName, varName, 1.0, 1.0)
+---    print(string.format("[%s] created var %s", modifierName, varName))
+---end
+---```
+---
+---@param modifierName string The name of timecycle modifier.
+---@param varName string The name of timecycle variable.
+---@param value1 number The first value of variable.
+---@param value2 number The second value of variable.
+function SetTimecycleModifierVar(modifierName, varName, value1, value2) end
+
 ---**`CFX` `client` [`0xD4D1BA63`](https://docs.fivem.net/natives/?_0xD4D1BA63)**
 ---
 ---Enables or disables whether train doors should be forced open whilst a player is inside the train. This is enabled by default in multiplayer.
@@ -4210,6 +4931,179 @@ function SetVehicleXenonLightsCustomColor(vehicle, red, green, blue) end
 ---@param name string The name of the value to set, such as `pedLight.color.red`.
 ---@param value number The value to write.
 function SetVisualSettingFloat(name, value) end
+
+---**`CFX` `client` [`0x9FCD2EE6`](https://docs.fivem.net/natives/?_0x9FCD2EE6)**
+---
+---Sets world clip boundaries for water quads file (water.xml, water_heistisland.xml)
+---Used internally by LOAD_GLOBAL_WATER_FILE
+---
+---Example code:
+---```lua
+---SetWaterAreaClipRect(-4000, -4000, 4500, 8000)
+---```
+---
+---@param minX number
+---@param minY number
+---@param maxX number
+---@param maxY number
+function SetWaterAreaClipRect(minX, minY, maxX, maxY) end
+
+---**`CFX` `client` [`0xF49797EB`](https://docs.fivem.net/natives/?_0xF49797EB)**
+---
+---Example code:
+---```lua
+---local success = SetWaterQuadAlpha(0, 5, 5, 5, 5)
+---```
+---
+---@param waterQuad number The water quad index
+---@param a0 number The a0 level
+---@param a1 number The a1 level
+---@param a2 number The a2 level
+---@param a3 number The a3 level
+---@return boolean # Returns true on success.
+function SetWaterQuadAlpha(waterQuad, a0, a1, a2, a3) end
+
+---**`CFX` `client` [`0x80AD144C`](https://docs.fivem.net/natives/?_0x80AD144C)**
+---
+---This native allows you to update the bounds of a specified water quad index.
+---
+---Example code:
+---```lua
+---local success = SetWaterQuadBounds(0, -5000.0, -5000.0, 5000.0, 5000.0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param minX number The minX coordinate
+---@param minY number The minY coordinate
+---@param maxX number The maxX coordinate
+---@param maxY number The maxY coordinate
+---@return boolean # Returns true on success.
+function SetWaterQuadBounds(waterQuad, minX, minY, maxX, maxY) end
+
+---**`CFX` `client` [`0xD1FDCFC1`](https://docs.fivem.net/natives/?_0xD1FDCFC1)**
+---
+---Example code:
+---```lua
+---local success = SetWaterQuadHasLimitedDepth(0, true)
+---```
+---
+---@param waterQuad number The water quad index
+---@param hasLimitedDepth boolean Unknown effect
+---@return boolean # Returns true on success.
+function SetWaterQuadHasLimitedDepth(waterQuad, hasLimitedDepth) end
+
+---**`CFX` `client` [`0xA387D917`](https://docs.fivem.net/natives/?_0xA387D917)**
+---
+---Example code:
+---```lua
+---local success = SetWaterQuadIsInvisible(0, true)
+---```
+---
+---@param waterQuad number The water quad index
+---@param isInvisible boolean Unknown effect
+---@return boolean # Returns true on success.
+function SetWaterQuadIsInvisible(waterQuad, isInvisible) end
+
+---**`CFX` `client` [`0x6292F7A8`](https://docs.fivem.net/natives/?_0x6292F7A8)**
+---
+---Example code:
+---```lua
+---local success = SetWaterQuadLevel(0, 55.0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param level number The water level inside the water quad
+---@return boolean # Returns true on success.
+function SetWaterQuadLevel(waterQuad, level) end
+
+---**`CFX` `client` [`0xC3FF42FF`](https://docs.fivem.net/natives/?_0xC3FF42FF)**
+---
+---Example code:
+---```lua
+---local success = SetWaterQuadNoStencil(0, true)
+---```
+---
+---@param waterQuad number The water quad index
+---@param noStencil boolean Unknown effect
+---@return boolean # Returns true on success.
+function SetWaterQuadNoStencil(waterQuad, noStencil) end
+
+---**`CFX` `client` [`0x50131EB2`](https://docs.fivem.net/natives/?_0x50131EB2)**
+---
+---This native allows you to update the water quad type.
+---
+---Valid type definitions:
+---
+---*   **0** Square
+---*   **1** Right triangle where the 90 degree angle is at maxX, minY
+---*   **2** Right triangle where the 90 degree angle is at minX, minY
+---*   **3** Right triangle where the 90 degree angle is at minX, maxY
+---*   **4** Right triangle where the 90 degree angle is at maxY, maxY
+---
+---Example code:
+---```lua
+---local success = SetWaterQuadType(0, 0)
+---```
+---
+---@param waterQuad number The water quad index
+---@param type number The water quad type
+---@return boolean # Returns true on success.
+function SetWaterQuadType(waterQuad, type) end
+
+---**`CFX` `client` [`0xE4174B7B`](https://docs.fivem.net/natives/?_0xE4174B7B)**
+---
+---Example code:
+---```lua
+---local success = SetWaveQuadAmplitude(0, 1.0)
+---```
+---
+---@param waveQuad number The wave quad index
+---@param amplitude number The amplitude value
+---@return boolean # Returns true on success.
+function SetWaveQuadAmplitude(waveQuad, amplitude) end
+
+---**`CFX` `client` [`0x1FCC1FAF`](https://docs.fivem.net/natives/?_0x1FCC1FAF)**
+---
+---This native allows you to update the bounds of a specified water quad index.
+---
+---Example code:
+---```lua
+---local success = SetWaveQuadBounds(0, -5000, -5000, 5000, 5000)
+---```
+---
+---@param waveQuad number The wave quad index
+---@param minX number The minX coordinate
+---@param minY number The minY coordinate
+---@param maxX number The maxX coordinate
+---@param maxY number The maxY coordinate
+---@return boolean # Returns true on success.
+function SetWaveQuadBounds(waveQuad, minX, minY, maxX, maxY) end
+
+---**`CFX` `client` [`0xFC9341A3`](https://docs.fivem.net/natives/?_0xFC9341A3)**
+---
+---directionX/Y should be constrained between -1.0 and 1.0
+---A positive value will create the wave starting at min and rolling towards max
+---A negative value will create the wave starting at max and rolling towards min
+---Applying both values allows you to make diagonal waves
+---
+---Example code:
+---```lua
+---local success = SetWaveQuadDirection(0, 0.3, 0.1)
+---```
+---
+---@param waveQuad number The wave quad index
+---@param directionX number The minX coordinate
+---@param directionY number The minY coordinate
+---@return boolean # Returns true on success.
+function SetWaveQuadDirection(waveQuad, directionX, directionY) end
+
+---**`CFX` `client` [`0xDFD8F6DE`](https://docs.fivem.net/natives/?_0xDFD8F6DE)**
+---
+---Disables weapons aim blocking due to environment for local player.
+---For non-player peds [SET_PED_ENABLE_WEAPON_BLOCKING](#\_0x97A790315D3831FD) can be used.
+---
+---@param state boolean On/Off
+function SetWeaponsNoAimBlocking(state) end
 
 ---**`CFX` `client` [`0x311150E5`](https://docs.fivem.net/natives/?_0x311150E5)**
 ---

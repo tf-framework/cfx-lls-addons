@@ -188,16 +188,17 @@ function CanPlayerStartCommerceSession(playerSrc) end
 
 ---**`CFX` `server` [`0x2D23D743`](https://docs.fivem.net/natives/?_0x2D23D743)**
 ---
----List of component/props ID
----gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
+---CLEAR_PED_PROP
 ---
 ---**This is the server-side RPC native equivalent of the client native [CLEAR_PED_PROP](https://docs.fivem.net/natives/?_0x0943E5B8E078E76E).**
 ---
----@param ped Ped
----@param propId number
+---@param ped Ped The ped handle.
+---@param propId number The prop id you want to clear from the ped. Refer to [SET_PED_PROP_INDEX](#\_0x93376B65A266EB5F).
 function ClearPedProp(ped, propId) end
 
 ---**`CFX` `server` [`0xA635F451`](https://docs.fivem.net/natives/?_0xA635F451)**
+---
+---CLEAR_PED_SECONDARY_TASK
 ---
 ---**This is the server-side RPC native equivalent of the client native [CLEAR_PED_SECONDARY_TASK](https://docs.fivem.net/natives/?_0x176CECF6F920D707).**
 ---
@@ -287,10 +288,12 @@ function CreatePed(pedType, modelHash, x, y, z, heading, isNetwork, bScriptHostP
 
 ---**`CFX` `server` [`0x3000F092`](https://docs.fivem.net/natives/?_0x3000F092)**
 ---
+---CREATE_PED_INSIDE_VEHICLE
+---
 ---**This is the server-side RPC native equivalent of the client native [CREATE_PED_INSIDE_VEHICLE](https://docs.fivem.net/natives/?_0x7DD959874C1FD534).**
 ---
 ---@param vehicle Vehicle
----@param pedType number
+---@param pedType number See [`CREATE_PED`](#\_0xD49F9B0955C367DE)
 ---@param modelHash Hash
 ---@param seat number
 ---@param isNetwork boolean
@@ -370,11 +373,49 @@ function DeleteResourceKvp(key) end
 ---@param key string The key to delete
 function DeleteResourceKvpNoSync(key) end
 
+---**`CFX` `server` [`0x43F15989`](https://docs.fivem.net/natives/?_0x43F15989)**
+---
+---@param vehicle Vehicle The target vehicle.
+---@return boolean # Returns whether or not the boat sinks when wrecked.
+function DoesBoatSinkWhenWrecked(vehicle) end
+
 ---**`CFX` `server` [`0x3AC90869`](https://docs.fivem.net/natives/?_0x3AC90869)**
 ---
 ---@param entity Object
 ---@return boolean
 function DoesEntityExist(entity) end
+
+---**`CFX` `server` [`0x12038599`](https://docs.fivem.net/natives/?_0x12038599)**
+---
+---Returns whether or not the player exists
+---
+---Example code:
+---```lua
+---local deferralMessages = { "Isn't this just magical!", "We can defer all day!", "You'll get in eventually", "You're totally not going to sit here forever", "The Fruit Tree is a lie" }
+---AddEventHandler("playerConnecting", function(name, setKickReason, deferrals)
+---    local source = source
+---    deferrals.defer()
+---
+---    Wait(0)
+---
+---
+---    local messageIndex = 0
+---
+---    repeat
+---        Wait(2000)
+---        if messageIndex >= #deferralMessages then
+---            deferrals.done()
+---        else
+---            messageIndex = messageIndex + 1
+---        end
+---        deferrals.update(deferralMessages[messageIndex])
+---    until not DoesPlayerExist(source)
+---end)
+---```
+---
+---@param playerSrc string
+---@return boolean # True if the player exists, false otherwise
+function DoesPlayerExist(playerSrc) end
 
 ---**`CFX` `server` [`0x167ABA27`](https://docs.fivem.net/natives/?_0x167ABA27)**
 ---
@@ -566,6 +607,12 @@ function GetCurrentResourceName() end
 ---@return Entity # The attached entity handle. 0 returned if the entity is not attached.
 function GetEntityAttachedTo(entity) end
 
+---**`CFX` `server` [`0xE8C0C629`](https://docs.fivem.net/natives/?_0xE8C0C629)**
+---
+---@param entity Entity The target entity.
+---@return boolean # Returns whether or not entity collisions are disabled.
+function GetEntityCollisionDisabled(entity) end
+
 ---**`CFX` `server` [`0x1647F1CB`](https://docs.fivem.net/natives/?_0x1647F1CB)**
 ---
 ---Gets the current coordinates for a specified entity. This native is used server side when using OneSync.
@@ -624,10 +671,10 @@ function GetEntityHeading(entity) end
 
 ---**`CFX` `server` [`0x8E3222B7`](https://docs.fivem.net/natives/?_0x8E3222B7)**
 ---
----Currently it only works with peds.
+---Only works for vehicle and peds
 ---
----@param entity Entity
----@return number
+---@param entity Entity The entity to check the health of
+---@return number # If the entity is a vehicle it will return 0-1000<br>If the entity is a ped it will return 0-200<br>If the entity is an object it will return 0
 function GetEntityHealth(entity) end
 
 ---**`CFX` `server` [`0xC7AE6AA1`](https://docs.fivem.net/natives/?_0xC7AE6AA1)**
@@ -697,6 +744,13 @@ function GetEntitySpeed(entity) end
 ---
 ---Gets the entity type (as an integer), which can be one of the following defined down below:
 ---
+---**The following entities will return type `1`:**
+---
+---*   Ped
+---*   Player
+---*   Animal (Red Dead Redemption 2)
+---*   Horse (Red Dead Redemption 2)
+---
 ---**The following entities will return type `2`:**
 ---
 ---*   Automobile
@@ -708,13 +762,6 @@ function GetEntitySpeed(entity) end
 ---*   Trailer
 ---*   Train
 ---*   DraftVeh (Red Dead Redemption 2)
----
----**The following entities will return type `1`:**
----
----*   Ped
----*   Player
----*   Animal (Red Dead Redemption 2)
----*   Horse (Red Dead Redemption 2)
 ---
 ---**The following entities will return type `3`:**
 ---
@@ -749,6 +796,7 @@ function GetEntityVelocity(entity) end
 ---    *   2612
 ---    *   2699
 ---    *   2802
+---    *   2944
 ---*   RedM
 ---    *   1311
 ---    *   1355
@@ -963,6 +1011,12 @@ function GetPedSourceOfDeath(ped) end
 ---@param index number A zero-based index with a maximum value of 7.
 ---@return number # The type of the specific task.<br>1604: A value of 530 denotes no script task is assigned or an invalid input was given.<br>2060+: A value of 531 denotes no script task is assigned or an invalid input was given.
 function GetPedSpecificTaskType(ped, index) end
+
+---**`CFX` `server` [`0x40321B83`](https://docs.fivem.net/natives/?_0x40321B83)**
+---
+---@param ped Ped The target ped.
+---@return boolean # Whether or not the ped is stealthy.
+function GetPedStealthMovement(ped) end
 
 ---**`CFX` `server` [`0x433C765D`](https://docs.fivem.net/natives/?_0x433C765D)**
 ---
@@ -1544,6 +1598,8 @@ function GetVehicleWindowTint(vehicle) end
 
 ---**`CFX` `server` [`0x3E1E286D`](https://docs.fivem.net/natives/?_0x3E1E286D)**
 ---
+---GIVE_WEAPON_COMPONENT_TO_PED
+---
 ---**This is the server-side RPC native equivalent of the client native [GIVE_WEAPON_COMPONENT_TO_PED](https://docs.fivem.net/natives/?_0xD966D51AA5B28BB9).**
 ---
 ---@param ped Ped
@@ -1552,6 +1608,8 @@ function GetVehicleWindowTint(vehicle) end
 function GiveWeaponComponentToPed(ped, weaponHash, componentHash) end
 
 ---**`CFX` `server` [`0xC4D88A85`](https://docs.fivem.net/natives/?_0xC4D88A85)**
+---
+---GIVE_WEAPON_TO_PED
 ---
 ---**This is the server-side RPC native equivalent of the client native [GIVE_WEAPON_TO_PED](https://docs.fivem.net/natives/?_0xBF0FD6E56C964FCB).**
 ---
@@ -1567,6 +1625,12 @@ function GiveWeaponToPed(ped, weaponHash, ammoCount, isHidden, bForceInHand) end
 ---@param vehicle Vehicle
 ---@return boolean
 function HasEntityBeenMarkedAsNoLongerNeeded(vehicle) end
+
+---**`CFX` `server` [`0xB8AF3137`](https://docs.fivem.net/natives/?_0xB8AF3137)**
+---
+---@param vehicle Vehicle The target vehicle.
+---@return boolean # Returns whether or not the target vehicle has been damaged by bullets.
+function HasVehicleBeenDamagedByBullets(vehicle) end
 
 ---**`CFX` `server` [`0xE4E83A5B`](https://docs.fivem.net/natives/?_0xE4E83A5B)**
 ---
@@ -1589,12 +1653,37 @@ function InvokeFunctionReference(referenceIdentity, argsSerialized, argsLength, 
 ---@return boolean
 function IsAceAllowed(object) end
 
+---**`CFX` `server` [`0xD5C39EE6`](https://docs.fivem.net/natives/?_0xD5C39EE6)**
+---
+---@param vehicle Vehicle The target vehicle.
+---@return boolean # Returns whether or not the boat is anchored and frozen.
+function IsBoatAnchoredAndFrozen(vehicle) end
+
+---**`CFX` `server` [`0x9049DB44`](https://docs.fivem.net/natives/?_0x9049DB44)**
+---
+---@param vehicle Vehicle The target vehicle.
+---@return boolean # Returns whether or not the boat is wrecked.
+function IsBoatWrecked(vehicle) end
+
 ---**`CFX` `shared` [`0xCF24C52E`](https://docs.fivem.net/natives/?_0xCF24C52E)**
 ---
 ---Gets whether or not this is the CitizenFX server.
 ---
 ---@return boolean # A boolean value.
 function IsDuplicityVersion() end
+
+---**`CFX` `shared` [`0xEDBE6ADD`](https://docs.fivem.net/natives/?_0xEDBE6ADD)**
+---
+---A getter for [FREEZE_ENTITY_POSITION](#\_0x428CA6DBD1094446).
+---
+---Example code:
+---```lua
+---local isFrozen = IsEntityPositionFrozen(PlayerPedId())
+---```
+---
+---@param entity Entity The entity to check for
+---@return boolean # Boolean stating if it is frozen or not.
+function IsEntityPositionFrozen(entity) end
 
 ---**`CFX` `server` [`0x120B4ED5`](https://docs.fivem.net/natives/?_0x120B4ED5)**
 ---
@@ -1604,6 +1693,12 @@ function IsDuplicityVersion() end
 ---@return boolean # Returns `true` if the entity is visible, `false` otherwise.
 function IsEntityVisible(entity) end
 
+---**`CFX` `server` [`0x76876154`](https://docs.fivem.net/natives/?_0x76876154)**
+---
+---@param ped Ped The target ped.
+---@return boolean # Whether or not the ped's flash light is on.
+function IsFlashLightOn(ped) end
+
 ---**`CFX` `server` [`0x404794CA`](https://docs.fivem.net/natives/?_0x404794CA)**
 ---
 ---This native checks if the given ped is a player.
@@ -1611,6 +1706,30 @@ function IsEntityVisible(entity) end
 ---@param ped Ped
 ---@return boolean # Returns `true` if the ped is a player, `false` otherwise.
 function IsPedAPlayer(ped) end
+
+---**`CFX` `server` [`0x25865633`](https://docs.fivem.net/natives/?_0x25865633)**
+---
+---@param ped Ped The target ped.
+---@return boolean # Whether or not the ped is handcuffed.
+function IsPedHandcuffed(ped) end
+
+---**`CFX` `server` [`0xC833BBE1`](https://docs.fivem.net/natives/?_0xC833BBE1)**
+---
+---@param ped Ped The target ped.
+---@return boolean # Whether or not the ped is ragdolling.
+function IsPedRagdoll(ped) end
+
+---**`CFX` `server` [`0xEFEED13C`](https://docs.fivem.net/natives/?_0xEFEED13C)**
+---
+---@param ped Ped The target ped.
+---@return boolean # Whether or not the ped is strafing.
+function IsPedStrafing(ped) end
+
+---**`CFX` `server` [`0x5AE7EDA2`](https://docs.fivem.net/natives/?_0x5AE7EDA2)**
+---
+---@param ped Ped The target ped.
+---@return boolean # Whether or not the ped is using action mode.
+function IsPedUsingActionMode(ped) end
 
 ---**`CFX` `server` [`0xDEDAE23D`](https://docs.fivem.net/natives/?_0xDEDAE23D)**
 ---
@@ -1687,6 +1806,15 @@ function IsVehicleSirenOn(vehicle) end
 ---@param completely boolean
 ---@return boolean
 function IsVehicleTyreBurst(vehicle, wheelID, completely) end
+
+---**`CFX` `server` [`0xAC4EF23D`](https://docs.fivem.net/natives/?_0xAC4EF23D)**
+---
+---See the client-side [IS_VEHICLE_WINDOW_INTACT](https://docs.fivem.net/natives/https://docs.fivem.net/natives/?_0x46E571A0E20D01F1) for a window indexes list.
+---
+---@param vehicle Vehicle The target vehicle.
+---@param windowIndex number The window index.
+---@return boolean
+function IsVehicleWindowIntact(vehicle, windowIndex) end
 
 ---**`CFX` `server` [`0xA8F63EAB`](https://docs.fivem.net/natives/?_0xA8F63EAB)**
 ---
@@ -1928,6 +2056,8 @@ function RemoveStateBagChangeHandler(cookie) end
 
 ---**`CFX` `server` [`0x412AA00D`](https://docs.fivem.net/natives/?_0x412AA00D)**
 ---
+---REMOVE_WEAPON_COMPONENT_FROM_PED
+---
 ---**This is the server-side RPC native equivalent of the client native [REMOVE_WEAPON_COMPONENT_FROM_PED](https://docs.fivem.net/natives/?_0x1E8BE90C74FB4C09).**
 ---
 ---@param ped Ped
@@ -2031,6 +2161,8 @@ function SetConvarServerInfo(varName, value) end
 
 ---**`CFX` `server` [`0xB8278882`](https://docs.fivem.net/natives/?_0xB8278882)**
 ---
+---SET_CURRENT_PED_WEAPON
+---
 ---**This is the server-side RPC native equivalent of the client native [SET_CURRENT_PED_WEAPON](https://docs.fivem.net/natives/?_0xADF692B254977C0C).**
 ---
 ---@param ped Ped
@@ -2059,6 +2191,8 @@ function SetEntityCoords(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag,
 ---It overrides the default distance culling radius of an entity. Set to `0.0` to reset.
 ---If you want to interact with an entity outside of your players' scopes set the radius to a huge number.
 ---
+---**WARNING**: Culling natives are deprecated and have known, [unfixable issues](https://forum.cfx.re/t/issue-with-culling-radius-and-server-side-entities/4900677/4)
+---
 ---@param entity Entity The entity handle to override the distance culling radius.
 ---@param radius number The new distance culling radius.
 function SetEntityDistanceCullingRadius(entity, radius) end
@@ -2073,7 +2207,17 @@ function SetEntityDistanceCullingRadius(entity, radius) end
 ---@param heading number The heading in degrees.
 function SetEntityHeading(entity, heading) end
 
+---**`CFX` `server` [`0x9F7F8D36`](https://docs.fivem.net/natives/?_0x9F7F8D36)**
+---
+---It allows to flag an entity to ignore the request control filter policy.
+---
+---@param entity Entity The entity handle to ignore the request control filter.
+---@param ignore boolean Define if the entity ignores the request control filter policy.
+function SetEntityIgnoreRequestControlFilter(entity, ignore) end
+
 ---**`CFX` `server` [`0xA345EFE`](https://docs.fivem.net/natives/?_0xA345EFE)**
+---
+---SET_ENTITY_ROTATION
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_ENTITY_ROTATION](https://docs.fivem.net/natives/?_0x8524A8B0171D5E07).**
 ---
@@ -2081,7 +2225,7 @@ function SetEntityHeading(entity, heading) end
 ---@param pitch number
 ---@param roll number
 ---@param yaw number
----@param rotationOrder number
+---@param rotationOrder number The order yaw pitch roll are applied, see [`GET_ENTITY_ROTATION`](#\_0xAFBD61CC738D9EB9).
 ---@param p5 boolean
 function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
 
@@ -2114,7 +2258,57 @@ function SetGameType(gametypeName) end
 
 ---**`CFX` `server` [`0xF5C6330C`](https://docs.fivem.net/natives/?_0xF5C6330C)**
 ---
----@param handler function
+---Sets the handler for HTTP requests made to the executing resource.
+---
+---Example request URL: `http://localhost:30120/http-test/ping` - this request will be sent to the `http-test` resource with the `/ping` path.
+---
+---The handler function assumes the following signature:
+---
+---```ts
+---function HttpHandler(
+---  request: {
+---    address: string;
+---    headers: Record<string, string>;
+---    method: string;
+---    path: string;
+---    setDataHandler(handler: (data: string) => void): void;
+---    setDataHandler(handler: (data: ArrayBuffer) => void, binary: 'binary'): void;
+---    setCancelHandler(handler: () => void): void;
+---  },
+---  response: {
+---    writeHead(code: number, headers?: Record<string, string | string[]>): void;
+---    write(data: string): void;
+---    send(data?: string): void;
+---  }
+---): void;
+---```
+---
+---*   **request**: The request object.
+---    *   **address**: The IP address of the request sender.
+---    *   **path**: The path to where the request was sent.
+---    *   **headers**: The headers sent with the request.
+---    *   **method**: The request method.
+---    *   **setDataHandler**: Sets the handler for when a data body is passed with the request. Additionally you can pass the `'binary'` argument to receive a `BufferArray` in JavaScript or `System.Byte[]` in C# (has no effect in Lua).
+---    *   **setCancelHandler**: Sets the handler for when the request is cancelled.
+---*   **response**: An object to control the response.
+---    *   **writeHead**: Sets the status code & headers of the response. Can be only called once and won't work if called after running other response functions.
+---    *   **write**: Writes to the response body without sending it. Can be called multiple times.
+---    *   **send**: Writes to the response body and then sends it along with the status code & headers, finishing the request.
+---
+---Example code:
+---```lua
+---SetHttpHandler(function(request, response)
+---  if request.method == 'GET' and request.path == '/ping' then -- if a GET request was sent to the `/ping` path
+---      response.writeHead(200, { ['Content-Type'] = 'text/plain' }) -- set the response status code to `200 OK` and the body content type to plain text
+---      response.send('pong') -- respond to the request with `pong`
+---  else -- otherwise
+---      response.writeHead(404) -- set the response status code to `404 Not Found`
+---      response.send() -- respond to the request with no data
+---  end
+---end)
+---```
+---
+---@param handler function The handler function.
 function SetHttpHandler(handler) end
 
 ---**`CFX` `server` [`0xB7BA82DC`](https://docs.fivem.net/natives/?_0xB7BA82DC)**
@@ -2147,6 +2341,8 @@ function SetPedArmour(ped, amount) end
 
 ---**`CFX` `server` [`0xCF1384C4`](https://docs.fivem.net/natives/?_0xCF1384C4)**
 ---
+---SET_PED_CAN_RAGDOLL
+---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_CAN_RAGDOLL](https://docs.fivem.net/natives/?_0xB128377056A54E2A).**
 ---
 ---@param ped Ped
@@ -2159,31 +2355,47 @@ function SetPedCanRagdoll(ped, toggle) end
 ---
 ---### MP Freemode list of components
 ---
----**0**: Face\
----**1**: Mask\
----**2**: Hair\
----**3**: Torso\
----**4**: Leg\
----**5**: Parachute / bag\
----**6**: Shoes\
----**7**: Accessory\
----**8**: Undershirt\
----**9**: Kevlar\
----**10**: Badge\
+---**0**: Face
+---**1**: Mask
+---**2**: Hair
+---**3**: Torso
+---**4**: Leg
+---**5**: Parachute / bag
+---**6**: Shoes
+---**7**: Accessory
+---**8**: Undershirt
+---**9**: Kevlar
+---**10**: Badge
 ---**11**: Torso 2
+---List of Component IDs
 ---
----### Related and useful natives
----
----[GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](#\_0x27561561732A7842)\
----[GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](#\_0x8F7156A3142A6BAD)
----[List of component/props ID](gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
+---```cpp
+---// Components
+---enum ePedVarComp
+---{
+---PV_COMP_INVALID = 0xFFFFFFFF,
+---PV_COMP_HEAD = 0, // "HEAD"
+---PV_COMP_BERD = 1, // "BEARD"
+---PV_COMP_HAIR = 2, // "HAIR"
+---PV_COMP_UPPR = 3, // "UPPER"
+---PV_COMP_LOWR = 4, // "LOWER"
+---PV_COMP_HAND = 5, // "HAND"
+---PV_COMP_FEET = 6, // "FEET"
+---PV_COMP_TEEF = 7, // "TEETH"
+---PV_COMP_ACCS = 8, // "ACCESSORIES"
+---PV_COMP_TASK = 9, // "TASK"
+---PV_COMP_DECL = 10, // "DECL"
+---PV_COMP_JBIB = 11, // "JBIB"
+---PV_COMP_MAX = 12,
+---};
+---```
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_COMPONENT_VARIATION](https://docs.fivem.net/natives/?_0x262B14F48D29DE80).**
 ---
 ---@param ped Ped The ped handle.
 ---@param componentId number The component that you want to set.
----@param drawableId number The drawable id that is going to be set.
----@param textureId number The texture id of the drawable.
+---@param drawableId number The drawable id that is going to be set. Refer to [GET_NUMBER_OF_PED_DRAWABLE_VARIATIONS](#\_0x27561561732A7842).
+---@param textureId number The texture id of the drawable. Refer to [GET_NUMBER_OF_PED_TEXTURE_VARIATIONS](#\_0x8F7156A3142A6BAD).
 ---@param paletteId number 0 to 3.
 function SetPedComponentVariation(ped, componentId, drawableId, textureId, paletteId) end
 
@@ -2741,11 +2953,13 @@ function SetPedHeadOverlay(ped, overlayID, index, opacity) end
 
 ---**`CFX` `server` [`0x7500C79`](https://docs.fivem.net/natives/?_0x7500C79)**
 ---
+---SET_PED_INTO_VEHICLE
+---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_INTO_VEHICLE](https://docs.fivem.net/natives/?_0xF75B0D629E1C063D).**
 ---
 ---@param ped Ped
 ---@param vehicle Vehicle
----@param seatIndex number
+---@param seatIndex number See eSeatPosition declared in [`IS_VEHICLE_SEAT_FREE`](#\_0x22AC59A870E6A669). -2 for the first available seat.
 function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 
 ---**`CFX` `server` [`0x829F2E2`](https://docs.fivem.net/natives/?_0x829F2E2)**
@@ -2754,32 +2968,46 @@ function SetPedIntoVehicle(ped, vehicle, seatIndex) end
 ---
 ---### MP Freemode list of props
 ---
----**0**: Hat\
----**1**: Glass\
----**2**: Ear\
----**6**: Watch\
----**7**: Bracelet
+---**0**: Hats
+---**1**: Glasses
+---**2**: Ears
+---**6**: Watches
+---**7**: Bracelets
+---List of Prop IDs
 ---
----### Related and useful natives
----
----[GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](#\_0x5FAF9754E789FB47)\
----[GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](#\_0xA6E7F1CEB523E171)
----[List of component/props ID](https://gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html) of player_two with examples
+---```cpp
+---// Props
+---enum eAnchorPoints
+---{
+---ANCHOR_HEAD = 0, // "p_head"
+---ANCHOR_EYES = 1, // "p_eyes"
+---ANCHOR_EARS = 2, // "p_ears"
+---ANCHOR_MOUTH = 3, // "p_mouth"
+---ANCHOR_LEFT_HAND = 4, // "p_lhand"
+---ANCHOR_RIGHT_HAND = 5, // "p_rhand"
+---ANCHOR_LEFT_WRIST = 6, // "p_lwrist"
+---ANCHOR_RIGHT_WRIST = 7, // "p_rwrist"
+---ANCHOR_HIP = 8, // "p_lhip"
+---ANCHOR_LEFT_FOOT = 9, // "p_lfoot"
+---ANCHOR_RIGHT_FOOT = 10, // "p_rfoot"
+---ANCHOR_PH_L_HAND = 11, // "ph_lhand"
+---ANCHOR_PH_R_HAND = 12, // "ph_rhand"
+---NUM_ANCHORS = 13,
+---};
+---```
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_PROP_INDEX](https://docs.fivem.net/natives/?_0x93376B65A266EB5F).**
 ---
 ---@param ped Ped The ped handle.
----@param componentId number The component that you want to set.
----@param drawableId number The drawable id that is going to be set.
----@param textureId number The texture id of the drawable.
+---@param componentId number The component that you want to set. Refer to [SET_PED_COMPONENT_VARIATION](#\_0x262B14F48D29DE80).
+---@param drawableId number The drawable id that is going to be set. Refer to [GET_NUMBER_OF_PED_PROP_DRAWABLE_VARIATIONS](#\_0x5FAF9754E789FB47).
+---@param textureId number The texture id of the drawable. Refer to [GET_NUMBER_OF_PED_PROP_TEXTURE_VARIATIONS](#\_0xA6E7F1CEB523E171).
 ---@param attach boolean Attached or not.
 function SetPedPropIndex(ped, componentId, drawableId, textureId, attach) end
 
 ---**`CFX` `server` [`0x4111BA46`](https://docs.fivem.net/natives/?_0x4111BA46)**
 ---
 ---p1 is always 0 in R\* scripts; and a quick disassembly seems to indicate that p1 is unused.
----List of component/props ID:
----gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_RANDOM_COMPONENT_VARIATION](https://docs.fivem.net/natives/?_0xC8A9481A01E63C28).**
 ---
@@ -2789,12 +3017,11 @@ function SetPedRandomComponentVariation(ped, p1) end
 
 ---**`CFX` `server` [`0xE3318E0E`](https://docs.fivem.net/natives/?_0xE3318E0E)**
 ---
----List of component/props ID
----gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
+---SET_PED_RANDOM_PROPS
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_RANDOM_PROPS](https://docs.fivem.net/natives/?_0xC44AA05345C992C6).**
 ---
----@param ped Ped
+---@param ped Ped The ped handle.
 function SetPedRandomProps(ped) end
 
 ---**`CFX` `server` [`0xCFF6FF66`](https://docs.fivem.net/natives/?_0xCFF6FF66)**
@@ -2886,6 +3113,8 @@ function SetPlayerControl(player, bHasControl, flags) end
 ---
 ---Sets the culling radius for the specified player.
 ---Set to `0.0` to reset.
+---
+---**WARNING**: Culling natives are deprecated and have known, [unfixable issues](https://forum.cfx.re/t/issue-with-culling-radius-and-server-side-entities/4900677/4)
 ---
 ---@param playerSrc string The player to set the culling radius for.
 ---@param radius number The radius.
@@ -3039,6 +3268,8 @@ function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) 
 
 ---**`CFX` `server` [`0x24877D84`](https://docs.fivem.net/natives/?_0x24877D84)**
 ---
+---SET_VEHICLE_ALARM
+---
 ---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_ALARM](https://docs.fivem.net/natives/?_0xCDE5E70C1DDB954C).**
 ---
 ---@param vehicle Vehicle
@@ -3146,10 +3377,12 @@ function SetVehicleDoorBroken(vehicle, doorIndex, deleteDoor) end
 
 ---**`CFX` `server` [`0x400F9556`](https://docs.fivem.net/natives/?_0x400F9556)**
 ---
+---SET_VEHICLE_NUMBER_PLATE_TEXT
+---
 ---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_NUMBER_PLATE_TEXT](https://docs.fivem.net/natives/?_0x95A88F0B409CDA47).**
 ---
----@param vehicle Vehicle
----@param plateText string
+---@param vehicle Vehicle The vehicle to set the plate for
+---@param plateText string The text to set the plate to, 8 chars maximum
 function SetVehicleNumberPlateText(vehicle, plateText) end
 
 ---**`CFX` `shared` [`0xDD379006`](https://docs.fivem.net/natives/?_0xDD379006)**
@@ -3261,6 +3494,8 @@ function TaskEnterVehicle(ped, vehicle, timeout, seatIndex, speed, flag, p6) end
 
 ---**`CFX` `server` [`0xC1971F30`](https://docs.fivem.net/natives/?_0xC1971F30)**
 ---
+---TASK_EVERYONE_LEAVE_VEHICLE
+---
 ---**This is the server-side RPC native equivalent of the client native [TASK_EVERYONE_LEAVE_VEHICLE](https://docs.fivem.net/natives/?_0x7F93691AB4B92272).**
 ---
 ---@param vehicle Vehicle
@@ -3268,16 +3503,18 @@ function TaskEveryoneLeaveVehicle(vehicle) end
 
 ---**`CFX` `server` [`0x80A9E7A7`](https://docs.fivem.net/natives/?_0x80A9E7A7)**
 ---
+---TASK_GO_STRAIGHT_TO_COORD
+---
 ---**This is the server-side RPC native equivalent of the client native [TASK_GO_STRAIGHT_TO_COORD](https://docs.fivem.net/natives/?_0xD76B57B44F1E6F8B).**
 ---
----@param ped Ped
----@param x number
----@param y number
----@param z number
----@param speed number
----@param timeout number
----@param targetHeading number
----@param distanceToSlide number
+---@param ped Ped The ped handle.
+---@param x number The x coordinate.
+---@param y number The y coordinate.
+---@param z number The z coordinate.
+---@param speed number The ped movement speed.
+---@param timeout number \-1 , other values appear to break the ped movement.
+---@param targetHeading number The heading you want the ped to be on x,y,z coord.
+---@param distanceToSlide number The distance from x,y,z where the ped will start sliding.
 function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, distanceToSlide) end
 
 ---**`CFX` `server` [`0xF91DF93B`](https://docs.fivem.net/natives/?_0xF91DF93B)**
@@ -3486,6 +3723,8 @@ end
 
 ---**`CFX` `server` [`0x8A632BD8`](https://docs.fivem.net/natives/?_0x8A632BD8)**
 ---
+---TASK_REACT_AND_FLEE_PED
+---
 ---**This is the server-side RPC native equivalent of the client native [TASK_REACT_AND_FLEE_PED](https://docs.fivem.net/natives/?_0x72C896464915D1B1).**
 ---
 ---@param ped Ped
@@ -3527,11 +3766,13 @@ function TaskShootAtEntity(entity, target, duration, firingPattern) end
 
 ---**`CFX` `server` [`0x65D4A35D`](https://docs.fivem.net/natives/?_0x65D4A35D)**
 ---
+---TASK_WARP_PED_INTO_VEHICLE
+---
 ---**This is the server-side RPC native equivalent of the client native [TASK_WARP_PED_INTO_VEHICLE](https://docs.fivem.net/natives/?_0x9A7D091411C5F684).**
 ---
 ---@param ped Ped
 ---@param vehicle Vehicle
----@param seatIndex number
+---@param seatIndex number See eSeatPosition declared in [`IS_VEHICLE_SEAT_FREE`](#\_0x22AC59A870E6A669).
 function TaskWarpPedIntoVehicle(ped, vehicle, seatIndex) end
 
 ---**`CFX` `server` [`0x1E35DBBA`](https://docs.fivem.net/natives/?_0x1E35DBBA)**
