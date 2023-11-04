@@ -403,23 +403,48 @@ function AnimatedShakeScriptGlobal(p0, p1, p2, p3) end
 ---Last param determines if its relative to the Entity
 ---```
 ---
----@param cam Cam
----@param entity Entity
----@param xOffset number
----@param yOffset number
----@param zOffset number
----@param isRelative boolean
+---Example code:
+---```lua
+---local entity = PlayerPedId()
+---local cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
+---
+---AttachCamToEntity(cam,entity, 0.0, 0.0, 0.0, true) --attach camera to the center of the entity
+---
+---SetCamActive(cam, true)
+---RenderScriptCams(true, false, 0, true, true)
+---```
+---
+---@param cam Cam The camera handle.
+---@param entity Entity The entity handle.
+---@param xOffset number X-axis offset
+---@param yOffset number Y-axis offset
+---@param zOffset number Z-axis offset
+---@param isRelative boolean Whether or not the camera will be relative to the entity
 function AttachCamToEntity(cam, entity, xOffset, yOffset, zOffset, isRelative) end
 
 ---**`CAM` `client` [`0x61A3DBA14AB7F411`](https://docs.fivem.net/natives/?_0x61A3DBA14AB7F411)**
 ---
----@param cam Cam
----@param ped Ped
----@param boneIndex number
----@param xOffset number
----@param yOffset number
----@param zOffset number
----@param isRelative boolean
+---This native works with peds only.
+---
+---Example code:
+---```lua
+---local ped = PlayerPedId()
+---local cam = CreateCam("DEFAULT_SCRIPTED_CAMERA", true)
+---
+---AttachCamToPedBone(cam,ped,4089, 0.0, 0.0, 0.0, true) -- attach it to a finger on the left hand
+---
+---SetCamActive(cam, true)
+---RenderScriptCams(true, false, 0, true, true)
+---
+---```
+---
+---@param cam Cam The camera handle.
+---@param ped Ped The ped handle.
+---@param boneIndex number This is different to boneID, use ['GET_PED_BONE_INDEX'](#\_0x3F428D08BE5AAE31) to get the index from the ID. use the index for attaching to specific bones. `cam` will be attached to the center of `ped` if bone index given doesn't correspond to bone indexes for that entity type.
+---@param xOffset number X-axis offset
+---@param yOffset number Y-axis offset
+---@param zOffset number Z-axis offset
+---@param isRelative boolean Whether or not the camera will be relative to the bone
 function AttachCamToPedBone(cam, ped, boneIndex, xOffset, yOffset, zOffset, isRelative) end
 
 ---**`CAM` `client` [`0xC3981DCE61D9E13F`](https://docs.fivem.net/natives/?_0xC3981DCE61D9E13F)**

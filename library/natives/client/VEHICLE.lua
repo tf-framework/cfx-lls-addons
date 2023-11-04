@@ -1140,17 +1140,45 @@ end
 
 ---**`VEHICLE` `client` [`0x4127F1D84E347769`](https://docs.fivem.net/natives/?_0x4127F1D84E347769)**
 ---
----```
----p2 is unknown and is always -1 in the script natives.
+---Example code:
+---```lua
+---function RequestVehicleModel(modelHash)
+---    if not IsModelInCdimage(modelHash) then return end
+---    RequestModel(modelHash)
+---    while not HasModelLoaded(modelHash) do
+---      Wait(0)
+---    end
+---end
+---
+---RegisterCommand('spawnCargobob', function(source, args)
+---    local cargobobHash = `cargobob`
+---    local carHash = `adder`
+---    local myPed = PlayerPedId()
+---
+---    local spawnCoords = GetEntityCoords(myPed)
+---
+---    RequestVehicleModel(cargobobHash)
+---    local cargobob = CreateVehicle(cargobobHash, spawnCoords+vec3(0.0,0.0, 10.0), GetEntityHeading(myPed), true, false) -- Spawns a cargobob above players location
+---    SetHeliBladesSpeed(cargobob, 1.0) -- sets the helicoper blades to max spin speed
+---    SetPedIntoVehicle(myPed, cargobob, -1) -- sets the player into the cargobob
+---    SetModelAsNoLongerNeeded(cargobobHash) -- removes model from game memory as we no longer need it
+---    CreatePickUpRopeForCargobob(cargobob, 1) -- 0 = hook, 1 = Magnet Enable rope from cargobob
+---
+---    RequestVehicleModel(carHash)
+---    local vehicle = CreateVehicle(carHash, spawnCoords, GetEntityHeading(myPed), true, false) -- Spawns a vehicle for the cargobob to pickup
+---    SetModelAsNoLongerNeeded(carHash)
+---    Wait(1000)
+---    AttachVehicleToCargobob(cargobob, vehicle, GetEntityBoneIndexByName(vehicle, 'bodyshell'), 0.0, 0.0, 0.0) --Attach the vehicle to the magnet or hook
+---end)
 ---```
 ---
----@param vehicle Vehicle The vehicle which should be attached
 ---@param cargobob Vehicle The cargobob
----@param p2 number
----@param x number
----@param y number
----@param z number
-function AttachVehicleToCargobob(vehicle, cargobob, p2, x, y, z) end
+---@param vehicle Vehicle The vehicle that will be attached
+---@param vehicleBoneIndex number A Vehicle bone the hook/magnet should attach to or -1 for none/default [GET_ENTITY_BONE_INDEX_BY_NAME](#\_0xFB71170B7E76ACBA)
+---@param x number x hook/magnet Offset
+---@param y number y hook/magnet Offset
+---@param z number z hook/magnet Offset
+function AttachVehicleToCargobob(cargobob, vehicle, vehicleBoneIndex, x, y, z) end
 
 ---**`VEHICLE` `client` [`0x29A16F8D621C4508`](https://docs.fivem.net/natives/?_0x29A16F8D621C4508)**
 ---
@@ -1283,7 +1311,7 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---
 ---*   17. Very long train and freight variation.
 ---*   18. Freight train only.
----*   25. Double metro train (with both models flipped opposite to each other). This used to be `24` before the 2372 build.
+---*   26. Double metro train (with both models flipped opposite to each other). This used to be `25` before the 2802 build, it also used to be `24` before the 2372 build.
 ---
 ---Example code:
 ---```lua
@@ -1314,7 +1342,7 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---    if #args < 1 then
 ---        TriggerEvent('chat:addMessage', {
 ---            args = {
----                'Error, provide a variation id, you can find those in trains.xml. Variations range from 0 to 25.'
+---                'Error, provide a variation id, you can find those in trains.xml. Variations range from 0 to 26.'
 ---            }
 ---        })
 ---        return
@@ -1333,7 +1361,7 @@ function CopyVehicleDamages(sourceVehicle, targetVehicle) end
 ---end, false)
 ---```
 ---
----@param variation number The variation id, these can range from 0 to 25 as of build 2372.
+---@param variation number The variation id, these can range from 0 to 26 as of build 2802 (previously `0-25` in build 2372 and `0-24` before that).
 ---@param x number Spawn coordinate X component.
 ---@param y number Spawn coordinate Y component.
 ---@param z number Spawn coordinate Z component.
@@ -1502,9 +1530,9 @@ function DetachVehicleFromAnyTowTruck(vehicle) end
 
 ---**`VEHICLE` `client` [`0x0E21D3DF1051399D`](https://docs.fivem.net/natives/?_0x0E21D3DF1051399D)**
 ---
----@param vehicle Vehicle
 ---@param cargobob Vehicle
-function DetachVehicleFromCargobob(vehicle, cargobob) end
+---@param vehicle Vehicle
+function DetachVehicleFromCargobob(cargobob, vehicle) end
 
 ---**`VEHICLE` `client` [`0xC2DB6B6708350ED8`](https://docs.fivem.net/natives/?_0xC2DB6B6708350ED8)**
 ---

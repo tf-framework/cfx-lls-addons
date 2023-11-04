@@ -881,7 +881,7 @@ function ClearGpsFlags() end
 
 ---**`HUD` `client` [`0x67EEDEA1B9BAFD94`](https://docs.fivem.net/natives/?_0x67EEDEA1B9BAFD94)**
 ---
----Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](https://runtime.fivem.net/doc/reference.html#\_0x3DDA37128DD1ACA8)
+---Does the same as [`SET_GPS_MULTI_ROUTE_RENDER(false)`](#\_0x3DDA37128DD1ACA8)
 ---
 function ClearGpsMultiRoute() end
 
@@ -2106,7 +2106,7 @@ function GetWaypointBlipEnumId() end
 ---p1 is either 1 or 2 in the PC scripts.
 ---```
 ---
----This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the `CLONE_PED` ( https://runtime.fivem.net/doc/natives/#\_0xEF29A16337FACADB ) to clone said ped.
+---This native is used to "give"/duplicate a player ped to a frontend menu as configured via the `ACTIVATE_FRONTEND_MENU` native, you first must utilize the [CLONE_PED](#\_0xEF29A16337FACADB) to clone said ped.
 ---
 ---@param ped Ped
 ---@param p1 number
@@ -2827,20 +2827,24 @@ function SetBlipCoords(blip, posX, posY, posZ) end
 
 ---**`HUD` `client` [`0x9029B2F3DA924928`](https://docs.fivem.net/natives/?_0x9029B2F3DA924928)**
 ---
----**displayId Behaviour** <br>
----0 = Doesn't show up, ever, anywhere. <br>
----1 = Doesn't show up, ever, anywhere. <br>
----2 = Shows on both main map and minimap. (Selectable on map) <br>
----3 = Shows on main map only. (Selectable on map) <br>
----4 = Shows on main map only. (Selectable on map) <br>
----5 = Shows on minimap only. <br>
----6 = Shows on both main map and minimap. (Selectable on map) <br>
----7 = Doesn't show up, ever, anywhere. <br>
----8 = Shows on both main map and minimap. (Not selectable on map) <br>
----9 = Shows on minimap only. <br>
----10 = Shows on both main map and minimap. (Not selectable on map) <br>
----Anything higher than 10 seems to be exactly the same as 10. <br>
----<br>
+---**displayId Behaviour**
+---
+---| display ID 	| Behaviour                                                   	|
+---|------------	|-------------------------------------------------------------	|
+---| 0          	| Doesn't show up, ever, anywhere.                            	|
+---| 1          	| Doesn't show up, ever, anywhere.                            	|
+---| 2          	| Shows on both main map and minimap. (Selectable on map)     	|
+---| 3          	| Shows on main map only. (Selectable on map)                 	|
+---| 4          	| Shows on main map only. (Selectable on map)                 	|
+---| 5          	| Shows on minimap only.                                      	|
+---| 6          	| Shows on both main map and minimap. (Selectable on map)     	|
+---| 7          	| Doesn't show up, ever, anywhere.                            	|
+---| 8          	| Shows on both main map and minimap. (Not selectable on map) 	|
+---| 9          	| Shows on minimap only.                                      	|
+---| 10         	| Shows on both main map and minimap. (Not selectable on map) 	|
+---
+---Anything higher than 10 seems to be exactly the same as 10.
+---
 ---Rockstar seem to only use 0, 2, 3, 4, 5 and 8 in the decompiled scripts.
 ---
 ---@param blip Blip
@@ -2990,10 +2994,6 @@ function SetBlipShowCone(blip, toggle) end
 
 ---**`HUD` `client` [`0xDF735600A4696DAF`](https://docs.fivem.net/natives/?_0xDF735600A4696DAF)**
 ---
----<!--
----_loc1_.map((name, idx) => `| ${idx} | ${name} | ![${name}](https://runtime.fivem.net/blips/${name}.svg) |`).join('\n')
------>
----
 ---Sets the displayed sprite for a specific blip.
 ---
 ---There's a [list of sprites](https://docs.fivem.net/game-references/blips/) on the FiveM documentation site.
@@ -3021,13 +3021,52 @@ function SetFloatingHelpTextScreenPosition(hudIndex, x, y) end
 
 ---**`HUD` `client` [`0x788E7FD431BD67F1`](https://docs.fivem.net/natives/?_0x788E7FD431BD67F1)**
 ---
----@param hudIndex number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
-function SetFloatingHelpTextStyle(hudIndex, p1, p2, p3, p4, p5) end
+---### Arrow Positions
+---
+---*   0 = Off / No arrow
+---*   1 = Top
+---*   2 = Left
+---*   3 = Bottom
+---*   4 = Right
+---
+---### Note
+---
+---Any numeric value greater than 4 will result in a right arrow (Index 4)
+---
+---### Important
+---
+---Needs to be called every frame
+---
+---![Preview of the provided example code](https://forum.cfx.re/uploads/default/original/4X/7/f/3/7f319bc93c3a00b8829bd4ac8dddc235fbf3a9ef.png)
+---
+---Example code:
+---```lua
+---function DisplayHelpText(string)
+---    BeginTextCommandDisplayHelp("STRING")
+---    AddTextComponentSubstringPlayerName(string)
+---    EndTextCommandDisplayHelp(1, false, false, 0)
+---end
+---
+---CreateThread(function()
+---    while true do
+---        Wait(0)
+---
+---        local Ped = PlayerPedId()
+---
+---        DisplayHelpText('Example Text')
+---        SetFloatingHelpTextStyle(0, 2, 2, 0, 3, 0)
+---        SetFloatingHelpTextToEntity(0, Ped, 0, 0)
+---    end
+---end)
+---```
+---
+---@param hudIndex number The hud index for the floating help message
+---@param style number Value 0 won't show an arrow at all. Values 1, 2 and -2 will display an arrow.
+---@param hudColor number https://docs.fivem.net/docs/game-references/hud-colors/
+---@param alpha number Value for the help box opacity, from 0-255. Anything greater will simply ignore the alpha value. Always 191 in R\* scripts.
+---@param arrowPosition number Used to set the arrow positon. No value will hide the arrow
+---@param boxOffset number Offset for the floating help box. Note: Arrow stays fixed
+function SetFloatingHelpTextStyle(hudIndex, style, hudColor, alpha, arrowPosition, boxOffset) end
 
 ---**`HUD` `client` [`0xB094BC1DB4018240`](https://docs.fivem.net/natives/?_0xB094BC1DB4018240)**
 ---
@@ -3142,7 +3181,7 @@ function SetMinimapFowRevealCoordinate(x, y, z) end
 ---You need to center the minimap manually as well as change/lock it's zoom and angle in order for it to appear correctly on the minimap.
 ---You'll also need to use the `GOLF` scaleform in order to get the correct minmap border to show up.
 ---
----Use [`N_0x35edd5b2e3ff01c0()`](https://runtime.fivem.net/doc/reference.html#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
+---Use [`SET_MINIMAP_GOLF_COURSE_OFF()`](#\_0x35EDD5B2E3FF01C0) to reset the map when you no longer want to display any golf holes (you still need to unlock zoom, position and angle of the radar manually after calling this).
 ---
 ---@param hole number The ID of the hole to draw on the map. ID starts with 1 for hole 1, 2 for hole 2, etc. 0 disables the golf map behaviour.
 function SetMinimapGolfCourse(hole) end

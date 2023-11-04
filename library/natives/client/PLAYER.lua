@@ -426,13 +426,11 @@ function ClearPlayerWantedLevel(player) end
 
 ---**`PLAYER` `client` [`0x5E6CC07646BBEAB8`](https://docs.fivem.net/natives/?_0x5E6CC07646BBEAB8)**
 ---
----```
----Inhibits the player from using any method of combat including melee and firearms.
+---Inhibits the player from using any method of combat including melee and firearms.\
 ---NOTE: Only disables the firing for one frame
----```
 ---
----@param player Player
----@param toggle boolean
+---@param player Player The player for which to disable combat methods.
+---@param toggle boolean Unused, as this native will disable combat regardless of the value of this parameter.
 function DisablePlayerFiring(player, toggle) end
 
 ---**`PLAYER` `client` [`0xC142BE3BB9CE125F`](https://docs.fivem.net/natives/?_0xC142BE3BB9CE125F)**
@@ -1309,8 +1307,10 @@ function SetAirDragMultiplierForPlayersVehicle(player, multiplier) end
 
 ---**`PLAYER` `client` [`0x056E0FE8534C2949`](https://docs.fivem.net/natives/?_0x056E0FE8534C2949)**
 ---
----@param player Player
----@param toggle boolean
+---Sets whether all random peds will run away from the player if they are agitated (threatened) (bool=true), or if they will stand their ground (bool=false).
+---
+---@param player Player The Player ID for whom you want to set this behavior.
+---@param toggle boolean true/false.
 function SetAllRandomPedsFlee(player, toggle) end
 
 ---**`PLAYER` `client` [`0x471D2FF42A94B4F2`](https://docs.fivem.net/natives/?_0x471D2FF42A94B4F2)**
@@ -1819,16 +1819,16 @@ function SetPlayerWantedCentrePosition(player, position, p2, p3) end
 
 ---**`PLAYER` `client` [`0x39FF19C64EF7DA5B`](https://docs.fivem.net/natives/?_0x39FF19C64EF7DA5B)**
 ---
----```
----Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect
----wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files
----disableNoMission-  Disables When Off Mission- appears to always be false
+---Example code:
+---```lua
+---local player = PlayerId()
+---SetPlayerWantedLevel(player, 5, false) -- 5 star wanted level
 ---```
 ---
----@param player Player
----@param wantedLevel number
----@param disableNoMission boolean
-function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
+---@param player Player the target player
+---@param wantedLevel number the wanted level 1-5
+---@param delayedResponse boolean false = 0-10sec police spawn response time, true = 10-20sec police spawn response time
+function SetPlayerWantedLevel(player, wantedLevel, delayedResponse) end
 
 ---**`PLAYER` `client` [`0xE0A7D1E497FFCD6F`](https://docs.fivem.net/natives/?_0xE0A7D1E497FFCD6F)**
 ---
@@ -1844,14 +1844,16 @@ function SetPlayerWantedLevelNow(player, p1) end
 
 ---**`PLAYER` `client` [`0x340E61DE7F471565`](https://docs.fivem.net/natives/?_0x340E61DE7F471565)**
 ---
----```
----p2 is always false in R* scripts
+---Example code:
+---```lua
+---local player = PlayerId()
+---SetPlayerWantedLevelNoDrop(player, 5, false) -- 5 star wanted level
 ---```
 ---
----@param player Player
----@param wantedLevel number
----@param p2 boolean
-function SetPlayerWantedLevelNoDrop(player, wantedLevel, p2) end
+---@param player Player the target player
+---@param wantedLevel number the wanted level 1-5
+---@param delayedResponse boolean false = 0-10sec police spawn response time, true = 10-20sec police spawn response time
+function SetPlayerWantedLevelNoDrop(player, wantedLevel, delayedResponse) end
 
 ---**`PLAYER` `client` [`0xCE07B9F7817AADA3`](https://docs.fivem.net/natives/?_0xCE07B9F7817AADA3)**
 ---
