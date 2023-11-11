@@ -3730,9 +3730,29 @@ function SetCarBootOpen(vehicle) end
 
 ---**`VEHICLE` `client` [`0xF39C4F538B5124C2`](https://docs.fivem.net/natives/?_0xF39C4F538B5124C2)**
 ---
----@param vehicle Vehicle
----@param p1 boolean
-function SetConvertibleRoof(vehicle, p1) end
+---This allows for the vehicle's roof to be put on when set to true, and removed when set to false, provided that the vehicle has a version with a roof and a version without a roof.
+---
+---#### Vehicles with both roofed and roofless versions (others may exist; this list is compiled from decompiled scripts).
+---
+---*   chino
+---*   voltic
+---*   buccaneer
+---*   buccaneer2
+---*   chino2
+---*   faction
+---*   faction2
+---*   mamba
+---
+---Example code:
+---```lua
+----- In this case we are removing the roof from the vehicle.
+---local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+---SetConvertibleRoof(vehicle, false)
+---```
+---
+---@param vehicle Vehicle The vehicle to which the roof state will be applied.
+---@param toggle boolean Boolean value where `true` adds the roof and `false` removes it, applicable only if the vehicle has a version with and without a roof.
+function SetConvertibleRoof(vehicle, toggle) end
 
 ---**`VEHICLE` `client` [`0x1A78AD3D8240536F`](https://docs.fivem.net/natives/?_0x1A78AD3D8240536F)**
 ---
