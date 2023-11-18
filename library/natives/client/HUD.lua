@@ -3486,12 +3486,23 @@ function SetRadarZoomToDistance(zoom) end
 
 ---**`HUD` `client` [`0x25615540D894B814`](https://docs.fivem.net/natives/?_0x25615540D894B814)**
 ---
----```
----Enabling this on a radius blip will make it outline only. See https://cdn.discordapp.com/attachments/553235301632573459/575132227935928330/unknown.png
+---Enabling this on a radius blip will make it outline only.\
+---Please note that this only works on a **radius** blip (i.e. one generated using [`ADD_BLIP_FOR_RADIUS`](#\_0x46818D79B1F7499A)), not a normal blip.
+---
+---**Example result:**\
+---![example-image](https://i.imgur.com/hS6ki7p.png)
+---
+---Example code:
+---```lua
+---local coords = GetEntityCoords(PlayerPedId())
+---local radiusBlip = AddBlipForRadius(coords, 100.0) -- need to have .0
+---SetBlipColour(radiusBlip, 1)
+---SetBlipAlpha(radiusBlip, 255)
+---SetRadiusBlipEdge(radiusBlip, true)
 ---```
 ---
----@param blip Blip
----@param toggle boolean
+---@param blip Blip The blip handle
+---@param toggle boolean Whether to turn off or on the effect
 function SetRadiusBlipEdge(blip, toggle) end
 
 ---**`HUD` `client` [`0xD68A5FF8A3A89874`](https://docs.fivem.net/natives/?_0xD68A5FF8A3A89874)**

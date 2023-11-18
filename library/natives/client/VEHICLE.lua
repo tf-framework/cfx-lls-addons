@@ -3760,6 +3760,21 @@ function SetConvertibleRoof(vehicle, toggle) end
 ---@param state boolean
 function SetConvertibleRoofLatchState(vehicle, state) end
 
+---**`VEHICLE` `client` [`0x2D55FE374D5FDB91`](https://docs.fivem.net/natives/?_0x2D55FE374D5FDB91)**
+---
+---Disables wings for `Deluxo` and `Oppressor MK II`. For the Deluxo, it retracts the wings immediately, preventing flight. For the Oppressor Mk II, the wings retract after landing and take-off is not possible, though it can still glide if launched into the air.
+---
+---Example code:
+---```lua
+----- In this case we are disabling the wings of the vehicle
+---local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+---SetDisableHoverModeFlight(vehicle, true)
+---```
+---
+---@param vehicle Vehicle The vehicle to which the toggle will be applied.
+---@param toggle boolean Boolean parameter where setting `true` disables the vehicle's wings, preventing flight. Setting it to `false` allows the vehicle to fly as usual.
+function SetDisableHoverModeFlight(vehicle, toggle) end
+
 ---**`VEHICLE` `client` [`0x25367DE49D64CF16`](https://docs.fivem.net/natives/?_0x25367DE49D64CF16)**
 ---
 ---@param vehicle Vehicle
@@ -3864,6 +3879,21 @@ function SetHeliTailExplodeThrowDashboard(vehicle, p1) end
 ---@param vehicle Vehicle
 ---@param p1 number
 function SetHeliTurbulenceScalar(vehicle, p1) end
+
+---**`VEHICLE` `client` [`0x70A252F60A3E036B`](https://docs.fivem.net/natives/?_0x70A252F60A3E036B)**
+---
+---This native allows opening or closing the wings of the Deluxo/Oppressor. For the Deluxo, wing deployment depends on sufficient altitude.
+---
+---Example code:
+---```lua
+----- In this case we are opening the wings of the vehicle
+---local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+---SetHoverModeWingRatio(vehicle, 1.0)
+---```
+---
+---@param vehicle Vehicle The vehicle to which the ratio will be applied.
+---@param ratio number Between 0.0 and 1.0. 0.0 is wings closed, 1.0 is wings open.
+function SetHoverModeWingRatio(vehicle, ratio) end
 
 ---**`VEHICLE` `client` [`0xACFB2463CC22BED2`](https://docs.fivem.net/natives/?_0xACFB2463CC22BED2)**
 ---
@@ -4028,6 +4058,80 @@ function SetRenderTrainAsDerailed(train, toggle) end
 ---@param vehicleGenerator number
 ---@param enabled boolean
 function SetScriptVehicleGenerator(vehicleGenerator, enabled) end
+
+---**`VEHICLE` `client` [`0xF1211889DF15A763`](https://docs.fivem.net/natives/?_0xF1211889DF15A763)**
+---
+---Allows locking the hover/non-hover mode of a vehicle, such as the flying mode of the `Deluxo`. In the decompiled scripts, this native is used on `oppressor2` but couldn't get it to work on it.
+---
+---Example code:
+---```lua
+----- Checks the altitude of the Deluxo and locks its current mode when above 150 meters.
+----- If the Deluxo is in flying mode at this altitude, it will be unable to switch to driving mode, and vice versa.
+---Citizen.CreateThread(function()
+---    local coords -- Variable to store the vehicle's coordinates.
+---    local vehicle -- Variable to store the vehicle entity.
+---
+---    repeat
+---        vehicle = GetVehiclePedIsIn(PlayerPedId(), false) -- Get the vehicle the player is currently in.
+---
+---        if (GetEntityModel(vehicle) == joaat("deluxo")) then -- Check if the vehicle is a Deluxo.
+---            coords = GetEntityCoords(vehicle) -- Get the current coordinates of the vehicle.
+---        end
+---
+---        Citizen.Wait(0) -- Wait for the next frame.
+---
+---    until coords.z >= 150.0 -- Keep looping until the Deluxo is above 150 meters.
+---
+---    SetSpecialFlightModeAllowed(vehicle, false) -- Lock the Deluxo's current mode (flying or driving).
+---end)
+---```
+---
+---@param vehicle Vehicle The vehicle to which the locking state will be applied.
+---@param toggle boolean Boolean parameter where setting `false` locks the current state of the vehicle, preventing transitions such as the `Deluxo` or Oppressor switching between their flying and driving modes. Setting it to `true` allows changing the vehicle state as usual.
+function SetSpecialFlightModeAllowed(vehicle, toggle) end
+
+---**`VEHICLE` `client` [`0xD138FA15C9776837`](https://docs.fivem.net/natives/?_0xD138FA15C9776837)**
+---
+---Used alongside [`SET_SPECIAL_FLIGHT_MODE_TARGET_RATIO`](#\_0x438B3D7CA026FE91), this function initiates hover transformation for vehicles with a hover mode, like the `Deluxo`, based on a specified ratio (0.0 to 1.0). Incorrect values can glitch the vehicle. Without pairing, vehicles revert to car mode. Ineffective on the `oppressor2`
+---
+---Example code:
+---```lua
+----- In this case we are enabling the hover mode for the vehicle and initiates hover transformation.
+---local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+---SetSpecialFlightModeRatio(vehicle, 0.75 - GetFrameTime())
+---SetVehicleHoverTransformPercentage(vehicle, 1.0)
+---```
+---
+---@param vehicle Vehicle The vehicle to which the ratio will be applied.
+---@param ratio number A value between 0.0 and 1.0 indicating the target state for the vehicle's hover mode transition. In decompiled scripts, a common usage is 0.75 - GetFrameTime(). Exceeding the maximum can cause the `Deluxo's` wheels to glitch, delaying their return to the initial position.
+function SetSpecialFlightModeRatio(vehicle, ratio) end
+
+---**`VEHICLE` `client` [`0x438B3D7CA026FE91`](https://docs.fivem.net/natives/?_0x438B3D7CA026FE91)**
+---
+---According to decompiled scripts this should work with the `deluxo` and `oppressor2` vehicles.
+---Does nothing when used on `oppressor2`.
+---
+---For the deluxo:
+---
+---*   Set `state` to `0.0`: Fully transform to a 'road' vehicle (non-hover mode).
+---*   Set `state` to `1.0`: Fully transform to a 'flying' vehicle (hover mode).
+---
+---If you set it to something like 0.5, then something [weird happens](https://streamable.com/p6wmr), you end up in some 50% hover mode, 50% not hover mode.
+---
+---This doesn't need to be called every tick, just once and the vehicle will transform to that state at the usual transform speed. It'll just stop transforming when it reaches the state you provided.
+---
+---Once this native is used then players will just be able to hit the vehicle transform key to toggle the transformation cycle; it won't block users from using the key.
+---
+---Example code:
+---```lua
+----- In this case we are enabling the hover mode for the deluxo (fyling mode)
+---local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+---SetSpecialFlightModeTargetRatio(vehicle, 1.0)
+---```
+---
+---@param vehicle Vehicle The vehicle (a deluxo or oppressor2).
+---@param state number The transform state (value between 0.0 and 1.0).
+function SetSpecialFlightModeTargetRatio(vehicle, state) end
 
 ---**`VEHICLE` `client` [`0xC59872A5134879C7`](https://docs.fivem.net/natives/?_0xC59872A5134879C7)**
 ---
@@ -6668,16 +6772,6 @@ function SetRandomBoatsInMp(toggle) end
 ---@param enable boolean
 function SetReduceDriftVehicleSuspension(vehicle, enable) end
 
----**`VEHICLE` `client` [`0x70A252F60A3E036B`](https://docs.fivem.net/natives/?_0x70A252F60A3E036B)**
----
----```
----NativeDB Introduced: v1365
----```
----
----@param vehicle Vehicle
----@param ratio number
-function SetSpecialflightWingRatio(vehicle, ratio) end
-
 ---**`VEHICLE` `client` [`0x878C75C09FBDB942`](https://docs.fivem.net/natives/?_0x878C75C09FBDB942)**
 ---
 ---```
@@ -6904,60 +6998,6 @@ function SetVehicleExclusiveDriver_2(vehicle, ped, index) end
 ---@param vehicle Vehicle
 ---@param hash Hash
 function SetVehicleHandlingHashForAi(vehicle, hash) end
-
----**`VEHICLE` `client` [`0x2D55FE374D5FDB91`](https://docs.fivem.net/natives/?_0x2D55FE374D5FDB91)**
----
----```
----NativeDB Introduced: v1290
----```
----
----@param vehicle Vehicle
----@param toggle boolean
-function SetVehicleHoverTransformActive(vehicle, toggle) end
-
----**`VEHICLE` `client` [`0xF1211889DF15A763`](https://docs.fivem.net/natives/?_0xF1211889DF15A763)**
----
----```
----If false, anything related to INPUT_VEH_TRANSFORM are ignored (changing hover state through script natives still possible).
----```
----
----```
----NativeDB Introduced: v1290
----```
----
----@param vehicle Vehicle
----@param toggle boolean
-function SetVehicleHoverTransformEnabled(vehicle, toggle) end
-
----**`VEHICLE` `client` [`0x438B3D7CA026FE91`](https://docs.fivem.net/natives/?_0x438B3D7CA026FE91)**
----
----According to decompiled scripts this should work with the `deluxo` and `oppressor2` vehicles.
----I've only seen this work for `deluxo` though, can't figure out what it's supposed to do on `oppressor2`.
----
----For the deluxo:
----
----*   Set `state` to `0.0`: Fully transform to a 'road' vehicle (non-hover mode).
----*   Set `state` to `1.0`: Fully transform to a 'flying' vehicle (hover mode).
----
----If you set it to something like 0.5, then something [weird happens](https://streamable.com/p6wmr), you end up in some 50% hover mode, 50% not hover mode.
----
----This doesn't need to be called every tick, just once and the vehicle will transform to that state at the usual transform speed. It'll just stop transforming when it reaches the state you provided.
----
----Once this native is used then players will just be able to hit the vehicle transform key to toggle the transformation cycle; it won't block users from using the key.
----
----@param vehicle Vehicle The vehicle (a deluxo or oppressor2).
----@param state number The transform state (value between 0.0 and 1.0).
-function SetVehicleHoverTransformPercentage(vehicle, state) end
-
----**`VEHICLE` `client` [`0xD138FA15C9776837`](https://docs.fivem.net/natives/?_0xD138FA15C9776837)**
----
----```
----NativeDB Introduced: v1290
----```
----
----@param vehicle Vehicle
----@param ratio number
-function SetVehicleHoverTransformRatio(vehicle, ratio) end
 
 ---**`VEHICLE` `client` [`0xF40DD601A65F7F19`](https://docs.fivem.net/natives/?_0xF40DD601A65F7F19)**
 ---
