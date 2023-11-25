@@ -1248,8 +1248,36 @@ function SetCamDofPlanes(cam, p1, p2, p3, p4) end
 
 ---**`CAM` `client` [`0x5EE29B4D7D5DF897`](https://docs.fivem.net/natives/?_0x5EE29B4D7D5DF897)**
 ---
----@param cam Cam
----@param dofStrength number
+---Specifies how much the DoF effect should be applied (Set using [`SET_CAM_NEAR_DOF`](#\_0x3FA4BF0A7AB7DE2C), [`SET_CAM_FAR_DOF`](#\_0xEDD91296CD01AEE0), etc.)
+---
+---Example code:
+---```lua
+---CreateThread(function()
+---    local camera = CreateCam("DEFAULT_SCRIPTED_FLY_CAMERA", true)
+---    -- Set the cam coordinates to the player coords
+---    local playerCoords = GetEntityCoords(PlayerPedId())
+---    SetCamCoord(camera, playerCoords)
+---    -- Render the camera we just created
+---    RenderScriptCams(true)
+---    -- Use a shallow depth of field
+---    SetCamUseShallowDofMode(camera, true)
+---    -- Set at what distance your camera should start to focus (Example: 0.7 meters)
+---    SetCamNearDof(camera, 0.7)
+---    -- Set at what distance your camera should stop focusing (Example: 1.3 meters)
+---    SetCamFarDof(camera, 1.3)
+---    -- Apply 100% of the DoF effect (The native you're reading documentation on)
+---    SetCamDofStrength(camera, 1.0)
+---
+---    while DoesCamExist(camera) do
+---        -- Use DoF effect (needs to be called every tick)
+---        SetUseHiDof()
+---        Citizen.Wait(0)
+---    end
+---end)
+---```
+---
+---@param cam Cam The camera handle
+---@param dofStrength number Depth of Field strength (between 0.0 and 1.0)
 function SetCamDofStrength(cam, dofStrength) end
 
 ---**`CAM` `client` [`0xAE306F2A904BF86E`](https://docs.fivem.net/natives/?_0xAE306F2A904BF86E)**
@@ -1260,8 +1288,14 @@ function SetCamFarClip(cam, farClip) end
 
 ---**`CAM` `client` [`0xEDD91296CD01AEE0`](https://docs.fivem.net/natives/?_0xEDD91296CD01AEE0)**
 ---
----@param cam Cam
----@param farDOF number
+---Specifies when the camera should stop being in focus. Can be used together with [`SET_USE_HI_DOF`](#\_0xA13B0222F3D94A94), [`SET_CAM_NEAR_DOF`](#\_0x3FA4BF0A7AB7DE2C), [`SET_CAM_USE_SHALLOW_DOF_MODE`](#\_0x16A96863A17552BB), [`SET_CAM_DOF_STRENGTH`](#\_0x5EE29B4D7D5DF897) and other DoF related natives.
+---
+---### Usage Example
+---
+---A usage example for this native can be found in the following native documentation: [`SET_CAM_DOF_STRENGTH`](#\_0x5EE29B4D7D5DF897).
+---
+---@param cam Cam The camera handle
+---@param farDOF number Distance in in standard units
 function SetCamFarDof(cam, farDOF) end
 
 ---**`CAM` `client` [`0xB13C14F66A00D047`](https://docs.fivem.net/natives/?_0xB13C14F66A00D047)**
@@ -1304,8 +1338,14 @@ function SetCamNearClip(cam, nearClip) end
 
 ---**`CAM` `client` [`0x3FA4BF0A7AB7DE2C`](https://docs.fivem.net/natives/?_0x3FA4BF0A7AB7DE2C)**
 ---
----@param cam Cam
----@param nearDOF number
+---Specifies when the camera should start being in focus. Can be used together with [`SET_USE_HI_DOF`](#\_0xA13B0222F3D94A94), [`SET_CAM_FAR_DOF`](#\_0xEDD91296CD01AEE0), [`SET_CAM_USE_SHALLOW_DOF_MODE`](#\_0x16A96863A17552BB), [`SET_CAM_DOF_STRENGTH`](#\_0x5EE29B4D7D5DF897) and other DoF related natives.
+---
+---### Usage Example
+---
+---A usage example for this native can be found in the following native documentation: [`SET_CAM_DOF_STRENGTH`](#\_0x5EE29B4D7D5DF897).
+---
+---@param cam Cam The camera handle
+---@param nearDOF number Distance in in standard units
 function SetCamNearDof(cam, nearDOF) end
 
 ---**`CAM` `client` [`0xBFD8727AEA3CCEBA`](https://docs.fivem.net/natives/?_0xBFD8727AEA3CCEBA)**
@@ -1451,8 +1491,14 @@ function SetCamSplineSmoothingStyle(cam, smoothingStyle) end
 
 ---**`CAM` `client` [`0x16A96863A17552BB`](https://docs.fivem.net/natives/?_0x16A96863A17552BB)**
 ---
----@param cam Cam
----@param toggle boolean
+---Enables or disables the usage of a shallow DOF. Needs to be set to true to use [`SET_CAM_NEAR_DOF`](#\_0x3FA4BF0A7AB7DE2C), [`SET_CAM_FAR_DOF`](#\_0xEDD91296CD01AEE0), etc. Doesn't need to be called every tick.
+---
+---### Usage Example
+---
+---A usage example for this native can be found in the following native documentation: [`SET_CAM_DOF_STRENGTH`](#\_0x5EE29B4D7D5DF897).
+---
+---@param cam Cam The camera handle
+---@param toggle boolean Boolean if the camera should use a shallow depth of field or not
 function SetCamUseShallowDofMode(cam, toggle) end
 
 ---**`CAM` `client` [`0x2A2173E46DAECD12`](https://docs.fivem.net/natives/?_0x2A2173E46DAECD12)**
@@ -1679,6 +1725,13 @@ function SetInVehicleCamStateThisUpdate(p0, p1) end
 function SetThirdPersonAimCamNearClipThisUpdate(distance) end
 
 ---**`CAM` `client` [`0xA13B0222F3D94A94`](https://docs.fivem.net/natives/?_0xA13B0222F3D94A94)**
+---
+---Needs to be called every tick to make the active camera use a high depth of field.\
+---The DoF can be customized using [`SET_CAM_NEAR_DOF`](#\_0x3FA4BF0A7AB7DE2C), [`SET_CAM_FAR_DOF`](#\_0xEDD91296CD01AEE0), [`SET_CAM_USE_SHALLOW_DOF_MODE`](#\_0x16A96863A17552BB), [`SET_CAM_DOF_STRENGTH`](#\_0x5EE29B4D7D5DF897) and other DoF related natives.
+---
+---### Usage Example
+---
+---A usage example for this native can be found in the following native documentation: [`SET_CAM_DOF_STRENGTH`](#\_0x5EE29B4D7D5DF897).
 ---
 function SetUseHiDof() end
 

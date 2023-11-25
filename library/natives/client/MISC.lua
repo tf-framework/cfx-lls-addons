@@ -17,18 +17,6 @@ function N_0x02deaac8f8ea7fe7(p0) end
 ---
 function N_0x06462a961e94b67c() end
 
----**`MISC` `client` [`0x0CF97F497FE7D048`](https://docs.fivem.net/natives/?_0x0CF97F497FE7D048)**
----
----```
----0 as param = weird black and green screen
----0.1 - 0.99 = Prevent rain effect from falling (still sound and effects on puddles) and prevent puddles from increase/decrease, seems than it prevent any weather change too
----1 and more = "Unfreeze" rain puddles but clear weather too
----When 'freezing' is enabled, it seem to also freeze value getted with GetRainLevel
----```
----
----@param p0 number
-function N_0x0cf97f497fe7d048(p0) end
-
 ---**`MISC` `client` [`0x1178E104409FE58C`](https://docs.fivem.net/natives/?_0x1178E104409FE58C)**
 ---
 ---```
@@ -917,6 +905,26 @@ function ClearOverrideWeather() end
 ---**`MISC` `client` [`0x1B1AB132A16FDA55`](https://docs.fivem.net/natives/?_0x1B1AB132A16FDA55)**
 ---
 function ClearReplayStats() end
+
+---**`MISC` `client` [`0x0CF97F497FE7D048`](https://docs.fivem.net/natives/?_0x0CF97F497FE7D048)**
+---
+---Clears the active weather type after a specific amount of time determined by `transitionTimeInMs`.
+---
+---Example code:
+---```lua
+---RegisterCommand('weathertransition', function(source, args)
+---    -- Set the weather type to foggy so we can see the change
+---    SetWeatherTypeNowPersist("FOGGY")
+---    -- Clear the weather and run the transition
+---    local transitionTimeInMs = tonumber(args[1]) or 5000
+---    if transitionTimeInMs > 0 then
+---        ClearWeatherTypeNowPersistNetwork(transitionTimeInMs)
+---    end
+---end, false)
+---```
+---
+---@param transitionTimeInMs number Transition time in milliseconds.
+function ClearWeatherTypeNowPersistNetwork(transitionTimeInMs) end
 
 ---**`MISC` `client` [`0xCCC39339BEF76CF5`](https://docs.fivem.net/natives/?_0xCCC39339BEF76CF5)**
 ---
@@ -2195,6 +2203,22 @@ function SetBit(address, offset) end
 ---@param p3 number
 function SetBitsInRange(var, rangeStart, rangeEnd, p3) end
 
+---**`MISC` `client` [`0xF36199225D6D8C86`](https://docs.fivem.net/natives/?_0xF36199225D6D8C86)**
+---
+---Allows modification of the cloud opacity. It can also be used in other contexts, such as when the player is in a switch state [`IS_PLAYER_SWITCH_IN_PROGRESS`](#\_0xD9D2CFFF49FAB35F).
+---
+---Example code:
+---```lua
+----- Check if the player is in a Switch "state"
+---if IsPlayerSwitchInProgress() then
+---    -- If the player is in a Switch state, set the clouds opacity to 1.0
+---    SetCloudsAlpha(1.0)
+---end
+---```
+---
+---@param opacity number The opacity value to set for clouds.
+function SetCloudsAlpha(opacity) end
+
 ---**`MISC` `client` [`0xB938B7E6D3C0620C`](https://docs.fivem.net/natives/?_0xB938B7E6D3C0620C)**
 ---
 ---@param toggle boolean
@@ -3184,11 +3208,6 @@ function SaveBenchmarkRecording() end
 ---
 ---@param player Player
 function SetBeastModeActive(player) end
-
----**`MISC` `client` [`0xF36199225D6D8C86`](https://docs.fivem.net/natives/?_0xF36199225D6D8C86)**
----
----@param opacity number
-function SetCloudHatOpacity(opacity) end
 
 ---**`MISC` `client` [`0xA1183BCFEE0F93D1`](https://docs.fivem.net/natives/?_0xA1183BCFEE0F93D1)**
 ---

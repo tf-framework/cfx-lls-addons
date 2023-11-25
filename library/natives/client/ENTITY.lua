@@ -400,7 +400,23 @@ function CreateModelSwap(x, y, z, radius, originalModel, newModel, p6) end
 
 ---**`ENTITY` `client` [`0xAE3CBE5BF394C9C9`](https://docs.fivem.net/natives/?_0xAE3CBE5BF394C9C9)**
 ---
----Deletes the specified entity, and invalidates the passed handle (i.e. in/out argument).
+---Delete the specified entity, and invalidate the passed handle (i.e., the in/out argument).
+---You might want to check if the entity exists before with [DOES_ENTITY_EXIST](#\_0x7239B21A38F536BA).
+---
+---Example code:
+---```lua
+----- Retrieve the vehicle the player is currently in.
+---local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
+---
+----- Check if the vehicle exists in the game world.
+---if not DoesEntityExist(vehicle) then
+---    -- If the vehicle does not exist, end the execution of the code here.
+---    return
+---end
+---
+----- If the vehicle does exist, delete the vehicle entity from the game world.
+---DeleteEntity(vehicle)
+---```
 ---
 ---@param entity Entity The entity to delete.
 function DeleteEntity(entity) end

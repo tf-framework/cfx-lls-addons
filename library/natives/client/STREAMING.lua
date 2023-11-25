@@ -199,7 +199,17 @@ function GetPlayerSwitchJumpCutIndex() end
 
 ---**`STREAMING` `client` [`0x470555300D10B2A5`](https://docs.fivem.net/natives/?_0x470555300D10B2A5)**
 ---
----@return number
+---Example code:
+---```lua
+---local stateSwitch = GetPlayerSwitchState()
+---if stateSwitch == 5 then
+---    -- Player is in the air
+---    elseif stateSwitch == 12 then
+---    -- Player is not in the air or switch is completed
+---end
+---```
+---
+---@return number # *   Returns 5 if the player is in the air (in a state of switch).<br>*   Returns 12 if the player is either not in the air or if the switch is completed.
 function GetPlayerSwitchState() end
 
 ---**`STREAMING` `client` [`0xB3C94A90D9FC9E62`](https://docs.fivem.net/natives/?_0xB3C94A90D9FC9E62)**
@@ -881,6 +891,45 @@ function StreamvolHasLoaded(unused) end
 ---@return boolean
 function StreamvolIsValid(unused) end
 
+---**`STREAMING` `client` [`0xAAB3200ED59016BC`](https://docs.fivem.net/natives/?_0xAAB3200ED59016BC)**
+---
+---You can check if the player is in a Switch state with [`IS_PLAYER_SWITCH_IN_PROGRESS`](#\_0xD9D2CFFF49FAB35F).
+---
+---***Note:** Doesn't act normally when used on Mount Chiliad.*
+---
+---Example code:
+---```lua
+----- Check if the player is in a Switch "state"
+---if not IsPlayerSwitchInProgress() then
+---    -- If the player is not already in a Switch state, initiate a Switch
+---    SwitchToMultiFirstPart(PlayerPedId(), 0, 1)
+---    -- In this case, switchType is set to 1, which means "3 steps out from ped"
+---end
+---```
+---
+---@param ped Ped The Ped (player character) for which the switch is initiated.
+---@param flags number Flags control various functionalities: 0 for normal behavior, 1 for no transition, and 255 for Switch IN.
+---@param switchType number Specifies the type of switch (0 - 3): 0 for 1 step towards ped, 1 for 3 steps out from ped, 2 for 1 step out from ped, and 3 for 1 step towards ped.
+function SwitchToMultiFirstpart(ped, flags, switchType) end
+
+---**`STREAMING` `client` [`0xD8295AF639FD9CB8`](https://docs.fivem.net/natives/?_0xD8295AF639FD9CB8)**
+---
+---After using [`SWITCH_TO_MULTI_FIRSTPART`](#\_0xAAB3200ED59016BC) , use this native to smoothly return the camera to the player's character.
+---
+---Example code:
+---```lua
+---RegisterCommand("switchPlayer", function()
+---    if IsPlayerSwitchInProgress() then return end
+---    local ped = PlayerPedId()
+---    SwitchToMultiFirstPart(ped, 0, 1)
+---    Citizen.Wait(5000)
+---    SwitchToMultiSecondPart(ped)
+---end, false)
+---```
+---
+---@param ped Ped
+function SwitchToMultiSecondpart(ped) end
+
 ---**`STREAMING` `client` [`0xF741BD853611592D`](https://docs.fivem.net/natives/?_0xF741BD853611592D)**
 ---
 ---```
@@ -933,34 +982,3 @@ function LoadGlobalWaterType(waterType) end
 ---@param name string
 ---@param toggle boolean
 function SetIslandHopperEnabled(name, toggle) end
-
----**`STREAMING` `client` [`0xD8295AF639FD9CB8`](https://docs.fivem.net/natives/?_0xD8295AF639FD9CB8)**
----
----Use after using \_SWITCH_OUT_PLAYER to swoop the camera back down to the player's ped.
----
----@param ped Ped
-function SwitchInPlayer(ped) end
-
----**`STREAMING` `client` [`0xAAB3200ED59016BC`](https://docs.fivem.net/natives/?_0xAAB3200ED59016BC)**
----
----```
----doesn't act normally when used on mount chilliad
----
----flags:
----
----0: normal
----1: no transition
----255: switch IN
----
----switchType: 0 - 3
----
----0: 1 step towards ped
----1: 3 steps out from ped
----2: 1 step out from ped
----3: 1 step towards ped
----```
----
----@param ped Ped
----@param flags number
----@param switchType number
-function SwitchOutPlayer(ped, flags, switchType) end

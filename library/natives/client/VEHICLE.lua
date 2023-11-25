@@ -2496,6 +2496,15 @@ function GetVehicleHealthPercentage(vehicle) end
 ---@return number
 function GetVehicleHomingLockonState(vehicle) end
 
+---**`VEHICLE` `client` [`0xCA4AC3EAAE46EC7B`](https://docs.fivem.net/natives/?_0xCA4AC3EAAE46EC7B)**
+---
+---See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
+---
+---@param vehicle Vehicle
+---@param doorIndex number
+---@return number # Returns vehicle door lock state previously set with [`SET_VEHICLE_INDIVIDUAL_DOORS_LOCKED`](#\_0xBE70724027F85BCD)
+function GetVehicleIndividualDoorLockStatus(vehicle, doorIndex) end
+
 ---**`VEHICLE` `client` [`0xD4C4642CB7F50B5D`](https://docs.fivem.net/natives/?_0xD4C4642CB7F50B5D)**
 ---
 ---```
@@ -6083,17 +6092,6 @@ function GetVehicleCurrentSlipstreamDraft(vehicle) end
 ---@param vehicle Vehicle
 ---@param color number
 function GetVehicleDashboardColor(vehicle, color) end
-
----**`VEHICLE` `client` [`0xCA4AC3EAAE46EC7B`](https://docs.fivem.net/natives/?_0xCA4AC3EAAE46EC7B)**
----
----See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
----
----Returns vehicle door destroy type previously set with \_SET_VEHICLE_DOOR_DESTROY_TYPE
----
----@param vehicle Vehicle
----@param doorIndex number
----@return number
-function GetVehicleDoorDestroyType(vehicle, doorIndex) end
 
 ---**`VEHICLE` `client` [`0xBC9CFF381338CB4F`](https://docs.fivem.net/natives/?_0xBC9CFF381338CB4F)**
 ---
