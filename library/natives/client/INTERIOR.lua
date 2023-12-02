@@ -236,6 +236,16 @@ function GetInteriorFromPrimaryView() end
 ---@return number
 function GetInteriorGroupId(interior) end
 
+---**`INTERIOR` `client` [`0xF49B58631D9E22D9`](https://docs.fivem.net/natives/?_0xF49B58631D9E22D9)**
+---
+---```
+---NativeDB Introduced: v1493
+---```
+---
+---@param interior number ID of the interior
+---@return number # Returns interior heading in radians. Multiply the returned value with 57.29578 (or 180.0 / math.pi) to convert it to degrees.
+function GetInteriorHeading(interior) end
+
 ---**`INTERIOR` `client` [`0x252BDC06B73FA6EA`](https://docs.fivem.net/natives/?_0x252BDC06B73FA6EA)**
 ---
 ---```
@@ -362,18 +372,6 @@ function ClearInteriorForEntity(entity) end
 ---
 ---@param mapObjectHash Hash
 function EnableScriptCullModelThisFrame(mapObjectHash) end
-
----**`INTERIOR` `client` [`0xF49B58631D9E22D9`](https://docs.fivem.net/natives/?_0xF49B58631D9E22D9)**
----
----```
----GET_INTERIOR_*
----
----NativeDB Introduced: v1493
----```
----
----@param interior number
----@return number
-function GetInteriorHeading(interior) end
 
 ---**`INTERIOR` `client` [`0xC1F1920BAF281317`](https://docs.fivem.net/natives/?_0xC1F1920BAF281317)**
 ---

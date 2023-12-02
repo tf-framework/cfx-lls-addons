@@ -323,17 +323,6 @@ function N_0xdd2620b7b9d16ff1(player, p1) end
 ---@param toggle boolean
 function N_0xde45d1a1ef45ee61(player, toggle) end
 
----**`PLAYER` `client` [`0xF10B44FD479D69F3`](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)**
----
----```
----Only 1 occurrence. p1 was 2.
----```
----
----@param player Player
----@param p1 number
----@return boolean
-function N_0xf10b44fd479d69f3(player, p1) end
-
 ---**`PLAYER` `client` [`0xFAC75988A7D078D3`](https://docs.fivem.net/natives/?_0xFAC75988A7D078D3)**
 ---
 ---@param player Player
@@ -2251,6 +2240,31 @@ function HasPlayerBeenShotByCop(player, ms, p2) end
 ---
 ---@return boolean
 function IsPlayerCamControlDisabled() end
+
+---**`PLAYER` `client` [`0xF10B44FD479D69F3`](https://docs.fivem.net/natives/?_0xF10B44FD479D69F3)**
+---
+---Violation types:
+---
+---```
+---enum eViolationType {
+---  VT_PAVED_PEDESTRIAN_AREAS = 0,
+---  VT_RUNNING_REDS,
+---  VT_AGAINST_TRAFFIC
+---};
+---```
+---
+---Checks if a player is performing a certain type of traffic violation.
+---
+---*   Type 0: Checks if the player is driving outside designated road areas pedestrians would walk on (specifically paved sidewalks).
+---*   Type 1: Checks if the player is running through reds, takes some time to return true.
+---*   Type 2: Checks if the player is driving on the wrong side of the road (against traffic).
+---
+---Used solely in "Al Di Napoli" with type 2 for a voiceline.
+---
+---@param player Player Player ID
+---@param type number A violation type from 0 to 2 (`eViolationType`).
+---@return boolean # Whether or not the player is actively performing a certain type of traffic violation.
+function IsPlayerDrivingDangerously(player, type) end
 
 ---**`PLAYER` `client` [`0xC2AFFFDABBDC2C5C`](https://docs.fivem.net/natives/?_0xC2AFFFDABBDC2C5C)**
 ---
