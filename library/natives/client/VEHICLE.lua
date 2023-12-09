@@ -2578,13 +2578,9 @@ function GetVehicleMaxTraction(vehicle) end
 
 ---**`VEHICLE` `client` [`0x772960298DA26FDB`](https://docs.fivem.net/natives/?_0x772960298DA26FDB)**
 ---
----```
----Returns -1 if the vehicle mod is stock
----```
----
----@param vehicle Vehicle
+---@param vehicle Vehicle The vehicle to get the mod of.
 ---@param modType number Refer to eVehicleModType in [`SET_VEHICLE_MOD`](#\_0x6AF0636DDEDCB6DD).
----@return number
+---@return number # Returns the current modIndex, or `-1` if the mod is stock.
 function GetVehicleMod(vehicle, modType) end
 
 ---**`VEHICLE` `client` [`0x8C044C5C84505B6A`](https://docs.fivem.net/natives/?_0x8C044C5C84505B6A)**
