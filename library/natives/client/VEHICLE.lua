@@ -1203,17 +1203,13 @@ function AttachVehicleToTrailer(vehicle, trailer, radius) end
 
 ---**`VEHICLE` `client` [`0x260BE8F09E326A20`](https://docs.fivem.net/natives/?_0x260BE8F09E326A20)**
 ---
----```
----This native makes the vehicle stop immediately, as happens when we enter a MP garage.
----. distance defines how far it will travel until stopping. Garage doors use 3.0.
----. If killEngine is set to 1, you cannot resume driving the vehicle once it stops. This looks like is a bitmapped integer.
----```
+---This native makes the vehicle stop immediately, as it happens when we enter a multiplayer garage.
 ---
----@param vehicle Vehicle
----@param distance number
----@param duration number
----@param unknown boolean
-function BringVehicleToHalt(vehicle, distance, duration, unknown) end
+---@param vehicle Vehicle The vehicle to stop.
+---@param distance number The distance from the initial coords at which the vehicle should come to rest.
+---@param duration number The length of time in seconds to hold the car at rest after stopping.
+---@param bControlVerticalVelocity boolean `false` by default which allows gravity to act normally in the z direction. Enable this option to halt the vehicle's vertical velocity as well.
+function BringVehicleToHalt(vehicle, distance, duration, bControlVerticalVelocity) end
 
 ---**`VEHICLE` `client` [`0x26C10ECBDA5D043B`](https://docs.fivem.net/natives/?_0x26C10ECBDA5D043B)**
 ---

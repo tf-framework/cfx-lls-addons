@@ -1488,8 +1488,6 @@ function EndTextCommandThefeedPostMessagetext(textureDict, textureName, flash, i
 
 ---**`HUD` `client` [`0x1E6611149DB3DB6B`](https://docs.fivem.net/natives/?_0x1E6611149DB3DB6B)**
 ---
----NOTE: 'duration' is a multiplier, so 1.0 is normal, 2.0 is twice as long (very slow), and 0.5 is half as long.
----
 ---Example, only occurrence in the scripts:
 ---
 ---```
@@ -1497,18 +1495,26 @@ function EndTextCommandThefeedPostMessagetext(textureDict, textureName, flash, i
 ---```
 ---
 ---Example result:
----
 ---![](https://i.imgur.com/YrN4Bcm.png)
 ---
 ---@param picTxd string
 ---@param picTxn string
 ---@param flash boolean
----@param iconType number
+---@param iconType number The icon type, you can find those here: [`END_TEXT_COMMAND_THEFEED_POST_MESSAGETEXT`](#\_0x1CCD9A37359072CF)
 ---@param nameStr string
 ---@param subtitleStr string
----@param duration number
+---@param durationMultiplier number 1.0 is normal, 2.0 is twice as long, and 0.5 is half its normal display time.
 ---@return number
-function EndTextCommandThefeedPostMessagetextTu(picTxd, picTxn, flash, iconType, nameStr, subtitleStr, duration) end
+function EndTextCommandThefeedPostMessagetextTu(
+	picTxd,
+	picTxn,
+	flash,
+	iconType,
+	nameStr,
+	subtitleStr,
+	durationMultiplier
+)
+end
 
 ---**`HUD` `client` [`0x5CBF7BADE20DB93E`](https://docs.fivem.net/natives/?_0x5CBF7BADE20DB93E)**
 ---

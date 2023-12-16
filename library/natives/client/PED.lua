@@ -4933,7 +4933,22 @@ function SetPedDefensiveSphereAttachedToVehicle(ped, target, xOffset, yOffset, z
 
 ---**`PED` `client` [`0x95E3D6257B166CF2`](https://docs.fivem.net/natives/?_0x95E3D6257B166CF2)**
 ---
----@param multiplier number
+---**Usage:** Call this native every frame
+---
+---Example code:
+---```lua
+----- 0.0 means no peds, while 1.0 indicates the regular density of peds.
+---local pedsDensityFactor = 0.0
+---
+---Citizen.CreateThread(function()
+---   while true do
+---       SetPedDensityMultiplierThisFrame(pedsDensityFactor)
+---       Citizen.Wait(0)
+---   end
+---end)
+---```
+---
+---@param multiplier number Adjust from 0.0 (minimum, indicating no pedestrians in the street) to 1.0 (maximum, representing a normal amount of pedestrians on the street).
 function SetPedDensityMultiplierThisFrame(multiplier) end
 
 ---**`PED` `client` [`0xAA5A7ECE2AA8FE70`](https://docs.fivem.net/natives/?_0xAA5A7ECE2AA8FE70)**
