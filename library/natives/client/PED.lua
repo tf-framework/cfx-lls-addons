@@ -2383,11 +2383,30 @@ function GetVehiclePedIsEntering(ped) end
 
 ---**`PED` `client` [`0x9A9112A0FE9A4713`](https://docs.fivem.net/natives/?_0x9A9112A0FE9A4713)**
 ---
----Gets the vehicle the specified Ped is in. Returns 0 if the ped is/was not in a vehicle.
----If the Ped is not in a vehicle and includeLastVehicle is true, the vehicle they were last in is returned.
+---Retrieves the vehicle the specified ped is currently in, or the last vehicle they were in.
+---
+---Example code:
+---```lua
+----- This example gets the vehicle the player is currently in and print the vehicle id.
+---
+----- Retrieve the LocalPlayer.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is currently in.
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- Check if the vehicle exists in the game world.
+---if not DoesEntityExist(vehicle) then
+---    -- If the vehicle does not exist, end the execution of the code here.
+---    return
+---end
+---
+----- Print the vehicle id
+---print("Vehicle ID: " .. vehicle)
+---```
 ---
 ---@param ped Ped The target ped
----@param lastVehicle boolean False = CurrentVehicle, True = LastVehicle
+---@param lastVehicle boolean A boolean value where `false` represents the current vehicle the Ped is in, and `true` represents the last vehicle the Ped was in.
 ---@return Vehicle # The vehicle id. Returns 0 if the ped is/was not in a vehicle.
 function GetVehiclePedIsIn(ped, lastVehicle) end
 

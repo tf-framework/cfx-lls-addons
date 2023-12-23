@@ -42,18 +42,6 @@ function N_0x063ae2b2cc273588(vehicle, p1) end
 ---@param p1 any
 function N_0x065d03a9d6b2c6b5(p0, p1) end
 
----**`VEHICLE` `client` [`0x0A3F820A9A9A9AC5`](https://docs.fivem.net/natives/?_0x0A3F820A9A9A9AC5)**
----
----```
----NativeDB Introduced: v1180
----```
----
----@param vehicle Vehicle
----@param x number
----@param y number
----@param z number
-function N_0x0a3f820a9a9a9ac5(vehicle, x, y, z) end
-
 ---**`VEHICLE` `client` [`0x0A436B8643716D14`](https://docs.fivem.net/natives/?_0x0A436B8643716D14)**
 ---
 ---```
@@ -61,12 +49,6 @@ function N_0x0a3f820a9a9a9ac5(vehicle, x, y, z) end
 ---```
 ---
 function N_0x0a436b8643716d14() end
-
----**`VEHICLE` `client` [`0x0AD9E8F87FF7C16F`](https://docs.fivem.net/natives/?_0x0AD9E8F87FF7C16F)**
----
----@param p0 any
----@param p1 boolean
-function N_0x0ad9e8f87ff7c16f(p0, p1) end
 
 ---**`VEHICLE` `client` [`0x0BBB9A7A8FFE931B`](https://docs.fivem.net/natives/?_0x0BBB9A7A8FFE931B)**
 ---
@@ -117,12 +99,6 @@ function N_0x1b212b26dd3c04df(vehicle, toggle) end
 ---@param p0 any
 ---@param p1 any
 function N_0x1f34b0626c594380(p0, p1) end
-
----**`VEHICLE` `client` [`0x1F9FB66F3A3842D2`](https://docs.fivem.net/natives/?_0x1F9FB66F3A3842D2)**
----
----@param vehicle Vehicle
----@param p1 boolean
-function N_0x1f9fb66f3a3842d2(vehicle, p1) end
 
 ---**`VEHICLE` `client` [`0x2310A8F9421EBF43`](https://docs.fivem.net/natives/?_0x2310A8F9421EBF43)**
 ---
@@ -734,16 +710,6 @@ function N_0xae3fee8709b39dcb(vehicle) end
 ---@param p1 any
 function N_0xaf60e6a2936f982a(p0, p1) end
 
----**`VEHICLE` `client` [`0xB264C4D2F2B0A78B`](https://docs.fivem.net/natives/?_0xB264C4D2F2B0A78B)**
----
----```
----This native doesn't seem to do anything, might be a debug-only native.
----Confirmed, it is a debug native.
----```
----
----@param vehicle Vehicle
-function N_0xb264c4d2f2b0a78b(vehicle) end
-
 ---**`VEHICLE` `client` [`0xB2E0C0D6922D31F2`](https://docs.fivem.net/natives/?_0xB2E0C0D6922D31F2)**
 ---
 ---```
@@ -769,12 +735,6 @@ function N_0xb68cfaf83a02768d(vehicle, toggle) end
 ---@param p0 any
 ---@param p1 any
 function N_0xb9562064627ff9db(p0, p1) end
-
----**`VEHICLE` `client` [`0xBA91D045575699AD`](https://docs.fivem.net/natives/?_0xBA91D045575699AD)**
----
----@param vehicle Vehicle
----@return boolean
-function N_0xba91d045575699ad(vehicle) end
 
 ---**`VEHICLE` `client` [`0xBB2333BB87DDD87F`](https://docs.fivem.net/natives/?_0xBB2333BB87DDD87F)**
 ---
@@ -1051,6 +1011,13 @@ function AddVehicleStuckCheckWithWarp(p0, p1, p2, p3, p4, p5, p6) end
 ---
 ---@param vehicle Vehicle
 function AddVehicleUpsidedownCheck(vehicle) end
+
+---**`VEHICLE` `client` [`0xB264C4D2F2B0A78B`](https://docs.fivem.net/natives/?_0xB264C4D2F2B0A78B)**
+---
+---This native it's a debug native. Won't do anything.
+---
+---@param vehicle Vehicle
+function AllowAmbientVehiclesToAvoidAdverseConditions(vehicle) end
 
 ---**`VEHICLE` `client` [`0x11D862A3E977A9EF`](https://docs.fivem.net/natives/?_0x11D862A3E977A9EF)**
 ---
@@ -1800,6 +1767,47 @@ function GetHeliTailBoomHealth(vehicle) end
 ---@return number
 function GetHeliTailRotorHealth(vehicle) end
 
+---**`VEHICLE` `client` [`0xBA91D045575699AD`](https://docs.fivem.net/natives/?_0xBA91D045575699AD)**
+---
+---Checks whether the specified boat vehicle is capsized, meaning it has overturned or is upside down in the water.
+---
+---Example code:
+---```lua
+----- This example checks if the player is in a boat and if the boat is capsized.
+---
+----- Retrieve the LocalPlayer.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is in
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- Retrieve the model of the vehicle
+---local vehicleModel = GetEntityModel(vehicle)
+---
+----- Check if the vehicle exists in the game world.
+---if not DoesEntityExist(vehicle) then
+---    -- If the vehicle does not exist, end the execution of the code here.
+---    return
+---end
+---
+----- Check if the vehicle is a boat.
+---if not IsThisModelABoat(vehicleModel) then
+---    -- If the vehicle is not a boat, end the execution of the code here.
+---    return
+---end
+---
+----- Check if the boat is capsized.
+---if GetIsBoatCapsized(vehicle) then
+---    print("The boat is capsized!")
+---else
+---    print("The boat is not capsized!")
+---end
+---```
+---
+---@param vehicle Vehicle The vehicle to check. This should be a boat-type vehicle.
+---@return boolean # Returns `true` if the specified boat is capsized, `false` otherwise.
+function GetIsBoatCapsized(vehicle) end
+
 ---**`VEHICLE` `client` [`0x5EF77C9ADD3B11A3`](https://docs.fivem.net/natives/?_0x5EF77C9ADD3B11A3)**
 ---
 ---```
@@ -2503,14 +2511,10 @@ function GetVehicleIndividualDoorLockStatus(vehicle, doorIndex) end
 
 ---**`VEHICLE` `client` [`0xD4C4642CB7F50B5D`](https://docs.fivem.net/natives/?_0xD4C4642CB7F50B5D)**
 ---
----```
----Only used like this:
----if (VEHICLE::GET_VEHICLE_IS_MERCENARY(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(v_3))) {                                                        sub_157e9c(g_40001._f1868, 0);
----}
----```
+---Returns whether the specified vehicle is designated as a mercenary vehicle
 ---
----@param vehicle Vehicle
----@return boolean
+---@param vehicle Vehicle The vehicle to check for mercenary status.
+---@return boolean # Returns `true` if the vehicle is a mercenary vehicle, `false` otherwise.
 function GetVehicleIsMercenary(vehicle) end
 
 ---**`VEHICLE` `client` [`0x28D37D4F71AC5C58`](https://docs.fivem.net/natives/?_0x28D37D4F71AC5C58)**
@@ -3869,6 +3873,20 @@ function SetHeliBladesFullSpeed(vehicle) end
 ---@param speed number
 function SetHeliBladesSpeed(vehicle, speed) end
 
+---**`VEHICLE` `client` [`0x0A3F820A9A9A9AC5`](https://docs.fivem.net/natives/?_0x0A3F820A9A9A9AC5)**
+---
+---Set a specific offset for helis chasing target in combat
+---
+---```
+---NativeDB Introduced: v1180
+---```
+---
+---@param vehicle Vehicle Helicopter for which the combat offset is being set.
+---@param x number Offset along the X-axis (left/right) relative to the helicopter's current position and orientation
+---@param y number Offset along the Y-axis (forward/backward) relative to the helicopter's current position and orientation
+---@param z number Offset along the Z-axis (up/down) relative to the helicopter's current position and orientation.
+function SetHeliCombatOffset(vehicle, x, y, z) end
+
 ---**`VEHICLE` `client` [`0x3EC8BF18AA453FE9`](https://docs.fivem.net/natives/?_0x3EC8BF18AA453FE9)**
 ---
 ---@param vehicle Vehicle
@@ -4222,6 +4240,14 @@ function SetVehicleActiveDuringPlayback(vehicle, toggle) end
 ---@param vehicle Vehicle
 ---@param toggle boolean
 function SetVehicleActiveForPedNavigation(vehicle, toggle) end
+
+---**`VEHICLE` `client` [`0x1F9FB66F3A3842D2`](https://docs.fivem.net/natives/?_0x1F9FB66F3A3842D2)**
+---
+---This native is used to simulate a high-speed impact for a vehicle when it collides with a breakable object (frag). It's particularly useful in scripted sequences where a vehicle is required to break through a barrier but might not actually be moving at a sufficient speed to do so realistically. Note that this setting is temporary and will reset after one frame, so it needs to be called every frame for a lasting effect.
+---
+---@param vehicle Vehicle The vehicle to be affected by this setting.
+---@param actHighSpeed boolean A boolean flag. Set to `true` to make the vehicle act as if it's at high speed for the current frame
+function SetVehicleActAsIfHighSpeedForFragSmashing(vehicle, actHighSpeed) end
 
 ---**`VEHICLE` `client` [`0xCDE5E70C1DDB954C`](https://docs.fivem.net/natives/?_0xCDE5E70C1DDB954C)**
 ---
@@ -4898,6 +4924,39 @@ function SetVehicleIndicatorLights(vehicle, turnSignal, toggle) end
 ---@param doorIndex number See eDoorId declared in [`SET_VEHICLE_DOOR_SHUT`](#\_0x93D9BD300D7789E5)
 ---@param doorLockStatus number See eCarLock declared in [`SET_VEHICLE_DOORS_LOCKED`](#\_0xB664292EAECF7FA6)
 function SetVehicleIndividualDoorsLocked(vehicle, doorIndex, doorLockStatus) end
+
+---**`VEHICLE` `client` [`0x0AD9E8F87FF7C16F`](https://docs.fivem.net/natives/?_0x0AD9E8F87FF7C16F)**
+---
+---This native sets whether a specific vehicle influences the player's wanted level when it is involved in an incident that typically triggers a wanted response, such as being marked as a "victim" vehicle.
+---
+---This is particularly useful when utilizing the wanted system from GTA, and you want to prevent a vehicle from affecting the wanted level when it is stolen. In the decompiled scripts this native is only used to disable the influence of the vehicle on the wanted level.
+---
+---Example code:
+---```lua
+----- This example will prevent the closest vehicle from influencing the wanted level.
+---
+----- Retrieve the LocalPlayer
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the coordinates of the player.
+---local playerCoords = GetEntityCoords(playerPed)
+---
+----- Retrieve the closest vehicle.
+---local vehicle = GetClosestVehicle(playerCoords.x, playerCoords.y, playerCoords.z, 3, 0, 70)
+---
+----- Check if the vehicle exists in the game world.
+---if not DoesEntityExist(vehicle) then
+---    -- If the vehicle does not exist, end the execution of the code here.
+---    return
+---end
+---
+----- Set the vehicle to not influence the wanted level.
+---SetVehicleInfluencesWantedLevel(vehicle, false)
+---```
+---
+---@param vehicle Vehicle The specific vehicle to be set for influencing the wanted level.
+---@param influenceWantedLevel boolean A boolean value. Set to `true` to make the vehicle influence the wanted level; `false` to prevent it from doing so.
+function SetVehicleInfluencesWantedLevel(vehicle, influenceWantedLevel) end
 
 ---**`VEHICLE` `client` [`0xBC2042F090AF6AD3`](https://docs.fivem.net/natives/?_0xBC2042F090AF6AD3)**
 ---
