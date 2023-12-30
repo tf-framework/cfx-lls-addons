@@ -3234,6 +3234,17 @@ function SetMinimapInPrologue(toggle) end
 ---@param ped Ped
 function SetMinimapInSpectatorMode(toggle, ped) end
 
+---**`HUD` `client` [`0x6B50FC8749632EC1`](https://docs.fivem.net/natives/?_0x6B50FC8749632EC1)**
+---
+---Enables or disables the sonar sweep animation on the minimap.
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param toggle boolean A boolean value where `true` activates the sonar sweep animation on the minimap, and `false` turns it off.
+function SetMinimapSonarSweep(toggle) end
+
 ---**`HUD` `client` [`0x5F28ECF5FC84772F`](https://docs.fivem.net/natives/?_0x5F28ECF5FC84772F)**
 ---
 ---@param p0 boolean
@@ -3664,6 +3675,17 @@ function SetTextScale(scale, size) end
 ---@param start number
 ---@param end_ number
 function SetTextWrap(start, end_) end
+
+---**`HUD` `client` [`0x5E1460624D194A38`](https://docs.fivem.net/natives/?_0x5E1460624D194A38)**
+---
+---Switches the display of the in-game minimap to the Cayo Perico map. This native needs to be called every frame to maintain the toggled state effectively.
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param toggle boolean A boolean value where `true` switches the minimap to the Cayo Perico map, and `false` reverts it to the standard map.
+function SetUseIslandMap(toggle) end
 
 ---**`HUD` `client` [`0x7B1776B3B53F8D74`](https://docs.fivem.net/natives/?_0x7B1776B3B53F8D74)**
 ---
@@ -4926,15 +4948,6 @@ function SetMainPlayerBlipColour(color) end
 ---@param p1 boolean
 function SetMinimapAltitudeIndicatorLevel(altitude, p1) end
 
----**`HUD` `client` [`0x6B50FC8749632EC1`](https://docs.fivem.net/natives/?_0x6B50FC8749632EC1)**
----
----```
----NativeDB Introduced: v2189
----```
----
----@param toggle boolean
-function SetMinimapSonarEnabled(toggle) end
-
 ---**`HUD` `client` [`0xE45087D85F468BC2`](https://docs.fivem.net/natives/?_0xE45087D85F468BC2)**
 ---
 ---@param p0 boolean
@@ -5086,17 +5099,6 @@ function SetPlayerIsInDirectorMode(toggle) end
 ---@param b number
 ---@param a number
 function SetScriptVariable_2HudColour(r, g, b, a) end
-
----**`HUD` `client` [`0x5E1460624D194A38`](https://docs.fivem.net/natives/?_0x5E1460624D194A38)**
----
----Toggles the Cayo Perico map.
----
----```
----NativeDB Introduced: v2189
----```
----
----@param toggle boolean
-function SetToggleMinimapHeistIsland(toggle) end
 
 ---**`HUD` `client` [`0x6CDD58146A436083`](https://docs.fivem.net/natives/?_0x6CDD58146A436083)**
 ---

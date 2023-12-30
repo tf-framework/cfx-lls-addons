@@ -693,6 +693,18 @@ function SetHdArea(x, y, z, radius) end
 ---@param toggle boolean
 function SetInteriorActive(interiorID, toggle) end
 
+---**`STREAMING` `client` [`0x9A9D1BA639675CF1`](https://docs.fivem.net/natives/?_0x9A9D1BA639675CF1)**
+---
+---Enables the specified island. For more information, see islandhopper.meta
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param islandName string The name of the island to be enabled or disabled.
+---@param toggle boolean A boolean value where `true` enables the island and `false` disables it.
+function SetIslandEnabled(islandName, toggle) end
+
 ---**`STREAMING` `client` [`0xAF12610C644A35C9`](https://docs.fivem.net/natives/?_0xAF12610C644A35C9)**
 ---
 ---```
@@ -970,15 +982,3 @@ function IsModelAPed(model) end
 ---
 ---@param waterType number
 function LoadGlobalWaterType(waterType) end
-
----**`STREAMING` `client` [`0x9A9D1BA639675CF1`](https://docs.fivem.net/natives/?_0x9A9D1BA639675CF1)**
----
----Enables the specified island. For more information, see islandhopper.meta
----
----```
----NativeDB Introduced: v2189
----```
----
----@param name string
----@param toggle boolean
-function SetIslandHopperEnabled(name, toggle) end

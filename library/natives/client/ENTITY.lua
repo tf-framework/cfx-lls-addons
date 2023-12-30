@@ -1312,14 +1312,12 @@ function IsEntityOccluded(entity) end
 
 ---**`ENTITY` `client` [`0xE659E47AF827484B`](https://docs.fivem.net/natives/?_0xE659E47AF827484B)**
 ---
----```
----Returns true if the entity is in between the minimum and maximum values for the 2d screen coords.
----This means that it will return true even if the entity is behind a wall for example, as long as you're looking at their location.
----Chipping
----```
+---Determines whether the screen position of the specified entity is within the 2D bounds of the screen.
 ---
----@param entity Entity
----@return boolean
+---This native will not check if the entity is not visible due to being occluded (for example, behind a wall). To check if a entity is on screen and is not occluded, use [IS_ENTITY_OCCLUDED](#\_0xE31C2C72B8692B64).
+---
+---@param entity Entity The entity to check.
+---@return boolean # Returns `true` if the the entity is in between the minimum and maximum values for the 2D screen bound coords; otherwise, `false`.
 function IsEntityOnScreen(entity) end
 
 ---**`ENTITY` `client` [`0x1F0B79228E461EC9`](https://docs.fivem.net/natives/?_0x1F0B79228E461EC9)**

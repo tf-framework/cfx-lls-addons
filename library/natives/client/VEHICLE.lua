@@ -50,17 +50,6 @@ function N_0x065d03a9d6b2c6b5(p0, p1) end
 ---
 function N_0x0a436b8643716d14() end
 
----**`VEHICLE` `client` [`0x0BBB9A7A8FFE931B`](https://docs.fivem.net/natives/?_0x0BBB9A7A8FFE931B)**
----
----```
----NativeDB Introduced: v1290
----```
----
----@param p0 any
----@param p1 any
----@param p2 any
-function N_0x0bbb9a7a8ffe931b(p0, p1, p2) end
-
 ---**`VEHICLE` `client` [`0x107A473D7A6647A9`](https://docs.fivem.net/natives/?_0x107A473D7A6647A9)**
 ---
 ---```
@@ -81,18 +70,6 @@ function N_0x1312ddd8385aee4e(p0, p1) end
 ---@param vehicle Vehicle
 ---@param p1 number
 function N_0x182f266c2d9e2beb(vehicle, p1) end
-
----**`VEHICLE` `client` [`0x1B212B26DD3C04DF`](https://docs.fivem.net/natives/?_0x1B212B26DD3C04DF)**
----
----```
----Sets a value that appears to affect door opening behavior when damaged.
----
----SET_*
----```
----
----@param vehicle Vehicle
----@param toggle boolean
-function N_0x1b212b26dd3c04df(vehicle, toggle) end
 
 ---**`VEHICLE` `client` [`0x1F34B0626C594380`](https://docs.fivem.net/natives/?_0x1F34B0626C594380)**
 ---
@@ -1590,6 +1567,18 @@ function DoesVehicleExistWithDecorator(decorator) end
 ---@return boolean
 function DoesVehicleHaveRoof(vehicle) end
 
+---**`VEHICLE` `client` [`0x99015ED7DBEA5113`](https://docs.fivem.net/natives/?_0x99015ED7DBEA5113)**
+---
+---Determines whether the specified vehicle is equipped with a searchlight.
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param vehicle Vehicle The vehicle to check for the presence of a searchlight.
+---@return boolean # Returns `true` if the vehicle has a searchlight, `false` otherwise.
+function DoesVehicleHaveSearchlight(vehicle) end
+
 ---**`VEHICLE` `client` [`0x57E4C39DE5EE8470`](https://docs.fivem.net/natives/?_0x57E4C39DE5EE8470)**
 ---
 ---```
@@ -1658,6 +1647,43 @@ function ForceSubmarineSurfaceMode(vehicle, toggle) end
 ---@param vehicle Vehicle
 ---@return number
 function GetBoatBoomPositionRatio(vehicle) end
+
+---**`VEHICLE` `client` [`0x5AA3F878A178C4FC`](https://docs.fivem.net/natives/?_0x5AA3F878A178C4FC)**
+---
+---Retrieves the agility for a specific boat model, including any vehicle mods. Unlike other vehicles where Rockstar Games typically assess performance based on traction, boats use agility as a measure. This static value is distinct from the traction metrics used for other vehicle types.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---Example code:
+---```lua
+----- This example prints the agility of the player's current boat.
+---
+----- Retrieve the player ped.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is currently in.
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- Retrieve the model hash of the boat.
+---local boatHash = GetEntityModel(vehicle)
+---
+----- If the vehicle does not exist or is not a boat, end the execution of the code here.
+---if not DoesEntityExist(vehicle) or not IsThisModelABoat(boatHash) then
+---    return
+---end
+---
+----- Retrieve the agility of the boat.
+---local agility = GetBoatVehicleModelAgility(boatHash)
+---
+----- Print the agility of the boat.
+---print("Boat Agility: " .. agility)
+---```
+---
+---@param modelHash Hash The model hash of the boat.
+---@return number # Returns the agility value of the specified boat as a float number.
+function GetBoatVehicleModelAgility(modelHash) end
 
 ---**`VEHICLE` `client` [`0xF73EB622C4F1689B`](https://docs.fivem.net/natives/?_0xF73EB622C4F1689B)**
 ---
@@ -1911,6 +1937,43 @@ function GetLastPedInVehicleSeat(vehicle, seatIndex) end
 ---@return string
 function GetLiveryName(vehicle, liveryIndex) end
 
+---**`VEHICLE` `client` [`0xF7AF4F159FF99F97`](https://docs.fivem.net/natives/?_0xF7AF4F159FF99F97)**
+---
+---Retrieves the manufacturer's name for a specified vehicle.
+---
+---```
+---NativeDB Introduced: v1868
+---```
+---
+---Example code:
+---```lua
+----- This example prints the manufacturer of the player's current vehicle.
+---
+----- Retrieve the player ped.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is currently in.
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- If the vehicle does not exist, end the execution of the code here.
+---if not DoesEntityExist(vehicle) then
+---    return
+---end
+---
+----- Retrieve the model hash of the vehicle.
+---local vehicleHash = GetEntityModel(vehicle)
+---
+----- Retrieve the manufacturer of the vehicle.
+---local manufacturer = GetMakeNameFromVehicleModel(vehicleHash)
+---
+----- Print the manufacturer of the vehicle.
+---print("Vehicle Manufacturer: " .. manufacturer)
+---```
+---
+---@param modelHash Hash The model hash of the vehicle.
+---@return string # Returns the display label of the manufacturer if the vehicle model is recognized, or "CARNOTFOUND" if the hash does not correspond to any known vehicle model.
+function GetMakeNameFromVehicleModel(modelHash) end
+
 ---**`VEHICLE` `client` [`0x51F0FEB9F6AE98C0`](https://docs.fivem.net/natives/?_0x51F0FEB9F6AE98C0)**
 ---
 ---@param vehicle Vehicle
@@ -2160,12 +2223,36 @@ function GetTrainCarriage(train, trailerNumber) end
 
 ---**`VEHICLE` `client` [`0x5DD35C8D074E57AE`](https://docs.fivem.net/natives/?_0x5DD35C8D074E57AE)**
 ---
+---Retrieves a static value representing the maximum drive force of specific a vehicle, including any vehicle mods. This value does not change dynamically during gameplay. This value provides an approximation and should be considered alongside other performance metrics like top speed for a more comprehensive understanding of the vehicle's capabilities.
+---
 ---```
----static - max acceleration
+---NativeDB Introduced: v323
 ---```
 ---
----@param vehicle Vehicle
----@return number
+---Example code:
+---```lua
+----- This example prints the acceleration of the player's current vehicle.
+---
+----- Retrieve the player ped.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is currently in.
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- If the vehicle does not exist, end the execution of the code here.
+---if not DoesEntityExist(vehicle) then
+---    return
+---end
+---
+----- Retrieve the acceleration of the vehicle.
+---local acceleration = GetVehicleAcceleration(vehicle)
+---
+----- Print the acceleration of the vehicle.
+---print("Vehicle Acceleration: " .. acceleration)
+---```
+---
+---@param vehicle Vehicle The vehicle for which to obtain the acceleration.
+---@return number # Returns the acceleration value of the specified vehicle as a float number.
 function GetVehicleAcceleration(vehicle) end
 
 ---**`VEHICLE` `client` [`0x873B82D42AC2B9E5`](https://docs.fivem.net/natives/?_0x873B82D42AC2B9E5)**
@@ -2435,8 +2522,36 @@ function GetVehicleEnveffScale(vehicle) end
 
 ---**`VEHICLE` `client` [`0x53AF99BAA671CA47`](https://docs.fivem.net/natives/?_0x53AF99BAA671CA47)**
 ---
----@param vehicle Vehicle
----@return number
+---Retrieves a static value representing the estimated max speed of a specific vehicle, including any vehicle mods. This value does not change dynamically during gameplay.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---Example code:
+---```lua
+----- This example prints the estimated max speed of the player's current vehicle.
+---
+----- Retrieve the player ped.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is currently in.
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- If the vehicle does not exist, end the execution of the code here.
+---if not DoesEntityExist(vehicle) then
+---    return
+---end
+---
+----- Retrieve the estimated max speed of the vehicle.
+---local estimatedMaxSpeed = GetVehicleEstimatedMaxSpeed(vehicle)
+---
+----- Print the estimated max speed of the vehicle.
+---print("Estimated Max Speed: " .. estimatedMaxSpeed)
+---```
+---
+---@param vehicle Vehicle The vehicle for which to obtain the estimated max speed.
+---@return number # Returns the estimated maximum speed of the specified vehicle as a float number.
 function GetVehicleEstimatedMaxSpeed(vehicle) end
 
 ---**`VEHICLE` `client` [`0x3BC4245933A166F7`](https://docs.fivem.net/natives/?_0x3BC4245933A166F7)**
@@ -3947,6 +4062,43 @@ function SetMissionTrainCoords(train, x, y, z) end
 ---@param value number
 function SetNumberOfParkedVehicles(value) end
 
+---**`VEHICLE` `client` [`0x1B212B26DD3C04DF`](https://docs.fivem.net/natives/?_0x1B212B26DD3C04DF)**
+---
+---Enables or disables the opening of a vehicle's rear doors in the event of a sticky bomb explosion. This native is effective for armored vehicles, such as the Stockade (Brinks vehicle), allowing the rear doors to be opened through controlled explosions, which might otherwise remain locked due to the vehicle nature.
+---
+---Example code:
+---```lua
+----- This example disables the rear doors of the vehicle from opening upon explosion.
+---
+----- Retrieve the LocalPlayer.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is currently in.
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- Check if the vehicle exists in the game world.
+---if not DoesEntityExist(vehicle) then
+---    -- If the vehicle does not exist, end the execution of the code here.
+---    return
+---end
+---
+----- Retrieve the model of the vehicle
+---local modelVehicle = GetEntityModel(vehicle)
+---
+----- Retrieve the hash of the Stockade.
+---local hashStockade = GetHashKey("stockade")
+---
+----- Check if the vehicle is a Stockade.
+---if (modelVehicle == hashStockade) then
+---    -- Disable the rear doors from opening upon explosion.
+---    SetOpenRearDoorsOnExplosion(vehicle, true)
+---end
+---```
+---
+---@param vehicle Vehicle The vehicle to apply this setting to.
+---@param toggle boolean A boolean value where `true` allows the rear doors to open upon explosion, and `false` prevents them from opening.
+function SetOpenRearDoorsOnExplosion(vehicle, toggle) end
+
 ---**`VEHICLE` `client` [`0xEAE6DCC7EEE3DB1D`](https://docs.fivem.net/natives/?_0xEAE6DCC7EEE3DB1D)**
 ---
 ---@param multiplier number
@@ -3969,6 +4121,38 @@ function SetPickupRopeLengthForCargobob(cargobob, length1, length2, state) end
 ---@param vehicle Vehicle
 ---@param toggle boolean
 function SetPlaneResistToExplosion(vehicle, toggle) end
+
+---**`VEHICLE` `client` [`0x0BBB9A7A8FFE931B`](https://docs.fivem.net/natives/?_0x0BBB9A7A8FFE931B)**
+---
+---Adjusts the scale of damage applied to a specified section of a plane.
+---In the decompiled scripts the `damageScale` is always set to `0f` (maybe to disable damages on the specified section)
+---
+---```cpp
+---enum ePlaneDamageSection {
+---    WING_L = 0,
+---    WING_R = 1,
+---    TAIL = 2,
+---    ENGINE_L = 3,
+---    ENGINE_R = 4,
+---    ELEVATOR_L = 5,
+---    ELEVATOR_R = 6,
+---    AILERON_L = 7,
+---    AILERON_R = 8,
+---    RUDDER = 9,
+---    RUDDER_2 = 10,
+---    AIRBRAKE_L = 11,
+---    AIRBRAKE_R = 12
+---}
+---```
+---
+---```
+---NativeDB Introduced: v1290
+---```
+---
+---@param vehicle Vehicle Plane to which the damage scale adjustment will be applied.
+---@param damageSection number Specific section of the plane, as defined in the `ePlaneDamageSection` enum, where the damage scale will be adjusted.
+---@param damageScale number A float value representing the scale of damage to be applied to the specified section.
+function SetPlaneSectionDamageScale(vehicle, damageSection, damageScale) end
 
 ---**`VEHICLE` `client` [`0xAD2D28A1AFDFF131`](https://docs.fivem.net/natives/?_0xAD2D28A1AFDFF131)**
 ---
@@ -5813,16 +5997,6 @@ function DoesVehicleAllowRappel(vehicle) end
 ---@return boolean
 function DoesVehicleHaveLandingGear(vehicle) end
 
----**`VEHICLE` `client` [`0x99015ED7DBEA5113`](https://docs.fivem.net/natives/?_0x99015ED7DBEA5113)**
----
----```
----NativeDB Introduced: v2189
----```
----
----@param vehicle Vehicle
----@return boolean
-function DoesVehicleHaveSearchlight(vehicle) end
-
 ---**`VEHICLE` `client` [`0x534E36D4DB9ECC5D`](https://docs.fivem.net/natives/?_0x534E36D4DB9ECC5D)**
 ---
 ---```
@@ -6026,19 +6200,6 @@ function GetIsWheelsLoweredStateActive(vehicle) end
 ---@return Vehicle
 function GetLastRammedVehicle(vehicle) end
 
----**`VEHICLE` `client` [`0xF7AF4F159FF99F97`](https://docs.fivem.net/natives/?_0xF7AF4F159FF99F97)**
----
----Will return a vehicle's manufacturer display label.
----Returns "CARNOTFOUND" if the hash doesn't match a vehicle hash.
----
----```
----NativeDB Introduced: v1868
----```
----
----@param modelHash Hash
----@return string
-function GetMakeNameFromVehicleModel(modelHash) end
-
 ---**`VEHICLE` `client` [`0x92922A607497B14D`](https://docs.fivem.net/natives/?_0x92922A607497B14D)**
 ---
 ---@param vehicle Vehicle
@@ -6177,17 +6338,6 @@ function GetVehicleModelEstimatedAgility(modelHash) end
 ---@param modelHash Hash
 ---@return number
 function GetVehicleModelMaxKnots(modelHash) end
-
----**`VEHICLE` `client` [`0x5AA3F878A178C4FC`](https://docs.fivem.net/natives/?_0x5AA3F878A178C4FC)**
----
----```
----GET_VEHICLE_MODEL_*
----called if the vehicle is a boat -- returns vecMoveResistanceX?
----```
----
----@param modelHash Hash
----@return number
-function GetVehicleModelMoveResistance(modelHash) end
 
 ---**`VEHICLE` `client` [`0x7619EEE8C886757F`](https://docs.fivem.net/natives/?_0x7619EEE8C886757F)**
 ---
