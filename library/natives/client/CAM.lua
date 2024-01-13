@@ -1831,8 +1831,8 @@ function StopCutsceneCamShaking() end
 
 ---**`CAM` `client` [`0x0EF93E9F3D08C178`](https://docs.fivem.net/natives/?_0x0EF93E9F3D08C178)**
 ---
----@param p0 boolean
-function StopGameplayCamShaking(p0) end
+---@param bStopImmediately boolean Should the shake stop this frame.
+function StopGameplayCamShaking(bStopImmediately) end
 
 ---**`CAM` `client` [`0xF46C581C61718916`](https://docs.fivem.net/natives/?_0xF46C581C61718916)**
 ---
