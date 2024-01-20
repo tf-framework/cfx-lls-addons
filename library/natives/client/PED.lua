@@ -3351,8 +3351,8 @@ function RegisterHatedTargetsAroundPed(ped, radius) end
 ---end)
 ---```
 ---
----@param ped Ped
----@return number # The Pedheadshot handle.
+---@param ped Ped The ped you want to take the "headshot" of.
+---@return number # It returns a Pedheadshot handle, which can be used by natives such as [`GET_PEDHEADSHOT_TXD_STRING`](#\_0xDB4EACD4AD0A5D6B)
 function RegisterPedheadshot(ped) end
 
 ---**`PED` `client` [`0x953563CE563143AF`](https://docs.fivem.net/natives/?_0x953563CE563143AF)**
