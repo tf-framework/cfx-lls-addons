@@ -364,7 +364,7 @@ function N_0xd9f692d349249528() end
 ---**`MISC` `client` [`0xE3D969D2785FFB5E`](https://docs.fivem.net/natives/?_0xE3D969D2785FFB5E)**
 ---
 ---```
----sets something to 1
+---sets something to 1  
 ---```
 ---
 function N_0xe3d969d2785ffb5e() end
@@ -488,8 +488,8 @@ function Acos(p0) end
 ---**`MISC` `client` [`0x1F464EF988465A81`](https://docs.fivem.net/natives/?_0x1F464EF988465A81)**
 ---
 ---```
----Returns the index of the newly created hospital spawn point.
----p3 might be radius?
+---Returns the index of the newly created hospital spawn point.  
+---p3 might be radius?  
 ---```
 ---
 ---@param x number
@@ -626,7 +626,7 @@ function AddStuntJump(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, camX, camY
 ---}
 ---
 ---local stuntjump = AddStuntJumpAngled(
----    data.entry.leftbottom,
+---    data.entry.leftbottom, 
 ---    data.entry.righttop,
 ---    data.entry.radius,
 ---    data.landing.start,
@@ -671,29 +671,7 @@ function AddStuntJump(x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4, camX, camY
 ---@param unk2 number always 0
 ---@param unk3 number always 0
 ---@return number # The ID of the stuntjump that was created.
-function AddStuntJumpAngled(
-	x1,
-	y1,
-	z1,
-	x2,
-	y2,
-	z2,
-	radius1,
-	x3,
-	y3,
-	z3,
-	x4,
-	y4,
-	z4,
-	radius2,
-	camX,
-	camY,
-	camZ,
-	unk1,
-	unk2,
-	unk3
-)
-end
+function AddStuntJumpAngled(x1, y1, z1, x2, y2, z2, radius1, x3, y3, z3, x4, y4, z4, radius2, camX, camY, camZ, unk1, unk2, unk3) end
 
 ---**`MISC` `client` [`0xDEA36202FC3382DF`](https://docs.fivem.net/natives/?_0xDEA36202FC3382DF)**
 ---
@@ -770,7 +748,7 @@ function ClearAngledAreaOfVehicles(x1, y1, z1, x2, y2, z2, width, p7, p8, p9, p1
 ---**`MISC` `client` [`0xA56F01F3765B93A0`](https://docs.fivem.net/natives/?_0xA56F01F3765B93A0)**
 ---
 ---```
----Example: CLEAR_AREA(0, 0, 0, 30, true, false, false, false);
+---Example: CLEAR_AREA(0, 0, 0, 30, true, false, false, false);  
 ---```
 ---
 ---@param X number
@@ -819,7 +797,7 @@ function ClearAreaOfCops(x, y, z, radius, createNetEvent) end
 ---**`MISC` `client` [`0xDD9B9B385AAC7F5B`](https://docs.fivem.net/natives/?_0xDD9B9B385AAC7F5B)**
 ---
 ---```
----I looked through the PC scripts that this site provides you with a link to find. It shows the last param mainly uses, (0, 2, 6, 16, and 17) so I am going to assume it is a type of flag.
+---I looked through the PC scripts that this site provides you with a link to find. It shows the last param mainly uses, (0, 2, 6, 16, and 17) so I am going to assume it is a type of flag.  
 ---```
 ---
 ---@param x number
@@ -866,7 +844,7 @@ function ClearAreaOfProjectiles(x, y, z, radius, createNetEvent) end
 ---**`MISC` `client` [`0x01C7B9B38428AEB6`](https://docs.fivem.net/natives/?_0x01C7B9B38428AEB6)**
 ---
 ---```
----Example: 		CLEAR_AREA_OF_VEHICLES(0, 0, 0, 10000, false, false, false, false, false);
+---Example: 		CLEAR_AREA_OF_VEHICLES(0, 0, 0, 10000, false, false, false, false, false);  
 ---```
 ---
 ---```
@@ -965,19 +943,19 @@ function CompareStrings(str1, str2, matchCase, maxLength) end
 ---**`MISC` `client` [`0x3F892CAF67444AE7`](https://docs.fivem.net/natives/?_0x3F892CAF67444AE7)**
 ---
 ---```
----enum IncidentTypes
----{
----    FireDepartment = 3,
----    Paramedics = 5,
----    Police = 7,
----    PedsInCavalcades = 11,
----    Merryweather = 14
----};
----As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.
----Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).
----Side Note 2: I say it breaks as if you call this proper,
----if(CREATE_INCIDENT) etc it will return false if you do as I said above.
----=====================================================
+---enum IncidentTypes  
+---{  
+---    FireDepartment = 3,  
+---    Paramedics = 5,  
+---    Police = 7,  
+---    PedsInCavalcades = 11,   
+---    Merryweather = 14  
+---};  
+---As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.   
+---Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).  
+---Side Note 2: I say it breaks as if you call this proper,  
+---if(CREATE_INCIDENT) etc it will return false if you do as I said above.  
+---=====================================================  
 ---```
 ---
 ---```
@@ -998,23 +976,23 @@ function CreateIncident(dispatchService, x, y, z, numUnits, radius, outIncidentI
 ---**`MISC` `client` [`0x05983472F0494E60`](https://docs.fivem.net/natives/?_0x05983472F0494E60)**
 ---
 ---```
----p0 could be type (valueused in scripts: 14, 7, 5, 3, 11)
----p1 is a return from get_player_ped() in am_gang_call.c, but player_ped_id() in other (non am) scripts.
----p3 is usually 0f or 3f
----=====================================================
----enum IncidentTypes
----{
----    FireDepartment = 3,
----    Paramedics = 5,
----    Police = 7,
----    PedsInCavalcades = 11,
----    Merryweather = 14
----};
----As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.
----Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).
----Side Note 2: I say it breaks as if you call this proper,
----if(CREATE_INCIDENT) etc it will return false if you do as I said above.
----=====================================================
+---p0 could be type (valueused in scripts: 14, 7, 5, 3, 11)  
+---p1 is a return from get_player_ped() in am_gang_call.c, but player_ped_id() in other (non am) scripts.  
+---p3 is usually 0f or 3f  
+---=====================================================  
+---enum IncidentTypes  
+---{  
+---    FireDepartment = 3,  
+---    Paramedics = 5,  
+---    Police = 7,  
+---    PedsInCavalcades = 11,   
+---    Merryweather = 14  
+---};  
+---As for the 'police' incident, it will call police cars to you, but unlike PedsInCavalcades & Merryweather they won't start shooting at you unless you shoot first or shoot at them. The top 2 however seem to cancel theirselves if there is noone dead around you or a fire. I only figured them out as I found out the 3rd param is definately the amountOfPeople and they called incident 3 in scripts with 4 people (which the firetruck has) and incident 5 with 2 people (which the ambulence has). The 4 param I cant say is radius, but for the pedsInCavalcades and Merryweather R* uses 0.0f and for the top 3 (Emergency Services) they use 3.0f.   
+---Side Note: It seems calling the pedsInCavalcades or Merryweather then removing it seems to break you from calling the EmergencyEvents and I also believe pedsInCavalcades. (The V cavalcades of course not IV).  
+---Side Note 2: I say it breaks as if you call this proper,  
+---if(CREATE_INCIDENT) etc it will return false if you do as I said above.  
+---=====================================================  
 ---```
 ---
 ---```
@@ -1033,12 +1011,12 @@ function CreateIncidentWithEntity(dispatchService, ped, numUnits, radius, outInc
 ---**`MISC` `client` [`0x556C1AA270D5A207`](https://docs.fivem.net/natives/?_0x556C1AA270D5A207)**
 ---
 ---```
----Delete an incident with a given id.
----=======================================================
----Correction, I have change this to int, instead of int*
----as it doesn't use a pointer to the createdIncident.
----If you try it you will crash (or) freeze.
----=======================================================
+---Delete an incident with a given id.  
+---=======================================================  
+---Correction, I have change this to int, instead of int*  
+---as it doesn't use a pointer to the createdIncident.  
+---If you try it you will crash (or) freeze.  
+---=======================================================  
 ---```
 ---
 ---@param incidentId number
@@ -1080,32 +1058,32 @@ function DisableStuntJumpSet(p0) end
 ---**`MISC` `client` [`0x00DC833F2568DBF6`](https://docs.fivem.net/natives/?_0x00DC833F2568DBF6)**
 ---
 ---```
----windowTitle's
---------------------
----CELL_EMAIL_BOD	=	"Enter your Eyefind message"
----CELL_EMAIL_BODE	=	"Message too long. Try again"
----CELL_EMAIL_BODF	=	"Forbidden message. Try again"
----CELL_EMAIL_SOD	=	"Enter your Eyefind subject"
----CELL_EMAIL_SODE	=	"Subject too long. Try again"
----CELL_EMAIL_SODF	=	"Forbidden text. Try again"
----CELL_EMASH_BOD	=	"Enter your Eyefind message"
----CELL_EMASH_BODE	=	"Message too long. Try again"
----CELL_EMASH_BODF	=	"Forbidden message. Try again"
----CELL_EMASH_SOD	=	"Enter your Eyefind subject"
----CELL_EMASH_SODE	=	"Subject too long. Try again"
----CELL_EMASH_SODF	=	"Forbidden Text. Try again"
----FMMC_KEY_TIP10	=	"Enter Synopsis"
----FMMC_KEY_TIP12	=	"Enter Custom Team Name"
----FMMC_KEY_TIP12F	=	"Forbidden Text. Try again"
----FMMC_KEY_TIP12N	=	"Custom Team Name"
----FMMC_KEY_TIP8	=	"Enter Message"
----FMMC_KEY_TIP8F	=	"Forbidden Text. Try again"
----FMMC_KEY_TIP8FS	=	"Invalid Message. Try again"
----FMMC_KEY_TIP8S	=	"Enter Message"
----FMMC_KEY_TIP9	=	"Enter Outfit Name"
----FMMC_KEY_TIP9F	=	"Invalid Outfit Name. Try again"
----FMMC_KEY_TIP9N	=	"Outfit Name"
----PM_NAME_CHALL	=	"Enter Challenge Name"
+---windowTitle's  
+--------------------  
+---CELL_EMAIL_BOD	=	"Enter your Eyefind message"  
+---CELL_EMAIL_BODE	=	"Message too long. Try again"  
+---CELL_EMAIL_BODF	=	"Forbidden message. Try again"  
+---CELL_EMAIL_SOD	=	"Enter your Eyefind subject"  
+---CELL_EMAIL_SODE	=	"Subject too long. Try again"  
+---CELL_EMAIL_SODF	=	"Forbidden text. Try again"  
+---CELL_EMASH_BOD	=	"Enter your Eyefind message"  
+---CELL_EMASH_BODE	=	"Message too long. Try again"  
+---CELL_EMASH_BODF	=	"Forbidden message. Try again"  
+---CELL_EMASH_SOD	=	"Enter your Eyefind subject"  
+---CELL_EMASH_SODE	=	"Subject too long. Try again"  
+---CELL_EMASH_SODF	=	"Forbidden Text. Try again"  
+---FMMC_KEY_TIP10	=	"Enter Synopsis"  
+---FMMC_KEY_TIP12	=	"Enter Custom Team Name"  
+---FMMC_KEY_TIP12F	=	"Forbidden Text. Try again"  
+---FMMC_KEY_TIP12N	=	"Custom Team Name"  
+---FMMC_KEY_TIP8	=	"Enter Message"  
+---FMMC_KEY_TIP8F	=	"Forbidden Text. Try again"  
+---FMMC_KEY_TIP8FS	=	"Invalid Message. Try again"  
+---FMMC_KEY_TIP8S	=	"Enter Message"  
+---FMMC_KEY_TIP9	=	"Enter Outfit Name"  
+---FMMC_KEY_TIP9F	=	"Invalid Outfit Name. Try again"  
+---FMMC_KEY_TIP9N	=	"Outfit Name"  
+---PM_NAME_CHALL	=	"Enter Challenge Name"  
 ---```
 ---
 ---@param p0 number
@@ -1116,17 +1094,7 @@ function DisableStuntJumpSet(p0) end
 ---@param defaultConcat2 string
 ---@param defaultConcat3 string
 ---@param maxInputLength number
-function DisplayOnscreenKeyboard(
-	p0,
-	windowTitle,
-	p2,
-	defaultText,
-	defaultConcat1,
-	defaultConcat2,
-	defaultConcat3,
-	maxInputLength
-)
-end
+function DisplayOnscreenKeyboard(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, maxInputLength) end
 
 ---**`MISC` `client` [`0xCA78CFA0366592FE`](https://docs.fivem.net/natives/?_0xCA78CFA0366592FE)**
 ---
@@ -1142,21 +1110,7 @@ end
 ---@param defaultConcat6 string
 ---@param defaultConcat7 string
 ---@param maxInputLength number
-function DisplayOnscreenKeyboardWithLongerInitialString(
-	p0,
-	windowTitle,
-	p2,
-	defaultText,
-	defaultConcat1,
-	defaultConcat2,
-	defaultConcat3,
-	defaultConcat4,
-	defaultConcat5,
-	defaultConcat6,
-	defaultConcat7,
-	maxInputLength
-)
-end
+function DisplayOnscreenKeyboardWithLongerInitialString(p0, windowTitle, p2, defaultText, defaultConcat1, defaultConcat2, defaultConcat3, defaultConcat4, defaultConcat5, defaultConcat6, defaultConcat7, maxInputLength) end
 
 ---**`MISC` `client` [`0x1327E2FE9746BAEE`](https://docs.fivem.net/natives/?_0x1327E2FE9746BAEE)**
 ---
@@ -1216,7 +1170,7 @@ function EnableStuntJumpSet(p0) end
 ---**`MISC` `client` [`0x28A04B411933F8A6`](https://docs.fivem.net/natives/?_0x28A04B411933F8A6)**
 ---
 ---```
----Makes the ped jump around like they're in a tennis match
+---Makes the ped jump around like they're in a tennis match  
 ---```
 ---
 ---@param ped Ped
@@ -1231,9 +1185,9 @@ function EndReplayStats() end
 ---**`MISC` `client` [`0x6874E2190B0C1972`](https://docs.fivem.net/natives/?_0x6874E2190B0C1972)**
 ---
 ---```
----Finds a position ahead of the player by predicting the players next actions.
----The positions match path finding node positions.
----When roads diverge, the position may rapidly change between two or more positions. This is due to the engine not being certain of which path the player will take.
+---Finds a position ahead of the player by predicting the players next actions.  
+---The positions match path finding node positions.  
+---When roads diverge, the position may rapidly change between two or more positions. This is due to the engine not being certain of which path the player will take.  
 ---```
 ---
 ---@param posX number
@@ -1250,16 +1204,16 @@ function FindSpawnPointInDirection(posX, posY, posZ, dirX, dirY, dirZ, distance,
 ---**`MISC` `client` [`0xC0AA53F866B3134D`](https://docs.fivem.net/natives/?_0xC0AA53F866B3134D)**
 ---
 ---```
----Sets the localplayer playerinfo state back to playing (State 0)
----States are:
-----1: "Invalid"
----0: "Playing"
----1: "Died"
----2: "Arrested"
----3: "Failed Mission"
----4: "Left Game"
----5: "Respawn"
----6: "In MP Cutscene"
+---Sets the localplayer playerinfo state back to playing (State 0)  
+---States are:  
+----1: "Invalid"  
+---0: "Playing"  
+---1: "Died"  
+---2: "Arrested"  
+---3: "Failed Mission"  
+---4: "Left Game"  
+---5: "Respawn"  
+---6: "In MP Cutscene"  
 ---```
 ---
 function ForceGameStatePlaying() end
@@ -1267,7 +1221,7 @@ function ForceGameStatePlaying() end
 ---**`MISC` `client` [`0xF6062E089251C898`](https://docs.fivem.net/natives/?_0xF6062E089251C898)**
 ---
 ---```
----creates single lightning+thunder at random position
+---creates single lightning+thunder at random position  
 ---```
 ---
 function ForceLightningFlash() end
@@ -1518,7 +1472,7 @@ function GetNumSuccessfulStuntJumps() end
 ---**`MISC` `client` [`0x8362B09B91893647`](https://docs.fivem.net/natives/?_0x8362B09B91893647)**
 ---
 ---```
----Returns NULL unless UPDATE_ONSCREEN_KEYBOARD() returns 1 in the same tick.
+---Returns NULL unless UPDATE_ONSCREEN_KEYBOARD() returns 1 in the same tick.  
 ---```
 ---
 ---@return string
@@ -1617,7 +1571,7 @@ function GetWindSpeed() end
 ---**`MISC` `client` [`0x9870ACFB89A90995`](https://docs.fivem.net/natives/?_0x9870ACFB89A90995)**
 ---
 ---```
----p3 - possibly radius?
+---p3 - possibly radius?  
 ---```
 ---
 ---@param x number
@@ -1752,7 +1706,7 @@ function IsDurangoVersion() end
 ---**`MISC` `client` [`0x7EA2B6AF97ECA6ED`](https://docs.fivem.net/natives/?_0x7EA2B6AF97ECA6ED)**
 ---
 ---```
----This function is hard-coded to always return 0.
+---This function is hard-coded to always return 0.  
 ---```
 ---
 ---@return boolean
@@ -1761,11 +1715,11 @@ function IsFrontendFading() end
 ---**`MISC` `client` [`0xC8BC6461E629BEAA`](https://docs.fivem.net/natives/?_0xC8BC6461E629BEAA)**
 ---
 ---```
----=======================================================
----Correction, I have change this to int, instead of int*
----as it doesn't use a pointer to the createdIncident.
----If you try it you will crash (or) freeze.
----=======================================================
+---=======================================================  
+---Correction, I have change this to int, instead of int*  
+---as it doesn't use a pointer to the createdIncident.  
+---If you try it you will crash (or) freeze.  
+---=======================================================  
 ---```
 ---
 ---@param incidentId number
@@ -1841,8 +1795,8 @@ function IsPrevWeatherType(weatherType) end
 ---**`MISC` `client` [`0x5270A8FBC098C3F8`](https://docs.fivem.net/natives/?_0x5270A8FBC098C3F8)**
 ---
 ---```
----Determines whether there is a projectile within the specified coordinates. The coordinates form a rectangle.
----ownedByPlayer = only projectiles fired by the player will be detected.
+---Determines whether there is a projectile within the specified coordinates. The coordinates form a rectangle.  
+---ownedByPlayer = only projectiles fired by the player will be detected.  
 ---```
 ---
 ---@param x1 number
@@ -1879,7 +1833,7 @@ function IsProjectileTypeInAngledArea(x1, y1, z1, x2, y2, z2, width, p7, weaponH
 ---**`MISC` `client` [`0x2E0DC353342C4A6D`](https://docs.fivem.net/natives/?_0x2E0DC353342C4A6D)**
 ---
 ---```
----Determines whether there is a projectile of a specific type within the specified coordinates. The coordinates form a axis-aligned bounding box.
+---Determines whether there is a projectile of a specific type within the specified coordinates. The coordinates form a axis-aligned bounding box.  
 ---```
 ---
 ---@param x1 number
@@ -1912,7 +1866,7 @@ function IsPs3Version() end
 ---**`MISC` `client` [`0xFEFCF11B01287125`](https://docs.fivem.net/natives/?_0xFEFCF11B01287125)**
 ---
 ---```
----Determines whether there is a sniper bullet within the specified coordinates. The coordinates form an axis-aligned bounding box.
+---Determines whether there is a sniper bullet within the specified coordinates. The coordinates form an axis-aligned bounding box.  
 ---```
 ---
 ---@param x1 number
@@ -1927,7 +1881,7 @@ function IsSniperBulletInArea(x1, y1, z1, x2, y2, z2) end
 ---**`MISC` `client` [`0x61A23B7EDA9BDA24`](https://docs.fivem.net/natives/?_0x61A23B7EDA9BDA24)**
 ---
 ---```
----This function is hard-coded to always return 0.
+---This function is hard-coded to always return 0.  
 ---```
 ---
 ---@return boolean
@@ -2056,7 +2010,7 @@ function PlayTennisSwingAnim(ped, animDict, animName, p3, p4, p5) end
 ---**`MISC` `client` [`0x7472BB270D7B4F3E`](https://docs.fivem.net/natives/?_0x7472BB270D7B4F3E)**
 ---
 ---```
----spawns a few distant/out-of-sight peds, vehicles, animals etc each time it is called
+---spawns a few distant/out-of-sight peds, vehicles, animals etc each time it is called  
 ---```
 ---
 function PopulateNow() end
@@ -2261,7 +2215,7 @@ function SetExplosiveMeleeThisFrame(player) end
 ---**`MISC` `client` [`0xDA66D2796BA33F12`](https://docs.fivem.net/natives/?_0xDA66D2796BA33F12)**
 ---
 ---```
----Sets whether the game should fade in after the player dies or is arrested.
+---Sets whether the game should fade in after the player dies or is arrested.  
 ---```
 ---
 ---@param toggle boolean
@@ -2275,7 +2229,7 @@ function SetFadeInAfterLoad(toggle) end
 ---**`MISC` `client` [`0x1E0B4DC0D990A4E7`](https://docs.fivem.net/natives/?_0x1E0B4DC0D990A4E7)**
 ---
 ---```
----Sets whether the game should fade out after the player is arrested.
+---Sets whether the game should fade out after the player is arrested.  
 ---```
 ---
 ---@param toggle boolean
@@ -2284,7 +2238,7 @@ function SetFadeOutAfterArrest(toggle) end
 ---**`MISC` `client` [`0x4A18E01DF2C87B86`](https://docs.fivem.net/natives/?_0x4A18E01DF2C87B86)**
 ---
 ---```
----Sets whether the game should fade out after the player dies.
+---Sets whether the game should fade out after the player dies.  
 ---```
 ---
 ---@param toggle boolean
@@ -2308,7 +2262,7 @@ function SetFireAmmoThisFrame(player) end
 ---**`MISC` `client` [`0x577D1284D6873711`](https://docs.fivem.net/natives/?_0x577D1284D6873711)**
 ---
 ---```
----Make sure to call this from the correct thread if you're using multiple threads because all other threads except the one which is calling SET_GAME_PAUSED will be paused which means you will lose control and the game remains in paused mode until you exit GTA5.exe
+---Make sure to call this from the correct thread if you're using multiple threads because all other threads except the one which is calling SET_GAME_PAUSED will be paused which means you will lose control and the game remains in paused mode until you exit GTA5.exe  
 ---```
 ---
 ---@param toggle boolean
@@ -2317,11 +2271,11 @@ function SetGamePaused(toggle) end
 ---**`MISC` `client` [`0x740E14FAD5842351`](https://docs.fivem.net/natives/?_0x740E14FAD5842351)**
 ---
 ---```
----level can be from 0 to 3
----0: 9.8
----1: 2.4
----2: 0.1 - very low
----3: 0.0
+---level can be from 0 to 3  
+---0: 9.8   
+---1: 2.4   
+---2: 0.1 - very low  
+---3: 0.0  
 ---```
 ---
 ---@param level number
@@ -2358,9 +2312,9 @@ function SetMinigameInProgress(toggle) end
 ---**`MISC` `client` [`0xC4301E5121A0ED73`](https://docs.fivem.net/natives/?_0xC4301E5121A0ED73)**
 ---
 ---```
----If true, the player can't save the game.
----If the parameter is true, sets the mission flag to true, if the parameter is false, the function does nothing at all.
----^ also, if the mission flag is already set, the function does nothing at all
+---If true, the player can't save the game.   
+---If the parameter is true, sets the mission flag to true, if the parameter is false, the function does nothing at all.  
+---^ also, if the mission flag is already set, the function does nothing at all  
 ---```
 ---
 ---@param toggle boolean
@@ -2376,8 +2330,8 @@ function SetOverrideWeather(weatherType) end
 ---**`MISC` `client` [`0x971927086CFD2158`](https://docs.fivem.net/natives/?_0x971927086CFD2158)**
 ---
 ---```
----If the parameter is true, sets the random event flag to true, if the parameter is false, the function does nothing at all.
----Does nothing if the mission flag is set.
+---If the parameter is true, sets the random event flag to true, if the parameter is false, the function does nothing at all.  
+---Does nothing if the mission flag is set.  
 ---```
 ---
 ---@param toggle boolean
@@ -2454,11 +2408,11 @@ function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 ---**`MISC` `client` [`0x1D408577D440E81E`](https://docs.fivem.net/natives/?_0x1D408577D440E81E)**
 ---
 ---```
----Maximum value is 1.
----At a value of 0 the game will still run at a minimum time scale.
----Slow Motion 1: 0.6
----Slow Motion 2: 0.4
----Slow Motion 3: 0.2
+---Maximum value is 1.  
+---At a value of 0 the game will still run at a minimum time scale.  
+---Slow Motion 1: 0.6  
+---Slow Motion 2: 0.4  
+---Slow Motion 3: 0.2  
 ---```
 ---
 ---@param timeScale number
@@ -2513,7 +2467,7 @@ function SetWeatherTypePersist(weatherType) end
 ---**`MISC` `client` [`0xAC3A74E8384A9919`](https://docs.fivem.net/natives/?_0xAC3A74E8384A9919)**
 ---
 ---```
----Sets the the raw wind speed value.
+---Sets the the raw wind speed value.  
 ---```
 ---
 ---@param speed number
@@ -2535,7 +2489,7 @@ function SetWindDirection(direction) end
 ---**`MISC` `client` [`0xEE09ECEDBABE47FC`](https://docs.fivem.net/natives/?_0xEE09ECEDBABE47FC)**
 ---
 ---```
----Using this native will clamp the wind speed value to a range of 0.0- 12.0. Using SET_WIND sets the same value but without the restriction.
+---Using this native will clamp the wind speed value to a range of 0.0- 12.0. Using SET_WIND sets the same value but without the restriction.  
 ---```
 ---
 ---@param speed number
@@ -2558,27 +2512,12 @@ function SetWindSpeed(speed) end
 ---@param isAudible boolean Whether the bullet should be audible. Optional, defaults to true
 ---@param isInvisible boolean Whether the bullet should be invisible. Optional, defaults to false
 ---@param speed number Speed the bullet should fly at. Optional
-function ShootSingleBulletBetweenCoords(
-	x1,
-	y1,
-	z1,
-	x2,
-	y2,
-	z2,
-	damage,
-	pureAccuracy,
-	weaponHash,
-	ownerPed,
-	isAudible,
-	isInvisible,
-	speed
-)
-end
+function ShootSingleBulletBetweenCoords(x1, y1, z1, x2, y2, z2, damage, pureAccuracy, weaponHash, ownerPed, isAudible, isInvisible, speed) end
 
 ---**`MISC` `client` [`0xE3A7742E0B7A2F8B`](https://docs.fivem.net/natives/?_0xE3A7742E0B7A2F8B)**
 ---
 ---```
----entity - entity to ignore
+---entity - entity to ignore  
 ---```
 ---
 ---```
@@ -2599,23 +2538,7 @@ end
 ---@param isInvisible boolean
 ---@param speed number
 ---@param entity Entity
-function ShootSingleBulletBetweenCoordsIgnoreEntity(
-	x1,
-	y1,
-	z1,
-	x2,
-	y2,
-	z2,
-	damage,
-	p7,
-	weaponHash,
-	ownerPed,
-	isAudible,
-	isInvisible,
-	speed,
-	entity
-)
-end
+function ShootSingleBulletBetweenCoordsIgnoreEntity(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity) end
 
 ---**`MISC` `client` [`0xBFE5756E7407064A`](https://docs.fivem.net/natives/?_0xBFE5756E7407064A)**
 ---
@@ -2643,27 +2566,7 @@ end
 ---@param p15 boolean
 ---@param p16 boolean
 ---@param p17 boolean
-function ShootSingleBulletBetweenCoordsIgnoreEntityNew(
-	x1,
-	y1,
-	z1,
-	x2,
-	y2,
-	z2,
-	damage,
-	p7,
-	weaponHash,
-	ownerPed,
-	isAudible,
-	isInvisible,
-	speed,
-	entity,
-	p14,
-	p15,
-	p16,
-	p17
-)
-end
+function ShootSingleBulletBetweenCoordsIgnoreEntityNew(x1, y1, z1, x2, y2, z2, damage, p7, weaponHash, ownerPed, isAudible, isInvisible, speed, entity, p14, p15, p16, p17) end
 
 ---**`MISC` `client` [`0xD3D15555431AB793`](https://docs.fivem.net/natives/?_0xD3D15555431AB793)**
 ---
@@ -2736,8 +2639,8 @@ function StopSaveStruct() end
 ---**`MISC` `client` [`0x5A5F40FE637EB584`](https://docs.fivem.net/natives/?_0x5A5F40FE637EB584)**
 ---
 ---```
----Returns false if it's a null or empty string or if the string is too long. outInteger will be set to -999 in that case.
----If all checks have passed successfully, the return value will be set to whatever strtol(string, 0i64, 10); returns.
+---Returns false if it's a null or empty string or if the string is too long. outInteger will be set to -999 in that case.  
+---If all checks have passed successfully, the return value will be set to whatever strtol(string, 0i64, 10); returns.  
 ---```
 ---
 ---@param string string
@@ -2856,10 +2759,10 @@ function WaterOverrideSetShorewaveminamplitude(minAmplitude) end
 ---**`MISC` `client` [`0xC54A08C85AE4D410`](https://docs.fivem.net/natives/?_0xC54A08C85AE4D410)**
 ---
 ---```
----This seems to edit the water wave, intensity around your current location.
----0.0f = Normal
----1.0f = So Calm and Smooth, a boat will stay still.
----3.0f = Really Intense.
+---This seems to edit the water wave, intensity around your current location.  
+---0.0f = Normal  
+---1.0f = So Calm and Smooth, a boat will stay still.  
+---3.0f = Really Intense.  
 ---```
 ---
 ---@param strength number
@@ -2937,7 +2840,7 @@ function CopyMemory(dst, src, size) end
 ---**`MISC` `client` [`0xEB6891F03362FB12`](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)**
 ---
 ---```
----Exits the game and downloads a fresh social club update on next restart.
+---Exits the game and downloads a fresh social club update on next restart.  
 ---```
 ---
 function ForceSocialClubUpdate() end
@@ -3282,8 +3185,8 @@ function SetSnowLevel(level) end
 ---Refer to [`SET_WEATHER_TYPE_NOW_PERSIST`](#\_0xED712CA327900C8A) for weather types.
 ---
 ---```
----Mixes two weather types. If percentWeather2 is set to 0.0f, then the weather will be entirely of weatherType1, if it is set to 1.0f it will be entirely of weatherType2. If it's set somewhere in between, there will be a mixture of weather behaviors. To test, try this in the RPH console, and change the float to different values between 0 and 1:
----execute "NativeFunction.Natives.x578C752848ECFA0C(Game.GetHashKey(""RAIN""), Game.GetHashKey(""SMOG""), 0.50f);
+---Mixes two weather types. If percentWeather2 is set to 0.0f, then the weather will be entirely of weatherType1, if it is set to 1.0f it will be entirely of weatherType2. If it's set somewhere in between, there will be a mixture of weather behaviors. To test, try this in the RPH console, and change the float to different values between 0 and 1:  
+---execute "NativeFunction.Natives.x578C752848ECFA0C(Game.GetHashKey(""RAIN""), Game.GetHashKey(""SMOG""), 0.50f);  
 ---```
 ---
 ---@param weatherType1 Hash

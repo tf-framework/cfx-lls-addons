@@ -91,15 +91,15 @@ function N_0x1a8ea222f9c67dbb(p0) end
 ---**`STATS` `client` [`0x26D7399B9587FE89`](https://docs.fivem.net/natives/?_0x26D7399B9587FE89)**
 ---
 ---```
----STATS::0x343B27E2(0);
----STATS::0x343B27E2(1);
----STATS::0x343B27E2(2);
----STATS::0x343B27E2(3);
----STATS::0x343B27E2(4);
----STATS::0x343B27E2(5);
----STATS::0x343B27E2(6);
----STATS::0x343B27E2(7);
----Identical in ingamehud & maintransition.
+---STATS::0x343B27E2(0);  
+---STATS::0x343B27E2(1);  
+---STATS::0x343B27E2(2);  
+---STATS::0x343B27E2(3);  
+---STATS::0x343B27E2(4);  
+---STATS::0x343B27E2(5);  
+---STATS::0x343B27E2(6);  
+---STATS::0x343B27E2(7);  
+---Identical in ingamehud & maintransition.  
 ---```
 ---
 ---@param p0 number
@@ -216,7 +216,7 @@ function N_0x38491439b6ba7f7d(p0, p1) end
 ---**`STATS` `client` [`0x38BAAA5DD4C9D19F`](https://docs.fivem.net/natives/?_0x38BAAA5DD4C9D19F)**
 ---
 ---```
----Sets profile setting 934
+---Sets profile setting 934  
 ---```
 ---
 ---@param value number
@@ -295,7 +295,7 @@ function N_0x53cae13e9b426993(p0) end
 ---**`STATS` `client` [`0x55384438FC55AD8E`](https://docs.fivem.net/natives/?_0x55384438FC55AD8E)**
 ---
 ---```
----Sets profile setting 935
+---Sets profile setting 935  
 ---```
 ---
 ---@param value number
@@ -499,7 +499,7 @@ function N_0x7e6946f68a38b74f(p0) end
 ---**`STATS` `client` [`0x7EEC2A316C250073`](https://docs.fivem.net/natives/?_0x7EEC2A316C250073)**
 ---
 ---```
----_PLAYSTATS_ROB_ARMOURD_TRUCK
+---_PLAYSTATS_ROB_ARMOURD_TRUCK  
 ---```
 ---
 ---@param p0 any
@@ -664,13 +664,13 @@ function N_0xa761d4ac6115623d() end
 ---**`STATS` `client` [`0xA78B8FA58200DA56`](https://docs.fivem.net/natives/?_0xA78B8FA58200DA56)**
 ---
 ---```
----STATS::0xE3247582(0);
----STATS::0xE3247582(1);
----STATS::0xE3247582(2);
----STATS::0xE3247582(3);
----STATS::0xE3247582(4);
----STATS::0xE3247582(5);
----STATS::0xE3247582(6);
+---STATS::0xE3247582(0);  
+---STATS::0xE3247582(1);  
+---STATS::0xE3247582(2);  
+---STATS::0xE3247582(3);  
+---STATS::0xE3247582(4);  
+---STATS::0xE3247582(5);  
+---STATS::0xE3247582(6);  
 ---```
 ---
 ---@param p0 number
@@ -947,7 +947,7 @@ function N_0xf11f01d98113536a(p0) end
 ---**`STATS` `client` [`0xF1A1803D3476F215`](https://docs.fivem.net/natives/?_0xF1A1803D3476F215)**
 ---
 ---```
----Sets profile setting 933
+---Sets profile setting 933  
 ---```
 ---
 ---@param value number
@@ -1298,7 +1298,7 @@ function PlaystatsHoldUpMissionDone(p0, p1, p2, p3) end
 ---**`STATS` `client` [`0x5DA3A8DE8CB6226F`](https://docs.fivem.net/natives/?_0x5DA3A8DE8CB6226F)**
 ---
 ---```
----longest time being ilde?
+---longest time being ilde?  
 ---```
 ---
 ---@param time number
@@ -1531,7 +1531,7 @@ function StatGetBool(statHash, outValue, p2) end
 ---**`STATS` `client` [`0x10FE3F1B79F9B071`](https://docs.fivem.net/natives/?_0x10FE3F1B79F9B071)**
 ---
 ---```
----p2 - Default value? Seems to be -1 most of the time.
+---p2 - Default value? Seems to be -1 most of the time.  
 ---```
 ---
 ---@param statName Hash
@@ -1560,7 +1560,7 @@ function StatGetFloat(statHash, outValue, p2) end
 ---**`STATS` `client` [`0x767FBC2AC802EF3D`](https://docs.fivem.net/natives/?_0x767FBC2AC802EF3D)**
 ---
 ---```
----p2 appears to always be -1
+---p2 appears to always be -1  
 ---```
 ---
 ---@param statHash Hash
@@ -1628,7 +1628,7 @@ function StatGetSaveMigrationStatus(data) end
 ---**`STATS` `client` [`0xE50384ACC2C3DB74`](https://docs.fivem.net/natives/?_0xE50384ACC2C3DB74)**
 ---
 ---```
----p1 is always -1 in the script files
+---p1 is always -1 in the script files  
 ---```
 ---
 ---@param statHash Hash
@@ -1639,7 +1639,7 @@ function StatGetString(statHash, p1) end
 ---**`STATS` `client` [`0x2365C388E393BBE2`](https://docs.fivem.net/natives/?_0x2365C388E393BBE2)**
 ---
 ---```
----Needs more research. Seems to return "STAT_UNKNOWN" if no such user id exists.
+---Needs more research. Seems to return "STAT_UNKNOWN" if no such user id exists.  
 ---```
 ---
 ---@param p0 any
@@ -1725,7 +1725,7 @@ function StatSetCheatIsActive() end
 ---**`STATS` `client` [`0xC2F84B7F9C4D0C61`](https://docs.fivem.net/natives/?_0xC2F84B7F9C4D0C61)**
 ---
 ---```
----p1 always true.
+---p1 always true.  
 ---```
 ---
 ---@param statName Hash
@@ -1736,16 +1736,16 @@ function StatSetCurrentPosixTime(statName, p1) end
 ---**`STATS` `client` [`0x2C29BFB64F4FCBE4`](https://docs.fivem.net/natives/?_0x2C29BFB64F4FCBE4)**
 ---
 ---```
----'value' is a structure to a structure, 'numFields' is how many fields there are in said structure (usually 7).
----The structure looks like this:
----int year
----int month
----int day
----int hour
----int minute
----int second
----int millisecond
----The decompiled scripts use TIME::GET_POSIX_TIME to fill this structure.
+---'value' is a structure to a structure, 'numFields' is how many fields there are in said structure (usually 7).  
+---The structure looks like this:  
+---int year  
+---int month  
+---int day  
+---int hour  
+---int minute  
+---int second  
+---int millisecond  
+---The decompiled scripts use TIME::GET_POSIX_TIME to fill this structure.  
 ---```
 ---
 ---@param statName Hash
@@ -1771,70 +1771,70 @@ function StatSetFloat(statName, value, save) end
 ---**`STATS` `client` [`0x17695002FD8B2AE0`](https://docs.fivem.net/natives/?_0x17695002FD8B2AE0)**
 ---
 ---```
----The following values have been found in the decompiled scripts:
----"RC_ABI1"
----"RC_ABI2"
----"RC_BA1"
----"RC_BA2"
----"RC_BA3"
----"RC_BA3A"
----"RC_BA3C"
----"RC_BA4"
----"RC_DRE1"
----"RC_EPS1"
----"RC_EPS2"
----"RC_EPS3"
----"RC_EPS4"
----"RC_EPS5"
----"RC_EPS6"
----"RC_EPS7"
----"RC_EPS8"
----"RC_EXT1"
----"RC_EXT2"
----"RC_EXT3"
----"RC_EXT4"
----"RC_FAN1"
----"RC_FAN2"
----"RC_FAN3"
----"RC_HAO1"
----"RC_HUN1"
----"RC_HUN2"
----"RC_JOS1"
----"RC_JOS2"
----"RC_JOS3"
----"RC_JOS4"
----"RC_MAU1"
----"RC_MIN1"
----"RC_MIN2"
----"RC_MIN3"
----"RC_MRS1"
----"RC_MRS2"
----"RC_NI1"
----"RC_NI1A"
----"RC_NI1B"
----"RC_NI1C"
----"RC_NI1D"
----"RC_NI2"
----"RC_NI3"
----"RC_OME1"
----"RC_OME2"
----"RC_PA1"
----"RC_PA2"
----"RC_PA3"
----"RC_PA3A"
----"RC_PA3B"
----"RC_PA4"
----"RC_RAM1"
----"RC_RAM2"
----"RC_RAM3"
----"RC_RAM4"
----"RC_RAM5"
----"RC_SAS1"
----"RC_TON1"
----"RC_TON2"
----"RC_TON3"
----"RC_TON4"
----"RC_TON5"
+---The following values have been found in the decompiled scripts:  
+---"RC_ABI1"  
+---"RC_ABI2"  
+---"RC_BA1"  
+---"RC_BA2"  
+---"RC_BA3"  
+---"RC_BA3A"  
+---"RC_BA3C"  
+---"RC_BA4"  
+---"RC_DRE1"  
+---"RC_EPS1"  
+---"RC_EPS2"  
+---"RC_EPS3"  
+---"RC_EPS4"  
+---"RC_EPS5"  
+---"RC_EPS6"  
+---"RC_EPS7"  
+---"RC_EPS8"  
+---"RC_EXT1"  
+---"RC_EXT2"  
+---"RC_EXT3"  
+---"RC_EXT4"  
+---"RC_FAN1"  
+---"RC_FAN2"  
+---"RC_FAN3"  
+---"RC_HAO1"  
+---"RC_HUN1"  
+---"RC_HUN2"  
+---"RC_JOS1"  
+---"RC_JOS2"  
+---"RC_JOS3"  
+---"RC_JOS4"  
+---"RC_MAU1"  
+---"RC_MIN1"  
+---"RC_MIN2"  
+---"RC_MIN3"  
+---"RC_MRS1"  
+---"RC_MRS2"  
+---"RC_NI1"  
+---"RC_NI1A"  
+---"RC_NI1B"  
+---"RC_NI1C"  
+---"RC_NI1D"  
+---"RC_NI2"  
+---"RC_NI3"  
+---"RC_OME1"  
+---"RC_OME2"  
+---"RC_PA1"  
+---"RC_PA2"  
+---"RC_PA3"  
+---"RC_PA3A"  
+---"RC_PA3B"  
+---"RC_PA4"  
+---"RC_RAM1"  
+---"RC_RAM2"  
+---"RC_RAM3"  
+---"RC_RAM4"  
+---"RC_RAM5"  
+---"RC_SAS1"  
+---"RC_TON1"  
+---"RC_TON2"  
+---"RC_TON3"  
+---"RC_TON4"  
+---"RC_TON5"  
 ---```
 ---
 ---@param statName Hash
@@ -2495,7 +2495,7 @@ function StatGetCancelSaveMigrationStatus() end
 ---**`STATS` `client` [`0xF4D8E7AC2A27758C`](https://docs.fivem.net/natives/?_0xF4D8E7AC2A27758C)**
 ---
 ---```
----Needs more research. Possibly used to calculate the "mask" when calling "STAT_SET_BOOL_MASKED"?
+---Needs more research. Possibly used to calculate the "mask" when calling "STAT_SET_BOOL_MASKED"?  
 ---```
 ---
 ---@param p0 number
@@ -2505,7 +2505,7 @@ function StatGetPackedBoolMask(p0) end
 ---**`STATS` `client` [`0x94F12ABF9C79E339`](https://docs.fivem.net/natives/?_0x94F12ABF9C79E339)**
 ---
 ---```
----Needs more research. Possibly used to calculate the "mask" when calling "STAT_SET_MASKED_INT"?
+---Needs more research. Possibly used to calculate the "mask" when calling "STAT_SET_MASKED_INT"?  
 ---```
 ---
 ---@param p0 number

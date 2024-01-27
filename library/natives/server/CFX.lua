@@ -97,7 +97,7 @@ function AddPedDecorationFromHashes(ped, collection, overlay) end
 ---
 ---Example code:
 ---```lua
----AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value)
+---AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
 ---    local entity = GetEntityFromStateBagName(bagName)
 ---    -- Whoops, we don't have a valid entity!
 ---    if entity === 0 then return end
@@ -154,23 +154,7 @@ function AddStateBagChangeHandler(keyFilter, bagFilter, handler) end
 ---@param isForceRel boolean (Usually true) When true, force gets multiplied with the objects mass and different objects will have the same acceleration
 ---@param p12 boolean (Usually false)
 ---@param p13 boolean (Usually true)
-function ApplyForceToEntity(
-	entity,
-	forceType,
-	x,
-	y,
-	z,
-	offX,
-	offY,
-	offZ,
-	boneIndex,
-	isDirectionRel,
-	ignoreUpVec,
-	isForceRel,
-	p12,
-	p13
-)
-end
+function ApplyForceToEntity(entity, forceType, x, y, z, offX, offY, offZ, boneIndex, isDirectionRel, ignoreUpVec, isForceRel, p12, p13) end
 
 ---**`CFX` `shared` [`0xFA29D35D`](https://docs.fivem.net/natives/?_0xFA29D35D)**
 ---
@@ -643,7 +627,7 @@ function GetEntityCoords(entity) end
 ---
 ---Example code:
 ---```lua
----AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value)
+---AddStateBagChangeHandler("blockTasks", nil, function(bagName, key, value) 
 ---    local entity = GetEntityFromStateBagName(bagName)
 ---    -- Whoops, we don't have a valid entity!
 ---    if entity === 0 then return end
@@ -1052,7 +1036,7 @@ function GetPlayerFromIndex(index) end
 ---
 ---Example code:
 ---```lua
----AddStateBagChangeHandler("isDead", nil, function(bagName, key, value)
+---AddStateBagChangeHandler("isDead", nil, function(bagName, key, value) 
 ---    local ply = GetPlayerFromStateBagName(bagName)
 ---    -- The player doesn't exist!
 ---    if ply == 0 then return end
@@ -1284,7 +1268,7 @@ function GetResourceKvpFloat(key) end
 ---
 ---Example code:
 ---```lua
----local kvpValue = GetResourceKvpInt('bananabread')
+---local kvpValue = GetResourceKvpInt('bananabread') 
 ---if kvpValue ~= 0 then
 ---	-- do something!
 ---end
@@ -1300,7 +1284,7 @@ function GetResourceKvpInt(key) end
 ---
 ---Example code:
 ---```lua
----local kvpValue = GetResourceKvpString('codfish')
+---local kvpValue = GetResourceKvpString('codfish') 
 ---if kvpValue then
 ---	-- do something!
 ---end
@@ -1958,7 +1942,7 @@ function ProfilerIsRecording() end
 ---RegisterCommand("ping", function(source, args, rawCommand)
 ---    -- If the source is > 0, then that means it must be a player.
 ---    if (source > 0) then
----
+---    
 ---        -- result (using the default GTA:O chat theme) https://i.imgur.com/TaCnG09.png
 ---        TriggerClientEvent("chat:addMessage", -1, {
 ---            args = {
@@ -1967,7 +1951,7 @@ function ProfilerIsRecording() end
 ---            },
 ---            color = { 5, 255, 255 }
 ---        })
----
+---    
 ---    -- If it's not a player, then it must be RCON, a resource, or the server console directly.
 ---    else
 ---        print("This command was executed by the server console, RCON client, or a resource.")
@@ -2905,20 +2889,7 @@ function SetPedDefaultComponentVariation(ped) end
 ---@param skinMix number 0.0 - 1.0 Of whose characteristics to take Mother -> Father (skinFirstID and skinSecondID)
 ---@param thirdMix number Overrides the others in favor of the third IDs.
 ---@param isParent boolean IsParent is set for "children" of the player character's grandparents during old-gen character creation. It has unknown effect otherwise.
-function SetPedHeadBlendData(
-	ped,
-	shapeFirstID,
-	shapeSecondID,
-	shapeThirdID,
-	skinFirstID,
-	skinSecondID,
-	skinThirdID,
-	shapeMix,
-	skinMix,
-	thirdMix,
-	isParent
-)
-end
+function SetPedHeadBlendData(ped, shapeFirstID, shapeSecondID, shapeThirdID, skinFirstID, skinSecondID, skinThirdID, shapeMix, skinMix, thirdMix, isParent) end
 
 ---**`CFX` `server` [`0xD28DBA90`](https://docs.fivem.net/natives/?_0xD28DBA90)**
 ---
@@ -3395,9 +3366,9 @@ function SetVehicleNumberPlateText(vehicle, plateText) end
 ---
 ---local kvpHandle = StartFindKvp('mollis:')
 ---
----if kvpHandle ~= -1 then
+---if kvpHandle ~= -1 then 
 ---	local key
----
+---	
 ---	repeat
 ---		key = FindKvp(kvpHandle)
 ---
@@ -3461,19 +3432,7 @@ function TaskCombatPed(ped, targetPed, p2, p3) end
 ---@param pedAccuracy number
 ---@param p8 boolean
 ---@param firingPattern Hash
-function TaskDriveBy(
-	driverPed,
-	targetPed,
-	targetVehicle,
-	targetX,
-	targetY,
-	targetZ,
-	distanceToShoot,
-	pedAccuracy,
-	p8,
-	firingPattern
-)
-end
+function TaskDriveBy(driverPed, targetPed, targetVehicle, targetX, targetY, targetZ, distanceToShoot, pedAccuracy, p8, firingPattern) end
 
 ---**`CFX` `server` [`0xB8689B4E`](https://docs.fivem.net/natives/?_0xB8689B4E)**
 ---
@@ -3663,20 +3622,7 @@ function TaskLeaveVehicle(ped, vehicle, flags) end
 ---@param lockX boolean
 ---@param lockY boolean
 ---@param lockZ boolean
-function TaskPlayAnim(
-	ped,
-	animDictionary,
-	animationName,
-	blendInSpeed,
-	blendOutSpeed,
-	duration,
-	flag,
-	playbackRate,
-	lockX,
-	lockY,
-	lockZ
-)
-end
+function TaskPlayAnim(ped, animDictionary, animationName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, lockX, lockY, lockZ) end
 
 ---**`CFX` `server` [`0x3DDEB0E6`](https://docs.fivem.net/natives/?_0x3DDEB0E6)**
 ---
@@ -3701,25 +3647,7 @@ end
 ---@param animTime number Value between 0.0 and 1.0, lets you start an animation from the given point
 ---@param p14 any
 ---@param p15 any
-function TaskPlayAnimAdvanced(
-	ped,
-	animDict,
-	animName,
-	posX,
-	posY,
-	posZ,
-	rotX,
-	rotY,
-	rotZ,
-	animEnterSpeed,
-	animExitSpeed,
-	duration,
-	flag,
-	animTime,
-	p14,
-	p15
-)
-end
+function TaskPlayAnimAdvanced(ped, animDict, animName, posX, posY, posZ, rotX, rotY, rotZ, animEnterSpeed, animExitSpeed, duration, flag, animTime, p14, p15) end
 
 ---**`CFX` `server` [`0x8A632BD8`](https://docs.fivem.net/natives/?_0x8A632BD8)**
 ---

@@ -200,7 +200,7 @@ function NetGameserverGetCatalogState(state) end
 ---**`NETSHOPPING` `client` [`0xC27009422FCCA88D`](https://docs.fivem.net/natives/?_0xC27009422FCCA88D)**
 ---
 ---```
----bool is always true in game scripts
+---bool is always true in game scripts  
 ---```
 ---
 ---@param itemHash Hash

@@ -72,7 +72,7 @@ function N_0x36f1b38855f2a8df(player) end
 ---**`PLAYER` `client` [`0x4669B3ED80F24B4E`](https://docs.fivem.net/natives/?_0x4669B3ED80F24B4E)**
 ---
 ---```
----This has been found in use in the decompiled files.
+---This has been found in use in the decompiled files.  
 ---```
 ---
 ---@param player Player
@@ -97,7 +97,7 @@ function N_0x55fcc0c390620314(player1, player2, toggle) end
 ---**`PLAYER` `client` [`0x5FC472C501CCADB3`](https://docs.fivem.net/natives/?_0x5FC472C501CCADB3)**
 ---
 ---```
----Appears once in "re_dealgonewrong"
+---Appears once in "re_dealgonewrong"  
 ---```
 ---
 ---@param player Player
@@ -210,7 +210,7 @@ function N_0x9f260bfb59adbca3(player, entity) end
 ---**`PLAYER` `client` [`0xAD73CE5A09E42D12`](https://docs.fivem.net/natives/?_0xAD73CE5A09E42D12)**
 ---
 ---```
----This has been found in use in the decompiled files.
+---This has been found in use in the decompiled files.  
 ---```
 ---
 ---@param player Player
@@ -251,9 +251,9 @@ function N_0xb9cf1f793a9f1bf1() end
 ---**`PLAYER` `client` [`0xBC9490CA15AEA8FB`](https://docs.fivem.net/natives/?_0xBC9490CA15AEA8FB)**
 ---
 ---```
----Seems to only appear in scripts used in Singleplayer.
----Always used like this in scripts
----PLAYER::_BC9490CA15AEA8FB(PLAYER::PLAYER_ID());
+---Seems to only appear in scripts used in Singleplayer.  
+---Always used like this in scripts  
+---PLAYER::_BC9490CA15AEA8FB(PLAYER::PLAYER_ID());  
 ---```
 ---
 ---@param player Player
@@ -271,7 +271,7 @@ function N_0xc3376f42b1faccc6(player) end
 ---**`PLAYER` `client` [`0xCAC57395B151135F`](https://docs.fivem.net/natives/?_0xCAC57395B151135F)**
 ---
 ---```
----Found in "director_mode", "fm_bj_race_controler", "fm_deathmatch_controler", "fm_impromptu_dm_controler", "fm_race_controler", "gb_deathmatch".
+---Found in "director_mode", "fm_bj_race_controler", "fm_deathmatch_controler", "fm_impromptu_dm_controler", "fm_race_controler", "gb_deathmatch".  
 ---```
 ---
 ---@param player Player
@@ -309,7 +309,7 @@ function N_0xdcc07526b8ec45af(player) end
 ---**`PLAYER` `client` [`0xDD2620B7B9D16FF1`](https://docs.fivem.net/natives/?_0xDD2620B7B9D16FF1)**
 ---
 ---```
----2 occurrences in agency_heist3a. p1 was 0.7f then 0.4f.
+---2 occurrences in agency_heist3a. p1 was 0.7f then 0.4f.  
 ---```
 ---
 ---@param player Player
@@ -406,8 +406,8 @@ function ClearPlayerParachuteVariationOverride(player) end
 ---**`PLAYER` `client` [`0xB302540597885499`](https://docs.fivem.net/natives/?_0xB302540597885499)**
 ---
 ---```
----This executes at the same as speed as PLAYER::SET_PLAYER_WANTED_LEVEL(player, 0, false);
----PLAYER::GET_PLAYER_WANTED_LEVEL(player); executes in less than half the time. Which means that it's worth first checking if the wanted level needs to be cleared before clearing. However, this is mostly about good code practice and can important in other situations. The difference in time in this example is negligible.
+---This executes at the same as speed as PLAYER::SET_PLAYER_WANTED_LEVEL(player, 0, false);  
+---PLAYER::GET_PLAYER_WANTED_LEVEL(player); executes in less than half the time. Which means that it's worth first checking if the wanted level needs to be cleared before clearing. However, this is mostly about good code practice and can important in other situations. The difference in time in this example is negligible.  
 ---```
 ---
 ---@param player Player
@@ -432,8 +432,8 @@ function DisablePlayerVehicleRewards(player) end
 ---**`PLAYER` `client` [`0x94DD7888C10A979E`](https://docs.fivem.net/natives/?_0x94DD7888C10A979E)**
 ---
 ---```
----Purpose of the BOOL currently unknown.
----Both, true and false, work
+---Purpose of the BOOL currently unknown.  
+---Both, true and false, work  
 ---```
 ---
 ---@param unk boolean
@@ -465,7 +465,7 @@ function ExtendWorldBoundaryForPlayer(x, y, z) end
 ---**`PLAYER` `client` [`0xBC8983F38F78ED51`](https://docs.fivem.net/natives/?_0xBC8983F38F78ED51)**
 ---
 ---```
----used with 1,2,8,64,128 in the scripts
+---used with 1,2,8,64,128 in the scripts  
 ---```
 ---
 ---@param cleanupFlags number
@@ -474,7 +474,7 @@ function ForceCleanup(cleanupFlags) end
 ---**`PLAYER` `client` [`0x4C68DDDDF0097317`](https://docs.fivem.net/natives/?_0x4C68DDDDF0097317)**
 ---
 ---```
----PLAYER::FORCE_CLEANUP_FOR_ALL_THREADS_WITH_THIS_NAME("pb_prostitute", 1); // Found in decompilation
+---PLAYER::FORCE_CLEANUP_FOR_ALL_THREADS_WITH_THIS_NAME("pb_prostitute", 1); // Found in decompilation  
 ---```
 ---
 ---@param name string
@@ -495,8 +495,8 @@ function GetCauseOfMostRecentForceCleanup() end
 ---**`PLAYER` `client` [`0x2975C866E6713290`](https://docs.fivem.net/natives/?_0x2975C866E6713290)**
 ---
 ---```
----Returns TRUE if it found an entity in your crosshair within range of your weapon. Assigns the handle of the target to the *entity that you pass it.
----Returns false if no entity found.
+---Returns TRUE if it found an entity in your crosshair within range of your weapon. Assigns the handle of the target to the *entity that you pass it.  
+---Returns false if no entity found.  
 ---```
 ---
 ---@param player Player
@@ -507,8 +507,8 @@ function GetEntityPlayerIsFreeAimingAt(player, entity) end
 ---**`PLAYER` `client` [`0x462E0DB9B137DC5F`](https://docs.fivem.net/natives/?_0x462E0DB9B137DC5F)**
 ---
 ---```
----Gets the maximum wanted level the player can get.
----Ranges from 0 to 5.
+---Gets the maximum wanted level the player can get.  
+---Ranges from 0 to 5.  
 ---```
 ---
 ---@return number
@@ -552,7 +552,7 @@ function GetPlayerFakeWantedLevel(player) end
 ---**`PLAYER` `client` [`0x0D127585F77030AF`](https://docs.fivem.net/natives/?_0x0D127585F77030AF)**
 ---
 ---```
----Returns the group ID the player is member of.
+---Returns the group ID the player is member of.  
 ---```
 ---
 ---@param player Player
@@ -568,7 +568,7 @@ function GetPlayerHasReserveParachute(player) end
 ---**`PLAYER` `client` [`0xA5EDC40EF369B48D`](https://docs.fivem.net/natives/?_0xA5EDC40EF369B48D)**
 ---
 ---```
----Returns the same as PLAYER_ID and NETWORK_PLAYER_ID_TO_INT
+---Returns the same as PLAYER_ID and NETWORK_PLAYER_ID_TO_INT  
 ---```
 ---
 ---@return Player
@@ -577,20 +577,20 @@ function GetPlayerIndex() end
 ---**`PLAYER` `client` [`0xB721981B2B939E07`](https://docs.fivem.net/natives/?_0xB721981B2B939E07)**
 ---
 ---```
----Returns the Player's Invincible status.
----This function will always return false if 0x733A643B5B0C53C1 is used to set the invincibility status. To always get the correct result, use this:
----	bool IsPlayerInvincible(Player player)
----	{
----auto addr = getScriptHandleBaseAddress(GET_PLAYER_PED(player));
----if (addr)
----{
----	DWORD flag = *(DWORD *)(addr + 0x188);
----	return ((flag & (1 << 8)) != 0) || ((flag & (1 << 9)) != 0);
----}
----return false;
----	}
----============================================================
----This has bothered me for too long, whoever may come across this, where did anyone ever come up with this made up hash? 0x733A643B5B0C53C1 I've looked all over old hash list, and this nativedb I can not find that PC hash anywhere. What native name is it now or was it?
+---Returns the Player's Invincible status.  
+---This function will always return false if 0x733A643B5B0C53C1 is used to set the invincibility status. To always get the correct result, use this:  
+---	bool IsPlayerInvincible(Player player)  
+---	{  
+---auto addr = getScriptHandleBaseAddress(GET_PLAYER_PED(player));	  
+---if (addr)  
+---{  
+---	DWORD flag = *(DWORD *)(addr + 0x188);  
+---	return ((flag & (1 << 8)) != 0) || ((flag & (1 << 9)) != 0);  
+---}  
+---return false;  
+---	}  
+---============================================================  
+---This has bothered me for too long, whoever may come across this, where did anyone ever come up with this made up hash? 0x733A643B5B0C53C1 I've looked all over old hash list, and this nativedb I can not find that PC hash anywhere. What native name is it now or was it?  
 ---```
 ---
 ---@param player Player
@@ -628,22 +628,22 @@ function GetPlayerParachuteSmokeTrailColor(player, r, g, b) end
 ---**`PLAYER` `client` [`0x75D3F7A1B0D9B145`](https://docs.fivem.net/natives/?_0x75D3F7A1B0D9B145)**
 ---
 ---```
----Tints:
----None = -1,
----Rainbow = 0,
----Red = 1,
----SeasideStripes = 2,
----WidowMaker = 3,
----Patriot = 4,
----Blue = 5,
----Black = 6,
----Hornet = 7,
----AirFocce = 8,
----Desert = 9,
----Shadow = 10,
----HighAltitude = 11,
----Airbone = 12,
----Sunrise = 13,
+---Tints:  
+---None = -1,  
+---Rainbow = 0,  
+---Red = 1,  
+---SeasideStripes = 2,  
+---WidowMaker = 3,  
+---Patriot = 4,  
+---Blue = 5,  
+---Black = 6,  
+---Hornet = 7,  
+---AirFocce = 8,  
+---Desert = 9,  
+---Shadow = 10,  
+---HighAltitude = 11,  
+---Airbone = 12,  
+---Sunrise = 13,  
 ---```
 ---
 ---@param player Player
@@ -679,22 +679,22 @@ function GetPlayerPedScriptIndex(player) end
 ---**`PLAYER` `client` [`0xD5A016BC3C09CF40`](https://docs.fivem.net/natives/?_0xD5A016BC3C09CF40)**
 ---
 ---```
----Tints:
----None = -1,
----Rainbow = 0,
----Red = 1,
----SeasideStripes = 2,
----WidowMaker = 3,
----Patriot = 4,
----Blue = 5,
----Black = 6,
----Hornet = 7,
----AirFocce = 8,
----Desert = 9,
----Shadow = 10,
----HighAltitude = 11,
----Airbone = 12,
----Sunrise = 13,
+---Tints:  
+---None = -1,  
+---Rainbow = 0,  
+---Red = 1,  
+---SeasideStripes = 2,  
+---WidowMaker = 3,  
+---Patriot = 4,  
+---Blue = 5,  
+---Black = 6,  
+---Hornet = 7,  
+---AirFocce = 8,  
+---Desert = 9,  
+---Shadow = 10,  
+---HighAltitude = 11,  
+---Airbone = 12,  
+---Sunrise = 13,  
 ---```
 ---
 ---@param player Player
@@ -724,8 +724,8 @@ function GetPlayerSprintTimeRemaining(player) end
 ---**`PLAYER` `client` [`0x13EDE1A5DBF797C9`](https://docs.fivem.net/natives/?_0x13EDE1A5DBF797C9)**
 ---
 ---```
----Assigns the handle of locked-on melee target to *entity that you pass it.
----Returns false if no entity found.
+---Assigns the handle of locked-on melee target to *entity that you pass it.  
+---Returns false if no entity found.  
 ---```
 ---
 ---@param player Player
@@ -736,8 +736,8 @@ function GetPlayerTargetEntity(player, entity) end
 ---**`PLAYER` `client` [`0x37039302F4E0A008`](https://docs.fivem.net/natives/?_0x37039302F4E0A008)**
 ---
 ---```
----Gets the player's team.
----Does nothing in singleplayer.
+---Gets the player's team.  
+---Does nothing in singleplayer.  
 ---```
 ---
 ---@param player Player
@@ -765,11 +765,11 @@ function GetPlayerWantedLevel(player) end
 ---**`PLAYER` `client` [`0x5063F92F07C2A316`](https://docs.fivem.net/natives/?_0x5063F92F07C2A316)**
 ---
 ---```
----Returns the time since the character was arrested in (ms) milliseconds.
----example
----var time = Function.call<int>(Hash.GET_TIME_SINCE_LAST_ARREST();
----UI.DrawSubtitle(time.ToString());
----if player has not been arrested, the int returned will be -1.
+---Returns the time since the character was arrested in (ms) milliseconds.  
+---example  
+---var time = Function.call<int>(Hash.GET_TIME_SINCE_LAST_ARREST();  
+---UI.DrawSubtitle(time.ToString());  
+---if player has not been arrested, the int returned will be -1.  
 ---```
 ---
 ---@return number
@@ -778,11 +778,11 @@ function GetTimeSinceLastArrest() end
 ---**`PLAYER` `client` [`0xC7034807558DDFCA`](https://docs.fivem.net/natives/?_0xC7034807558DDFCA)**
 ---
 ---```
----Returns the time since the character died in (ms) milliseconds.
----example
----var time = Function.call<int>(Hash.GET_TIME_SINCE_LAST_DEATH();
----UI.DrawSubtitle(time.ToString());
----if player has not died, the int returned will be -1.
+---Returns the time since the character died in (ms) milliseconds.  
+---example  
+---var time = Function.call<int>(Hash.GET_TIME_SINCE_LAST_DEATH();  
+---UI.DrawSubtitle(time.ToString());  
+---if player has not died, the int returned will be -1.  
 ---```
 ---
 ---@return number
@@ -825,7 +825,7 @@ function GetWantedLevelRadius(player) end
 ---**`PLAYER` `client` [`0xFDD179EAF45B556C`](https://docs.fivem.net/natives/?_0xFDD179EAF45B556C)**
 ---
 ---```
----Drft
+---Drft  
 ---```
 ---
 ---@param wantedLevel number
@@ -888,9 +888,9 @@ function HasPlayerLeftTheWorld(player) end
 ---**`PLAYER` `client` [`0x9EC6603812C24710`](https://docs.fivem.net/natives/?_0x9EC6603812C24710)**
 ---
 ---```
----Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
------------------------------------------------------------
----if (NETWORK::NETWORK_IS_PARTICIPANT_ACTIVE(PLAYER::INT_TO_PARTICIPANTINDEX(i)))
+---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
+-----------------------------------------------------------  
+---if (NETWORK::NETWORK_IS_PARTICIPANT_ACTIVE(PLAYER::INT_TO_PARTICIPANTINDEX(i)))  
 ---```
 ---
 ---@param value number
@@ -900,7 +900,7 @@ function IntToParticipantindex(value) end
 ---**`PLAYER` `client` [`0x41BD2A6B006AF756`](https://docs.fivem.net/natives/?_0x41BD2A6B006AF756)**
 ---
 ---```
----Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).
+---Simply returns whatever is passed to it (Regardless of whether the handle is valid or not).  
 ---```
 ---
 ---@param value number
@@ -910,7 +910,7 @@ function IntToPlayerindex(value) end
 ---**`PLAYER` `client` [`0x38D28DA81E4E9BF9`](https://docs.fivem.net/natives/?_0x38D28DA81E4E9BF9)**
 ---
 ---```
----Returns true if an unk value is greater than 0.0f
+---Returns true if an unk value is greater than 0.0f  
 ---```
 ---
 ---@param player Player
@@ -920,9 +920,9 @@ function IsPlayerBattleAware(player) end
 ---**`PLAYER` `client` [`0x388A47C51ABDAC8E`](https://docs.fivem.net/natives/?_0x388A47C51ABDAC8E)**
 ---
 ---```
----Return true while player is being arrested / busted.
----If atArresting is set to 1, this function will return 1 when player is being arrested (while player is putting his hand up, but still have control)
----If atArresting is set to 0, this function will return 1 only when the busted screen is shown.
+---Return true while player is being arrested / busted.  
+---If atArresting is set to 1, this function will return 1 when player is being arrested (while player is putting his hand up, but still have control)  
+---If atArresting is set to 0, this function will return 1 only when the busted screen is shown.  
 ---```
 ---
 ---@param player Player
@@ -939,7 +939,7 @@ function IsPlayerBluetoothEnable(player) end
 ---**`PLAYER` `client` [`0x95E8F73DC65EFB9C`](https://docs.fivem.net/natives/?_0x95E8F73DC65EFB9C)**
 ---
 ---```
----Returns TRUE if the player ('s ped) is climbing at the moment.
+---Returns TRUE if the player ('s ped) is climbing at the moment.  
 ---```
 ---
 ---@param player Player
@@ -949,9 +949,9 @@ function IsPlayerClimbing(player) end
 ---**`PLAYER` `client` [`0x49C32D60007AFA47`](https://docs.fivem.net/natives/?_0x49C32D60007AFA47)**
 ---
 ---```
----Can the player control himself, used to disable controls for player for things like a cutscene.
-------
----You can't disable controls with this, use SET_PLAYER_CONTROL(...) for this.
+---Can the player control himself, used to disable controls for player for things like a cutscene.  
+------  
+---You can't disable controls with this, use SET_PLAYER_CONTROL(...) for this.  
 ---```
 ---
 ---@param player Player
@@ -967,7 +967,7 @@ function IsPlayerDead(player) end
 ---**`PLAYER` `client` [`0x2E397FD2ECD37C87`](https://docs.fivem.net/natives/?_0x2E397FD2ECD37C87)**
 ---
 ---```
----Gets a value indicating whether the specified player is currently aiming freely.
+---Gets a value indicating whether the specified player is currently aiming freely.  
 ---```
 ---
 ---@param player Player
@@ -977,7 +977,7 @@ function IsPlayerFreeAiming(player) end
 ---**`PLAYER` `client` [`0x3C06B5C839B38F7B`](https://docs.fivem.net/natives/?_0x3C06B5C839B38F7B)**
 ---
 ---```
----Gets a value indicating whether the specified player is currently aiming freely at the specified entity.
+---Gets a value indicating whether the specified player is currently aiming freely at the specified entity.  
 ---```
 ---
 ---@param player Player
@@ -994,7 +994,7 @@ function IsPlayerFreeForAmbientTask(player) end
 ---**`PLAYER` `client` [`0x74556E1420867ECA`](https://docs.fivem.net/natives/?_0x74556E1420867ECA)**
 ---
 ---```
----this function is hard-coded to always return 0.
+---this function is hard-coded to always return 0.  
 ---```
 ---
 ---@return boolean
@@ -1003,8 +1003,8 @@ function IsPlayerLoggingInNp() end
 ---**`PLAYER` `client` [`0xF25D331DC2627BBC`](https://docs.fivem.net/natives/?_0xF25D331DC2627BBC)**
 ---
 ---```
----Returns TRUE if the game is in online mode and FALSE if in offline mode.
----This is an alias for NETWORK_IS_SIGNED_ONLINE.
+---Returns TRUE if the game is in online mode and FALSE if in offline mode.  
+---This is an alias for NETWORK_IS_SIGNED_ONLINE.  
 ---```
 ---
 ---@return boolean
@@ -1013,7 +1013,7 @@ function IsPlayerOnline() end
 ---**`PLAYER` `client` [`0x5E9564D8246B909A`](https://docs.fivem.net/natives/?_0x5E9564D8246B909A)**
 ---
 ---```
----Checks whether the specified player has a Ped, the Ped is not dead, is not injured and is not arrested.
+---Checks whether the specified player has a Ped, the Ped is not dead, is not injured and is not arrested.  
 ---```
 ---
 ---@param player Player
@@ -1035,7 +1035,7 @@ function IsPlayerReadyForCutscene(player) end
 ---**`PLAYER` `client` [`0x4EC12697209F2196`](https://docs.fivem.net/natives/?_0x4EC12697209F2196)**
 ---
 ---```
----Returns true if the player is riding a train.
+---Returns true if the player is riding a train.  
 ---```
 ---
 ---@param player Player
@@ -1117,7 +1117,7 @@ function IsSystemUiBeingDisplayed() end
 ---**`PLAYER` `client` [`0xEE68096F9F37341E`](https://docs.fivem.net/natives/?_0xEE68096F9F37341E)**
 ---
 ---```
----Does exactly the same thing as PLAYER_ID()
+---Does exactly the same thing as PLAYER_ID()  
 ---```
 ---
 ---@return number
@@ -1126,8 +1126,8 @@ function NetworkPlayerIdToInt() end
 ---**`PLAYER` `client` [`0xED51733DC73AED51`](https://docs.fivem.net/natives/?_0xED51733DC73AED51)**
 ---
 ---```
----Only 1 match. ob_sofa_michael.
----PLAYER::PLAYER_ATTACH_VIRTUAL_BOUND(-804.5928f, 173.1801f, 71.68436f, 0f, 0f, 0.590625f, 1f, 0.7f);1.0.335.2, 1.0.350.1/2, 1.0.372.2, 1.0.393.2, 1.0.393.4, 1.0.463.1;
+---Only 1 match. ob_sofa_michael.  
+---PLAYER::PLAYER_ATTACH_VIRTUAL_BOUND(-804.5928f, 173.1801f, 71.68436f, 0f, 0f, 0.590625f, 1f, 0.7f);1.0.335.2, 1.0.350.1/2, 1.0.372.2, 1.0.393.2, 1.0.393.4, 1.0.463.1;  
 ---```
 ---
 ---@param p0 number
@@ -1143,7 +1143,7 @@ function PlayerAttachVirtualBound(p0, p1, p2, p3, p4, p5, p6, p7) end
 ---**`PLAYER` `client` [`0x1DD5897E2FA6E7C9`](https://docs.fivem.net/natives/?_0x1DD5897E2FA6E7C9)**
 ---
 ---```
----1.0.335.2, 1.0.350.1/2, 1.0.372.2, 1.0.393.2, 1.0.393.4, 1.0.463.1;
+---1.0.335.2, 1.0.350.1/2, 1.0.372.2, 1.0.393.2, 1.0.393.4, 1.0.463.1;  
 ---```
 ---
 function PlayerDetachVirtualBound() end
@@ -1171,59 +1171,59 @@ function RemovePlayerHelmet(player, p2) end
 ---**`PLAYER` `client` [`0xE9B09589827545E7`](https://docs.fivem.net/natives/?_0xE9B09589827545E7)**
 ---
 ---```
----PLAYER::REPORT_CRIME(PLAYER::PLAYER_ID(), 37, PLAYER::GET_WANTED_LEVEL_THRESHOLD(1));
----From am_armybase.ysc.c4:
----PLAYER::REPORT_CRIME(PLAYER::PLAYER_ID(4), 36, PLAYER::GET_WANTED_LEVEL_THRESHOLD(4));
---------
----This was taken from the GTAV.exe v1.334. The function is called sub_140592CE8. For a full decompilation of the function, see here: pastebin.com/09qSMsN7
---------
----crimeType:
----1: Firearms possession
----2: Person running a red light ("5-0-5")
----3: Reckless driver
----4: Speeding vehicle (a "5-10")
----5: Traffic violation (a "5-0-5")
----6: Motorcycle rider without a helmet
----7: Vehicle theft (a "5-0-3")
----8: Grand Theft Auto
----9: ???
----10: ???
----11: Assault on a civilian (a "2-40")
----12: Assault on an officer
----13: Assault with a deadly weapon (a "2-45")
----14: Officer shot (a "2-45")
----15: Pedestrian struck by a vehicle
----16: Officer struck by a vehicle
----17: Helicopter down (an "AC"?)
----18: Civilian on fire (a "2-40")
----19: Officer set on fire (a "10-99")
----20: Car on fire
----21: Air unit down (an "AC"?)
----22: An explosion (a "9-96")
----23: A stabbing (a "2-45") (also something else I couldn't understand)
----24: Officer stabbed (also something else I couldn't understand)
----25: Attack on a vehicle ("MDV"?)
----26: Damage to property
----27: Suspect threatening officer with a firearm
----28: Shots fired
----29: ???
----30: ???
----31: ???
----32: ???
----33: ???
----34: A "2-45"
----35: ???
----36: A "9-25"
----37: ???
----38: ???
----39: ???
----40: ???
----41: ???
----42: ???
----43: Possible disturbance
----44: Civilian in need of assistance
----45: ???
----46: ???
+---PLAYER::REPORT_CRIME(PLAYER::PLAYER_ID(), 37, PLAYER::GET_WANTED_LEVEL_THRESHOLD(1));  
+---From am_armybase.ysc.c4:  
+---PLAYER::REPORT_CRIME(PLAYER::PLAYER_ID(4), 36, PLAYER::GET_WANTED_LEVEL_THRESHOLD(4));  
+--------  
+---This was taken from the GTAV.exe v1.334. The function is called sub_140592CE8. For a full decompilation of the function, see here: pastebin.com/09qSMsN7   
+--------  
+---crimeType:  
+---1: Firearms possession  
+---2: Person running a red light ("5-0-5")  
+---3: Reckless driver  
+---4: Speeding vehicle (a "5-10")  
+---5: Traffic violation (a "5-0-5")  
+---6: Motorcycle rider without a helmet  
+---7: Vehicle theft (a "5-0-3")  
+---8: Grand Theft Auto  
+---9: ???  
+---10: ???  
+---11: Assault on a civilian (a "2-40")  
+---12: Assault on an officer  
+---13: Assault with a deadly weapon (a "2-45")  
+---14: Officer shot (a "2-45")  
+---15: Pedestrian struck by a vehicle  
+---16: Officer struck by a vehicle  
+---17: Helicopter down (an "AC"?)  
+---18: Civilian on fire (a "2-40")  
+---19: Officer set on fire (a "10-99")  
+---20: Car on fire  
+---21: Air unit down (an "AC"?)  
+---22: An explosion (a "9-96")  
+---23: A stabbing (a "2-45") (also something else I couldn't understand)  
+---24: Officer stabbed (also something else I couldn't understand)  
+---25: Attack on a vehicle ("MDV"?)  
+---26: Damage to property  
+---27: Suspect threatening officer with a firearm  
+---28: Shots fired  
+---29: ???  
+---30: ???  
+---31: ???  
+---32: ???  
+---33: ???  
+---34: A "2-45"  
+---35: ???  
+---36: A "9-25"  
+---37: ???  
+---38: ???  
+---39: ???  
+---40: ???  
+---41: ???  
+---42: ???  
+---43: Possible disturbance  
+---44: Civilian in need of assistance  
+---45: ???  
+---46: ???  
 ---```
 ---
 ---@param player Player
@@ -1285,9 +1285,9 @@ function RestorePlayerStamina(player, percentage) end
 ---**`PLAYER` `client` [`0xCA7DC8329F0A1E9E`](https://docs.fivem.net/natives/?_0xCA7DC8329F0A1E9E)**
 ---
 ---```
----This can be between 1.0f - 14.9f
----You can change the max in IDA from 15.0. I say 15.0 as the function blrs if what you input is greater than or equal to 15.0 hence why it's 14.9 max default.
----On PC the multiplier can be between 0.0f and 50.0f (inclusive).
+---This can be between 1.0f - 14.9f   
+---You can change the max in IDA from 15.0. I say 15.0 as the function blrs if what you input is greater than or equal to 15.0 hence why it's 14.9 max default.  
+---On PC the multiplier can be between 0.0f and 50.0f (inclusive).  
 ---```
 ---
 ---@param player Player
@@ -1357,7 +1357,7 @@ function SetPlayerBluetoothState(player, state) end
 ---**`PLAYER` `client` [`0xD5E460AD7020A246`](https://docs.fivem.net/natives/?_0xD5E460AD7020A246)**
 ---
 ---```
----Sets whether this player can be hassled by gangs.
+---Sets whether this player can be hassled by gangs.  
 ---```
 ---
 ---@param player Player
@@ -1399,7 +1399,7 @@ function SetPlayerCanUseCover(player, toggle) end
 ---**`PLAYER` `client` [`0x14D913B777DFF5DA`](https://docs.fivem.net/natives/?_0x14D913B777DFF5DA)**
 ---
 ---```
----6 matches across 4 scripts. 5 occurrences were 240. The other was 255.
+---6 matches across 4 scripts. 5 occurrences were 240. The other was 255.  
 ---```
 ---
 ---@param value number
@@ -1408,7 +1408,7 @@ function SetPlayerClothLockCounter(value) end
 ---**`PLAYER` `client` [`0x9F7BBA2EA6372500`](https://docs.fivem.net/natives/?_0x9F7BBA2EA6372500)**
 ---
 ---```
----Every occurrence was either 0 or 2.
+---Every occurrence was either 0 or 2.  
 ---```
 ---
 ---@param index number
@@ -1485,9 +1485,9 @@ function SetPlayerHealthRechargeMultiplier(player, regenRate) end
 ---**`PLAYER` `client` [`0x239528EACDC3E7DE`](https://docs.fivem.net/natives/?_0x239528EACDC3E7DE)**
 ---
 ---```
----Simply sets you as invincible (Health will not deplete).
----Use 0x733A643B5B0C53C1 instead if you want Ragdoll enabled, which is equal to:
----*(DWORD *)(playerPedAddress + 0x188) |= (1 << 9);
+---Simply sets you as invincible (Health will not deplete).  
+---Use 0x733A643B5B0C53C1 instead if you want Ragdoll enabled, which is equal to:  
+---*(DWORD *)(playerPedAddress + 0x188) |= (1 << 9);  
 ---```
 ---
 ---@param player Player
@@ -1519,7 +1519,7 @@ function SetPlayerLockon(player, toggle) end
 ---**`PLAYER` `client` [`0x29961D490E5814FD`](https://docs.fivem.net/natives/?_0x29961D490E5814FD)**
 ---
 ---```
----Affects the range of auto aim target.
+---Affects the range of auto aim target.  
 ---```
 ---
 ---@param player Player
@@ -1529,7 +1529,7 @@ function SetPlayerLockonRangeOverride(player, range) end
 ---**`PLAYER` `client` [`0x77DFCCF5948B8C71`](https://docs.fivem.net/natives/?_0x77DFCCF5948B8C71)**
 ---
 ---```
----Default is 100. Use player id and not ped id. For instance: PLAYER::SET_PLAYER_MAX_ARMOUR(PLAYER::PLAYER_ID(), 100); // main_persistent.ct4
+---Default is 100. Use player id and not ped id. For instance: PLAYER::SET_PLAYER_MAX_ARMOUR(PLAYER::PLAYER_ID(), 100); // main_persistent.ct4  
 ---```
 ---
 ---@param player Player
@@ -1599,8 +1599,8 @@ function SetPlayerNoiseMultiplier(player, multiplier) end
 ---**`PLAYER` `client` [`0x977DB4641F6FC3DB`](https://docs.fivem.net/natives/?_0x977DB4641F6FC3DB)**
 ---
 ---```
----example:
----PLAYER::SET_PLAYER_PARACHUTE_MODEL_OVERRIDE(PLAYER::PLAYER_ID(), 0x73268708);
+---example:  
+---PLAYER::SET_PLAYER_PARACHUTE_MODEL_OVERRIDE(PLAYER::PLAYER_ID(), 0x73268708);  
 ---```
 ---
 ---@param player Player
@@ -1639,22 +1639,22 @@ function SetPlayerParachuteSmokeTrailColor(player, r, g, b) end
 ---**`PLAYER` `client` [`0xA3D0E54541D9A5E5`](https://docs.fivem.net/natives/?_0xA3D0E54541D9A5E5)**
 ---
 ---```
----Tints:
----None = -1,
----Rainbow = 0,
----Red = 1,
----SeasideStripes = 2,
----WidowMaker = 3,
----Patriot = 4,
----Blue = 5,
----Black = 6,
----Hornet = 7,
----AirFocce = 8,
----Desert = 9,
----Shadow = 10,
----HighAltitude = 11,
----Airbone = 12,
----Sunrise = 13,
+---Tints:  
+---None = -1,  
+---Rainbow = 0,  
+---Red = 1,  
+---SeasideStripes = 2,  
+---WidowMaker = 3,  
+---Patriot = 4,  
+---Blue = 5,  
+---Black = 6,  
+---Hornet = 7,  
+---AirFocce = 8,  
+---Desert = 9,  
+---Shadow = 10,  
+---HighAltitude = 11,  
+---Airbone = 12,  
+---Sunrise = 13,  
 ---```
 ---
 ---@param player Player
@@ -1664,8 +1664,8 @@ function SetPlayerParachuteTintIndex(player, tintIndex) end
 ---**`PLAYER` `client` [`0xD9284A8C0D48352C`](https://docs.fivem.net/natives/?_0xD9284A8C0D48352C)**
 ---
 ---```
----p1 was always 5.
----p4 was always false.
+---p1 was always 5.  
+---p4 was always false.  
 ---```
 ---
 ---@param player Player
@@ -1678,22 +1678,22 @@ function SetPlayerParachuteVariationOverride(player, p1, p2, p3, p4) end
 ---**`PLAYER` `client` [`0xAF04C87F5DC1DF38`](https://docs.fivem.net/natives/?_0xAF04C87F5DC1DF38)**
 ---
 ---```
----Tints:
----None = -1,
----Rainbow = 0,
----Red = 1,
----SeasideStripes = 2,
----WidowMaker = 3,
----Patriot = 4,
----Blue = 5,
----Black = 6,
----Hornet = 7,
----AirFocce = 8,
----Desert = 9,
----Shadow = 10,
----HighAltitude = 11,
----Airbone = 12,
----Sunrise = 13,
+---Tints:  
+---None = -1,  
+---Rainbow = 0,  
+---Red = 1,  
+---SeasideStripes = 2,  
+---WidowMaker = 3,  
+---Patriot = 4,  
+---Blue = 5,  
+---Black = 6,  
+---Hornet = 7,  
+---AirFocce = 8,  
+---Desert = 9,  
+---Shadow = 10,  
+---HighAltitude = 11,  
+---Airbone = 12,  
+---Sunrise = 13,  
 ---```
 ---
 ---@param player Player
@@ -1703,10 +1703,10 @@ function SetPlayerReserveParachuteTintIndex(player, index) end
 ---**`PLAYER` `client` [`0x11D5F725F0E780E0`](https://docs.fivem.net/natives/?_0x11D5F725F0E780E0)**
 ---
 ---```
----example:
----flags: 0-6
----PLAYER::SET_PLAYER_RESET_FLAG_PREFER_REAR_SEATS(PLAYER::PLAYER_ID(), 6);
----wouldnt the flag be the seatIndex?
+---example:  
+---flags: 0-6  
+---PLAYER::SET_PLAYER_RESET_FLAG_PREFER_REAR_SEATS(PLAYER::PLAYER_ID(), 6);  
+---wouldnt the flag be the seatIndex?  
 ---```
 ---
 ---@param player Player
@@ -1722,7 +1722,7 @@ function SetPlayerSimulateAiming(player, toggle) end
 ---**`PLAYER` `client` [`0xB2C1A29588A9F47C`](https://docs.fivem.net/natives/?_0xB2C1A29588A9F47C)**
 ---
 ---```
----Values around 1.0f to 2.0f used in game scripts.
+---Values around 1.0f to 2.0f used in game scripts.  
 ---```
 ---
 ---@param player Player
@@ -1762,7 +1762,7 @@ function SetPlayerTargetLevel(targetLevel) end
 ---**`PLAYER` `client` [`0x0299FA38396A4940`](https://docs.fivem.net/natives/?_0x0299FA38396A4940)**
 ---
 ---```
----Set player team on deathmatch and last team standing..
+---Set player team on deathmatch and last team standing..  
 ---```
 ---
 ---@param player Player
@@ -1792,12 +1792,12 @@ function SetPlayerVehicleDefenseModifier(player, modifier) end
 ---**`PLAYER` `client` [`0x520E541A97A13354`](https://docs.fivem.net/natives/?_0x520E541A97A13354)**
 ---
 ---```
----# Predominant call signatures
----PLAYER::SET_PLAYER_WANTED_CENTRE_POSITION(PLAYER::PLAYER_ID(), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1));
----# Parameter value ranges
----P0: PLAYER::PLAYER_ID()
----P1: ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1)
----P2: Not set by any call
+---# Predominant call signatures  
+---PLAYER::SET_PLAYER_WANTED_CENTRE_POSITION(PLAYER::PLAYER_ID(), ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1));  
+---# Parameter value ranges  
+---P0: PLAYER::PLAYER_ID()  
+---P1: ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), 1)  
+---P2: Not set by any call  
 ---```
 ---
 ---@param player Player
@@ -1822,9 +1822,9 @@ function SetPlayerWantedLevel(player, wantedLevel, delayedResponse) end
 ---**`PLAYER` `client` [`0xE0A7D1E497FFCD6F`](https://docs.fivem.net/natives/?_0xE0A7D1E497FFCD6F)**
 ---
 ---```
----Forces any pending wanted level to be applied to the specified player immediately.
----Call SET_PLAYER_WANTED_LEVEL with the desired wanted level, followed by SET_PLAYER_WANTED_LEVEL_NOW.
----Second parameter is unknown (always false).
+---Forces any pending wanted level to be applied to the specified player immediately.  
+---Call SET_PLAYER_WANTED_LEVEL with the desired wanted level, followed by SET_PLAYER_WANTED_LEVEL_NOW.  
+---Second parameter is unknown (always false).  
 ---```
 ---
 ---@param player Player
@@ -1861,7 +1861,7 @@ function SetPlayerWeaponDefenseModifier(player, modifier) end
 ---**`PLAYER` `client` [`0x32C62AA929C2DA6A`](https://docs.fivem.net/natives/?_0x32C62AA929C2DA6A)**
 ---
 ---```
----The player will be ignored by the police if toggle is set to true
+---The player will be ignored by the police if toggle is set to true  
 ---```
 ---
 ---@param player Player
@@ -1883,10 +1883,10 @@ function SetPoliceRadarBlips(toggle) end
 ---**`PLAYER` `client` [`0x6DB47AA77FD94E09`](https://docs.fivem.net/natives/?_0x6DB47AA77FD94E09)**
 ---
 ---```
----Multiplier goes up to 1.49 any value above will be completely overruled by the game and the multiplier will not take effect, this can be edited in memory however.
----Just call it one time, it is not required to be called once every tick.
----Note: At least the IDA method if you change the max float multiplier from 1.5 it will change it for both this and SWIM above. I say 1.5 as the function blrs if what you input is greater than or equal to 1.5 hence why it's 1.49 max default.
----It is not possible to "decrease" speed. Anything below 1 will be ignored.
+---Multiplier goes up to 1.49 any value above will be completely overruled by the game and the multiplier will not take effect, this can be edited in memory however.  
+---Just call it one time, it is not required to be called once every tick.  
+---Note: At least the IDA method if you change the max float multiplier from 1.5 it will change it for both this and SWIM above. I say 1.5 as the function blrs if what you input is greater than or equal to 1.5 hence why it's 1.49 max default.  
+---It is not possible to "decrease" speed. Anything below 1 will be ignored.  
 ---```
 ---
 ---@param player Player
@@ -1901,10 +1901,10 @@ function SetSpecialAbilityMultiplier(multiplier) end
 ---**`PLAYER` `client` [`0xA91C6F0FF7D16A13`](https://docs.fivem.net/natives/?_0xA91C6F0FF7D16A13)**
 ---
 ---```
----Swim speed multiplier.
----Multiplier goes up to 1.49
----Just call it one time, it is not required to be called once every tick. - Note copied from below native.
----Note: At least the IDA method if you change the max float multiplier from 1.5 it will change it for both this and RUN_SPRINT below. I say 1.5 as the function blrs if what you input is greater than or equal to 1.5 hence why it's 1.49 max default.
+---Swim speed multiplier.  
+---Multiplier goes up to 1.49  
+---Just call it one time, it is not required to be called once every tick. - Note copied from below native.  
+---Note: At least the IDA method if you change the max float multiplier from 1.5 it will change it for both this and RUN_SPRINT below. I say 1.5 as the function blrs if what you input is greater than or equal to 1.5 hence why it's 1.49 max default.  
 ---```
 ---
 ---@param player Player
@@ -1914,7 +1914,7 @@ function SetSwimMultiplierForPlayer(player, multiplier) end
 ---**`PLAYER` `client` [`0x9B0BB33B04405E7A`](https://docs.fivem.net/natives/?_0x9B0BB33B04405E7A)**
 ---
 ---```
----Max value is 1.0
+---Max value is 1.0  
 ---```
 ---
 ---@param player Player
@@ -2153,7 +2153,7 @@ function StartPlayerTeleport(player, x, y, z, heading, teleportWithVehicle, find
 ---**`PLAYER` `client` [`0xC449EDED9D73009C`](https://docs.fivem.net/natives/?_0xC449EDED9D73009C)**
 ---
 ---```
----Disables the player's teleportation
+---Disables the player's teleportation  
 ---```
 ---
 function StopPlayerTeleport() end
@@ -2234,8 +2234,8 @@ function HasPlayerBeenShotByCop(player, ms, p2) end
 ---**`PLAYER` `client` [`0x7C814D2FB49F40C0`](https://docs.fivem.net/natives/?_0x7C814D2FB49F40C0)**
 ---
 ---```
----Returns true when the player is not able to control the cam i.e. when running a benchmark test, switching the player or viewing a cutscene.
----Note: I am not 100% sure if the native actually checks if the cam control is disabled but it seems promising.
+---Returns true when the player is not able to control the cam i.e. when running a benchmark test, switching the player or viewing a cutscene.  
+---Note: I am not 100% sure if the native actually checks if the cam control is disabled but it seems promising.  
 ---```
 ---
 ---@return boolean
@@ -2375,10 +2375,10 @@ function SpecialAbilityDeplete(p0) end
 ---**`PLAYER` `client` [`0x9A987297ED8BD838`](https://docs.fivem.net/natives/?_0x9A987297ED8BD838)**
 ---
 ---```
----This was previously named as "RESERVE_ENTITY_EXPLODES_ON_HIGH_EXPLOSION_COMBO"
----which is obviously incorrect.
----Seems to only appear in scripts used in Singleplayer. p1 ranges from 2 - 46.
----I assume this switches the crime type
+---This was previously named as "RESERVE_ENTITY_EXPLODES_ON_HIGH_EXPLOSION_COMBO"  
+---which is obviously incorrect.  
+---Seems to only appear in scripts used in Singleplayer. p1 ranges from 2 - 46.  
+---I assume this switches the crime type  
 ---```
 ---
 ---@param player Player

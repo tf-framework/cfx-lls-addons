@@ -6,8 +6,8 @@ function N_0x0b40ed49d7d6ff84() end
 ---**`BRAIN` `client` [`0x4D953DF78EBF8158`](https://docs.fivem.net/natives/?_0x4D953DF78EBF8158)**
 ---
 ---```
----Something like flush_all_scripts
----Most of time comes after NETWORK_END_TUTORIAL_SESSION() or before TERMINATE_THIS_THREAD()
+---Something like flush_all_scripts   
+---Most of time comes after NETWORK_END_TUTORIAL_SESSION() or before TERMINATE_THIS_THREAD()  
 ---```
 ---
 function N_0x4d953df78ebf8158() end
@@ -15,33 +15,33 @@ function N_0x4d953df78ebf8158() end
 ---**`BRAIN` `client` [`0x6D6840CEE8845831`](https://docs.fivem.net/natives/?_0x6D6840CEE8845831)**
 ---
 ---```
----Possible values:
----act_cinema
----am_mp_carwash_launch
----am_mp_carwash_control
----am_mp_property_ext
----chop
----fairgroundHub
----launcher_BasejumpHeli
----launcher_BasejumpPack
----launcher_CarWash
----launcher_golf
----launcher_Hunting_Ambient
----launcher_MrsPhilips
----launcher_OffroadRacing
----launcher_pilotschool
----launcher_Racing
----launcher_rampage
----launcher_rampage
----launcher_range
----launcher_stunts
----launcher_stunts
----launcher_tennis
----launcher_Tonya
----launcher_Triathlon
----launcher_Yoga
----ob_mp_bed_low
----ob_mp_bed_med
+---Possible values:  
+---act_cinema  
+---am_mp_carwash_launch  
+---am_mp_carwash_control  
+---am_mp_property_ext  
+---chop  
+---fairgroundHub  
+---launcher_BasejumpHeli  
+---launcher_BasejumpPack  
+---launcher_CarWash  
+---launcher_golf  
+---launcher_Hunting_Ambient  
+---launcher_MrsPhilips  
+---launcher_OffroadRacing  
+---launcher_pilotschool  
+---launcher_Racing  
+---launcher_rampage  
+---launcher_rampage  
+---launcher_range  
+---launcher_stunts  
+---launcher_stunts  
+---launcher_tennis  
+---launcher_Tonya  
+---launcher_Triathlon  
+---launcher_Yoga  
+---ob_mp_bed_low  
+---ob_mp_bed_med  
 ---```
 ---
 ---@param action string
@@ -50,10 +50,10 @@ function N_0x6d6840cee8845831(action) end
 ---**`BRAIN` `client` [`0x6E91B04E08773030`](https://docs.fivem.net/natives/?_0x6E91B04E08773030)**
 ---
 ---```
----Looks like a cousin of above function _6D6840CEE8845831 as it was found among them. Must be similar
----Here are possible values of argument -
----"ob_tv"
----"launcher_Darts"
+---Looks like a cousin of above function _6D6840CEE8845831 as it was found among them. Must be similar  
+---Here are possible values of argument -   
+---"ob_tv"  
+---"launcher_Darts"  
 ---```
 ---
 ---@param action string
@@ -93,7 +93,7 @@ function IsObjectWithinBrainActivationRange(object) end
 ---**`BRAIN` `client` [`0xC5042CC6F5E3D450`](https://docs.fivem.net/natives/?_0xC5042CC6F5E3D450)**
 ---
 ---```
----Gets whether the world point the calling script is registered to is within desired range of the player.
+---Gets whether the world point the calling script is registered to is within desired range of the player.  
 ---```
 ---
 ---@return boolean

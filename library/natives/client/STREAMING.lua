@@ -154,8 +154,8 @@ function EndSrl() end
 ---**`STREAMING` `client` [`0xB5D7B26B45720E05`](https://docs.fivem.net/natives/?_0xB5D7B26B45720E05)**
 ---
 ---```
----x1, y1, z1 -- Coords of your ped model
----x2, y2, z2 -- Coords of the ped you want to switch to
+---x1, y1, z1 -- Coords of your ped model  
+---x2, y2, z2 -- Coords of the ped you want to switch to  
 ---```
 ---
 ---@param x1 number
@@ -236,7 +236,7 @@ function HasAnimSetLoaded(animSet) end
 ---**`STREAMING` `client` [`0x318234F4F3738AF3`](https://docs.fivem.net/natives/?_0x318234F4F3738AF3)**
 ---
 ---```
----Alias for HAS_ANIM_SET_LOADED.
+---Alias for HAS_ANIM_SET_LOADED.  
 ---```
 ---
 ---@param clipSet string
@@ -289,7 +289,7 @@ function IsIplActive(iplName) end
 ---**`STREAMING` `client` [`0x19AAC8F07BFEC53E`](https://docs.fivem.net/natives/?_0x19AAC8F07BFEC53E)**
 ---
 ---```
----Returns whether the specified model represents a vehicle.
+---Returns whether the specified model represents a vehicle.  
 ---```
 ---
 ---@param model Hash
@@ -299,7 +299,7 @@ function IsModelAVehicle(model) end
 ---**`STREAMING` `client` [`0x35B9E0803292B641`](https://docs.fivem.net/natives/?_0x35B9E0803292B641)**
 ---
 ---```
----Check if model is in cdimage(rpf)
+---Check if model is in cdimage(rpf)  
 ---```
 ---
 ---@param model Hash
@@ -309,7 +309,7 @@ function IsModelInCdimage(model) end
 ---**`STREAMING` `client` [`0xC0296A2EDF545E92`](https://docs.fivem.net/natives/?_0xC0296A2EDF545E92)**
 ---
 ---```
----Returns whether the specified model exists in the game.
+---Returns whether the specified model exists in the game.  
 ---```
 ---
 ---@param model Hash
@@ -334,8 +334,8 @@ function IsNewLoadSceneLoaded() end
 ---**`STREAMING` `client` [`0xD9D2CFFF49FAB35F`](https://docs.fivem.net/natives/?_0xD9D2CFFF49FAB35F)**
 ---
 ---```
----Returns true if the player is currently switching, false otherwise.
----(When the camera is in the sky moving from Trevor to Franklin for example)
+---Returns true if the player is currently switching, false otherwise.  
+---(When the camera is in the sky moving from Trevor to Franklin for example)  
 ---```
 ---
 ---@return boolean
@@ -498,7 +498,7 @@ function RemoveAnimSet(animSet) end
 ---**`STREAMING` `client` [`0x01F73A131C18CD94`](https://docs.fivem.net/natives/?_0x01F73A131C18CD94)**
 ---
 ---```
----Alias for REMOVE_ANIM_SET.
+---Alias for REMOVE_ANIM_SET.  
 ---```
 ---
 ---@param clipSet string
@@ -644,7 +644,7 @@ function RequestPtfxAsset() end
 ---**`STREAMING` `client` [`0x42CBE54462D92634`](https://docs.fivem.net/natives/?_0x42CBE54462D92634)**
 ---
 ---```
----This is a NOP function. It does nothing at all.
+---This is a NOP function. It does nothing at all.  
 ---```
 ---
 ---@param toggle boolean
@@ -653,7 +653,7 @@ function SetDitchPoliceModels(toggle) end
 ---**`STREAMING` `client` [`0x198F77705FA0931D`](https://docs.fivem.net/natives/?_0x198F77705FA0931D)**
 ---
 ---```
----It seems to make the entity's coords mark the point from which LOD-distances are measured. In my testing, setting a vehicle as the focus entity and moving that vehicle more than 300 distance units away from the player will make the level of detail around the player go down drastically (shadows disappear, textures go extremely low res, etc). The player seems to be the default focus entity.
+---It seems to make the entity's coords mark the point from which LOD-distances are measured. In my testing, setting a vehicle as the focus entity and moving that vehicle more than 300 distance units away from the player will make the level of detail around the player go down drastically (shadows disappear, textures go extremely low res, etc). The player seems to be the default focus entity.  
 ---```
 ---
 ---@param entity Entity
@@ -708,9 +708,9 @@ function SetIslandEnabled(islandName, toggle) end
 ---**`STREAMING` `client` [`0xAF12610C644A35C9`](https://docs.fivem.net/natives/?_0xAF12610C644A35C9)**
 ---
 ---```
----Possible p0 values:
----"prologue"
----"Prologue_Main"
+---Possible p0 values:  
+---"prologue"  
+---"Prologue_Main"  
 ---```
 ---
 ---@param name string
@@ -757,18 +757,7 @@ function SetPlayerSwitchEstablishingShot(name) end
 ---@param camFov number
 ---@param camFarClip number
 ---@param rotationOrder number
-function SetPlayerSwitchOutro(
-	cameraCoordX,
-	cameraCoordY,
-	cameraCoordZ,
-	camRotationX,
-	camRotationY,
-	camRotationZ,
-	camFov,
-	camFarClip,
-	rotationOrder
-)
-end
+function SetPlayerSwitchOutro(cameraCoordX, cameraCoordY, cameraCoordZ, camRotationX, camRotationY, camRotationZ, camFov, camFarClip, rotationOrder) end
 
 ---**`STREAMING` `client` [`0x77B5F9A36BF96710`](https://docs.fivem.net/natives/?_0x77B5F9A36BF96710)**
 ---
@@ -807,24 +796,24 @@ function ShutdownCreatorBudget() end
 ---**`STREAMING` `client` [`0xFAA23F2CBA159D67`](https://docs.fivem.net/natives/?_0xFAA23F2CBA159D67)**
 ---
 ---```
----// this enum comes directly from R* so don't edit this
----enum ePlayerSwitchType
----{
----	SWITCH_TYPE_AUTO,
----	SWITCH_TYPE_LONG,
----	SWITCH_TYPE_MEDIUM,
----	SWITCH_TYPE_SHORT
----};
----Use GET_IDEAL_PLAYER_SWITCH_TYPE for the best switch type. Or just auto, because it calls the same function in executable.
--------------------------------------------------------
----Examples from the decompiled scripts:
----STREAMING::START_PLAYER_SWITCH(l_832._f3, PLAYER::PLAYER_PED_ID(), 0, 3);
----STREAMING::START_PLAYER_SWITCH(l_832._f3, PLAYER::PLAYER_PED_ID(), 2050, 3);
----STREAMING::START_PLAYER_SWITCH(PLAYER::PLAYER_PED_ID(), l_832._f3, 1024, 3);
----STREAMING::START_PLAYER_SWITCH(g_141F27, PLAYER::PLAYER_PED_ID(), 513, v_14);
----Note: DO NOT, use SWITCH_TYPE_LONG with flag 513. It leaves you stuck in the clouds. You'll have to call STOP_PLAYER_SWITCH() to return to your ped.
----Flag 8 w/ SWITCH_TYPE_LONG will zoom out 3 steps, then zoom in 2/3 steps and stop on the 3rd and just hang there.
----Flag 8 w/ SWITCH_TYPE_MEDIUM will zoom out 1 step, and just hang there.
+---// this enum comes directly from R* so don't edit this  
+---enum ePlayerSwitchType  
+---{  
+---	SWITCH_TYPE_AUTO,  
+---	SWITCH_TYPE_LONG,  
+---	SWITCH_TYPE_MEDIUM,  
+---	SWITCH_TYPE_SHORT  
+---};  
+---Use GET_IDEAL_PLAYER_SWITCH_TYPE for the best switch type. Or just auto, because it calls the same function in executable.  
+-------------------------------------------------------  
+---Examples from the decompiled scripts:  
+---STREAMING::START_PLAYER_SWITCH(l_832._f3, PLAYER::PLAYER_PED_ID(), 0, 3);  
+---STREAMING::START_PLAYER_SWITCH(l_832._f3, PLAYER::PLAYER_PED_ID(), 2050, 3);  
+---STREAMING::START_PLAYER_SWITCH(PLAYER::PLAYER_PED_ID(), l_832._f3, 1024, 3);  
+---STREAMING::START_PLAYER_SWITCH(g_141F27, PLAYER::PLAYER_PED_ID(), 513, v_14);  
+---Note: DO NOT, use SWITCH_TYPE_LONG with flag 513. It leaves you stuck in the clouds. You'll have to call STOP_PLAYER_SWITCH() to return to your ped.  
+---Flag 8 w/ SWITCH_TYPE_LONG will zoom out 3 steps, then zoom in 2/3 steps and stop on the 3rd and just hang there.  
+---Flag 8 w/ SWITCH_TYPE_MEDIUM will zoom out 1 step, and just hang there.  
 ---```
 ---
 ---@param from Ped

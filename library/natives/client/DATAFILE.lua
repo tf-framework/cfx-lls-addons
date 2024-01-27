@@ -111,14 +111,14 @@ function DataarrayGetString(arrayData, arrayIndex) end
 ---**`DATAFILE` `client` [`0x3A0014ADB172A3C5`](https://docs.fivem.net/natives/?_0x3A0014ADB172A3C5)**
 ---
 ---```
----Types:
----1 = Boolean
----2 = Integer
----3 = Float
----4 = String
----5 = Vector3
----6 = Object
----7 = Array
+---Types:  
+---1 = Boolean  
+---2 = Integer  
+---3 = Float  
+---4 = String  
+---5 = Vector3  
+---6 = Object  
+---7 = Array  
 ---```
 ---
 ---@param arrayData any
@@ -192,14 +192,14 @@ function DatadictGetString(objectData, key) end
 ---**`DATAFILE` `client` [`0x031C55ED33227371`](https://docs.fivem.net/natives/?_0x031C55ED33227371)**
 ---
 ---```
----Types:
----1 = Boolean
----2 = Integer
----3 = Float
----4 = String
----5 = Vector3
----6 = Object
----7 = Array
+---Types:  
+---1 = Boolean  
+---2 = Integer  
+---3 = Float  
+---4 = String  
+---5 = Vector3  
+---6 = Object  
+---7 = Array  
 ---```
 ---
 ---@param objectData any
@@ -305,24 +305,24 @@ function DatafileHasValidFileData(p0) end
 ---**`DATAFILE` `client` [`0xBEDB96A7584AA8CF`](https://docs.fivem.net/natives/?_0xBEDB96A7584AA8CF)**
 ---
 ---```
----Example:
----if (!DATAFILE::_BEDB96A7584AA8CF())
----{
----    if (!g_109E3)
----	{
----        if (((sub_d4f() == 2) == 0) && (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS()))
----{
----            if (NETWORK::NETWORK_IS_CLOUD_AVAILABLE())
----	{
----                g_17A8B = 0;
----            }
----            if (!g_D52C)
----	{
----                sub_730();
----            }
----        }
----    }
----}
+---Example:  
+---if (!DATAFILE::_BEDB96A7584AA8CF())  
+---{  
+---    if (!g_109E3)  
+---	{  
+---        if (((sub_d4f() == 2) == 0) && (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS()))  
+---{  
+---            if (NETWORK::NETWORK_IS_CLOUD_AVAILABLE())  
+---	{  
+---                g_17A8B = 0;  
+---            }  
+---            if (!g_D52C)  
+---	{  
+---                sub_730();  
+---            }  
+---        }  
+---    }  
+---}  
 ---```
 ---
 ---@return boolean

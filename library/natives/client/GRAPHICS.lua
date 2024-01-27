@@ -243,7 +243,7 @@ function N_0x5f6df3d92271e8a1(toggle) end
 ---**`GRAPHICS` `client` [`0x615D3925E87A3B26`](https://docs.fivem.net/natives/?_0x615D3925E87A3B26)**
 ---
 ---```
----Unknown. Called after creating a checkpoint (type: 51) in the creators.
+---Unknown. Called after creating a checkpoint (type: 51) in the creators.  
 ---```
 ---
 ---@param checkpoint number
@@ -464,7 +464,7 @@ function N_0xbcedb009461da156() end
 ---**`GRAPHICS` `client` [`0xBE197EAA669238F4`](https://docs.fivem.net/natives/?_0xBE197EAA669238F4)**
 ---
 ---```
----This function is hard-coded to always return 0.
+---This function is hard-coded to always return 0.  
 ---```
 ---
 ---@param p0 any
@@ -520,7 +520,7 @@ function N_0xcfd16f0db5a3535c(toggle) end
 ---**`GRAPHICS` `client` [`0xD1C55B110E4DF534`](https://docs.fivem.net/natives/?_0xD1C55B110E4DF534)**
 ---
 ---```
----SET_TV_???
+---SET_TV_???  
 ---```
 ---
 ---@param p0 any
@@ -549,7 +549,7 @@ function N_0xe2892e7e55d7073a(p0) end
 ---**`GRAPHICS` `client` [`0xE3E2C1B4C59DBC77`](https://docs.fivem.net/natives/?_0xE3E2C1B4C59DBC77)**
 ---
 ---```
----Sets an unknown value related to timecycles.
+---Sets an unknown value related to timecycles.  
 ---```
 ---
 ---@param unk number
@@ -578,7 +578,7 @@ function N_0xe63d7c6eececb66b(toggle) end
 ---**`GRAPHICS` `client` [`0xE791DF1F73ED2C8B`](https://docs.fivem.net/natives/?_0xE791DF1F73ED2C8B)**
 ---
 ---```
----This function is hard-coded to always return 0.
+---This function is hard-coded to always return 0.  
 ---```
 ---
 ---@param p0 any
@@ -588,7 +588,7 @@ function N_0xe791df1f73ed2c8b(p0) end
 ---**`GRAPHICS` `client` [`0xEC72C258667BE5EA`](https://docs.fivem.net/natives/?_0xEC72C258667BE5EA)**
 ---
 ---```
----This function is hard-coded to always return 0.
+---This function is hard-coded to always return 0.  
 ---```
 ---
 ---@param p0 any
@@ -648,62 +648,62 @@ function N_0xfcf6788fc4860cd4(checkpoint) end
 ---**`GRAPHICS` `client` [`0xB302244A1839BDAD`](https://docs.fivem.net/natives/?_0xB302244A1839BDAD)**
 ---
 ---```
----decal types:
----public enum DecalTypes
----{
----    splatters_blood = 1010,
----    splatters_blood_dir = 1015,
----    splatters_blood_mist = 1017,
----    splatters_mud = 1020,
----    splatters_paint = 1030,
----    splatters_water = 1040,
----    splatters_water_hydrant = 1050,
----    splatters_blood2 = 1110,
----    weapImpact_metal = 4010,
----    weapImpact_concrete = 4020,
----    weapImpact_mattress = 4030,
----    weapImpact_mud = 4032,
----    weapImpact_wood = 4050,
----    weapImpact_sand = 4053,
----    weapImpact_cardboard = 4040,
----    weapImpact_melee_glass = 4100,
----    weapImpact_glass_blood = 4102,
----    weapImpact_glass_blood2 = 4104,
----    weapImpact_shotgun_paper = 4200,
----    weapImpact_shotgun_mattress,
----    weapImpact_shotgun_metal,
----    weapImpact_shotgun_wood,
----    weapImpact_shotgun_dirt,
----    weapImpact_shotgun_tvscreen,
----    weapImpact_shotgun_tvscreen2,
----    weapImpact_shotgun_tvscreen3,
----    weapImpact_melee_concrete = 4310,
----    weapImpact_melee_wood = 4312,
----    weapImpact_melee_metal = 4314,
----    burn1 = 4421,
----    burn2,
----    burn3,
----    burn4,
----    burn5,
----    bang_concrete_bang = 5000,
----    bang_concrete_bang2,
----    bang_bullet_bang,
----    bang_bullet_bang2 = 5004,
----    bang_glass = 5031,
----    bang_glass2,
----    solidPool_water = 9000,
----    solidPool_blood,
----    solidPool_oil,
----    solidPool_petrol,
----    solidPool_mud,
----    porousPool_water,
----    porousPool_blood,
----    porousPool_oil,
----    porousPool_petrol,
----    porousPool_mud,
----    porousPool_water_ped_drip,
----    liquidTrail_water = 9050
----}
+---decal types:  
+---public enum DecalTypes  
+---{  
+---    splatters_blood = 1010,  
+---    splatters_blood_dir = 1015,  
+---    splatters_blood_mist = 1017,  
+---    splatters_mud = 1020,  
+---    splatters_paint = 1030,  
+---    splatters_water = 1040,  
+---    splatters_water_hydrant = 1050,  
+---    splatters_blood2 = 1110,  
+---    weapImpact_metal = 4010,  
+---    weapImpact_concrete = 4020,  
+---    weapImpact_mattress = 4030,  
+---    weapImpact_mud = 4032,  
+---    weapImpact_wood = 4050,  
+---    weapImpact_sand = 4053,  
+---    weapImpact_cardboard = 4040,  
+---    weapImpact_melee_glass = 4100,  
+---    weapImpact_glass_blood = 4102,  
+---    weapImpact_glass_blood2 = 4104,  
+---    weapImpact_shotgun_paper = 4200,  
+---    weapImpact_shotgun_mattress,  
+---    weapImpact_shotgun_metal,  
+---    weapImpact_shotgun_wood,  
+---    weapImpact_shotgun_dirt,  
+---    weapImpact_shotgun_tvscreen,  
+---    weapImpact_shotgun_tvscreen2,  
+---    weapImpact_shotgun_tvscreen3,  
+---    weapImpact_melee_concrete = 4310,  
+---    weapImpact_melee_wood = 4312,  
+---    weapImpact_melee_metal = 4314,  
+---    burn1 = 4421,  
+---    burn2,  
+---    burn3,  
+---    burn4,  
+---    burn5,  
+---    bang_concrete_bang = 5000,  
+---    bang_concrete_bang2,  
+---    bang_bullet_bang,  
+---    bang_bullet_bang2 = 5004,  
+---    bang_glass = 5031,  
+---    bang_glass2,  
+---    solidPool_water = 9000,  
+---    solidPool_blood,  
+---    solidPool_oil,  
+---    solidPool_petrol,  
+---    solidPool_mud,  
+---    porousPool_water,  
+---    porousPool_blood,  
+---    porousPool_oil,  
+---    porousPool_petrol,  
+---    porousPool_mud,  
+---    porousPool_water_ped_drip,  
+---    liquidTrail_water = 9050  
+---}  
 ---```
 ---
 ---@param decalType number
@@ -727,36 +727,14 @@ function N_0xfcf6788fc4860cd4(checkpoint) end
 ---@param p18 boolean
 ---@param p19 boolean
 ---@return number
-function AddDecal(
-	decalType,
-	posX,
-	posY,
-	posZ,
-	p4,
-	p5,
-	p6,
-	p7,
-	p8,
-	p9,
-	width,
-	height,
-	rCoef,
-	gCoef,
-	bCoef,
-	opacity,
-	timeout,
-	p17,
-	p18,
-	p19
-)
-end
+function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, p7, p8, p9, width, height, rCoef, gCoef, bCoef, opacity, timeout, p17, p18, p19) end
 
 ---**`GRAPHICS` `client` [`0x9CD43EEE12BF4DD0`](https://docs.fivem.net/natives/?_0x9CD43EEE12BF4DD0)**
 ---
 ---```
----Example:
----GRAPHICS::ADD_ENTITY_ICON(a_0, "MP_Arrow");
----I tried this and nothing happened...
+---Example:  
+---GRAPHICS::ADD_ENTITY_ICON(a_0, "MP_Arrow");  
+---I tried this and nothing happened...  
 ---```
 ---
 ---@param entity Entity
@@ -847,7 +825,7 @@ function AnimpostfxStopAll() end
 ---**`GRAPHICS` `client` [`0x845BAD77CC770633`](https://docs.fivem.net/natives/?_0x845BAD77CC770633)**
 ---
 ---```
----Might be more appropriate in AUDIO?
+---Might be more appropriate in AUDIO?  
 ---```
 ---
 ---@param entity Entity
@@ -856,7 +834,7 @@ function AttachTvAudioToEntity(entity) end
 ---**`GRAPHICS` `client` [`0xF6E48914C7A8694E`](https://docs.fivem.net/natives/?_0xF6E48914C7A8694E)**
 ---
 ---```
----Push a function from the Scaleform onto the stack
+---Push a function from the Scaleform onto the stack  
 ---```
 ---
 ---@param scaleform number
@@ -936,7 +914,7 @@ function BeginTextCommandScaleformString(textLabel) end
 ---**`GRAPHICS` `client` [`0xFBD96D87AC96D533`](https://docs.fivem.net/natives/?_0xFBD96D87AC96D533)**
 ---
 ---```
----Calls the Scaleform function.
+---Calls the Scaleform function.  
 ---```
 ---
 ---@param scaleform number
@@ -946,8 +924,8 @@ function CallScaleformMovieMethod(scaleform, method) end
 ---**`GRAPHICS` `client` [`0xD0837058AE2E4BEE`](https://docs.fivem.net/natives/?_0xD0837058AE2E4BEE)**
 ---
 ---```
----Calls the Scaleform function and passes the parameters as floats.
----The number of parameters passed to the function varies, so the end of the parameter list is represented by -1.0.
+---Calls the Scaleform function and passes the parameters as floats.  
+---The number of parameters passed to the function varies, so the end of the parameter list is represented by -1.0.  
 ---```
 ---
 ---@param scaleform number
@@ -962,14 +940,14 @@ function CallScaleformMovieMethodWithNumber(scaleform, methodName, param1, param
 ---**`GRAPHICS` `client` [`0xEF662D8D57E290B1`](https://docs.fivem.net/natives/?_0xEF662D8D57E290B1)**
 ---
 ---```
----Calls the Scaleform function and passes both float and string parameters (in their respective order).
----The number of parameters passed to the function varies, so the end of the float parameters is represented by -1.0, and the end of the string parameters is represented by 0 (NULL).
----NOTE: The order of parameters in the function prototype is important! All float parameters must come first, followed by the string parameters.
----Examples:
----// function MY_FUNCTION(floatParam1, floatParam2, stringParam)
----GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_MIXED_PARAMS(scaleform, "MY_FUNCTION", 10.0, 20.0, -1.0, -1.0, -1.0, "String param", 0, 0, 0, 0);
----// function MY_FUNCTION_2(floatParam, stringParam1, stringParam2)
----GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_MIXED_PARAMS(scaleform, "MY_FUNCTION_2", 10.0, -1.0, -1.0, -1.0, -1.0, "String param #1", "String param #2", 0, 0, 0);
+---Calls the Scaleform function and passes both float and string parameters (in their respective order).  
+---The number of parameters passed to the function varies, so the end of the float parameters is represented by -1.0, and the end of the string parameters is represented by 0 (NULL).  
+---NOTE: The order of parameters in the function prototype is important! All float parameters must come first, followed by the string parameters.  
+---Examples:  
+---// function MY_FUNCTION(floatParam1, floatParam2, stringParam)  
+---GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_MIXED_PARAMS(scaleform, "MY_FUNCTION", 10.0, 20.0, -1.0, -1.0, -1.0, "String param", 0, 0, 0, 0);  
+---// function MY_FUNCTION_2(floatParam, stringParam1, stringParam2)  
+---GRAPHICS::_CALL_SCALEFORM_MOVIE_FUNCTION_MIXED_PARAMS(scaleform, "MY_FUNCTION_2", 10.0, -1.0, -1.0, -1.0, -1.0, "String param #1", "String param #2", 0, 0, 0);  
 ---```
 ---
 ---@param scaleform number
@@ -984,27 +962,13 @@ function CallScaleformMovieMethodWithNumber(scaleform, methodName, param1, param
 ---@param stringParam3 string
 ---@param stringParam4 string
 ---@param stringParam5 string
-function CallScaleformMovieMethodWithNumberAndString(
-	scaleform,
-	methodName,
-	floatParam1,
-	floatParam2,
-	floatParam3,
-	floatParam4,
-	floatParam5,
-	stringParam1,
-	stringParam2,
-	stringParam3,
-	stringParam4,
-	stringParam5
-)
-end
+function CallScaleformMovieMethodWithNumberAndString(scaleform, methodName, floatParam1, floatParam2, floatParam3, floatParam4, floatParam5, stringParam1, stringParam2, stringParam3, stringParam4, stringParam5) end
 
 ---**`GRAPHICS` `client` [`0x51BC1ED3CC44E8F7`](https://docs.fivem.net/natives/?_0x51BC1ED3CC44E8F7)**
 ---
 ---```
----Calls the Scaleform function and passes the parameters as strings.
----The number of parameters passed to the function varies, so the end of the parameter list is represented by 0 (NULL).
+---Calls the Scaleform function and passes the parameters as strings.  
+---The number of parameters passed to the function varies, so the end of the parameter list is represented by 0 (NULL).  
 ---```
 ---
 ---@param scaleform number
@@ -1116,40 +1080,40 @@ function ClearTvChannelPlaylist(tvChannel) end
 ---**`GRAPHICS` `client` [`0x0134F0835AB6BFCB`](https://docs.fivem.net/natives/?_0x0134F0835AB6BFCB)**
 ---
 ---```
----Creates a checkpoint. Returns the handle of the checkpoint.
+---Creates a checkpoint. Returns the handle of the checkpoint.  
 ---20/03/17 : Attention, checkpoints are already handled by the game itself, so you must not loop it like markers.
----Parameters:
----* type - The type of checkpoint to create. See below for a list of checkpoint types.
----* pos1 - The position of the checkpoint.
----* pos2 - The position of the next checkpoint to point to.
+---Parameters:  
+---* type - The type of checkpoint to create. See below for a list of checkpoint types.  
+---* pos1 - The position of the checkpoint.  
+---* pos2 - The position of the next checkpoint to point to.  
 ---* diameter - The diameter of the checkpoint.
----* color - The color of the checkpoint.
----* reserved - Special parameter, see below for details. Usually set to 0 in the scripts.
----Checkpoint types (prior to game build 2189):
----0-4---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
----5-9---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
----10-14-------Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
----15-19-------1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
----20-24-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
----25-29-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
----30-34-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker
----35-38-------Ring: Airplane Up, Left, Right, UpsideDown
----39----------?
----40----------Ring: just a ring
----41----------?
----42-44-------Cylinder w/ number (uses 'reserved' parameter)
----45-47-------Cylinder no arrow or number
----If using type 42-44, reserved sets number / number and shape to display
----0-99------------Just numbers (0-99)
----100-109-----------------Arrow (0-9)
----110-119------------Two arrows (0-9)
----120-129----------Three arrows (0-9)
----130-139----------------Circle (0-9)
----140-149------------CycleArrow (0-9)
----150-159----------------Circle (0-9)
----160-169----Circle  w/ pointer (0-9)
----170-179-------Perforated ring (0-9)
----180-189----------------Sphere (0-9)
+---* color - The color of the checkpoint.  
+---* reserved - Special parameter, see below for details. Usually set to 0 in the scripts.  
+---Checkpoint types (prior to game build 2189):  
+---0-4---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
+---5-9---------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
+---10-14-------Ring: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker  
+---15-19-------1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker        
+---20-24-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker   
+---25-29-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker      
+---30-34-------Cylinder: 1 arrow, 2 arrow, 3 arrows, CycleArrow, Checker   
+---35-38-------Ring: Airplane Up, Left, Right, UpsideDown  
+---39----------?  
+---40----------Ring: just a ring  
+---41----------?  
+---42-44-------Cylinder w/ number (uses 'reserved' parameter)  
+---45-47-------Cylinder no arrow or number  
+---If using type 42-44, reserved sets number / number and shape to display  
+---0-99------------Just numbers (0-99)  
+---100-109-----------------Arrow (0-9)  
+---110-119------------Two arrows (0-9)  
+---120-129----------Three arrows (0-9)  
+---130-139----------------Circle (0-9)  
+---140-149------------CycleArrow (0-9)  
+---150-159----------------Circle (0-9)  
+---160-169----Circle  w/ pointer (0-9)  
+---170-179-------Perforated ring (0-9)  
+---180-189----------------Sphere (0-9)  
 ---```
 ---
 ---[Checkpoint Types](https://docs.fivem.net/docs/game-references/checkpoints/) as of game build 2189
@@ -1168,22 +1132,7 @@ function ClearTvChannelPlaylist(tvChannel) end
 ---@param alpha number
 ---@param reserved number
 ---@return number
-function CreateCheckpoint(
-	type,
-	posX1,
-	posY1,
-	posZ1,
-	posX2,
-	posY2,
-	posZ2,
-	diameter,
-	red,
-	green,
-	blue,
-	alpha,
-	reserved
-)
-end
+function CreateCheckpoint(type, posX1, posY1, posZ1, posX2, posY2, posZ2, diameter, red, green, blue, alpha, reserved) end
 
 ---**`GRAPHICS` `client` [`0xE2C9439ED45DEA60`](https://docs.fivem.net/natives/?_0xE2C9439ED45DEA60)**
 ---
@@ -1252,21 +1201,21 @@ function DontRenderInGameUi(p0) end
 ---**`GRAPHICS` `client` [`0xD3A9971CADAC7252`](https://docs.fivem.net/natives/?_0xD3A9971CADAC7252)**
 ---
 ---```
----x,y,z = start pos
----x2,y2,z2 = end pos
----Draw's a 3D Box between the two x,y,z coords.
------------------
----Keep in mind that the edges of the box do only align to the worlds base-vectors. Therefore something like rotation cannot be applied. That means this function is pretty much useless, unless you want a static unicolor box somewhere.
----I recommend using a predefined function to call this.
----[VB.NET]
----Public Sub DrawBox(a As Vector3, b As Vector3, col As Color)
----    [Function].Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A)
----End Sub
----[C#]
----public void DrawBox(Vector3 a, Vector3 b, Color col)
----{
----    Function.Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A);
----}
+---x,y,z = start pos  
+---x2,y2,z2 = end pos  
+---Draw's a 3D Box between the two x,y,z coords.  
+-----------------  
+---Keep in mind that the edges of the box do only align to the worlds base-vectors. Therefore something like rotation cannot be applied. That means this function is pretty much useless, unless you want a static unicolor box somewhere.  
+---I recommend using a predefined function to call this.  
+---[VB.NET]  
+---Public Sub DrawBox(a As Vector3, b As Vector3, col As Color)  
+---    [Function].Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A)  
+---End Sub  
+---[C#]  
+---public void DrawBox(Vector3 a, Vector3 b, Color col)  
+---{  
+---    Function.Call(Hash.DRAW_BOX,a.X, a.Y, a.Z,b.X, b.Y, b.Z,col.R, col.G, col.B, col.A);  
+---}  
 ---```
 ---
 ---@param x1 number
@@ -1284,7 +1233,7 @@ function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
 ---**`GRAPHICS` `client` [`0x083A2CA4F2E573BD`](https://docs.fivem.net/natives/?_0x083A2CA4F2E573BD)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param x1 number
@@ -1302,7 +1251,7 @@ function DrawDebugBox(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 ---**`GRAPHICS` `client` [`0x73B1189623049839`](https://docs.fivem.net/natives/?_0x73B1189623049839)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param x number
@@ -1318,7 +1267,7 @@ function DrawDebugCross(x, y, z, size, red, green, blue, alpha) end
 ---**`GRAPHICS` `client` [`0x7FDFADE676AA3CB0`](https://docs.fivem.net/natives/?_0x7FDFADE676AA3CB0)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param x1 number
@@ -1336,7 +1285,7 @@ function DrawDebugLine(x1, y1, z1, x2, y2, z2, r, g, b, a) end
 ---**`GRAPHICS` `client` [`0xD8B9A8AC5608FF94`](https://docs.fivem.net/natives/?_0xD8B9A8AC5608FF94)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param x1 number
@@ -1358,7 +1307,7 @@ function DrawDebugLineWithTwoColours(x1, y1, z1, x2, y2, z2, r1, g1, b1, r2, g2,
 ---**`GRAPHICS` `client` [`0xAAD68E1AB39DA632`](https://docs.fivem.net/natives/?_0xAAD68E1AB39DA632)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param x number
@@ -1374,7 +1323,7 @@ function DrawDebugSphere(x, y, z, radius, red, green, blue, alpha) end
 ---**`GRAPHICS` `client` [`0x3903E216620488E8`](https://docs.fivem.net/natives/?_0x3903E216620488E8)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param text string
@@ -1390,7 +1339,7 @@ function DrawDebugText(text, x, y, z, red, green, blue, alpha) end
 ---**`GRAPHICS` `client` [`0xA3BB2E9555C05A8F`](https://docs.fivem.net/natives/?_0xA3BB2E9555C05A8F)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param text string
@@ -1496,56 +1445,30 @@ function DrawLowQualityPhotoToPhone(p0, p1) end
 ---@param textureDict string A texture dictionary to draw the marker with, or NULL. Example: 'GolfPutting'
 ---@param textureName string A texture name in `textureDict` to draw the marker with, or NULL. Example: 'PuttingMarker'
 ---@param drawOnEnts boolean Whether or not the marker should draw on intersecting entities.
-function DrawMarker(
-	type,
-	posX,
-	posY,
-	posZ,
-	dirX,
-	dirY,
-	dirZ,
-	rotX,
-	rotY,
-	rotZ,
-	scaleX,
-	scaleY,
-	scaleZ,
-	red,
-	green,
-	blue,
-	alpha,
-	bobUpAndDown,
-	faceCamera,
-	p19,
-	rotate,
-	textureDict,
-	textureName,
-	drawOnEnts
-)
-end
+function DrawMarker(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts) end
 
 ---**`GRAPHICS` `client` [`0xAC26716048436851`](https://docs.fivem.net/natives/?_0xAC26716048436851)**
 ---
 ---```
----x/y/z - Location of a vertex (in world coords), presumably.
--------------------
----x1, y1, z1     : Coordinates for the first point
----x2, y2, z2     : Coordinates for the second point
----x3, y3, z3     : Coordinates for the third point
----r, g, b, alpha : Color with RGBA-Values
----Keep in mind that only one side of the drawn triangle is visible: It's the side, in which the vector-product of the vectors heads to: (b-a)x(c-a) Or (b-a)x(c-b).
----But be aware: The function seems to work somehow differently. I have trouble having them drawn in rotated orientation. Try it yourself and if you somehow succeed, please edit this and post your solution.
----I recommend using a predefined function to call this.
----[VB.NET]
----Public Sub DrawPoly(a As Vector3, b As Vector3, c As Vector3, col As Color)
----    [Function].Call(Hash.DRAW_POLY, a.X, a.Y, a.Z, b.X, b.Y, b.Z, c.X, c.Y, c.Z, col.R, col.G, col.B, col.A)
----End Sub
----[C#]
----public void DrawPoly(Vector3 a, Vector3 b, Vector3 c, Color col)
----{
----    Function.Call(Hash.DRAW_POLY, a.X, a.Y, a.Z, b.X, b.Y, b.Z, c.X, c.Y, c.Z, col.R, col.G, col.B, col.A);
----}
----BTW: Intersecting triangles are not supported: They overlap in the order they were called.
+---x/y/z - Location of a vertex (in world coords), presumably.  
+-------------------  
+---x1, y1, z1     : Coordinates for the first point  
+---x2, y2, z2     : Coordinates for the second point  
+---x3, y3, z3     : Coordinates for the third point  
+---r, g, b, alpha : Color with RGBA-Values  
+---Keep in mind that only one side of the drawn triangle is visible: It's the side, in which the vector-product of the vectors heads to: (b-a)x(c-a) Or (b-a)x(c-b).  
+---But be aware: The function seems to work somehow differently. I have trouble having them drawn in rotated orientation. Try it yourself and if you somehow succeed, please edit this and post your solution.  
+---I recommend using a predefined function to call this.  
+---[VB.NET]  
+---Public Sub DrawPoly(a As Vector3, b As Vector3, c As Vector3, col As Color)  
+---    [Function].Call(Hash.DRAW_POLY, a.X, a.Y, a.Z, b.X, b.Y, b.Z, c.X, c.Y, c.Z, col.R, col.G, col.B, col.A)  
+---End Sub  
+---[C#]  
+---public void DrawPoly(Vector3 a, Vector3 b, Vector3 c, Color col)  
+---{  
+---    Function.Call(Hash.DRAW_POLY, a.X, a.Y, a.Z, b.X, b.Y, b.Z, c.X, c.Y, c.Z, col.R, col.G, col.B, col.A);  
+---}  
+---BTW: Intersecting triangles are not supported: They overlap in the order they were called.  
 ---```
 ---
 ---@param x1 number
@@ -1566,16 +1489,16 @@ function DrawPoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha) e
 ---**`GRAPHICS` `client` [`0x3A618A217E5154F0`](https://docs.fivem.net/natives/?_0x3A618A217E5154F0)**
 ---
 ---```
----Draws a rectangle on the screen.
-----x: The relative X point of the center of the rectangle. (0.0-1.0, 0.0 is the left edge of the screen, 1.0 is the right edge of the screen)
-----y: The relative Y point of the center of the rectangle. (0.0-1.0, 0.0 is the top edge of the screen, 1.0 is the bottom edge of the screen)
-----width: The relative width of the rectangle. (0.0-1.0, 1.0 means the whole screen width)
-----height: The relative height of the rectangle. (0.0-1.0, 1.0 means the whole screen height)
-----R: Red part of the color. (0-255)
-----G: Green part of the color. (0-255)
-----B: Blue part of the color. (0-255)
-----A: Alpha part of the color. (0-255, 0 means totally transparent, 255 means totally opaque)
----The total number of rectangles to be drawn in one frame is apparently limited to 399.
+---Draws a rectangle on the screen.  
+----x: The relative X point of the center of the rectangle. (0.0-1.0, 0.0 is the left edge of the screen, 1.0 is the right edge of the screen)  
+----y: The relative Y point of the center of the rectangle. (0.0-1.0, 0.0 is the top edge of the screen, 1.0 is the bottom edge of the screen)  
+----width: The relative width of the rectangle. (0.0-1.0, 1.0 means the whole screen width)  
+----height: The relative height of the rectangle. (0.0-1.0, 1.0 means the whole screen height)  
+----R: Red part of the color. (0-255)  
+----G: Green part of the color. (0-255)  
+----B: Blue part of the color. (0-255)  
+----A: Alpha part of the color. (0-255, 0 means totally transparent, 255 means totally opaque)  
+---The total number of rectangles to be drawn in one frame is apparently limited to 399.  
 ---```
 ---
 ---```
@@ -1622,23 +1545,7 @@ function DrawScaleformMovie(scaleformHandle, x, y, width, height, red, green, bl
 ---@param scaleY number
 ---@param scaleZ number
 ---@param p13 any
-function DrawScaleformMovie_3d(
-	scaleform,
-	posX,
-	posY,
-	posZ,
-	rotX,
-	rotY,
-	rotZ,
-	p7,
-	sharpness,
-	p9,
-	scaleX,
-	scaleY,
-	scaleZ,
-	p13
-)
-end
+function DrawScaleformMovie_3d(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7, sharpness, p9, scaleX, scaleY, scaleZ, p13) end
 
 ---**`GRAPHICS` `client` [`0x1CE592FDC749D6F5`](https://docs.fivem.net/natives/?_0x1CE592FDC749D6F5)**
 ---
@@ -1656,28 +1563,12 @@ end
 ---@param scaleY number
 ---@param scaleZ number
 ---@param p13 any
-function DrawScaleformMovie_3dSolid(
-	scaleform,
-	posX,
-	posY,
-	posZ,
-	rotX,
-	rotY,
-	rotZ,
-	p7,
-	p8,
-	p9,
-	scaleX,
-	scaleY,
-	scaleZ,
-	p13
-)
-end
+function DrawScaleformMovie_3dSolid(scaleform, posX, posY, posZ, rotX, rotY, rotZ, p7, p8, p9, scaleX, scaleY, scaleZ, p13) end
 
 ---**`GRAPHICS` `client` [`0x0DF606929C105BE1`](https://docs.fivem.net/natives/?_0x0DF606929C105BE1)**
 ---
 ---```
----unk is not used so no need
+---unk is not used so no need  
 ---```
 ---
 ---@param scaleform number
@@ -1701,22 +1592,22 @@ function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, 
 ---**`GRAPHICS` `client` [`0xD0F64B265C8C8B33`](https://docs.fivem.net/natives/?_0xD0F64B265C8C8B33)**
 ---
 ---```
----Parameters:
----* pos - coordinate where the spotlight is located
----* dir - the direction vector the spotlight should aim at from its current position
----* r,g,b - color of the spotlight
----* distance - the maximum distance the light can reach
----* brightness - the brightness of the light
----* roundness - "smoothness" of the circle edge
----* radius - the radius size of the spotlight
----* falloff - the falloff size of the light's edge (example: www.i.imgur.com/DemAWeO.jpg)
----Example in C# (spotlight aims at the closest vehicle):
----Vector3 myPos = Game.Player.Character.Position;
----Vehicle nearest = World.GetClosestVehicle(myPos , 1000f);
----Vector3 destinationCoords = nearest.Position;
----Vector3 dirVector = destinationCoords - myPos;
----dirVector.Normalize();
----Function.Call(Hash.DRAW_SPOT_LIGHT, pos.X, pos.Y, pos.Z, dirVector.X, dirVector.Y, dirVector.Z, 255, 255, 255, 100.0f, 1f, 0.0f, 13.0f, 1f);
+---Parameters:  
+---* pos - coordinate where the spotlight is located  
+---* dir - the direction vector the spotlight should aim at from its current position  
+---* r,g,b - color of the spotlight  
+---* distance - the maximum distance the light can reach  
+---* brightness - the brightness of the light  
+---* roundness - "smoothness" of the circle edge  
+---* radius - the radius size of the spotlight  
+---* falloff - the falloff size of the light's edge (example: www.i.imgur.com/DemAWeO.jpg)  
+---Example in C# (spotlight aims at the closest vehicle):  
+---Vector3 myPos = Game.Player.Character.Position;  
+---Vehicle nearest = World.GetClosestVehicle(myPos , 1000f);  
+---Vector3 destinationCoords = nearest.Position;  
+---Vector3 dirVector = destinationCoords - myPos;  
+---dirVector.Normalize();  
+---Function.Call(Hash.DRAW_SPOT_LIGHT, pos.X, pos.Y, pos.Z, dirVector.X, dirVector.Y, dirVector.Z, 255, 255, 255, 100.0f, 1f, 0.0f, 13.0f, 1f);  
 ---```
 ---
 ---@param posX number
@@ -1733,36 +1624,20 @@ function DrawScaleformMovieFullscreenMasked(scaleform1, scaleform2, red, green, 
 ---@param hardness number
 ---@param radius number
 ---@param falloff number
-function DrawSpotLight(
-	posX,
-	posY,
-	posZ,
-	dirX,
-	dirY,
-	dirZ,
-	colorR,
-	colorG,
-	colorB,
-	distance,
-	brightness,
-	hardness,
-	radius,
-	falloff
-)
-end
+function DrawSpotLight(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, hardness, radius, falloff) end
 
 ---**`GRAPHICS` `client` [`0xE7FFAE5EBF23D890`](https://docs.fivem.net/natives/?_0xE7FFAE5EBF23D890)**
 ---
 ---```
----Draws a 2D sprite on the screen.
----Parameters:
----textureDict - Name of texture dictionary to load texture from (e.g. "CommonMenu", "MPWeaponsCommon", etc.)
----textureName - Name of texture to load from texture dictionary (e.g. "last_team_standing_icon", "tennis_icon", etc.)
----screenX/Y - Screen offset (0.5 = center)
----scaleX/Y - Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)
----heading - Texture rotation in degrees (default = 0.0) positive is clockwise, measured in degrees
----red,green,blue - Sprite color (default = 255/255/255)
----alpha - opacity level
+---Draws a 2D sprite on the screen.  
+---Parameters:  
+---textureDict - Name of texture dictionary to load texture from (e.g. "CommonMenu", "MPWeaponsCommon", etc.)  
+---textureName - Name of texture to load from texture dictionary (e.g. "last_team_standing_icon", "tennis_icon", etc.)  
+---screenX/Y - Screen offset (0.5 = center)  
+---scaleX/Y - Texture scaling. Negative values can be used to flip the texture on that axis. (0.5 = half)  
+---heading - Texture rotation in degrees (default = 0.0) positive is clockwise, measured in degrees  
+---red,green,blue - Sprite color (default = 255/255/255)  
+---alpha - opacity level  
 ---```
 ---
 ---```
@@ -1881,7 +1756,7 @@ function EndPetrolTrailDecals() end
 ---**`GRAPHICS` `client` [`0xC6796A8FFA375E53`](https://docs.fivem.net/natives/?_0xC6796A8FFA375E53)**
 ---
 ---```
----Pops and calls the Scaleform function on the stack
+---Pops and calls the Scaleform function on the stack  
 ---```
 ---
 function EndScaleformMovieMethod() end
@@ -1940,8 +1815,8 @@ function GetDecalWashLevel(decal) end
 ---**`GRAPHICS` `client` [`0x84ED31191CC5D2C9`](https://docs.fivem.net/natives/?_0x84ED31191CC5D2C9)**
 ---
 ---```
----false = Any resolution < 1280x720
----true = Any resolution >= 1280x720
+---false = Any resolution < 1280x720  
+---true = Any resolution >= 1280x720  
 ---```
 ---
 ---@return boolean
@@ -1959,10 +1834,10 @@ function GetIsPetrolDecalInRange(xCoord, yCoord, zCoord, radius) end
 ---**`GRAPHICS` `client` [`0x30CF4BDA4FCB1905`](https://docs.fivem.net/natives/?_0x30CF4BDA4FCB1905)**
 ---
 ---```
----Setting Aspect Ratio Manually in game will return:
----false - for Narrow format Aspect Ratios (3:2, 4:3, 5:4, etc. )
----true - for Wide format Aspect Ratios (5:3, 16:9, 16:10, etc. )
----Setting Aspect Ratio to "Auto" in game will return "false" or "true" based on the actual set Resolution Ratio.
+---Setting Aspect Ratio Manually in game will return:  
+---false - for Narrow format Aspect Ratios (3:2, 4:3, 5:4, etc. )  
+---true - for Wide format Aspect Ratios (5:3, 16:9, 16:10, etc. )  
+---Setting Aspect Ratio to "Auto" in game will return "false" or "true" based on the actual set Resolution Ratio.  
 ---```
 ---
 ---@return boolean
@@ -1994,7 +1869,7 @@ function GetRequestingnightvision() end
 ---**`GRAPHICS` `client` [`0xBAF107B6BB2C97F0`](https://docs.fivem.net/natives/?_0xBAF107B6BB2C97F0)**
 ---
 ---```
----Gets the scale of safe zone. if the safe zone size scale is max, it will return 1.0.
+---Gets the scale of safe zone. if the safe zone size scale is max, it will return 1.0.  
 ---```
 ---
 ---@return number
@@ -2117,8 +1992,8 @@ function GetStatusOfTakeMissionCreatorPhoto() end
 ---**`GRAPHICS` `client` [`0x35736EE65BD00C11`](https://docs.fivem.net/natives/?_0x35736EE65BD00C11)**
 ---
 ---```
----Returns the texture resolution of the passed texture dict+name.
----Note: Most texture resolutions are doubled compared to the console version of the game.
+---Returns the texture resolution of the passed texture dict+name.  
+---Note: Most texture resolutions are doubled compared to the console version of the game.  
 ---```
 ---
 ---@param textureDict string
@@ -2235,7 +2110,7 @@ function GolfTrailSetFixedControlPoint(type, xPos, yPos, zPos, p4, red, green, b
 ---**`GRAPHICS` `client` [`0x312342E1A4874F3F`](https://docs.fivem.net/natives/?_0x312342E1A4874F3F)**
 ---
 ---```
----p8 seems to always be false.
+---p8 seems to always be false.  
 ---```
 ---
 ---@param p0 number
@@ -2259,7 +2134,7 @@ function GolfTrailSetRadius(p0, p1, p2) end
 ---**`GRAPHICS` `client` [`0x9CFDD90B2B844BF7`](https://docs.fivem.net/natives/?_0x9CFDD90B2B844BF7)**
 ---
 ---```
----Only appeared in Golf & Golf_mp. Parameters were all ptrs
+---Only appeared in Golf & Golf_mp. Parameters were all ptrs  
 ---```
 ---
 ---@param p0 number
@@ -2392,9 +2267,9 @@ function PassKeyboardInputToScaleform(scaleformHandle) end
 ---**`GRAPHICS` `client` [`0x8A35C742130C6080`](https://docs.fivem.net/natives/?_0x8A35C742130C6080)**
 ---
 ---```
----REQUEST_STREAMED_TEXTURE_DICT("MPOnMissMarkers", false);
----*uParam0.f_809 = add_decal(9120, vParam1, vVar4, vVar7, 2f, 2f, to_float(iVar0) / 255f, to_float(iVar1) / 255f, to_float(iVar2) / 255f, 1f, -1f, 1, 0, 0);
----PATCH_DECAL_DIFFUSE_MAP(9120, "MPOnMissMarkers", "Capture_The_Flag_Base_Icon");
+---REQUEST_STREAMED_TEXTURE_DICT("MPOnMissMarkers", false);  
+---*uParam0.f_809 = add_decal(9120, vParam1, vVar4, vVar7, 2f, 2f, to_float(iVar0) / 255f, to_float(iVar1) / 255f, to_float(iVar2) / 255f, 1f, -1f, 1, 0, 0);  
+---PATCH_DECAL_DIFFUSE_MAP(9120, "MPOnMissMarkers", "Capture_The_Flag_Base_Icon");  
 ---```
 ---
 ---@param decalType number
@@ -2457,7 +2332,7 @@ function RemoveDecalsFromVehicle(vehicle) end
 ---**`GRAPHICS` `client` [`0x5D6B2D4830A67C62`](https://docs.fivem.net/natives/?_0x5D6B2D4830A67C62)**
 ---
 ---```
----Removes all decals in range from a position, it includes the bullet holes, blood pools, petrol...
+---Removes all decals in range from a position, it includes the bullet holes, blood pools, petrol...  
 ---```
 ---
 ---@param x number
@@ -2565,7 +2440,7 @@ function SaveHighQualityPhoto(unused) end
 ---**`GRAPHICS` `client` [`0xC58424BA936EB458`](https://docs.fivem.net/natives/?_0xC58424BA936EB458)**
 ---
 ---```
----Pushes a boolean for the Scaleform function onto the stack.
+---Pushes a boolean for the Scaleform function onto the stack.  
 ---```
 ---
 ---@param value boolean
@@ -2574,7 +2449,7 @@ function ScaleformMovieMethodAddParamBool(value) end
 ---**`GRAPHICS` `client` [`0xD69736AAE04DB51A`](https://docs.fivem.net/natives/?_0xD69736AAE04DB51A)**
 ---
 ---```
----Pushes a float for the Scaleform function onto the stack.
+---Pushes a float for the Scaleform function onto the stack.  
 ---```
 ---
 ---@param value number
@@ -2583,7 +2458,7 @@ function ScaleformMovieMethodAddParamFloat(value) end
 ---**`GRAPHICS` `client` [`0xC3D0841A0CC546A6`](https://docs.fivem.net/natives/?_0xC3D0841A0CC546A6)**
 ---
 ---```
----Pushes an integer for the Scaleform function onto the stack.
+---Pushes an integer for the Scaleform function onto the stack.  
 ---```
 ---
 ---@param value number
@@ -2602,8 +2477,8 @@ function ScaleformMovieMethodAddParamLatestBriefString(value) end
 ---**`GRAPHICS` `client` [`0xE83A3E3557A56640`](https://docs.fivem.net/natives/?_0xE83A3E3557A56640)**
 ---
 ---```
----This method is the equivalent to PUSH_SCALEFORM_MOVIE_FUNCTION_PARAMETER_STRING when using it to add a new button (like "INSTRUCTIONAL_BUTTONS").
----When switching with a controller, the icons update and become the controller's icons.
+---This method is the equivalent to PUSH_SCALEFORM_MOVIE_FUNCTION_PARAMETER_STRING when using it to add a new button (like "INSTRUCTIONAL_BUTTONS").  
+---When switching with a controller, the icons update and become the controller's icons.  
 ---```
 ---
 ---@param string string
@@ -2663,11 +2538,11 @@ function SetBackfaceculling(toggle) end
 ---**`GRAPHICS` `client` [`0x2707AAE9D9297D89`](https://docs.fivem.net/natives/?_0x2707AAE9D9297D89)**
 ---
 ---```
----Sets the cylinder height of the checkpoint.
----Parameters:
----* nearHeight - The height of the checkpoint when inside of the radius.
----* farHeight - The height of the checkpoint when outside of the radius.
----* radius - The radius of the checkpoint.
+---Sets the cylinder height of the checkpoint.  
+---Parameters:  
+---* nearHeight - The height of the checkpoint when inside of the radius.  
+---* farHeight - The height of the checkpoint when outside of the radius.  
+---* radius - The radius of the checkpoint.  
 ---```
 ---
 ---@param checkpoint number
@@ -2679,7 +2554,7 @@ function SetCheckpointCylinderHeight(checkpoint, nearHeight, farHeight, radius) 
 ---**`GRAPHICS` `client` [`0x7167371E8AD747F7`](https://docs.fivem.net/natives/?_0x7167371E8AD747F7)**
 ---
 ---```
----Sets the checkpoint color.
+---Sets the checkpoint color.  
 ---```
 ---
 ---@param checkpoint number
@@ -2710,7 +2585,7 @@ function SetCurrentPlayerTcmodifier(modifierName) end
 ---**`GRAPHICS` `client` [`0x175B6BFC15CDD0C5`](https://docs.fivem.net/natives/?_0x175B6BFC15CDD0C5)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param enabled boolean
@@ -2750,7 +2625,7 @@ function SetEntityIconVisibility(entity, toggle) end
 ---**`GRAPHICS` `client` [`0x0AB84296FED9CFC6`](https://docs.fivem.net/natives/?_0x0AB84296FED9CFC6)**
 ---
 ---```
----Purpose of p0 and p1 unknown.
+---Purpose of p0 and p1 unknown.  
 ---```
 ---
 ---@param p0 number
@@ -2778,13 +2653,13 @@ function SetNextPlayerTcmodifier(modifierName) end
 ---**`GRAPHICS` `client` [`0x18F621F7A5B1F85D`](https://docs.fivem.net/natives/?_0x18F621F7A5B1F85D)**
 ---
 ---```
----Enables Night Vision.
----Example:
----C#: Function.Call(Hash.SET_NIGHTVISION, true);
----C++: GRAPHICS::SET_NIGHTVISION(true);
----BOOL toggle:
----true = turns night vision on for your player.
----false = turns night vision off for your player.
+---Enables Night Vision.  
+---Example:  
+---C#: Function.Call(Hash.SET_NIGHTVISION, true);  
+---C++: GRAPHICS::SET_NIGHTVISION(true);  
+---BOOL toggle:  
+---true = turns night vision on for your player.  
+---false = turns night vision off for your player.  
 ---```
 ---
 ---@param toggle boolean
@@ -2825,8 +2700,8 @@ function SetParticleFxLoopedAlpha(ptfxHandle, alpha) end
 ---**`GRAPHICS` `client` [`0x7F8F65877F88783B`](https://docs.fivem.net/natives/?_0x7F8F65877F88783B)**
 ---
 ---```
----only works on some fx's
----p4 = 0
+---only works on some fx's  
+---p4 = 0  
 ---```
 ---
 ---@param ptfxHandle number
@@ -2870,9 +2745,9 @@ function SetParticleFxLoopedScale(ptfxHandle, scale) end
 ---**`GRAPHICS` `client` [`0x77168D722C58B2FC`](https://docs.fivem.net/natives/?_0x77168D722C58B2FC)**
 ---
 ---```
----Usage example for C#:
----Function.Call(Hash.SET_PARTICLE_FX_NON_LOOPED_ALPHA, new InputArgument[] { 0.1f });
----		Note: the argument alpha ranges from 0.0f-1.0f !
+---Usage example for C#:  
+---Function.Call(Hash.SET_PARTICLE_FX_NON_LOOPED_ALPHA, new InputArgument[] { 0.1f });  
+---		Note: the argument alpha ranges from 0.0f-1.0f !  
 ---```
 ---
 ---@param alpha number
@@ -3001,7 +2876,7 @@ function SetScriptGfxDrawOrder(order) end
 ---**`GRAPHICS` `client` [`0x7E08924259E08CE0`](https://docs.fivem.net/natives/?_0x7E08924259E08CE0)**
 ---
 ---```
----Toggles Heatvision on/off.
+---Toggles Heatvision on/off.  
 ---```
 ---
 ---@param toggle boolean
@@ -3104,7 +2979,7 @@ function SetTvVolume(volume) end
 ---**`GRAPHICS` `client` [`0x6F60E89A7B64EE1D`](https://docs.fivem.net/natives/?_0x6F60E89A7B64EE1D)**
 ---
 ---```
----network fx
+---network fx  
 ---```
 ---
 ---```
@@ -3127,26 +3002,12 @@ function SetTvVolume(volume) end
 ---@param yAxis boolean
 ---@param zAxis boolean
 ---@return number
-function StartNetworkedParticleFxLoopedOnEntity(
-	effectName,
-	entity,
-	xOffset,
-	yOffset,
-	zOffset,
-	xRot,
-	yRot,
-	zRot,
-	scale,
-	xAxis,
-	yAxis,
-	zAxis
-)
-end
+function StartNetworkedParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 ---**`GRAPHICS` `client` [`0xDDE23F30CC5A0F03`](https://docs.fivem.net/natives/?_0xDDE23F30CC5A0F03)**
 ---
 ---```
----network fx
+---network fx  
 ---```
 ---
 ---```
@@ -3170,22 +3031,7 @@ end
 ---@param yAxis boolean
 ---@param zAxis boolean
 ---@return number
-function StartNetworkedParticleFxLoopedOnEntityBone(
-	effectName,
-	entity,
-	xOffset,
-	yOffset,
-	zOffset,
-	xRot,
-	yRot,
-	zRot,
-	boneIndex,
-	scale,
-	xAxis,
-	yAxis,
-	zAxis
-)
-end
+function StartNetworkedParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
 ---**`GRAPHICS` `client` [`0xF56B8137DF10135D`](https://docs.fivem.net/natives/?_0xF56B8137DF10135D)**
 ---
@@ -3230,20 +3076,7 @@ end
 ---@param yAxis boolean
 ---@param zAxis boolean
 ---@return boolean
-function StartNetworkedParticleFxNonLoopedAtCoord(
-	effectName,
-	xPos,
-	yPos,
-	zPos,
-	xRot,
-	yRot,
-	zRot,
-	scale,
-	xAxis,
-	yAxis,
-	zAxis
-)
-end
+function StartNetworkedParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 ---**`GRAPHICS` `client` [`0xC95EB1DB6E92113D`](https://docs.fivem.net/natives/?_0xC95EB1DB6E92113D)**
 ---
@@ -3260,21 +3093,7 @@ end
 ---@param axisY boolean
 ---@param axisZ boolean
 ---@return boolean
-function StartNetworkedParticleFxNonLoopedOnEntity(
-	effectName,
-	entity,
-	offsetX,
-	offsetY,
-	offsetZ,
-	rotX,
-	rotY,
-	rotZ,
-	scale,
-	axisX,
-	axisY,
-	axisZ
-)
-end
+function StartNetworkedParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
 
 ---**`GRAPHICS` `client` [`0xA41B6A43642AC2CF`](https://docs.fivem.net/natives/?_0xA41B6A43642AC2CF)**
 ---
@@ -3292,28 +3111,13 @@ end
 ---@param axisY boolean
 ---@param axisZ boolean
 ---@return boolean
-function StartNetworkedParticleFxNonLoopedOnPedBone(
-	effectName,
-	ped,
-	offsetX,
-	offsetY,
-	offsetZ,
-	rotX,
-	rotY,
-	rotZ,
-	boneIndex,
-	scale,
-	axisX,
-	axisY,
-	axisZ
-)
-end
+function StartNetworkedParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
 ---**`GRAPHICS` `client` [`0xE184F4F0DC5910E7`](https://docs.fivem.net/natives/?_0xE184F4F0DC5910E7)**
 ---
 ---```
----GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_fbi_falling_debris", 93.7743f, -749.4572f, 70.86904f, 0f, 0f, 0f, 0x3F800000, 0, 0, 0, 0)
----p11 seems to be always 0
+---GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("scr_fbi_falling_debris", 93.7743f, -749.4572f, 70.86904f, 0f, 0f, 0f, 0x3F800000, 0, 0, 0, 0)  
+---p11 seems to be always 0  
 ---```
 ---
 ---@param effectName string
@@ -3346,21 +3150,7 @@ function StartParticleFxLoopedAtCoord(effectName, x, y, z, xRot, yRot, zRot, sca
 ---@param yAxis boolean
 ---@param zAxis boolean
 ---@return number
-function StartParticleFxLoopedOnEntity(
-	effectName,
-	entity,
-	xOffset,
-	yOffset,
-	zOffset,
-	xRot,
-	yRot,
-	zRot,
-	scale,
-	xAxis,
-	yAxis,
-	zAxis
-)
-end
+function StartParticleFxLoopedOnEntity(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, scale, xAxis, yAxis, zAxis) end
 
 ---**`GRAPHICS` `client` [`0xC6EB449E33977F0B`](https://docs.fivem.net/natives/?_0xC6EB449E33977F0B)**
 ---
@@ -3378,22 +3168,7 @@ end
 ---@param yAxis boolean
 ---@param zAxis boolean
 ---@return number
-function StartParticleFxLoopedOnEntityBone(
-	effectName,
-	entity,
-	xOffset,
-	yOffset,
-	zOffset,
-	xRot,
-	yRot,
-	zRot,
-	boneIndex,
-	scale,
-	xAxis,
-	yAxis,
-	zAxis
-)
-end
+function StartParticleFxLoopedOnEntityBone(effectName, entity, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
 ---**`GRAPHICS` `client` [`0xF28DA9F38CD1787C`](https://docs.fivem.net/natives/?_0xF28DA9F38CD1787C)**
 ---
@@ -3411,39 +3186,24 @@ end
 ---@param yAxis boolean
 ---@param zAxis boolean
 ---@return number
-function StartParticleFxLoopedOnPedBone(
-	effectName,
-	ped,
-	xOffset,
-	yOffset,
-	zOffset,
-	xRot,
-	yRot,
-	zRot,
-	boneIndex,
-	scale,
-	xAxis,
-	yAxis,
-	zAxis
-)
-end
+function StartParticleFxLoopedOnPedBone(effectName, ped, xOffset, yOffset, zOffset, xRot, yRot, zRot, boneIndex, scale, xAxis, yAxis, zAxis) end
 
 ---**`GRAPHICS` `client` [`0x25129531F77B9ED3`](https://docs.fivem.net/natives/?_0x25129531F77B9ED3)**
 ---
 ---```
----GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_paleto_roof_impact", -140.8576f, 6420.789f, 41.1391f, 0f, 0f, 267.3957f, 0x3F800000, 0, 0, 0);
----Axis - Invert Axis Flags
----list: pastebin.com/N9unUFWY
-----------------------------------------------------------------------
----C#
----Function.Call<int>(Hash.START_PARTICLE_FX_NON_LOOPED_AT_COORD, = you are calling this function.
----char *effectname = This is an in-game effect name, for e.g. "scr_fbi4_trucks_crash" is used to give the effects when truck crashes etc
----float x, y, z pos = this one is Simple, you just have to declare, where do you want this effect to take place at, so declare the ordinates
----float xrot, yrot, zrot = Again simple? just mention the value in case if you want the effect to rotate.
----float scale = is declare the scale of the effect, this may vary as per the effects for e.g 1.0f
----bool xaxis, yaxis, zaxis = To bool the axis values.
----example:
----Function.Call<int>(Hash.START_PARTICLE_FX_NON_LOOPED_AT_COORD, "scr_fbi4_trucks_crash", GTA.Game.Player.Character.Position.X, GTA.Game.Player.Character.Position.Y, GTA.Game.Player.Character.Position.Z + 4f, 0, 0, 0, 5.5f, 0, 0, 0);
+---GRAPHICS::START_PARTICLE_FX_NON_LOOPED_AT_COORD("scr_paleto_roof_impact", -140.8576f, 6420.789f, 41.1391f, 0f, 0f, 267.3957f, 0x3F800000, 0, 0, 0);  
+---Axis - Invert Axis Flags  
+---list: pastebin.com/N9unUFWY  
+----------------------------------------------------------------------  
+---C#  
+---Function.Call<int>(Hash.START_PARTICLE_FX_NON_LOOPED_AT_COORD, = you are calling this function.  
+---char *effectname = This is an in-game effect name, for e.g. "scr_fbi4_trucks_crash" is used to give the effects when truck crashes etc  
+---float x, y, z pos = this one is Simple, you just have to declare, where do you want this effect to take place at, so declare the ordinates  
+---float xrot, yrot, zrot = Again simple? just mention the value in case if you want the effect to rotate.  
+---float scale = is declare the scale of the effect, this may vary as per the effects for e.g 1.0f  
+---bool xaxis, yaxis, zaxis = To bool the axis values.  
+---example:  
+---Function.Call<int>(Hash.START_PARTICLE_FX_NON_LOOPED_AT_COORD, "scr_fbi4_trucks_crash", GTA.Game.Player.Character.Position.X, GTA.Game.Player.Character.Position.Y, GTA.Game.Player.Character.Position.Z + 4f, 0, 0, 0, 5.5f, 0, 0, 0);  
 ---```
 ---
 ---@param effectName string
@@ -3463,13 +3223,13 @@ function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRo
 ---**`GRAPHICS` `client` [`0x0D53A3B8DA0809D2`](https://docs.fivem.net/natives/?_0x0D53A3B8DA0809D2)**
 ---
 ---```
----Starts a particle effect on an entity for example your player.
----List: pastebin.com/N9unUFWY
----Example:
----C#:
----Function.Call(Hash.REQUEST_NAMED_PTFX_ASSET, "scr_rcbarry2");                     Function.Call(Hash._SET_PTFX_ASSET_NEXT_CALL, "scr_rcbarry2");                             Function.Call(Hash.START_PARTICLE_FX_NON_LOOPED_ON_ENTITY, "scr_clown_appears", Game.Player.Character, 0.0, 0.0, -0.5, 0.0, 0.0, 0.0, 1.0, false, false, false);
----Internally this calls the same function as GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE
----however it uses -1 for the specified bone index, so it should be possible to start a non looped fx on an entity bone using that native
+---Starts a particle effect on an entity for example your player.  
+---List: pastebin.com/N9unUFWY  
+---Example:  
+---C#:  
+---Function.Call(Hash.REQUEST_NAMED_PTFX_ASSET, "scr_rcbarry2");                     Function.Call(Hash._SET_PTFX_ASSET_NEXT_CALL, "scr_rcbarry2");                             Function.Call(Hash.START_PARTICLE_FX_NON_LOOPED_ON_ENTITY, "scr_clown_appears", Game.Player.Character, 0.0, 0.0, -0.5, 0.0, 0.0, 0.0, 1.0, false, false, false);  
+---Internally this calls the same function as GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE  
+---however it uses -1 for the specified bone index, so it should be possible to start a non looped fx on an entity bone using that native  
 ---```
 ---
 ---@param effectName string
@@ -3485,28 +3245,14 @@ function StartParticleFxNonLoopedAtCoord(effectName, xPos, yPos, zPos, xRot, yRo
 ---@param axisY boolean
 ---@param axisZ boolean
 ---@return boolean
-function StartParticleFxNonLoopedOnEntity(
-	effectName,
-	entity,
-	offsetX,
-	offsetY,
-	offsetZ,
-	rotX,
-	rotY,
-	rotZ,
-	scale,
-	axisX,
-	axisY,
-	axisZ
-)
-end
+function StartParticleFxNonLoopedOnEntity(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, scale, axisX, axisY, axisZ) end
 
 ---**`GRAPHICS` `client` [`0x0E7E72961BA18619`](https://docs.fivem.net/natives/?_0x0E7E72961BA18619)**
 ---
 ---```
----GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_bong_smoke", PLAYER::PLAYER_PED_ID(), -0.025f, 0.13f, 0f, 0f, 0f, 0f, 31086, 0x3F800000, 0, 0, 0);
----Axis - Invert Axis Flags
----list: pastebin.com/N9unUFWY
+---GRAPHICS::START_PARTICLE_FX_NON_LOOPED_ON_PED_BONE("scr_sh_bong_smoke", PLAYER::PLAYER_PED_ID(), -0.025f, 0.13f, 0f, 0f, 0f, 0f, 31086, 0x3F800000, 0, 0, 0);  
+---Axis - Invert Axis Flags  
+---list: pastebin.com/N9unUFWY  
 ---```
 ---
 ---@param effectName string
@@ -3523,22 +3269,7 @@ end
 ---@param axisY boolean
 ---@param axisZ boolean
 ---@return boolean
-function StartParticleFxNonLoopedOnPedBone(
-	effectName,
-	ped,
-	offsetX,
-	offsetY,
-	offsetZ,
-	rotX,
-	rotY,
-	rotZ,
-	boneIndex,
-	scale,
-	axisX,
-	axisY,
-	axisZ
-)
-end
+function StartParticleFxNonLoopedOnPedBone(effectName, ped, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
 ---**`GRAPHICS` `client` [`0x99AC7F0D8B9C893D`](https://docs.fivem.net/natives/?_0x99AC7F0D8B9C893D)**
 ---
@@ -3548,7 +3279,7 @@ function StartPetrolTrailDecals(p0) end
 ---**`GRAPHICS` `client` [`0x8F75998877616996`](https://docs.fivem.net/natives/?_0x8F75998877616996)**
 ---
 ---```
----p1 is always 0 in the native scripts
+---p1 is always 0 in the native scripts  
 ---```
 ---
 ---@param ptfxHandle number
@@ -3609,22 +3340,7 @@ function TerraingridSetColours(lowR, lowG, lowB, lowAlpha, R, G, B, Alpha, highR
 ---@param glowIntensity number glow intensity / opacity (40.0 is fine for daylight, 15.0 is fine for night time).
 ---@param normalHeight number The z coord for 'normal' height (white grid lines level).
 ---@param heightDiff number This is the height difference/margin used for line color changes. 0.2 works fine (normalHeight + 0.2 = yellow, normalHeight - 0.2 = red).
-function TerraingridSetParams(
-	x,
-	y,
-	z,
-	p3,
-	rotation,
-	p5,
-	width,
-	height,
-	p8,
-	scale,
-	glowIntensity,
-	normalHeight,
-	heightDiff
-)
-end
+function TerraingridSetParams(x, y, z, p3, rotation, p5, width, height, p8, scale, glowIntensity, normalHeight, heightDiff) end
 
 ---**`GRAPHICS` `client` [`0xDFC252D8A3E15AB7`](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)**
 ---
@@ -3661,8 +3377,8 @@ function Ui3dscenePushPreset(presetName) end
 ---**`GRAPHICS` `client` [`0xB7ED70C49521A61D`](https://docs.fivem.net/natives/?_0xB7ED70C49521A61D)**
 ---
 ---```
----GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);
----GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");
+---GRAPHICS::UNPATCH_DECAL_DIFFUSE_MAP(9123);  
+---GRAPHICS::SET_STREAMED_TEXTURE_DICT_AS_NO_LONGER_NEEDED("MPMissMarkers256");  
 ---```
 ---
 ---@param decalType number
@@ -3809,20 +3525,7 @@ function DrawBinkMovie(binkMovie, posX, posY, scaleX, scaleY, rotation, r, g, b,
 ---@param green number Color
 ---@param blue number Color
 ---@param alpha number Opacity level
-function DrawInteractiveSprite(
-	textureDict,
-	textureName,
-	screenX,
-	screenY,
-	width,
-	height,
-	heading,
-	red,
-	green,
-	blue,
-	alpha
-)
-end
+function DrawInteractiveSprite(textureDict, textureName, screenX, screenY, width, height, heading, red, green, blue, alpha) end
 
 ---**`GRAPHICS` `client` [`0xF49E9A9716A04595`](https://docs.fivem.net/natives/?_0xF49E9A9716A04595)**
 ---
@@ -3868,40 +3571,13 @@ function DrawLightWithRangeAndShadow(x, y, z, r, g, b, range, intensity, shadow)
 ---@param textureName string
 ---@param drawOnEnts boolean
 ---@param p24 boolean
-function DrawMarker_2(
-	type,
-	posX,
-	posY,
-	posZ,
-	dirX,
-	dirY,
-	dirZ,
-	rotX,
-	rotY,
-	rotZ,
-	scaleX,
-	scaleY,
-	scaleZ,
-	red,
-	green,
-	blue,
-	alpha,
-	bobUpAndDown,
-	faceCamera,
-	p19,
-	rotate,
-	textureDict,
-	textureName,
-	drawOnEnts,
-	p24
-)
-end
+function DrawMarker_2(type, posX, posY, posZ, dirX, dirY, dirZ, rotX, rotY, rotZ, scaleX, scaleY, scaleZ, red, green, blue, alpha, bobUpAndDown, faceCamera, p19, rotate, textureDict, textureName, drawOnEnts, p24) end
 
 ---**`GRAPHICS` `client` [`0x98C4FE6EC34154CA`](https://docs.fivem.net/natives/?_0x98C4FE6EC34154CA)**
 ---
 ---```
----It's called after 0xD3A10FC7FD8D98CD and 0xF1CEA8A4198D8E9A
----p0 was always "CELEBRATION_WINNER"
+---It's called after 0xD3A10FC7FD8D98CD and 0xF1CEA8A4198D8E9A  
+---p0 was always "CELEBRATION_WINNER"  
 ---```
 ---
 ---@param p0 string
@@ -3950,24 +3626,7 @@ function DrawSphere(x, y, z, radius, r, g, b, opacity) end
 ---@param radius number
 ---@param falloff number
 ---@param shadowId number
-function DrawSpotLightWithShadow(
-	posX,
-	posY,
-	posZ,
-	dirX,
-	dirY,
-	dirZ,
-	colorR,
-	colorG,
-	colorB,
-	distance,
-	brightness,
-	roundness,
-	radius,
-	falloff,
-	shadowId
-)
-end
+function DrawSpotLightWithShadow(posX, posY, posZ, dirX, dirY, dirZ, colorR, colorG, colorB, distance, brightness, roundness, radius, falloff, shadowId) end
 
 ---**`GRAPHICS` `client` [`0x29280002282F1928`](https://docs.fivem.net/natives/?_0x29280002282F1928)**
 ---
@@ -3999,33 +3658,7 @@ end
 ---@param u3 number
 ---@param v3 number
 ---@param w3 number
-function DrawSpritePoly(
-	x1,
-	y1,
-	z1,
-	x2,
-	y2,
-	z2,
-	x3,
-	y3,
-	z3,
-	red,
-	green,
-	blue,
-	alpha,
-	textureDict,
-	textureName,
-	u1,
-	v1,
-	w1,
-	u2,
-	v2,
-	w2,
-	u3,
-	v3,
-	w3
-)
-end
+function DrawSpritePoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
 ---**`GRAPHICS` `client` [`0x736D7AA1B750856B`](https://docs.fivem.net/natives/?_0x736D7AA1B750856B)**
 ---
@@ -4067,41 +3700,7 @@ end
 ---@param u3 number
 ---@param v3 number
 ---@param w3 number
-function DrawSpritePoly_2(
-	x1,
-	y1,
-	z1,
-	x2,
-	y2,
-	z2,
-	x3,
-	y3,
-	z3,
-	red1,
-	green1,
-	blue1,
-	alpha1,
-	red2,
-	green2,
-	blue2,
-	alpha2,
-	red3,
-	green3,
-	blue3,
-	alpha3,
-	textureDict,
-	textureName,
-	u1,
-	v1,
-	w1,
-	u2,
-	v2,
-	w2,
-	u3,
-	v3,
-	w3
-)
-end
+function DrawSpritePoly_2(x1, y1, z1, x2, y2, z2, x3, y3, z3, red1, green1, blue1, alpha1, red2, green2, blue2, alpha2, red3, green3, blue3, alpha3, textureDict, textureName, u1, v1, w1, u2, v2, w2, u3, v3, w3) end
 
 ---**`GRAPHICS` `client` [`0x95812F9B26074726`](https://docs.fivem.net/natives/?_0x95812F9B26074726)**
 ---
@@ -4128,24 +3727,7 @@ end
 ---@param green number
 ---@param blue number
 ---@param alpha number
-function DrawSpriteUv(
-	textureDict,
-	textureName,
-	x,
-	y,
-	width,
-	height,
-	u1,
-	v1,
-	u2,
-	v2,
-	heading,
-	red,
-	green,
-	blue,
-	alpha
-)
-end
+function DrawSpriteUv(textureDict, textureName, x, y, width, height, u1, v1, u2, v2, heading, red, green, blue, alpha) end
 
 ---**`GRAPHICS` `client` [`0xAE4E8157D9ECF087`](https://docs.fivem.net/natives/?_0xAE4E8157D9ECF087)**
 ---
@@ -4158,7 +3740,7 @@ function EndTextCommandScaleformString_2() end
 ---**`GRAPHICS` `client` [`0x873C9F3104101DD3`](https://docs.fivem.net/natives/?_0x873C9F3104101DD3)**
 ---
 ---```
----Returns current screen resolution.
+---Returns current screen resolution.  
 ---```
 ---
 ---@param x number
@@ -4303,14 +3885,14 @@ function RequestScaleformMovie_2(scaleformName) end
 ---**`GRAPHICS` `client` [`0xBD06C611BB9048C2`](https://docs.fivem.net/natives/?_0xBD06C611BB9048C2)**
 ---
 ---```
----Similar to REQUEST_SCALEFORM_MOVIE, but seems to be some kind of "interactive" scaleform movie?
----These seem to be the only scaleforms ever requested by this native:
----"breaking_news"
----"desktop_pc"
----"ECG_MONITOR"
----"Hacking_PC"
----"TEETH_PULLING"
----Note: Unless this hash is out-of-order, this native is next-gen only.
+---Similar to REQUEST_SCALEFORM_MOVIE, but seems to be some kind of "interactive" scaleform movie?  
+---These seem to be the only scaleforms ever requested by this native:  
+---"breaking_news"  
+---"desktop_pc"  
+---"ECG_MONITOR"  
+---"Hacking_PC"  
+---"TEETH_PULLING"  
+---Note: Unless this hash is out-of-order, this native is next-gen only.  
 ---```
 ---
 ---@param scaleformName string
@@ -4557,22 +4139,7 @@ function SetScaleformFitRendertarget(scaleformHandle, toggle) end
 ---@param axisY boolean
 ---@param axisZ boolean
 ---@return boolean
-function StartNetworkedParticleFxNonLoopedOnEntityBone(
-	effectName,
-	entity,
-	offsetX,
-	offsetY,
-	offsetZ,
-	rotX,
-	rotY,
-	rotZ,
-	boneIndex,
-	scale,
-	axisX,
-	axisY,
-	axisZ
-)
-end
+function StartNetworkedParticleFxNonLoopedOnEntityBone(effectName, entity, offsetX, offsetY, offsetZ, rotX, rotY, rotZ, boneIndex, scale, axisX, axisY, axisZ) end
 
 ---**`GRAPHICS` `client` [`0x63606A61DE68898A`](https://docs.fivem.net/natives/?_0x63606A61DE68898A)**
 ---

@@ -2,7 +2,7 @@
 ---**`CAM` `client` [`0x0225778816FDC28C`](https://docs.fivem.net/natives/?_0x0225778816FDC28C)**
 ---
 ---```
----some camera effect that is (also) used in the drunk-cheat, and turned off (by setting it to 0.0) along with the shaking effects once the drunk cheat is disabled. Possibly a cinematic or script-cam version of _0x487A82C650EB7799
+---some camera effect that is (also) used in the drunk-cheat, and turned off (by setting it to 0.0) along with the shaking effects once the drunk cheat is disabled. Possibly a cinematic or script-cam version of _0x487A82C650EB7799  
 ---```
 ---
 ---@param p0 number
@@ -15,7 +15,7 @@ function N_0x0aa27680a0bd43fa() end
 ---**`CAM` `client` [`0x12DED8CA53D47EA5`](https://docs.fivem.net/natives/?_0x12DED8CA53D47EA5)**
 ---
 ---```
----Hardcoded to only work in multiplayer.
+---Hardcoded to only work in multiplayer.  
 ---```
 ---
 ---@param p0 number
@@ -328,10 +328,10 @@ function N_0xfd3151cd37ea2245(entity) end
 ---**`CAM` `client` [`0x8609C75EC438FB3B`](https://docs.fivem.net/natives/?_0x8609C75EC438FB3B)**
 ---
 ---```
----I filled p1-p6 (the floats) as they are as other natives with 6 floats in a row are similar and I see no other method. So if a test from anyone proves them wrong please correct.
----p7 (length) determines the length of the spline, affects camera path and duration of transition between previous node and this one
----p8 big values ~100 will slow down the camera movement before reaching this node
----p9 != 0 seems to override the rotation/pitch (bool?)
+---I filled p1-p6 (the floats) as they are as other natives with 6 floats in a row are similar and I see no other method. So if a test from anyone proves them wrong please correct.  
+---p7 (length) determines the length of the spline, affects camera path and duration of transition between previous node and this one  
+---p8 big values ~100 will slow down the camera movement before reaching this node  
+---p9 != 0 seems to override the rotation/pitch (bool?)  
 ---```
 ---
 ---@param camera Cam
@@ -374,8 +374,8 @@ function AddCamSplineNodeUsingGameplayFrame(cam, p1, p2) end
 ---**`CAM` `client` [`0xA2746EEAE3E577CD`](https://docs.fivem.net/natives/?_0xA2746EEAE3E577CD)**
 ---
 ---```
----Example from michael2 script.
----CAM::ANIMATED_SHAKE_CAM(l_5069, "shake_cam_all@", "light", "", 1f);
+---Example from michael2 script.  
+---CAM::ANIMATED_SHAKE_CAM(l_5069, "shake_cam_all@", "light", "", 1f);  
 ---```
 ---
 ---@param cam Cam
@@ -400,7 +400,7 @@ function AnimatedShakeScriptGlobal(p0, p1, p2, p3) end
 ---**`CAM` `client` [`0xFEDB7D269E8C60E3`](https://docs.fivem.net/natives/?_0xFEDB7D269E8C60E3)**
 ---
 ---```
----Last param determines if its relative to the Entity
+---Last param determines if its relative to the Entity  
 ---```
 ---
 ---Example code:
@@ -535,7 +535,7 @@ function CreateCinematicShot(p0, p1, p2, entity) end
 ---**`CAM` `client` [`0x487A82C650EB7799`](https://docs.fivem.net/natives/?_0x487A82C650EB7799)**
 ---
 ---```
----some camera effect that is used in the drunk-cheat, and turned off (by setting it to 0.0) along with the shaking effects once the drunk cheat is disabled.
+---some camera effect that is used in the drunk-cheat, and turned off (by setting it to 0.0) along with the shaking effects once the drunk cheat is disabled.  
 ---```
 ---
 ---@param p0 number
@@ -544,7 +544,7 @@ function CustomMenuCoordinates(p0) end
 ---**`CAM` `client` [`0x8E5FB15663F79120`](https://docs.fivem.net/natives/?_0x8E5FB15663F79120)**
 ---
 ---```
----BOOL param indicates whether the cam should be destroyed if it belongs to the calling script.
+---BOOL param indicates whether the cam should be destroyed if it belongs to the calling script.  
 ---```
 ---
 ---@param bScriptHostCam boolean
@@ -553,7 +553,7 @@ function DestroyAllCams(bScriptHostCam) end
 ---**`CAM` `client` [`0x865908C81A2C22E9`](https://docs.fivem.net/natives/?_0x865908C81A2C22E9)**
 ---
 ---```
----BOOL param indicates whether the cam should be destroyed if it belongs to the calling script.
+---BOOL param indicates whether the cam should be destroyed if it belongs to the calling script.  
 ---```
 ---
 ---@param cam Cam
@@ -585,8 +585,8 @@ function DoesCamExist(cam) end
 ---**`CAM` `client` [`0xD4E8E24955024033`](https://docs.fivem.net/natives/?_0xD4E8E24955024033)**
 ---
 ---```
----Fades the screen in.
----duration: The time the fade should take, in milliseconds.
+---Fades the screen in.  
+---duration: The time the fade should take, in milliseconds.  
 ---```
 ---
 ---@param duration number
@@ -595,8 +595,8 @@ function DoScreenFadeIn(duration) end
 ---**`CAM` `client` [`0x891B5B39AC6302AF`](https://docs.fivem.net/natives/?_0x891B5B39AC6302AF)**
 ---
 ---```
----Fades the screen out.
----duration: The time the fade should take, in milliseconds.
+---Fades the screen out.  
+---duration: The time the fade should take, in milliseconds.  
 ---```
 ---
 ---@param duration number
@@ -674,7 +674,7 @@ function GetCamSplineNodeIndex(cam) end
 ---**`CAM` `client` [`0xD9D0E694C8282C96`](https://docs.fivem.net/natives/?_0xD9D0E694C8282C96)**
 ---
 ---```
----I'm pretty sure the parameter is the camera as usual, but I am not certain so I'm going to leave it as is.
+---I'm pretty sure the parameter is the camera as usual, but I am not certain so I'm going to leave it as is.  
 ---```
 ---
 ---@param cam Cam
@@ -684,8 +684,8 @@ function GetCamSplineNodePhase(cam) end
 ---**`CAM` `client` [`0xB5349E36C546509A`](https://docs.fivem.net/natives/?_0xB5349E36C546509A)**
 ---
 ---```
----Can use this with SET_CAM_SPLINE_PHASE to set the float it this native returns.
----(returns 1.0f when no nodes has been added, reached end of non existing spline)
+---Can use this with SET_CAM_SPLINE_PHASE to set the float it this native returns.  
+---(returns 1.0f when no nodes has been added, reached end of non existing spline)  
 ---```
 ---
 ---@param cam Cam
@@ -888,7 +888,7 @@ function IsBonnetCinematicCamRendering() end
 ---**`CAM` `client` [`0xDFB2B516207D3534`](https://docs.fivem.net/natives/?_0xDFB2B516207D3534)**
 ---
 ---```
----Returns whether or not the passed camera handle is active.
+---Returns whether or not the passed camera handle is active.  
 ---```
 ---
 ---@param cam Cam
@@ -1046,7 +1046,7 @@ function IsSphereVisible(x, y, z, radius) end
 ---**`CAM` `client` [`0x7DCF7C708D292D55`](https://docs.fivem.net/natives/?_0x7DCF7C708D292D55)**
 ---
 ---```
----Max value for p1 is 15.
+---Max value for p1 is 15.  
 ---```
 ---
 ---@param cam Cam
@@ -1066,9 +1066,9 @@ function OverrideCamSplineVelocity(cam, p1, p2, p3) end
 ---**`CAM` `client` [`0x9A2D0FB2E7852392`](https://docs.fivem.net/natives/?_0x9A2D0FB2E7852392)**
 ---
 ---```
----Atleast one time in a script for the zRot Rockstar uses GET_ENTITY_HEADING to help fill the parameter.
----p9 is unknown at this time.
----p10 throughout all the X360 Scripts is always 2.
+---Atleast one time in a script for the zRot Rockstar uses GET_ENTITY_HEADING to help fill the parameter.  
+---p9 is unknown at this time.  
+---p10 throughout all the X360 Scripts is always 2.  
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -1090,9 +1090,9 @@ function PlayCamAnim(cam, animName, animDictionary, x, y, z, xRot, yRot, zRot, p
 ---**`CAM` `client` [`0xE32EFE9AB4A9AA0C`](https://docs.fivem.net/natives/?_0xE32EFE9AB4A9AA0C)**
 ---
 ---```
----Examples:
----CAM::PLAY_SYNCHRONIZED_CAM_ANIM(l_2734, NETWORK::_02C40BF885C567B6(l_2739), "PLAYER_EXIT_L_CAM", "mp_doorbell");
----CAM::PLAY_SYNCHRONIZED_CAM_ANIM(l_F0D[7/*1*/], l_F4D[15/*1*/], "ah3b_attackheli_cam2", "missheistfbi3b_helicrash");
+---Examples:  
+---CAM::PLAY_SYNCHRONIZED_CAM_ANIM(l_2734, NETWORK::_02C40BF885C567B6(l_2739), "PLAYER_EXIT_L_CAM", "mp_doorbell");  
+---CAM::PLAY_SYNCHRONIZED_CAM_ANIM(l_F0D[7/*1*/], l_F4D[15/*1*/], "ah3b_attackheli_cam2", "missheistfbi3b_helicrash");  
 ---```
 ---
 ---[Animations list](https://alexguirre.github.io/animations-list/)
@@ -1143,7 +1143,7 @@ function PointCamAtEntity(cam, entity, offsetX, offsetY, offsetZ, p5) end
 ---**`CAM` `client` [`0x68B2B5F33BA63C41`](https://docs.fivem.net/natives/?_0x68B2B5F33BA63C41)**
 ---
 ---```
----Parameters p0-p5 seems correct. The bool p6 is unknown, but through every X360 script it's always 1. Please correct p0-p5 if any prove to be wrong.
+---Parameters p0-p5 seems correct. The bool p6 is unknown, but through every X360 script it's always 1. Please correct p0-p5 if any prove to be wrong.  
 ---```
 ---
 ---@param cam Cam
@@ -1158,11 +1158,11 @@ function PointCamAtPedBone(cam, ped, boneIndex, x, y, z, p6) end
 ---**`CAM` `client` [`0x07E5B515DB0636FC`](https://docs.fivem.net/natives/?_0x07E5B515DB0636FC)**
 ---
 ---```
----ease - smooth transition between the camera's positions
----easeTime - Time in milliseconds for the transition to happen
----If you have created a script (rendering) camera, and want to go back to the
----character (gameplay) camera, call this native with render set to 0.
----Setting ease to 1 will smooth the transition.
+---ease - smooth transition between the camera's positions  
+---easeTime - Time in milliseconds for the transition to happen  
+---If you have created a script (rendering) camera, and want to go back to the   
+---character (gameplay) camera, call this native with render set to 0.  
+---Setting ease to 1 will smooth the transition.  
 ---```
 ---
 ---```
@@ -1179,7 +1179,7 @@ function RenderScriptCams(render, ease, easeTime, p3, p4) end
 ---**`CAM` `client` [`0x026FB97D0A425F84`](https://docs.fivem.net/natives/?_0x026FB97D0A425F84)**
 ---
 ---```
----Set camera as active/inactive.
+---Set camera as active/inactive.  
 ---```
 ---
 ---@param cam Cam
@@ -1189,7 +1189,7 @@ function SetCamActive(cam, active) end
 ---**`CAM` `client` [`0x9FBDA379383A52A4`](https://docs.fivem.net/natives/?_0x9FBDA379383A52A4)**
 ---
 ---```
----Previous declaration void SET_CAM_ACTIVE_WITH_INTERP(Cam camTo, Cam camFrom, int duration, BOOL easeLocation, BOOL easeRotation) is completely wrong. The last two params are integers not BOOLs...
+---Previous declaration void SET_CAM_ACTIVE_WITH_INTERP(Cam camTo, Cam camFrom, int duration, BOOL easeLocation, BOOL easeRotation) is completely wrong. The last two params are integers not BOOLs...  
 ---```
 ---
 ---@param camTo Cam
@@ -1202,7 +1202,7 @@ function SetCamActiveWithInterp(camTo, camFrom, duration, easeLocation, easeRota
 ---**`CAM` `client` [`0x8C1DC7770C51DC8D`](https://docs.fivem.net/natives/?_0x8C1DC7770C51DC8D)**
 ---
 ---```
----Allows you to aim and shoot at the direction the camera is facing.
+---Allows you to aim and shoot at the direction the camera is facing.  
 ---```
 ---
 ---@param cam Cam
@@ -1218,7 +1218,7 @@ function SetCamAnimCurrentPhase(cam, phase) end
 ---**`CAM` `client` [`0x4D41783FB745E42E`](https://docs.fivem.net/natives/?_0x4D41783FB745E42E)**
 ---
 ---```
----Sets the position of the cam.
+---Sets the position of the cam.  
 ---```
 ---
 ---@param cam Cam
@@ -1230,7 +1230,7 @@ function SetCamCoord(cam, posX, posY, posZ) end
 ---**`CAM` `client` [`0x1B93E0107865DD40`](https://docs.fivem.net/natives/?_0x1B93E0107865DD40)**
 ---
 ---```
----NOTE: Debugging functions are not present in the retail version of the game.
+---NOTE: Debugging functions are not present in the retail version of the game.  
 ---```
 ---
 ---@param camera Cam
@@ -1271,7 +1271,7 @@ function SetCamDofPlanes(cam, p1, p2, p3, p4) end
 ---    while DoesCamExist(camera) do
 ---        -- Use DoF effect (needs to be called every tick)
 ---        SetUseHiDof()
----        Citizen.Wait(0)
+---        Citizen.Wait(0)  
 ---    end
 ---end)
 ---```
@@ -1301,10 +1301,10 @@ function SetCamFarDof(cam, farDOF) end
 ---**`CAM` `client` [`0xB13C14F66A00D047`](https://docs.fivem.net/natives/?_0xB13C14F66A00D047)**
 ---
 ---```
----Sets the field of view of the cam.
-------------------------------------------------
----Min: 1.0f
----Max: 130.0f
+---Sets the field of view of the cam.  
+------------------------------------------------  
+---Min: 1.0f  
+---Max: 130.0f  
 ---```
 ---
 ---@param cam Cam
@@ -1314,10 +1314,10 @@ function SetCamFov(cam, fieldOfView) end
 ---**`CAM` `client` [`0x45F1DE9C34B93AE6`](https://docs.fivem.net/natives/?_0x45F1DE9C34B93AE6)**
 ---
 ---```
----The native seems to only be called once.
----The native is used as so,
----CAM::SET_CAM_INHERIT_ROLL_VEHICLE(l_544, getElem(2, &l_525, 4));
----In the exile1 script.
+---The native seems to only be called once.  
+---The native is used as so,  
+---CAM::SET_CAM_INHERIT_ROLL_VEHICLE(l_544, getElem(2, &l_525, 4));  
+---In the exile1 script.  
 ---```
 ---
 ---@param cam Cam
@@ -1400,7 +1400,7 @@ function SetCamShakeAmplitude(cam, amplitude) end
 ---**`CAM` `client` [`0x1381539FEE034CDA`](https://docs.fivem.net/natives/?_0x1381539FEE034CDA)**
 ---
 ---```
----I named p1 as timeDuration as it is obvious. I'm assuming tho it is ran in ms(Milliseconds) as usual.
+---I named p1 as timeDuration as it is obvious. I'm assuming tho it is ran in ms(Milliseconds) as usual.  
 ---```
 ---
 ---@param cam Cam
@@ -1445,7 +1445,7 @@ function SetCamSplinePhase(cam, p1) end
 ---1: Smooth lead-in
 ---2: Smooth lead-out
 ---3: Both lead-in and lead-out are smoothed
----4-6: Longer speed up, lead-in, lead-out, and both in order as above.
+---4-6: Longer speed up, lead-in, lead-out, and both in order as above. 
 ---6: see above, but missed a node in testing(?)
 ---7: Smoothed lead-in, longer smoothed lead-out
 ---8: Longer lead-in and lead-out than 6, didn't drop node
@@ -1608,8 +1608,8 @@ function SetGameplayCamFollowPedThisUpdate(ped) end
 ---**`CAM` `client` [`0xB4EC2312F4E5B1F1`](https://docs.fivem.net/natives/?_0xB4EC2312F4E5B1F1)**
 ---
 ---```
----Sets the camera position relative to heading in float from -360 to +360.
----Heading is alwyas 0 in aiming camera.
+---Sets the camera position relative to heading in float from -360 to +360.  
+---Heading is alwyas 0 in aiming camera.  
 ---```
 ---
 ---@param heading number
@@ -1626,7 +1626,7 @@ function SetGameplayCamRelativePitch(angle, scalingFactor) end
 ---**`CAM` `client` [`0xA87E00932DB4D85D`](https://docs.fivem.net/natives/?_0xA87E00932DB4D85D)**
 ---
 ---```
----Sets the amplitude for the gameplay (i.e. 3rd or 1st) camera to shake. Used in script "drunk_controller.ysc.c4" to simulate making the player drunk.
+---Sets the amplitude for the gameplay (i.e. 3rd or 1st) camera to shake. Used in script "drunk_controller.ysc.c4" to simulate making the player drunk.  
 ---```
 ---
 ---@param amplitude number
@@ -1646,7 +1646,7 @@ function SetGameplayCoordHint(x, y, z, duration, blendOutDuration, blendInDurati
 ---**`CAM` `client` [`0x189E955A8313E298`](https://docs.fivem.net/natives/?_0x189E955A8313E298)**
 ---
 ---```
----p6 & p7 - possibly length or time
+---p6 & p7 - possibly length or time  
 ---```
 ---
 ---@param entity Entity
@@ -1744,18 +1744,18 @@ function SetWidescreenBorders(p0, p1) end
 ---**`CAM` `client` [`0x6A25241C340D3822`](https://docs.fivem.net/natives/?_0x6A25241C340D3822)**
 ---
 ---```
----Possible shake types (updated b617d):
----DEATH_FAIL_IN_EFFECT_SHAKE
----DRUNK_SHAKE
----FAMILY5_DRUG_TRIP_SHAKE
----HAND_SHAKE
----JOLT_SHAKE
----LARGE_EXPLOSION_SHAKE
----MEDIUM_EXPLOSION_SHAKE
----SMALL_EXPLOSION_SHAKE
----ROAD_VIBRATION_SHAKE
----SKY_DIVING_SHAKE
----VIBRATE_SHAKE
+---Possible shake types (updated b617d):  
+---DEATH_FAIL_IN_EFFECT_SHAKE  
+---DRUNK_SHAKE  
+---FAMILY5_DRUG_TRIP_SHAKE  
+---HAND_SHAKE  
+---JOLT_SHAKE  
+---LARGE_EXPLOSION_SHAKE  
+---MEDIUM_EXPLOSION_SHAKE  
+---SMALL_EXPLOSION_SHAKE  
+---ROAD_VIBRATION_SHAKE  
+---SKY_DIVING_SHAKE  
+---VIBRATE_SHAKE  
 ---```
 ---
 ---@param cam Cam
@@ -1766,7 +1766,7 @@ function ShakeCam(cam, type, amplitude) end
 ---**`CAM` `client` [`0xDCE214D9ED58F3CF`](https://docs.fivem.net/natives/?_0xDCE214D9ED58F3CF)**
 ---
 ---```
----p0 argument found in the b617d scripts: "DRUNK_SHAKE"
+---p0 argument found in the b617d scripts: "DRUNK_SHAKE"  
 ---```
 ---
 ---@param p0 string
@@ -1776,18 +1776,18 @@ function ShakeCinematicCam(p0, p1) end
 ---**`CAM` `client` [`0xFD55E49555E017CF`](https://docs.fivem.net/natives/?_0xFD55E49555E017CF)**
 ---
 ---```
----Possible shake types (updated b617d):
----DEATH_FAIL_IN_EFFECT_SHAKE
----DRUNK_SHAKE
----FAMILY5_DRUG_TRIP_SHAKE
----HAND_SHAKE
----JOLT_SHAKE
----LARGE_EXPLOSION_SHAKE
----MEDIUM_EXPLOSION_SHAKE
----SMALL_EXPLOSION_SHAKE
----ROAD_VIBRATION_SHAKE
----SKY_DIVING_SHAKE
----VIBRATE_SHAKE
+---Possible shake types (updated b617d):  
+---DEATH_FAIL_IN_EFFECT_SHAKE  
+---DRUNK_SHAKE  
+---FAMILY5_DRUG_TRIP_SHAKE  
+---HAND_SHAKE  
+---JOLT_SHAKE  
+---LARGE_EXPLOSION_SHAKE  
+---MEDIUM_EXPLOSION_SHAKE  
+---SMALL_EXPLOSION_SHAKE  
+---ROAD_VIBRATION_SHAKE  
+---SKY_DIVING_SHAKE  
+---VIBRATE_SHAKE  
 ---```
 ---
 ---@param shakeName string
@@ -1869,16 +1869,16 @@ function StopScriptGlobalShaking(p0) end
 ---**`CAM` `client` [`0xDF2E1F7742402E81`](https://docs.fivem.net/natives/?_0xDF2E1F7742402E81)**
 ---
 ---```
----Seems to animate the gameplay camera zoom.
----Eg. _ANIMATE_GAMEPLAY_CAM_ZOOM(1f, 1000f);
----will animate the camera zooming in from 1000 meters away.
----Game scripts use it like this:
----// Setting this to 1 prevents V key from changing zoom
----PLAYER::SET_PLAYER_FORCED_ZOOM(PLAYER::PLAYER_ID(), 1);
----// These restrict how far you can move cam up/down left/right
----CAM::_CLAMP_GAMEPLAY_CAM_YAW(-20f, 50f);
----CAM::_CLAMP_GAMEPLAY_CAM_PITCH(-60f, 0f);
----CAM::_ANIMATE_GAMEPLAY_CAM_ZOOM(1f, 1f);
+---Seems to animate the gameplay camera zoom.  
+---Eg. _ANIMATE_GAMEPLAY_CAM_ZOOM(1f, 1000f);  
+---will animate the camera zooming in from 1000 meters away.  
+---Game scripts use it like this:  
+---// Setting this to 1 prevents V key from changing zoom  
+---PLAYER::SET_PLAYER_FORCED_ZOOM(PLAYER::PLAYER_ID(), 1);  
+---// These restrict how far you can move cam up/down left/right  
+---CAM::_CLAMP_GAMEPLAY_CAM_YAW(-20f, 50f);  
+---CAM::_CLAMP_GAMEPLAY_CAM_PITCH(-60f, 0f);  
+---CAM::_ANIMATE_GAMEPLAY_CAM_ZOOM(1f, 1f);  
 ---```
 ---
 ---@param p0 number
@@ -1919,20 +1919,7 @@ function AttachCamToPedBone_2(cam, ped, boneIndex, p3, p4, p5, p6, p7, p8, p9) e
 ---@param offY number The Y offset direction.
 ---@param offZ number The Z offset direction.
 ---@param fixedDirection boolean Whether or not the camera direction will relative to the vehicle direction.
-function AttachCamToVehicleBone(
-	cam,
-	vehicle,
-	boneIndex,
-	relativeRotation,
-	rotX,
-	rotY,
-	rotZ,
-	offX,
-	offY,
-	offZ,
-	fixedDirection
-)
-end
+function AttachCamToVehicleBone(cam, vehicle, boneIndex, relativeRotation, rotX, rotY, rotZ, offX, offY, offZ, fixedDirection) end
 
 ---**`CAM` `client` [`0xA516C198B7DCA1E1`](https://docs.fivem.net/natives/?_0xA516C198B7DCA1E1)**
 ---
@@ -1968,10 +1955,10 @@ function DisableCamCollisionForEntity(entity) end
 ---**`CAM` `client` [`0xDE2EF5DA284CC8DF`](https://docs.fivem.net/natives/?_0xDE2EF5DA284CC8DF)**
 ---
 ---```
----Disables first person camera for the current frame.
----Found in decompiled scripts:
----GRAPHICS::DRAW_DEBUG_TEXT_2D("Disabling First Person Cam", 0.5, 0.8, 0.0, 0, 0, 255, 255);
----CAM::_DE2EF5DA284CC8DF();
+---Disables first person camera for the current frame.  
+---Found in decompiled scripts:  
+---GRAPHICS::DRAW_DEBUG_TEXT_2D("Disabling First Person Cam", 0.5, 0.8, 0.0, 0, 0, 255, 255);  
+---CAM::_DE2EF5DA284CC8DF();  
 ---```
 ---
 function DisableFirstPersonCamThisFrame() end
@@ -1983,7 +1970,7 @@ function DisableVehicleFirstPersonCamThisFrame() end
 ---**`CAM` `client` [`0xEA7F0AD7E9BA676F`](https://docs.fivem.net/natives/?_0xEA7F0AD7E9BA676F)**
 ---
 ---```
----Shows the crosshair even if it wouldn't show normally. Only works for one frame, so make sure to call it repeatedly.
+---Shows the crosshair even if it wouldn't show normally. Only works for one frame, so make sure to call it repeatedly.  
 ---```
 ---
 function EnableCrosshairThisFrame() end
@@ -2076,7 +2063,7 @@ function ReplayFreeCamGetMaxRange() end
 ---**`CAM` `client` [`0x7DD234D6F3914C5B`](https://docs.fivem.net/natives/?_0x7DD234D6F3914C5B)**
 ---
 ---```
----This native has its name defined inside its codE
+---This native has its name defined inside its codE  
 ---```
 ---
 ---@param camera Cam
@@ -2096,7 +2083,7 @@ function SetCamDofFocalLengthMultiplier(camera, multiplier) end
 ---**`CAM` `client` [`0xC669EEA5D031B7DE`](https://docs.fivem.net/natives/?_0xC669EEA5D031B7DE)**
 ---
 ---```
----This native has a name defined inside its code
+---This native has a name defined inside its code  
 ---```
 ---
 ---@param camera Cam
@@ -2106,7 +2093,7 @@ function SetCamDofFocusDistanceBias(camera, p1) end
 ---**`CAM` `client` [`0xC3654A441402562D`](https://docs.fivem.net/natives/?_0xC3654A441402562D)**
 ---
 ---```
----This native has a name defined inside its code
+---This native has a name defined inside its code  
 ---```
 ---
 ---@param camera Cam
@@ -2116,7 +2103,7 @@ function SetCamDofMaxNearInFocusDistance(camera, p1) end
 ---**`CAM` `client` [`0x2C654B4943BDDF7C`](https://docs.fivem.net/natives/?_0x2C654B4943BDDF7C)**
 ---
 ---```
----This native has a name defined inside its code
+---This native has a name defined inside its code  
 ---```
 ---
 ---@param camera Cam
@@ -2126,9 +2113,9 @@ function SetCamDofMaxNearInFocusDistanceBlendLevel(camera, p1) end
 ---**`CAM` `client` [`0x80C8B1846639BB19`](https://docs.fivem.net/natives/?_0x80C8B1846639BB19)**
 ---
 ---```
----if p0 is 0, effect is cancelled
----if p0 is 1, effect zooms in, gradually tilts cam clockwise apx 30 degrees, wobbles slowly. Motion blur is active until cancelled.
----if p0 is 2, effect immediately tilts cam clockwise apx 30 degrees, begins to wobble slowly, then gradually tilts cam back to normal. The wobbling will continue until the effect is cancelled.
+---if p0 is 0, effect is cancelled  
+---if p0 is 1, effect zooms in, gradually tilts cam clockwise apx 30 degrees, wobbles slowly. Motion blur is active until cancelled.  
+---if p0 is 2, effect immediately tilts cam clockwise apx 30 degrees, begins to wobble slowly, then gradually tilts cam back to normal. The wobbling will continue until the effect is cancelled.  
 ---```
 ---
 ---@param p0 number
@@ -2178,7 +2165,7 @@ function SetGameplayCamRawPitch(pitch) end
 ---**`CAM` `client` [`0x103991D4A307D472`](https://docs.fivem.net/natives/?_0x103991D4A307D472)**
 ---
 ---```
----Does nothing
+---Does nothing  
 ---```
 ---
 ---```

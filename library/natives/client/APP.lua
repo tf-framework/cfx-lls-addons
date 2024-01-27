@@ -63,9 +63,9 @@ function AppSaveData() end
 ---**`APP` `client` [`0xCFD0406ADAF90D2B`](https://docs.fivem.net/natives/?_0xCFD0406ADAF90D2B)**
 ---
 ---```
----Called in the gamescripts like:
----APP::APP_SET_APP("car");
----APP::APP_SET_APP("dog");
+---Called in the gamescripts like:  
+---APP::APP_SET_APP("car");  
+---APP::APP_SET_APP("dog");  
 ---```
 ---
 ---@param appName string

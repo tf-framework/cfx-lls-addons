@@ -74,7 +74,7 @@ function GetDlcVehicleFlags(dlcVehicleIndex) end
 ---**`FILES` `client` [`0xECC01B7C5763333C`](https://docs.fivem.net/natives/?_0xECC01B7C5763333C)**
 ---
 ---```
----dlcVehicleIndex is 0 to GET_NUM_DLC_VEHICLS()
+---dlcVehicleIndex is 0 to GET_NUM_DLC_VEHICLS()  
 ---```
 ---
 ---@param dlcVehicleIndex number
@@ -90,24 +90,24 @@ function GetDlcVehicleModLockHash(hash) end
 ---**`FILES` `client` [`0x6CF598A2957C2BF8`](https://docs.fivem.net/natives/?_0x6CF598A2957C2BF8)**
 ---
 ---```
----p0 seems to be the weapon index
----p1 seems to be the weapon component index
----struct DlcComponentData{
----int attachBone;
----int padding1;
----int bActiveByDefault;
----int padding2;
----int unk;
----int padding3;
----int componentHash;
----int padding4;
----int unk2;
----int padding5;
----int componentCost;
----int padding6;
----char nameLabel[64];
----char descLabel[64];
----};
+---p0 seems to be the weapon index  
+---p1 seems to be the weapon component index  
+---struct DlcComponentData{  
+---int attachBone;  
+---int padding1;  
+---int bActiveByDefault;  
+---int padding2;  
+---int unk;  
+---int padding3;  
+---int componentHash;  
+---int padding4;  
+---int unk2;  
+---int padding5;  
+---int componentCost;  
+---int padding6;  
+---char nameLabel[64];  
+---char descLabel[64];  
+---};  
 ---```
 ---
 ---@param dlcWeaponIndex number
@@ -119,28 +119,28 @@ function GetDlcWeaponComponentData(dlcWeaponIndex, dlcWeapCompIndex, ComponentDa
 ---**`FILES` `client` [`0x79923CD21BECE14E`](https://docs.fivem.net/natives/?_0x79923CD21BECE14E)**
 ---
 ---```
----dlcWeaponIndex takes a number from 0 - GET_NUM_DLC_WEAPONS() - 1.
----struct DlcWeaponData
----{
----int emptyCheck; //use DLC1::_IS_DLC_DATA_EMPTY on this
----int padding1;
----int weaponHash;
----int padding2;
----int unk;
----int padding3;
----int weaponCost;
----int padding4;
----int ammoCost;
----int padding5;
----int ammoType;
----int padding6;
----int defaultClipSize;
----int padding7;
----char nameLabel[64];
----char descLabel[64];
----char desc2Label[64]; // usually "the" + name
----char upperCaseNameLabel[64];
----};
+---dlcWeaponIndex takes a number from 0 - GET_NUM_DLC_WEAPONS() - 1.  
+---struct DlcWeaponData  
+---{  
+---int emptyCheck; //use DLC1::_IS_DLC_DATA_EMPTY on this  
+---int padding1;  
+---int weaponHash;  
+---int padding2;  
+---int unk;  
+---int padding3;  
+---int weaponCost;  
+---int padding4;  
+---int ammoCost;  
+---int padding5;  
+---int ammoType;  
+---int padding6;  
+---int defaultClipSize;  
+---int padding7;  
+---char nameLabel[64];  
+---char descLabel[64];  
+---char desc2Label[64]; // usually "the" + name  
+---char upperCaseNameLabel[64];  
+---};  
 ---```
 ---
 ---@param dlcWeaponIndex number
@@ -304,12 +304,12 @@ function GetShopPedQueryComponent(componentId, outComponent) end
 ---**`FILES` `client` [`0x6D793F03A631FE56`](https://docs.fivem.net/natives/?_0x6D793F03A631FE56)**
 ---
 ---```
----struct Outfit_s
----{
----	int mask, torso, pants, parachute, shoes, misc1, tops1, armour, crew, tops2, hat, glasses, earpiece;
----	int maskTexture, torsoTexture, pantsTexture, parachuteTexture, shoesTexture, misc1Texture, tops1Texture,
----		armourTexture, crewTexture, tops2Texture, hatTexture, glassesTexture, earpieceTexture;
----};
+---struct Outfit_s  
+---{  
+---	int mask, torso, pants, parachute, shoes, misc1, tops1, armour, crew, tops2, hat, glasses, earpiece;  
+---	int maskTexture, torsoTexture, pantsTexture, parachuteTexture, shoesTexture, misc1Texture, tops1Texture,   
+---		armourTexture, crewTexture, tops2Texture, hatTexture, glassesTexture, earpieceTexture;  
+---};  
 ---```
 ---
 ---@param outfitIndex number

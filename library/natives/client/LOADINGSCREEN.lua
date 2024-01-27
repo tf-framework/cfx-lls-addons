@@ -37,7 +37,7 @@ function LoadingscreenSetLoadFreemode(toggle) end
 ---**`LOADINGSCREEN` `client` [`0xFC309E94546FCDB5`](https://docs.fivem.net/natives/?_0xFC309E94546FCDB5)**
 ---
 ---```
----Only occurrence was false, in maintransition.
+---Only occurrence was false, in maintransition.  
 ---```
 ---
 ---@param toggle boolean

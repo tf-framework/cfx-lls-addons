@@ -20,7 +20,7 @@ function AddExtraCalmingQuad(xLow, yLow, xHigh, yHigh, height) end
 ---**`WATER` `client` [`0x2B2A2CC86778B619`](https://docs.fivem.net/natives/?_0x2B2A2CC86778B619)**
 ---
 ---```
----Gets the aggressiveness factor of the ocean waves.
+---Gets the aggressiveness factor of the ocean waves.  
 ---```
 ---
 ---@return number
@@ -29,9 +29,9 @@ function GetDeepOceanScaler() end
 ---**`WATER` `client` [`0xF6829842C06AE524`](https://docs.fivem.net/natives/?_0xF6829842C06AE524)**
 ---
 ---```
----This function set height to the value of z-axis of the water surface.
----This function works with sea and lake. However it does not work with shallow rivers (e.g. raton canyon will return -100000.0f)
----note: seems to return true when you are in water
+---This function set height to the value of z-axis of the water surface.  
+---This function works with sea and lake. However it does not work with shallow rivers (e.g. raton canyon will return -100000.0f)  
+---note: seems to return true when you are in water  
 ---```
 ---
 ---@param x number
@@ -53,7 +53,7 @@ function GetWaterHeightNoWaves(x, y, z, height) end
 ---**`WATER` `client` [`0xC443FD757C3BA637`](https://docs.fivem.net/natives/?_0xC443FD757C3BA637)**
 ---
 ---```
----Sets the water height for a given position and radius.
+---Sets the water height for a given position and radius.  
 ---```
 ---
 ---@param x number
@@ -65,7 +65,7 @@ function ModifyWater(x, y, height, radius) end
 ---**`WATER` `client` [`0x5E5E99285AE812DB`](https://docs.fivem.net/natives/?_0x5E5E99285AE812DB)**
 ---
 ---```
----Sets the waves intensity back to original (1.0 in most cases).
+---Sets the waves intensity back to original (1.0 in most cases). 
 ---```
 ---
 function ResetDeepOceanScaler() end
@@ -73,8 +73,8 @@ function ResetDeepOceanScaler() end
 ---**`WATER` `client` [`0xB96B00E976BE977F`](https://docs.fivem.net/natives/?_0xB96B00E976BE977F)**
 ---
 ---```
----Sets a value that determines how aggressive the ocean waves will be. Values of 2.0 or more make for very aggressive waves like you see during a thunderstorm.
----Works only ~200 meters around the player.
+---Sets a value that determines how aggressive the ocean waves will be. Values of 2.0 or more make for very aggressive waves like you see during a thunderstorm.  
+---Works only ~200 meters around the player.  
 ---```
 ---
 ---@param intensity number
@@ -120,7 +120,7 @@ function TestVerticalProbeAgainstAllWater(x, y, z, flag, height) end
 ---**`WATER` `client` [`0xB1252E3E59A82AAF`](https://docs.fivem.net/natives/?_0xB1252E3E59A82AAF)**
 ---
 ---```
----p0 is the handle returned from _0xFDBF4CDBC07E1706
+---p0 is the handle returned from _0xFDBF4CDBC07E1706  
 ---```
 ---
 ---@param p0 number
