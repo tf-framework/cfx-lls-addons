@@ -1155,6 +1155,17 @@ function DeleteCheckpoint(checkpoint) end
 ---@param point number
 function DestroyTrackedPoint(point) end
 
+---**`GRAPHICS` `client` [`0x2BF72AD5B41AA739`](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)**
+---
+---Removes any custom moon cycle overrides that have been configured with [ENABLE_MOON_CYCLE_OVERRIDE](#\_0x2C328AF17210F009)
+---
+---Example code:
+---```lua
+---DisableMoonCycleOverride()
+---```
+---
+function DisableMoonCycleOverride() end
+
 ---**`GRAPHICS` `client` [`0x3669F1B198DCAA4F`](https://docs.fivem.net/natives/?_0x3669F1B198DCAA4F)**
 ---
 function DisableOcclusionThisFrame() end
@@ -1738,6 +1749,32 @@ function EnableAlienBloodVfx(toggle) end
 ---
 ---@param toggle boolean Whether to toggle the clown VFX on or off.
 function EnableClownBloodVfx(toggle) end
+
+---**`GRAPHICS` `client` [`0x2C328AF17210F009`](https://docs.fivem.net/natives/?_0x2C328AF17210F009)**
+---
+---Enable a custom moon cycle, allowing control of which lunar phase the moon is in.
+---
+---Valid values are from `0.0` to `1.0`, with `0.5` representing a full moon.
+---
+---| Value |   Lunar Phase   |
+---| :---: | :-------------: |
+---| `0.1` | Waxing Crescent |
+---| `0.2` |  First Quarter  |
+---| `0.3` | Waxing Gibbous  |
+---| `0.5` |    Full Moon    |
+---| `0.7` | Waning Gibbous  |
+---| `0.8` |  Third Quarter  |
+---| `0.9` | Waning Crescent |
+---
+---The moon phase can be disabled with [DISABLE_MOON_CYCLE_OVERRIDE](#\_0x2BF72AD5B41AA739)
+---
+---Example code:
+---```lua
+---EnableMoonCycleOverride(0.5)
+---```
+---
+---@param phase number A value indicating the moon cycle.
+function EnableMoonCycleOverride(phase) end
 
 ---**`GRAPHICS` `client` [`0x74C180030FDE4B69`](https://docs.fivem.net/natives/?_0x74C180030FDE4B69)**
 ---
@@ -3899,12 +3936,6 @@ function RequestScaleformMovie_2(scaleformName) end
 ---@return number
 function RequestScaleformMovieInteractive(scaleformName) end
 
----**`GRAPHICS` `client` [`0x2BF72AD5B41AA739`](https://docs.fivem.net/natives/?_0x2BF72AD5B41AA739)**
----
----Resets the extra timecycle modifier strength normally set with [`SetExtraTimecycleModifierStrength`](#\_0x2C328AF17210F009)
----
-function ResetExtraTimecycleModifierStrength() end
-
 ---**`GRAPHICS` `client` [`0x40AFB081F8ADD4EE`](https://docs.fivem.net/natives/?_0x40AFB081F8ADD4EE)**
 ---
 ---@param p0 number
@@ -4072,13 +4103,6 @@ function SetCheckpointIconScale(checkpoint, scale) end
 ---
 ---@param modifierName string
 function SetExtraTimecycleModifier(modifierName) end
-
----**`GRAPHICS` `client` [`0x2C328AF17210F009`](https://docs.fivem.net/natives/?_0x2C328AF17210F009)**
----
----The same as [`SetTimecycleModifierStrength`](#\_0x82E7FFCD5B2326B3) but for the secondary tiemcycle modifier.
----
----@param strength number
-function SetExtraTimecycleModifierStrength(strength) end
 
 ---**`GRAPHICS` `client` [`0xAEEDAD1420C65CC0`](https://docs.fivem.net/natives/?_0xAEEDAD1420C65CC0)**
 ---
