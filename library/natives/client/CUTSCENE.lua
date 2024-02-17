@@ -164,7 +164,7 @@ function GetCutsceneTime() end
 ---**`CUTSCENE` `client` [`0xEE53B14A19E480D4`](https://docs.fivem.net/natives/?_0xEE53B14A19E480D4)**
 ---
 ---Gets the total length of the cutscene irrespective of playback list in milliseconds
----To account for sections, see [`_GET_CUTSCENE_END_TIME`]()
+---To account for sections, see [`_GET_CUTSCENE_END_TIME`](#\_0x971D7B15BCDBEF99)
 ---
 ---@return number # Cutscene total length in milliseconds
 function GetCutsceneTotalDuration() end
@@ -358,7 +358,7 @@ function SetCutscenePedComponentVariationFromPed(cutsceneEntName, ped, modelHash
 
 ---**`CUTSCENE` `client` [`0x0546524ADE2E9723`](https://docs.fivem.net/natives/?_0x0546524ADE2E9723)**
 ---
----See [`SET_PED_PROP_INDEX`](\_0x93376B65A266EB5F)
+---See [`SET_PED_PROP_INDEX`](#\_0x93376B65A266EB5F)
 ---
 ---@param cutsceneEntName string i.e Michael, Trevor, MP\_1, MP\_4
 ---@param componentId number
@@ -392,7 +392,7 @@ function StartCutscene(flags) end
 
 ---**`CUTSCENE` `client` [`0x1C9ADDA3244A1FBF`](https://docs.fivem.net/natives/?_0x1C9ADDA3244A1FBF)**
 ---
----Similar to [`SET_CUTSCENE_ORIGIN`](\_0xB812B3FD1C01CF27) but without heading and doesn't need [`START_CUTSCENE`](\_0x186D5CB5E7B0FF7B)
+---Similar to [`SET_CUTSCENE_ORIGIN`](#\_0xB812B3FD1C01CF27) but without heading and doesn't need [`START_CUTSCENE`](#\_0x186D5CB5E7B0FF7B)
 ---
 ---@param x number
 ---@param y number
@@ -418,7 +418,7 @@ function WasCutsceneSkipped() end
 
 ---**`CUTSCENE` `client` [`0x011883f41211432a`](https://docs.fivem.net/natives/?_0x011883f41211432a)**
 ---
----Returns the time of the cutscene's end accounting for [`REQUEST_CUTSCENE_WITH_PLAYBACK_LIST`](\_0xC23DE0E91C30B58C)
+---Returns the time of the cutscene's end accounting for [`REQUEST_CUTSCENE_WITH_PLAYBACK_LIST`](#\_0xC23DE0E91C30B58C)
 ---
 ---If a cutscene is laid out with 10 second sections, and section 0 and 1 are enabled then it would be 20000ms.
 ---

@@ -2158,6 +2158,16 @@ function StartPlayerTeleport(player, x, y, z, heading, teleportWithVehicle, find
 ---
 function StopPlayerTeleport() end
 
+---**`PLAYER` `client` [`0x9A987297ED8BD838`](https://docs.fivem.net/natives/?_0x9A987297ED8BD838)**
+---
+---Suppresses a crime for a given player for this frame only.
+---
+---**Note:** This native needs to be executed inside a thread if a crime is meant to be suppressed for a given amount of time.
+---
+---@param player Player The player we are suppressing the crime for.
+---@param crimeType number The crime to suppress, see [`REPORT_CRIME`](#\_0xE9B09589827545E7) for available types.
+function SuppressCrimeThisFrame(player, crimeType) end
+
 ---**`PLAYER` `client` [`0x290D248E25815AE8`](https://docs.fivem.net/natives/?_0x290D248E25815AE8)**
 ---
 ---```
@@ -2371,19 +2381,6 @@ function SpecialAbilityActivate(player) end
 ---
 ---@param p0 any
 function SpecialAbilityDeplete(p0) end
-
----**`PLAYER` `client` [`0x9A987297ED8BD838`](https://docs.fivem.net/natives/?_0x9A987297ED8BD838)**
----
----```
----This was previously named as "RESERVE_ENTITY_EXPLODES_ON_HIGH_EXPLOSION_COMBO"  
----which is obviously incorrect.  
----Seems to only appear in scripts used in Singleplayer. p1 ranges from 2 - 46.  
----I assume this switches the crime type  
----```
----
----@param player Player
----@param p1 number
-function SwitchCrimeType(player, p1) end
 
 ---**`PLAYER` `client` [`0xE23D5873C2394C61`](https://docs.fivem.net/natives/?_0xE23D5873C2394C61)**
 ---

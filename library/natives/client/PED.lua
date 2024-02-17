@@ -692,16 +692,22 @@ function ApplyPedBloodDamageByZone(ped, p1, p2, p3, p4) end
 
 ---**`PED` `client` [`0xEF0D582CBF2D9B0F`](https://docs.fivem.net/natives/?_0xEF0D582CBF2D9B0F)**
 ---
----@param ped Ped
----@param p1 any
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 any
----@param p7 number
----@param p8 any
-function ApplyPedBloodSpecific(ped, p1, p2, p3, p4, p5, p6, p7, p8) end
+---Applies blood damage to a ped with specific parameters for zone, UV offsets, rotation, scale, and initial aging.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param ped Ped The Ped to which blood damage is applied.
+---@param component number Specific component or body part.
+---@param u number UV texture coordinates for placing the decal in the specified zone.
+---@param v number UV texture coordinates for placing the decal in the specified zone.
+---@param rotation number Angle in degrees for the rotation of the blood decal.
+---@param scale number Scale factor for the damage, ranging from 0.0 to 1.0.
+---@param forcedFrame number Allows a specific frame of damage to be chosen (-1 for random selection).
+---@param preAge number Number of seconds to pre-age the damage for an "old wound" effect (0.0 for fresh wound).
+---@param bloodName string Name of the blood type, matching an entry in peddamage.xml.
+function ApplyPedBloodSpecific(ped, component, u, v, rotation, scale, forcedFrame, preAge, bloodName) end
 
 ---**`PED` `client` [`0x397C38AA7B4A5F83`](https://docs.fivem.net/natives/?_0x397C38AA7B4A5F83)**
 ---

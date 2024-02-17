@@ -42,14 +42,6 @@ function N_0x063ae2b2cc273588(vehicle, p1) end
 ---@param p1 any
 function N_0x065d03a9d6b2c6b5(p0, p1) end
 
----**`VEHICLE` `client` [`0x0A436B8643716D14`](https://docs.fivem.net/natives/?_0x0A436B8643716D14)**
----
----```
----CLEAR_VEHICLE_*
----```
----
-function N_0x0a436b8643716d14() end
-
 ---**`VEHICLE` `client` [`0x107A473D7A6647A9`](https://docs.fivem.net/natives/?_0x107A473D7A6647A9)**
 ---
 ---```
@@ -570,20 +562,6 @@ function N_0x99a05839c46ce316(toggle) end
 ---@param p1 number
 ---@param p2 number
 function N_0x99cad8e7afdb60fa(vehicle, p1, p2) end
-
----**`VEHICLE` `client` [`0x9A75585FB2E54FAD`](https://docs.fivem.net/natives/?_0x9A75585FB2E54FAD)**
----
----```
----Related to car generators & CPlayerSwitchMgrLong
----SET_VEHICLE_*
----SET_VEHICLE_GENERATORS_EXPECTED_GAMEPLAY_PT ?
----```
----
----@param x number
----@param y number
----@param z number
----@param radius number
-function N_0x9a75585fb2e54fad(x, y, z, radius) end
 
 ---**`VEHICLE` `client` [`0x9BDDC73CC6A115D4`](https://docs.fivem.net/natives/?_0x9BDDC73CC6A115D4)**
 ---
@@ -1167,6 +1145,20 @@ function ClearVehicleCustomPrimaryColour(vehicle) end
 ---
 ---@param vehicle Vehicle
 function ClearVehicleCustomSecondaryColour(vehicle) end
+
+---**`VEHICLE` `client` [`0x0A436B8643716D14`](https://docs.fivem.net/natives/?_0x0A436B8643716D14)**
+---
+---Removes the cargen area of interest and resumes normal cargen spawning.
+---
+---You can set the area of interest with [`SET_VEHICLE_GENERATOR_AREA_OF_INTEREST`](#\_0x9A75585FB2E54FAD)
+---
+---Example code:
+---```lua
+----- This example clears the area of interest (cargen) and resumes normal spawning
+---ClearVehicleGeneratorAreaOfInterest()
+---```
+---
+function ClearVehicleGeneratorAreaOfInterest() end
 
 ---**`VEHICLE` `client` [`0x6D6AF961B72728AE`](https://docs.fivem.net/natives/?_0x6D6AF961B72728AE)**
 ---
@@ -5005,6 +4997,32 @@ function SetVehicleFullbeam(vehicle, toggle) end
 ---@param toggle boolean
 function SetVehicleGeneratesEngineShockingEvents(vehicle, toggle) end
 
+---**`VEHICLE` `client` [`0x9A75585FB2E54FAD`](https://docs.fivem.net/natives/?_0x9A75585FB2E54FAD)**
+---
+---Specifies an area of interest where cargens will focus on spawning vehicles
+---
+---You can clear the area of interest with [`CLEAR_VEHICLE_GENERATOR_AREA_OF_INTEREST`](#\_0x0A436B8643716D14)
+---
+---Example code:
+---```lua
+----- This example sets the area of interest (cargen) to the player's position with a radius of 100.0
+---
+----- Retrieve the player ped
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the coordinates of the player.
+---local coords = GetEntityCoords(playerPed, false)
+---
+----- Set the area of interest to the player's position with a radius of 100.0
+---SetVehicleGeneratorAreaOfInterest(coords.x, coords.y, coords.z, 100.0)
+---```
+---
+---@param x number The X coordinate of the central point of the area of interest.
+---@param y number The Y coordinate of the central point of the area of interest.
+---@param z number The Z coordinate of the central point of the area of interest.
+---@param radius number The radius around the central point, defining the size of the area of interest
+function SetVehicleGeneratorAreaOfInterest(x, y, z, radius) end
+
 ---**`VEHICLE` `client` [`0x89F149B6131E57DA`](https://docs.fivem.net/natives/?_0x89F149B6131E57DA)**
 ---
 ---@param vehicle Vehicle
@@ -5150,6 +5168,14 @@ function SetVehicleIsStolen(vehicle, isStolen) end
 ---@param vehicle Vehicle
 ---@param state boolean
 function SetVehicleIsWanted(vehicle, state) end
+
+---**`VEHICLE` `client` [`0xB8FBC8B1330CA9B4`](https://docs.fivem.net/natives/?_0xB8FBC8B1330CA9B4)**
+---
+---Calling this native will keep a vehicle's engine running after exiting.
+---
+---@param vehicle Vehicle The vehicle handle.
+---@param toggle boolean `true` to keep the engine on, otherwise `false`.
+function SetVehicleKeepEngineOnWhenAbandoned(vehicle, toggle) end
 
 ---**`VEHICLE` `client` [`0x99C82F8A139F3E4E`](https://docs.fivem.net/natives/?_0x99C82F8A139F3E4E)**
 ---
@@ -7170,12 +7196,6 @@ function SetVehicleHandlingHashForAi(vehicle, hash) end
 ---@param vehicle Vehicle
 ---@param color number
 function SetVehicleInteriorColor(vehicle, color) end
-
----**`VEHICLE` `client` [`0xB8FBC8B1330CA9B4`](https://docs.fivem.net/natives/?_0xB8FBC8B1330CA9B4)**
----
----@param vehicle Vehicle
----@param toggle boolean
-function SetVehicleJetEngineOn(vehicle, toggle) end
 
 ---**`VEHICLE` `client` [`0x1FD09E7390A74D54`](https://docs.fivem.net/natives/?_0x1FD09E7390A74D54)**
 ---
