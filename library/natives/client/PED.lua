@@ -2674,12 +2674,16 @@ function IsPedComponentVariationValid(ped, componentId, drawableId, textureId) e
 
 ---**`PED` `client` [`0x3317DEDB88C95038`](https://docs.fivem.net/natives/?_0x3317DEDB88C95038)**
 ---
----Seems to consistently return true if the ped is dead, however, it does not detect the dying phase.
+---Determines if a ped is dead. Contrary to what the name might suggest, it does not always detect when a ped is in the 'dying' phase (transitioning to death). The exception is when `checkMeleeDeathFlags` is set to `true`, which then includes peds in the midst of melee takedown moves as being in a dying state, even if the death task has not yet started.
 ---
----@param ped Ped the ped
----@param p1 boolean always passed 1 in the scripts; requires more research.
----@return boolean # Whether the ped is dead or dying.
-function IsPedDeadOrDying(ped, p1) end
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param ped Ped The ped to check.
+---@param checkMeleeDeathFlags boolean If set to `true`, extends the check to include melee takedown moves as part of the dying phase.
+---@return boolean # Returns `true` if the ped is dead. When `checkMeleeDeathFlags` is set to `true`, it also considers peds in melee takedown moves as dying, although the broader 'dying' phase may not be detected.
+function IsPedDeadOrDying(ped, checkMeleeDeathFlags) end
 
 ---**`PED` `client` [`0xBA63D9FE45412247`](https://docs.fivem.net/natives/?_0xBA63D9FE45412247)**
 ---
@@ -6137,6 +6141,11 @@ function StopAnyPedModelBeingSuppressed() end
 ---@param ped Ped
 function StopPedWeaponFiringWhenDropped(ped) end
 
+---**`PED` `client` [`0xCD9CC7E200A52A6F`](https://docs.fivem.net/natives/?_0xCD9CC7E200A52A6F)**
+---
+---@param scene number Scene ID returned by [`CREATE_SYNCHRONIZED_SCENE`](#\_0x8C18E0F9080ADD73)
+function TakeOwnershipOfSynchronizedScene(scene) end
+
 ---**`PED` `client` [`0x96B1361D9B24C2FF`](https://docs.fivem.net/natives/?_0x96B1361D9B24C2FF)**
 ---
 ---```
@@ -6236,11 +6245,6 @@ function ClonePedToTargetEx(ped, targetPed, p2) end
 ---@param object Hash
 ---@return number
 function CreateSynchronizedScene_2(x, y, z, radius, object) end
-
----**`PED` `client` [`0xCD9CC7E200A52A6F`](https://docs.fivem.net/natives/?_0xCD9CC7E200A52A6F)**
----
----@param scene number
-function DisposeSynchronizedScene(scene) end
 
 ---**`PED` `client` [`0xCC6E3B6BB69501F1`](https://docs.fivem.net/natives/?_0xCC6E3B6BB69501F1)**
 ---

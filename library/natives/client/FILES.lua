@@ -1,27 +1,4 @@
 ---@meta
----**`FILES` `client` [`0x10144267DD22866C`](https://docs.fivem.net/natives/?_0x10144267DD22866C)**
----
----Returns some sort of index/offset for overlays/decorations.
----
----```
----Character types:
----0 = Michael,
----1 = Franklin,
----2 = Trevor,
----3 = MPMale,
----4 = MPFemale
----```
----
----```
----NativeDB Introduced: v2189
----```
----
----@param overlayHash Hash
----@param p1 any
----@param character number
----@return number
-function N_0x10144267dd22866c(overlayHash, p1, character) end
-
 ---**`FILES` `client` [`0x6CEBE002E58DEE97`](https://docs.fivem.net/natives/?_0x6CEBE002E58DEE97)**
 ---
 ---Returns some sort of index/offset for props.
@@ -367,6 +344,18 @@ function GetShopPedQueryProp(componentId, outProp) end
 ---@param outComponent any The referenced struct.
 ---@return boolean, any # A bool indicating that the tattoo data could be fetched(?)
 function GetTattooShopDlcItemData(characterType, decorationIndex, outComponent) end
+
+---**`FILES` `client` [`0x10144267DD22866C`](https://docs.fivem.net/natives/?_0x10144267DD22866C)**
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param character number AKA eFaction in shop_tattoo.meta. Which character this tattoo belongs to. See [GET_NUM_TATTOO_SHOP_DLC_ITEMS](#\_0x278F76C3B0A8F109).
+---@param collection number Which collection this tattoo belongs to. If you specify `-1`, it will check all collections.
+---@param preset number Which preset this tattoo belongs to.
+---@return number # Returns the actual index (Not ID from `shop_tattoo.meta`) from `0` to [GET_NUM_TATTOO_SHOP_DLC_ITEMS](#\_0x278F76C3B0A8F109), or `-1` (if it failed to find the tattoo) of a tattoo.
+function GetTattooShopDlcItemIndex(character, collection, preset) end
 
 ---**`FILES` `client` [`0x6E11F282F11863B6`](https://docs.fivem.net/natives/?_0x6E11F282F11863B6)**
 ---

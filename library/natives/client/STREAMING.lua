@@ -726,11 +726,10 @@ function SetModelAsNoLongerNeeded(model) end
 
 ---**`STREAMING` `client` [`0x8C95333CFC3340F3`](https://docs.fivem.net/natives/?_0x8C95333CFC3340F3)**
 ---
----Control how many new (ambient?) peds will spawn in the game world.
----Range for p0 seems to be 0-3, where 0 is none and 3 is the normal level.
+---Sets the memory budget level for ped population.
 ---
----@param p0 number
-function SetPedPopulationBudget(p0) end
+---@param budgetLevel number Ranges from `0` to `3`, where `0` is lowest (no peds) and `3` is the full budget level.
+function SetPedPopulationBudget(budgetLevel) end
 
 ---**`STREAMING` `client` [`0x5F2013F8BC24EE69`](https://docs.fivem.net/natives/?_0x5F2013F8BC24EE69)**
 ---

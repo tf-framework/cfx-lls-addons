@@ -196,16 +196,6 @@ function N_0x705a276ebff3133d() end
 ---
 function N_0x7295c203dd659dfe() end
 
----**`CAM` `client` [`0x79C0E43EB9B944E2`](https://docs.fivem.net/natives/?_0x79C0E43EB9B944E2)**
----
----```
----NativeDB Introduced: v1734
----```
----
----@param hash Hash
----@return boolean
-function N_0x79c0e43eb9b944e2(hash) end
-
 ---**`CAM` `client` [`0x7B8A361C1813FBEF`](https://docs.fivem.net/natives/?_0x7B8A361C1813FBEF)**
 ---
 function N_0x7b8a361c1813fbef() end
@@ -1718,6 +1708,36 @@ function SetGameplayVehicleHint(vehicle, offsetX, offsetY, offsetZ, p4, time, ea
 ---@param p0 Vehicle
 ---@param p1 number
 function SetInVehicleCamStateThisUpdate(p0, p1) end
+
+---**`CAM` `client` [`0x79C0E43EB9B944E2`](https://docs.fivem.net/natives/?_0x79C0E43EB9B944E2)**
+---
+---Override the camera work of the third-person camera to table game for current frame only.
+---
+---|                  HashKey                    |       Hash        |    Game         |
+---| :---------------------------------: | :-----------:| :-------------:  |
+---| `CASINO_LUCKY_WHEEL_CAMERA` |   `5891389`   |  Lucky Wheel    |
+---| `CASINO_SLOT_MACHINE_CAMERA` |  `518572876`  |     Slots       |
+---| `CASINO_ROULETTE_CAMERA` |   `71681063`  |    Roulette     |
+---| `CASINO_BLACKJACK_CAMERA` | `-2124244681` |    Blackjack    |
+---| `CASINO_POKER_CAMERA` | `-1938411241` |   Three Cards   |
+---| `CASINO_INSIDE_TRACK_CAMERA` | `1929822423` |   Inside Track    |
+---| `ARCADE_LOVE_PROFESSOR_P1_CAMERA` | `545868034` |   LoveProfessorP1   |
+---| `ARCADE_LOVE_PROFESSOR_P2_CAMERA` | `935304251` |   LoveProfessorP2   |
+---
+---Example code:
+---```lua
+---CreateThread(function()
+---    while true do
+---      -- override to lucky wheel camera work
+---      SetTableGamesCameraThisUpdate(GetHashKey("CASINO_LUCKY_WHEEL_CAMERA"))
+---      Wait(0)
+---    end
+---end)
+---```
+---
+---@param hash Hash Hash for table game
+---@return boolean # Returns a boolean value indicating if the camera settings were successfully overriden for this current frame.
+function SetTableGamesCameraThisUpdate(hash) end
 
 ---**`CAM` `client` [`0x42156508606DE65E`](https://docs.fivem.net/natives/?_0x42156508606DE65E)**
 ---
