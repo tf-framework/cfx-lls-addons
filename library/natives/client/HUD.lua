@@ -73,10 +73,6 @@ function N_0x24a49beaf468dc90(p0, p1, p2, p3, p4) end
 ---@param toggle boolean
 function N_0x2790f4b17d098e26(toggle) end
 
----**`HUD` `client` [`0x2916A928514C9827`](https://docs.fivem.net/natives/?_0x2916A928514C9827)**
----
-function N_0x2916a928514c9827() end
-
 ---**`HUD` `client` [`0x2C173AE2BDB9385E`](https://docs.fivem.net/natives/?_0x2C173AE2BDB9385E)**
 ---
 ---GET_BLIP_\*
@@ -2536,6 +2532,20 @@ function ReleaseControlOfFrontend() end
 ---@param name string
 ---@return boolean
 function ReleaseNamedRendertarget(name) end
+
+---**`HUD` `client` [`0x2916A928514C9827`](https://docs.fivem.net/natives/?_0x2916A928514C9827)**
+---
+---Forces the map menu to reload.
+---
+---Example code:
+---```lua
+---  if GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0 then -- Ensure we're on the map screen
+---    ReloadMapMenu()
+---    print('Reloaded map menu!')
+---  end
+---```
+---
+function ReloadMapMenu() end
 
 ---**`HUD` `client` [`0x86A652570E5F25DD`](https://docs.fivem.net/natives/?_0x86A652570E5F25DD)**
 ---

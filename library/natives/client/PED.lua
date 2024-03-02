@@ -1170,6 +1170,8 @@ function DropAmbientProp(ped) end
 ---The naming of the native is a legacy leftover (formerly EXPLODE_CHAR_HEAD in GTA3) as in the early 3D GTA games, lethal
 ---damage to a ped head would 'explode' it.
 ---
+---Do note that this native function does not work in multiplayer/network environment.
+---
 ---@param ped Ped The ped to lethally injure.
 ---@param weaponHash Hash The weapon to attribute the damage to.
 function ExplodePedHead(ped, weaponHash) end

@@ -1803,6 +1803,16 @@ function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animnName, bl
 ---@param animName string
 function NetworkAddSynchronisedSceneCamera(netScene, animDict, animName) end
 
+---**`NETWORK` `client` [`0x267C78C60E806B9A`](https://docs.fivem.net/natives/?_0x267C78C60E806B9A)**
+---
+---Allows scripts to use attachment commands on entities (eg. [`ATTACH_ENTITY_TO_ENTITY`](#\_0x6B9BBD38AB0796DF)) that are not controlled by the client.
+---
+---**Note:** This is only local and does not affect entities on other machines. This is used by the ferris wheel script to sync players on carts.
+---
+---@param entity Entity Entity handle to allow remote attachment for.
+---@param toggle boolean true/false.
+function NetworkAllowRemoteAttachmentModification(entity, toggle) end
+
 ---**`NETWORK` `client` [`0x15337C7C268A27B2`](https://docs.fivem.net/natives/?_0x15337C7C268A27B2)**
 ---
 ---@param networkHandle any
@@ -5395,12 +5405,6 @@ function NetworkAcceptInvite() end
 ---
 ---@return boolean
 function NetworkAllocateTunablesRegistrationDataMap() end
-
----**`NETWORK` `client` [`0x267C78C60E806B9A`](https://docs.fivem.net/natives/?_0x267C78C60E806B9A)**
----
----@param entity Entity
----@param toggle boolean
-function NetworkAllowLocalEntityAttachment(entity, toggle) end
 
 ---**`NETWORK` `client` [`0x66D6A5E9C511214A`](https://docs.fivem.net/natives/?_0x66D6A5E9C511214A)**
 ---
