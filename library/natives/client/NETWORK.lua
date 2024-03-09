@@ -3737,12 +3737,13 @@ function NetworkOverrideChatRestrictions(player, toggle) end
 
 ---**`NETWORK` `client` [`0xE679E3E06E363892`](https://docs.fivem.net/natives/?_0xE679E3E06E363892)**
 ---
----Works in Singleplayer too.
----Passing wrong data (e.g. hours above 23) will cause the game to crash.
+---Overrides the game clock time for the local player, allowing for manipulation of the in-game time. This native is effective in both multiplayer and singleplayer modes.
 ---
----@param hours number
----@param minutes number
----@param seconds number
+---**Note:** Passing wrong data (e.g. hours above 23) will cause the game to crash.
+---
+---@param hours number The hour to set (0-23).
+---@param minutes number The minute to set (0-59).
+---@param seconds number The second to set (0-59).
 function NetworkOverrideClockTime(hours, minutes, seconds) end
 
 ---**`NETWORK` `client` [`0xA7E30DE9272B6D49`](https://docs.fivem.net/natives/?_0xA7E30DE9272B6D49)**

@@ -626,18 +626,20 @@ function AddRelationshipGroup(name, groupHash) end
 
 ---**`PED` `client` [`0x1B5C85C612E5256E`](https://docs.fivem.net/natives/?_0x1B5C85C612E5256E)**
 ---
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@param p6 boolean
----@param p7 boolean
----@param p8 boolean
----@param p9 boolean
+---Sets an area where scenarios are blocked
+---
+---@param posMinX number Min X Coordinate.
+---@param posMinY number Min Y Coordinate.
+---@param posMinZ number Min Z Coordinate.
+---@param posMaxX number Max X Coordinate.
+---@param posMaxY number Max Y Coordinate.
+---@param posMaxZ number Max Z Coordinate.
+---@param network boolean Optionally networked to all other players
+---@param cancelActive boolean Should this cause peds already in active scenario points in the area specified to leave
+---@param blockPeds boolean if this area effects scenarios with peds
+---@param blockVehicles boolean if this area effects scenarios with vehicles
 ---@return number
-function AddScenarioBlockingArea(x1, y1, z1, x2, y2, z2, p6, p7, p8, p9) end
+function AddScenarioBlockingArea(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ, network, cancelActive, blockPeds, blockVehicles) end
 
 ---**`PED` `client` [`0x697157CED63F18D4`](https://docs.fivem.net/natives/?_0x697157CED63F18D4)**
 ---
@@ -3479,9 +3481,9 @@ function RemoveRelationshipGroup(groupHash) end
 
 ---**`PED` `client` [`0x31D16B74C6E29D66`](https://docs.fivem.net/natives/?_0x31D16B74C6E29D66)**
 ---
----@param p0 any
----@param p1 boolean
-function RemoveScenarioBlockingArea(p0, p1) end
+---@param scenarioBlockingIndex number the index of the Scenario blocking area
+---@param bNetwork boolean Optionally networked to all other players
+function RemoveScenarioBlockingArea(scenarioBlockingIndex, bNetwork) end
 
 ---**`PED` `client` [`0xD37401D78A929A49`](https://docs.fivem.net/natives/?_0xD37401D78A929A49)**
 ---
@@ -5135,6 +5137,19 @@ function SetPedGravity(ped, toggle) end
 ---@param index number
 function SetPedGroupMemberPassengerIndex(ped, index) end
 
+---**`PED` `client` [`0x4CFFC65454C93A49`](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49)**
+---
+---Sets the tint index for the hair on the specified ped.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param ped Ped The Ped whose hair tint is to be set.
+---@param colorID number The tint index for the primary hair color.
+---@param highlightColorID number The tint index for the hair highlight color.
+function SetPedHairTint(ped, colorID, highlightColorID) end
+
 ---**`PED` `client` [`0x9414E18B9434C2FE`](https://docs.fivem.net/natives/?_0x9414E18B9434C2FE)**
 ---
 ---For more info please refer to [this](https://gtaforums.com/topic/858970-all-gtao-face-ids-pedset-ped-head-blend-data-explained) topic.
@@ -6017,9 +6032,11 @@ function SetScenarioPedsToBeReturnedByNextCommand(value) end
 
 ---**`PED` `client` [`0x7A556143A1C03898`](https://docs.fivem.net/natives/?_0x7A556143A1C03898)**
 ---
----@param p0 number
----@param p1 number
-function SetScenarioPedDensityMultiplierThisFrame(p0, p1) end
+---Set the number of scenario peds on the entire map
+---
+---@param interiorMult number Multiplier for ped scenarios inside interiors.
+---@param exteriorMult number Multiplier for ped scenarios outside interiors.
+function SetScenarioPedDensityMultiplierThisFrame(interiorMult, exteriorMult) end
 
 ---**`PED` `client` [`0x5917BBA32D06C230`](https://docs.fivem.net/natives/?_0x5917BBA32D06C230)**
 ---
@@ -6692,17 +6709,6 @@ function SetPedEyeColor(ped, index) end
 ---@param scale number A float ranging from -1.0 to 1.0
 function SetPedFaceFeature(ped, index, scale) end
 
----**`PED` `client` [`0x4CFFC65454C93A49`](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49)**
----
----```
----Used for freemode (online) characters.  
----```
----
----@param ped Ped
----@param colorID number
----@param highlightColorID number
-function SetPedHairColor(ped, colorID, highlightColorID) end
-
 ---**`PED` `client` [`0x497BF74A7B9CB952`](https://docs.fivem.net/natives/?_0x497BF74A7B9CB952)**
 ---
 ---```
@@ -6738,12 +6744,17 @@ function SetPedScubaGearVariation(ped) end
 
 ---**`PED` `client` [`0xEC6935EBE0847B90`](https://docs.fivem.net/natives/?_0xEC6935EBE0847B90)**
 ---
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@return any
-function SetPedShouldPlayDirectedScenarioExit(p0, p1, p2, p3) end
+---When this ped receives its next script task, they will exit from their scenario using the normal scenario exit.
+---Exiting the scenario may take several frames while the ped is playing the exit animation.
+---If the ped is not currently using a scenario at the time of the command or 0,0,0 is specified as the reaction position,
+---then the ped will by default attempt to direct their exit forwards.
+---
+---@param ped Ped the ped who should play a normal (unhurried) exit the next time they are given a script command.
+---@param x number X Coordinate.
+---@param y number Y Coordinate.
+---@param z number Z Coordinate.
+---@return boolean # Returns true if the position was successfully set.
+function SetPedShouldPlayDirectedScenarioExit(ped, x, y, z) end
 
 ---**`PED` `client` [`0x5615E0C5EB2BC6E2`](https://docs.fivem.net/natives/?_0x5615E0C5EB2BC6E2)**
 ---

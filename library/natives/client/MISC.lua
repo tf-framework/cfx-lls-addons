@@ -37,41 +37,6 @@ function N_0x1178e104409fe58c(p0, p1) end
 ---@return boolean
 function N_0x19bfed045c647c49(ped) end
 
----**`MISC` `client` [`0x1BB299305C3E8C13`](https://docs.fivem.net/natives/?_0x1BB299305C3E8C13)**
----
----```
----SCRIPT_RACE_*
----```
----
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function N_0x1bb299305c3e8c13(p0, p1, p2, p3) end
-
----**`MISC` `client` [`0x1EAE0A6E978894A2`](https://docs.fivem.net/natives/?_0x1EAE0A6E978894A2)**
----
----```
----Unsure about the use of this native but here's an example:
----void sub_8709() {
----    MISC::_1EAE0A6E978894A2(0, 1);
----    MISC::_1EAE0A6E978894A2(1, 1);
----    MISC::_1EAE0A6E978894A2(2, 1);
----    MISC::_1EAE0A6E978894A2(3, 1);
----    MISC::_1EAE0A6E978894A2(4, 1);
----    MISC::_1EAE0A6E978894A2(5, 1);
----    MISC::_1EAE0A6E978894A2(6, 1);
----    MISC::_1EAE0A6E978894A2(7, 1);
----    MISC::_1EAE0A6E978894A2(8, 1);
----}
----So it appears that p0 ranges from 0 to 8.
----ENABLE_DISPATCH_SERVICE, seems to have a similar layout.
----```
----
----@param p0 number
----@param p1 boolean
-function N_0x1eae0a6e978894a2(p0, p1) end
-
 ---**`MISC` `client` [`0x2107A3773771186D`](https://docs.fivem.net/natives/?_0x2107A3773771186D)**
 ---
 ---```
@@ -407,24 +372,6 @@ function N_0xeb2104e905c6f2e9() end
 ---@param p0 any
 function N_0xebd3205a207939ed(p0) end
 
----**`MISC` `client` [`0xF56DFB7B61BE7276`](https://docs.fivem.net/natives/?_0xF56DFB7B61BE7276)**
----
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 number
----@param p7 number
----@param p8 number
----@param p9 number
----@param p10 number
----@param p11 number
----@param p12 number
----@return boolean, number
-function N_0xf56dfb7b61be7276(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12) end
-
 ---**`MISC` `client` [`0xFA3FFB0EEBC288A3`](https://docs.fivem.net/natives/?_0xFA3FFB0EEBC288A3)**
 ---
 ---```
@@ -457,15 +404,6 @@ function N_0xfaa457ef263e8763(p0, name) end
 ---**`MISC` `client` [`0xFB00CA71DA386228`](https://docs.fivem.net/natives/?_0xFB00CA71DA386228)**
 ---
 function N_0xfb00ca71da386228() end
-
----**`MISC` `client` [`0xFB80AB299D2EE1BD`](https://docs.fivem.net/natives/?_0xFB80AB299D2EE1BD)**
----
----```
----Toggles some stunt jump stuff.
----```
----
----@param toggle boolean
-function N_0xfb80ab299d2ee1bd(toggle) end
 
 ---**`MISC` `client` [`0x73D57CFFDD12C355`](https://docs.fivem.net/natives/?_0x73D57CFFDD12C355)**
 ---
@@ -1364,13 +1302,52 @@ function GetGameTimer() end
 
 ---**`MISC` `client` [`0x8BDC7BFC57A81E76`](https://docs.fivem.net/natives/?_0x8BDC7BFC57A81E76)**
 ---
----@param x number
----@param y number
----@param z number
----@param groundZ number
----@param normal vector3
----@return boolean, number, vector3
+---Attempts to identify the highest ground Z-coordinate and determine the corresponding surface normal directly beneath a specified 3D coordinate.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---Example code:
+---```lua
+---local x, y, z = 100.0, -200.0, 50.0
+---local success, groundZ, normal = GetGroundZAndNormalFor_3dCoord(x, y, z)
+---
+---if success then
+---    print("Ground Z found at: ", groundZ)
+---    print("Surface normal is: ", normal.x, normal.y, normal.z)
+---else
+---    print("No ground found.")
+---end
+---```
+---
+---@param x number X-coordinate of the point to check.
+---@param y number Y-coordinate of the point to check.
+---@param z number Z-coordinate of the point to check.
+---@param groundZ number A pointer to a float where the ground Z-coordinate will be stored if found.
+---@param normal vector3 A pointer to a Vector3 structure where the surface normal at the ground point will be stored.
+---@return boolean, number, vector3 # Returns `true` if ground is found below the given coordinates and the surface normal could be determined, otherwise `false`.
 function GetGroundZAndNormalFor_3dCoord(x, y, z, groundZ, normal) end
+
+---**`MISC` `client` [`0x9E82F0F362881B29`](https://docs.fivem.net/natives/?_0x9E82F0F362881B29)**
+---
+---Determines the highest ground Z-coordinate directly below a specified 3D coordinate, excluding any objects at that point. Optionally, water can be considered as ground when determining the highest point.
+---
+---```
+---NativeDB Added Parameter 6: BOOL ignoreDistToWaterLevelCheck - If set to true, the distance to the water level will be ignored when checking for water as ground. 
+---```
+---
+---```
+---NativeDB Introduced: v505
+---```
+---
+---@param x number X-coordinate of the point to check.
+---@param y number Y-coordinate of the point to check.
+---@param z number Z-coordinate of the point to check.
+---@param groundZ number A pointer to a float where the ground Z-coordinate will be stored if found.
+---@param waterAsGround boolean If set to `true`, water will be included in the check, and its height will be returned if it is higher than the ground level.
+---@return boolean, number # Returns `true` if ground (or water, if specified) is found below the given coordinates, otherwise `false`.
+function GetGroundZExcludingObjectsFor_3dCoord(x, y, z, groundZ, waterAsGround) end
 
 ---**`MISC` `client` [`0xC906A7DAB05C8D2B`](https://docs.fivem.net/natives/?_0xC906A7DAB05C8D2B)**
 ---
@@ -1432,6 +1409,55 @@ function GetIndexOfCurrentLevel() end
 ---
 ---@return boolean
 function GetIsAutoSaveOff() end
+
+---**`MISC` `client` [`0xF56DFB7B61BE7276`](https://docs.fivem.net/natives/?_0xF56DFB7B61BE7276)**
+---
+---Determines whether a line segment intersects a plane and, if so, returns the parameter value at which this intersection occurs.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---Example code:
+---```lua
+----- Define the line segment with start and end points
+---local startX, startY, startZ = 100.0, -200.0, 50.0
+---local endX, endY, endZ = 200.0, -100.0, 50.0
+---
+----- Define the plane with a point on the plane and the normal vector
+---local planeX, planeY, planeZ = 150.0, -150.0, 50.0
+---local normalX, normalY, normalZ = 0.0, 0.0, 1.0
+---
+----- Call the native
+---local success, intersectionParameter = GetLinePlaneIntersection(startX, startY, startZ, endX, endY, endZ, planeX, planeY, planeZ, normalX, normalY, normalZ, intersectionParameter)
+---
+---if success then
+---    -- Calculate the intersection point using intersectionParameter
+---    local intersectX = startX + (endX - startX) * intersectionParameter
+---    local intersectY = startY + (endY - startY) * intersectionParameter
+---    local intersectZ = startZ + (endZ - startZ) * intersectionParameter
+---    
+---    print("Intersection point at: (" .. intersectX .. ", " .. intersectY .. ", " .. intersectZ .. ")")
+---else
+---    print("No intersection found.")
+---end
+---```
+---
+---@param x1 number The X-coordinate of the first point of the line segment.
+---@param y1 number The Y-coordinate of the first point of the line segment.
+---@param z1 number The Z-coordinate of the first point of the line segment. Together, `x1`, `y1`, and `z1` define the starting point of the line segment.
+---@param x2 number The X-coordinate of the second point of the line segment.
+---@param y2 number The Y-coordinate of the second point of the line segment.
+---@param z2 number The Z-coordinate of the second point of the line segment. Together, `x2`, `y2`, and `z2` define the ending point of the line segment.
+---@param planeX number The X-coordinate of a point on the plane. This, along with `planeY` and `planeZ`, specifies a point that lies on the plane's surface.
+---@param planeY number The Y-coordinate of a point on the plane.
+---@param planeZ number The Z-coordinate of a point on the plane.
+---@param planeNormalX number The X-component of the plane's normal vector. The normal vector is perpendicular to the plane's surface and defines its orientation.
+---@param planeNormalY number The Y-component of the plane's normal vector.
+---@param planeNormalZ number The Z-component of the plane's normal vector. Together, `planeNormalX`, `planeNormalY`, and `planeNormalZ` fully describe the plane's orientation in 3D space.
+---@param intersectionParameter number A pointer to a float. This parameter is used to return the value of `t` at which the line segment intersects the plane. The value of `t` is a scalar multiplier that can be used to calculate the exact intersection point on the line segment. If the line does not intersect the plane, the value of `t` is not meaningful.
+---@return boolean, number # Returns `true` if the line segment intersects the plane, in which case the `intersectionParameter` will contain the intersection point's parameter value. Returns `false` if there is no intersection, making the `intersectionParameter` value irrelevant.
+function GetLinePlaneIntersection(x1, y1, z1, x2, y2, z2, planeX, planeY, planeZ, planeNormalX, planeNormalY, planeNormalZ, intersectionParameter) end
 
 ---**`MISC` `client` [`0xA33CDCCDA663159E`](https://docs.fivem.net/natives/?_0xA33CDCCDA663159E)**
 ---
@@ -2123,11 +2149,31 @@ function ScriptRaceGetPlayerSplitTime(player, p1, p2) end
 
 ---**`MISC` `client` [`0x0A60017F841A54F2`](https://docs.fivem.net/natives/?_0x0A60017F841A54F2)**
 ---
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
-function ScriptRaceInit(p0, p1, p2, p3) end
+---Initializes a script race in GTA:Online and sets up the helper split time system.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param numCheckpoints number The total number of checkpoints in the race
+---@param numLaps number The total number of laps in the race.
+---@param numPlayers number The total number of players participating in the race.
+---@param localPlayer Player Local player in the race.
+function ScriptRaceInit(numCheckpoints, numLaps, numPlayers, localPlayer) end
+
+---**`MISC` `client` [`0x1BB299305C3E8C13`](https://docs.fivem.net/natives/?_0x1BB299305C3E8C13)**
+---
+---Records that a player has successfully passed a checkpoint during a scripted race in GTA:Online. This native should be used after initializing the race with [`SCRIPT_RACE_INIT`](#\_0x0A60017F841A54F2).
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param ped Ped The index of the Ped who hit the checkpoint.
+---@param checkpoint number The checkpoint number that the player has passed.
+---@param lap number The current lap that the player is on.
+---@param time number The time it took for the player to reach this checkpoint from the start of the race or the last checkpoint.
+function ScriptRacePlayerHitCheckpoint(ped, checkpoint, lap, time) end
 
 ---**`MISC` `client` [`0x1FF6BF9A63E5757F`](https://docs.fivem.net/natives/?_0x1FF6BF9A63E5757F)**
 ---
@@ -2420,26 +2466,33 @@ function SetTimeScale(timeScale) end
 
 ---**`MISC` `client` [`0x29B487C359E19889`](https://docs.fivem.net/natives/?_0x29B487C359E19889)**
 ---
+---Immediately changes the game's weather to the specified type, which will then persist for one cycle before the game resumes its natural weather progression.
+---
+---**Note:** This native is not supported in networked sessions. Please refer to [`SET_OVERRIDE_WEATHER`](#\_0xA43D5C6FE51ADBEF) or [`SET_WEATHER_TYPE_NOW_PERSIST`](#\_0xED712CA327900C8A) if you want to override weather in networked sessions.
+---
 ---```
----// timecycle_keyframe_data
----BLIZZARD = 0x27EA2814
----CLEAR = 0x36A83D84
----CLEARING = 0x6DB1A50D
----CLOUDS = 0x30FDAF5C
----EXTRASUNNY = 0x97AA0A79
----FOGGY = 0xAE737644
----HALLOWEEN = 0xC91A3202
----NEUTRAL = 0xA4CA1326
----OVERCAST = 0xBB898D2D
----RAIN = 0x54A69840
----SMOG = 0x10DCF4B5
----SNOW = 0xEFB6EFF6
----SNOWLIGHT = 0x23FB812B
----THUNDER = 0xB677829F
----XMAS = 0xAAC9C895
+---NativeDB Introduced: v323
 ---```
 ---
----@param weatherType string
+---**Weather Types:**
+---
+---*   CLEAR
+---*   EXTRASUNNY
+---*   CLOUDS
+---*   OVERCAST
+---*   RAIN
+---*   CLEARING
+---*   THUNDER
+---*   SMOG
+---*   FOGGY
+---*   XMAS
+---*   SNOW
+---*   SNOWLIGHT
+---*   BLIZZARD
+---*   HALLOWEEN
+---*   NEUTRAL
+---
+---@param weatherType string The weather type to set. This should be one of the predefined weather type strings.
 function SetWeatherTypeNow(weatherType) end
 
 ---**`MISC` `client` [`0xED712CA327900C8A`](https://docs.fivem.net/natives/?_0xED712CA327900C8A)**
@@ -2459,9 +2512,15 @@ function SetWeatherTypeOvertimePersist(weatherType, time) end
 
 ---**`MISC` `client` [`0x704983DF373B198F`](https://docs.fivem.net/natives/?_0x704983DF373B198F)**
 ---
----Refer to [`SET_WEATHER_TYPE_NOW_PERSIST`](#\_0xED712CA327900C8A) for weather types.
+---Sets the current weather type to persist indefinitely until changed.
 ---
----@param weatherType string
+---**Note:** This native is not supported in networked sessions. Please refer to [`SET_OVERRIDE_WEATHER`](#\_0xA43D5C6FE51ADBEF) or [`SET_WEATHER_TYPE_NOW_PERSIST`](#\_0xED712CA327900C8A) if you want to override weather in networked sessions.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param weatherType string The weather type to be set as persistent. Refer to [`SET_WEATHER_TYPE_NOW_PERSIST`](#\_0xED712CA327900C8A) for a list of weather type strings.
 function SetWeatherTypePersist(weatherType) end
 
 ---**`MISC` `client` [`0xAC3A74E8384A9919`](https://docs.fivem.net/natives/?_0xAC3A74E8384A9919)**
@@ -2648,6 +2707,40 @@ function StopSaveStruct() end
 ---@return boolean, number
 function StringToInt(string, outInteger) end
 
+---**`MISC` `client` [`0x1EAE0A6E978894A2`](https://docs.fivem.net/natives/?_0x1EAE0A6E978894A2)**
+---
+---Suppresses or enables a specific type of random event for the current frame.
+---
+---```cpp
+---enum eEventType {
+---    RC_PED_STEAL_VEHICLE = 0,
+---    RC_PED_JAY_WALK_LIGHT = 1,
+---    RC_COP_PURSUE = 2,
+---    RC_COP_PURSUE_VEHICLE_FLEE_SPAWNED = 3,
+---    RC_COP_VEHICLE_DRIVING_FAST = 4,
+---    RC_COP_VEHICLE_DRIVING_SLOW = 5,
+---    RC_DRIVER_RECKLESS = 6,
+---    RC_DRIVER_PRO = 7,
+---    RC_PED_PURSUE_WHEN_HIT_BY_CAR = 8
+---}
+---```
+---
+---Example code:
+---```lua
+---local eventToDisable = 0 -- RC_PED_STEAL_VEHICLE
+---
+---CreateThread(function()
+---    while true do
+---        Wait(0)
+---        SupressRandomEventThisFrame(eventToDisable, true)
+---    end
+---end)
+---```
+---
+---@param eventType number The type of the event to be suppressed or enabled. Use the `eEventType` enum for specific event types.
+---@param enable boolean Set to `false` to suppress the event for this frame; set to `true` to enable it.
+function SupressRandomEventThisFrame(eventType, enable) end
+
 ---**`MISC` `client` [`0x632106CC96E82E91`](https://docs.fivem.net/natives/?_0x632106CC96E82E91)**
 ---
 ---@param p0 number
@@ -2660,6 +2753,17 @@ function Tan(p0) end
 ---
 ---@param scriptName string
 function TerminateAllScriptsWithThisName(scriptName) end
+
+---**`MISC` `client` [`0xFB80AB299D2EE1BD`](https://docs.fivem.net/natives/?_0xFB80AB299D2EE1BD)**
+---
+---Enable/disable optional stunt camera.
+---
+---```
+---NativeDB Introduced: v757
+---```
+---
+---@param toggle boolean Set to `true` to enable the optional stunt jump camera angles, or `false` to disable them and use the default camera view.
+function ToggleShowOptionalStuntJumpCamera(toggle) end
 
 ---**`MISC` `client` [`0xA74802FB8D0B7814`](https://docs.fivem.net/natives/?_0xA74802FB8D0B7814)**
 ---
@@ -2891,20 +2995,6 @@ function GetCloudHatOpacity() end
 ---
 ---@return string
 function GetGlobalCharBuffer() end
-
----**`MISC` `client` [`0x9E82F0F362881B29`](https://docs.fivem.net/natives/?_0x9E82F0F362881B29)**
----
----```
----NativeDB Added Parameter 6: BOOL p5
----```
----
----@param x number
----@param y number
----@param z number
----@param groundZ number
----@param p4 boolean
----@return boolean, number
-function GetGroundZFor_3dCoord_2(x, y, z, groundZ, p4) end
 
 ---**`MISC` `client` [`0x9689123E3F213AA5`](https://docs.fivem.net/natives/?_0x9689123E3F213AA5)**
 ---

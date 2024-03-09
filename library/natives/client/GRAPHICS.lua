@@ -647,8 +647,9 @@ function N_0xfcf6788fc4860cd4(checkpoint) end
 
 ---**`GRAPHICS` `client` [`0xB302244A1839BDAD`](https://docs.fivem.net/natives/?_0xB302244A1839BDAD)**
 ---
----```
----decal types:  
+---Places a decal into the world
+---
+---```cs
 ---public enum DecalTypes  
 ---{  
 ---    splatters_blood = 1010,  
@@ -706,28 +707,28 @@ function N_0xfcf6788fc4860cd4(checkpoint) end
 ---}  
 ---```
 ---
----@param decalType number
----@param posX number
----@param posY number
----@param posZ number
----@param p4 number
----@param p5 number
----@param p6 number
----@param p7 number
----@param p8 number
----@param p9 number
----@param width number
----@param height number
----@param rCoef number
----@param gCoef number
----@param bCoef number
----@param opacity number
----@param timeout number
----@param p17 boolean
----@param p18 boolean
----@param p19 boolean
----@return number
-function AddDecal(decalType, posX, posY, posZ, p4, p5, p6, p7, p8, p9, width, height, rCoef, gCoef, bCoef, opacity, timeout, p17, p18, p19) end
+---@param decalType number which type of decal to place, based on the ID, see `DecalTypes` enum.
+---@param posX number X position coordinate.
+---@param posY number Y position coordinate.
+---@param posZ number Z position coordinate.
+---@param dirX number X Orientation.
+---@param dirY number Y Orientation.
+---@param dirZ number Z Orientation.
+---@param sideX number Usually set to 0.
+---@param sideY number Usually set to 1.
+---@param sideZ number Usually set to 0.
+---@param width number Width of the decal.
+---@param height number Height of the decal.
+---@param rCoef number Red Color.
+---@param gCoef number Green Color.
+---@param bCoef number Blue Color.
+---@param opacity number Alpha Color.
+---@param timeout number The lifetime of the decal.
+---@param isLongRange boolean toggle further LOD draw distance.
+---@param isDynamic boolean toggle dynamics.
+---@param useComplexColn boolean use complex coloring.
+---@return number # An integer value representing the added decal index, will return `0` if the decal cannot be added.
+function AddDecal(decalType, posX, posY, posZ, dirX, dirY, dirZ, sideX, sideY, sideZ, width, height, rCoef, gCoef, bCoef, opacity, timeout, isLongRange, isDynamic, useComplexColn) end
 
 ---**`GRAPHICS` `client` [`0x9CD43EEE12BF4DD0`](https://docs.fivem.net/natives/?_0x9CD43EEE12BF4DD0)**
 ---

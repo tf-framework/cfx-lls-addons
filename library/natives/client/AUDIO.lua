@@ -42,23 +42,6 @@ function N_0x2acabed337622df2(p0) end
 ---@return any
 function N_0x2dd39bf3e2f9c47f() end
 
----**`AUDIO` `client` [`0x30CA2EF91D15ADF8`](https://docs.fivem.net/natives/?_0x30CA2EF91D15ADF8)**
----
----```
----NativeDB Introduced: v2189
----```
----
----@return any
-function N_0x30ca2ef91d15adf8() end
-
----**`AUDIO` `client` [`0x40763EA7B9B783E7`](https://docs.fivem.net/natives/?_0x40763EA7B9B783E7)**
----
----@param p0 string
----@param p1 number
----@param p2 number
----@return any
-function N_0x40763ea7b9b783e7(p0, p1, p2) end
-
 ---**`AUDIO` `client` [`0x43FA0DFC5DF87815`](https://docs.fivem.net/natives/?_0x43FA0DFC5DF87815)**
 ---
 ---@param vehicle Vehicle
@@ -148,12 +131,6 @@ function N_0x9bd7bd55e4533183(p0, p1, p2) end
 ---@param p1 number
 function N_0x9d3af56e94c9ae98(vehicle, p1) end
 
----**`AUDIO` `client` [`0xAA19F5572C38B564`](https://docs.fivem.net/natives/?_0xAA19F5572C38B564)**
----
----@param p0 any
----@return any, any
-function N_0xaa19f5572c38b564(p0) end
-
 ---**`AUDIO` `client` [`0xB542DE8C3D1CB210`](https://docs.fivem.net/natives/?_0xB542DE8C3D1CB210)**
 ---
 ---@param p0 boolean
@@ -179,14 +156,6 @@ function N_0xbf4dc1784be94dfa(ped, p1, hash) end
 ---
 ---@param vehicle Vehicle
 function N_0xc1805d05e6d4fe10(vehicle) end
-
----**`AUDIO` `client` [`0xC8EDE9BDBCCBA6D4`](https://docs.fivem.net/natives/?_0xC8EDE9BDBCCBA6D4)**
----
----@param p0 any
----@param p1 number
----@param p2 number
----@param p3 number
-function N_0xc8ede9bdbccba6d4(p0, p1, p2, p3) end
 
 ---**`AUDIO` `client` [`0xD2DCCD8E16E20997`](https://docs.fivem.net/natives/?_0xD2DCCD8E16E20997)**
 ---
@@ -608,109 +577,158 @@ function GetSoundIdFromNetworkId(netId) end
 ---@return number # Returns the currently playing stream's play time
 function GetStreamPlayTime() end
 
+---**`AUDIO` `client` [`0xAA19F5572C38B564`](https://docs.fivem.net/natives/?_0xAA19F5572C38B564)**
+---
+---@param textLabel string all the text labels for filenames in `AmericanDialogueFiles.txt` appear to end with the letter 'A', it is the script's responsibility to add this 'A' before calling `GET_VARIATION_CHOSEN_FOR_SCRIPTED_LINE`.
+---@return number # Returns the variation chosen for a given script speech line, or `0` if it hasn't been chosen yet.Returns `-1` if there is no conversation active or if the active conversation doesn't contain this line or if the text label can't be found in the currently loaded text blocks
+function GetVariationChosenForScriptedLine(textLabel) end
+
 ---**`AUDIO` `client` [`0x02165D55000219AC`](https://docs.fivem.net/natives/?_0x02165D55000219AC)**
 ---
----```
----Returns hash of default vehicle horn  
----Hash is stored in audVehicleAudioEntity  
----```
----
 ---@param vehicle Vehicle
----@return Hash
+---@return Hash # Returns the horn sound hash
 function GetVehicleDefaultHorn(vehicle) end
 
 ---**`AUDIO` `client` [`0xACB5DCCA1EC76840`](https://docs.fivem.net/natives/?_0xACB5DCCA1EC76840)**
 ---
 ---@param vehicle Vehicle
----@return Hash
+---@return Hash # Returns the horn sound hash ignoring any horn mods applied to the car
 function GetVehicleDefaultHornIgnoreMods(vehicle) end
+
+---**`AUDIO` `client` [`0xD53F3A29BCE2580E`](https://docs.fivem.net/natives/?_0xD53F3A29BCE2580E)**
+---
+---```
+---NativeDB Introduced: v1365
+---```
+---
+---@param vehicle Vehicle
+---@return number # The current horn sound index being used by the given vehicle
+function GetVehicleHornSoundIndex(vehicle) end
+
+---**`AUDIO` `client` [`0x544810ED9DB6BBE6`](https://docs.fivem.net/natives/?_0x544810ED9DB6BBE6)**
+---
+---@return boolean # Returns true if the audio for the Multiplayer data set has loaded
+function HasLoadedMpDataSet() end
+
+---**`AUDIO` `client` [`0x5B50ABB1FE3746F4`](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)**
+---
+---@return boolean # Returns true if the audio for the Single Player data set has loaded
+function HasLoadedSpDataSet() end
 
 ---**`AUDIO` `client` [`0xFCBDCE714A7C88E5`](https://docs.fivem.net/natives/?_0xFCBDCE714A7C88E5)**
 ---
 ---@param soundId number
----@return boolean
+---@return boolean # Returns true if the sound has finished playing, false otherwise.
 function HasSoundFinished(soundId) end
 
 ---**`AUDIO` `client` [`0x8F8C0E370AE62F5C`](https://docs.fivem.net/natives/?_0x8F8C0E370AE62F5C)**
 ---
----```
----NativeDB Added Parameter 3: Any p2
----```
+---This native is marked as a deprecated native internally, use [HINT_SCRIPT_AUDIO_BANK](#\_0xFB380A29641EC31A) instead
 ---
----@param p0 any
----@param p1 any
----@return any
-function HintAmbientAudioBank(p0, p1) end
+---@param bankName string
+---@param bOverNetwork boolean
+---@return boolean
+function HintAmbientAudioBank(bankName, bOverNetwork) end
+
+---**`AUDIO` `client` [`0x40763EA7B9B783E7`](https://docs.fivem.net/natives/?_0x40763EA7B9B783E7)**
+---
+---This is marked as a deprecated function internally, please use [HINT_SCRIPT_AUDIO_BANK](#\_0xFB380A29641EC31A) instead.
+---
+---@param bankName string
+---@param bOverNetwork boolean
+---@param playerBits number
+---@return boolean
+function HintMissionAudioBank(bankName, bOverNetwork, playerBits) end
 
 ---**`AUDIO` `client` [`0xFB380A29641EC31A`](https://docs.fivem.net/natives/?_0xFB380A29641EC31A)**
 ---
----```
----NativeDB Added Parameter 3: Any p2
----```
+---Hints that this bank would be good to load if there are free slots.
+---Does not guarentee loading of the bank, [REQUEST_SCRIPT_AUDIO_BANK](#\_0xFE02FFBED8CA9D99) MUST be used as normal before triggering sounds"
 ---
----@param p0 any
----@param p1 number
----@return any
-function HintScriptAudioBank(p0, p1) end
+---This native has a new argument on newer game builds:
+---
+---*   **playerBits**: likely used to specifiy players to sync to as a bit mask (1 << (0-128))
+---
+---@param bankName string
+---@param bOverNetwork boolean
+---@return boolean
+function HintScriptAudioBank(bankName, bOverNetwork) end
+
+---**`AUDIO` `client` [`0x950A154B8DAB6185`](https://docs.fivem.net/natives/?_0x950A154B8DAB6185)**
+---
+---@param audioName string
+---@param entity Entity
+function InitSynchSceneAudioWithEntity(audioName, entity) end
+
+---**`AUDIO` `client` [`0xC8EDE9BDBCCBA6D4`](https://docs.fivem.net/natives/?_0xC8EDE9BDBCCBA6D4)**
+---
+---@param audioName string
+---@param x number
+---@param y number
+---@param z number
+function InitSynchSceneAudioWithPosition(audioName, x, y, z) end
 
 ---**`AUDIO` `client` [`0xA018A12E5C5C2FA6`](https://docs.fivem.net/natives/?_0xA018A12E5C5C2FA6)**
 ---
----@param p0 any
----@param p1 any
----@param p2 any
-function InterruptConversation(p0, p1, p2) end
+---Handles conversation interrupts, using the code-side system for improved timing and to minimize unfriendly logic interactions.
+---
+---@param interrupterPed Ped the ped speaking
+---@param context string the line to use
+---@param voiceName string the voicename for the audio asset
+function InterruptConversation(interrupterPed, context, voiceName) end
 
 ---**`AUDIO` `client` [`0x8A694D7A68F8DC38`](https://docs.fivem.net/natives/?_0x8A694D7A68F8DC38)**
 ---
----```
----One call found in the b617d scripts:
----AUDIO::_8A694D7A68F8DC38(NETWORK::NET_TO_PED(l_3989._f26F[0/*1*/]), "CONV_INTERRUPT_QUIT_IT", "LESTER");
----```
+---Handles conversation interrupts and pauses, using the code-side system for improved timing and to minimize unfriendly logic interactions.
 ---
----@param ped Ped
----@param p1 string
----@param p2 string
-function InterruptConversationAndPause(ped, p1, p2) end
+---@param interrupterPed Ped the ped speaking
+---@param context string the line to use
+---@param voiceName string the voicename for the audio asset
+function InterruptConversationAndPause(interrupterPed, context, voiceName) end
 
 ---**`AUDIO` `client` [`0x226435CB96CCFC8C`](https://docs.fivem.net/natives/?_0x226435CB96CCFC8C)**
 ---
----```
----Example:  
----bool playing = AUDIO::IS_ALARM_PLAYING("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS");  
+---Example code:
+---```lua
+---local bAlarmPlaying = IsAlarmPlaying("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS")
 ---```
 ---
 ---@param alarmName string
----@return boolean
+---@return boolean # Returns true if an alarm is currently playing with the specified name
 function IsAlarmPlaying(alarmName) end
 
 ---**`AUDIO` `client` [`0x932C2D096A2C3FFF`](https://docs.fivem.net/natives/?_0x932C2D096A2C3FFF)**
 ---
----```
----Common in the scripts:  
----AUDIO::IS_AMBIENT_SPEECH_DISABLED(PLAYER::PLAYER_PED_ID());  
----```
----
 ---@param ped Ped
----@return boolean
+---@return boolean # Returns true if ambient speech for the ped has been disabled
 function IsAmbientSpeechDisabled(ped) end
 
 ---**`AUDIO` `client` [`0x9072C8B49907BFAD`](https://docs.fivem.net/natives/?_0x9072C8B49907BFAD)**
 ---
 ---@param ped Ped
----@return boolean
+---@return boolean # Returns true if the ped is currently playing ambient speech
 function IsAmbientSpeechPlaying(ped) end
 
 ---**`AUDIO` `client` [`0x01E2817A479A7F9B`](https://docs.fivem.net/natives/?_0x01E2817A479A7F9B)**
 ---
 ---@param ambientZone string
----@return boolean
+---@return boolean # Returns true if the given ambient zone is allowed to be active
 function IsAmbientZoneEnabled(ambientZone) end
 
 ---**`AUDIO` `client` [`0xC265DF9FB44A9FBD`](https://docs.fivem.net/natives/?_0xC265DF9FB44A9FBD)**
 ---
 ---@param pedHandle Ped
----@return boolean
+---@return boolean # Returns true of the ped is currently playing animal sounds
 function IsAnimalVocalizationPlaying(pedHandle) end
+
+---**`AUDIO` `client` [`0x30CA2EF91D15ADF8`](https://docs.fivem.net/natives/?_0x30CA2EF91D15ADF8)**
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@return boolean # Returns true if any ped-independent positional scripted speech (ie. triggered using [PLAY_AMBIENT_SPEECH_FROM_POSITION_NATIVE](#\_0xED640017ED337E45)) is currently playing
+function IsAnyPositionalSpeechPlaying() end
 
 ---**`AUDIO` `client` [`0x729072355FA39EC9`](https://docs.fivem.net/natives/?_0x729072355FA39EC9)**
 ---
@@ -2303,34 +2321,6 @@ function UseSirenAsHorn(vehicle, toggle) end
 ---@return number
 function GetCurrentRadioTrackPlaybackTime(radioStationName) end
 
----**`AUDIO` `client` [`0xD53F3A29BCE2580E`](https://docs.fivem.net/natives/?_0xD53F3A29BCE2580E)**
----
----```
----NativeDB Introduced: v1365
----```
----
----@param vehicle Vehicle
----@return number
-function GetVehicleDefaultHornVariation(vehicle) end
-
----**`AUDIO` `client` [`0x544810ED9DB6BBE6`](https://docs.fivem.net/natives/?_0x544810ED9DB6BBE6)**
----
----```
----HAS_*
----```
----
----@return boolean
-function HasMultiplayerAudioDataLoaded() end
-
----**`AUDIO` `client` [`0x5B50ABB1FE3746F4`](https://docs.fivem.net/natives/?_0x5B50ABB1FE3746F4)**
----
----```
----HAS_*
----```
----
----@return boolean
-function HasMultiplayerAudioDataUnloaded() end
-
 ---**`AUDIO` `client` [`0x2B1784DB08AFEA79`](https://docs.fivem.net/natives/?_0x2B1784DB08AFEA79)**
 ---
 ---```
@@ -2509,35 +2499,6 @@ function SetRadioTrackMix(radioStationName, mixName, p2) end
 ---@param vehicle Vehicle
 ---@param toggle boolean
 function SetSirenKeepOn(vehicle, toggle) end
-
----**`AUDIO` `client` [`0x950A154B8DAB6185`](https://docs.fivem.net/natives/?_0x950A154B8DAB6185)**
----
----```
----Sets the position of the audio event to the entity's position for one frame(?)
----if (l_8C3 == 0) {
----    sub_27fd1(0, -1, 1);
----    if (PED::IS_SYNCHRONIZED_SCENE_RUNNING(l_87D)) {
----        AUDIO::STOP_SYNCHRONIZED_AUDIO_EVENT(l_87D);
----    }
----    if (sub_7dd(l_A00)) {
----        AUDIO::_950A154B8DAB6185("PAP2_IG1_POPPYSEX", l_A00);
----    }
----    sub_91c("TK************ SETTING SYNCH SCENE AUDIO POSITION THIS FRAME ************TK");
----    l_8C3 = 1;
----}
------
----Found in the b617d scripts, duplicates removed:
----AUDIO::_950A154B8DAB6185("CAR_5_IG_6", l_7FE[1/*1*/]);
----AUDIO::_950A154B8DAB6185("EX03_TRAIN_BIKE_LAND",   PLAYER::PLAYER_PED_ID());
----AUDIO::_950A154B8DAB6185("FBI_2_MCS_1_LeadIn", l_40[2/*1*/]);
----AUDIO::_950A154B8DAB6185("FIN_C2_MCS_1", l_24C[0/*1*/]);
----AUDIO::_950A154B8DAB6185("MNT_DNC", l_5F);
----AUDIO::_950A154B8DAB6185("PAP2_IG1_POPPYSEX", l_A00);
----```
----
----@param p0 string
----@param p1 Entity
-function SetSynchronizedAudioEventPositionThisFrame(p0, p1) end
 
 ---**`AUDIO` `client` [`0xBCC29F935ED07688`](https://docs.fivem.net/natives/?_0xBCC29F935ED07688)**
 ---

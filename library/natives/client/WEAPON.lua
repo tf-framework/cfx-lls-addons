@@ -85,25 +85,23 @@ function ClearPedLastWeaponDamage(ped) end
 
 ---**`WEAPON` `client` [`0x9541D3CF0D398F36`](https://docs.fivem.net/natives/?_0x9541D3CF0D398F36)**
 ---
----```
----Now has 8 params.  
----```
+---Create a weapon object that cannot be attached to a ped. If you want to create a weapon object that can be attached to a ped, use [`CREATE_OBJECT`](#\_0x509D5878EB39E842) instead.
 ---
 ---```
----NativeDB Added Parameter 9: Any p8
----NativeDB Added Parameter 10: Any p9
+---NativeDB Added Parameter 9: BOOL bRegisterAsNetworkObject
+---NativeDB Added Parameter 10: BOOL bScriptHostObject
 ---```
 ---
----@param weaponHash Hash
----@param ammoCount number
----@param x number
----@param y number
----@param z number
----@param showWorldModel boolean
----@param scale number
----@param p7 any
+---@param weaponHash Hash The hash of the weapon to create.
+---@param ammoCount number The amount of ammo for the weapon.
+---@param x number X coordinate for the weapon's position.
+---@param y number Y coordinate for the weapon's position.
+---@param z number Z coordinate for the weapon's position.
+---@param bCreateDefaultComponents boolean Boolean that indicates whether the default components should be created for that weapon (`true`/`false`).
+---@param scale number The size of the object, to increase it, set the scale to a value greater than `1.0`.
+---@param customModelHash number The hash of the custom model to use for the weapon object. Set to `0` if you do not intend to use a custom model hash.
 ---@return Object
-function CreateWeaponObject(weaponHash, ammoCount, x, y, z, showWorldModel, scale, p7) end
+function CreateWeaponObject(weaponHash, ammoCount, x, y, z, bCreateDefaultComponents, scale, customModelHash) end
 
 ---**`WEAPON` `client` [`0x5CEE3DF569CECAB0`](https://docs.fivem.net/natives/?_0x5CEE3DF569CECAB0)**
 ---

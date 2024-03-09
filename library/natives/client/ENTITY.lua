@@ -445,11 +445,17 @@ function ForceEntityAiAndAnimationUpdate(entity) end
 
 ---**`ENTITY` `client` [`0x428CA6DBD1094446`](https://docs.fivem.net/natives/?_0x428CA6DBD1094446)**
 ---
----Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
+---Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using [`SET_ENTITY_COORDS`](#\_0x06843DA7060A026B).
 ---
 ---Example code:
 ---```lua
----FreezeEntityPosition(PlayerPedId(), true)
+----- Freeze the local player.
+---
+----- Retrieve the player ped
+---local playerPed = PlayerPedId() 
+---
+----- Freeze the ped
+---FreezeEntityPosition(playerPed, true)
 ---```
 ---
 ---@param entity Entity The entity to freeze/unfreeze.
@@ -1599,16 +1605,22 @@ function SetEntityCoords(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag,
 
 ---**`ENTITY` `client` [`0x239A3351AC1DA385`](https://docs.fivem.net/natives/?_0x239A3351AC1DA385)**
 ---
----Sets the coordinates (world position) for a specified entity.
+---Teleports an entity to specified coordinates directly, with options to maintain certain behaviors post-teleportation.
 ---
----@param entity Entity The entity to change coordinates for.
----@param xPos number The X coordinate.
----@param yPos number The Y coordinate.
----@param zPos number The Z coordinate, origin level.
----@param alive boolean Unused by the game, potentially used by debug builds of GTA in order to assert whether or not an entity was alive.
----@param deadFlag boolean Whether to disable physics for dead peds, too, and not just living peds.
----@param ragdollFlag boolean A special flag used for ragdolling peds.
-function SetEntityCoordsNoOffset(entity, xPos, yPos, zPos, alive, deadFlag, ragdollFlag) end
+---**Note**:
+---
+---*   This native allows precise placement of entities without the usual adjustments for collision or interaction with the environment that may occur with other teleportation natives.
+---*   The `keepTasks` and `keepIK` parameters are specifically useful for maintaining the current state of a ped, ensuring actions or animations are not abruptly stopped due to the teleportation.
+---*   Setting `doWarp` to `false` is useful when simulating continuous movement or when the entity should interact with its immediate surroundings upon arrival.
+---
+---@param entity Entity The entity to reposition.
+---@param x number X coordinate for the new position.
+---@param y number Y coordinate for the new position.
+---@param z number Z coordinate for the new position.
+---@param keepTasks boolean If `true`, the tasks currently assigned to the ped are not removed upon teleportation. Applies only to peds.
+---@param keepIK boolean If `true`, the Inverse Kinematics (IK) on the ped are not reset upon teleportation. Applies only to peds.
+---@param doWarp boolean If `false`, the entity will maintain continuous motion and will not clear contacts nor create space for itself upon teleportation.
+function SetEntityCoordsNoOffset(entity, x, y, z, keepTasks, keepIK, doWarp) end
 
 ---**`ENTITY` `client` [`0x621873ECE1178967`](https://docs.fivem.net/natives/?_0x621873ECE1178967)**
 ---
@@ -1817,13 +1829,56 @@ function SetEntityRenderScorched(entity, toggle) end
 
 ---**`ENTITY` `client` [`0x8524A8B0171D5E07`](https://docs.fivem.net/natives/?_0x8524A8B0171D5E07)**
 ---
----@param entity Entity
----@param pitch number
----@param roll number
----@param yaw number
----@param rotationOrder number The order yaw pitch roll are applied, see [`GET_ENTITY_ROTATION`](#\_0xAFBD61CC738D9EB9).
----@param p5 boolean
-function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
+---Sets the rotation of a specified entity in the game world.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---Example code:
+---```lua
+----- Example of rotating a vehicle 360 degrees
+---RegisterCommand('360', function()
+---    local playerPed = PlayerPedId() -- Get the player's Ped
+---    local vehicle = GetVehiclePedIsIn(playerPed, false) -- Get the vehicle the player is currently in.
+---    if not vehicle or not DoesEntityExist(vehicle) then
+---        print("You are not in a vehicle")
+---        return
+---    end
+---    
+---    local rot = GetEntityRotation(vehicle, 2)
+---    local roll, pitch, yaw = rot.x, rot.y, rot.z
+---    local finalYaw = yaw + 360
+---    local steps = 20 -- Reduced the number of steps so each rotation is larger
+---    -- Function to perform the rotation gradually
+---    local function doRotation()
+---        local currentYaw = yaw
+---        -- Loop to adjust the rotation in steps
+---        for i = 1, steps do
+---            Citizen.Wait(20) -- Increases the delay between each adjustment to make the animation slower
+---            currentYaw = currentYaw + (360 / steps) -- Increments the rotation
+---            if currentYaw >= finalYaw then
+---                currentYaw = finalYaw
+---            end
+---            -- Apply the current rotation
+---            SetEntityRotation(vehicle, roll, pitch, currentYaw % 360, 2, true)
+---            if currentYaw == finalYaw then
+---                break -- Stops the loop once the rotation is complete
+---            end
+---        end
+---    end
+---    -- Execute the rotation in a coroutine to not block the main thread
+---    Citizen.CreateThread(doRotation)
+---end, false)
+---```
+---
+---@param entity Entity The entity to rotate.
+---@param pitch number The pitch (X-axis) rotation in degrees.
+---@param roll number The roll (Y-axis) rotation in degrees.
+---@param yaw number The yaw (Z-axis) rotation in degrees.
+---@param rotationOrder number Specifies the order in which yaw, pitch, and roll are applied, see [`GET_ENTITY_ROTATION`](#\_0xAFBD61CC738D9EB9) for the available rotation orders.
+---@param bDeadCheck boolean Usually set to `true`. Determines whether to check if the entity is dead before applying the rotation.
+function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, bDeadCheck) end
 
 ---**`ENTITY` `client` [`0x57C5DB656185EAC4`](https://docs.fivem.net/natives/?_0x57C5DB656185EAC4)**
 ---

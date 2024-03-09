@@ -167,16 +167,6 @@ function N_0x62374889a4d59f72() end
 ---
 function N_0x62ecfcfdee7885d6() end
 
----**`CAM` `client` [`0x661B5C8654ADD825`](https://docs.fivem.net/natives/?_0x661B5C8654ADD825)**
----
----```
----SET_CAM_*
----```
----
----@param cam Cam
----@param p1 boolean
-function N_0x661b5c8654add825(cam, p1) end
-
 ---**`CAM` `client` [`0x705A276EBFF3133D`](https://docs.fivem.net/natives/?_0x705A276EBFF3133D)**
 ---
 ---@return boolean
@@ -1014,14 +1004,19 @@ function IsScreenFadingOut() end
 
 ---**`CAM` `client` [`0xC912AF078AF19212`](https://docs.fivem.net/natives/?_0xC912AF078AF19212)**
 ---
+---Determines if a global camera shake is currently active. You can stop the currently active global camera shake using [STOP_SCRIPT_GLOBAL_SHAKING](#\_0x1C9D7949FA533490).
+---
 ---```
----In drunk_controller.c4, sub_309
----if (CAM::IS_SCRIPT_GLOBAL_SHAKING()) {
----    CAM::STOP_SCRIPT_GLOBAL_SHAKING(0);
----}
+---NativeDB Introduced: v323
 ---```
 ---
----@return boolean
+---Example code:
+---```lua
+----- Print whether a global camera shake is currently active
+---print(IsScriptGlobalShaking())
+---```
+---
+---@return boolean # Returns `true` if a scripted global camera shake is currently in effect, otherwise `false`.
 function IsScriptGlobalShaking() end
 
 ---**`CAM` `client` [`0xE33D59DA70B58FDF`](https://docs.fivem.net/natives/?_0xE33D59DA70B58FDF)**
@@ -1205,6 +1200,14 @@ function SetCamAffectsAiming(cam, toggle) end
 ---@param phase number
 function SetCamAnimCurrentPhase(cam, phase) end
 
+---**`CAM` `client` [`0x661B5C8654ADD825`](https://docs.fivem.net/natives/?_0x661B5C8654ADD825)**
+---
+---Makes the minimap follow a scripted camera's rotation instead of the gameplay cam.
+---
+---@param cam Cam Cam handle returned by [CREATE_CAM](#\_0xC3981DCE61D9E13F)
+---@param toggle boolean Whether or not this camera should control the minimap heading.
+function SetCamControlsMiniMapHeading(cam, toggle) end
+
 ---**`CAM` `client` [`0x4D41783FB745E42E`](https://docs.fivem.net/natives/?_0x4D41783FB745E42E)**
 ---
 ---```
@@ -1290,15 +1293,14 @@ function SetCamFarDof(cam, farDOF) end
 
 ---**`CAM` `client` [`0xB13C14F66A00D047`](https://docs.fivem.net/natives/?_0xB13C14F66A00D047)**
 ---
+---Adjusts the field of view (FOV) for a specified camera, allowing for a wider or narrower perspective of the game world. The field of view is measured in degrees and affects how much of the game world is visible at any given moment through the camera.
+---
 ---```
----Sets the field of view of the cam.  
-------------------------------------------------  
----Min: 1.0f  
----Max: 130.0f  
+---NativeDB Introduced: v323
 ---```
 ---
----@param cam Cam
----@param fieldOfView number
+---@param cam Cam The camera whose FOV is being set.
+---@param fieldOfView number The new FOV value, in degrees. Valid range is from `1.0f` (minimum FOV, for a very narrow view) to `130.0f` (maximum FOV, for a very wide view).
 function SetCamFov(cam, fieldOfView) end
 
 ---**`CAM` `client` [`0x45F1DE9C34B93AE6`](https://docs.fivem.net/natives/?_0x45F1DE9C34B93AE6)**
@@ -1856,35 +1858,98 @@ function StopGameplayCamShaking(bStopImmediately) end
 
 ---**`CAM` `client` [`0xF46C581C61718916`](https://docs.fivem.net/natives/?_0xF46C581C61718916)**
 ---
----@param p0 boolean
-function StopGameplayHint(p0) end
+---Terminates the current gameplay hint camera, with an option for immediate cessation or a gradual fade out.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param bStopImmediately boolean Specifies whether the gameplay hint camera should stop instantly `true` or gradually transition out `false`.
+function StopGameplayHint(bStopImmediately) end
 
 ---**`CAM` `client` [`0xC819F3CBB62BF692`](https://docs.fivem.net/natives/?_0xC819F3CBB62BF692)**
 ---
+---Instructs the game engine to stop rendering scripted cameras and transition back to the gameplay camera, optionally applying custom blending and rendering options.
+---
+---```cpp
+---enum eRenderingOptionFlags {
+---    RO_NO_OPTIONS = 0,
+---    RO_STOP_RENDERING_OPTION_WHEN_PLAYER_EXITS_INTO_COVER = 1
+---};
 ---```
----This native makes the gameplay camera zoom into first person/third person with a special effect.
+---
+---```cpp
+---enum eCamSplineSmoothingFlags {
+---    CAM_SPLINE_NO_SMOOTH                = 0,    // No smoothing just moves at a constant rate
+---    CAM_SPLINE_SLOW_IN_SMOOTH           = 1,    // Decelerates when approaching a node
+---    CAM_SPLINE_SLOW_OUT_SMOOTH          = 2,    // Accelerates slowly when leaving a node
+---    CAM_SPLINE_SLOW_IN_OUT_SMOOTH       = 3,    // Decelerates when approaching a node and accelerates slowly when leaving a node
+---    CAM_SPLINE_VERY_SLOW_IN             = 4, 
+---    CAM_SPLINE_VERY_SLOW_OUT            = 5, 
+---    CAM_SPLINE_VERY_SLOW_IN_SLOW_OUT    = 6, 
+---    CAM_SPLINE_SLOW_IN_VERY_SLOW_OUT    = 7, 
+---    CAM_SPLINE_VERY_SLOW_IN_VERY_SLOW_OUT = 8,
+---    CAM_SPLINE_EASE_IN                  = 9, 
+---    CAM_SPLINE_EASE_OUT                 = 10, 
+---    CAM_SPLINE_QUADRATIC_EASE_IN        = 11, 
+---    CAM_SPLINE_QUADRATIC_EASE_OUT       = 12, 
+---    CAM_SPLINE_QUADRATIC_EASE_IN_OUT    = 13, 
+---    CAM_SPLINE_CUBIC_EASE_IN            = 14, 
+---    CAM_SPLINE_CUBIC_EASE_OUT           = 15, 
+---    CAM_SPLINE_CUBIC_EASE_IN_OUT        = 16, 
+---    CAM_SPLINE_QUARTIC_EASE_IN          = 17, 
+---    CAM_SPLINE_QUARTIC_EASE_OUT         = 18, 
+---    CAM_SPLINE_QUARTIC_EASE_IN_OUT      = 19, 
+---    CAM_SPLINE_QUINTIC_EASE_IN          = 20, 
+---    CAM_SPLINE_QUINTIC_EASE_OUT         = 21, 
+---    CAM_SPLINE_QUINTIC_EASE_IN_OUT      = 22, 
+---    CAM_SPLINE_CIRCULAR_EASE_IN         = 23, 
+---    CAM_SPLINE_CIRCULAR_EASE_OUT        = 24, 
+---    CAM_SPLINE_CIRCULAR_EASE_IN_OUT     = 25 
+---};
 ---```
 ---
 ---```
----NativeDB Added Parameter 4: Any p3
+---NativeDB Added Parameter 4: int renderingOptions : An integer bitmask of eRenderingOptionFlags to apply specific rendering behaviors during the transition. RO_NO_OPTIONS signifies no special options are applied.
 ---```
 ---
----@param render boolean
----@param p1 number
----@param p2 number
-function StopRenderingScriptCamsUsingCatchUp(render, p1, p2) end
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param bShouldApplyAcrossAllThreads boolean If `true`, ensures that the rendering stop request is enforced regardless of other script threads that might still expect rendering to be active. Use with caution to avoid conflicts.
+---@param distanceToBlend number Specifies the distance over which the camera should blend from the scripted camera back to the gameplay camera. A value of `0.0` uses the game's default blending distance.
+---@param blendType number An integer representing `eCamSplineSmoothingFlags` to determine the smoothness of the camera transition. Common values include `CAM_SPLINE_SLOW_IN_OUT_SMOOTH` among others, defining the easing of the blend.
+function StopRenderingScriptCamsUsingCatchUp(bShouldApplyAcrossAllThreads, distanceToBlend, blendType) end
 
 ---**`CAM` `client` [`0x1C9D7949FA533490`](https://docs.fivem.net/natives/?_0x1C9D7949FA533490)**
 ---
+---Stops the currently active global camera shake that was initiated by a script. You can check if a global camera shake is active using [IS_SCRIPT_GLOBAL_SHAKING](#\_0xC912AF078AF19212).
+---
 ---```
----In drunk_controller.c4, sub_309
----if (CAM::IS_SCRIPT_GLOBAL_SHAKING()) {
----    CAM::STOP_SCRIPT_GLOBAL_SHAKING(0);
----}
+---NativeDB Introduced: v323
 ---```
 ---
----@param p0 boolean
-function StopScriptGlobalShaking(p0) end
+---Example code:
+---```lua
+----- Stops the currently active global camera shake with a gradual fade out
+---if IsScriptGlobalShaking() then
+---    StopScriptGlobalShaking(false)
+---end
+---```
+---
+---@param bStopImmediately boolean A boolean indicating whether the camera shake should stop instantly (TRUE) or gradually fade out (FALSE).
+function StopScriptGlobalShaking(bStopImmediately) end
+
+---**`CAM` `client` [`0x6493CF69859B116A`](https://docs.fivem.net/natives/?_0x6493CF69859B116A)**
+---
+---Applies a predefined set of vehicle camera settings optimized for capturing stunts, effective for the current game update/frame.
+---
+---```
+---NativeDB Introduced: v791
+---```
+---
+function UseVehicleCamStuntSettingsThisUpdate() end
 
 ---**`CAM` `client` [`0xDF2E1F7742402E81`](https://docs.fivem.net/natives/?_0xDF2E1F7742402E81)**
 ---
@@ -2245,7 +2310,3 @@ function SetGameplayHintAnimOffsety(yOffset) end
 ---```
 ---
 function SetUseHiDofInCutscene() end
-
----**`CAM` `client` [`0x6493CF69859B116A`](https://docs.fivem.net/natives/?_0x6493CF69859B116A)**
----
-function UseStuntCameraThisFrame() end

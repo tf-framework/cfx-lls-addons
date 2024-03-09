@@ -14,7 +14,17 @@ function N_0xaa76052dda9bfc3e(p0, p1, p2, p3, p4, p5, p6) end
 ---
 ---Creates a navmesh blocking object, vehicles will avoid driving through this area.
 ---
----Only 32 blocking objects may exist at a given time and must be manually managed. See [`REMOVE_NAVMESH_BLOCKING_OBJECT`](#\_0x46399A7895957C0E) and [onResourceStop](https://docs.fivem.net/docs/scripting-reference/events/list/onResourceStop/)
+---Only 32 blocking objects may exist at a given time and must be manually managed. See [`REMOVE_NAVMESH_BLOCKING_OBJECT`](#\_0x46399A7895957C0E) and [`onResourceStop`](https://docs.fivem.net/docs/scripting-reference/events/list/onResourceStop/)
+---
+---```
+---enum eBlockingObjectFlags {
+---    BLOCKING_OBJECT_DEFAULT = 0,      // Default Flag
+---    BLOCKING_OBJECT_WANDERPATH = 1,   // Blocking object will block wander paths
+---    BLOCKING_OBJECT_SHORTESTPATH = 2, // Blocking object will block (regular) shortest-paths
+---    BLOCKING_OBJECT_FLEEPATH = 4,     // Blocking object will block flee paths
+---    BLOCKING_OBJECT_ALLPATHS = 7,     // Blocking object will block all paths
+---}
+---```
 ---
 ---@param x number The x coordinate to create the block on.
 ---@param y number The y coordinate.
@@ -23,10 +33,10 @@ function N_0xaa76052dda9bfc3e(p0, p1, p2, p3, p4, p5, p6) end
 ---@param length number The length of the block.
 ---@param height number The height of the block.
 ---@param heading number The heading of object in degrees.
----@param p7 boolean Usually false.
----@param p8 any A bitfield; usually 7.
+---@param bPermanent boolean A boolean indicating if the blocking object is permanent (`true`/`false`).
+---@param flags number Flag for the blocking object, refer to `eBlockingObjectFlags`.
 ---@return any
-function AddNavmeshBlockingObject(x, y, z, width, length, height, heading, p7, p8) end
+function AddNavmeshBlockingObject(x, y, z, width, length, height, heading, bPermanent, flags) end
 
 ---**`PATHFIND` `client` [`0x387EAD7EE42F6685`](https://docs.fivem.net/natives/?_0x387EAD7EE42F6685)**
 ---
@@ -74,14 +84,17 @@ function ClearGpsDisabledZoneAtIndex(index) end
 
 ---**`PATHFIND` `client` [`0x4C8872D8CDBE1B8B`](https://docs.fivem.net/natives/?_0x4C8872D8CDBE1B8B)**
 ---
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
-function DisableNavmeshInArea(p0, p1, p2, p3, p4, p5, p6) end
+---Use this if you want to completely disable a large area of navmesh.
+---For smaller areas, use [`ADD_NAVMESH_BLOCKING_OBJECT`](#\_0xFCD5C8E06E502F5A) instead.
+---
+---@param posMinX number X Min Coordinate.
+---@param posMinY number Y Min Coordinate.
+---@param posMinZ number Z Min Coordinate.
+---@param posMaxX number X Max Coordinate.
+---@param posMaxY number Y Max Coordinate.
+---@param posMaxZ number Z Max Coordinate.
+---@param bDisable boolean Whether to disable the navmesh or not.
+function DisableNavmeshInArea(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ, bDisable) end
 
 ---**`PATHFIND` `client` [`0x0EAEB0DB4B132399`](https://docs.fivem.net/natives/?_0x0EAEB0DB4B132399)**
 ---
@@ -336,14 +349,14 @@ function GetNthClosestVehicleNodeWithHeading(x, y, z, nthClosest, outPosition, h
 
 ---**`PATHFIND` `client` [`0x01708E8DD3FF8C65`](https://docs.fivem.net/natives/?_0x01708E8DD3FF8C65)**
 ---
----@param p0 number
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@return number
-function GetNumNavmeshesExistingInArea(p0, p1, p2, p3, p4, p5) end
+---@param posMinX number Min X Coordinate.
+---@param posMinY number Min Y Coordinate.
+---@param posMinZ number Min Z Coordinate.
+---@param posMaxX number Max X Coordinate.
+---@param posMaxY number Max Y Coordinate.
+---@param posMaxZ number Max Z Coordinate.
+---@return number # Returns the number of navmeshes which exist in the given area (irrespective of whether they are currently loaded or not)
+function GetNumNavmeshesExistingInArea(posMinX, posMinY, posMinZ, posMaxX, posMaxY, posMaxZ) end
 
 ---**`PATHFIND` `client` [`0x93E0DB8440B73A7D`](https://docs.fivem.net/natives/?_0x93E0DB8440B73A7D)**
 ---
@@ -667,16 +680,16 @@ function SetRoadsInArea(x1, y1, z1, x2, y2, z2, nodeEnabled, unknown2) end
 
 ---**`PATHFIND` `client` [`0x109E99373F290687`](https://docs.fivem.net/natives/?_0x109E99373F290687)**
 ---
----@param p0 any
----@param p1 number
----@param p2 number
----@param p3 number
----@param p4 number
----@param p5 number
----@param p6 number
----@param p7 number
----@param p8 any
-function UpdateNavmeshBlockingObject(p0, p1, p2, p3, p4, p5, p6, p7, p8) end
+---@param object Object Navmesh Blocking Object by ID. must be returned by [`ADD_NAVMESH_BLOCKING_OBJECT`](#\_0xFCD5C8E06E502F5A).
+---@param posX number X position coordinate.
+---@param posY number Y position coordinate.
+---@param posZ number Z position coordinate.
+---@param scaleX number X Scale.
+---@param scaleY number Y Scale.
+---@param scaleZ number Z Scale.
+---@param heading number Heading of the blocking object.
+---@param flags number Flags for the blocking object, see [`ADD_NAVMESH_BLOCKING_OBJECT`](#\_0xFCD5C8E06E502F5A) for list of blocking object flags.
+function UpdateNavmeshBlockingObject(object, posX, posY, posZ, scaleX, scaleY, scaleZ, heading, flags) end
 
 ---**`PATHFIND` `client` [`0x3599D741C9AC6310`](https://docs.fivem.net/natives/?_0x3599D741C9AC6310)**
 ---
