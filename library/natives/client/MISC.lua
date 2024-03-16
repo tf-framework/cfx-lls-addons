@@ -2063,6 +2063,12 @@ function QueueMissionRepeatLoad() end
 ---@return boolean # Returns 1 if the message isn't currently on screen.
 function QueueMissionRepeatSave() end
 
+---**`MISC` `client` [`0xEB6891F03362FB12`](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)**
+---
+---Quits the game.
+---
+function QuitGame() end
+
 ---**`MISC` `client` [`0xC8F4131414C835A1`](https://docs.fivem.net/natives/?_0xC8F4131414C835A1)**
 ---
 ---@param p0 any
@@ -2138,6 +2144,13 @@ function ResetDispatchSpawnBlockingAreas() end
 ---
 ---@param p0 any
 function ResetDispatchTimeBetweenSpawnAttempts(p0) end
+
+---**`MISC` `client` [`0xE574A662ACAEFBB1`](https://docs.fivem.net/natives/?_0xE574A662ACAEFBB1)**
+---
+---In singleplayer it does exactly what the name implies. In FiveM / GTA:Online it shows the `Disconnecting from GTA Online` warning screen message and quits the game.
+---After quitting, the game process is started again (as the name implies).
+---
+function RestartGame() end
 
 ---**`MISC` `client` [`0x8EF5573A1F801A5C`](https://docs.fivem.net/natives/?_0x8EF5573A1F801A5C)**
 ---
@@ -2941,14 +2954,6 @@ function ClearTacticalAnalysisPoints() end
 ---@param size number
 function CopyMemory(dst, src, size) end
 
----**`MISC` `client` [`0xEB6891F03362FB12`](https://docs.fivem.net/natives/?_0xEB6891F03362FB12)**
----
----```
----Exits the game and downloads a fresh social club update on next restart.  
----```
----
-function ForceSocialClubUpdate() end
-
 ---**`MISC` `client` [`0xB335F761606DB47C`](https://docs.fivem.net/natives/?_0xB335F761606DB47C)**
 ---
 ---@param p1 any
@@ -3182,12 +3187,6 @@ function ResetBenchmarkRecording() end
 ---```
 ---
 function ResetDispatchSpawnLocation() end
-
----**`MISC` `client` [`0xE574A662ACAEFBB1`](https://docs.fivem.net/natives/?_0xE574A662ACAEFBB1)**
----
----In singleplayer it does exactly what the name implies. In FiveM / GTA:Online it shows `Disconnecting from GTA Online` HUD and then quits the game.
----
-function RestartGame() end
 
 ---**`MISC` `client` [`0x37DEB0AA183FB6D8`](https://docs.fivem.net/natives/?_0x37DEB0AA183FB6D8)**
 ---

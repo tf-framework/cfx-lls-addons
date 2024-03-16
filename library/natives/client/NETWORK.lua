@@ -388,10 +388,6 @@ function N_0x4348bfda56023a2f(p0, p1) end
 ---
 function N_0x444c4525ece0a4b9() end
 
----**`NETWORK` `client` [`0x45A83257ED02D9BC`](https://docs.fivem.net/natives/?_0x45A83257ED02D9BC)**
----
-function N_0x45a83257ed02d9bc() end
-
 ---**`NETWORK` `client` [`0x45E816772E93A9DB`](https://docs.fivem.net/natives/?_0x45E816772E93A9DB)**
 ---
 ---@return any
@@ -3875,6 +3871,13 @@ function NetworkQueryRespawnResults(p0) end
 ---@param p0 any
 ---@return boolean, any
 function NetworkQueueGamerForStatus(p0) end
+
+---**`NETWORK` `client` [`0x45A83257ED02D9BC`](https://docs.fivem.net/natives/?_0x45A83257ED02D9BC)**
+---
+---Forces the "Are you sure you want to quit Grand Theft Auto V?" warning message (Same as when you Alt+F4) to show.
+---Doesn't work in singleplayer.
+---
+function NetworkQuitMpToDesktop() end
 
 ---**`NETWORK` `client` [`0x06FAACD625D80CAA`](https://docs.fivem.net/natives/?_0x06FAACD625D80CAA)**
 ---

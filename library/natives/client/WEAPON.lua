@@ -295,8 +295,20 @@ function GetSelectedPedWeapon(ped) end
 
 ---**`WEAPON` `client` [`0xC3287EE3050FB74C`](https://docs.fivem.net/natives/?_0xC3287EE3050FB74C)**
 ---
----@param weaponHash Hash The hash of the Weapon.
----@return Hash # *   **Melee**: 2685387236<br>*   **Handgun**: 416676503<br>*   **Submachine Gun**: -957766203<br>*   **Shotgun**: 860033945<br>*   **Assault Rifle**: 970310034<br>*   **Light Machine Gun**: 1159398588<br>*   **Sniper**: 3082541095<br>*   **Heavy Weapon**: 2725924767<br>*   **Throwables**: 1548507267<br>*   **Misc**: 4257178988
+---Gets and returns the hash of the group of the specified weapon (group names can be found/changed under "Group" in the weapons' meta file).
+---Note that the group is **not** the same as the location on the weapon wheel.
+---
+---Example code:
+---```lua
+---print(GetWeapontypeGroup(`WEAPON_PISTOL`)) -- Outputs the hash of GROUP_PISTOL
+---print(GetWeapontypeGroup(`WEAPON_RPG`)) -- Outputs the hash of GROUP_HEAVY
+---print(GetWeapontypeGroup(`WEAPON_SNOWBALL`)) -- Outputs the hash of GROUP_THROWN
+---print(GetWeapontypeGroup(`WEAPON_MUSKET`)) -- Outputs the hash of GROUP_SNIPER
+---print(GetWeapontypeGroup(GetSelectedPedWeapon(PlayerPedId()))) -- Outputs the hash of the currently selected weapon
+---```
+---
+---@param weaponHash Hash The hash of the weapon.
+---@return Hash # Returns the hash of the group of the weapon. Hashes:| Group                  | Unsigned   | Signed      | Example                 |<br>|:----------------------:|:----------:|:-----------:|:-----------------------:|<br>| GROUP_DIGISCANNER      | 3539449195 | -755518101  | WEAPON_DIGISCANNER      |<br>| GROUP_FIREEXTINGUISHER | 4257178988 | -37788308   | WEAPON_FIREEXTINGUISHER |<br>| GROUP_HACKINGDEVICE    | 1175761940 | 1175761940  | WEAPON_HACKINGDEVICE    |<br>| GROUP_HEAVY            | 2725924767 | -1569042529 | WEAPON_RPG              |<br>| GROUP_MELEE            | 3566412244 | -728555052  | WEAPON_BAT              |<br>| GROUP_METALDETECTOR    | 3759491383 | -535475913  | WEAPON_METALDETECTOR    |<br>| GROUP_MG               | 1159398588 | 1159398588  | WEAPON_COMBATMG         |<br>| GROUP_NIGHTVISION      | 3493187224 | -801780072  | GADGET_NIGHTVISION      |<br>| GROUP_PARACHUTE        | 431593103  | 431593103   | GADGET_PARACHUTE        |<br>| GROUP_PETROLCAN        | 1595662460 | 1595662460  | WEAPON_PETROLCAN        |<br>| GROUP_PISTOL           | 416676503  | 416676503   | WEAPON_PISTOL           |<br>| GROUP_RIFLE            | 970310034  | 970310034   | WEAPON_ASSAULTRIFLE     |<br>| GROUP_SHOTGUN          | 860033945  | 860033945   | WEAPON_PUMPSHOTGUN      |<br>| GROUP_SMG              | 3337201093 | -957766203  | WEAPON_MICROSMG         |<br>| GROUP_SNIPER           | 3082541095 | -1212426201 | WEAPON_SNIPERRIFLE      |<br>| GROUP_STUNGUN          | 690389602  | 690389602   | WEAPON_STUNGUN          |<br>| GROUP_THROWN           | 1548507267 | 1548507267  | WEAPON_SNOWBALL         |<br>| GROUP_TRANQILIZER      | 75159441   | 75159441    | WEAPON_TRANQUILIZER     |<br>| GROUP_UNARMED          | 2685387236 | -1609580060 | WEAPON_UNARMED          |
 function GetWeapontypeGroup(weaponHash) end
 
 ---**`WEAPON` `client` [`0xF46CDC33180FDA94`](https://docs.fivem.net/natives/?_0xF46CDC33180FDA94)**
