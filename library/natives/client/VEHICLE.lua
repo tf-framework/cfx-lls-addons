@@ -84,21 +84,6 @@ function N_0x2310a8f9421ebf43(p0) end
 ---@param p1 boolean
 function N_0x2311dd7159f00582(vehicle, p1) end
 
----**`VEHICLE` `client` [`0x26D99D5A82FD18E8`](https://docs.fivem.net/natives/?_0x26D99D5A82FD18E8)**
----
----@param p0 any
-function N_0x26d99d5a82fd18e8(p0) end
-
----**`VEHICLE` `client` [`0x26E13D440E7F6064`](https://docs.fivem.net/natives/?_0x26E13D440E7F6064)**
----
----```
----NativeDB Introduced: v1290
----```
----
----@param vehicle Vehicle
----@param value number
-function N_0x26e13d440e7f6064(vehicle, value) end
-
 ---**`VEHICLE` `client` [`0x2C1D8B3B19E517CC`](https://docs.fivem.net/natives/?_0x2C1D8B3B19E517CC)**
 ---
 ---@param p0 any
@@ -852,12 +837,6 @@ function N_0xe8718faf591fd224(vehicle) end
 ---@param p1 any
 function N_0xed5ede9e676643c9(p0, p1) end
 
----**`VEHICLE` `client` [`0xEDBC8405B3895CC9`](https://docs.fivem.net/natives/?_0xEDBC8405B3895CC9)**
----
----@param p0 any
----@param p1 any
-function N_0xedbc8405b3895cc9(p0, p1) end
-
 ---**`VEHICLE` `client` [`0xEEBFC7A7EFDC35B4`](https://docs.fivem.net/natives/?_0xEEBFC7A7EFDC35B4)**
 ---
 ---```
@@ -897,13 +876,6 @@ function N_0xf25e02cb9c5818f8() end
 ---@param p1 any
 ---@return any
 function N_0xf3b0e0aed097a3f5(p0, p1) end
-
----**`VEHICLE` `client` [`0xF78F94D60248C737`](https://docs.fivem.net/natives/?_0xF78F94D60248C737)**
----
----@param vehicle Vehicle
----@param p1 boolean
----@return boolean
-function N_0xf78f94d60248c737(vehicle, p1) end
 
 ---**`VEHICLE` `client` [`0xF8B49F5BA7F850E7`](https://docs.fivem.net/natives/?_0xF8B49F5BA7F850E7)**
 ---
@@ -993,6 +965,36 @@ function AreAllVehicleWindowsIntact(vehicle) end
 ---@param vehicle Vehicle
 ---@return boolean
 function AreAnyVehicleSeatsFree(vehicle) end
+
+---**`VEHICLE` `client` [`0xF78F94D60248C737`](https://docs.fivem.net/natives/?_0xF78F94D60248C737)**
+---
+---Queries whether the control panels of a plane are intact. This native is used to determine the operational status of a plane's cockpit controls, which can affect the plane's flyability.
+---
+---Example code:
+---```lua
+----- Retrieve the player ped
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the plane the player is currently in.
+---local plane = GetVehiclePedIsIn(playerPed, false)
+---
+----- If the player is not in a plane, return
+---if (plane == 0) or (not IsThisModelAPlane(GetEntityModel(plane))) then return end
+---
+----- Check if the plane's control panels are intact
+---local controlPanelsIntact = ArePlaneControlPanelsIntact(plane, true)
+---
+---if (controlPanelsIntact) then
+---    print("The plane's control panels are intact")
+---else
+---    print("The plane's control panels are damaged or the plane is destroyed")
+---end
+---```
+---
+---@param vehicle Vehicle The vehicle to check. This should be a plane.
+---@param checkForZeroHealth boolean If set to `true`, the native also checks if the plane's health is zero, indicating it is completely destroyed. If `false`, only the state of the control panels is considered.
+---@return boolean # Returns `true` if the plane's control panels are intact, and, depending on the `checkForZeroHealth` parameter, the plane is not completely destroyed. Returns `false` if the control panels are damaged or the plane is destroyed (when `checkForZeroHealth` is `true`).
+function ArePlaneControlPanelsIntact(vehicle, checkForZeroHealth) end
 
 ---**`VEHICLE` `client` [`0x755D6D5267CBBD7E`](https://docs.fivem.net/natives/?_0x755D6D5267CBBD7E)**
 ---
@@ -3838,6 +3840,85 @@ function SetConvertibleRoof(vehicle, toggle) end
 ---@param vehicle Vehicle
 ---@param state boolean
 function SetConvertibleRoofLatchState(vehicle, state) end
+
+---**`VEHICLE` `client` [`0x26D99D5A82FD18E8`](https://docs.fivem.net/natives/?_0x26D99D5A82FD18E8)**
+---
+---Disables the additional physics forces applied to BMX bikes that enable them to perform tricks.
+---
+---```
+---NativeDB Introduced: v463
+---```
+---
+---Example code:
+---```lua
+----- Retrieve the player ped
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the BMX bike the player is currently riding
+---local bmx = GetVehiclePedIsIn(playerPed, false)
+---
+----- If the player is not riding a BMX bike, return
+---if not IsThisModelABicycle(GetEntityModel(bmx)) then return end
+---
+----- Disable the extra forces applied to BMX bikes for tricks
+---SetDisableBmxExtraTrickForces(bmx, true)
+---```
+---
+---@param disableExtraTrickForces boolean Set to `true` to disable the extra forces applied for tricks on BMX bicycles, making the bike behave more like a regular bicycle without trick capabilities. Set to `false` to allow BMX bikes to perform tricks normally.
+function SetDisableBmxExtraTrickForces(disableExtraTrickForces) end
+
+---**`VEHICLE` `client` [`0x26E13D440E7F6064`](https://docs.fivem.net/natives/?_0x26E13D440E7F6064)**
+---
+---Prevents a vehicle from exploding upon sustaining body damage from physical collisions. This can be used to increase the durability of vehicles in high-impact scenarios, such as races or combat situations, by preventing them from being destroyed due to collision-induced body damage.
+---
+---For helicopters, you might want to check [`SET_DISABLE_HELI_EXPLODE_FROM_BODY_DAMAGE`](#\_0xEDBC8405B3895CC9) instead.
+---
+---```
+---NativeDB Introduced: v1290
+---```
+---
+---Example code:
+---```lua
+----- Retrieve the player ped
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is currently in
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- Disable explosion from body damage on collision for the vehicle
+---SetDisableExplodeFromBodyDamageOnCollision(vehicle, true)
+---```
+---
+---@param vehicle Vehicle The vehicle to apply this setting to.
+---@param disableExplode boolean `true` to disable explosion from body damage on collision; `false` to allow explosions as normal.
+function SetDisableExplodeFromBodyDamageOnCollision(vehicle, disableExplode) end
+
+---**`VEHICLE` `client` [`0xEDBC8405B3895CC9`](https://docs.fivem.net/natives/?_0xEDBC8405B3895CC9)**
+---
+---Prevents a helicopter from exploding due to relatively minor body damage. This native can be particularly useful in gameplay scenarios or missions where helicopters are subject to damage that would not realistically cause an explosion, ensuring they remain operational unless subjected to more significant damage.
+---
+---```
+---NativeDB Introduced: v1103
+---```
+---
+---Example code:
+---```lua
+----- Retrieve the player ped.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the helicopter the player is currently in.
+---local helicopter = GetVehiclePedIsIn(playerPed, false)
+---
+----- If the player is not in a helicopter, or the vehicle is not a helicopter, return.
+---if (helicopter == 0) or (not IsThisModelAHeli(GetEntityModel(helicopter))) then return end
+---
+----- Disable explosion from body damage for the helicopter.
+---SetDisableHeliExplodeFromBodyDamage(helicopter, true)
+---```
+---
+---@param helicopter Vehicle The helicopter to apply this setting to.
+---@param disableExplode boolean `true` to disable explosion from body damage on collision; `false` to allow explosions as normal.
+function SetDisableHeliExplodeFromBodyDamage(helicopter, disableExplode) end
 
 ---**`VEHICLE` `client` [`0x2D55FE374D5FDB91`](https://docs.fivem.net/natives/?_0x2D55FE374D5FDB91)**
 ---

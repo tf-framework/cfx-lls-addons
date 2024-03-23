@@ -1889,6 +1889,16 @@ function SetMobilePhoneRadioState(state) end
 ---@param toggle boolean
 function SetMobileRadioEnabledDuringGameplay(toggle) end
 
+---**`AUDIO` `client` [`0x29DA3CA8D8B2692D`](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)**
+---
+---```
+---NativeDB Introduced: v1493
+---```
+---
+---@param ped Ped
+---@param enabled boolean
+function SetPedClothEventsEnabled(ped, enabled) end
+
 ---**`AUDIO` `client` [`0x95D2D383D5396B8A`](https://docs.fivem.net/natives/?_0x95D2D383D5396B8A)**
 ---
 ---Sets the ped so they sound drunk
@@ -2106,24 +2116,19 @@ function SetVehicleRadioEnabled(vehicle, toggle) end
 ---**`AUDIO` `client` [`0xBB6F1CAEC68B0BCE`](https://docs.fivem.net/natives/?_0xBB6F1CAEC68B0BCE)**
 ---
 ---@param vehicle Vehicle
----@param toggle boolean
-function SetVehicleRadioLoud(vehicle, toggle) end
+---@param loud boolean
+function SetVehicleRadioLoud(vehicle, loud) end
 
 ---**`AUDIO` `client` [`0xF1F8157B8C3F171C`](https://docs.fivem.net/natives/?_0xF1F8157B8C3F171C)**
 ---
 ---Overrides the vehicle's startup engine rev sound.
 ---
----2 calls found in the b617d scripts:
----
----```cpp
----AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_A42, "Franklin_Bike_Rev", "BIG_SCORE_3A_SOUNDS");  
----AUDIO::SET_VEHICLE_STARTUP_REV_SOUND(l_166, "Trevor_Revs_Off", "PALETO_SCORE_SETUP_SOUNDS");
----```
+---You can reset this with [RESET_VEHICLE_STARTUP_REV_SOUND](#\_0xD2DCCD8E16E20997)
 ---
 ---@param vehicle Vehicle
----@param p1 string
----@param p2 string
-function SetVehicleStartupRevSound(vehicle, p1, p2) end
+---@param soundName string
+---@param setName string
+function SetVehicleStartupRevSound(vehicle, soundName, setName) end
 
 ---**`AUDIO` `client` [`0x1B9C0099CB942AC6`](https://docs.fivem.net/natives/?_0x1B9C0099CB942AC6)**
 ---
@@ -2143,34 +2148,11 @@ function SkipToNextScriptedConversationLine() end
 
 ---**`AUDIO` `client` [`0x0355EF116C4C97B2`](https://docs.fivem.net/natives/?_0x0355EF116C4C97B2)**
 ---
----```
----Example:
----This will start the alarm at Fort Zancudo.
----AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);
----First parameter (char) is the name of the alarm.
----Second parameter (bool) is unknown, it does not seem to make a difference if this one is 0 or 1.
--------------
----It DOES make a difference but it has to do with the duration or something I dunno yet
--------------
---- Found in the b617d scripts:
---- AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS", 0);
---- AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS_UPPER", 1);
---- AUDIO::START_ALARM("AGENCY_HEIST_FIB_TOWER_ALARMS_UPPER_B", 0);
---- AUDIO::START_ALARM("BIG_SCORE_HEIST_VAULT_ALARMS", a_0);
---- AUDIO::START_ALARM("FBI_01_MORGUE_ALARMS", 1);
---- AUDIO::START_ALARM("FIB_05_BIOTECH_LAB_ALARMS", 0);
---- AUDIO::START_ALARM("JEWEL_STORE_HEIST_ALARMS", 0);
---- AUDIO::START_ALARM("PALETO_BAY_SCORE_ALARM", 1);
---- AUDIO::START_ALARM("PALETO_BAY_SCORE_CHICKEN_FACTORY_ALARM", 0);
---- AUDIO::START_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);
---- AUDIO::START_ALARM("PORT_OF_LS_HEIST_SHIP_ALARMS", 0);
---- AUDIO::START_ALARM("PRISON_ALARMS", 0);
---- AUDIO::START_ALARM("PROLOGUE_VAULT_ALARMS", 0);
----```
+---You should call [PREPARE_ALARM](#\_0x9D74AE343DB65533) and wait for its value to be true before using this
 ---
 ---@param alarmName string
----@param p2 boolean
-function StartAlarm(alarmName, p2) end
+---@param skipStartup boolean
+function StartAlarm(alarmName, skipStartup) end
 
 ---**`AUDIO` `client` [`0x013A80FC08F6E4F2`](https://docs.fivem.net/natives/?_0x013A80FC08F6E4F2)**
 ---
@@ -2185,45 +2167,41 @@ function StartAudioScene(scene) end
 
 ---**`AUDIO` `client` [`0x23641AFE870AF385`](https://docs.fivem.net/natives/?_0x23641AFE870AF385)**
 ---
+---For use with [PRELOAD_SCRIPT_CONVERSATION](#\_0x3B3CAD6166916D87) and [GET_IS_PRELOADED_CONVERSATION_READY](#\_0xE73364DB90778FFA)
+---
 function StartPreloadedConversation() end
 
 ---**`AUDIO` `client` [`0x6B17C62C9635D2DC`](https://docs.fivem.net/natives/?_0x6B17C62C9635D2DC)**
 ---
----@param p0 boolean
----@param p1 boolean
----@param p2 boolean
----@param p3 boolean
-function StartScriptConversation(p0, p1, p2, p3) end
+---@param displaySubtitles boolean
+---@param addToBriefScreen boolean Defaults to true
+---@param cloneConversation boolean Defaults to false
+---@param interruptible boolean Defaults to true
+function StartScriptConversation(displaySubtitles, addToBriefScreen, cloneConversation, interruptible) end
 
 ---**`AUDIO` `client` [`0x252E5F915EABB675`](https://docs.fivem.net/natives/?_0x252E5F915EABB675)**
 ---
----@param p0 boolean
----@param p1 boolean
-function StartScriptPhoneConversation(p0, p1) end
+---@param displaySubtitles boolean
+---@param addToBriefScreen boolean Defaults to true
+function StartScriptPhoneConversation(displaySubtitles, addToBriefScreen) end
 
 ---**`AUDIO` `client` [`0xA1CADDCD98415A41`](https://docs.fivem.net/natives/?_0xA1CADDCD98415A41)**
 ---
----```
----Example:  
----This will stop the alarm at Fort Zancudo.  
----AUDIO::STOP_ALARM("PORT_OF_LS_HEIST_FORT_ZANCUDO_ALARMS", 1);  
----First parameter (char) is the name of the alarm.  
----Second parameter (bool) has to be true (1) to have any effect.  
----```
----
 ---@param alarmName string
----@param toggle boolean
-function StopAlarm(alarmName, toggle) end
+---@param instantStop boolean Whether to kill the alarm instantly, or to let the audio system turn it off when it becomes inaudible
+function StopAlarm(alarmName, instantStop) end
 
 ---**`AUDIO` `client` [`0x2F794A877ADD4C92`](https://docs.fivem.net/natives/?_0x2F794A877ADD4C92)**
 ---
----@param stop boolean
-function StopAllAlarms(stop) end
+---@param instantStop boolean Whether to kill the alarm instantly, or to let the audio system turn it off when it becomes inaudible
+function StopAllAlarms(instantStop) end
 
 ---**`AUDIO` `client` [`0xDFE8422B3B94E688`](https://docs.fivem.net/natives/?_0xDFE8422B3B94E688)**
 ---
----@param scene string
-function StopAudioScene(scene) end
+---Stops the named mixing scene (which was previously started by this script)
+---
+---@param sceneName string
+function StopAudioScene(sceneName) end
 
 ---**`AUDIO` `client` [`0xBAC7FC81A75EC1A1`](https://docs.fivem.net/natives/?_0xBAC7FC81A75EC1A1)**
 ---
@@ -2414,20 +2392,6 @@ function GetCurrentRadioTrackPlaybackTime(radioStationName) end
 ---@param ped Ped
 ---@param toggle boolean
 function SetPedAudioFootstepLoud(ped, toggle) end
-
----**`AUDIO` `client` [`0x29DA3CA8D8B2692D`](https://docs.fivem.net/natives/?_0x29DA3CA8D8B2692D)**
----
----```
----Enables/disables ped's "quiet" footstep sound.
----```
----
----```
----NativeDB Introduced: v1493
----```
----
----@param ped Ped
----@param toggle boolean
-function SetPedAudioFootstepQuiet(ped, toggle) end
 
 ---**`AUDIO` `client` [`0xA5342D390CDA41D6`](https://docs.fivem.net/natives/?_0xA5342D390CDA41D6)**
 ---

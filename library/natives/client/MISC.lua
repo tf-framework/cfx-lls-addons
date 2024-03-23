@@ -2461,7 +2461,9 @@ function SetThisScriptCanBePaused(toggle) end
 
 ---**`MISC` `client` [`0xB98236CAAECEF897`](https://docs.fivem.net/natives/?_0xB98236CAAECEF897)**
 ---
----@param toggle boolean
+---Normally, blips can only be removed by the script or resource that created them. However, this native function allows a script to bypass this logic and remove blips from any script.
+---
+---@param toggle boolean Bool indicating if the script that called this native can remove blips created by other scripts.
 function SetThisScriptCanRemoveBlipsCreatedByAnyScript(toggle) end
 
 ---**`MISC` `client` [`0x1D408577D440E81E`](https://docs.fivem.net/natives/?_0x1D408577D440E81E)**

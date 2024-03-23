@@ -2540,6 +2540,8 @@ function ReloadMapMenu() end
 ---
 ---Removes the blip from your map.
 ---
+---**Note:** This function only works on the script that created the blip, if you wish to remove blips created by other scripts, see [`SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT`](#\_0x86A652570E5F25DD).
+---
 ---Example code:
 ---```lua
 ----- Create the blip
