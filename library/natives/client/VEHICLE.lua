@@ -63,12 +63,6 @@ function N_0x1312ddd8385aee4e(p0, p1) end
 ---@param p1 number
 function N_0x182f266c2d9e2beb(vehicle, p1) end
 
----**`VEHICLE` `client` [`0x1F34B0626C594380`](https://docs.fivem.net/natives/?_0x1F34B0626C594380)**
----
----@param p0 any
----@param p1 any
-function N_0x1f34b0626c594380(p0, p1) end
-
 ---**`VEHICLE` `client` [`0x2310A8F9421EBF43`](https://docs.fivem.net/natives/?_0x2310A8F9421EBF43)**
 ---
 ---```
@@ -83,13 +77,6 @@ function N_0x2310a8f9421ebf43(p0) end
 ---@param vehicle Vehicle
 ---@param p1 boolean
 function N_0x2311dd7159f00582(vehicle, p1) end
-
----**`VEHICLE` `client` [`0x2C1D8B3B19E517CC`](https://docs.fivem.net/natives/?_0x2C1D8B3B19E517CC)**
----
----@param p0 any
----@param p1 any
----@return any
-function N_0x2c1d8b3b19e517cc(p0, p1) end
 
 ---**`VEHICLE` `client` [`0x2C4A1590ABF43E8B`](https://docs.fivem.net/natives/?_0x2C4A1590ABF43E8B)**
 ---
@@ -719,16 +706,6 @@ function N_0xc4b3347bd68bd609(p0) end
 ---@param p1 boolean
 function N_0xc50ce861b55eab8b(vehicle, p1) end
 
----**`VEHICLE` `client` [`0xC67DB108A9ADE3BE`](https://docs.fivem.net/natives/?_0xC67DB108A9ADE3BE)**
----
----```
----NativeDB Introduced: v2189
----```
----
----@param p0 any
----@param p1 any
-function N_0xc67db108a9ade3be(p0, p1) end
-
 ---**`VEHICLE` `client` [`0xCF9159024555488C`](https://docs.fivem.net/natives/?_0xCF9159024555488C)**
 ---
 ---@param p0 any
@@ -1127,6 +1104,49 @@ function BringVehicleToHalt(vehicle, distance, duration, bControlVerticalVelocit
 ---@return boolean
 function CanAnchorBoatHere(vehicle) end
 
+---**`VEHICLE` `client` [`0x2C1D8B3B19E517CC`](https://docs.fivem.net/natives/?_0x2C1D8B3B19E517CC)**
+---
+---Determines whether the specified Cargobob can pick up a given entity.
+---
+---Example code:
+---```lua
+---
+----- This example checks if the player is in a Cargobob and if the Cargobob can pick up the specified entity.
+---
+----- Retrieve the player ped.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the player's vehicle (cargobob).
+---local cargobob = GetVehiclePedIsIn(playerPed, false)
+---
+----- Retrieve the model hash of the cargobob.
+---local model = GetEntityModel(cargobob)
+---
+----- Check if the vehicle exists and if it's a Cargobob. If not, terminate the script.
+---if not DoesEntityExist(cargobob) or GetHashKey("cargobob") ~= model then
+---    return
+---end
+---
+---local entityID = 15362 -- The entity you want to check if the Cargobob can pick up (this is a random entity ID).
+---
+----- Check if the entity exists. If not, terminate the script.
+---if not DoesEntityExist(entityID) then
+---    return
+---end
+---
+----- Check if the Cargobob can pick up the specified entity.
+---if CanCargobobPickUpEntity(vehicle, entityID) then
+---    print("Cargobob can pick up the specified entity")
+---else
+---    print("Cargobob can't pick up the specified entity")
+---end
+---```
+---
+---@param cargobob Vehicle The Cargobob helicopter to be checked.
+---@param entity Entity The entity to be checked for pick-up.
+---@return boolean # Returns `true` if the Cargobob can pick up the specified entity, `false` otherwise.
+function CanCargobobPickUpEntity(cargobob, entity) end
+
 ---**`VEHICLE` `client` [`0x30785D90C956BF35`](https://docs.fivem.net/natives/?_0x30785D90C956BF35)**
 ---
 ---@param vehicle Vehicle The vehicle to check.
@@ -1395,6 +1415,8 @@ function DeleteMissionTrain(train) end
 
 ---**`VEHICLE` `client` [`0x22102C9ABFCF125D`](https://docs.fivem.net/natives/?_0x22102C9ABFCF125D)**
 ---
+---Removes a scripted vehicle generator.
+---
 ---@param vehicleGenerator number
 function DeleteScriptVehicleGenerator(vehicleGenerator) end
 
@@ -1416,6 +1438,44 @@ function DeleteVehicle(vehicle) end
 ---
 ---@param vehicle Vehicle
 function DetachContainerFromHandlerFrame(vehicle) end
+
+---**`VEHICLE` `client` [`0xAF03011701811146`](https://docs.fivem.net/natives/?_0xAF03011701811146)**
+---
+---Detaches the specified entity currently being carried by a Cargobob.
+---
+---Example code:
+---```lua
+----- This example detaches a specific entity from a Cargobob.
+---
+----- Retrieve the player ped.
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the player's vehicle (cargobob).
+---local cargobob = GetVehiclePedIsIn(playerPed, false)
+---
+----- Retrieve the model hash of the cargobob.
+---local cargobobModel = GetEntityModel(cargobob)
+---
+----- Check if the vehicle exists and if it's a Cargobob. If not, terminate the script.
+---if not DoesEntityExist(cargobob) or cargobobModel ~= GetHashKey("cargobob") then
+---    return
+---end
+---
+---local entityID = 15362 -- The entity you want to detach from the Cargobob (this is a random entity ID).
+---
+----- Check if the entity exists; if not, terminate the script.
+---if not DoesEntityExist(yourEntity) then
+---    return
+---end
+---
+----- Detach the entity from the Cargobob.
+---DetachEntityFromCargobob(cargobob, entityID)
+---```
+---
+---@param vehicle Vehicle The Cargobob helicopter.
+---@param entity Entity The entity to be detached.
+---@return any
+function DetachEntityFromCargobob(vehicle, entity) end
 
 ---**`VEHICLE` `client` [`0xADF7BE450512C12F`](https://docs.fivem.net/natives/?_0xADF7BE450512C12F)**
 ---
@@ -1596,6 +1656,18 @@ function FixVehicleWindow(vehicle, windowIndex) end
 ---@param vehicle Vehicle
 ---@param p1 boolean
 function ForcePlaybackRecordedVehicleUpdate(vehicle, p1) end
+
+---**`VEHICLE` `client` [`0xC67DB108A9ADE3BE`](https://docs.fivem.net/natives/?_0xC67DB108A9ADE3BE)**
+---
+---Forces a submarine to maintain neutral buoyancy for a specified duration, preventing it from rising when unoccupied or without a driver.
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param submarine Vehicle The submarine vehicle to apply neutral buoyancy to.
+---@param time number The duration in milliseconds for which to maintain neutral buoyancy.
+function ForceSubmarineNeurtalBuoyancy(submarine, time) end
 
 ---**`VEHICLE` `client` [`0x33506883545AC0DF`](https://docs.fivem.net/natives/?_0x33506883545AC0DF)**
 ---
@@ -2147,6 +2219,30 @@ function GetRotationOfVehicleRecordingAtTime(recording, time, script) end
 ---@param time number
 ---@return vector3
 function GetRotationOfVehicleRecordingIdAtTime(id, time) end
+
+---**`VEHICLE` `client` [`0x3E71D0B300B7AA79`](https://docs.fivem.net/natives/?_0x3E71D0B300B7AA79)**
+---
+---Determines if the submarine is operating below its designated crush depth.
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param submarine Vehicle The submarine vehicle to be evaluated for being under its crush depth threshold.
+---@return boolean # Returns `true` if the submarine is below its designated crush depth, `false` otherwise.
+function GetSubmarineIsUnderDesignDepth(submarine) end
+
+---**`VEHICLE` `client` [`0x093D6DDCA5B8FBAE`](https://docs.fivem.net/natives/?_0x093D6DDCA5B8FBAE)**
+---
+---Checks if a Submarine has any air leaks, when there is more than 4 the player will drown.
+---
+---```
+---NativeDB Introduced: v2189
+---```
+---
+---@param submarine Vehicle The submarine vehicle to check for air leaks.
+---@return number # Returns the number of air leaks on the submarine.
+function GetSubmarineNumberOfAirLeaks(submarine) end
 
 ---**`VEHICLE` `client` [`0x5746F3A7AB7FE544`](https://docs.fivem.net/natives/?_0x5746F3A7AB7FE544)**
 ---
@@ -3732,6 +3828,44 @@ function SetBoatSinksWhenWrecked(vehicle, toggle) end
 ---@param state boolean
 function SetCanResprayVehicle(vehicle, state) end
 
+---**`VEHICLE` `client` [`0x1F34B0626C594380`](https://docs.fivem.net/natives/?_0x1F34B0626C594380)**
+---
+---Prevents a specified entity from being detached from a Cargobob, even in the event of collisions.
+---
+---Example code:
+---```lua
+----- This example prevents a specific entity from being detached from a Cargobob, even in the event of collisions.
+---
+----- Retrieve the player ped
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the player's vehicle (cargobob)
+---local cargobob = GetVehiclePedIsIn(playerPed, false)
+---
+----- Retrieve the model hash of the cargobob.
+---local cargobobModel = GetEntityModel(cargobob)
+---
+----- Check if the cargobob exists. If not, terminate the script.
+---if not DoesEntityExist(cargobob) or GetHashKey("cargobob") ~= cargobobModel then 
+---    -- If the cargobob does not exist, end the execution of the code here.
+---    return 
+---end
+---
+---local entityID = 15362 -- The entity you want to prevent from being detached from the Cargobob (this is a random entity ID).
+---
+----- Check if the entity exists; if not, terminate the script.
+---if not DoesEntityExist(yourEntity) then
+---    return
+---end
+---
+----- Prevent the entity from being detached from the Cargobob.
+---SetCargobobExcludeFromPickupEntity(cargobob, entityID)
+---```
+---
+---@param cargobob Vehicle The Cargobob helicopter from which the entity is not to be detached
+---@param entity Entity The entity to remain attached to the Cargobob.
+function SetCargobobExcludeFromPickupEntity(cargobob, entity) end
+
 ---**`VEHICLE` `client` [`0x571FEB383F629926`](https://docs.fivem.net/natives/?_0x571FEB383F629926)**
 ---
 ---Stops cargobob from being able to detach the attached vehicle.
@@ -5035,9 +5169,17 @@ function SetVehicleExtraColours(vehicle, pearlescentColor, wheelColor) end
 ---
 ---Example code:
 ---```lua
----local localPlayerPed = GetPlayerPed(-1)
----local localVehicle = GetVehiclePedIsIn(localPlayerPed, false)
----SetVehicleFixed(localVehicle)
+----- Get the player ped
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the vehicle the player is in
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- If the player is not in a vehicle, return
+---if (vehicle == 0) then return end 
+---
+----- Fix the vehicle
+---SetVehicleFixed(vehicle)
 ---```
 ---
 ---@param vehicle Vehicle The vehicle that will be fixed
@@ -5461,12 +5603,10 @@ function SetVehicleModKit(vehicle, modKit) end
 
 ---**`VEHICLE` `client` [`0xBFDF984E2C22B94F`](https://docs.fivem.net/natives/?_0xBFDF984E2C22B94F)**
 ---
----```
----NOTE: Debugging functions are not present in the retail version of the game.  
----```
+---This method is utilized solely for debugging purposes and is functional only in debug builds of the game. Please note that its functionality may not be available in the retail version.
 ---
----@param vehicle Vehicle
----@param name string
+---@param vehicle Vehicle The vehicle id.
+---@param name string Debug name.
 function SetVehicleNameDebug(vehicle, name) end
 
 ---**`VEHICLE` `client` [`0xFBA550EA44404EE6`](https://docs.fivem.net/natives/?_0xFBA550EA44404EE6)**
@@ -5819,10 +5959,10 @@ function SkipToEndAndStopPlaybackRecordedVehicle(vehicle) end
 
 ---**`VEHICLE` `client` [`0x9E5B5E4D2CCD2259`](https://docs.fivem.net/natives/?_0x9E5B5E4D2CCD2259)**
 ---
----See eWindowId declared in [`IS_VEHICLE_WINDOW_INTACT`](#\_0x46E571A0E20D01F1).
+---Smashes a vehicles window. See eWindowId declared in [`IS_VEHICLE_WINDOW_INTACT`](#\_0x46E571A0E20D01F1).
 ---
----@param vehicle Vehicle
----@param windowIndex number
+---@param vehicle Vehicle The vehicle id.
+---@param windowIndex number Windows to smash index.
 function SmashVehicleWindow(vehicle, windowIndex) end
 
 ---**`VEHICLE` `client` [`0x374706271354CB18`](https://docs.fivem.net/natives/?_0x374706271354CB18)**
@@ -5881,17 +6021,11 @@ function StartVehicleAlarm(vehicle) end
 
 ---**`VEHICLE` `client` [`0x9C8C6504B5B63D2C`](https://docs.fivem.net/natives/?_0x9C8C6504B5B63D2C)**
 ---
----```
----Sounds the horn for the specified vehicle.  
----vehicle: The vehicle to activate the horn for.  
----mode: The hash of "NORMAL" or "HELDDOWN". Can be 0.  
----duration: The duration to sound the horn, in milliseconds.  
----Note: If a player is in the vehicle, it will only sound briefly.  
----```
+---Sounds the horn for the specified vehicle. Note that if a player is in the vehicle, it will only sound briefly.
 ---
----@param vehicle Vehicle
----@param duration number
----@param mode Hash
+---@param vehicle Vehicle Vehicle id
+---@param duration number The duration to sound the horn, in milliseconds.
+---@param mode Hash The hash of "NORMAL" or "HELDDOWN". Can be 0.
 ---@param forever boolean
 function StartVehicleHorn(vehicle, duration, mode, forever) end
 
@@ -6047,13 +6181,6 @@ function CanAnchorBoatHere_2(vehicle) end
 ---**`VEHICLE` `client` [`0xAA3F739ABDDCF21F`](https://docs.fivem.net/natives/?_0xAA3F739ABDDCF21F)**
 ---
 function ClearVehiclePhoneExplosiveDevice() end
-
----**`VEHICLE` `client` [`0xAF03011701811146`](https://docs.fivem.net/natives/?_0xAF03011701811146)**
----
----@param vehicle Vehicle
----@param entity Entity
----@return any
-function DetachEntityFromCargobob(vehicle, entity) end
 
 ---**`VEHICLE` `client` [`0x83F813570FF519DE`](https://docs.fivem.net/natives/?_0x83F813570FF519DE)**
 ---
@@ -6306,26 +6433,6 @@ function GetLastRammedVehicle(vehicle) end
 ---@param vehicle Vehicle
 ---@return number
 function GetNumberOfVehicleDoors(vehicle) end
-
----**`VEHICLE` `client` [`0x093D6DDCA5B8FBAE`](https://docs.fivem.net/natives/?_0x093D6DDCA5B8FBAE)**
----
----```
----NativeDB Introduced: v2189
----```
----
----@param submarine Vehicle
----@return number
-function GetSubmarineCrushDepthWarningState(submarine) end
-
----**`VEHICLE` `client` [`0x3E71D0B300B7AA79`](https://docs.fivem.net/natives/?_0x3E71D0B300B7AA79)**
----
----```
----NativeDB Introduced: v2189
----```
----
----@param submarine Vehicle
----@return boolean
-function GetSubmarineIsBelowFirstCrushDepth(submarine) end
 
 ---**`VEHICLE` `client` [`0x55EAB010FAEE9380`](https://docs.fivem.net/natives/?_0x55EAB010FAEE9380)**
 ---

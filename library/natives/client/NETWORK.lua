@@ -393,28 +393,6 @@ function N_0x444c4525ece0a4b9() end
 ---@return any
 function N_0x45e816772e93a9db() end
 
----**`NETWORK` `client` [`0x45F35C0EDC33B03B`](https://docs.fivem.net/natives/?_0x45F35C0EDC33B03B)**
----
----NETWORK_A\*
----Similar structure as NETWORK_ADD_ENTITY_TO_SYNCHRONISED_SCENE but it includes this time a hash.
----In casino_slots it is used one time in a synced scene involving a ped and the slot machine?
----
----```
----NativeDB Introduced: v1734
----```
----
----@param netScene number
----@param modelHash Hash
----@param x number
----@param y number
----@param z number
----@param p5 number
----@param p6 string
----@param p7 number
----@param p8 number
----@param flags number
-function N_0x45f35c0edc33b03b(netScene, modelHash, x, y, z, p5, p6, p7, p8, flags) end
-
 ---**`NETWORK` `client` [`0x4811BBAC21C5FCD5`](https://docs.fivem.net/natives/?_0x4811BBAC21C5FCD5)**
 ---
 ---@param p0 any
@@ -895,24 +873,6 @@ function N_0xa2e9c1ab8a92e8cd(toggle) end
 ---
 ---@return any
 function N_0xa306f470d1660581() end
-
----**`NETWORK` `client` [`0xA5EAFE473E45C442`](https://docs.fivem.net/natives/?_0xA5EAFE473E45C442)**
----
----```
----NativeDB Introduced: v1290
----```
----
----@param p0 any
----@param p1 any
----@param p2 any
----@param p3 any
----@param p4 any
----@param p5 any
----@param p6 any
----@param p7 any
----@param p8 any
----@param p9 any
-function N_0xa5eafe473e45c442(p0, p1, p2, p3, p4, p5, p6, p7, p8, p9) end
 
 ---**`NETWORK` `client` [`0xA6FCECCF4721D679`](https://docs.fivem.net/natives/?_0xA6FCECCF4721D679)**
 ---
@@ -1752,14 +1712,16 @@ function NetworkAddEntityDisplayedBoundaries(p0, p1, p2, p3, p4, p5) end
 
 ---**`NETWORK` `client` [`0xF2404D68CBC855FA`](https://docs.fivem.net/natives/?_0xF2404D68CBC855FA)**
 ---
----@param entity Entity
----@param netScene number
----@param animDict string
----@param animName string
----@param speed number
----@param speedMulitiplier number
----@param flag number
-function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animName, speed, speedMulitiplier, flag) end
+---Adds an entity to a network synchronised scene.
+---
+---@param entity Entity Entity handle to add to the scene.
+---@param netScene number Which network scene to add this entity to (Returned by [`NETWORK_CREATE_SYNCHRONISED_SCENE`](#\_0x7CD6BC4C2BBDD526))
+---@param animDict string Animation dictionary to play on this entity.
+---@param animName string Animation clip from the dictionary to play on this entity.
+---@param blendIn number Blend in speed of the animation. Default is `8.0`.
+---@param blendOut number Blend out speed of the animation. Default is `-8.0`.
+---@param flag number Synchronized scene flags. See [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](#\_0x742A637471BCECD9) for more info.
+function NetworkAddEntityToSynchronisedScene(entity, netScene, animDict, animName, blendIn, blendOut, flag) end
 
 ---**`NETWORK` `client` [`0x236406F60CF216D6`](https://docs.fivem.net/natives/?_0x236406F60CF216D6)**
 ---
@@ -1778,19 +1740,89 @@ function NetworkAddFollowers(p0, p1) end
 ---@return boolean, number
 function NetworkAddFriend(networkHandle, message) end
 
+---**`NETWORK` `client` [`0x45F35C0EDC33B03B`](https://docs.fivem.net/natives/?_0x45F35C0EDC33B03B)**
+---
+---Adds a map entity to a network synchronized scene. This native function is utilized only once as of game build 2944 within the casino_slots script.
+---Please note that it's only possible to add a single map entity to synchronised scenes.
+---
+---It's advisable to initially locate the object and retrieve its actual coordinates using [`GET_CLOSEST_OBJECT_OF_TYPE`](#\_0xE143FA2249364369).
+---
+---```
+---NativeDB Introduced: v1734
+---```
+---
+---@param netScene number Net scene ID returned by [`NETWORK_CREATE_SYNCHRONISED_SCENE`](#\_0x7CD6BC4C2BBDD526)
+---@param modelHash Hash Model hash of the object the script should look for.
+---@param x number Object X coord.
+---@param y number Object Y coord.
+---@param z number Object Z coord.
+---@param animDict string Anim dictionary to play on this object.
+---@param animName string Anim name to play on this object.
+---@param blendInSpeed number Float representing how quickly the animation should be blended into. Default is `8.0`.
+---@param blendOutSpeed number Float representing how quickly the animation should be blended out of. Default is `-8.0`
+---@param flags number See [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](#\_0x742A637471BCECD9).
+function NetworkAddMapEntityToSynchronisedScene(netScene, modelHash, x, y, z, animDict, animName, blendInSpeed, blendOutSpeed, flags) end
+
 ---**`NETWORK` `client` [`0x742A637471BCECD9`](https://docs.fivem.net/natives/?_0x742A637471BCECD9)**
 ---
----@param ped Ped
----@param netScene number
----@param animDict string
----@param animnName string
----@param blendInSpeed number
----@param blendOutSpeed number
----@param duration number
----@param flag number
----@param playbackRate number
----@param p9 any
-function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animnName, blendInSpeed, blendOutSpeed, duration, flag, playbackRate, p9) end
+---Adds a ped to a networked synchronised scene.
+---
+---Synchronized scene playback flags (Also works in other `NETWORK_ADD_*_TO_SYNCHRONISED_SCENE` natives):
+---|Value| Name | Notes |
+---|:----:|:------:| :--------: |
+---|`0`| None | No flag set. |
+---|`1`| USE_PHYSICS | Allows the ped to have physics during the scene. |
+---|`2`| TAG_SYNC_OUT | The task will do a tag synchronized blend out with the movement behaviour of the ped. |
+---|`4`| DONT_INTERRUPT | The scene will not be interrupted by external events. |
+---|`8`| ON_ABORT_STOP_SCENE | The scene will be stopped if the scripted task is aborted. |
+---|`16`| ABORT_ON_WEAPON_DAMAGE | The scene will be stopped if the ped is damaged by a weapon. |
+---|`32`| BLOCK_MOVER_UPDATE | The task will not update the mover. |
+---|`64`| LOOP_WITHIN_SCENE | Animations within this scene will be looped until the scene is finished. |
+---|`128`| PRESERVE_VELOCITY | The task will keep it's velocity when the scene is cleaned up/stopped. Do note that the `USE_PHYSICS` flag must also be present. |
+---|`256`| EXPAND_PED_CAPSULE_FROM_SKELETON | The task will apply the `ExpandPedCapsuleFromSkeleton` reset flag to the ped (See [`SET_PED_RESET_FLAG`](#\_0xC1E8A365BF3B29F2)). |
+---|`512`| ACTIVATE_RAGDOLL_ON_COLLISION | The ped will be ragdoll if it comes in contact with an object. |
+---|`1024`| HIDE_WEAPON | The ped's current weapon will be hidden during the scene. |
+---|`2048`| ABORT_ON_DEATH | The synchronised scene will be aborted if the ped dies. |
+---|`4096`| VEHICLE_ABORT_ON_LARGE_IMPACT | If the scene is running on a vehicle, then it will be aborted if the vehicle takes a heavy collision with another vehicle. |
+---|`16384`| PROCESS_ATTACHMENTS_ON_START | Attachments will be processed at the start of the scene. |
+---|`32768`| NET_ON_EARLY_NON_PED_STOP_RETURN_TO_START |  A non-ped entity will be returned to their starting position if the scene finishes early. |
+---|`65536`| SET_PED_OUT_OF_VEHICLE_AT_START | If the ped is in a vehicle when the scene starts, it will be set out of the vehicle. |
+---|`131072`| NET_DISREGARD_ATTACHMENT_CHECKS | Attachment checks will be disregarded when the scene is running. |
+---
+---These flags can be combined with the `|` operator.
+---
+---@param ped Ped Ped handle to add.
+---@param netScene number Network scene handle (Returned by [`NETWORK_CREATE_SYNCHRONISED_SCENE`](#\_0x7CD6BC4C2BBDD526))
+---@param animDict string Dictionary of the animation that the ped will play. Network synchronised scenes don't require the animation dictionary to be loaded, unlike [`TASK_SYNCHRONIZED_SCENE`](#\_0xEEA929141F699854).
+---@param animClip string Clip name from the anim dictionary that the ped will play.
+---@param blendInSpeed number Blend in speed. The lower the value, the slower the blend in speed is. Default is `8.0`.
+---@param blendOutSpeed number Blend out speed. This should be the negative value of `blendInSpeed`. Default is `-8.0`.
+---@param syncedSceneFlags number Synchronized scene flags bit field from the above table.
+---@param ragdollFlags number Ragdoll blocking flags. Default is `0`.
+---@param moverBlendInDelta number Determines the rate at which the mover blends in to the scene. Useful for ensuring a seamless entry onto a synchronized scene. Default is `1000.0`.
+---@param ikFlags number Inverse kinematics flags. Default is `0`.
+function NetworkAddPedToSynchronisedScene(ped, netScene, animDict, animClip, blendInSpeed, blendOutSpeed, syncedSceneFlags, ragdollFlags, moverBlendInDelta, ikFlags) end
+
+---**`NETWORK` `client` [`0xA5EAFE473E45C442`](https://docs.fivem.net/natives/?_0xA5EAFE473E45C442)**
+---
+---Adds a ped to a networked synchronized scene but extends [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](#\_0x742A637471BCECD9) to support IK flags.
+---There is barely any difference between this and [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](#\_0x742A637471BCECD9).
+---
+---```
+---NativeDB Introduced: v1290
+---```
+---
+---@param ped Ped Index of the ped to add to the scene.
+---@param netSceneID number Network scene ID returned by [`NETWORK_CREATE_SYNCHRONISED_SCENE`](#\_0x7CD6BC4C2BBDD526).
+---@param animDict string Which anim dictionary to use on this ped.
+---@param animClip string Which clip from the anim dictionary to use on this ped.
+---@param blendIn number Blend in speed of the animation. Default is `8.0`.
+---@param blendOut number Blend out speed of the animation. Default is `-8.0`.
+---@param sceneFlags number Synchronized scene flags. See [`NETWORK_ADD_PED_TO_SYNCHRONISED_SCENE`](#\_0x742A637471BCECD9).
+---@param ragdollFlags number Ragdoll blocking flags. Default is 0.
+---@param moverBlendInDelta number Determines the rate at which the mover blends in to the scene. Useful for ensuring a seamless entry onto a synchronized scene. Default is `1000.0`.
+---@param ikFlags number Inverse kinematics flags. Default is `0`.
+function NetworkAddPedToSynchronisedSceneWithIk(ped, netSceneID, animDict, animClip, blendIn, blendOut, sceneFlags, ragdollFlags, moverBlendInDelta, ikFlags) end
 
 ---**`NETWORK` `client` [`0xCF8BD3B0BD6D42D7`](https://docs.fivem.net/natives/?_0xCF8BD3B0BD6D42D7)**
 ---
@@ -2196,20 +2228,23 @@ function NetworkConcealPlayer(player, toggle, p2) end
 
 ---**`NETWORK` `client` [`0x7CD6BC4C2BBDD526`](https://docs.fivem.net/natives/?_0x7CD6BC4C2BBDD526)**
 ---
----@param x number
----@param y number
----@param z number
----@param xRot number
----@param yRot number
----@param zRot number
----@param rotationOrder number
----@param holdLastFrame boolean
----@param looped boolean
----@param p9 number
----@param animTime number
----@param animSpeed number
----@return number # netScene id
-function NetworkCreateSynchronisedScene(x, y, z, xRot, yRot, zRot, rotationOrder, holdLastFrame, looped, p9, animTime, animSpeed) end
+---Creates a networked synchronized scene.
+---Be sure to actually start the scene with [`NETWORK_START_SYNCHRONISED_SCENE`](#\_0x9A1B3FCDB36C8697) after you're done adding peds or entities to the scene.
+---
+---@param x number X coord of the scene position (If the scene is for an object, the position should be of the object's coordinates most of the time)
+---@param y number Y coord of the scene position.
+---@param z number Z coord of the scene position.
+---@param xRot number Value x of the scene rotation.
+---@param yRot number Value y of the scene rotation.
+---@param zRot number Value z of the scene rotation (It's heading).
+---@param rotationOrder number Rotation order. Default is 2.
+---@param holdLastFrame boolean If true, the scene stays on the last frame once it finishes, making `GetSynchronizedScenePhase` keep returning `1.0`. Script is expected to clean up it's memory and stop the animation if this is passed as true and the phase reaches `1.0`.
+---@param looped boolean If true, the scene will be looped and `holdLastFrame` will be disregarded.
+---@param phaseToStopScene number Which phase (from `0.0` to `1.0` to stop the scene. Default is `1.0`)
+---@param phaseToStartScene number Which phase (from `0.0` to `1.0` to start the scene. Default is `0.0`)
+---@param animSpeed number Speed of the animation. Default is `1.0`
+---@return number # Returns the network synchronized scene's handle. You can get information regarding the phase, rate etc of this synchronised scene by using local synchronized scene natives (e.g [`GET_SYNCHRONIZED_SCENE_PHASE`](#\_0xE4A310B1D7FA73CC)).<br>Do note that you need to get the local scene handle from the network scene handle (using [`NETWORK_GET_LOCAL_SCENE_FROM_NETWORK_ID`](#\_0x02C40BF885C567B6)) and then pass the returned value to the local synchronized scene info natives.
+function NetworkCreateSynchronisedScene(x, y, z, xRot, yRot, zRot, rotationOrder, holdLastFrame, looped, phaseToStopScene, phaseToStartScene, animSpeed) end
 
 ---**`NETWORK` `client` [`0xF9B83B77929D8863`](https://docs.fivem.net/natives/?_0xF9B83B77929D8863)**
 ---
@@ -2632,9 +2667,11 @@ function NetworkGetLocalHandle(networkHandle, bufferSize) end
 
 ---**`NETWORK` `client` [`0x02C40BF885C567B6`](https://docs.fivem.net/natives/?_0x02C40BF885C567B6)**
 ---
----@param netId number
----@return number
-function NetworkGetLocalSceneFromNetworkId(netId) end
+---Returns a local synchronized scene handle of a networked synchronised scene.
+---
+---@param netSceneId number Network synchronised scene ID (returned by [`NETWORK_CREATE_SYNCHRONISED_SCENE`](#\_0x7CD6BC4C2BBDD526)).
+---@return number # Local synchronized scene ID. This value can be used with natives such as: [`GET_SYNCHRONIZED_SCENE_PHASE`](#\_0xE4A310B1D7FA73CC), [`GET_SYNCHRONIZED_SCENE_RATE`](#\_0xD80932D577274D40), [`IS_SYNCHRONIZED_SCENE_RUNNING`](#\_0x25D39B935A038A26) and more.
+function NetworkGetLocalSceneFromNetworkId(netSceneId) end
 
 ---**`NETWORK` `client` [`0xAFEBB0D5D8F687D2`](https://docs.fivem.net/natives/?_0xAFEBB0D5D8F687D2)**
 ---
@@ -3950,17 +3987,99 @@ function NetworkResetBodyTracker() end
 
 ---**`NETWORK` `client` [`0xEA23C49EAA83ACFB`](https://docs.fivem.net/natives/?_0xEA23C49EAA83ACFB)**
 ---
+---Revives our local player who was previously dead.
+---
+---**Note:** Call this once you resurrect the player (this does not need to be called every frame).
+---
+---```cpp
+---enum ePlayerSpawnLocation {
+---  SPAWN_LOCATION_AUTOMATIC = 0, // system will decide
+---  SPAWN_LOCATION_NEAR_DEATH,					
+---  SPAWN_LOCATION_NEAR_TEAM_MATES,			
+---  SPAWN_LOCATION_MISSION_AREA, // script defined area
+---  SPAWN_LOCATION_NEAR_OTHER_PLAYERS, 
+---  SPAWN_LOCATION_NEAR_CURRENT_POSITION,	
+---  SPAWN_LOCATION_AT_CURRENT_POSITION,
+---  SPAWN_LOCATION_NET_TEST_BED,	
+---  SPAWN_LOCATION_CUSTOM_SPAWN_POINTS,
+---  SPAWN_LOCATION_OUTSIDE_SIMEON_GARAGE,
+---  SPAWN_LOCATION_NEAR_SPECIFIC_COORDS,
+---  SPAWN_LOCATION_AT_SPECIFIC_COORDS,
+---  SPAWN_LOCATION_AT_AIRPORT_ARRIVALS,
+---  SPAWN_LOCATION_AT_SPECIFIC_COORDS_IF_POSSIBLE,
+---  SPAWN_LOCATION_IN_SPECIFIC_ANGLED_AREA,
+---  SPAWN_LOCATION_NEAREST_RESPAWN_POINT, 
+---  SPAWN_LOCATION_AT_SPECIFIC_COORDS_RACE_CORONA, 
+---  SPAWN_LOCATION_INSIDE_GARAGE,
+---  SPAWN_LOCATION_INSIDE_PROPERTY,
+---  SPAWN_LOCATION_INSIDE_PROPERTY_OR_GARAGE,
+---  SPAWN_LOCATION_NEAR_DEATH_IMPROMPTU,
+---  SPAWN_LOCATION_NEAR_CURRENT_POSITION_SPREAD_OUT,
+---  SPAWN_LOCATION_NEAREST_RESPAWN_POINT_TO_SPECIFIC_COORDS,
+---  SPAWN_LOCATION_NEAREST_HOSPITAL,
+---  SPAWN_LOCATION_NEAREST_POLICE_STATION,
+---  SPAWN_LOCATION_NEAREST_HOTEL_TO_SPECIFIC_COORDS,
+---  SPAWN_LOCATION_MISSION_AREA_NEAR_CURRENT_POSITION,
+---  SPAWN_LOCATION_PRIVATE_YACHT,
+---  SPAWN_LOCATION_PRIVATE_YACHT_APARTMENT,
+---  SPAWN_LOCATION_PRIVATE_FRIEND_YACHT,
+---  SPAWN_LOCATION_PRIVATE_YACHT_NEAR_SHORE,
+---  SPAWN_LOCATION_NEAR_GANG_BOSS,
+---  SPAWN_LOCATION_NEAR_SPECIFIC_COORDS_WITH_GANG,
+---  SPAWN_LOCATION_GANG_DM,
+---  SPAWN_LOCATION_GANG_BOSS_PRIVATE_YACHT,
+---  SPAWN_LOCATION_OFFICE,
+---  SPAWN_LOCATION_CLUBHOUSE,
+---  SPAWN_LOCATION_NEAR_CURRENT_POSITION_AS_POSSIBLE,
+---  SPAWN_LOCATION_NEAR_CURRENT_PERCEIVED_POSITION,
+---  SPAWN_LOCATION_IE_WAREHOUSE,
+---  SPAWN_LOCATION_BUNKER,
+---  SPAWN_LOCATION_HANGAR,
+---  SPAWN_LOCATION_DEFUNCT_BASE,
+---  SPAWN_LOCATION_NIGHTCLUB,
+---  SPAWN_LOCATION_ARENA_GARAGE,
+---  SPAWN_LOCATION_CASINO,
+---  SPAWN_LOCATION_CASINO_APARTMENT,
+---  SPAWN_LOCATION_CASINO_OUTSIDE,
+---  SPAWN_LOCATION_ARCADE,
+---  SPAWN_LOCATION_CASINO_NIGHTCLUB,
+---  SPAWN_LOCATION_SUBMARINE,
+---  SPAWN_LOCATION_HEIST_ISLAND_NEAR_DEATH,
+---  SPAWN_LOCATION_HEIST_ISLAND_BEACH_PARTY,
+---  SPAWN_LOCATION_LAND_NEAR_SUBMARINE,
+---  SPAWN_LOCATION_CAR_MEET,
+---  SPAWN_LOCATION_AUTO_SHOP,
+---  SPAWN_LOCATION_FIXER_HQ,
+---  SPAWN_LOCATION_SITTING_SMOKING,
+---  SPAWN_LOCATION_DRUNK_WAKE_UP_MUSIC_STUDIO,
+---  SPAWN_LOCATION_MUSIC_STUDIO,
+---  TOTAL_SPAWN_LOCATIONS
+---};
 ---```
----NativeDB Added Parameter 7: Any p6
+---
+---```cpp
+---enum eSpawnReason {
+---  SPAWN_REASON_DEATH = 0,
+---  SPAWN_REASON_TRANSITION,
+---  SPAWN_REASON_MANUAL,
+---  SPAWN_REASON_RESTORE_CHARACTER,
+---  SPAWN_REASON_IN_VEHICLE
+---};
 ---```
+---
+---### Added parameters
+---
+---*   **bUnpauseRenderPhases**: This boolean parameter will unpause the render phases when set to `true`.
+---*   **iSpawnLocation**: This integer parameter sets the player's spawn location metric for telemetry. See `ePlayerSpawnLocation` enum.
+---*   **iSpawnReason**: This integer parameter sets the player's spawn reason metric for telemetry. See `eSpawnReason` enum.
 ---
 ---@param x number
 ---@param y number
 ---@param z number
 ---@param heading number
----@param unk boolean
----@param changetime boolean
-function NetworkResurrectLocalPlayer(x, y, z, heading, unk, changetime) end
+---@param nInvincibilityTime number This is the length of time in milliseconds that the player will be invincible for after resurrection.
+---@param bLeaveDeadPed boolean Leaves the dead ped behind when resurrecting.
+function NetworkResurrectLocalPlayer(x, y, z, heading, nInvincibilityTime, bLeaveDeadPed) end
 
 ---**`NETWORK` `client` [`0xF1B84178F8674195`](https://docs.fivem.net/natives/?_0xF1B84178F8674195)**
 ---

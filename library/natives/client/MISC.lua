@@ -1,14 +1,4 @@
 ---@meta
----**`MISC` `client` [`0x02DEAAC8F8EA7FE7`](https://docs.fivem.net/natives/?_0x02DEAAC8F8EA7FE7)**
----
----```
----Found in the scripts:
----MISC::_02DEAAC8F8EA7FE7("");
----```
----
----@param p0 string
-function N_0x02deaac8f8ea7fe7(p0) end
-
 ---**`MISC` `client` [`0x06462A961E94B67C`](https://docs.fivem.net/natives/?_0x06462A961E94B67C)**
 ---
 ---```
@@ -117,14 +107,6 @@ function N_0x397baa01068baa96() end
 ---@param p0 any
 ---@param name string
 function N_0x48f069265a0e4bec(p0, name) end
-
----**`MISC` `client` [`0x4DCDF92BF64236CD`](https://docs.fivem.net/natives/?_0x4DCDF92BF64236CD)**
----
----**This native does absolutely nothing, just a nullsub**
----
----@param p0 string
----@param p1 string
-function N_0x4dcdf92bf64236cd(p0, p1) end
 
 ---**`MISC` `client` [`0x54F157E0336A3822`](https://docs.fivem.net/natives/?_0x54F157E0336A3822)**
 ---
@@ -422,6 +404,16 @@ function Absi(value) end
 ---@param p0 number
 ---@return number
 function Acos(p0) end
+
+---**`MISC` `client` [`0x4DCDF92BF64236CD`](https://docs.fivem.net/natives/?_0x4DCDF92BF64236CD)**
+---
+---Creates and opens a new activity feed post to start filling in.
+---
+---**Note**: This is a PS4 related native, resulting in a nullsub on the PC platform. This native won't do anything when invoked.
+---
+---@param captionString string The main text or caption for the activity feed post. This is the primary message displayed in the feed entry.
+---@param condensedCaptionString string A shorter or condensed version of the caption, used in cases where space is limited or a brief summary is required.
+function ActivityFeedCreate(captionString, condensedCaptionString) end
 
 ---**`MISC` `client` [`0x1F464EF988465A81`](https://docs.fivem.net/natives/?_0x1F464EF988465A81)**
 ---
@@ -2231,6 +2223,17 @@ function SetBitsInRange(var, rangeStart, rangeEnd, p3) end
 ---
 ---@param opacity number The opacity value to set for clouds.
 function SetCloudsAlpha(opacity) end
+
+---**`MISC` `client` [`0x02DEAAC8F8EA7FE7`](https://docs.fivem.net/natives/?_0x02DEAAC8F8EA7FE7)**
+---
+---Overrides the cloud settings, which are normally controlled by the weather, with the specified named version. This native allows for custom cloud formations and behaviors that deviate from the default settings associated with the game's current weather conditions.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---@param overrideSettingsName string The name of the cloud settings to use. Use a empty string to clear the override and return to the default settings.
+function SetCloudSettingsOverride(overrideSettingsName) end
 
 ---**`MISC` `client` [`0xB938B7E6D3C0620C`](https://docs.fivem.net/natives/?_0xB938B7E6D3C0620C)**
 ---

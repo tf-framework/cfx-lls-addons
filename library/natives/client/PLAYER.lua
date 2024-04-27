@@ -1002,12 +1002,9 @@ function IsPlayerLoggingInNp() end
 
 ---**`PLAYER` `client` [`0xF25D331DC2627BBC`](https://docs.fivem.net/natives/?_0xF25D331DC2627BBC)**
 ---
----```
----Returns TRUE if the game is in online mode and FALSE if in offline mode.  
----This is an alias for NETWORK_IS_SIGNED_ONLINE.  
----```
+---It returns true if the player is online, suggesting they are also logged in locally. Note that this is an alias for `NETWORK_IS_SIGNED_ONLINE`.
 ---
----@return boolean
+---@return boolean # It provides a true value if the game is in online mode and false if it's in offline mode.
 function IsPlayerOnline() end
 
 ---**`PLAYER` `client` [`0x5E9564D8246B909A`](https://docs.fivem.net/natives/?_0x5E9564D8246B909A)**
@@ -1484,15 +1481,11 @@ function SetPlayerHealthRechargeMultiplier(player, regenRate) end
 
 ---**`PLAYER` `client` [`0x239528EACDC3E7DE`](https://docs.fivem.net/natives/?_0x239528EACDC3E7DE)**
 ---
----```
----Simply sets you as invincible (Health will not deplete).  
----Use 0x733A643B5B0C53C1 instead if you want Ragdoll enabled, which is equal to:  
----*(DWORD *)(playerPedAddress + 0x188) |= (1 << 9);  
----```
+---Make the player impervious to all forms of damage.
 ---
----@param player Player
----@param toggle boolean
-function SetPlayerInvincible(player, toggle) end
+---@param player Player The player index.
+---@param bInvincible boolean
+function SetPlayerInvincible(player, bInvincible) end
 
 ---**`PLAYER` `client` [`0xFF300C7649724A0B`](https://docs.fivem.net/natives/?_0xFF300C7649724A0B)**
 ---
@@ -1538,13 +1531,17 @@ function SetPlayerMaxArmour(player, value) end
 
 ---**`PLAYER` `client` [`0x1DE37BBF9E9CC14A`](https://docs.fivem.net/natives/?_0x1DE37BBF9E9CC14A)**
 ---
----@param player Player
+---Establishes a reset flag to prevent the player from entering any vehicle. Not that this native must be called every frame.
+---
+---@param player Player The player index.
 function SetPlayerMayNotEnterAnyVehicle(player) end
 
 ---**`PLAYER` `client` [`0x8026FF78F208978A`](https://docs.fivem.net/natives/?_0x8026FF78F208978A)**
 ---
----@param player Player
----@param vehicle Vehicle
+---Limit the player to only enter this vehicle. Note set vehicle to false if you want them to access any vehicle.
+---
+---@param player Player The player index.
+---@param vehicle Vehicle Vehicle id.
 function SetPlayerMayOnlyEnterThisVehicle(player, vehicle) end
 
 ---**`PLAYER` `client` [`0x4A3DC7ECCC321032`](https://docs.fivem.net/natives/?_0x4A3DC7ECCC321032)**
@@ -1761,11 +1758,9 @@ function SetPlayerTargetLevel(targetLevel) end
 
 ---**`PLAYER` `client` [`0x0299FA38396A4940`](https://docs.fivem.net/natives/?_0x0299FA38396A4940)**
 ---
----```
----Set player team on deathmatch and last team standing..  
----```
+---Set the player's current team.
 ---
----@param player Player
+---@param player Player The player index.
 ---@param team number
 function SetPlayerTeam(player, team) end
 

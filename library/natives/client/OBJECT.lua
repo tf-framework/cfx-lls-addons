@@ -906,6 +906,21 @@ function GetCoordsAndRotationOfClosestObjectOfType(x, y, z, radius, modelHash, o
 ---@return number
 function GetObjectFragmentDamageHealth(p0, p1) end
 
+---**`OBJECT` `client` [`0x163E252DE035A133`](https://docs.fivem.net/natives/?_0x163E252DE035A133)**
+---
+---Calculates the world coordinates after applying the specified offsets to the given position, relative to a certain heading.
+---This native is similar to [`GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS`](#\_0x1899F328B0E12848), but uses a world position and heading as the reference point.
+---
+---@param xPos number The X coordinate of the original position.
+---@param yPos number The Y coordinate of the original position.
+---@param zPos number The Z coordinate of the original position.
+---@param heading number The heading (in degrees) relative to which the offsets are applied.
+---@param xOffset number Left/right offset from the coord.
+---@param yOffset number Forward/backward offset from the coord.
+---@param zOffset number Upward/downward offset from the coord.
+---@return vector3 # Returns a Vector3 representing the new world coordinates after applying the offsets to the original position relative to the specified heading.
+function GetOffsetFromCoordAndHeadingInWorldCoords(xPos, yPos, zPos, heading, xOffset, yOffset, zOffset) end
+
 ---**`OBJECT` `client` [`0x225B8B35C88029B3`](https://docs.fivem.net/natives/?_0x225B8B35C88029B3)**
 ---
 ---@param pickup Pickup
@@ -1492,18 +1507,6 @@ function ForcePickupRegenerate(p0) end
 ---@param p1 any
 ---@return boolean
 function GetIsArenaPropPhysicsDisabled(entity, p1) end
-
----**`OBJECT` `client` [`0x163E252DE035A133`](https://docs.fivem.net/natives/?_0x163E252DE035A133)**
----
----@param xPos number
----@param yPos number
----@param zPos number
----@param heading number
----@param xOffset number
----@param yOffset number
----@param zOffset number
----@return vector3
-function GetObjectOffsetFromCoords(xPos, yPos, zPos, heading, xOffset, yOffset, zOffset) end
 
 ---**`OBJECT` `client` [`0xE84EB93729C5F36A`](https://docs.fivem.net/natives/?_0xE84EB93729C5F36A)**
 ---

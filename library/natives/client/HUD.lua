@@ -90,11 +90,6 @@ function N_0x2c173ae2bdb9385e(blip) end
 ---@param p1 any
 function N_0x2c9f302398e13141(blip, p1) end
 
----**`HUD` `client` [`0x2DE6C5E2E996F178`](https://docs.fivem.net/natives/?_0x2DE6C5E2E996F178)**
----
----@param p0 any
-function N_0x2de6c5e2e996f178(p0) end
-
 ---**`HUD` `client` [`0x2E22FEFA0100275E`](https://docs.fivem.net/natives/?_0x2E22FEFA0100275E)**
 ---
 ---@return boolean
@@ -1822,8 +1817,10 @@ function GetDefaultScriptRendertargetRenderId() end
 
 ---**`HUD` `client` [`0x1BEDE233E6CD2A1F`](https://docs.fivem.net/natives/?_0x1BEDE233E6CD2A1F)**
 ---
----@param blipSprite number
----@return Blip
+---Also see [`GET_NEXT_BLIP_INFO_ID`](#\_0x14F96AA50D6FBEA7) for an example.
+---
+---@param blipSprite number Sprite ID, see the [Blips Game Reference](https://docs.fivem.net/docs/game-references/blips/) for the full list.
+---@return Blip # Returns the first blip ID in an interator that has the specified blip sprite.
 function GetFirstBlipInfoId(blipSprite) end
 
 ---**`HUD` `client` [`0xE3B05614DCE1D014`](https://docs.fivem.net/natives/?_0xE3B05614DCE1D014)**
@@ -1968,8 +1965,28 @@ function GetNewSelectedMissionCreatorBlip() end
 
 ---**`HUD` `client` [`0x14F96AA50D6FBEA7`](https://docs.fivem.net/natives/?_0x14F96AA50D6FBEA7)**
 ---
----@param blipSprite number
----@return Blip
+---Example code:
+---```lua
+---function GetAllBlipsWithSprite(blip_sprite)
+---  local current_blip = GetFirstBlipInfoId(blip_sprite)
+---  local blips_array = {}
+---
+---  if not DoesBlipExist(current_blip) then 
+---    print('there are no blips with this sprite set') 
+---    return blips_array 
+---  end
+---
+---  while DoesBlipExist(current_blip) do
+---    table.insert(blips_array, current_blip)
+---    current_blip = GetNextBlipInfoId(blip_sprite)
+---  end
+---
+---  return blips_array
+---end
+---```
+---
+---@param blipSprite number Sprite ID, see the [Game Reference](https://docs.fivem.net/docs/game-references/blips/) for the full list.
+---@return Blip # Returns the next blip ID in an interator that has the specified blip sprite.
 function GetNextBlipInfoId(blipSprite) end
 
 ---**`HUD` `client` [`0x9A3FF3DE163034E8`](https://docs.fivem.net/natives/?_0x9A3FF3DE163034E8)**
@@ -2289,6 +2306,11 @@ function IsNavigatingMenuContent() end
 ---@return boolean
 function IsOnlinePoliciesMenuActive() end
 
+---**`HUD` `client` [`0x9049FE339D5F6F6F`](https://docs.fivem.net/natives/?_0x9049FE339D5F6F6F)**
+---
+---@return boolean
+function IsPausemapInInteriorMode() end
+
 ---**`HUD` `client` [`0xB0034A223497FFCB`](https://docs.fivem.net/natives/?_0xB0034A223497FFCB)**
 ---
 ---@return boolean
@@ -2488,6 +2510,13 @@ function PauseMenuSetBusySpinner(p0, p1, p2) end
 ---@param setWarn boolean Wether to show the message or not.
 function PauseMenuSetWarnOnTabChange(setWarn) end
 
+---**`HUD` `client` [`0x2DE6C5E2E996F178`](https://docs.fivem.net/natives/?_0x2DE6C5E2E996F178)**
+---
+---Toggles pause menu map rendering.
+---
+---@param enabled boolean
+function PauseToggleFullscreenMap(enabled) end
+
 ---**`HUD` `client` [`0xC65AB383CD91DF98`](https://docs.fivem.net/natives/?_0xC65AB383CD91DF98)**
 ---
 function PreloadBusyspinner() end
@@ -2631,20 +2660,11 @@ function ResetReticuleValues() end
 
 ---**`HUD` `client` [`0x10706DC6AD2D49C0`](https://docs.fivem.net/natives/?_0x10706DC6AD2D49C0)**
 ---
----```
----Before using this native click the native above and look at the decription.  
----Example:  
----int GetHash = Function.Call<int>(Hash.GET_HASH_KEY, "fe_menu_version_corona_lobby");  
----Function.Call(Hash.ACTIVATE_FRONTEND_MENU, GetHash, 0, -1);  
----Function.Call(Hash.RESTART_FRONTEND_MENU(GetHash, -1);  
----This native refreshes the frontend menu.  
----p1 = Hash of Menu  
----p2 = Unknown but always works with -1.  
----```
+---Changes the current frontend menu to the desired frontend menu version.
 ---
----@param menuHash Hash
----@param p1 number
-function RestartFrontendMenu(menuHash, p1) end
+---@param menuHash Hash Hash of the frontend menu. See [`ACTIVATE_FRONTEND_MENU`](#\_0xEF01D36B9C9D0C7B) for the list of available menus.
+---@param highlightedTab number Menu ID (from PauseMenuLUT (in pause_menu_sp_content.gfx files), but the value - 1000) of which tab to have highlighted on the header, or -1.
+function RestartFrontendMenu(menuHash, highlightedTab) end
 
 ---**`HUD` `client` [`0x9969599CCFF5D85E`](https://docs.fivem.net/natives/?_0x9969599CCFF5D85E)**
 ---
@@ -2951,6 +2971,32 @@ function SetBlipSprite(blip, spriteId) end
 ---
 ---@param hudColor number
 function SetColourOfNextTextComponent(hudColor) end
+
+---**`HUD` `client` [`0x77E2DD177910E1CF`](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)**
+---
+---Overrides the position of the main player blip for the current frame.
+---
+---Example code:
+---```lua
+----- Function to check if player is using the map
+---local function IsPlayerUsingPausemap()
+---  return IsPauseMenuActive() and GetNumberOfReferencesOfScriptWithNameHash(`pausemenu_map`) > 0
+---end
+---
+---Citizen.CreateThread(function()
+---  while true do
+---    Wait(0) -- Not using Wait will cause the game to hang.
+---
+---    if IsPlayerUsingPausemap() and not IsPausemapInInteriorMode() then -- Make sure the player using the map and the map has switched view
+---      SetFakePausemapPlayerPositionThisFrame(0.0, 0.0) -- Override position
+---    end
+---  end
+---end)
+---```
+---
+---@param x number X coord of the position.
+---@param y number Y coord of the position.
+function SetFakePausemapPlayerPositionThisFrame(x, y) end
 
 ---**`HUD` `client` [`0x7679CC1BCEBE3D4C`](https://docs.fivem.net/natives/?_0x7679CC1BCEBE3D4C)**
 ---
@@ -3335,6 +3381,14 @@ function SetMultiplayerWalletCash() end
 function SetNewWaypoint(x, y) end
 
 ---**`HUD` `client` [`0xDF47FC56C71569CF`](https://docs.fivem.net/natives/?_0xDF47FC56C71569CF)**
+---
+---This native is deprecated.
+---
+---If you're looking to:
+---
+---*   Toggle the pause menu on, use [`ACTIVATE_FRONTEND_MENU`](#\_0xEF01D36B9C9D0C7B)
+---*   Toggle the pause menu off, use [`SET_FRONTEND_ACTIVE`](#\_0x745711A75AB09277)
+---*   Disable toggling the pause menu, use [`DISABLE_FRONTEND_THIS_FRAME`](#\_0x6D3465A73092F0E6)
 ---
 ---@param toggle boolean
 function SetPauseMenuActive(toggle) end
@@ -4636,11 +4690,6 @@ function HudWeaponWheelIgnoreControlInput(toggle) end
 ---
 function HudWeaponWheelIgnoreSelection() end
 
----**`HUD` `client` [`0x9049FE339D5F6F6F`](https://docs.fivem.net/natives/?_0x9049FE339D5F6F6F)**
----
----@return boolean
-function IsMinimapInInterior() end
-
 ---**`HUD` `client` [`0x3D9ACB1EB139E702`](https://docs.fivem.net/natives/?_0x3D9ACB1EB139E702)**
 ---
 ---Returns true if the cursor is hovering above instructional buttons.
@@ -4987,17 +5036,6 @@ function SetPedAiBlipSprite(ped, spriteId) end
 ---@param hasCone boolean
 ---@param color number See [`SET_BLIP_COLOUR`](#\_0x03D7FB09E75D6B7E).
 function SetPedHasAiBlipWithColor(ped, hasCone, color) end
-
----**`HUD` `client` [`0x77E2DD177910E1CF`](https://docs.fivem.net/natives/?_0x77E2DD177910E1CF)**
----
----```
----Sets the position of the arrow icon representing the player on both the minimap and world map.  
----Too bad this wouldn't work over the network (obviously not). Could spoof where we would be.  
----```
----
----@param x number
----@param y number
-function SetPlayerBlipPositionThisFrame(x, y) end
 
 ---**`HUD` `client` [`0x808519373FD336A3`](https://docs.fivem.net/natives/?_0x808519373FD336A3)**
 ---

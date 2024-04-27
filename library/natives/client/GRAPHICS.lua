@@ -87,12 +87,6 @@ function N_0x27feb5254759cde3(textureDict, p1) end
 ---
 function N_0x2a251aa48b2b46db() end
 
----**`GRAPHICS` `client` [`0x2A893980E96B659A`](https://docs.fivem.net/natives/?_0x2A893980E96B659A)**
----
----@param p0 boolean
----@return boolean
-function N_0x2a893980e96b659a(p0) end
-
 ---**`GRAPHICS` `client` [`0x2B40A97646381508`](https://docs.fivem.net/natives/?_0x2B40A97646381508)**
 ---
 ---@param p0 any
@@ -309,16 +303,6 @@ function N_0x82acc484ffa3b05f(p0) end
 ---**`GRAPHICS` `client` [`0x851CD923176EBA7C`](https://docs.fivem.net/natives/?_0x851CD923176EBA7C)**
 ---
 function N_0x851cd923176eba7c() end
-
----**`GRAPHICS` `client` [`0x86255B1FC929E33E`](https://docs.fivem.net/natives/?_0x86255B1FC929E33E)**
----
----```
----NativeDB Introduced: v1290
----```
----
----@param p0 any
----@return any
-function N_0x86255b1fc929e33e(p0) end
 
 ---**`GRAPHICS` `client` [`0x8CDE909A0370BB3A`](https://docs.fivem.net/natives/?_0x8CDE909A0370BB3A)**
 ---
@@ -2008,14 +1992,11 @@ function GetStatusOfSaveHighQualityPhoto() end
 
 ---**`GRAPHICS` `client` [`0xF5BED327CEA362B1`](https://docs.fivem.net/natives/?_0xF5BED327CEA362B1)**
 ---
----```
----3 matches across 3 scripts. First 2 were 0, 3rd was 1. Possibly a bool.
----appcamera, appmedia, and cellphone_controller.
----```
+---Returns status of gallery photo fetch, which was requested by [`QUEUE_OPERATION_TO_CREATE_SORTED_LIST_OF_PHOTOS`](#\_0x2A893980E96B659A).
 ---
----@param p0 boolean
----@return number
-function GetStatusOfSortedListOperation(p0) end
+---@param scanForSaving boolean
+---@return number # 0 - Succeeded, 1 - In progress, 2 - Failed
+function GetStatusOfSortedListOperation(scanForSaving) end
 
 ---**`GRAPHICS` `client` [`0x0D6CA79EEEBD8CA3`](https://docs.fivem.net/natives/?_0x0D6CA79EEEBD8CA3)**
 ---
@@ -2232,6 +2213,16 @@ function HasStreamedTextureDictLoaded(textureDict) end
 ---@return boolean
 function IsDecalAlive(decal) end
 
+---**`GRAPHICS` `client` [`0x86255B1FC929E33E`](https://docs.fivem.net/natives/?_0x86255B1FC929E33E)**
+---
+---```
+---NativeDB Introduced: v1290
+---```
+---
+---@param scaleformIndex number Scaleform index returned by [`REQUEST_SCALEFORM_MOVIE`](#\_0x11FE353CF9733E6F) (or similar natives).
+---@return boolean # Returns true if a scaleform movie is being deleted from streaming memory (After it has been marked as no longer needed with [`SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED`](#\_0x1D132D614DD86811).
+function IsScaleformMovieDeleting(scaleformIndex) end
+
 ---**`GRAPHICS` `client` [`0x768FF8961BA904D6`](https://docs.fivem.net/natives/?_0x768FF8961BA904D6)**
 ---
 ---methodReturn: The return value of this native: END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE
@@ -2339,6 +2330,15 @@ function PushTimecycleModifier() end
 ---@return any
 function QueryMovieMeshSetState(p0) end
 
+---**`GRAPHICS` `client` [`0x2A893980E96B659A`](https://docs.fivem.net/natives/?_0x2A893980E96B659A)**
+---
+---Queues a scan of all gallery photos.
+---Also see [`GET_STATUS_OF_SORTED_LIST_OPERATION`](#\_0xF5BED327CEA362B1)
+---
+---@param scanForSaving boolean
+---@return boolean # Returns true if the operation began.
+function QueueOperationToCreateSortedListOfPhotos(scanForSaving) end
+
 ---**`GRAPHICS` `client` [`0xEB119AA014E89183`](https://docs.fivem.net/natives/?_0xEB119AA014E89183)**
 ---
 ---@param movieMeshSet number
@@ -2427,6 +2427,22 @@ function RequestScaleformMovie(scaleformName) end
 ---@param scaleformName string
 ---@return number
 function RequestScaleformMovieInstance(scaleformName) end
+
+---**`GRAPHICS` `client` [`0xBD06C611BB9048C2`](https://docs.fivem.net/natives/?_0xBD06C611BB9048C2)**
+---
+---Requests a scaleform movie that doesn't render when the game is paused (With [`SET_GAME_PAUSED`](#\_0x577D1284D6873711)).
+---
+---@param scaleformName string
+---@return number
+function RequestScaleformMovieSkipRenderWhilePaused(scaleformName) end
+
+---**`GRAPHICS` `client` [`0x65E7E78842E74CDB`](https://docs.fivem.net/natives/?_0x65E7E78842E74CDB)**
+---
+---Requests a scaleform movie, which has no widescreen adjustments while rendering (Useful for when your scaleform doesn't fully draw on the screen and borders are visible).
+---
+---@param scaleformName string
+---@return number
+function RequestScaleformMovieWithIgnoreSuperWidescreen(scaleformName) end
 
 ---**`GRAPHICS` `client` [`0x9304881D6F6537EA`](https://docs.fivem.net/natives/?_0x9304881D6F6537EA)**
 ---
@@ -3382,7 +3398,9 @@ function TerraingridSetParams(x, y, z, p3, rotation, p5, width, height, p8, scal
 
 ---**`GRAPHICS` `client` [`0xDFC252D8A3E15AB7`](https://docs.fivem.net/natives/?_0xDFC252D8A3E15AB7)**
 ---
----@param toggle boolean
+---Switches the rendering display to exclude everything except PostFX, resulting in a frozen screen before the UI pass.
+---
+---@param toggle boolean Setting it to `false` will exclude render updates as mentioned in the description, until it's set back to `true`.
 function TogglePausedRenderphases(toggle) end
 
 ---**`GRAPHICS` `client` [`0xA328A24AAA6B7FDC`](https://docs.fivem.net/natives/?_0xA328A24AAA6B7FDC)**
@@ -3911,31 +3929,6 @@ function RegisterNoirScreenEffectThisFrame() end
 ---
 ---@param binkMovie number
 function ReleaseBinkMovie(binkMovie) end
-
----**`GRAPHICS` `client` [`0x65E7E78842E74CDB`](https://docs.fivem.net/natives/?_0x65E7E78842E74CDB)**
----
----Another [REQUEST_SCALEFORM_MOVIE](#\_0x11FE353CF9733E6F) equivalent.
----
----@param scaleformName string
----@return number
-function RequestScaleformMovie_2(scaleformName) end
-
----**`GRAPHICS` `client` [`0xBD06C611BB9048C2`](https://docs.fivem.net/natives/?_0xBD06C611BB9048C2)**
----
----```
----Similar to REQUEST_SCALEFORM_MOVIE, but seems to be some kind of "interactive" scaleform movie?  
----These seem to be the only scaleforms ever requested by this native:  
----"breaking_news"  
----"desktop_pc"  
----"ECG_MONITOR"  
----"Hacking_PC"  
----"TEETH_PULLING"  
----Note: Unless this hash is out-of-order, this native is next-gen only.  
----```
----
----@param scaleformName string
----@return number
-function RequestScaleformMovieInteractive(scaleformName) end
 
 ---**`GRAPHICS` `client` [`0x40AFB081F8ADD4EE`](https://docs.fivem.net/natives/?_0x40AFB081F8ADD4EE)**
 ---

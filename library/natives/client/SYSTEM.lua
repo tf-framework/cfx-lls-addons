@@ -48,15 +48,22 @@ function Round(value) end
 
 ---**`SYSTEM` `client` [`0xC1B1E9A034A63A62`](https://docs.fivem.net/natives/?_0xC1B1E9A034A63A62)**
 ---
----@param value number
+---Sets the value for the timer A in milliseconds
+---
+---@param value number In milliseconds.
 function Settimera(value) end
 
 ---**`SYSTEM` `client` [`0x5AE11BC36633DE4E`](https://docs.fivem.net/natives/?_0x5AE11BC36633DE4E)**
 ---
----@param value number
+---Sets the value for the timer B in milliseconds
+---
+---@param value number In milliseconds.
 function Settimerb(value) end
 
 ---**`SYSTEM` `client` [`0xEDD95A39E5544DE8`](https://docs.fivem.net/natives/?_0xEDD95A39E5544DE8)**
+---
+---Left bit shifts a value.
+---It is advised you use the `<<` operator instead of this native. It does the same and is faster.
 ---
 ---@param value number
 ---@param bitShift number
@@ -64,6 +71,9 @@ function Settimerb(value) end
 function ShiftLeft(value, bitShift) end
 
 ---**`SYSTEM` `client` [`0x97EF1E5BCE9DC075`](https://docs.fivem.net/natives/?_0x97EF1E5BCE9DC075)**
+---
+---Right bit shifts a value.
+---It is advised you use the `>>` operator instead of this native. It does the same and is faster.
 ---
 ---@param value number
 ---@param bitShift number
@@ -195,32 +205,57 @@ function ToFloat(value) end
 
 ---**`SYSTEM` `client` [`0x2A488C176D52CCA5`](https://docs.fivem.net/natives/?_0x2A488C176D52CCA5)**
 ---
+---Calculates the distance between two points in 3D space. For performance reasons, consider using direct mathematical calculations for distance, as they can be more efficient than calling this native function.
+---
 ---```
----Calculates distance between vectors.  
+---NativeDB Introduced: v323
 ---```
 ---
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@return number
+---Example code:
+---```lua
+----- Define a set of coordinates
+---local coords = vector3(145.0, 200.0, 1000.0)
+---
+----- Get the player's current ped
+---local playerPed = PlayerPedId()
+---
+----- Get the player's current coordinates
+---local coordsPlayer = GetEntityCoords(playerPed, false)
+---
+----- Calculate the distance between the player and the coordinates
+---local distance = Vdist(coordsPlayer.x, coordsPlayer.y, coordsPlayer.z, coords.x, coords.y, coords.z)
+---
+---if (distance < 10.0) then
+---    print("You are close to the coordinates")
+---else
+---    print("You are far from the coordinates")
+---end
+---```
+---
+---@param x1 number X coordinate of the first point.
+---@param y1 number Y coordinate of the first point.
+---@param z1 number Z coordinate of the first point. Represents the height or elevation at the first point.
+---@param x2 number X coordinate of the second point.
+---@param y2 number Y coordinate of the second point.
+---@param z2 number Z coordinate of the second point. Represents the height or elevation at the second point.
+---@return number # Returns the distance as a float between the two points (`x1`, `y1`, `z1`) and (`x2`, `y2`, `z2`) in the game world.
 function Vdist(x1, y1, z1, x2, y2, z2) end
 
 ---**`SYSTEM` `client` [`0xB7A628320EFF8E47`](https://docs.fivem.net/natives/?_0xB7A628320EFF8E47)**
 ---
+---Calculates distance between vectors but does not perform Sqrt operations. Its way faster than [`VDIST`](#\_0x2A488C176D52CCA5), but it's not faster than direct mathematical calculations.
+---
 ---```
----Calculates distance between vectors but does not perform Sqrt operations. (Its way faster)  
+---NativeDB Introduced: v323
 ---```
 ---
----@param x1 number
----@param y1 number
----@param z1 number
----@param x2 number
----@param y2 number
----@param z2 number
----@return number
+---@param x1 number X coordinate of the first point.
+---@param y1 number Y coordinate of the first point.
+---@param z1 number Z coordinate of the first point. Represents the height or elevation at the first point.
+---@param x2 number X coordinate of the second point.
+---@param y2 number Y coordinate of the second point.
+---@param z2 number Z coordinate of the second point. Represents the height or elevation at the second point.
+---@return number # Returns the distance as a float between the two points (`x1`, `y1`, `z1`) and (`x2`, `y2`, `z2`) in the game world.
 function Vdist2(x1, y1, z1, x2, y2, z2) end
 
 ---**`SYSTEM` `client` [`0x652D2EEEF1D3E62C`](https://docs.fivem.net/natives/?_0x652D2EEEF1D3E62C)**

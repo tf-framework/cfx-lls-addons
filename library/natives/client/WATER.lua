@@ -28,20 +28,22 @@ function GetDeepOceanScaler() end
 
 ---**`WATER` `client` [`0xF6829842C06AE524`](https://docs.fivem.net/natives/?_0xF6829842C06AE524)**
 ---
----```
----This function set height to the value of z-axis of the water surface.  
----This function works with sea and lake. However it does not work with shallow rivers (e.g. raton canyon will return -100000.0f)  
----note: seems to return true when you are in water  
----```
+---Retrieves the depth of the water beneath the specified position, accounting for the waves.
 ---
----@param x number
----@param y number
----@param z number
----@param height number
----@return boolean, number
+---**Note:** The result might vary depending on the specific frame when this command is executed due to wave fluctuations.
+---
+---@param x number The coordinate at which to test at for water.
+---@param y number The coordinate at which to test at for water.
+---@param z number The coordinate at which to test at for water.
+---@param height number The height at which to test at for water.
+---@return boolean, number # Returns `false` when land at the tested coordinates is higher than water, `true` otherwise.
 function GetWaterHeight(x, y, z, height) end
 
 ---**`WATER` `client` [`0x8EE6B53CE13A9794`](https://docs.fivem.net/natives/?_0x8EE6B53CE13A9794)**
+---
+---Retrieves the depth of the water beneath the specified position, disregarding wave effects.
+---
+---**Note:** The result remains consistent across different frames as it doesn't consider wave fluctuations.
 ---
 ---@param x number
 ---@param y number

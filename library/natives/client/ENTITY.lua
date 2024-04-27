@@ -93,16 +93,6 @@ function N_0xc34bc448da29f5e9(entity, toggle) end
 ---@param p1 any
 function N_0xcea7c8e1b48ff68c(p0, p1) end
 
----**`ENTITY` `client` [`0xD7B80E7C3BEFC396`](https://docs.fivem.net/natives/?_0xD7B80E7C3BEFC396)**
----
----```
----NativeDB Introduced: v1180
----```
----
----@param p0 any
----@param p1 any
-function N_0xd7b80e7c3befc396(p0, p1) end
-
 ---**`ENTITY` `client` [`0xDC6F8601FAF2E893`](https://docs.fivem.net/natives/?_0xDC6F8601FAF2E893)**
 ---
 ---```
@@ -1526,9 +1516,9 @@ function SetEntityAnimSpeed(entity, animDictionary, animName, speedMultiplier) e
 ---Note that this is not needed right after creating an entity as a script-created entity will automatically be assigned.
 ---
 ---@param entity Entity An entity handle.
----@param p1 boolean
----@param p2 boolean
-function SetEntityAsMissionEntity(entity, p1, p2) end
+---@param scriptHostObject boolean Whether or not to assign script info to this entity, if set to false the entity will only be protected from despawning locally.
+---@param bGrabFromOtherScript boolean Changes the entity so it's owned by the current script if the entity is already a mission entity. This will only work on entities the machine has control of (non-remote entities).
+function SetEntityAsMissionEntity(entity, scriptHostObject, bGrabFromOtherScript) end
 
 ---**`ENTITY` `client` [`0xB736A491E64A32CF`](https://docs.fivem.net/natives/?_0xB736A491E64A32CF)**
 ---
@@ -1938,6 +1928,38 @@ function SetObjectAsNoLongerNeeded(object) end
 ---
 ---@param ped Ped
 function SetPedAsNoLongerNeeded(ped) end
+
+---**`ENTITY` `client` [`0xD7B80E7C3BEFC396`](https://docs.fivem.net/natives/?_0xD7B80E7C3BEFC396)**
+---
+---Configures an entity to either allow or prevent it from being picked up by Cargobobs.
+---
+---```
+---NativeDB Introduced: v1180
+---```
+---
+---Example code:
+---```lua
+----- This example prevents a entity (in this example the vehicle of the player) from being picked up by any Cargobobs.
+---
+----- Retrieve the player ped
+---local playerPed = PlayerPedId()
+---
+----- Retrieve the player's vehicle (cargobob)
+---local vehicle = GetVehiclePedIsIn(playerPed, false)
+---
+----- Check if the vehicle exists in the game world.
+---if not DoesEntityExist(vehicle) then
+---    -- If the vehicle does not exist, end the execution of the code here.
+---    return
+---end
+---
+----- Prevent the vehicle from being picked up by Cargobobs.
+---SetPickUpByCargobobDisabled(vehicle, true)
+---```
+---
+---@param entity Entity The entity to be configured for pick up by Cargobob.
+---@param toggle boolean A boolean value where `true` prevents the entity from being picked up by Cargobobs, and `false` allows it.
+function SetPickUpByCargobobDisabled(entity, toggle) end
 
 ---**`ENTITY` `client` [`0x629BFA74418D6239`](https://docs.fivem.net/natives/?_0x629BFA74418D6239)**
 ---
