@@ -1597,16 +1597,10 @@ function SetAmbientZoneStatePersistent(zoneName, enabled, forceUpdate) end
 ---
 ---	AUD_ANIMAL_MOOD_NUM_MOODS
 ---}
----
----
----## Parameters
----* **animal**:
----* **mood**: Refer to eAudAnimalMood
----
 ---```
 ---
 ---@param animal Ped
----@param mood number
+---@param mood number Refer to eAudAnimalMood
 function SetAnimalMood(animal, mood) end
 
 ---**`AUDIO` `client` [`0xB9EFD5C25018725A`](https://docs.fivem.net/natives/?_0xB9EFD5C25018725A)**

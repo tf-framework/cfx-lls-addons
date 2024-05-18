@@ -188,7 +188,6 @@ function N_0x24e4e51fc16305f9() end
 ---NativeDB Introduced: v323
 ---```
 ---
----@return any
 function N_0x2555cf7da5473794() end
 
 ---**`NETWORK` `client` [`0x25D990F8E0E3F13C`](https://docs.fivem.net/natives/?_0x25D990F8E0E3F13C)**
@@ -629,7 +628,6 @@ function N_0x6fb7bb3607d27fa2() end
 ---NativeDB Introduced: v323
 ---```
 ---
----@return any
 function N_0x6fd992c4a1c1b986() end
 
 ---**`NETWORK` `client` [`0x702BC4D605522539`](https://docs.fivem.net/natives/?_0x702BC4D605522539)**
@@ -932,7 +930,6 @@ function N_0xaeab987727c5a8a4(p0) end
 ---NativeDB Introduced: v323
 ---```
 ---
----@return any
 function N_0xaedf1bc1c133d6e3() end
 
 ---**`NETWORK` `client` [`0xB13E88E655E5A3BC`](https://docs.fivem.net/natives/?_0xB13E88E655E5A3BC)**
