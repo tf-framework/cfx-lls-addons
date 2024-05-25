@@ -487,7 +487,7 @@ function FlushResourceKvp() end
 
 ---**`CFX` `server` [`0x65C16D57`](https://docs.fivem.net/natives/?_0x65C16D57)**
 ---
----Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using SET_ENTITY_COORDS.
+---Freezes or unfreezes an entity preventing its coordinates to change by the player if set to `true`. You can still change the entity position using [`SET_ENTITY_COORDS`](#\_0x06843DA7060A026B).
 ---
 ---**This is the server-side RPC native equivalent of the client native [FREEZE_ENTITY_POSITION](https://docs.fivem.net/natives/?_0x428CA6DBD1094446).**
 ---
@@ -781,6 +781,7 @@ function GetEntityVelocity(entity) end
 ---    *   2699
 ---    *   2802
 ---    *   2944
+---    *   3095
 ---*   RedM
 ---    *   1311
 ---    *   1355
@@ -1119,8 +1120,21 @@ function GetPlayerName(playerSrc) end
 
 ---**`CFX` `server` [`0x6E31E993`](https://docs.fivem.net/natives/?_0x6E31E993)**
 ---
----@param playerSrc string
----@return Entity
+---Used to get the player's Ped Entity ID when a valid `playerSrc` is passed.
+---
+---Example code:
+---```lua
+----- Let's assume source is a valid ID
+---local pedId = GetPlayerPed(source);
+---
+----- If pedId is valid (not equal to 0)
+---if pedId ~= 0 then
+---    -- Do something with this ped!
+---end
+---```
+---
+---@param playerSrc string The player source, passed as a string.
+---@return Entity # Returns a valid Ped Entity ID if the passed `playerSrc` is valid, `0` if not.
 function GetPlayerPed(playerSrc) end
 
 ---**`CFX` `server` [`0xFF1290D4`](https://docs.fivem.net/natives/?_0xFF1290D4)**
@@ -1876,11 +1890,11 @@ function NetworkGetFirstEntityOwner(entity) end
 ---@return number
 function NetworkGetNetworkIdFromEntity(entity) end
 
----**`CFX` `server` [`0x7A6462F4`](https://docs.fivem.net/natives/?_0x7A6462F4)**
+---**`CFX` `server` [`0xFFEEF513`](https://docs.fivem.net/natives/?_0xFFEEF513)**
 ---
 ---@param playerSrc string The player handle
 ---@return vector3
-function NetworkGetVoiceProximityOverride(playerSrc) end
+function NetworkGetVoiceProximityOverrideForPlayer(playerSrc) end
 
 ---**`CFX` `server` [`0x8E8CC653`](https://docs.fivem.net/natives/?_0x8E8CC653)**
 ---
@@ -2023,6 +2037,7 @@ function RemoveAllPedWeapons(ped, p1) end
 ---**`CFX` `server` [`0xD8C3C1CD`](https://docs.fivem.net/natives/?_0xD8C3C1CD)**
 ---
 ---Removes the blip from your map.
+---**Note:** This function only works on the script that created the blip, if you wish to remove blips created by other scripts, see [`SET_THIS_SCRIPT_CAN_REMOVE_BLIPS_CREATED_BY_ANY_SCRIPT`](#\_0x86A652570E5F25DD).
 ---
 ---**This is the server-side RPC native equivalent of the client native [REMOVE_BLIP](https://docs.fivem.net/natives/?_0x86A652570E5F25DD).**
 ---
@@ -2104,10 +2119,6 @@ function ScanResourceRoot(rootPath, callback) end
 function ScheduleResourceTick(resourceName) end
 
 ---**`CFX` `server` [`0x8DBBB0B9`](https://docs.fivem.net/natives/?_0x8DBBB0B9)**
----
----<!--
----_loc1_.map((name, idx) => `| ${idx} | ${name} | ![${name}](https://runtime.fivem.net/blips/${name}.svg) |`).join('\n')
------>
 ---
 ---Sets the displayed sprite for a specific blip.
 ---There's a [list of sprites](https://docs.fivem.net/game-references/blips/) on the FiveM documentation site.
@@ -2201,17 +2212,21 @@ function SetEntityIgnoreRequestControlFilter(entity, ignore) end
 
 ---**`CFX` `server` [`0xA345EFE`](https://docs.fivem.net/natives/?_0xA345EFE)**
 ---
----SET_ENTITY_ROTATION
+---Sets the rotation of a specified entity in the game world.
+---
+---```
+---NativeDB Introduced: v323
+---```
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_ENTITY_ROTATION](https://docs.fivem.net/natives/?_0x8524A8B0171D5E07).**
 ---
----@param entity Entity
----@param pitch number
----@param roll number
----@param yaw number
----@param rotationOrder number The order yaw pitch roll are applied, see [`GET_ENTITY_ROTATION`](#\_0xAFBD61CC738D9EB9).
----@param p5 boolean
-function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, p5) end
+---@param entity Entity The entity to rotate.
+---@param pitch number The pitch (X-axis) rotation in degrees.
+---@param roll number The roll (Y-axis) rotation in degrees.
+---@param yaw number The yaw (Z-axis) rotation in degrees.
+---@param rotationOrder number Specifies the order in which yaw, pitch, and roll are applied, see [`GET_ENTITY_ROTATION`](#\_0xAFBD61CC738D9EB9) for the available rotation orders.
+---@param bDeadCheck boolean Usually set to `true`. Determines whether to check if the entity is dead before applying the rotation.
+function SetEntityRotation(entity, pitch, roll, yaw, rotationOrder, bDeadCheck) end
 
 ---**`CFX` `server` [`0x635E5289`](https://docs.fivem.net/natives/?_0x635E5289)**
 ---
@@ -2871,10 +2886,10 @@ function SetPedDefaultComponentVariation(ped) end
 ---IDs start at zero and go Male Non-DLC, Female Non-DLC, Male DLC, and Female DLC.</br>
 ---This native function is often called prior to calling natives such as:
 ---
----*   [`SetPedHairColor`](#0xBB43F090)
----*   [`SetPedHeadOverlayColor`](#0x78935A27)
----*   [`SetPedHeadOverlay`](#0xD28DBA90)
----*   [`SetPedFaceFeature`](#0x6C8D4458)
+---*   [`SetPedHairColor`](#\_0xBB43F090)
+---*   [`SetPedHeadOverlayColor`](#\_0x78935A27)
+---*   [`SetPedHeadOverlay`](#\_0xD28DBA90)
+---*   [`SetPedFaceFeature`](#\_0x6C8D4458)
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_HEAD_BLEND_DATA](https://docs.fivem.net/natives/?_0x9414E18B9434C2FE).**
 ---
@@ -2912,7 +2927,7 @@ function SetPedHeadBlendData(ped, shapeFirstID, shapeSecondID, shapeThirdID, ski
 ---```
 ---
 ---**Note:**
----You may need to call [`SetPedHeadBlendData`](#0x9414E18B9434C2FE) prior to calling this native in order for it to work.
+---You may need to call [`SetPedHeadBlendData`](#\_0x9414E18B9434C2FE) prior to calling this native in order for it to work.
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PED_HEAD_OVERLAY](https://docs.fivem.net/natives/?_0x48F44967FA05CC1E).**
 ---
@@ -3093,15 +3108,13 @@ function SetPlayerCullingRadius(playerSrc, radius) end
 
 ---**`CFX` `server` [`0xDFB9A2A2`](https://docs.fivem.net/natives/?_0xDFB9A2A2)**
 ---
----Simply sets you as invincible (Health will not deplete).
----Use 0x733A643B5B0C53C1 instead if you want Ragdoll enabled, which is equal to:
----\*(DWORD \*)(playerPedAddress + 0x188) |= (1 << 9);
+---Make the player impervious to all forms of damage.
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PLAYER_INVINCIBLE](https://docs.fivem.net/natives/?_0x239528EACDC3E7DE).**
 ---
----@param player Player
----@param toggle boolean
-function SetPlayerInvincible(player, toggle) end
+---@param player Player The player index.
+---@param bInvincible boolean
+function SetPlayerInvincible(player, bInvincible) end
 
 ---**`CFX` `server` [`0x774A4C54`](https://docs.fivem.net/natives/?_0x774A4C54)**
 ---
@@ -3126,16 +3139,14 @@ function SetPlayerRoutingBucket(playerSrc, bucket) end
 
 ---**`CFX` `server` [`0xB7A0914B`](https://docs.fivem.net/natives/?_0xB7A0914B)**
 ---
----Call SET_PLAYER_WANTED_LEVEL_NOW for immediate effect
----wantedLevel is an integer value representing 0 to 5 stars even though the game supports the 6th wanted level but no police will appear since no definitions are present for it in the game files
----disableNoMission-  Disables When Off Mission- appears to always be false
+---SET_PLAYER_WANTED_LEVEL
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_PLAYER_WANTED_LEVEL](https://docs.fivem.net/natives/?_0x39FF19C64EF7DA5B).**
 ---
----@param player Player
----@param wantedLevel number
----@param disableNoMission boolean
-function SetPlayerWantedLevel(player, wantedLevel, disableNoMission) end
+---@param player Player the target player
+---@param wantedLevel number the wanted level 1-5
+---@param delayedResponse boolean false = 0-10sec police spawn response time, true = 10-20sec police spawn response time
+function SetPlayerWantedLevel(player, wantedLevel, delayedResponse) end
 
 ---**`CFX` `shared` [`0x21C7A35B`](https://docs.fivem.net/natives/?_0x21C7A35B)**
 ---
@@ -3316,23 +3327,32 @@ function SetVehicleDirtLevel(vehicle, dirtLevel) end
 
 ---**`CFX` `server` [`0x4CDD35D0`](https://docs.fivem.net/natives/?_0x4CDD35D0)**
 ---
----// Source GTA VC miss2 leak, matching constants for 0/2/4, testing
----// They use 10 in am_mp_property_int, don't know what it does atm.
----enum eCarLock {
----CARLOCK_NONE = 0,
----CARLOCK_UNLOCKED = 1,
----CARLOCK_LOCKED = 2,
----CARLOCK_LOCKOUT_PLAYER_ONLY = 3,
----CARLOCK_LOCKED_PLAYER_INSIDE = 4,
----CARLOCK_LOCKED_INITIALLY = 5,
----CARLOCK_FORCE_SHUT_DOORS = 6,
----CARLOCK_LOCKED_BUT_CAN_BE_DAMAGED = 7
+---Locks the doors of a specified vehicle to a defined lock state, affecting how players and NPCs can interact with the vehicle.
+---
+---```
+---NativeDB Introduced: v323
+---```
+---
+---```cpp
+---enum eVehicleLockState {
+---VEHICLELOCK_NONE = 0, // No specific lock state, vehicle behaves according to the game's default settings.
+---VEHICLELOCK_UNLOCKED = 1, // Vehicle is fully unlocked, allowing free entry by players and NPCs.
+---VEHICLELOCK_LOCKED = 2, // Vehicle is locked, preventing entry by players and NPCs.
+---VEHICLELOCK_LOCKOUT_PLAYER_ONLY = 3, // Vehicle locks out only players, allowing NPCs to enter.
+---VEHICLELOCK_LOCKED_PLAYER_INSIDE = 4, // Vehicle is locked once a player enters, preventing others from entering.
+---VEHICLELOCK_LOCKED_INITIALLY = 5, // Vehicle starts in a locked state, but may be unlocked through game events.
+---VEHICLELOCK_FORCE_SHUT_DOORS = 6, // Forces the vehicle's doors to shut and lock.
+---VEHICLELOCK_LOCKED_BUT_CAN_BE_DAMAGED = 7, // Vehicle is locked but can still be damaged.
+---VEHICLELOCK_LOCKED_BUT_BOOT_UNLOCKED = 8, // Vehicle is locked, but its trunk/boot remains unlocked.
+---VEHICLELOCK_LOCKED_NO_PASSENGERS = 9, // Vehicle is locked and does not allow passengers, except for the driver.
+---VEHICLELOCK_CANNOT_ENTER = 10 // Vehicle is completely locked, preventing entry entirely, even if previously inside.
 ---};
+---```
 ---
 ---**This is the server-side RPC native equivalent of the client native [SET_VEHICLE_DOORS_LOCKED](https://docs.fivem.net/natives/?_0xB664292EAECF7FA6).**
 ---
----@param vehicle Vehicle
----@param doorLockStatus number
+---@param vehicle Vehicle The vehicle whose doors are to be locked.
+---@param doorLockStatus number The lock state to apply to the vehicle's doors, see `eVehicleLockState`.
 function SetVehicleDoorsLocked(vehicle, doorLockStatus) end
 
 ---**`CFX` `server` [`0x8147FEA7`](https://docs.fivem.net/natives/?_0x8147FEA7)**
@@ -3478,21 +3498,68 @@ function TaskGoStraightToCoord(ped, x, y, z, speed, timeout, targetHeading, dist
 
 ---**`CFX` `server` [`0xF91DF93B`](https://docs.fivem.net/natives/?_0xF91DF93B)**
 ---
----example from fm_mission_controller
----TASK::TASK_GO_TO_COORD_ANY_MEANS(l\_649, sub_f7e86(-1, 0), 1.0, 0, 0, 786603, 0xbf800000);
+---Tells a ped to go to a coord by any means.
+---
+---```cpp
+---enum eDrivingMode {
+---DF_StopForCars = 1,
+---DF_StopForPeds = 2,
+---DF_SwerveAroundAllCars = 4,
+---DF_SteerAroundStationaryCars	= 8,
+---DF_SteerAroundPeds = 16,
+---DF_SteerAroundObjects = 32,
+---DF_DontSteerAroundPlayerPed = 64,
+---DF_StopAtLights = 128,
+---DF_GoOffRoadWhenAvoiding = 256,
+---DF_DriveIntoOncomingTraffic = 512,
+---DF_DriveInReverse = 1024,
+---// If pathfinding fails, cruise randomly instead of going on a straight line
+---DF_UseWanderFallbackInsteadOfStraightLine = 2048,
+---DF_AvoidRestrictedAreas = 4096,
+---// These only work on MISSION_CRUISE
+---DF_PreventBackgroundPathfinding = 8192,
+---DF_AdjustCruiseSpeedBasedOnRoadSpeed = 16384,
+---DF_UseShortCutLinks =  262144,
+---DF_ChangeLanesAroundObstructions = 524288,
+---DF_UseSwitchedOffNodes =  2097152,	// cruise tasks ignore this anyway--only used for goto's
+---DF_PreferNavmeshRoute =  4194304,	// if you're going to be primarily driving off road
+---// Only works for planes using MISSION_GOTO, will cause them to drive along the ground instead of fly
+---DF_PlaneTaxiMode =  8388608,
+---DF_ForceStraightLine = 16777216,
+---DF_UseStringPullingAtJunctions = 33554432,
+---DF_AvoidHighways = 536870912,
+---DF_ForceJoinInRoadDirection = 1073741824,
+---// Standard driving mode. stops for cars, peds, and lights, goes around stationary obstructions
+---DRIVINGMODE_STOPFORCARS = 786603, // DF_StopForCars|DF_StopForPeds|DF_SteerAroundObjects|DF_SteerAroundStationaryCars|DF_StopAtLights|DF_UseShortCutLinks|DF_ChangeLanesAroundObstructions,		// Obey lights too
+---// Like the above, but doesn't steer around anything in its way - will only wait instead.
+---DRIVINGMODE_STOPFORCARS_STRICT = 262275, // DF_StopForCars|DF_StopForPeds|DF_StopAtLights|DF_UseShortCutLinks, // Doesn't deviate an inch.
+---// Default "alerted" driving mode. drives around everything, doesn't obey lights
+---DRIVINGMODE_AVOIDCARS = 786469, // DF_SwerveAroundAllCars|DF_SteerAroundObjects|DF_UseShortCutLinks|DF_ChangeLanesAroundObstructions|DF_StopForCars,
+---// Very erratic driving. difference between this and AvoidCars is that it doesn't use the brakes at ALL to help with steering
+---DRIVINGMODE_AVOIDCARS_RECKLESS = 786468, // DF_SwerveAroundAllCars|DF_SteerAroundObjects|DF_UseShortCutLinks|DF_ChangeLanesAroundObstructions,
+---// Smashes through everything
+---DRIVINGMODE_PLOUGHTHROUGH = 262144, // DF_UseShortCutLinks
+---// Drives normally except for the fact that it ignores lights
+---DRIVINGMODE_STOPFORCARS_IGNORELIGHTS = 786475, // DF_StopForCars|DF_SteerAroundStationaryCars|DF_StopForPeds|DF_SteerAroundObjects|DF_UseShortCutLinks|DF_ChangeLanesAroundObstructions
+---// Try to swerve around everything, but stop for lights if necessary
+---DRIVINGMODE_AVOIDCARS_OBEYLIGHTS = 786597, // DF_SwerveAroundAllCars|DF_StopAtLights|DF_SteerAroundObjects|DF_UseShortCutLinks|DF_ChangeLanesAroundObstructions|DF_StopForCars
+---// Swerve around cars, be careful around peds, and stop for lights
+---DRIVINGMODE_AVOIDCARS_STOPFORPEDS_OBEYLIGHTS = 786599 // DF_SwerveAroundAllCars|DF_StopAtLights|DF_StopForPeds|DF_SteerAroundObjects|DF_UseShortCutLinks|DF_ChangeLanesAroundObstructions|DF_StopForCars
+---};
+---```
 ---
 ---**This is the server-side RPC native equivalent of the client native [TASK_GO_TO_COORD_ANY_MEANS](https://docs.fivem.net/natives/?_0x5BC448CB78FA3E88).**
 ---
----@param ped Ped
----@param x number
----@param y number
----@param z number
----@param speed number
----@param p5 any
----@param p6 boolean
----@param walkingStyle number
----@param p8 number
-function TaskGoToCoordAnyMeans(ped, x, y, z, speed, p5, p6, walkingStyle, p8) end
+---@param ped Ped The `Ped` Handle.
+---@param x number The goto target coordinate.
+---@param y number The goto target coordinate.
+---@param z number The goto target coordinate.
+---@param fMoveBlendRatio number 0.0 = still, 1.0 = walk, 2.0 = run, 3.0 = sprint.
+---@param vehicle Vehicle If defined, the pedestrian will only move if said vehicle exists. If you don't want any sort of association, just set it to `0`.
+---@param bUseLongRangeVehiclePathing boolean Setting to `true` tells the vehicle to use longrange vehicle pathing.
+---@param drivingFlags number See `eDrivingMode` enum.
+---@param fMaxRangeToShootTargets number Determines the maximum distance at which the `Ped` will engage in combat with threatening targets.
+function TaskGoToCoordAnyMeans(ped, x, y, z, fMoveBlendRatio, vehicle, bUseLongRangeVehiclePathing, drivingFlags, fMaxRangeToShootTargets) end
 
 ---**`CFX` `server` [`0x374827C2`](https://docs.fivem.net/natives/?_0x374827C2)**
 ---
@@ -3759,8 +3826,8 @@ function WasEventCanceled() end
 ---It is recommended to use [SET_BLIP_ROTATION](#\_0xF87683CDF73C3F6E) and [SET_BLIP_COLOUR](#\_0x03D7FB09E75D6B7E) to make the blip not rotate along with the camera.
 ---By default, the blip will show as a *regular* blip with the specified color/sprite if it is outside of the minimap view.
 ---Example image:
----![minimap](https://w.wew.wtf/pdcjig.png)
----![big map](https://w.wew.wtf/zgcjcm.png)
+---![minimap](https://i.imgur.com/qLbXWcQ.png)
+---![big map](https://i.imgur.com/0j7O7Rh.png)
 ---(Native name is *likely* to actually be ADD_BLIP_FOR_AREA, but due to the usual reasons this can't be confirmed)
 ---
 ---**This is the server-side RPC native equivalent of the client native [\_ADD_BLIP_FOR_AREA](https://docs.fivem.net/natives/?_0xCE5D0E5E315DB238).**
@@ -3842,7 +3909,7 @@ function SetPedEyeColor(ped, index) end
 ---*   **18**: Chin Hole (Chin Bum)
 ---*   **19**: Neck Thickness (Thin/Thick)
 ---    **Note:**
----    You may need to call [`SetPedHeadBlendData`](#0x9414E18B9434C2FE) prior to calling this native in order for it to work.
+---    You may need to call [`SetPedHeadBlendData`](#\_0x9414E18B9434C2FE) prior to calling this native in order for it to work.
 ---
 ---**This is the server-side RPC native equivalent of the client native [\_SET_PED_FACE_FEATURE](https://docs.fivem.net/natives/?_0x71A5C1DBA060049E).**
 ---
@@ -3850,17 +3917,6 @@ function SetPedEyeColor(ped, index) end
 ---@param index number An integer ranging from 0 to 19
 ---@param scale number A float ranging from -1.0 to 1.0
 function SetPedFaceFeature(ped, index, scale) end
-
----**`CFX` `server` [`0xBB43F090`](https://docs.fivem.net/natives/?_0xBB43F090)**
----
----Used for freemode (online) characters.
----
----**This is the server-side RPC native equivalent of the client native [\_SET_PED_HAIR_COLOR](https://docs.fivem.net/natives/?_0x4CFFC65454C93A49).**
----
----@param ped Ped
----@param colorID number
----@param highlightColorID number
-function SetPedHairColor(ped, colorID, highlightColorID) end
 
 ---**`CFX` `server` [`0x78935A27`](https://docs.fivem.net/natives/?_0x78935A27)**
 ---
@@ -3870,7 +3926,7 @@ function SetPedHairColor(ped, colorID, highlightColorID) end
 ---```
 ---
 ---**Note:**
----You may need to call [`SetPedHeadBlendData`](#0x9414E18B9434C2FE) prior to calling this native in order for it to work.
+---You may need to call [`SetPedHeadBlendData`](#\_0x9414E18B9434C2FE) prior to calling this native in order for it to work.
 ---
 ---**This is the server-side RPC native equivalent of the client native [\_SET_PED_HEAD_OVERLAY_COLOR](https://docs.fivem.net/natives/?_0x497BF74A7B9CB952).**
 ---

@@ -1,4 +1,10 @@
 ---@meta
+---**`CFX` `client` [`0xEEB9B76A`](https://docs.fivem.net/natives/?_0xEEB9B76A)**
+---
+---Activates built-in timecycle editing tool.
+---
+function ActivateTimecycleEditor() end
+
 ---**`CFX` `client` [`0xAC6E290D`](https://docs.fivem.net/natives/?_0xAC6E290D)**
 ---
 ---Adds an output for the specified audio submix.
@@ -11,9 +17,20 @@ function AddAudioSubmixOutput(submixId, outputSubmixId) end
 ---
 ---Loads a minimap overlay from a GFx file in the current resource.
 ---
+---If you need to control the depth of overlay use [`ADD_MINIMAP_OVERLAY_WITH_DEPTH`](#\_0xED0935B5).
+---
 ---@param name string The path to a `.gfx` file in the current resource. It has to be specified as a `file`.
 ---@return number # A minimap overlay ID.
 function AddMinimapOverlay(name) end
+
+---**`CFX` `client` [`0xED0935B5`](https://docs.fivem.net/natives/?_0xED0935B5)**
+---
+---Loads a minimap overlay from a GFx file in the current resource.
+---
+---@param name string The path to a `.gfx` file in the current resource. It has to be specified as a `file`.
+---@param depth number The depth of new overlay on the minimap. Pass `-1` for game to figure out the highest depth itself. Should not be greater than `0x7EFFFFFD`.
+---@return number # A minimap overlay ID.
+function AddMinimapOverlayWithDepth(name, depth) end
 
 ---**`CFX` `client` [`0xA66F8F75`](https://docs.fivem.net/natives/?_0xA66F8F75)**
 ---
@@ -120,6 +137,12 @@ function CallMinimapScaleformFunction(miniMap, fnName) end
 ---Cancels the currently executing event.
 ---
 function CancelEvent() end
+
+---**`CFX` `client` [`0xDD76B263`](https://docs.fivem.net/natives/?_0xDD76B263)**
+---
+---Resets the screen's draw-origin which was changed by the function [`SET_DRAW_ORIGIN`](#\_0xE10198D5) back to `x=0, y=0`. See [`SET_DRAW_ORIGIN`](#\_0xE10198D5) for further information.
+---
+function ClearDrawOrigin() end
 
 ---**`CFX` `client` [`0x2867ED8C`](https://docs.fivem.net/natives/?_0x2867ED8C)**
 ---
@@ -343,6 +366,20 @@ function DoorSystemGetActive() end
 ---@return number # The number of doors registered in the system
 function DoorSystemGetSize() end
 
+---**`CFX` `client` [`0xCD4D9DD5`](https://docs.fivem.net/natives/?_0xCD4D9DD5)**
+---
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+function DrawBox(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
+
 ---**`CFX` `client` [`0xEB2EDCA2`](https://docs.fivem.net/natives/?_0xEB2EDCA2)**
 ---
 ---Draws a gizmo. This function supports SDK infrastructure and is not intended to be used directly from your code.
@@ -362,6 +399,36 @@ function DoorSystemGetSize() end
 ---@return boolean # Whether or not the matrix was modified.
 function DrawGizmo(matrixPtr, id) end
 
+---**`CFX` `client` [`0xBD25EC89`](https://docs.fivem.net/natives/?_0xBD25EC89)**
+---
+---Draw a glow sphere this frame. Up to 256 per single frame.
+---
+---@param posX number Position X.
+---@param posY number Position Y.
+---@param posZ number Position Z.
+---@param radius number Sphere radius.
+---@param colorR number Red.
+---@param colorG number Green.
+---@param colorB number Blue.
+---@param intensity number Intensity.
+---@param invert boolean Invert rendering.
+---@param marker boolean Draw as a marker, otherwise as an overlay.
+function DrawGlowSphere(posX, posY, posZ, radius, colorR, colorG, colorB, intensity, invert, marker) end
+
+---**`CFX` `client` [`0xB3426BCC`](https://docs.fivem.net/natives/?_0xB3426BCC)**
+---
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+function DrawLine(x1, y1, z1, x2, y2, z2, red, green, blue, alpha) end
+
 ---**`CFX` `client` [`0xB856A90`](https://docs.fivem.net/natives/?_0xB856A90)**
 ---
 ---Like DRAW_RECT, but it's a line.
@@ -376,6 +443,23 @@ function DrawGizmo(matrixPtr, id) end
 ---@param b number Blue.
 ---@param a number Alpha.
 function DrawLine_2d(x1, y1, x2, y2, width, r, g, b, a) end
+
+---**`CFX` `client` [`0xABD19253`](https://docs.fivem.net/natives/?_0xABD19253)**
+---
+---@param x1 number
+---@param y1 number
+---@param z1 number
+---@param x2 number
+---@param y2 number
+---@param z2 number
+---@param x3 number
+---@param y3 number
+---@param z3 number
+---@param red number
+---@param green number
+---@param blue number
+---@param alpha number
+function DrawPoly(x1, y1, z1, x2, y2, z2, x3, y3, z3, red, green, blue, alpha) end
 
 ---**`CFX` `client` [`0xEC37C168`](https://docs.fivem.net/natives/?_0xEC37C168)**
 ---
@@ -858,6 +942,7 @@ function GetExternalKvpString(resource, key) end
 ---    *   2699
 ---    *   2802
 ---    *   2944
+---    *   3095
 ---*   RedM
 ---    *   1311
 ---    *   1355
@@ -1431,6 +1516,13 @@ function GetNumResourceMetadata(resourceName, metadataKey) end
 ---@return number # Returns parked vehicle density multiplier value.
 function GetParkedVehicleDensityMultiplier() end
 
+---**`CFX` `client` [`0xE5AF7A82`](https://docs.fivem.net/natives/?_0xE5AF7A82)**
+---
+---Returns the world position the pointer is hovering on the pause map.
+---
+---@return vector3 # A Vector3 with the pause map pointer world position X and Y values.
+function GetPauseMapPointerWorldPosition() end
+
 ---**`CFX` `client` [`0x7CCE1163`](https://docs.fivem.net/natives/?_0x7CCE1163)**
 ---
 ---Returns a list of decorations applied to a ped.
@@ -1572,8 +1664,29 @@ function GetPedSweat(ped) end
 
 ---**`CFX` `client` [`0x344EA166`](https://docs.fivem.net/natives/?_0x344EA166)**
 ---
----@param serverId number
----@return Player
+---Gets a local client's Player ID from its server ID counterpart, assuming the passed `serverId` exists on the client.
+---
+---If no matching client is found, or an invalid value is passed over as the `serverId` native's parameter, the native result will be `-1`.
+---
+---It's worth noting that this native method can only retrieve information about clients that are culled to the connected client.
+---
+---Example code:
+---```lua
+-----We will assume the serverId is '4' in this scenario and that it's a valid serverId.
+---
+----- Passing invalid Player IDs such as 'nil' or IDs that don't exist will result in playerId being -1.
+---
+---local playerId = GetPlayerFromServerId(serverId);
+---
+----- If the resulting playerId is not invalid (not equal to -1)
+---if playerId ~= -1 then
+---    -- Do our stuff on this player.
+---end
+---
+---```
+---
+---@param serverId number The player's server ID.
+---@return Player # A valid Player ID if one is found, `-1` if not.
 function GetPlayerFromServerId(serverId) end
 
 ---**`CFX` `shared` [`0xA56135E0`](https://docs.fivem.net/natives/?_0xA56135E0)**
@@ -1852,6 +1965,23 @@ function GetRuntimeTextureWidth(tex) end
 ---
 ---@return number # Returns scenario ped density multiplier value.
 function GetScenarioPedDensityMultiplier() end
+
+---**`CFX` `client` [`0x4301E10C`](https://docs.fivem.net/natives/?_0x4301E10C)**
+---
+---Returns the result of a shape test, also returning the material of any touched surface.
+---
+---When used with an asynchronous shape test, this native should be looped until returning 0 or 2, after which the handle is invalidated.
+---
+---Unless the return value is 2, the other return values are undefined.
+---
+---@param shapeTestHandle number A shape test handle.
+---@param hit boolean Whether or not the shape test hit any collisions.
+---@param endCoords vector3 The resulting coordinates where the shape test hit a collision.
+---@param surfaceNormal vector3 The surface normal of the hit position.
+---@param materialHash Hash hash of the hit material or surface type, see materialFX.dat
+---@param entityHit Entity Any dynamic entity hit by the shape test.
+---@return number, boolean, vector3, vector3, Hash, Entity # `0` if the handle is invalid, `1` if the shape test is still pending, or `2` if the shape test has completed, and the handle should be invalidated.
+function GetShapeTestResultIncludingMaterial(shapeTestHandle, hit, endCoords, surfaceNormal, materialHash, entityHit) end
 
 ---**`CFX` `shared` [`0x637F4C75`](https://docs.fivem.net/natives/?_0x637F4C75)**
 ---
@@ -2731,7 +2861,7 @@ function GetWaveQuadDirection(waveQuad, directionX, directionY) end
 
 ---**`CFX` `client` [`0x63ED2E7`](https://docs.fivem.net/natives/?_0x63ED2E7)**
 ---
----A getter for [SET_WEAPON_ANIMATION_OVERRIDE](\_0x1055AC3A667F09D9).
+---A getter for [SET_WEAPON_ANIMATION_OVERRIDE](#\_0x1055AC3A667F09D9).
 ---
 ---Example code:
 ---```lua
@@ -3277,6 +3407,15 @@ function NetworkGetEntityOwner(entity) end
 ---
 ---@param flag boolean true to override, false to use default game behavior.
 function OverridePedsCanStandOnTopFlag(flag) end
+
+---**`CFX` `client` [`0xB14F8EAD`](https://docs.fivem.net/natives/?_0xB14F8EAD)**
+---
+---Allows the bypassing of default game behavior that prevents the use of [SET_PED_DRIVE_BY_CLIPSET_OVERRIDE](#\_0xED34AB6C5CB36520) in certain scenarios to avoid clipping issues (e.g., when there is more than one Ped in a vehicle).
+---
+---Note: This flag and the overridden clipset are not replicated values and require synchronization through user scripts. Additionally, current game behavior also restricts applying this clipset locally when in first-person mode and will require a temporary workaround.
+---
+---@param flag boolean true to override, false to use default game behavior.
+function OverridePedsUseDefaultDriveByClipset(flag) end
 
 ---**`CFX` `client` [`0xD3BC438F`](https://docs.fivem.net/natives/?_0xD3BC438F)**
 ---
@@ -3834,6 +3973,11 @@ function SetAudioSubmixEffectRadioFx(submixId, effectSlot) end
 ---@param channel6Volume number The volume for channel 6.
 function SetAudioSubmixOutputVolumes(submixId, outputSlot, frontLeftVolume, frontRightVolume, rearLeftVolume, rearRightVolume, channel5Volume, channel6Volume) end
 
+---**`CFX` `client` [`0xC44C2F44`](https://docs.fivem.net/natives/?_0xC44C2F44)**
+---
+---@param toggle boolean
+function SetBackfaceculling(toggle) end
+
 ---**`CFX` `client` [`0xC5945BD9`](https://docs.fivem.net/natives/?_0xC5945BD9)**
 ---
 ---Example code:
@@ -3942,6 +4086,18 @@ function SetDiscordRichPresenceAssetSmallText(text) end
 ---
 ---@param text string Text to be displayed when hovering over image asset. Note that you must also set a valid image asset using the SET_DISCORD_RICH_PRESENCE_ASSET native.
 function SetDiscordRichPresenceAssetText(text) end
+
+---**`CFX` `client` [`0xE10198D5`](https://docs.fivem.net/natives/?_0xE10198D5)**
+---
+---Sets the on-screen drawing origin for draw-functions in world coordinates.
+---
+---The effect can be reset by calling [`CLEAR_DRAW_ORIGIN`](#\_0xDD76B263) and is limited to 32 different origins each frame.
+---
+---@param x number
+---@param y number
+---@param z number
+---@param is2d boolean
+function SetDrawOrigin(x, y, z, is2d) end
 
 ---**`CFX` `client` [`0xF761D9F3`](https://docs.fivem.net/natives/?_0xF761D9F3)**
 ---
@@ -4337,6 +4493,8 @@ function SetMinimapType(type) end
 
 ---**`CFX` `client` [`0x7F6B8D75`](https://docs.fivem.net/natives/?_0x7F6B8D75)**
 ---
+---**This native is deprecated and does nothing!**
+---
 ---@param modelHash Hash
 ---@param ratePerSecond number
 ---@param headlightRotation number
@@ -4380,6 +4538,40 @@ function SetNuiFocusKeepInput(keepInput) end
 ---@param modelHash Hash Ped's model.
 ---@param personalityHash Hash Personality hash.
 function SetPedModelPersonality(modelHash, personalityHash) end
+
+---**`CFX` `client` [`0xB300F03`](https://docs.fivem.net/natives/?_0xB300F03)**
+---
+---Purpose: The game's default values for these make shooting while traveling Left quite a bit slower than shooting while traveling right (This could be a game-balance thing?)
+---
+---Default Min: -45 Degrees
+---Default Max: 135 Degrees
+---
+---```
+---   \ ,- ~ ||~ - ,
+---, ' \    x   x    ' ,
+---```
+---
+---,      \    x    x   x  ,
+---,         \  x     x      ,
+---,            \     x    x  ,
+---,              \      x    ,
+---,                \   x     ,
+---,                 \   x x ,
+---,                  \  x ,
+---,                 , '
+---' - , \_ \_ \_ ,  '  \\
+---
+---If the transition angle is within the shaded portion (x), there will be no transition(Quicker)
+---The angle corresponds to where you are looking(North on the circle) vs. the heading of your Ped.
+---Note: For some reason,
+---
+---You can set these values to whatever you'd like with this native, but keep in mind that the transitional spin is only clockwise for some reason.
+---
+---I'd personally recommend something like -135/135
+---
+---@param min number Leftside angle on the above diagram
+---@param max number Rightside angle on the above diagram
+function SetPedTurningThresholds(min, max) end
 
 ---**`CFX` `client` [`0x35594F67`](https://docs.fivem.net/natives/?_0x35594F67)**
 ---
@@ -4524,6 +4716,24 @@ function SetStateBagValue(bagName, keyName, valueData, valueLength, replicated) 
 ---@param enabled boolean
 ---@return boolean
 function SetTextChatEnabled(enabled) end
+
+---**`CFX` `client` [`0xADA9255D`](https://docs.fivem.net/natives/?_0xADA9255D)**
+---
+---Sets the text font for the current text drawing command.
+---
+---@param fontId number The index of the font.
+function SetTextFontForCurrentCommand(fontId) end
+
+---**`CFX` `client` [`0x68CDFA60`](https://docs.fivem.net/natives/?_0x68CDFA60)**
+---
+---@param justifyType number
+function SetTextJustification(justifyType) end
+
+---**`CFX` `client` [`0x6F60AB54`](https://docs.fivem.net/natives/?_0x6F60AB54)**
+---
+---@param start number
+---@param end_ number
+function SetTextWrap(start, end_) end
 
 ---**`CFX` `client` [`0x6E0A422B`](https://docs.fivem.net/natives/?_0x6E0A422B)**
 ---
@@ -4673,6 +4883,22 @@ function SetVehicleHighGear(vehicle, gear) end
 ---@param vehicle Vehicle
 ---@param level number
 function SetVehicleOilLevel(vehicle, level) end
+
+---**`CFX` `client` [`0x2A6CC9F2`](https://docs.fivem.net/natives/?_0x2A6CC9F2)**
+---
+---Set the vehicle's pitch bias. Only works on planes.
+---
+---@param vehicle Vehicle Target vehicle.
+---@param value number Pitch bias value.
+function SetVehiclePitchBias(vehicle, value) end
+
+---**`CFX` `client` [`0x264B45DE`](https://docs.fivem.net/natives/?_0x264B45DE)**
+---
+---Set the vehicle's roll bias. Only works on planes.
+---
+---@param vehicle Vehicle Target vehicle.
+---@param value number Roll bias value.
+function SetVehicleRollBias(vehicle, value) end
 
 ---**`CFX` `client` [`0xFFCCC2EA`](https://docs.fivem.net/natives/?_0xFFCCC2EA)**
 ---
